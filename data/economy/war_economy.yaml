@@ -1,0 +1,1223 @@
+# Iron Ledger — War Economy Events Database
+# Random table / triggered events for economic disruption across the Rimevegr.
+# 15 settlements, 7 rival bands, 3 political unions.
+# Currency: 1 silver = 10 copper.
+# Seasons: thaw, long_sun, harvest, long_dark.
+# Player band: Voss's Black Axes.
+#
+# Usage: roll d100 per season per category, or trigger by campaign events.
+# Events cascade — blockades cause shortages, shortages cause famine.
+
+war_economy_events:
+
+  # ==========================================================================
+  # BLOCKADES (10 events)
+  # ==========================================================================
+  blockades:
+    - id: "WAR_BLK_001"
+      name: "Mountain Pass Sealed"
+      trigger: "Ordovast-Sigrun feud escalates"
+      affected_routes: ["Járnvegr (Iron Road)"]
+      affected_settlements: ["Grimholt", "Deepholm", "Raven's Perch"]
+      duration_weeks: "2-6"
+      economic_effects:
+        - "Iron trade halts between Grimholt and Deepholm"
+        - "Weapon prices +50% in Deepholm"
+        - "Grimholt food prices +30% (cut off from southern grain)"
+        - "Iron Road toll revenue drops to zero"
+      mercenary_opportunities:
+        - "Escort ore wagons through Markaleið bypass (+15 silver/run)"
+        - "Hired to break the blockade (combat contract, 40-60 silver)"
+        - "Smuggling iron through forest via Ashmark (risky, +20 silver)"
+      severity: "major"
+      seasons: ["any"]
+      chance_per_season: 8
+
+    - id: "WAR_BLK_002"
+      name: "Kolvik Harbour Chain Raised"
+      trigger: "Fjord Compact closes port to rival-aligned ships"
+      affected_routes: ["Skaldhaven-Kolvik coast path"]
+      affected_settlements: ["Kolvik", "Skaldhaven", "Stonebay Hamlet"]
+      duration_weeks: "1-4"
+      economic_effects:
+        - "Ship repair unavailable — damaged vessels rot at anchor"
+        - "Dried fish supply halted to inland settlements"
+        - "Kolvik weekly income drops to 2-4 silver"
+        - "Stonebay Hamlet loses its only trade partner"
+      mercenary_opportunities:
+        - "Hired to run the harbour chain at night (8 silver + cargo share)"
+        - "Guard the chain for Harbour-Master Inga (5 silver/week)"
+        - "Escort fishing boats to Stonebay Hamlet (+3 silver/trip)"
+      severity: "moderate"
+      seasons: ["thaw", "long_sun", "harvest"]
+      chance_per_season: 6
+
+    - id: "WAR_BLK_003"
+      name: "Bone Road Checkpoint"
+      trigger: "Three Wolves set a toll on Beinvegr"
+      affected_routes: ["Beinvegr (Bone Road)"]
+      affected_settlements: ["Frostfjord Hollow", "Ashen Reach"]
+      duration_weeks: "2-8"
+      economic_effects:
+        - "Trade between Frostfjord and Ashen Reach taxed +5 copper/head"
+        - "Frostfjord dried cod supply to forest settlements cut by half"
+        - "Ashen Reach pine tar prices +20%"
+      mercenary_opportunities:
+        - "Clear the Three Wolves checkpoint (combat, 25-35 silver)"
+        - "Negotiate passage rights for merchants (diplomacy, 10 silver fee)"
+        - "Run the checkpoint at night through the ridge route (+8 silver)"
+      severity: "moderate"
+      seasons: ["long_sun", "harvest"]
+      chance_per_season: 10
+
+    - id: "WAR_BLK_004"
+      name: "Bleakwater Ferry Seized"
+      trigger: "Iron Grip forces claim the river crossing"
+      affected_routes: ["Bleakwater Landing crossings"]
+      affected_settlements: ["Bleakwater Landing", "Vargheim", "Ashmark"]
+      duration_weeks: "1-3"
+      economic_effects:
+        - "River crossing toll quadrupled (2 copper to 8 copper per head)"
+        - "Charcoal shipments from Vargheim delayed"
+        - "Ashmark smelter output drops — no fuel"
+      mercenary_opportunities:
+        - "Hired by Ferryman Olaf to reclaim his ferry (15 silver)"
+        - "Guard the crossing for Ordovast (6 silver/week, burns goodwill)"
+        - "Find an alternative ford upstream (scouting contract, 5 silver)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 7
+
+    - id: "WAR_BLK_005"
+      name: "Widow's Crossing Barricade"
+      trigger: "Pale Widow blocks moor traffic to pressure Thornwall"
+      affected_routes: ["Ekkjubraut (Widow's Crossing)"]
+      affected_settlements: ["Ashen Reach", "Thornwall", "Moor's End"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "Thornwall wool exports to forest belt halted"
+        - "Moor's End isolated — food stores critical within 1 week"
+        - "Ashen Reach gains leverage in Fjord Compact negotiations"
+      mercenary_opportunities:
+        - "Thornwall hires convoy escort through Rime-Moor Road detour (+12 silver)"
+        - "Pale Widow pays to enforce the barricade (8 silver/week)"
+        - "Smuggle wool bales by night across moor bypass (+6 silver/load)"
+      severity: "moderate"
+      seasons: ["harvest", "long_dark"]
+      chance_per_season: 5
+
+    - id: "WAR_BLK_006"
+      name: "Rime-Moor Road Closed"
+      trigger: "Grimholt-Thornwall tensions boil over"
+      affected_routes: ["Hrímheiðarvegr (Rime-Moor Road)"]
+      affected_settlements: ["Grimholt", "Thornwall", "Moor's End"]
+      duration_weeks: "3-8"
+      economic_effects:
+        - "Thornwall mutton supply to Grimholt halted"
+        - "Grimholt iron supply to Thornwall halted"
+        - "Moor's End peat trade dies — only customer was Thornwall"
+        - "Both settlements must import at premium from Deepholm"
+      mercenary_opportunities:
+        - "Broker a temporary trade truce (diplomacy, 20 silver from each side)"
+        - "Run armed convoys between settlements (15 silver/convoy)"
+        - "Ordovast hires band to hold a forward camp on the moor (10 silver/week)"
+      severity: "major"
+      seasons: ["any"]
+      chance_per_season: 6
+
+    - id: "WAR_BLK_007"
+      name: "Fjord-Shadow Path Ambush Line"
+      trigger: "Silent Oar band sets ambush positions along the cliff trail"
+      affected_routes: ["Fjörðskuggaleið (Fjord-Shadow Path)"]
+      affected_settlements: ["Frostfjord Hollow", "Skaldhaven"]
+      duration_weeks: "1-3"
+      economic_effects:
+        - "Frostfjord-Skaldhaven trade halted"
+        - "Skaldhaven rune-craft exports dry up"
+        - "Frostfjord loses access to healing herbs from Skaldhaven"
+      mercenary_opportunities:
+        - "Hunt down Silent Oar ambush teams (combat, 30 silver bounty)"
+        - "Guard merchant parties through the cliff path (+10 silver/trip)"
+        - "Negotiate with Silent Oar for passage rights (5 silver bribe)"
+      severity: "moderate"
+      seasons: ["thaw", "long_sun"]
+      chance_per_season: 8
+
+    - id: "WAR_BLK_008"
+      name: "Charred Trail Felled Trees"
+      trigger: "Bone Pack blocks the forest road with cut timber"
+      affected_routes: ["Askstígr (Charred Trail)"]
+      affected_settlements: ["Ashen Reach", "Ashmark"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "Charcoal supply to Ashmark smelter interrupted"
+        - "Pine tar deliveries from Ashen Reach delayed"
+        - "Ashmark herb exports to Ashen Reach healer halted"
+      mercenary_opportunities:
+        - "Clear the roadblock (labor + combat, 12 silver)"
+        - "Bone Pack offers silver to keep it blocked (8 silver, betrayal)"
+        - "Haul goods on foot through forest bypass (+4 silver/bundle)"
+      severity: "minor"
+      seasons: ["long_sun", "harvest"]
+      chance_per_season: 12
+
+    - id: "WAR_BLK_009"
+      name: "Mine Road Ravine Collapse"
+      trigger: "Sabotage or natural rockslide blocks Námuvegr"
+      affected_routes: ["Námuvegr (Mine Road)"]
+      affected_settlements: ["Deepholm", "Ashmark"]
+      duration_weeks: "2-5"
+      economic_effects:
+        - "Deepholm western trade halted"
+        - "Ashmark loses access to Deepholm's market and supplies"
+        - "Ore prices in Ashmark +40% (must go through Grimholt)"
+      mercenary_opportunities:
+        - "Hired to clear the ravine (labor contract, 10 silver + food)"
+        - "Investigate sabotage for Jarl Sigrun (20 silver if proof found)"
+        - "Run goods through the rubble on foot (dangerous, +7 silver/load)"
+      severity: "moderate"
+      seasons: ["thaw", "harvest"]
+      chance_per_season: 5
+
+    - id: "WAR_BLK_010"
+      name: "Total Embargo — Compact vs. Grip"
+      trigger: "Ordovast-Sigrun feud reaches open hostility"
+      affected_routes: ["Járnvegr (Iron Road)", "Hrímheiðarvegr (Rime-Moor Road)", "Námuvegr (Mine Road)"]
+      affected_settlements: ["Grimholt", "Deepholm", "Thornwall", "Raven's Perch", "Ashmark"]
+      duration_weeks: "4-12"
+      economic_effects:
+        - "All trade between Iron Grip and Fjord Compact halts"
+        - "Weapon prices double across the Rimevegr"
+        - "Food prices +50% in mountain settlements"
+        - "Neutral settlements (Ashmark, Vargheim) become critical go-betweens"
+        - "Silver hoarding begins — barter replaces coin"
+      mercenary_opportunities:
+        - "Massive smuggling profits — 25 silver per contraband run"
+        - "Both sides hire mercenaries for border raids (40-80 silver)"
+        - "Diplomatic courier runs (high risk, 15 silver each way)"
+        - "Black market brokerage in Ashmark (+10 silver/week commission)"
+      severity: "catastrophic"
+      seasons: ["any"]
+      chance_per_season: 3
+
+  # ==========================================================================
+  # RAIDED CARAVANS (9 events)
+  # ==========================================================================
+  raided_caravans:
+    - id: "WAR_RAD_001"
+      name: "Iron Convoy Ambushed"
+      trigger: "Ore wagon attacked on the Iron Road"
+      affected_routes: ["Járnvegr (Iron Road)"]
+      affected_settlements: ["Grimholt", "Deepholm"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "3-5 wagonloads of iron ore lost"
+        - "Iron prices +15% in Deepholm for two weeks"
+        - "Grimholt iron-guard patrols doubled (manpower strain)"
+      mercenary_opportunities:
+        - "Hired to recover stolen ore (tracking + combat, 25 silver)"
+        - "Guard next convoy as additional security (+8 silver/trip)"
+        - "Track raiders to their camp — bounty on leader (15 silver)"
+      severity: "moderate"
+      seasons: ["any"]
+      chance_per_season: 10
+
+    - id: "WAR_RAD_002"
+      name: "Frostfjord Fish Shipment Stolen"
+      trigger: "Three Wolves raid a dried cod caravan on the moor track"
+      affected_routes: ["Frostfjord Hollow-Feldwick moor track"]
+      affected_settlements: ["Frostfjord Hollow", "Feldwick"]
+      duration_weeks: "1"
+      economic_effects:
+        - "Two weeks' dried cod supply lost"
+        - "Frostfjord food stores drop by 3 days"
+        - "Fish prices +25% in moor settlements"
+      mercenary_opportunities:
+        - "Hunt down the Three Wolves raiders (combat, 15 silver + recovered goods)"
+        - "Escort the replacement shipment (6 silver)"
+        - "Sell intelligence on Three Wolves camp location to Hrothgar (5 silver)"
+      severity: "minor"
+      seasons: ["harvest", "long_dark"]
+      chance_per_season: 12
+
+    - id: "WAR_RAD_003"
+      name: "Salt Shipment Intercepted"
+      trigger: "Bandits hit a salt merchant on the coast path"
+      affected_routes: ["Skaldhaven-Kolvik coast path"]
+      affected_settlements: ["Kolvik", "Skaldhaven", "Frostfjord Hollow"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "Salt supply gone — fish-curing operations halted in Kolvik"
+        - "Preserved food production drops across coastal settlements"
+        - "Salt prices triple inland (6 copper per measure to 18 copper)"
+      mercenary_opportunities:
+        - "Track down the bandits and recover the salt (20 silver bounty)"
+        - "Escort emergency salt shipment from Deepholm (12 silver)"
+        - "Corner the remaining salt market for resale profit (+8 silver)"
+      severity: "moderate"
+      seasons: ["harvest", "long_dark"]
+      chance_per_season: 7
+
+    - id: "WAR_RAD_004"
+      name: "Weapons Cache Seized"
+      trigger: "Hollow Hall intercepts weapon delivery to Thornwall"
+      affected_routes: ["Hrímheiðarvegr (Rime-Moor Road)"]
+      affected_settlements: ["Thornwall", "Grimholt"]
+      duration_weeks: "1"
+      economic_effects:
+        - "Thornwall garrison short 20 spears and 8 axes"
+        - "Defense readiness drops — Thornwall vulnerable for weeks"
+        - "Weapon prices +30% in moor settlements"
+      mercenary_opportunities:
+        - "Recover the cache from Hollow Hall's camp (combat, 35 silver)"
+        - "Sell rival weapons intel to Jarl Helga (10 silver)"
+        - "Forge replacement weapons in Ashmark for Thornwall (smith contract, 15 silver)"
+      severity: "major"
+      seasons: ["thaw", "long_sun"]
+      chance_per_season: 5
+
+    - id: "WAR_RAD_005"
+      name: "Livestock Driven Off"
+      trigger: "Raiders steal sheep flock on the Moss Way"
+      affected_routes: ["Mosavegr (Moss Way)"]
+      affected_settlements: ["Thornwall", "Moor's End"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "40-60 sheep lost — Thornwall wool output drops for the season"
+        - "Moor's End loses breeding stock"
+        - "Mutton prices +20% across the network"
+      mercenary_opportunities:
+        - "Track and recover the flock (scouting + combat, 20 silver + 2 sheep)"
+        - "Protect remaining herds for Thornwall (guard contract, 8 silver/week)"
+        - "Sell the stolen sheep at Vargheim black market (12 silver, dishonorable)"
+      severity: "moderate"
+      seasons: ["long_sun", "harvest"]
+      chance_per_season: 8
+
+    - id: "WAR_RAD_006"
+      name: "Charcoal Wagons Burned"
+      trigger: "Rival band torches Vargheim's charcoal delivery"
+      affected_routes: ["Vargheim-Ashmark forest path"]
+      affected_settlements: ["Vargheim", "Ashmark"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "Ashmark smelter production halts for a week"
+        - "Vargheim loses 2 weeks' charcoal revenue (24-40 silver)"
+        - "Pine tar production in Ashen Reach increases to fill gap (+5%)"
+      mercenary_opportunities:
+        - "Guard the next charcoal convoy through wolf territory (8 silver)"
+        - "Hunt the raiders responsible (15 silver bounty from Jarl Ulf)"
+        - "Negotiate bulk charcoal deal with Ashen Reach for Ashmark (broker fee 5 silver)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 9
+
+    - id: "WAR_RAD_007"
+      name: "Diplomatic Courier Murdered"
+      trigger: "Messenger carrying trade terms killed on the Border Trail"
+      affected_routes: ["Markaleið (Border Trail)"]
+      affected_settlements: ["Grimholt", "Ashmark"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "Trade negotiations between settlements collapse"
+        - "Mutual suspicion — each side blames the other"
+        - "Border trade volume drops 50% as merchants fear travel"
+      mercenary_opportunities:
+        - "Investigate the murder for either side (20 silver + political favor)"
+        - "Escort replacement diplomat (15 silver, high-profile)"
+        - "Exploit the chaos — sell information to both parties (10 silver each)"
+      severity: "major"
+      seasons: ["any"]
+      chance_per_season: 4
+
+    - id: "WAR_RAD_008"
+      name: "Fur Traders Slaughtered"
+      trigger: "Red Tide slavers attack a Vargheim fur caravan"
+      affected_routes: ["Vargheim-Kolvik forest-to-coast trail"]
+      affected_settlements: ["Vargheim", "Kolvik"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "Season's wolf-pelts and furs lost (value: 30+ silver)"
+        - "Kolvik loses its primary luxury trade goods"
+        - "Fur prices double across the Rimevegr"
+        - "Three traders taken as captives"
+      mercenary_opportunities:
+        - "Rescue the captives from Red Tide (combat, 25 silver + gratitude)"
+        - "Track the slavers to their ship (scouting, 10 silver from Jarl Ulf)"
+        - "Guard replacement fur shipment (8 silver)"
+      severity: "major"
+      seasons: ["harvest", "long_dark"]
+      chance_per_season: 5
+
+    - id: "WAR_RAD_009"
+      name: "Rune-Craft Stolen in Transit"
+      trigger: "Thieves intercept Skaldhaven rune-stones bound for Deepholm"
+      affected_routes: ["Fjörðskuggaleið (Fjord-Shadow Path)"]
+      affected_settlements: ["Skaldhaven", "Deepholm"]
+      duration_weeks: "1-3"
+      economic_effects:
+        - "Deepholm galdr workshop short on materials"
+        - "Skaldhaven loses 15 silver in goods"
+        - "Lore-Keeper Audun furious — reduces trade with unreliable routes"
+      mercenary_opportunities:
+        - "Recover the rune-stones (tracking, 20 silver + Audun's favor)"
+        - "Skaldhaven hires permanent route guards (6 silver/week)"
+        - "Sell knowledge of thief identity to Audun (8 silver)"
+      severity: "minor"
+      seasons: ["thaw", "long_sun"]
+      chance_per_season: 6
+
+  # ==========================================================================
+  # BURNED GRANARIES (6 events)
+  # ==========================================================================
+  burned_granaries:
+    - id: "WAR_GRN_001"
+      name: "Frostfjord Stores Torched"
+      trigger: "Arson during night raid — Three Wolves suspected"
+      affected_settlements: ["Frostfjord Hollow"]
+      duration_weeks: "permanent until resupplied"
+      economic_effects:
+        - "Food stores drop from 14 days to 3 days"
+        - "Frostfjord faces starvation within a week"
+        - "Jarl Hrothgar desperate — will accept any terms for food"
+        - "Dried cod exports cease entirely"
+      mercenary_opportunities:
+        - "Emergency food convoy from Ashen Reach (20 silver + Hrothgar's debt)"
+        - "Hunt the arsonists (15 silver bounty)"
+        - "Demand payment to share band provisions (extortion, +10 silver)"
+      severity: "catastrophic"
+      seasons: ["long_dark"]
+      chance_per_season: 4
+
+    - id: "WAR_GRN_002"
+      name: "Thornwall Sheep Pens Burned"
+      trigger: "Raid during harvest festival — attackers unknown"
+      affected_settlements: ["Thornwall"]
+      duration_weeks: "3-6"
+      economic_effects:
+        - "50+ sheep killed in the fire"
+        - "Wool production halted for the season"
+        - "Mutton supply for Rimevegr moor settlements cut by 40%"
+        - "Thornwall food stores drop by 5 days"
+      mercenary_opportunities:
+        - "Guard reconstruction efforts (6 silver/week)"
+        - "Investigate the attack for Jarl Helga (15 silver + favor)"
+        - "Source replacement livestock from Moor's End (escort, 8 silver)"
+      severity: "major"
+      seasons: ["harvest"]
+      chance_per_season: 5
+
+    - id: "WAR_GRN_003"
+      name: "Deepholm Underground Stores Flooded"
+      trigger: "Sabotaged drainage channels flood the lower granaries"
+      affected_settlements: ["Deepholm"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "Deepholm food stores drop from 45 days to 20 days"
+        - "Grain prices +60% in Deepholm"
+        - "Sigrun diverts military budget to emergency food purchases"
+        - "Market activity reduced — merchants hoarding"
+      mercenary_opportunities:
+        - "Investigate saboteur for Sigrun (30 silver + access to contracts)"
+        - "Organize food convoys from Thornwall (15 silver/convoy)"
+        - "Pump and repair drainage (labor contract, 10 silver + lodging)"
+      severity: "major"
+      seasons: ["thaw"]
+      chance_per_season: 3
+
+    - id: "WAR_GRN_004"
+      name: "Vargheim Kilns Destroyed"
+      trigger: "Bone Pack retaliates after being expelled from winter camp"
+      affected_settlements: ["Vargheim"]
+      duration_weeks: "4-8"
+      economic_effects:
+        - "Charcoal production halted — Vargheim loses primary export"
+        - "Ashmark smelter on half capacity (no charcoal fuel)"
+        - "Vargheim weekly income drops to 3-5 silver"
+        - "Wolf-pelt smoking sheds also damaged"
+      mercenary_opportunities:
+        - "Retaliation raid on Bone Pack camp (combat, 20 silver from Jarl Ulf)"
+        - "Guard kiln reconstruction (5 silver/week)"
+        - "Source emergency charcoal from Ashen Reach (broker fee 4 silver)"
+      severity: "major"
+      seasons: ["thaw", "long_sun"]
+      chance_per_season: 4
+
+    - id: "WAR_GRN_005"
+      name: "Poisoned Well at Ashmark"
+      trigger: "Unknown party dumps rotting carcasses into the village well"
+      affected_settlements: ["Ashmark"]
+      duration_weeks: "2-3"
+      economic_effects:
+        - "Ashmark population sickened — 15% workforce incapacitated"
+        - "Herb stores depleted treating the sick"
+        - "Trade halted as merchants fear contagion"
+        - "Pine tar production halts"
+      mercenary_opportunities:
+        - "Find the poisoner (investigation, 15 silver from Reeve Torsten)"
+        - "Escort a healer from Skaldhaven to Ashmark (10 silver)"
+        - "Dig a new well (labor, 4 silver + gratitude)"
+      severity: "moderate"
+      seasons: ["long_sun", "harvest"]
+      chance_per_season: 5
+
+    - id: "WAR_GRN_006"
+      name: "Feldwick Crops Burned"
+      trigger: "Three Wolves burn standing grain as punishment for resistance"
+      affected_settlements: ["Feldwick"]
+      duration_weeks: "permanent (season's crop lost)"
+      economic_effects:
+        - "Feldwick faces winter starvation — food stores at 2 days"
+        - "Population flees to neighboring settlements"
+        - "Three Wolves tighten grip — no one enters or leaves"
+        - "Sheep wool trade from Feldwick ceases entirely"
+      mercenary_opportunities:
+        - "Smuggle food into Feldwick (humanitarian, 5 silver from grateful villagers)"
+        - "Liberate Feldwick (major combat contract, 40+ silver collective)"
+        - "Report conditions to Skaldhaven or Ashen Reach for hire (5 silver intel fee)"
+      severity: "catastrophic"
+      seasons: ["harvest"]
+      chance_per_season: 6
+
+  # ==========================================================================
+  # REFUGEE INFLUX (6 events)
+  # ==========================================================================
+  refugee_influx:
+    - id: "WAR_REF_001"
+      name: "Feldwick Villagers Flee"
+      trigger: "Three Wolves occupation drives families out"
+      affected_settlements: ["Frostfjord Hollow", "Skaldhaven", "Kolvik"]
+      duration_weeks: "4-12"
+      economic_effects:
+        - "20-30 refugees arrive at receiving settlements"
+        - "Food consumption increases +15% at host settlements"
+        - "Cheap labor available but tensions with locals rise"
+        - "Begging and theft increase in Frostfjord market"
+      mercenary_opportunities:
+        - "Hired to protect refugee column during travel (8 silver)"
+        - "Settlement pays to keep order among refugees (5 silver/week)"
+        - "Recruit displaced fighters to the band (0 silver — they join for food)"
+      severity: "moderate"
+      seasons: ["any"]
+      chance_per_season: 8
+
+    - id: "WAR_REF_002"
+      name: "Moor's End Abandoned"
+      trigger: "Standing stones grow dangerous — population flees"
+      affected_settlements: ["Thornwall", "Moor's End"]
+      duration_weeks: "8-permanent"
+      economic_effects:
+        - "Moor's End population (31) relocates to Thornwall"
+        - "Thornwall food stores strained — drops by 4 days"
+        - "Peat supply collapses — Thornwall must find new fuel"
+        - "Sheep from Moor's End add to Thornwall herds (minor benefit)"
+      mercenary_opportunities:
+        - "Investigate the standing stones (supernatural contract, 25 silver)"
+        - "Escort refugees across the peat hags (5 silver)"
+        - "Loot abandoned Moor's End (0 silver, but salvage worth 8-12 silver)"
+      severity: "major"
+      seasons: ["long_dark"]
+      chance_per_season: 3
+
+    - id: "WAR_REF_003"
+      name: "Deserters From the Iron Grip"
+      trigger: "Ordovast's conscripts flee rather than fight"
+      affected_settlements: ["Ashmark", "Vargheim"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "10-15 armed deserters arrive — part desperate, part dangerous"
+        - "Local crime increases as deserters steal to survive"
+        - "Ordovast sends bounty hunters — settlements drawn into conflict"
+        - "Labor surplus briefly drops wages for hired work"
+      mercenary_opportunities:
+        - "Capture deserters for Ordovast's bounty (3 silver/head)"
+        - "Recruit capable fighters from the deserters (free recruits)"
+        - "Protect a settlement from deserter raids (8 silver/week)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 7
+
+    - id: "WAR_REF_004"
+      name: "Wounded Fighters Flood Skaldhaven"
+      trigger: "Aftermath of a major battle or skirmish nearby"
+      affected_settlements: ["Skaldhaven"]
+      duration_weeks: "2-6"
+      economic_effects:
+        - "Skaldhaven healer overwhelmed — herb stores depleted"
+        - "Hall of Sagas converted to a sick-house"
+        - "Normal trade and learning activities suspended"
+        - "Healing herb prices +100% across the Rimevegr"
+      mercenary_opportunities:
+        - "Source healing herbs from Ashmark (escort/trade run, 10 silver)"
+        - "Help Audun defend the wounded from rival bands (12 silver/week)"
+        - "Interrogate wounded fighters for intelligence (0 silver, information value)"
+      severity: "moderate"
+      seasons: ["any"]
+      chance_per_season: 5
+
+    - id: "WAR_REF_005"
+      name: "Escaped Thralls Seek Shelter"
+      trigger: "Red Tide slave ship wrecks on the coast"
+      affected_settlements: ["Stonebay Hamlet", "Kolvik"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "8-12 freed thralls arrive, starving and traumatized"
+        - "Stonebay Hamlet cannot support them (population only 23)"
+        - "Red Tide sends recovery parties — coastal settlements at risk"
+        - "Kolvik harbor traffic disrupted by Red Tide ships prowling"
+      mercenary_opportunities:
+        - "Defend thralls from Red Tide recovery party (combat, 10 silver from Kolvik)"
+        - "Return thralls to Red Tide for bounty (5 silver/head, dishonorable)"
+        - "Relocate thralls to inland settlement (escort, 6 silver from receiving village)"
+      severity: "moderate"
+      seasons: ["thaw", "long_sun"]
+      chance_per_season: 4
+
+    - id: "WAR_REF_006"
+      name: "Band Remnant Seeks Sanctuary"
+      trigger: "Destroyed mercenary band survivors stagger into a settlement"
+      affected_settlements: ["Ashen Reach", "Deepholm", "Frostfjord Hollow"]
+      duration_weeks: "1-4"
+      economic_effects:
+        - "5-8 armed survivors — potential allies or threat"
+        - "Settlement tensions rise (who feeds them, who commands them)"
+        - "Rival bands take notice — may attack to finish them off"
+        - "Weapon and armor supply temporarily increases (survivors sell gear)"
+      mercenary_opportunities:
+        - "Absorb survivors into the Black Axes (0 silver, +fighters)"
+        - "Broker their service to a jarl (5 silver finder's fee)"
+        - "Sell information about their former band's territory (10 silver)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 6
+
+  # ==========================================================================
+  # WAR TAXES (6 events)
+  # ==========================================================================
+  war_taxes:
+    - id: "WAR_TAX_001"
+      name: "Ordovast Demands Iron Tribute"
+      trigger: "Iron Grip war preparations intensify"
+      affected_settlements: ["Grimholt", "Raven's Perch", "Bleakwater Landing"]
+      duration_weeks: "4-8"
+      economic_effects:
+        - "All Iron Grip vassals owe +5 silver/week tribute"
+        - "Raven's Perch loyalty drops (already strained)"
+        - "Bleakwater Landing cannot pay — threatens to defect"
+        - "Iron exports reduced as Ordovast hoards for weapons"
+      mercenary_opportunities:
+        - "Collect tribute for Ordovast (enforcer work, 8 silver/week)"
+        - "Help Bleakwater Landing secretly defect (15 silver from Sigrun)"
+        - "Smuggle iron out of Grimholt territory for resale (20 silver/run)"
+      severity: "major"
+      seasons: ["any"]
+      chance_per_season: 6
+
+    - id: "WAR_TAX_002"
+      name: "Forced Provisioning for War Band"
+      trigger: "Grave Wardens demand food from settlements they protect"
+      affected_settlements: ["Ashmark", "Vargheim"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "Settlements lose 5 days' food stores"
+        - "Population resentment rises — may hire a rival band"
+        - "Market prices +10% as supplies tighten"
+      mercenary_opportunities:
+        - "Drive off the Grave Wardens (combat, 15 silver from villagers)"
+        - "Negotiate a fairer arrangement (diplomacy, 5 silver from each side)"
+        - "Replace the Grave Wardens as settlement protectors (long-term contract)"
+      severity: "moderate"
+      seasons: ["long_dark", "thaw"]
+      chance_per_season: 8
+
+    - id: "WAR_TAX_003"
+      name: "Bridge Tolls Tripled"
+      trigger: "Bleakwater Landing raises ferry prices under Iron Grip orders"
+      affected_settlements: ["Bleakwater Landing", "Vargheim", "Ashmark"]
+      duration_weeks: "2-8"
+      economic_effects:
+        - "River crossing now costs 6 copper/head (was 2 copper)"
+        - "Trade volume drops 30% between forest and mountain"
+        - "Merchants seek dangerous alternative fords"
+        - "Bleakwater Landing profits briefly but earns hatred"
+      mercenary_opportunities:
+        - "Establish a rival crossing point upstream (investment: 5 silver, income: 2 silver/week)"
+        - "Escort merchants through alternative ford (3 silver/trip)"
+        - "Convince Ferryman Olaf to lower prices (diplomacy, favor from merchants)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 7
+
+    - id: "WAR_TAX_004"
+      name: "Weapon Confiscation Edict"
+      trigger: "A jarl bans mercenary bands from carrying arms in settlement"
+      affected_settlements: ["Deepholm"]
+      duration_weeks: "4-permanent"
+      economic_effects:
+        - "Mercenary bands avoid Deepholm — contract pool shrinks"
+        - "Deepholm weapon trade goes underground"
+        - "Black market weapon prices +40%"
+        - "Sigrun's garrison stretched thin without mercenary support"
+      mercenary_opportunities:
+        - "Negotiate an exemption for the Black Axes (diplomacy, costs 5 silver bribe)"
+        - "Smuggle weapons into Deepholm for profit (+12 silver/shipment)"
+        - "Offer Sigrun security services unarmed inside walls (reduced rate, 4 silver/week)"
+      severity: "moderate"
+      seasons: ["any"]
+      chance_per_season: 3
+
+    - id: "WAR_TAX_005"
+      name: "Harvest Tithe Enforced at Sword-Point"
+      trigger: "Pale Widow demands 20% grain from Whispering Circle settlements"
+      affected_settlements: ["Ashen Reach", "Frostfjord Hollow"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "Food stores in tithed settlements drop by 20%"
+        - "Frostfjord Hollow protests — loyalty to Pale Widow erodes"
+        - "Hrothgar considers breaking from the Whispering Circle"
+        - "Grain prices +15% across western settlements"
+      mercenary_opportunities:
+        - "Enforce the tithe collection for the Pale Widow (10 silver)"
+        - "Help Hrothgar resist (secret contract, 20 silver, risky)"
+        - "Skim a portion of the tithe during transport (theft, +5 silver)"
+      severity: "moderate"
+      seasons: ["harvest"]
+      chance_per_season: 9
+
+    - id: "WAR_TAX_006"
+      name: "Allthing Emergency Levy"
+      trigger: "Regional crisis requires collective funding"
+      affected_settlements: ["all settlements"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "Every settlement pays 10% of weekly income as emergency levy"
+        - "Smallest settlements (Stonebay, Moor's End, Icebreak) exempted but resented"
+        - "Total collection: ~50-80 silver for regional defense"
+        - "Mercenary bands expected to contribute or lose standing"
+      mercenary_opportunities:
+        - "Volunteer to collect the levy (enforcement contract, 8 silver + political favor)"
+        - "Contribute to the levy (+1 reputation, costs 5 silver)"
+        - "Refuse and accept the reputation hit (0 silver, -1 standing)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 4
+
+  # ==========================================================================
+  # FAMINE AND SHORTAGE (8 events)
+  # ==========================================================================
+  famine_and_shortage:
+    - id: "WAR_FAM_001"
+      name: "Iron Shortage — Mines Flooded"
+      trigger: "Spring melt floods Grimholt surface mines"
+      affected_settlements: ["Grimholt", "Deepholm", "Ashmark"]
+      duration_weeks: "3-6"
+      economic_effects:
+        - "Iron ore production drops 60%"
+        - "Weapon and tool prices +40% across the Rimevegr"
+        - "Smiths in every settlement short on raw material"
+        - "Deepholm stockpiles gain value — Sigrun leverages for political gain"
+      mercenary_opportunities:
+        - "Guard Deepholm's remaining iron stockpile (10 silver/week)"
+        - "Recover iron from a flooded mine shaft (dangerous labor, 15 silver)"
+        - "Raid a rival band's weapon cache to resell (combat + trade, 20 silver)"
+      severity: "major"
+      seasons: ["thaw"]
+      chance_per_season: 10
+
+    - id: "WAR_FAM_002"
+      name: "Salt Famine"
+      trigger: "Coastal trade disrupted — no salt reaching inland"
+      affected_settlements: ["Thornwall", "Grimholt", "Vargheim", "Ashmark"]
+      duration_weeks: "4-8"
+      economic_effects:
+        - "No salt for food preservation — winter stores cannot be cured"
+        - "Salt prices 5x normal (30 copper/measure inland)"
+        - "Fish-smoking and meat-curing halted across the network"
+        - "Long Dark starvation risk increases for every inland settlement"
+      mercenary_opportunities:
+        - "Organize a salt convoy from Kolvik (massive profit, 25 silver/load)"
+        - "Raid a coastal salt store (combat, 15 silver in trade goods)"
+        - "Discover an inland salt deposit (exploration, potential fortune)"
+      severity: "catastrophic"
+      seasons: ["harvest", "long_dark"]
+      chance_per_season: 4
+
+    - id: "WAR_FAM_003"
+      name: "Timber Shortage"
+      trigger: "Forest fires or logging disputes cut supply"
+      affected_settlements: ["Frostfjord Hollow", "Thornwall", "Grimholt"]
+      duration_weeks: "4-10"
+      economic_effects:
+        - "No timber for repairs, construction, or shipbuilding"
+        - "Kolvik dry-dock shuts down — ship repairs impossible"
+        - "Palisade repairs delayed in frontier settlements"
+        - "Timber prices +60% (forest settlements gain leverage)"
+      mercenary_opportunities:
+        - "Escort timber rafts from Vargheim to coast (10 silver/raft)"
+        - "Negotiate logging rights in disputed forest (diplomacy, 8 silver)"
+        - "Guard Ashen Reach tar-works expansion (6 silver/week)"
+      severity: "major"
+      seasons: ["long_sun", "harvest"]
+      chance_per_season: 5
+
+    - id: "WAR_FAM_004"
+      name: "Grain Failure on the Moors"
+      trigger: "Wet summer or early frost destroys moor crops"
+      affected_settlements: ["Thornwall", "Feldwick", "Moor's End"]
+      duration_weeks: "8-permanent (season's harvest lost)"
+      economic_effects:
+        - "Moor settlements face winter with half rations"
+        - "Grain prices +50% across the Rimevegr"
+        - "Thornwall must import grain — weekly costs +10 silver"
+        - "Livestock slaughtered early (short-term meat glut, long-term loss)"
+      mercenary_opportunities:
+        - "Run grain convoys from Deepholm or Ashen Reach (12 silver/trip)"
+        - "Raid a settlement's hidden grain reserves for a desperate buyer (25 silver, dangerous)"
+        - "Hunt game on the moors to supplement food supply (labor, 3 silver/week)"
+      severity: "major"
+      seasons: ["harvest"]
+      chance_per_season: 8
+
+    - id: "WAR_FAM_005"
+      name: "Healing Herb Shortage"
+      trigger: "Over-harvesting or supply route disruption"
+      affected_settlements: ["all settlements with healers"]
+      duration_weeks: "3-6"
+      economic_effects:
+        - "Healing costs double across the network"
+        - "Ashmark healer's lodge nearly empty"
+        - "Wound treatment unavailable at smaller settlements"
+        - "Band casualties become potentially fatal from minor injuries"
+      mercenary_opportunities:
+        - "Herb-gathering expedition to Icebreak wilds (dangerous, 15 silver in herbs)"
+        - "Escort Ashmark healer to gathering grounds (8 silver)"
+        - "Corner remaining herb supply and sell at premium (10 silver profit, reputation cost)"
+      severity: "moderate"
+      seasons: ["long_dark", "thaw"]
+      chance_per_season: 7
+
+    - id: "WAR_FAM_006"
+      name: "Rope and Cordage Shortage"
+      trigger: "Hemp fields burned or trade routes severed"
+      affected_settlements: ["Kolvik", "Skaldhaven", "Deepholm"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "Ship rigging repairs impossible in Kolvik"
+        - "Mining operations in Deepholm slowed (no hoist ropes)"
+        - "Rope prices +80%"
+        - "Fishing nets rotting faster than they can be replaced"
+      mercenary_opportunities:
+        - "Source cordage from forest settlements (trade run, 8 silver)"
+        - "Guard a hemp shipment on the road (6 silver)"
+        - "Improvise rope production from birch bark for Kolvik (labor, 3 silver)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 6
+
+    - id: "WAR_FAM_007"
+      name: "Frostfjord Starvation Crisis"
+      trigger: "Cascading event — blockade + burned stores + long dark"
+      affected_settlements: ["Frostfjord Hollow"]
+      duration_weeks: "2-6"
+      economic_effects:
+        - "Population begins dying — 1-2 deaths per week"
+        - "Hrothgar sells everything to buy food at any price"
+        - "Settlement may be abandoned if relief does not arrive"
+        - "All trade ceases — survival mode"
+      mercenary_opportunities:
+        - "Emergency food delivery (heroic, 30 silver + permanent Frostfjord loyalty)"
+        - "Demand control of town in exchange for salvation (political power play)"
+        - "Evacuate survivors to Ashen Reach (escort, 10 silver, earns Pale Widow's favor)"
+      severity: "catastrophic"
+      seasons: ["long_dark"]
+      chance_per_season: 2
+
+    - id: "WAR_FAM_008"
+      name: "Fuel Shortage — Peat Exhausted"
+      trigger: "Moor's End peat bogs depleted or inaccessible"
+      affected_settlements: ["Thornwall", "Moor's End"]
+      duration_weeks: "6-permanent"
+      economic_effects:
+        - "No fuel for hearth fires in moor settlements"
+        - "Population must burn dung or furniture"
+        - "Cold exposure casualties during Long Dark"
+        - "Charcoal imports from Vargheim cost 3x normal"
+      mercenary_opportunities:
+        - "Organize charcoal supply from forest belt (trade, 8 silver/load)"
+        - "Find new peat bog (exploration contract, 10 silver)"
+        - "Clear the route to accessible peat deposits (labor + security, 6 silver)"
+      severity: "major"
+      seasons: ["long_dark"]
+      chance_per_season: 5
+
+  # ==========================================================================
+  # TRADE DISRUPTION (6 events)
+  # ==========================================================================
+  trade_disruption:
+    - id: "WAR_TRD_001"
+      name: "Iron Road Abandoned"
+      trigger: "Multiple ambushes make merchants refuse to travel"
+      affected_routes: ["Járnvegr (Iron Road)"]
+      affected_settlements: ["Grimholt", "Deepholm"]
+      duration_weeks: "3-8"
+      economic_effects:
+        - "Iron Road trade volume drops to zero"
+        - "Deepholm market activity -40%"
+        - "Grimholt forced to stockpile unsold ore"
+        - "Alternative routes (Markaleið, Námuvegr) become crowded and dangerous"
+      mercenary_opportunities:
+        - "Patrol the Iron Road to restore confidence (12 silver/week from merchant guild)"
+        - "Escort individual merchant caravans (8 silver/trip)"
+        - "Hunt down the ambush ring (combat contract, 35 silver bounty)"
+      severity: "major"
+      seasons: ["any"]
+      chance_per_season: 5
+
+    - id: "WAR_TRD_002"
+      name: "Merchant Guild Boycott"
+      trigger: "Traveling merchants refuse to visit a settlement after robbery"
+      affected_settlements: ["Vargheim"]
+      duration_weeks: "4-12"
+      economic_effects:
+        - "No outside trade goods arrive at Vargheim"
+        - "Furs and charcoal pile up unsold"
+        - "Salt and iron must be sourced at premium from neighbors"
+        - "Jarl Ulf's revenue drops to subsistence level"
+      mercenary_opportunities:
+        - "Track down the robbers to restore merchant confidence (20 silver from Ulf)"
+        - "Act as trade intermediary — buy Vargheim goods, resell elsewhere (5 silver/trip)"
+        - "Escort a merchant to prove the route is safe (8 silver)"
+      severity: "moderate"
+      seasons: ["any"]
+      chance_per_season: 5
+
+    - id: "WAR_TRD_003"
+      name: "Smuggling Ring Exposed"
+      trigger: "Iron Grip discovers illegal trade with Fjord Compact"
+      affected_settlements: ["Ashmark", "Grimholt", "Deepholm"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "Ashmark's neutral-broker status threatened"
+        - "Ordovast threatens to raze Ashmark's palisade"
+        - "Underground trade network disrupted — hidden prices spike"
+        - "Reeve Torsten faces execution demands from Grimholt"
+      mercenary_opportunities:
+        - "Protect Ashmark from Ordovast's retaliation (combat standby, 20 silver)"
+        - "Help Torsten relocate the smuggling operation (5 silver + future trade access)"
+        - "Turn evidence over to Ordovast for reward (15 silver, burns Ashmark trust)"
+      severity: "major"
+      seasons: ["any"]
+      chance_per_season: 4
+
+    - id: "WAR_TRD_004"
+      name: "Foreign Trade Ship Wrecked"
+      trigger: "Storm or sabotage destroys a rare outside trader"
+      affected_settlements: ["Kolvik", "Skaldhaven"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "Rare goods lost — foreign iron, spices, textiles gone"
+        - "Next foreign ship may not come for months"
+        - "Foreign goods prices +100% for the season"
+        - "Kolvik dry-dock gains salvage work (temporary income boost)"
+      mercenary_opportunities:
+        - "Salvage cargo from the wreck (labor + diving, 15 silver in goods)"
+        - "Guard the wreck site from rival scavengers (8 silver from Kolvik)"
+        - "Investigate sabotage for Harbour-Master Inga (12 silver)"
+      severity: "moderate"
+      seasons: ["harvest", "long_dark"]
+      chance_per_season: 4
+
+    - id: "WAR_TRD_005"
+      name: "Allthing Trade Fair Cancelled"
+      trigger: "Political tensions prevent the seasonal gathering"
+      affected_settlements: ["all settlements"]
+      duration_weeks: "permanent (missed season)"
+      economic_effects:
+        - "Largest annual trade event missed — settlements lose bulk trade opportunity"
+        - "Disputes that would have been resolved at Allthing fester"
+        - "Mercenary contract market shrinks (fewer employers gathered)"
+        - "Smaller settlements lose their only chance to trade bulk goods"
+      mercenary_opportunities:
+        - "Organize a smaller informal trade meet at Ashmark (broker fee, 10 silver)"
+        - "Diplomatic mission to restart Allthing preparations (15 silver from multiple jarls)"
+        - "Exploit gaps — corner missing trade goods for resale (variable profit)"
+      severity: "major"
+      seasons: ["long_sun"]
+      chance_per_season: 5
+
+    - id: "WAR_TRD_006"
+      name: "Counterfeit Silver Scandal"
+      trigger: "Debased coins discovered circulating from unknown source"
+      affected_settlements: ["Deepholm", "Grimholt", "Thornwall"]
+      duration_weeks: "2-6"
+      economic_effects:
+        - "Merchants demand payment in weighed silver, not coins"
+        - "Trade slows as trust collapses"
+        - "Prices +10% everywhere (uncertainty premium)"
+        - "Smaller settlements refuse coin — barter only"
+      mercenary_opportunities:
+        - "Investigate the counterfeiting source (20 silver from Sigrun)"
+        - "Hire out as coin-testers at market (3 silver/week)"
+        - "Exploit the chaos — buy goods cheap from panicked merchants (variable)"
+      severity: "moderate"
+      seasons: ["any"]
+      chance_per_season: 3
+
+  # ==========================================================================
+  # ECONOMIC OPPORTUNITY (8 events)
+  # ==========================================================================
+  economic_opportunity:
+    - id: "WAR_OPP_001"
+      name: "Abandoned Caravan Discovered"
+      trigger: "Merchant caravan found with dead crew — supplies intact"
+      affected_routes: ["Ekkjubraut (Widow's Crossing)"]
+      affected_settlements: ["Thornwall", "Ashen Reach"]
+      duration_weeks: "1"
+      economic_effects:
+        - "10-20 silver worth of trade goods sitting unguarded"
+        - "Whoever claims it first profits"
+        - "Dead merchants may belong to a faction — political consequences"
+      mercenary_opportunities:
+        - "Claim the goods outright (10-20 silver in trade goods, may anger the dead merchants' employer)"
+        - "Return goods to the rightful owner for reward (8 silver + favor)"
+        - "Investigate cause of death — potential contract from concerned jarl (12 silver)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 6
+
+    - id: "WAR_OPP_002"
+      name: "War Profiteering Window"
+      trigger: "Both Iron Grip and Fjord Compact buying weapons aggressively"
+      affected_settlements: ["Deepholm", "Grimholt"]
+      duration_weeks: "2-6"
+      economic_effects:
+        - "Weapon demand spikes — smiths working day and night"
+        - "Prices stay high as long as both sides compete"
+        - "Neutral settlements benefit from pass-through trade"
+      mercenary_opportunities:
+        - "Bulk weapon transport between settlements (15 silver/shipment)"
+        - "Sell captured weapons at inflated prices (+50% normal resale)"
+        - "Guard a smith working double shifts (5 silver/week)"
+        - "Play both sides — sell to whoever pays more (high profit, high risk)"
+      severity: "moderate"
+      seasons: ["any"]
+      chance_per_season: 7
+
+    - id: "WAR_OPP_003"
+      name: "Black Market Opens in Ashmark"
+      trigger: "Trade embargo forces underground commerce"
+      affected_settlements: ["Ashmark"]
+      duration_weeks: "4-12"
+      economic_effects:
+        - "Ashmark becomes the black market hub of the Rimevegr"
+        - "All goods available but at +30% markup"
+        - "Reeve Torsten takes a cut — village income doubles"
+        - "Both unions turn a blind eye (they need the goods too)"
+      mercenary_opportunities:
+        - "Supply the black market with contraband (10 silver/run)"
+        - "Provide security for market operations (8 silver/week)"
+        - "Establish your own stall — sell loot and barrow finds at premium (variable)"
+        - "Sell market intelligence to a interested jarl (5 silver)"
+      severity: "moderate"
+      seasons: ["any"]
+      chance_per_season: 5
+
+    - id: "WAR_OPP_004"
+      name: "Captured Supply Cache"
+      trigger: "Rival band's hidden supply depot discovered"
+      affected_settlements: ["nearest settlement to cache"]
+      duration_weeks: "1"
+      economic_effects:
+        - "20-40 silver worth of weapons, food, and trade goods"
+        - "Rival band weakened — their next season harder"
+        - "Finder must defend claim or sell quickly"
+      mercenary_opportunities:
+        - "Seize the cache for the band (20-40 silver in supplies)"
+        - "Sell cache location to a jarl (15 silver)"
+        - "Use cache to bribe a rival band into alliance (political leverage)"
+        - "Booby-trap the cache and wait for the rival to return (ambush opportunity)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 5
+
+    - id: "WAR_OPP_005"
+      name: "Ransom Collection"
+      trigger: "Prisoners from a skirmish can be ransomed"
+      affected_settlements: ["captor's settlement"]
+      duration_weeks: "1-4"
+      economic_effects:
+        - "Ransom demand: 10-30 silver per named fighter"
+        - "Holding prisoners costs food and manpower"
+        - "Successful ransom improves band reputation for honorable conduct"
+      mercenary_opportunities:
+        - "Negotiate ransom on behalf of prisoners (broker fee, 5 silver/head)"
+        - "Transport ransom payment securely (escort, 8 silver)"
+        - "Capture more prisoners in a raid for ransom stock (combat, variable)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 8
+
+    - id: "WAR_OPP_006"
+      name: "Looting a Burned Settlement"
+      trigger: "Raided settlement left undefended — salvage available"
+      affected_settlements: ["Feldwick"]
+      duration_weeks: "1-2"
+      economic_effects:
+        - "Salvageable iron, tools, and stored goods worth 10-25 silver"
+        - "First scavengers take the best — competition likely"
+        - "Local population sees looters as enemies (reputation loss)"
+      mercenary_opportunities:
+        - "Organized salvage operation (8-15 silver in goods)"
+        - "Guard the ruins for returning villagers (5 silver + reputation)"
+        - "Race rival bands to the best loot (timing-critical, 10-20 silver)"
+      severity: "minor"
+      seasons: ["any"]
+      chance_per_season: 4
+
+    - id: "WAR_OPP_007"
+      name: "Deepholm Arms Contract"
+      trigger: "Sigrun opens weapon procurement to mercenary suppliers"
+      affected_settlements: ["Deepholm"]
+      duration_weeks: "4-8"
+      economic_effects:
+        - "Deepholm paying premium for weapons and armor"
+        - "15 silver per quality sword, 8 silver per spear, 3 silver per shield"
+        - "Competing mercenary bands also bidding for the contract"
+        - "Whoever wins gains Sigrun's favor and Deepholm market access"
+      mercenary_opportunities:
+        - "Fulfill the arms contract by raiding barrows for ancient weapons (risky, 30+ silver)"
+        - "Source weapons from Grimholt's smiths (trade arbitrage, 10-15 silver profit)"
+        - "Forge the weapons yourself if you control a smith (production contract, 20 silver)"
+        - "Sabotage a rival band's bid (dirty work, 5 silver + advantage)"
+      severity: "moderate"
+      seasons: ["thaw", "long_sun"]
+      chance_per_season: 5
+
+    - id: "WAR_OPP_008"
+      name: "Harvest Surplus Trade Boom"
+      trigger: "Good weather produces bumper crop in one region"
+      affected_settlements: ["Thornwall", "Feldwick", "Ashen Reach"]
+      duration_weeks: "2-4"
+      economic_effects:
+        - "Food prices drop 30% in producing settlements"
+        - "Export demand from mountain/coast settlements spikes"
+        - "Silver flows into agricultural settlements"
+        - "Trade route traffic doubles — more targets but more guards"
+      mercenary_opportunities:
+        - "Escort grain convoys to hungry settlements (8 silver/trip, multiple trips)"
+        - "Buy surplus cheap, stockpile for Long Dark resale (investment: 10 silver, return: 20+)"
+        - "Guard the harvest against rival bands and raiders (6 silver/week)"
+        - "Tax the trade route (extortion, 10 silver/week, reputation cost)"
+      severity: "moderate"
+      seasons: ["harvest"]
+      chance_per_season: 10
+
+# ==========================================================================
+# CASCADE RULES
+# Events trigger follow-on events. Roll or apply these when indicated.
+# ==========================================================================
+cascade_rules:
+  - trigger_event_category: "blockades"
+    if_duration_exceeds_weeks: 4
+    follow_on:
+      - category: "famine_and_shortage"
+        chance_percent: 40
+        note: "Prolonged blockade starves dependent settlements"
+      - category: "refugee_influx"
+        chance_percent: 20
+        note: "People flee settlements that cannot feed them"
+
+  - trigger_event_category: "burned_granaries"
+    if_severity: "catastrophic"
+    follow_on:
+      - category: "refugee_influx"
+        chance_percent: 60
+        note: "Destroyed food stores force evacuation"
+      - category: "war_taxes"
+        chance_percent: 30
+        note: "Jarls demand emergency contributions from neighbors"
+
+  - trigger_event_category: "raided_caravans"
+    if_count_per_season_exceeds: 2
+    follow_on:
+      - category: "trade_disruption"
+        chance_percent: 50
+        note: "Merchants refuse routes after repeated attacks"
+      - category: "famine_and_shortage"
+        chance_percent: 25
+        note: "Specific goods stop reaching inland settlements"
+
+  - trigger_event_category: "famine_and_shortage"
+    if_severity: "major"
+    follow_on:
+      - category: "war_taxes"
+        chance_percent: 35
+        note: "Jarls squeeze remaining resources"
+      - category: "economic_opportunity"
+        chance_percent: 30
+        note: "Shortage creates profit opportunity for suppliers"
+      - category: "refugee_influx"
+        chance_percent: 20
+        note: "Starving populations move toward food sources"
+
+  - trigger_event_category: "war_taxes"
+    if_duration_exceeds_weeks: 6
+    follow_on:
+      - category: "trade_disruption"
+        chance_percent: 25
+        note: "Overtaxed merchants seek alternative routes or quit"
+      - category: "refugee_influx"
+        chance_percent: 15
+        note: "Crushed populations flee taxation"
+
+  - trigger_event_category: "trade_disruption"
+    if_severity: "major"
+    follow_on:
+      - category: "famine_and_shortage"
+        chance_percent: 40
+        note: "Broken trade routes mean missing essentials"
+      - category: "economic_opportunity"
+        chance_percent: 35
+        note: "Disruption always creates openings for the bold"
+
+# ==========================================================================
+# SEASONAL MODIFIERS
+# Adjust chance_per_season by these multipliers based on current season.
+# ==========================================================================
+seasonal_modifiers:
+  thaw:
+    blockades: 0.8       # snow melting opens passes
+    raided_caravans: 1.0
+    burned_granaries: 0.7  # less fire risk in wet season
+    refugee_influx: 1.2   # people move when travel resumes
+    war_taxes: 1.0
+    famine_and_shortage: 1.3  # end-of-winter stores lowest
+    trade_disruption: 0.8
+    economic_opportunity: 1.0
+  long_sun:
+    blockades: 1.2        # war season — contested routes
+    raided_caravans: 1.3  # peak trade = peak raiding
+    burned_granaries: 1.1  # dry conditions
+    refugee_influx: 0.8
+    war_taxes: 1.2        # jarls fund summer campaigns
+    famine_and_shortage: 0.6  # growing season
+    trade_disruption: 0.8
+    economic_opportunity: 1.3  # most commerce happening
+  harvest:
+    blockades: 1.0
+    raided_caravans: 1.2  # loaded harvest wagons are targets
+    burned_granaries: 1.5  # stakes highest — destroy the harvest
+    refugee_influx: 1.0
+    war_taxes: 1.3        # tithe collection season
+    famine_and_shortage: 0.8
+    trade_disruption: 1.0
+    economic_opportunity: 1.2  # surplus creates deals
+  long_dark:
+    blockades: 0.6        # fewer travelers to block
+    raided_caravans: 0.7  # less trade traffic
+    burned_granaries: 1.2  # desperate raiders target stores
+    refugee_influx: 1.3   # flee or freeze
+    war_taxes: 0.8
+    famine_and_shortage: 1.5  # winter is the killer
+    trade_disruption: 1.2  # what trade remains is fragile
+    economic_opportunity: 0.7  # fewer deals, but desperate ones

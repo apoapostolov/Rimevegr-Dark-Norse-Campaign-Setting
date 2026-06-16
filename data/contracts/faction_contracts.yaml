@@ -1,0 +1,901 @@
+# Iron Ledger — Faction Contracts
+# 22 contracts issued by union/faction leaders that advance the political timeline.
+# These force the band into factional alignment or demand dangerous neutrality.
+# Loaded by contract_manager.py alongside contracts_available.yaml.
+
+contracts:
+  # ============================================================
+  # THE IRON GRIP (6 contracts) — Warchief Ordovast, Grimholt
+  # ============================================================
+
+  - id: "CONT_FAC_001"
+    type: "war_band"
+    title: "March with the Iron Host"
+    employer: "Warchief Ordovast"
+    faction: "The Iron Grip"
+    settlement: "Grimholt"
+    region: "grimholt"
+    season: "summer"
+    year_range: [313, 314]
+    min_reputation: 3
+    payment_silver: 200
+    bonus: "Iron Grip sworn status"
+    advance_silver: 50
+    duration_days: 60
+    risk: "extreme"
+    band_size_min: 12
+    skills_valued: ["command", "shields", "axes"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_U02_027" # after Ordovast marches south
+      blocks_factions: ["The Fjord Compact", "The Whispering Circle"]
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Grimholt": 2, "The Iron Grip": 3 }
+        unlocks: ["CONT_FAC_002", "CONT_FAC_004"]
+        faction_lock: "The Iron Grip"
+      failure:
+        reputation_change: -2
+        standing_change: { "Grimholt": -2, "The Iron Grip": -3 }
+        triggers_event: "EVT_313_A01_BAND_ROUT"
+    narrative_hook: >-
+      Ordovast is marching. He wants every sword that can hold a line. The pay
+      is generous — two hundred silver for a summer campaign. The implication is
+      that refusing will be remembered. His recruiters do not ask twice.
+    forces_choice: true
+    notes: "Cannot be active simultaneously with Fjord Compact defense contracts."
+
+  - id: "CONT_FAC_002"
+    type: "scouting"
+    title: "Scout the Deepholm Approaches"
+    employer: "Warchief Ordovast"
+    faction: "The Iron Grip"
+    settlement: "Grimholt"
+    region: "deepholm_border"
+    season: "spring"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 80
+    bonus: "Map of Compact defenses (intelligence asset)"
+    advance_silver: 20
+    duration_days: 21
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["track", "navigate", "stealth"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_S10_010" # after Ordovast demands renewed oaths
+      blocks_factions: ["The Fjord Compact"]
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Grimholt": 1, "The Iron Grip": 2 }
+        unlocks: ["CONT_FAC_001"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Grimholt": -1, "The Fjord Compact": -2 }
+        triggers_event: "EVT_313_U_SCOUT_CAPTURED"
+    narrative_hook: >-
+      Ordovast needs eyes south. He wants the pass routes mapped, the
+      palisade weak points marked, the number of fighters counted. Do it
+      quietly. Do not get caught. If you are caught, he does not know you.
+    forces_choice: false
+    notes: "Capture by Compact forces triggers standing loss with Deepholm."
+
+  - id: "CONT_FAC_003"
+    type: "siege_support"
+    title: "Break the Gate at Deepholm"
+    employer: "Warchief Ordovast"
+    faction: "The Iron Grip"
+    settlement: "Grimholt"
+    region: "deepholm"
+    season: "summer"
+    year_range: [313, 313]
+    min_reputation: 4
+    payment_silver: 300
+    bonus: "First pick of Deepholm spoils, one weapon from Sigrun's armory"
+    advance_silver: 75
+    duration_days: 30
+    risk: "extreme"
+    band_size_min: 15
+    skills_valued: ["command", "shields", "axes", "siege"]
+    political_conditions:
+      requires_faction: "The Iron Grip"
+      requires_feud_max: null
+      requires_event: "EVT_313_U05_030" # after skirmish at the southern pass
+      blocks_factions:
+        ["The Fjord Compact", "The Whispering Circle", "Jarl Sigrun's Interest"]
+    consequences:
+      success:
+        reputation_change: 3
+        standing_change: { "Grimholt": 3, "The Iron Grip": 4, "Deepholm": -5 }
+        unlocks: ["CONT_FAC_006"]
+        faction_lock: "The Iron Grip"
+      failure:
+        reputation_change: -3
+        standing_change: { "Grimholt": -2, "The Iron Grip": -4 }
+        triggers_event: "EVT_313_U17_042" # ties to Battle of the Deepholm Gate
+    narrative_hook: >-
+      The gate cracked once and held. Ordovast wants it broken before the
+      autumn rains turn the ground to mud. Your band will be in the first
+      wave. Three hundred silver and first pick of spoils. The dead get nothing.
+    forces_choice: true
+    notes: "Highest-pay Iron Grip contract. Taking this makes the band a Compact enemy permanently."
+
+  - id: "CONT_FAC_004"
+    type: "garrison"
+    title: "Hold Raven's Perch for the Grip"
+    employer: "Warchief Ordovast"
+    faction: "The Iron Grip"
+    settlement: "Raven's Perch"
+    region: "grimholt"
+    season: "autumn"
+    year_range: [313, 314]
+    min_reputation: 2
+    payment_silver: 120
+    bonus: "Wintering rights at Raven's Perch"
+    advance_silver: 30
+    duration_days: 90
+    risk: "moderate"
+    band_size_min: 8
+    skills_valued: ["command", "intimidate", "forage"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A04_054" # after Iron Grip withdraws to regroup
+      blocks_factions: ["The Whispering Circle"]
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Raven's Perch": 2, "The Iron Grip": 2 }
+        unlocks: []
+      failure:
+        reputation_change: -1
+        standing_change: { "Raven's Perch": -1, "The Iron Grip": -2 }
+        triggers_event: null
+    narrative_hook: >-
+      Raven's Perch is restless. Ordovast's garrison is skeleton-thin after
+      the summer losses. He needs a reliable band to keep the headman loyal
+      and the Widow's agents out. Quiet work, steady pay, and the suspicion
+      that someone in the village answers to Ashen Reach.
+    forces_choice: false
+    notes: "The Widow has an agent posing as a herbalist in Raven's Perch (ref EVT_313_S19_019). Potential overlap with CONT_FAC_015."
+
+  - id: "CONT_FAC_005"
+    type: "raid"
+    title: "Burn the Compact Grain Stores"
+    employer: "Warchief Ordovast"
+    faction: "The Iron Grip"
+    settlement: "Grimholt"
+    region: "thornwall"
+    season: "autumn"
+    year_range: [313, 313]
+    min_reputation: 3
+    payment_silver: 150
+    bonus: "Keep any livestock seized"
+    advance_silver: 40
+    duration_days: 14
+    risk: "high"
+    band_size_min: 10
+    skills_valued: ["stealth", "track", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A04_054" # after autumn withdrawal
+      blocks_factions: ["The Fjord Compact"]
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change:
+          { "The Iron Grip": 2, "Thornwall": -4, "The Fjord Compact": -3 }
+        unlocks: []
+      failure:
+        reputation_change: -2
+        standing_change: { "Thornwall": -2, "The Iron Grip": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      Ordovast cannot break Deepholm's wall, so he means to starve it.
+      Thornwall's granaries feed half the Compact through winter. Burn them.
+      Take what the flames do not. Let Sigrun watch her alliance freeze.
+    forces_choice: true
+    notes: "Successful completion accelerates famine pricing at Thornwall (ref EVT_313_A11_061)."
+
+  - id: "CONT_FAC_006"
+    type: "loyalty_test"
+    title: "Execute the Deserters at Bleakwater"
+    employer: "Warchief Ordovast"
+    faction: "The Iron Grip"
+    settlement: "Bleakwater Landing"
+    region: "grimholt"
+    season: "winter"
+    year_range: [313, 314]
+    min_reputation: 3
+    payment_silver: 60
+    bonus: "Ordovast's personal favor marker (redeemable once)"
+    advance_silver: 0
+    duration_days: 10
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["intimidate", "command", "tracking"]
+    political_conditions:
+      requires_faction: "The Iron Grip"
+      requires_feud_max: null
+      requires_event: "EVT_313_A04_054"
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "The Iron Grip": 2, "Bleakwater Landing": -2 }
+        unlocks: []
+        faction_lock: "The Iron Grip"
+      failure:
+        reputation_change: -1
+        standing_change: { "The Iron Grip": -3 }
+        triggers_event: null
+    narrative_hook: >-
+      Twelve men fled Bleakwater after the summer campaign. Ordovast wants
+      them found and hanged — publicly, at the crossroads where others will
+      see. This is not about justice. It is about the message. Refuse, and
+      he questions where your own loyalty ends.
+    forces_choice: false
+    notes: "Low pay, high political consequence. Tests whether the band will do Ordovast's ugliest work."
+
+  # ============================================================
+  # THE FJORD COMPACT (5 contracts) — Jarl Sigrun, Deepholm
+  # ============================================================
+
+  - id: "CONT_FAC_007"
+    type: "patrol"
+    title: "Guard the Southern Pass"
+    employer: "Jarl Sigrun"
+    faction: "The Fjord Compact"
+    settlement: "Deepholm"
+    region: "deepholm"
+    season: "spring"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 100
+    bonus: "Compact shield-mark (access to Compact markets at reduced fees)"
+    advance_silver: 25
+    duration_days: 45
+    risk: "high"
+    band_size_min: 10
+    skills_valued: ["command", "shields", "spears"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_S03_003" # after Compact fortifies southern pass
+      blocks_factions: ["The Iron Grip"]
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Deepholm": 2, "The Fjord Compact": 2 }
+        unlocks: ["CONT_FAC_008", "CONT_FAC_009"]
+      failure:
+        reputation_change: -2
+        standing_change: { "Deepholm": -2, "The Fjord Compact": -3 }
+        triggers_event: "EVT_313_U05_030" # pass falls, skirmish escalates
+    narrative_hook: >-
+      Sigrun's carpenters built the palisade. She needs swords to stand
+      behind it. Ordovast is coming — not this week, perhaps not this month,
+      but he is coming. The pay is fair. The work is standing in mud watching
+      a road, until the day it is not.
+    forces_choice: true
+    notes: "Taking this locks out Iron Grip recruitment contracts."
+
+  - id: "CONT_FAC_008"
+    type: "coastal_defense"
+    title: "Repel the Red Tide at Bleakwater"
+    employer: "Jarl Sigrun"
+    faction: "The Fjord Compact"
+    settlement: "Bleakwater Landing"
+    region: "bleakwater"
+    season: "summer"
+    year_range: [313, 313]
+    min_reputation: 3
+    payment_silver: 140
+    bonus: "Captured longship share (if taken)"
+    advance_silver: 35
+    duration_days: 21
+    risk: "extreme"
+    band_size_min: 12
+    skills_valued: ["command", "axes", "bows", "sailing"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_U13_038" # after Red Tide raids Bleakwater coast
+      blocks_factions: ["The Iron Grip"]
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Bleakwater Landing": 3, "The Fjord Compact": 2 }
+        unlocks: ["CONT_FAC_010"]
+      failure:
+        reputation_change: -2
+        standing_change: { "Bleakwater Landing": -2, "The Fjord Compact": -2 }
+        triggers_event: null
+    narrative_hook: >-
+      Wulfgar took the fishing docks while the war pulled every fighter
+      south. Twenty pirates hold the waterfront. Sigrun cannot spare men.
+      She offers silver and a share of any ship you capture. Clear the coast
+      or Bleakwater starves through winter.
+    forces_choice: false
+    notes: "Combat-heavy contract. Red Tide are experienced raiders."
+
+  - id: "CONT_FAC_009"
+    type: "fort_building"
+    title: "Raise the Kolvik Watchtower"
+    employer: "Jarl Sigrun"
+    faction: "The Fjord Compact"
+    settlement: "Kolvik"
+    region: "kolvik"
+    season: "autumn"
+    year_range: [313, 314]
+    min_reputation: 2
+    payment_silver: 90
+    bonus: "Kolvik trade access (permanent discount on harbor goods)"
+    advance_silver: 20
+    duration_days: 40
+    risk: "moderate"
+    band_size_min: 8
+    skills_valued: ["command", "crafting", "shields"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A02_052" # after Widow summons her circle — Kolvik nervous
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Kolvik": 2, "The Fjord Compact": 1 }
+        unlocks: []
+      failure:
+        reputation_change: -1
+        standing_change: { "Kolvik": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      Kolvik's headman — the Widow's puppet — asked Sigrun for a watchtower.
+      Sigrun agreed, partly to protect the harbor and partly to plant Compact
+      eyes inside a settlement she does not fully trust. Your band provides
+      the muscle. Watch the workers. Watch the headman. Watch the horizon.
+    forces_choice: false
+    notes: "Potential intelligence overlap with Whispering Circle interests in Kolvik."
+
+  - id: "CONT_FAC_010"
+    type: "messenger"
+    title: "Run the Winter Dispatches"
+    employer: "Jarl Sigrun"
+    faction: "The Fjord Compact"
+    settlement: "Deepholm"
+    region: "rimevegr_central"
+    season: "winter"
+    year_range: [313, 314]
+    min_reputation: 1
+    payment_silver: 70
+    bonus: "Compact intelligence briefing (learn Iron Grip troop positions)"
+    advance_silver: 15
+    duration_days: 30
+    risk: "high"
+    band_size_min: 5
+    skills_valued: ["navigate", "stealth", "endurance"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: null
+      blocks_factions: ["The Iron Grip"]
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "The Fjord Compact": 1 }
+        unlocks: []
+      failure:
+        reputation_change: -1
+        standing_change: { "The Fjord Compact": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      Winter roads are death. Sigrun needs sealed messages carried to Kolvik,
+      Skaldhaven, and Thornwall before the passes close. Iron Grip patrols
+      are thickest on the Grimholt road. If the dispatches are captured,
+      Ordovast learns the Compact's spring plans. Burn them before that happens.
+    forces_choice: false
+    notes: "Low combat but high stakes — captured dispatches shift political balance."
+
+  - id: "CONT_FAC_011"
+    type: "naval_escort"
+    title: "Escort the Grain Fleet to Skaldhaven"
+    employer: "Jarl Sigrun"
+    faction: "The Fjord Compact"
+    settlement: "Deepholm"
+    region: "coastal"
+    season: "autumn"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 110
+    bonus: "One cask of Skaldhaven mead (trade value 15 silver)"
+    advance_silver: 25
+    duration_days: 14
+    risk: "high"
+    band_size_min: 8
+    skills_valued: ["sailing", "bows", "command"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A11_061" # after famine pricing hits
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Skaldhaven": 2, "The Fjord Compact": 1 }
+        unlocks: []
+      failure:
+        reputation_change: -1
+        standing_change: { "Skaldhaven": -2, "The Fjord Compact": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      Famine pricing has Thornwall and Skaldhaven desperate. Sigrun
+      chartered three grain ships from traders south of the Rimevegr. They
+      need armed escort past Red Tide hunting grounds and whatever Iron Grip
+      opportunists lurk near the coast. Lose the grain, lose Skaldhaven's
+      loyalty.
+    forces_choice: false
+    notes: "Ties to famine arc. Success stabilises the Compact's fraying alliances."
+
+  # ============================================================
+  # THE WHISPERING CIRCLE (5 contracts) — The Pale Widow, Ashen Reach
+  # ============================================================
+
+  - id: "CONT_FAC_012"
+    type: "sabotage"
+    title: "Ruin the Iron Grip Supply Train"
+    employer: "The Pale Widow"
+    faction: "The Whispering Circle"
+    settlement: "Ashen Reach"
+    region: "grimholt"
+    season: "autumn"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 70
+    bonus: "Widow's intelligence dossier on one settlement of the band's choice"
+    advance_silver: 15
+    duration_days: 14
+    risk: "high"
+    band_size_min: 4
+    skills_valued: ["stealth", "deceive", "poison"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A02_052" # after Widow summons her circle
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "The Whispering Circle": 2, "The Iron Grip": -2 }
+        unlocks: ["CONT_FAC_013", "CONT_FAC_014"]
+      failure:
+        reputation_change: -1
+        standing_change: { "The Iron Grip": -3, "The Whispering Circle": -1 }
+        triggers_event: "EVT_313_A07_057" # ties to Widow sabotage event
+    narrative_hook: >-
+      The Widow does not raise armies. She ruins grain. A supply train is
+      moving from Raven's Perch to Grimholt — forty sacks of wheat, ten
+      barrels of salted fish. She wants it spoiled, not stolen. Let Ordovast
+      eat rotten bread and wonder who he can trust. She pays less than he
+      does. What she offers instead is knowing things.
+    forces_choice: false
+    notes: "Covert contract. No public credit. Failure exposes the band to Iron Grip retaliation."
+
+  - id: "CONT_FAC_013"
+    type: "assassination"
+    title: "Silence the Loose Tongue at Grimholt"
+    employer: "The Pale Widow"
+    faction: "The Whispering Circle"
+    settlement: "Ashen Reach"
+    region: "grimholt"
+    season: "winter"
+    year_range: [313, 314]
+    min_reputation: 3
+    payment_silver: 100
+    bonus: "Name and location of a Whispering Circle safe house (permanent asset)"
+    advance_silver: 25
+    duration_days: 10
+    risk: "extreme"
+    band_size_min: 3
+    skills_valued: ["stealth", "knives", "deceive"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A07_057" # after supply line sabotage
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "The Whispering Circle": 3 }
+        unlocks: ["CONT_FAC_016"]
+      failure:
+        reputation_change: -2
+        standing_change: { "The Whispering Circle": -2, "Grimholt": -3 }
+        triggers_event: null
+    narrative_hook: >-
+      One of the Widow's agents turned. He sold names to Ordovast's
+      spymaster and has been living fat in Grimholt ever since. He knows
+      three other agents by face. Kill him before he talks again. Make it
+      look like a tavern brawl or a debt gone wrong. The Widow does not
+      want Ordovast asking questions.
+    forces_choice: false
+    notes: "Assassination contract. High standing reward, zero public reputation. The band's hands get dirty."
+
+  - id: "CONT_FAC_014"
+    type: "intelligence"
+    title: "Map Ordovast's Officer Corps"
+    employer: "The Pale Widow"
+    faction: "The Whispering Circle"
+    settlement: "Ashen Reach"
+    region: "grimholt"
+    season: "spring"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 60
+    bonus: "Cipher key for Whispering Circle coded messages"
+    advance_silver: 10
+    duration_days: 21
+    risk: "moderate"
+    band_size_min: 3
+    skills_valued: ["deceive", "bargain", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_S02_002" # after Ordovast regroups at Grimholt
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "The Whispering Circle": 2 }
+        unlocks: ["CONT_FAC_012"]
+      failure:
+        reputation_change: -1
+        standing_change: { "The Whispering Circle": -1, "Grimholt": -2 }
+        triggers_event: null
+    narrative_hook: >-
+      The Widow knows Ordovast's strength but not his structure. She wants
+      names — who commands his left flank, who handles supplies, who owes
+      gambling debts, who drinks too much, who hates whom. Spend a few weeks
+      near Grimholt and bring back a map of the men around the Warchief.
+      Drink with them. Listen. Do not get caught listening.
+    forces_choice: false
+    notes: "Pure intelligence contract. Low pay, high leverage value."
+
+  - id: "CONT_FAC_015"
+    type: "courier"
+    title: "Carry the Widow's Sealed Chest"
+    employer: "The Pale Widow"
+    faction: "The Whispering Circle"
+    settlement: "Ashen Reach"
+    region: "deepholm"
+    season: "summer"
+    year_range: [313, 313]
+    min_reputation: 1
+    payment_silver: 45
+    bonus: "Widow's favour (one future contract at +25% pay)"
+    advance_silver: 10
+    duration_days: 7
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["navigate", "stealth", "endurance"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_U14_039" # after Widow feeds intelligence to both sides
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "The Whispering Circle": 1 }
+        unlocks: []
+      failure:
+        reputation_change: -1
+        standing_change: { "The Whispering Circle": -2 }
+        triggers_event: null
+    narrative_hook: >-
+      An iron-bound chest, sealed with wax. Do not open it. Carry it to a
+      cave three leagues south of Deepholm and leave it. A woman with a
+      scarred throat will be waiting. Do not speak to her. Do not look
+      inside. The Widow pays for silence and speed, not curiosity.
+    forces_choice: false
+    notes: "The chest contains defense maps for Sigrun — part of the Widow's double game."
+
+  - id: "CONT_FAC_016"
+    type: "false_flag"
+    title: "The Grimholt Incident"
+    employer: "The Pale Widow"
+    faction: "The Whispering Circle"
+    settlement: "Ashen Reach"
+    region: "grimholt"
+    season: "autumn"
+    year_range: [313, 313]
+    min_reputation: 4
+    payment_silver: 180
+    bonus: "Permanent Whispering Circle informant status (intelligence on demand)"
+    advance_silver: 50
+    duration_days: 14
+    risk: "extreme"
+    band_size_min: 6
+    skills_valued: ["deceive", "command", "stealth", "disguise"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A02_052" # after Widow summons her circle
+      blocks_factions: ["The Iron Grip"]
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "The Whispering Circle": 4, "The Iron Grip": -4 }
+        unlocks: []
+      failure:
+        reputation_change: -3
+        standing_change:
+          { "The Whispering Circle": -3, "Grimholt": -5, "The Iron Grip": -5 }
+        triggers_event: null
+    narrative_hook: >-
+      The Widow wants an incident in Grimholt that looks like internal
+      betrayal. Wear Iron Grip colours, start a brawl in Ordovast's hall
+      between two rival officer factions, and let the fire spread. When
+      Ordovast purges his own men for treachery that never happened, the
+      Grip weakens from within. This is the Widow's masterpiece — and the
+      band is the brush.
+    forces_choice: true
+    notes: "DOUBLE-AGENT CONTRACT. The band nominally operates as Iron Grip while serving the Widow. Exposure means death."
+
+  # ============================================================
+  # JARL SIGRUN'S INTEREST (3 contracts) — Deepholm
+  # ============================================================
+
+  - id: "CONT_FAC_017"
+    type: "trade_protection"
+    title: "Keep the Deepholm Road Open"
+    employer: "Jarl Sigrun"
+    faction: "Jarl Sigrun's Interest"
+    settlement: "Deepholm"
+    region: "deepholm"
+    season: "spring"
+    year_range: [313, 314]
+    min_reputation: 2
+    payment_silver: 130
+    bonus: "Deepholm trade license (10% reduced market fees, permanent)"
+    advance_silver: 30
+    duration_days: 60
+    risk: "moderate"
+    band_size_min: 8
+    skills_valued: ["command", "intimidate", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2 # Sigrun won't hire bands feuding with Deepholm
+      requires_event: null
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Deepholm": 2, "Jarl Sigrun's Interest": 2 }
+        unlocks: ["CONT_FAC_018"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      Sigrun does not care about honour or oaths. She cares about silver
+      moving. The Deepholm road is the spine of her trade network and
+      bandits, deserters, and war refugees are choking it. Keep the wagons
+      rolling. Who you killed last summer is irrelevant. Can you keep a road
+      clear? That is what she is buying.
+    forces_choice: false
+    notes: "Neutral contract — does not require faction alignment. Sigrun hires based on competence."
+
+  - id: "CONT_FAC_018"
+    type: "arms_escort"
+    title: "Escort the Southern Arms Shipment"
+    employer: "Jarl Sigrun"
+    faction: "Jarl Sigrun's Interest"
+    settlement: "Deepholm"
+    region: "rimevegr_central"
+    season: "summer"
+    year_range: [313, 313]
+    min_reputation: 3
+    payment_silver: 160
+    bonus: "Two quality weapons from the shipment"
+    advance_silver: 40
+    duration_days: 21
+    risk: "high"
+    band_size_min: 10
+    skills_valued: ["command", "shields", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_U04_029" # after Sigrun mobilises all Compact fighters
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Deepholm": 2, "Jarl Sigrun's Interest": 3 }
+        unlocks: ["CONT_FAC_019"]
+      failure:
+        reputation_change: -2
+        standing_change: { "Deepholm": -2, "Jarl Sigrun's Interest": -2 }
+        triggers_event: null
+    narrative_hook: >-
+      Sigrun bought weapons from a southern trader — spearheads, axe blanks,
+      and two hundred arrowheads. The shipment arrives by river barge at the
+      southern landing. Both Ordovast and the Red Tide would kill to intercept
+      it. Escort the cargo to Deepholm. Every crate that arrives is a fighter
+      armed. Every crate lost is a fighter with a wooden spear.
+    forces_choice: false
+    notes: "DOUBLE-AGENT OPPORTUNITY. Ordovast will pay 200 silver to divert the shipment to Grimholt. Taking his counter-offer burns Sigrun permanently but enriches the band."
+
+  - id: "CONT_FAC_019"
+    type: "barrow_retrieval"
+    title: "Recover the Kingsmark from the Drowned Barrow"
+    employer: "Jarl Sigrun"
+    faction: "Jarl Sigrun's Interest"
+    settlement: "Deepholm"
+    region: "coastal"
+    season: "autumn"
+    year_range: [313, 314]
+    min_reputation: 4
+    payment_silver: 250
+    bonus: "Sigrun's personal oath of hospitality (permanent wintering rights at Deepholm)"
+    advance_silver: 60
+    duration_days: 30
+    risk: "extreme"
+    band_size_min: 8
+    skills_valued: ["rune_lore", "navigate", "endurance", "swimming"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A03_053" # after veil thins across inner fjords
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 3
+        standing_change: { "Deepholm": 3, "Jarl Sigrun's Interest": 4 }
+        unlocks: []
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      There is a barrow on the coast north of Deepholm that floods at high
+      tide. Inside it — so the skalds claim — lies the Kingsmark, a silver
+      torc that grants its bearer the right to call an Allthing vote that
+      cannot be refused. Sigrun wants it. Not for sentiment. With the
+      Allthing collapsed and the factions splitting, whoever holds the
+      Kingsmark shapes the law. The barrow is guarded by things that do not
+      breathe.
+    forces_choice: false
+    notes: "Supernatural-layer contract. Ties to waking_barrows chain. The Kingsmark is a political weapon."
+
+  # ============================================================
+  # THE FREE BANDS (3 contracts) — Unaligned mercenary companies
+  # ============================================================
+
+  - id: "CONT_FAC_020"
+    type: "bounty"
+    title: "Bring Back Hadric's Deserters"
+    employer: "Hadric of the Three Wolves"
+    faction: "The Free Bands"
+    settlement: "Feldwick"
+    region: "feldwick"
+    season: "autumn"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 80
+    bonus: "Standing truce with Three Wolves (one season)"
+    advance_silver: 15
+    duration_days: 21
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["track", "intimidate", "command"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A09_059" # after Three Wolves suffer losses
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "The Free Bands": 1, "Feldwick": 1 }
+        unlocks: ["CONT_FAC_022"]
+      failure:
+        reputation_change: -1
+        standing_change: { "The Free Bands": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      Hadric lost five men in an ambush and seven more walked away in the
+      night. He wants the seven back — alive if convenient, dead if not.
+      The message matters more than the bodies. Every band on the Rimevegr
+      is bleeding fighters. A man who walks away from his oath walks into
+      a shallow grave. That is the law of the road. Help enforce it.
+    forces_choice: false
+    notes: "Cross-band contract. Success improves general mercenary standing."
+
+  - id: "CONT_FAC_021"
+    type: "shared_defense"
+    title: "The Winter Truce at Icebreak"
+    employer: "Bryn of the Grave Wardens"
+    faction: "The Free Bands"
+    settlement: "Icebreak"
+    region: "icebreak"
+    season: "winter"
+    year_range: [313, 314]
+    min_reputation: 1
+    payment_silver: 40
+    bonus: "Shared provisions (reduce winter attrition by half)"
+    advance_silver: 0
+    duration_days: 90
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["command", "forage", "shelter", "rune_lore"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: "EVT_313_A10_060" # after barrow dead walk at Vargheim
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "The Free Bands": 2, "Icebreak": 1 }
+        unlocks: []
+      failure:
+        reputation_change: -1
+        standing_change: { "The Free Bands": -1, "Icebreak": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      Bryn proposes a winter truce at Icebreak — three bands pooling food,
+      watch rotation, and warm bodies against whatever comes out of the
+      barrows when the long dark settles. No faction colours. No oaths beyond
+      the season. The deal is simple: share the cold or die alone. The dead
+      do not care which union you swore to.
+    forces_choice: false
+    notes: "Survival contract. Low pay but critical for winter attrition management. Ties to waking_barrows chain."
+
+  - id: "CONT_FAC_022"
+    type: "arbitration"
+    title: "Settle the Grave Wardens-Three Wolves Blood Debt"
+    employer: "Unaligned elders at Feldwick"
+    faction: "The Free Bands"
+    settlement: "Feldwick"
+    region: "feldwick"
+    season: "spring"
+    year_range: [314, 314]
+    min_reputation: 3
+    payment_silver: 90
+    bonus: "Arbitrator reputation (+1 to all Free Band contract negotiations)"
+    advance_silver: 20
+    duration_days: 14
+    risk: "high"
+    band_size_min: 8
+    skills_valued: ["command", "intimidate", "bargain", "law"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+      requires_event: null
+      blocks_factions: []
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "The Free Bands": 3, "Feldwick": 2 }
+        unlocks: []
+      failure:
+        reputation_change: -2
+        standing_change: { "The Free Bands": -2, "Feldwick": -1 }
+        triggers_event: null
+    narrative_hook: >-
+      The Grave Wardens say the Three Wolves raided their supply cache. The
+      Three Wolves say the Wardens ambushed their scouts. Two men are dead
+      on each side and Feldwick sits between them. The elders want a band
+      with enough swords to keep both parties honest while they sort the
+      blood-price. Fairness is optional. Keeping the peace long enough to
+      reach a verdict is the job. Bring enough steel to make both sides
+      think twice about starting the fight in your presence.
+    forces_choice: false
+    notes: "Diplomatic contract. Success builds cross-band reputation. Failure starts a three-way fight."

@@ -1,0 +1,306 @@
+# Iron Ledger — Honor and Contract System
+# Rules governing how legitimate mercenary bands maintain status,
+# and how that status intersects with outlawry.
+# Cross-references: 20_SIMULATION_RULES.md §13 (Contracts and Reputation),
+#   §18 (Village Politics), data/culture/outlawry_system.yaml.
+# Currency: 1 silver = 10 copper. Merc retainer: 2 silver/week.
+
+# =================================================================
+# CONTRACT HONOR — WHAT HAPPENS WHEN A BAND BREAKS CONTRACT
+# =================================================================
+
+contract_honor:
+  principles:
+    - >
+      A mercenary band's word is its currency. A signed contract is a
+      binding oath witnessed at the ting or before a settlement headman.
+      Breaking contract is not just bad business — it is a legal offense
+      that can trigger outlawry proceedings.
+    - >
+      The distinction between a mercenary and a bandit is a piece of
+      parchment and a jarl willing to sign it. Contract honor is what
+      keeps that distinction real.
+
+  breach_types:
+    - type: "Abandonment"
+      description: "Leaving during an active contract without completing terms."
+      reputation_loss: -2
+      outlawry_risk: "lesser (fjörbaugsgarðr) from contracting settlement"
+      weregild_typical_copper: 200
+      blacklist_range: "Contracting jarl's territory. Word spreads to neighbors within 1 season."
+
+    - type: "Failure to deliver"
+      description: "Collected payment but could not complete the task."
+      reputation_loss: -1
+      outlawry_risk: "lesser if payment not returned within 1 season"
+      weregild_typical_copper: 100
+      blacklist_range: "Contracting settlement. May spread if egregious."
+      notes: >
+        Failure due to impossible conditions (storm, enemy outnumbered
+        10:1, plague) may be forgiven if argued at the ting. Failure
+        due to incompetence or cowardice is not.
+
+    - type: "Betrayal"
+      description: "Switching sides during a conflict for better pay."
+      reputation_loss: -3
+      outlawry_risk: "full (skóggangr) — automatic"
+      weregild_typical_copper: 0  # no weregild path
+      blacklist_range: "Universal. No jarl in the Rimevegr will hire a turncoat."
+      notes: >
+        The worst offense a mercenary can commit. The band is declared
+        niding — without honor. Individual members may be spared if
+        they can prove they opposed the betrayal, but the captain is
+        finished.
+
+    - type: "Collateral damage excess"
+      description: "Destroying more than the contract authorized."
+      reputation_loss: -1
+      outlawry_risk: "lesser if damages exceed 500 copper"
+      weregild_typical_copper: "Damage value as assessed by headman"
+      blacklist_range: "Contracting settlement plus affected parties."
+
+    - type: "Unauthorized action"
+      description: "Taking military action not specified in contract terms."
+      reputation_loss: -1
+      outlawry_risk: "lesser if action harmed the contracting party"
+      weregild_typical_copper: 150
+      blacklist_range: "Contracting settlement."
+
+# =================================================================
+# HARBORING OUTLAWS — THE RECRUITMENT RISK
+# =================================================================
+
+harboring_outlaws:
+  description: >
+    A legitimate band may recruit known outlaws into its ranks. This
+    is common — skilled fighters under skóggangr are cheap and
+    desperate. But the band assumes legal risk: if the outlaw is
+    identified, the entire band may inherit his outlaw status in
+    the jurisdiction where the outlawry was declared.
+
+  risk_levels:
+    - scenario: "Recruit a man under lesser outlawry (fjörbaugsgarðr)"
+      risk: "moderate"
+      consequence: >
+        If discovered in the exile territory: band fined 50 copper per
+        man harbored. Captain's reputation -1 in that settlement. The
+        outlaw is expelled or arrested. Band may continue operating
+        elsewhere.
+
+    - scenario: "Recruit a man under full outlawry (skóggangr)"
+      risk: "high"
+      consequence: >
+        If discovered: band declared outlawed in that territory.
+        Captain faces lesser outlawry proceedings. All band members
+        may be refused entry. Reputation -2 across the jarl's
+        territory. The outlaw must be surrendered or the band
+        fights its way out.
+
+    - scenario: "Recruit multiple outlaws (3+)"
+      risk: "extreme"
+      consequence: >
+        The band is reclassified as a wolfshead pack regardless of
+        its charter. Contracts void. Reputation drops to 0.
+        Legitimate markets closed. The transition from mercenary
+        to outlaw is complete.
+
+  mitigation:
+    - "Keep outlaws unnamed in band roster — they fight but don't exist officially"
+    - "Change the outlaw's name and appearance — if no one recognizes him, no risk"
+    - "Pay weregild before entering the exile territory — expensive but clean"
+    - "Operate only in territories where the outlawry is not recognized"
+
+# =================================================================
+# BOUNTY WORK — HUNTING YOUR OWN KIND
+# =================================================================
+
+bounty_work:
+  description: >
+    Contracts to hunt wolfshead bands are the most morally complex
+    jobs a mercenary band can take. The targets are men who were
+    mercenaries like you. Some still fight like it.
+
+  contract_types:
+    - type: "Head bounty"
+      pay_copper_per_head: 15
+      description: "Simple kill-or-capture per outlaw. Proof required — usually a head or a branded hand."
+      moral_cost: "Low if targets are genuinely dangerous raiders. High if they're starving families."
+
+    - type: "Camp clearance"
+      pay_copper_flat: 100
+      description: "Destroy a wolfshead camp. Proof: the camp must be confirmed destroyed by the contracting settlement."
+      moral_cost: "Moderate. Burning a camp means burning everything — supplies, shelters, sometimes people who couldn't run."
+
+    - type: "Leader elimination"
+      pay_copper: 50
+      description: "Kill or capture a specific wolfshead leader. Proof: the leader's body or sworn testimony."
+      moral_cost: "Variable. Some leaders are monsters. Some are just men who made one mistake."
+
+    - type: "Escort and enforce"
+      pay_copper_per_day: 10
+      description: "Guard a settlement against wolfshead pressure for a period. Not a hunt — a defense."
+      moral_cost: "Low. Defensive work. But the wolfsheads may probe, test, or parley. Killing desperate men who just want food is not every fighter's idea of honest work."
+
+  complications:
+    - "Target band includes a former comrade of one of your fighters"
+    - "Target band has children and non-combatants in camp"
+    - "Target band is better armed than your band (they raided an armory)"
+    - "Target band offers to pay you more than the contract"
+    - "Target band has information you need (about a bigger threat)"
+    - "The contracting settlement is more corrupt than the outlaws"
+
+# =================================================================
+# THE GRAY MARKET — DIRTY JOBS WITHOUT PAPERWORK
+# =================================================================
+
+gray_market:
+  description: >
+    Jobs too dirty for a signed contract but too profitable to refuse.
+    A headman who needs a rival's barn burned. A merchant who wants
+    competitors' goods destroyed. A jarl who wants an inconvenient
+    person to disappear without a ting ruling. No parchment. No
+    witnesses. Payment in advance, in copper, in a purse that was
+    never handed over.
+
+  job_types:
+    - type: "Arson"
+      typical_pay_copper: 50
+      risk: "Full outlawry if discovered"
+      notes: "Burning an occupied dwelling is automatic full outlawry. Burning an empty barn is destruction of property — lesser outlawry."
+
+    - type: "Intimidation"
+      typical_pay_copper: 20
+      risk: "Reputation loss if heavy-handed"
+      notes: "Threatening a family to move off land. No violence required. But the line between threat and assault is thin."
+
+    - type: "Evidence destruction"
+      typical_pay_copper: 30
+      risk: "Obstruction at ting — lesser outlawry"
+      notes: "Destroying records, witnesses, or physical evidence before a ting hearing."
+
+    - type: "Smuggling escort"
+      typical_pay_copper: 15
+      risk: "Fine + reputation -1 per settlement"
+      notes: "Guarding illegal cargo through territory. The band doesn't need to know what's in the crates."
+
+    - type: "Disappearance"
+      typical_pay_copper: 100
+      risk: "Full outlawry — this is murder without weregild"
+      notes: "The most dangerous gray-market job. The person was never there. The band was never here."
+
+  consequences:
+    - "Gray-market work pays well but leaves no contractual protection"
+    - "If the employer is caught, they will name the band to save themselves"
+    - "Repeated gray-market work shifts the band's reputation toward wolfshead"
+    - "Named Men may refuse gray-market orders (loyalty check, §12)"
+
+# =================================================================
+# REPUTATION MECHANICS
+# =================================================================
+
+reputation:
+  description: >
+    Honor rating is tracked per settlement (see 20_SIMULATION_RULES.md
+    §13). It represents how that settlement views the band: trustworthy,
+    unreliable, or dangerous. The number determines what contracts are
+    offered, what prices are charged, and whether the gates open.
+
+  how_it_rises:
+    - event: "Fulfilled contract"
+      modifier: "+1 in contracting settlement"
+    - event: "Thing-testimony (witnessed oath)"
+      modifier: "+1 in ting settlement"
+    - event: "Weregild payment (for band's offense)"
+      modifier: "+1 with wronged party"
+    - event: "Defending settlement from attack"
+      modifier: "+2 in defended settlement"
+    - event: "Clearing wolfshead threat"
+      modifier: "+1 with all settlements in region"
+
+  how_it_falls:
+    - event: "Broken contract"
+      modifier: "-2 in contracting settlement, -1 neighbors"
+    - event: "Harboring known outlaws"
+      modifier: "-1 per outlaw discovered"
+    - event: "Indiscriminate violence (civilian casualties)"
+      modifier: "-2 in affected settlement, -1 all witnesses"
+    - event: "Working without charter"
+      modifier: "-1 per season unchartered"
+    - event: "Gray-market work discovered"
+      modifier: "-1 per job discovered"
+    - event: "Atrocity"
+      modifier: "-3 universal"
+
+  thresholds:
+    5: "Honored. Best contracts. Priority access. Credit extended."
+    4: "Respected. Standard contracts. Fair prices."
+    3: "Neutral. Contracts available. Market rates."
+    2: "Suspect. Only desperate contracts. Watched."
+    1: "Unwelcome. Gates may close. Prices inflated 50%."
+    0: "Hostile. Refused entry. Mercenary hunting contract may be issued."
+    -1: "Outlawed. Kill-on-sight in this settlement."
+
+# =================================================================
+# THE THIN LINE — SLIDING INTO WOLFSHEAD STATUS
+# =================================================================
+
+the_thin_line:
+  description: >
+    The gap between legitimate mercenary and wolfshead can close in a
+    single bad season. Below are the specific scenarios where a band
+    risks crossing over.
+
+  scenarios:
+    - name: "The desperation cycle"
+      trigger: "Failed contract + refused settlement entry + winter"
+      description: >
+        The band fails a contract and loses reputation. The
+        contracting settlement refuses them entry. Word travels.
+        The next settlement charges double. Winter closes in.
+        Supplies run out. The captain makes a choice: raid a
+        farmstead or starve. Once the raid happens, they are
+        wolfsheads in practice. The ting ruling is a formality.
+      stages:
+        - "Contract failure. Reputation -2."
+        - "Settlement refusal. Morale -1."
+        - "Winter onset. Supply crisis. Morale -2."
+        - "Raid authorization. Reputation -3. Morale stabilizes."
+        - "Outlawry declared at next ting. Transition complete."
+
+    - name: "The harbor trap"
+      trigger: "Recruited 3+ outlaws, discovered"
+      description: >
+        The captain recruits cheap labor — outlawed fighters willing
+        to work for food. Three or more tips the balance. When
+        identified, the band is reclassified. The captain protests
+        that these men are reformed. The jarl does not care. Numbers
+        are numbers. The law is the law.
+
+    - name: "The turncoat stain"
+      trigger: "Betrayal (switching sides) in a conflict"
+      description: >
+        Even if the betrayal made tactical sense, the stain is
+        permanent. No jarl will hire a band that changed sides once.
+        The captain may argue the other employer broke terms first.
+        The ting does not care about nuance. Reputation drops to 0.
+        Contracts end. Wolfshead transition is immediate.
+
+    - name: "The leaderless drift"
+      trigger: "Captain killed, no clear successor, winter"
+      description: >
+        A band without a captain fractures. Named Men compete for
+        command. Morale drops. Discipline fails. The strongest
+        fighter takes charge and leads a raid. Within a season,
+        the band has fractured into a wolfshead pack and deserters.
+        This is how WOLF_001 (The Burnt Charter) was made.
+
+  recovery:
+    - >
+      Once a band crosses the line, recovery requires exceptional
+      service, a powerful patron, and time. Most never come back.
+      The Black Axes' advantage: Voss understands how thin the line
+      is. He has seen bands cross it. He knows the smell of
+      desperation. That knowledge keeps his people on the right side.
+    - >
+      See data/culture/outlawry_system.yaml for outlaw-to-citizen
+      return paths.

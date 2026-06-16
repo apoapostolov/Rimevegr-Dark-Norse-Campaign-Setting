@@ -1,0 +1,1822 @@
+# Iron Ledger — Y314-Y315 Event Database
+# ~120 canonical events across eight seasons (Y314 Reconstruction/Second Crisis, Y315 Endgame).
+# Schema: see EVENT_SCHEMA.md. Loaded by event_manager.py.
+# Chain orders continue from Y313 endpoints.
+
+events:
+  # ============================================================
+  # Y314 SPRING (Days 1–60) — Post-War Reconstruction
+  # ============================================================
+
+  - id: "EVT_314_S01_001"
+    title: "Dead Count at Frostfjord"
+    year: 314
+    season: "spring"
+    day: 2
+    category: "social"
+    location: "Frostfjord Hollow"
+    band_relevant: false
+    summary: "Frostfjord tallies the winter dead. Forty-three names read aloud at the quay. The youngest was six."
+
+  - id: "EVT_314_S02_002"
+    title: "Ordovast Claims War Victory"
+    year: 314
+    season: "spring"
+    day: 5
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 23
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast declares the war won, though half his vassal settlements sent no representatives and Deepholm remains unbroken. He orders a feast no one can afford."
+    prerequisites:
+      - "EVT_313_W17_092"
+
+  - id: "EVT_314_S03_003"
+    title: "Kell Settles the Last Coin"
+    year: 314
+    season: "spring"
+    day: 7
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 6
+    actors:
+      - "Kell Hook"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Kell drops a leather pouch on Gest's table — the last of the debt, earned by winter guard work. Gest counts it twice, nods. Kell is square for the first time in two years."
+    prerequisites:
+      - "EVT_313_S09_009"
+
+  - id: "EVT_314_S04_004"
+    title: "Thaw Reveals Mass Graves"
+    year: 314
+    season: "spring"
+    day: 9
+    category: "weather"
+    location: "Ashmark"
+    band_relevant: false
+    summary: "Hasty winter burials around Ashmark surface in the melt. The living cannot rebury the dead fast enough. Crows move in columns."
+
+  - id: "EVT_314_S05_005"
+    title: "Sigrun Rebuilds the Compact"
+    year: 314
+    season: "spring"
+    day: 12
+    category: "political"
+    chain: "fjord_compact"
+    chain_order: 11
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "Sigrun invites Stonebay and Bleakwater to join the Compact on reduced terms — half tribute, full protection. Both accept within a week."
+    prerequisites:
+      - "EVT_313_W12_087"
+
+  - id: "EVT_314_S06_006"
+    title: "Petra's Sister Arrives"
+    year: 314
+    season: "spring"
+    day: 14
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 7
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "A cart from the south brings a thin woman with burn scars on her arms. Petra says nothing for a long time. They stand in the mud and hold each other."
+    prerequisites:
+      - "EVT_313_W11_086"
+
+  - id: "EVT_314_S07_007"
+    title: "Barrow Fields Quiet — Too Quiet"
+    year: 314
+    season: "spring"
+    day: 16
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 14
+    location: "Vargheim"
+    band_relevant: false
+    summary: "The green lights that pulsed all winter have stopped. The humming has stopped. The barrow fields are silent. Nobody believes this is good news."
+    prerequisites:
+      - "EVT_313_W22_097"
+
+  - id: "EVT_314_S08_008"
+    title: "Widow Collects on Petra's Debt"
+    year: 314
+    season: "spring"
+    day: 18
+    category: "personal"
+    chain: "widows_web"
+    chain_order: 16
+    actors:
+      - "Pale Widow"
+      - "Petra Shepherd"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "A Whispering Circle agent arrives at the Black Axes camp and asks Petra to deliver a sealed letter to Sigrun. The favor, it seems, is espionage."
+    prerequisites:
+      - "EVT_313_W11_086"
+    branches:
+      - condition: "petra_delivers_letter"
+        result: "Petra becomes a Widow asset. The band's loyalty is compromised."
+      - condition: "petra_refuses_widow"
+        result: "Petra breaks the deal. The Widow's healers stop treating her sister."
+
+  - id: "EVT_314_S09_009"
+    title: "Voss Takes Spring Contract"
+    year: 314
+    season: "spring"
+    day: 21
+    category: "military"
+    chain: "voss_command"
+    chain_order: 8
+    location: "Stonebay Hamlet"
+    actors:
+      - "Voss Cold-Eye"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Voss signs a patrol contract for Stonebay — thirty silver for two months clearing bandits from the coast road. It pays the bills. It does not rebuild the band."
+    prerequisites:
+      - "EVT_313_W07_082"
+
+  - id: "EVT_314_S10_010"
+    title: "Bone Pack Absorbs Hollow Hall"
+    year: 314
+    season: "spring"
+    day: 24
+    category: "military"
+    location: "Moor's End"
+    factions:
+      - "The Bone Pack"
+      - "The Hollow Hall"
+    band_relevant: false
+    summary: "The Hollow Hall lost their captain in Y313. Their surviving six fighters join the Bone Pack. Combined strength: twenty-two fighters. A serious force."
+
+  - id: "EVT_314_S11_011"
+    title: "Dalla Speaks in Tongues"
+    year: 314
+    season: "spring"
+    day: 27
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 10
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: false
+    summary: "Dalla begins speaking in a language no one recognizes. The words come in her sleep and continue when she wakes. A seiðr-woman from Skaldhaven is summoned."
+    prerequisites:
+      - "EVT_313_W09_084"
+
+  - id: "EVT_314_S12_012"
+    title: "Refugees Flood Feldwick"
+    year: 314
+    season: "spring"
+    day: 30
+    category: "economic"
+    location: "Feldwick"
+    band_relevant: false
+    summary: "Forty refugees from burned farmsteads arrive in Feldwick with nothing. The settlement cannot feed them. Arguments break out over rations."
+    effects:
+      food_change:
+        { delta: -2, cause: "Refugee influx strains Feldwick stores" }
+
+  - id: "EVT_314_S13_013"
+    title: "Three Wolves Switch Sides"
+    year: 314
+    season: "spring"
+    day: 33
+    category: "political"
+    chain: "three_wolves"
+    chain_order: 8
+    location: "Feldwick"
+    actors:
+      - "Hadric"
+      - "Sigrun"
+    factions:
+      - "The Three Wolves"
+      - "The Fjord Compact"
+    band_relevant: true
+    summary: "Hadric pledges the Three Wolves to the Compact in exchange for winter provisions and a territorial grant around Feldwick. Sigrun accepts. The power map shifts."
+    prerequisites:
+      - "EVT_313_W18_093"
+
+  - id: "EVT_314_S14_014"
+    title: "Ash Finds the Galdr Fragment"
+    year: 314
+    season: "spring"
+    day: 36
+    category: "supernatural"
+    chain: "ash_past"
+    chain_order: 7
+    location: "Skaldhaven"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "While trading in Skaldhaven, Thorne discovers a carved bone tablet in a dead man's belongings. The runes match the marks on his skin. His hands shake."
+    prerequisites:
+      - "EVT_313_W16_091"
+
+  - id: "EVT_314_S15_015"
+    title: "Spring Planting Fails"
+    year: 314
+    season: "spring"
+    day: 42
+    category: "economic"
+    band_relevant: false
+    summary: "War-salted fields around Ashmark and Moor's End yield nothing. The soil is dead. Settlements that depended on local grain face a second year of imports."
+    effects:
+      food_change: { delta: -3, cause: "War-damaged fields fail to produce" }
+
+  - id: "EVT_314_S16_016"
+    title: "Grave Wardens Recruit Hard"
+    year: 314
+    season: "spring"
+    day: 48
+    category: "military"
+    chain: "grave_wardens"
+    chain_order: 8
+    location: "Skaldhaven"
+    actors:
+      - "Bryn"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "Bryn offers triple wages for barrow-clearing. Thirteen fighters sign on from disbanded warbands. The Wardens are now thirty strong — the largest they have ever been."
+    prerequisites:
+      - "EVT_313_W13_088"
+
+  # ============================================================
+  # Y314 SUMMER (Days 61–120) — Allthing and New Power Structure
+  # ============================================================
+
+  - id: "EVT_314_U01_017"
+    title: "Compact Opens Trade Festival"
+    year: 314
+    season: "summer"
+    day: 62
+    category: "economic"
+    chain: "fjord_compact"
+    chain_order: 12
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "Sigrun hosts a summer trade fair at Deepholm — free berths for any merchant ship that flies a Compact flag. Goods flow. Silver follows."
+    effects:
+      food_change:
+        { delta: 2, cause: "Compact trade festival brings goods south" }
+
+  - id: "EVT_314_U02_018"
+    title: "Ordovast Sabotages the Fair"
+    year: 314
+    season: "summer"
+    day: 66
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 24
+    location: "Deepholm"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast sends agents to buy grain at the Deepholm fair, then has it burned in a warehouse fire. Prices triple. He blames Bleakwater smugglers."
+
+  - id: "EVT_314_U03_019"
+    title: "Voss Challenged by Rolf"
+    year: 314
+    season: "summer"
+    day: 70
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 9
+    actors:
+      - "Voss Cold-Eye"
+      - "Rolf"
+    band_relevant: true
+    summary: "Rolf questions Voss's refusal to take the Widow's deal. In front of the band. Voss says nothing. They stare at each other for a long count. Rolf looks away first."
+
+  - id: "EVT_314_U04_020"
+    title: "Allthing Opens at Skaldhaven"
+    year: 314
+    season: "summer"
+    day: 75
+    category: "social"
+    chain: "allthing"
+    chain_order: 3
+    location: "Skaldhaven"
+    actors:
+      - "Ordovast"
+      - "Sigrun"
+      - "Pale Widow"
+    factions:
+      - "The Iron Grip"
+      - "The Fjord Compact"
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "The first post-war Allthing. All three factions present. Armed guards outnumber delegates. The lawspeaker's hands tremble as he calls the assembly to order."
+
+  - id: "EVT_314_U05_021"
+    title: "Widow Reveals War Ledger"
+    year: 314
+    season: "summer"
+    day: 78
+    category: "political"
+    chain: "widows_web"
+    chain_order: 17
+    location: "Skaldhaven"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "At the Allthing, the Widow produces a ledger of every debt, every broken oath, every bribe paid during the war. She reads names aloud. The hall goes silent."
+
+  - id: "EVT_314_U06_022"
+    title: "Allthing Votes on Barrow Tithe"
+    year: 314
+    season: "summer"
+    day: 80
+    category: "political"
+    chain: "allthing"
+    chain_order: 4
+    location: "Skaldhaven"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "Bryn demands a barrow tithe — every settlement contributes fighters or silver toward barrow-clearing. The vote divides sharply. Ordovast abstains. Sigrun supports. The Widow watches."
+    branches:
+      - condition: "tithe_passes"
+        result: "Regional defense against the supernatural threat. Grave Wardens gain legitimate authority."
+      - condition: "tithe_fails"
+        result: "Settlements fend for themselves. Barrow crisis escalates without coordination."
+
+  - id: "EVT_314_U07_023"
+    title: "Kell Wins a Fistfight"
+    year: 314
+    season: "summer"
+    day: 84
+    category: "personal"
+    actors:
+      - "Kell Hook"
+    band_relevant: true
+    summary: "Kell beats a Bone Pack fighter in a bare-knuckle bout at the Allthing grounds. No stakes. He did it because the man insulted Bjorn. Something has shifted in Kell."
+
+  - id: "EVT_314_U08_024"
+    title: "Red Tide Blockades Bleakwater"
+    year: 314
+    season: "summer"
+    day: 88
+    category: "military"
+    chain: "red_tide"
+    chain_order: 8
+    location: "Bleakwater Landing"
+    actors:
+      - "Wulfgar"
+    factions:
+      - "The Red Tide"
+    band_relevant: false
+    summary: "Wulfgar anchors four boats across the river mouth. Nothing enters or leaves Bleakwater without paying toll. The Compact protests. Wulfgar laughs."
+    effects:
+      food_change:
+        { delta: -2, cause: "Red Tide river blockade cuts supply lines" }
+
+  - id: "EVT_314_U09_025"
+    title: "Dalla Prophecy at Allthing"
+    year: 314
+    season: "summer"
+    day: 91
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 11
+    location: "Skaldhaven"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla walks into the Allthing grounds uninvited. She speaks in a flat voice: 'The barrow at the center of the world wakes in autumn. What sleeps there does not forgive.' Then she collapses."
+
+  - id: "EVT_314_U10_026"
+    title: "Bone Pack Claims Ashmark"
+    year: 314
+    season: "summer"
+    day: 95
+    category: "military"
+    location: "Ashmark"
+    factions:
+      - "The Bone Pack"
+    band_relevant: false
+    summary: "The reinforced Bone Pack walks into Ashmark and declares itself the settlement's guard force. The headman had no fighters left to argue with."
+
+  - id: "EVT_314_U11_027"
+    title: "Thorne's Hunters Arrive"
+    year: 314
+    season: "summer"
+    day: 98
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 9
+    actors:
+      - "Thorne Ash-Born"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Two men from Thorne's old warband arrive in the region asking questions. They are careful, professional, patient. Voss posts extra watches."
+    prerequisites:
+      - "EVT_313_W21_096"
+
+  - id: "EVT_314_U12_028"
+    title: "Midsummer Rites — Thin Attendance"
+    year: 314
+    season: "summer"
+    day: 105
+    category: "social"
+    location: "Thornwall"
+    band_relevant: false
+    summary: "The midsummer bonfire at Thornwall draws a third of the usual crowd. Too many dead. Too many gone. The songs are old ones. Nobody adds new verses."
+
+  - id: "EVT_314_U13_029"
+    title: "Iron Grip Fractures"
+    year: 314
+    season: "summer"
+    day: 110
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 25
+    location: "Raven's Perch"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Raven's Perch formally breaks from the Iron Grip and declares neutrality. Two other settlements send messengers saying the same. Ordovast has Grimholt, Vargheim, and his pride."
+    effects:
+      cohesion_change: { union: "The Iron Grip", delta: -3 }
+
+  - id: "EVT_314_U14_030"
+    title: "Voss Orders Weapons Maintenance"
+    year: 314
+    season: "summer"
+    day: 115
+    category: "military"
+    actors:
+      - "Voss Cold-Eye"
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "Voss has every weapon in the band stripped, oiled, and sharpened. Bjorn spends two days repairing shield rims. Voss says nothing about why. The band understands."
+
+  - id: "EVT_314_U15_031"
+    title: "Silent Oar Disappears"
+    year: 314
+    season: "summer"
+    day: 118
+    category: "military"
+    factions:
+      - "The Silent Oar"
+    band_relevant: false
+    summary: "The Silent Oar pulls up stakes and sails south without a word. Seven fighters, gone overnight. Nobody hired them to leave. Nobody knows why."
+
+  # ============================================================
+  # Y314 AUTUMN (Days 121–210) — Barrow Escalation
+  # ============================================================
+
+  - id: "EVT_314_A01_032"
+    title: "First Barrow Breach"
+    year: 314
+    season: "autumn"
+    day: 122
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 15
+    location: "Vargheim"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "The Vargheim barrow splits open. Nothing comes out, but the interior glows. A Grave Warden team enters. Two of five come back. They will not say what they saw."
+
+  - id: "EVT_314_A02_033"
+    title: "Ordovast Hires the Bone Pack"
+    year: 314
+    season: "autumn"
+    day: 126
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 26
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+      - "The Bone Pack"
+    band_relevant: false
+    summary: "Ordovast pays the Bone Pack eighty silver to garrison Ashmark and threaten Raven's Perch. He cannot hold territory with loyal men, so he buys disloyal ones."
+
+  - id: "EVT_314_A03_034"
+    title: "Dalla Walks to the Barrow"
+    year: 314
+    season: "autumn"
+    day: 130
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 12
+    location: "Vargheim"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla walks three days to the Vargheim barrow without food or water, lies on the cracked stone, and sleeps for two days. When she wakes, she says: 'It knows my name.'"
+
+  - id: "EVT_314_A04_035"
+    title: "Harvest Assessment — Below Survival"
+    year: 314
+    season: "autumn"
+    day: 134
+    category: "economic"
+    band_relevant: false
+    summary: "Regional harvest tallied at sixty percent of the minimum needed. The war burned fields. The spring planting failed. Without imports, people will die before midwinter."
+    effects:
+      food_change: { delta: -4, cause: "Post-war harvest catastrophically low" }
+
+  - id: "EVT_314_A05_036"
+    title: "Petra's Sister Tells the Truth"
+    year: 314
+    season: "autumn"
+    day: 138
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 8
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "Petra's sister finally speaks about what happened in the south. Slavers. A burned house. Things she had to do to survive. Petra listens without moving. Her face could be carved from stone."
+
+  - id: "EVT_314_A06_037"
+    title: "Grave Wardens Declare Emergency"
+    year: 314
+    season: "autumn"
+    day: 142
+    category: "military"
+    chain: "grave_wardens"
+    chain_order: 9
+    location: "Skaldhaven"
+    actors:
+      - "Bryn"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "Bryn sends riders to every settlement: three barrows have breached. Wisp-lights move between them at night. The Wardens cannot cover all three. Bands are offered double rates for barrow-clearing contracts."
+
+  - id: "EVT_314_A07_038"
+    title: "Widow Opens Grain Stores"
+    year: 314
+    season: "autumn"
+    day: 148
+    category: "economic"
+    chain: "widows_web"
+    chain_order: 18
+    location: "Ashen Reach"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: false
+    summary: "The Widow opens hidden grain stores at Ashen Reach and sells below market. Settlements that take the grain owe the Circle debts that are carefully recorded and never discussed aloud."
+
+  - id: "EVT_314_A08_039"
+    title: "Thorne Confronts His Pursuers"
+    year: 314
+    season: "autumn"
+    day: 152
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 10
+    actors:
+      - "Thorne Ash-Born"
+      - "Kell Hook"
+    band_relevant: true
+    summary: "Thorne and Kell intercept the two hunters outside Thornwall. Words, then weapons. One hunter dies. The other escapes south. The blood-price just doubled."
+    prerequisites:
+      - "EVT_314_U11_027"
+
+  - id: "EVT_314_A09_040"
+    title: "Red Tide Meets the Dead"
+    year: 314
+    season: "autumn"
+    day: 158
+    category: "supernatural"
+    chain: "red_tide"
+    chain_order: 9
+    location: "Bleakwater Landing"
+    actors:
+      - "Wulfgar"
+    factions:
+      - "The Red Tide"
+    band_relevant: false
+    summary: "A Red Tide raiding party camps near a barrow for the night. Three men are found dead at dawn — no wounds, faces frozen in terror. Wulfgar burns the camp and moves upriver."
+
+  - id: "EVT_314_A10_041"
+    title: "Ash Reads the Bone Tablet"
+    year: 314
+    season: "autumn"
+    day: 164
+    category: "supernatural"
+    chain: "ash_past"
+    chain_order: 8
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Working alone by firelight for weeks, Thorne deciphers the bone tablet. It describes a galdr-forge beneath the Iron Barrow — a place where runes were first carved into living flesh. His rune-marks ache."
+    prerequisites:
+      - "EVT_314_S14_014"
+
+  - id: "EVT_314_A11_042"
+    title: "Second Barrow Eruption"
+    year: 314
+    season: "autumn"
+    day: 170
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 16
+    location: "Deepholm"
+    band_relevant: true
+    summary: "The barrow west of Deepholm erupts — not light this time, but sound. A subsonic pulse that cracks plaster walls and stops the hearts of two elderly residents. The dead are walking inside."
+
+  - id: "EVT_314_A12_043"
+    title: "Compact and Grip Forced Truce"
+    year: 314
+    season: "autumn"
+    day: 176
+    category: "political"
+    chain: "fjord_compact"
+    chain_order: 13
+    location: "Thornwall"
+    actors:
+      - "Sigrun"
+      - "Ordovast"
+    factions:
+      - "The Fjord Compact"
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Sigrun and Ordovast meet at Thornwall under truce. They hate each other. But the barrows are worse than either of them. A ceasefire is signed — valid until spring."
+
+  - id: "EVT_314_A13_044"
+    title: "Band Takes Barrow Contract"
+    year: 314
+    season: "autumn"
+    day: 182
+    category: "military"
+    chain: "voss_command"
+    chain_order: 10
+    actors:
+      - "Voss Cold-Eye"
+      - "Bryn"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "Voss signs with the Grave Wardens for sixty silver — clear and seal the Moor's End barrow. The most dangerous contract the Black Axes have ever taken."
+
+  - id: "EVT_314_A14_045"
+    title: "Dalla Culmination"
+    year: 314
+    season: "autumn"
+    day: 190
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 13
+    location: "Vargheim"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla enters the Vargheim barrow alone. She emerges three days later, barefoot, calm, glowing faintly. She says: 'I closed the first door. There are seven.' The Vargheim barrow goes dark."
+
+  - id: "EVT_314_A15_046"
+    title: "Autumn Storms Batter Coast"
+    year: 314
+    season: "autumn"
+    day: 200
+    category: "weather"
+    location: "Frostfjord Hollow"
+    band_relevant: false
+    summary: "Three days of gale-force winds destroy what remained of the Frostfjord docks. Two trading ships lost. The coast road floods again. Winter is early."
+    effects:
+      food_change:
+        { delta: -2, cause: "Autumn storms destroy trade infrastructure" }
+
+  # ============================================================
+  # Y314 WINTER (Days 211–360) — Supernatural Crisis
+  # ============================================================
+
+  - id: "EVT_314_W01_047"
+    title: "Veil Thinning Begins"
+    year: 314
+    season: "winter"
+    day: 212
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 17
+    band_relevant: true
+    summary: "Every seiðr-practitioner in the Rimevegr reports the same thing: the barrier between the living world and the barrow-dead is thinner than it has been since the Cracking. Not metaphor. Measurable."
+    effects:
+      morale_change:
+        { delta: -2, cause: "Veil-thinning confirmed across the region" }
+
+  - id: "EVT_314_W02_048"
+    title: "Iron Grip Collapses"
+    year: 314
+    season: "winter"
+    day: 218
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 27
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Vargheim withdraws from the Iron Grip. Ordovast holds only Grimholt now. His officers advise surrender to the Compact. He executes one for cowardice. The rest fall silent."
+
+  - id: "EVT_314_W03_049"
+    title: "Moor's End Barrow Clearing"
+    year: 314
+    season: "winter"
+    day: 224
+    category: "military"
+    chain: "voss_command"
+    chain_order: 11
+    location: "Moor's End"
+    actors:
+      - "Voss Cold-Eye"
+      - "Bjorn the Lean"
+      - "Kell Hook"
+      - "Thorne Ash-Born"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "The Black Axes enter the Moor's End barrow with Grave Warden support. Two days underground. Lump waits outside and howls the entire time. They emerge minus one Warden. Kell won't talk about it."
+    prerequisites:
+      - "EVT_314_A13_044"
+
+  - id: "EVT_314_W04_050"
+    title: "Ash Past Resolution"
+    year: 314
+    season: "winter"
+    day: 230
+    category: "personal"
+    chain: "ash_past"
+    chain_order: 9
+    actors:
+      - "Thorne Ash-Born"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Thorne tells the band his real history — the galdr lineage, the rune-marks, the forge-born gift that someone carved into his infant skin. He was made, not born. Silence. Then Bjorn passes him a drink."
+    prerequisites:
+      - "EVT_314_A10_041"
+
+  - id: "EVT_314_W05_051"
+    title: "Bone Pack Overruns Raven's Perch"
+    year: 314
+    season: "winter"
+    day: 236
+    category: "military"
+    location: "Raven's Perch"
+    factions:
+      - "The Bone Pack"
+    band_relevant: false
+    summary: "The Bone Pack storms Raven's Perch in a night assault. The neutral settlement had no defenders. Its stores are looted. Forty residents flee into the snow."
+    effects:
+      feud_change:
+        {
+          pair: ["Raven's Perch", "Ashmark"],
+          delta: 3,
+          cause: "Bone Pack overruns neutral settlement",
+        }
+
+  - id: "EVT_314_W06_052"
+    title: "Third Barrow Opens"
+    year: 314
+    season: "winter"
+    day: 242
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 18
+    location: "Thornwall"
+    band_relevant: true
+    summary: "The Thornwall barrow cracks at midnight. Green fire shoots thirty feet into the sky. Figures move in the treeline. The settlement evacuates north."
+    effects:
+      morale_change:
+        { delta: -3, cause: "Third barrow eruption — Thornwall evacuated" }
+
+  - id: "EVT_314_W07_053"
+    title: "Widow Proposes Unified Command"
+    year: 314
+    season: "winter"
+    day: 250
+    category: "political"
+    chain: "widows_web"
+    chain_order: 19
+    location: "Ashen Reach"
+    actors:
+      - "Pale Widow"
+      - "Sigrun"
+    factions:
+      - "The Whispering Circle"
+      - "The Fjord Compact"
+    band_relevant: true
+    summary: "The Widow proposes a unified barrow defense force — Compact fighters, Warden expertise, Circle logistics. Under her coordination, naturally. Sigrun hesitates. The alternative is worse."
+
+  - id: "EVT_314_W08_054"
+    title: "Wulfgar Sues for Peace"
+    year: 314
+    season: "winter"
+    day: 256
+    category: "political"
+    chain: "red_tide"
+    chain_order: 10
+    location: "Bleakwater Landing"
+    actors:
+      - "Wulfgar"
+    factions:
+      - "The Red Tide"
+    band_relevant: false
+    summary: "After losing seven fighters to barrow encounters, Wulfgar lifts the Bleakwater blockade and sends word to the Compact: the Red Tide will stop raiding if given a seat at the defense table."
+    prerequisites:
+      - "EVT_314_A09_040"
+
+  - id: "EVT_314_W09_055"
+    title: "Long Dark Descends"
+    year: 314
+    season: "winter"
+    day: 265
+    category: "weather"
+    chain: "long_dark"
+    chain_order: 2
+    band_relevant: true
+    summary: "Two hours of grey light per day. The cold bites deeper than last year. Every settlement burns through its fuel reserves. The darkness itself feels heavier, as if the barrows are drinking the light."
+    effects:
+      morale_change:
+        { delta: -2, cause: "Long Dark after supernatural crisis year" }
+
+  - id: "EVT_314_W10_056"
+    title: "Bjorn Saves a Child"
+    year: 314
+    season: "winter"
+    day: 272
+    category: "personal"
+    actors:
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "A boy falls through river ice near the band's camp. Bjorn goes in after him without thinking. Both survive. The boy's father offers everything he has. Bjorn says hot soup would do."
+
+  - id: "EVT_314_W11_057"
+    title: "Dead Walk at Vargheim"
+    year: 314
+    season: "winter"
+    day: 280
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 19
+    location: "Vargheim"
+    band_relevant: false
+    summary: "Despite Dalla's sealing, the Vargheim barrow reopens. Three corpse-draugar are sighted outside the walls. The Grave Wardens put them down, but the door Dalla closed is open again."
+    prerequisites:
+      - "EVT_314_A14_045"
+
+  - id: "EVT_314_W12_058"
+    title: "Ordovast's Last Gamble"
+    year: 314
+    season: "winter"
+    day: 290
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 28
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: true
+    summary: "Ordovast sends a personal message to Voss: join me or watch Grimholt fall. He offers captaincy of a reformed Iron Grip warband — fifty fighters, Grimholt as base. Everything Voss never wanted."
+    branches:
+      - condition: "voss_joins_ordovast"
+        result: "Band becomes Iron Grip's military arm. Power and resources, but Ordovast's leash."
+      - condition: "voss_refuses_ordovast"
+        result: "Ordovast faces the barrow crisis with only garrison troops. Grimholt may fall."
+
+  - id: "EVT_314_W13_059"
+    title: "Midwinter Barrow Chorus"
+    year: 314
+    season: "winter"
+    day: 325
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 20
+    band_relevant: true
+    summary: "On midwinter night, the barrow hum returns — louder than Y313. Windows crack. Dogs flee. Every settlement reports the same: a voice beneath the hum, speaking words that are almost comprehensible."
+    effects:
+      morale_change:
+        { delta: -3, cause: "Midwinter barrow chorus — voices in the hum" }
+
+  - id: "EVT_314_W14_060"
+    title: "Year's End Assessment"
+    year: 314
+    season: "winter"
+    day: 355
+    category: "social"
+    band_relevant: true
+    summary: "Gest tallies the year. Silver: adequate. Losses: one Warden auxiliary. Morale: fragile. The band survived another year. But the world outside is worse, and Y315 will decide everything."
+
+  # ============================================================
+  # Y315 SPRING (Days 1–60) — Every Chain at Crisis Point
+  # ============================================================
+
+  - id: "EVT_315_S01_061"
+    title: "Spring Thaw — No Relief"
+    year: 315
+    season: "spring"
+    day: 2
+    category: "weather"
+    band_relevant: false
+    summary: "The thaw comes late and hard. Flooding everywhere. The coast road is impassable for two weeks. Ice-dammed rivers burst their banks at Kolvik and Stonebay."
+    effects:
+      food_change: { delta: -1, cause: "Severe spring flooding damages stores" }
+
+  - id: "EVT_315_S02_062"
+    title: "Ordovast Abdicates"
+    year: 315
+    season: "spring"
+    day: 5
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 29
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast steps down. No ceremony. He hands the Grimholt seal to his lieutenant and walks out the gate with a pack and a sword. Twenty years of ambition, ended in a quiet morning."
+    prerequisites:
+      - "EVT_314_W12_058"
+
+  - id: "EVT_315_S03_063"
+    title: "Compact Absorbs Grimholt"
+    year: 315
+    season: "spring"
+    day: 8
+    category: "political"
+    chain: "fjord_compact"
+    chain_order: 14
+    location: "Grimholt"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "Sigrun's envoys arrive in Grimholt before the gate is cold. The Compact offers protection and trade. Grimholt's new headman accepts. The Iron Grip is dead."
+    prerequisites:
+      - "EVT_315_S02_062"
+
+  - id: "EVT_315_S04_064"
+    title: "Voss Calls Full Muster"
+    year: 315
+    season: "spring"
+    day: 10
+    category: "military"
+    chain: "voss_command"
+    chain_order: 12
+    actors:
+      - "Voss Cold-Eye"
+      - "Gest Ledger"
+      - "Kell Hook"
+      - "Thorne Ash-Born"
+      - "Petra Shepherd"
+      - "Bjorn the Lean"
+      - "Rolf"
+      - "Lump"
+    band_relevant: true
+    summary: "Voss calls every member of the Black Axes together. Full gear. No exceptions. He looks at each of them and says: this year we finish it, one way or another."
+
+  - id: "EVT_315_S05_065"
+    title: "Thorne's Blood-Price Hunters Return"
+    year: 315
+    season: "spring"
+    day: 14
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 11
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Eight fighters arrive from the south — the full blood-price party. The surviving hunter recruited reinforcements. They make camp outside Skaldhaven and send word: deliver Thorne or face war."
+    prerequisites:
+      - "EVT_314_A08_039"
+
+  - id: "EVT_315_S06_066"
+    title: "Widow Reveals True Agenda"
+    year: 315
+    season: "spring"
+    day: 18
+    category: "political"
+    chain: "widows_web"
+    chain_order: 20
+    location: "Ashen Reach"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "The Widow summons Sigrun and Voss to Ashen Reach. She reveals what she has always known: the barrows are waking because the galdr-forge beneath the Iron Barrow was unsealed. She knows who did it. She wants it resealed — on her terms."
+
+  - id: "EVT_315_S07_067"
+    title: "Dalla Identifies the Iron Barrow"
+    year: 315
+    season: "spring"
+    day: 22
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 14
+    actors:
+      - "Dalla"
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Dalla tells Thorne she can feel the Iron Barrow — the deepest and oldest, somewhere beneath the hills north of Vargheim. She says his rune-marks are a key. He was made to open it."
+    prerequisites:
+      - "EVT_314_A14_045"
+
+  - id: "EVT_315_S08_068"
+    title: "Grave Wardens Map the Pattern"
+    year: 315
+    season: "spring"
+    day: 26
+    category: "military"
+    chain: "grave_wardens"
+    chain_order: 10
+    location: "Skaldhaven"
+    actors:
+      - "Bryn"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "Bryn lays out a map showing all breached barrows. They form a circle. At the center: unmarked ground north of Vargheim. The Iron Barrow. Every breach radiates from it."
+
+  - id: "EVT_315_S09_069"
+    title: "Alliance Crystallizes"
+    year: 315
+    season: "spring"
+    day: 30
+    category: "political"
+    chain: "fjord_compact"
+    chain_order: 15
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+      - "Bryn"
+      - "Voss Cold-Eye"
+    factions:
+      - "The Fjord Compact"
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "Sigrun commits Compact fighters. Bryn commits Warden expertise. Voss commits the Black Axes and Thorne — the only person who can read the forge-runes. An alliance born of necessity."
+
+  - id: "EVT_315_S10_070"
+    title: "Red Tide Joins Defense Pact"
+    year: 315
+    season: "spring"
+    day: 34
+    category: "military"
+    chain: "red_tide"
+    chain_order: 11
+    location: "Bleakwater Landing"
+    actors:
+      - "Wulfgar"
+    factions:
+      - "The Red Tide"
+    band_relevant: false
+    summary: "Wulfgar formally pledges his remaining twenty fighters to the barrow defense force. Raiding is over. He says: 'The dead don't leave silver worth looting.'"
+    prerequisites:
+      - "EVT_314_W08_054"
+
+  - id: "EVT_315_S11_071"
+    title: "Bone Pack Refuses to Join"
+    year: 315
+    season: "spring"
+    day: 38
+    category: "military"
+    factions:
+      - "The Bone Pack"
+    band_relevant: false
+    summary: "The Bone Pack's new captain declares his band answers to nobody. They hold Ashmark and Raven's Perch and intend to keep them while everyone else marches to their death underground."
+
+  - id: "EVT_315_S12_072"
+    title: "Kell Volunteers for the Barrow"
+    year: 315
+    season: "spring"
+    day: 42
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 7
+    actors:
+      - "Kell Hook"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Kell tells Voss he wants to be first into the Iron Barrow. No debts. No shame. Just something he needs to do. Voss studies him for a long time, then nods."
+
+  - id: "EVT_315_S13_073"
+    title: "Thorne Resolves the Blood-Price"
+    year: 315
+    season: "spring"
+    day: 48
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 12
+    actors:
+      - "Thorne Ash-Born"
+      - "Voss Cold-Eye"
+      - "Kell Hook"
+    band_relevant: true
+    summary: "Voss and the Black Axes ride out to meet the blood-price hunters. Voss offers weregild — triple the original debt in silver. After a tense negotiation, the hunters accept and ride south. Thorne's past is paid."
+    prerequisites:
+      - "EVT_315_S05_065"
+
+  - id: "EVT_315_S14_074"
+    title: "Petra Chooses the Band"
+    year: 315
+    season: "spring"
+    day: 52
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 9
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "Petra installs her sister in Deepholm under Compact protection. She returns to camp and sharpens her axe. Her sister is safe. This is what she does now."
+
+  - id: "EVT_315_S15_075"
+    title: "Earthquake Near Vargheim"
+    year: 315
+    season: "spring"
+    day: 58
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 21
+    location: "Vargheim"
+    band_relevant: true
+    summary: "The ground shakes for thirty seconds. Cracks open in fields north of Vargheim. Villagers report a low groaning from underground — like something rolling over in its sleep."
+    effects:
+      morale_change:
+        { delta: -2, cause: "Earthquake signals Iron Barrow awakening" }
+
+  # ============================================================
+  # Y315 SUMMER (Days 61–120) — Final Confrontation Season
+  # ============================================================
+
+  - id: "EVT_315_U01_076"
+    title: "Expedition Assembled"
+    year: 315
+    season: "summer"
+    day: 63
+    category: "military"
+    chain: "voss_command"
+    chain_order: 13
+    location: "Skaldhaven"
+    actors:
+      - "Voss Cold-Eye"
+      - "Bryn"
+      - "Sigrun"
+    factions:
+      - "The Grave Wardens"
+      - "The Fjord Compact"
+    band_relevant: true
+    summary: "Sixty fighters gather at Skaldhaven. Compact regulars, Grave Wardens, Red Tide veterans, the Black Axes, and eight volunteers from settlements. The largest cooperative force the Rimevegr has ever assembled."
+
+  - id: "EVT_315_U02_077"
+    title: "Allthing Convenes — War Footing"
+    year: 315
+    season: "summer"
+    day: 68
+    category: "social"
+    chain: "allthing"
+    chain_order: 5
+    location: "Skaldhaven"
+    actors:
+      - "Sigrun"
+      - "Pale Widow"
+      - "Bryn"
+    band_relevant: true
+    summary: "The Allthing votes unanimously to fund the Iron Barrow expedition. For the first time in living memory, every faction agrees on something. The lawspeaker weeps. He has waited forty years for this."
+
+  - id: "EVT_315_U03_078"
+    title: "March to the Iron Barrow"
+    year: 315
+    season: "summer"
+    day: 74
+    category: "military"
+    chain: "waking_barrows"
+    chain_order: 22
+    location: "Vargheim"
+    actors:
+      - "Voss Cold-Eye"
+      - "Bryn"
+    band_relevant: true
+    summary: "The expedition marches north from Skaldhaven. Three days' travel. The ground trembles more frequently as they approach. On the second night, green lights appear on the horizon — a welcoming committee."
+
+  - id: "EVT_315_U04_079"
+    title: "Widow's True Price"
+    year: 315
+    season: "summer"
+    day: 78
+    category: "political"
+    chain: "widows_web"
+    chain_order: 21
+    actors:
+      - "Pale Widow"
+      - "Voss Cold-Eye"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "The night before the descent, the Widow tells Voss her price for Circle support: whatever is in the galdr-forge belongs to her. Knowledge, artifacts, rune-tools — all of it. Voss can have the glory."
+    branches:
+      - condition: "voss_agrees_widow_price"
+        result: "Circle gains galdr-forge artifacts. Widow becomes the most powerful person in the Rimevegr."
+      - condition: "voss_refuses_widow_price"
+        result: "Widow withdraws Circle logistics. Expedition loses supply support mid-mission."
+
+  - id: "EVT_315_U05_080"
+    title: "Iron Barrow Entrance Found"
+    year: 315
+    season: "summer"
+    day: 82
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 23
+    location: "Vargheim"
+    actors:
+      - "Dalla"
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Dalla leads them to a hillside north of Vargheim. Thorne places his hand on the stone. His rune-marks glow. The hill opens. A staircase descends into green-lit darkness."
+
+  - id: "EVT_315_U06_081"
+    title: "Surface Guard Engagement"
+    year: 315
+    season: "summer"
+    day: 85
+    category: "military"
+    chain: "waking_barrows"
+    chain_order: 24
+    location: "Vargheim"
+    factions:
+      - "The Grave Wardens"
+      - "The Red Tide"
+    band_relevant: false
+    summary: "As the expedition descends, draugar swarm the surface camp. Red Tide and Compact fighters hold the perimeter. Twelve dead by nightfall. The exit must stay open."
+
+  - id: "EVT_315_U07_082"
+    title: "The Galdr-Forge"
+    year: 315
+    season: "summer"
+    day: 88
+    category: "supernatural"
+    chain: "ash_past"
+    chain_order: 10
+    actors:
+      - "Thorne Ash-Born"
+      - "Dalla"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Three levels down, they find it. A stone chamber with a forge that burns without fuel. Runes cover every surface. Thorne's entire body glows. Dalla says: 'This is where they made you. This is where we end it.'"
+    prerequisites:
+      - "EVT_314_W04_050"
+
+  - id: "EVT_315_U08_083"
+    title: "Kell Holds the Gate"
+    year: 315
+    season: "summer"
+    day: 90
+    category: "military"
+    actors:
+      - "Kell Hook"
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "Draugar pour from a side tunnel. Kell and Bjorn hold a narrow chokepoint for six hours while the rune-workers do what must be done. Kell fights with a calm precision no one has ever seen from him."
+
+  - id: "EVT_315_U09_084"
+    title: "Sealing the Forge"
+    year: 315
+    season: "summer"
+    day: 92
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 25
+    actors:
+      - "Thorne Ash-Born"
+      - "Dalla"
+    band_relevant: true
+    summary: "Thorne and Dalla work together — his rune-marks as the key, her seiðr as the lock. The forge dims. The hum stops. Thorne's rune-marks go dark for the first time in his life. Something in him goes quiet."
+    prerequisites:
+      - "EVT_315_U07_082"
+
+  - id: "EVT_315_U10_085"
+    title: "Collapse and Retreat"
+    year: 315
+    season: "summer"
+    day: 94
+    category: "military"
+    chain: "grave_wardens"
+    chain_order: 11
+    actors:
+      - "Bryn"
+      - "Voss Cold-Eye"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "The barrow begins to collapse. Bryn leads the retreat while Voss carries Dalla, who is unconscious. They lose eight fighters in the collapse. Bryn is the last one out. The hillside seals itself."
+
+  - id: "EVT_315_U11_086"
+    title: "Expedition Returns"
+    year: 315
+    season: "summer"
+    day: 98
+    category: "military"
+    chain: "voss_command"
+    chain_order: 14
+    location: "Skaldhaven"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Forty-three fighters walk back into Skaldhaven from sixty. Nobody cheers. Nobody needs to. The barrow hum has stopped across the entire Rimevegr. People stand in doorways and watch them pass."
+
+  - id: "EVT_315_U12_087"
+    title: "Midsummer — True Celebration"
+    year: 315
+    season: "summer"
+    day: 105
+    category: "social"
+    location: "Skaldhaven"
+    band_relevant: true
+    summary: "The first real celebration in three years. Songs. Mead. Wrestling. Bjorn loses an arm-wrestle to Bryn and demands a rematch. Kell sits outside the firelight and drinks alone. He is smiling."
+
+  - id: "EVT_315_U13_088"
+    title: "Widow Seizes Forge Artifacts"
+    year: 315
+    season: "summer"
+    day: 110
+    category: "political"
+    chain: "widows_web"
+    chain_order: 22
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "Circle agents recover rune-tools from the expedition's wounded before anyone notices they are missing. The Widow now possesses galdr artifacts. What she intends to do with them is not shared."
+
+  - id: "EVT_315_U14_089"
+    title: "Compact Trade Boom"
+    year: 315
+    season: "summer"
+    day: 115
+    category: "economic"
+    chain: "fjord_compact"
+    chain_order: 16
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "With the barrow threat ended and trade routes reopened, merchant ships return to Deepholm. Prices stabilize. The Compact now controls the strongest economic network the Rimevegr has seen."
+    effects:
+      food_change:
+        { delta: 4, cause: "Post-crisis trade boom restores supply lines" }
+
+  - id: "EVT_315_U15_090"
+    title: "Lump Finds a Bone"
+    year: 315
+    season: "summer"
+    day: 119
+    category: "personal"
+    actors:
+      - "Lump"
+    band_relevant: true
+    summary: "Lump digs up a massive thighbone from outside the sealed barrow. He carries it everywhere for a week. Nobody has the heart to take it away."
+
+  # ============================================================
+  # Y315 AUTUMN (Days 121–210) — Resolution and Consequences
+  # ============================================================
+
+  - id: "EVT_315_A01_091"
+    title: "Barrows Go Silent"
+    year: 315
+    season: "autumn"
+    day: 122
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 26
+    band_relevant: false
+    summary: "For the first time in four years, no barrow in the Rimevegr shows light, sound, or activity. The Grave Wardens continue patrols but find nothing. The sealing holds."
+
+  - id: "EVT_315_A02_092"
+    title: "Raven's Perch Liberated"
+    year: 315
+    season: "autumn"
+    day: 126
+    category: "military"
+    location: "Raven's Perch"
+    factions:
+      - "The Bone Pack"
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "Compact fighters march on Raven's Perch with the authority of the Allthing. The Bone Pack sees the numbers and retreats to Ashmark without a fight. Raven's Perch is free."
+
+  - id: "EVT_315_A03_093"
+    title: "Ordovast Sighted on Coast Road"
+    year: 315
+    season: "autumn"
+    day: 130
+    category: "personal"
+    chain: "iron_grip"
+    chain_order: 30
+    actors:
+      - "Ordovast"
+    band_relevant: false
+    summary: "A trader reports seeing Ordovast walking the coast road south of Frostfjord. Alone. Unarmed. He did not respond when called. The warlord has become a pilgrim or a ghost."
+
+  - id: "EVT_315_A04_094"
+    title: "Dalla Returns to Normal"
+    year: 315
+    season: "autumn"
+    day: 135
+    category: "personal"
+    chain: "dalla_awakening"
+    chain_order: 15
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: false
+    summary: "Dalla wakes one morning and asks for breakfast. She eats three bowls of porridge. Her eyes are brown again. She remembers everything and nothing. The seiðr has passed through her and moved on."
+
+  - id: "EVT_315_A05_095"
+    title: "Gest Updates the Ledger"
+    year: 315
+    season: "autumn"
+    day: 140
+    category: "economic"
+    actors:
+      - "Gest Ledger"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Gest presents the band's accounts. The barrow contracts and Allthing bonuses have made the Black Axes financially comfortable for the first time since Y312. Not rich. Comfortable. There is a difference."
+
+  - id: "EVT_315_A06_096"
+    title: "Thorne's Marks Fade"
+    year: 315
+    season: "autumn"
+    day: 145
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 13
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne's rune-marks continue to fade. By autumn they are faint scars. He is no longer a galdr-tool. He is just a man with scars and a band that knows his name."
+
+  - id: "EVT_315_A07_097"
+    title: "Harvest — First Decent Year"
+    year: 315
+    season: "autumn"
+    day: 150
+    category: "economic"
+    band_relevant: false
+    summary: "The harvest meets eighty percent of regional need — not abundance, but survival without imports. Fields are healing. The war is two years behind. Recovery is measurable."
+    effects:
+      food_change: { delta: 3, cause: "First adequate harvest since the war" }
+
+  - id: "EVT_315_A08_098"
+    title: "Grave Wardens Shift Mission"
+    year: 315
+    season: "autumn"
+    day: 156
+    category: "military"
+    chain: "grave_wardens"
+    chain_order: 12
+    location: "Skaldhaven"
+    actors:
+      - "Bryn"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: false
+    summary: "With the barrows sealed, Bryn reorients the Wardens toward mapping and monitoring. Patrols continue, but the urgency has shifted from crisis to maintenance. Bryn sleeps through the night for the first time in years."
+
+  - id: "EVT_315_A09_099"
+    title: "Widow Consolidates Quietly"
+    year: 315
+    season: "autumn"
+    day: 162
+    category: "political"
+    chain: "widows_web"
+    chain_order: 23
+    location: "Ashen Reach"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: false
+    summary: "The Widow has the artifacts, the debts, the information networks. She does not declare anything. She does not need to. Everyone who matters knows who holds the real power in the post-crisis Rimevegr."
+
+  - id: "EVT_315_A10_100"
+    title: "Bone Pack Disbands"
+    year: 315
+    season: "autumn"
+    day: 168
+    category: "military"
+    factions:
+      - "The Bone Pack"
+    band_relevant: false
+    summary: "Cut off from their occupied settlements, six Bone Pack fighters drift away over autumn. Their captain is found drunk in Kolvik. The remaining eight take individual contracts. The Bone Pack is finished."
+
+  - id: "EVT_315_A11_101"
+    title: "Petra Visits Her Sister"
+    year: 315
+    season: "autumn"
+    day: 174
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 10
+    location: "Deepholm"
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "Petra spends a week in Deepholm. She brings her sister a good axe, a warm cloak, and enough silver to see through winter. They eat together every night. Neither one talks about the past."
+
+  - id: "EVT_315_A12_102"
+    title: "Three Wolves Permanent Garrison"
+    year: 315
+    season: "autumn"
+    day: 180
+    category: "political"
+    chain: "three_wolves"
+    chain_order: 9
+    location: "Feldwick"
+    actors:
+      - "Hadric"
+    factions:
+      - "The Three Wolves"
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "The Three Wolves formally settle at Feldwick as permanent garrison under Compact charter. Hadric hangs up his sword. His fighters keep theirs, but garden plots are assigned alongside barracks."
+
+  - id: "EVT_315_A13_103"
+    title: "Autumn Rites — Real Ones"
+    year: 315
+    season: "autumn"
+    day: 188
+    category: "social"
+    location: "Thornwall"
+    band_relevant: true
+    summary: "The autumn feast at Thornwall draws three times last year's attendance. New songs. Some bad. Some good. Rolf gets roaring drunk and recites a poem about the barrow that is mostly profanity. Everyone applauds."
+
+  - id: "EVT_315_A14_104"
+    title: "Sigrun Proposes Regional Council"
+    year: 315
+    season: "autumn"
+    day: 196
+    category: "political"
+    chain: "fjord_compact"
+    chain_order: 17
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "Sigrun proposes replacing the Allthing's temporary war-footing structure with a permanent regional council. Representatives from every settlement. Taxes. Law. Something that might, for the first time, resemble governance."
+
+  - id: "EVT_315_A15_105"
+    title: "Voss Considers the Future"
+    year: 315
+    season: "autumn"
+    day: 205
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 15
+    actors:
+      - "Voss Cold-Eye"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Voss and Gest sit by the fire after the others sleep. Gest asks: what do the Black Axes do in peacetime? Voss stares at the fire for a long time. He does not have an answer yet."
+
+  # ============================================================
+  # Y315 WINTER (Days 211–360) — New Equilibrium
+  # ============================================================
+
+  - id: "EVT_315_W01_106"
+    title: "First Calm Winter"
+    year: 315
+    season: "winter"
+    day: 212
+    category: "weather"
+    band_relevant: true
+    summary: "The cold comes as it always does. But this year there is enough firewood. Enough food. Enough shelter. The Rimevegr settles into winter without dread for the first time in four years."
+
+  - id: "EVT_315_W02_107"
+    title: "Compact Council Ratified"
+    year: 315
+    season: "winter"
+    day: 220
+    category: "political"
+    chain: "fjord_compact"
+    chain_order: 18
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "Eleven of fifteen settlements send representatives. The regional council is ratified. Sigrun is elected first chair for a two-year term. It is imperfect and fragile and real."
+
+  - id: "EVT_315_W03_108"
+    title: "Widow Takes Council Seat"
+    year: 315
+    season: "winter"
+    day: 226
+    category: "political"
+    chain: "widows_web"
+    chain_order: 24
+    location: "Deepholm"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: false
+    summary: "The Widow takes Ashen Reach's council seat personally. Everyone expected a proxy. Her presence in the open — a first — signals something. Whether it is trust or dominance remains unclear."
+
+  - id: "EVT_315_W04_109"
+    title: "Kell Opens a Tab"
+    year: 315
+    season: "winter"
+    day: 232
+    category: "personal"
+    actors:
+      - "Kell Hook"
+    band_relevant: true
+    summary: "Kell walks into the Skaldhaven mead hall and puts silver on the bar. Drinks for anyone who fought in the barrow. He sits in the corner and doesn't gamble. The barkeeper marks the date in charcoal."
+
+  - id: "EVT_315_W05_110"
+    title: "Wulfgar Retires"
+    year: 315
+    season: "winter"
+    day: 238
+    category: "personal"
+    chain: "red_tide"
+    chain_order: 12
+    location: "Bleakwater Landing"
+    actors:
+      - "Wulfgar"
+    factions:
+      - "The Red Tide"
+    band_relevant: false
+    summary: "Wulfgar disbands the Red Tide. He keeps one boat and takes up fishing at Bleakwater. His fighters scatter across the region. The river raider era ends with a man mending nets."
+
+  - id: "EVT_315_W06_111"
+    title: "Thorne Teaches Rune-Reading"
+    year: 315
+    season: "winter"
+    day: 244
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 14
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "With his marks faded, Thorne's galdr sense is dull but not dead. He teaches basic rune identification to three Grave Wardens. The knowledge that was carved into him is now given freely."
+
+  - id: "EVT_315_W07_112"
+    title: "Long Dark — Endured"
+    year: 315
+    season: "winter"
+    day: 265
+    category: "weather"
+    chain: "long_dark"
+    chain_order: 3
+    band_relevant: true
+    summary: "The deepest dark comes. Two hours of light. Bitter cold. But the barrows are silent, the stores hold, and people survive it the way people always have — together, grudgingly, with small acts of care."
+
+  - id: "EVT_315_W08_113"
+    title: "Bjorn Gets a Dog"
+    year: 315
+    season: "winter"
+    day: 272
+    category: "personal"
+    actors:
+      - "Bjorn the Lean"
+      - "Lump"
+    band_relevant: true
+    summary: "A stray follows Bjorn back to camp. Lump accepts the newcomer after a brief standoff involving growling and then shared scraps. Bjorn names the dog Rust. Nobody asks why."
+
+  - id: "EVT_315_W09_114"
+    title: "Bryn Visits the Sealed Barrow"
+    year: 315
+    season: "winter"
+    day: 280
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 13
+    location: "Vargheim"
+    actors:
+      - "Bryn"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: false
+    summary: "Bryn makes the pilgrimage to the sealed Iron Barrow. The hillside is quiet. Grass is growing over the sealed entrance. She leaves a cairn for the eight who died inside."
+
+  - id: "EVT_315_W10_115"
+    title: "Gest Writes the History"
+    year: 315
+    season: "winter"
+    day: 290
+    category: "social"
+    actors:
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Gest begins writing the Black Axes' history — contracts, casualties, silver earned. Not a saga. A ledger. But between the numbers, the whole story is there for anyone who reads carefully."
+
+  - id: "EVT_315_W11_116"
+    title: "Council Sets Spring Tax"
+    year: 315
+    season: "winter"
+    day: 300
+    category: "economic"
+    chain: "fjord_compact"
+    chain_order: 19
+    location: "Deepholm"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "The council agrees on a modest spring tax — three percent of trade value. Low enough to accept, high enough to fund road repairs and a standing garrison. The first tax voted by consent, not imposed by force."
+
+  - id: "EVT_315_W12_117"
+    title: "Widow Seeds the Next Cycle"
+    year: 315
+    season: "winter"
+    day: 310
+    category: "political"
+    chain: "widows_web"
+    chain_order: 25
+    location: "Kolvik"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: false
+    summary: "Circle agents place two new operatives — one in Grimholt, one in Feldwick. The Widow's network expands while the council debates governance. Power moves in the gaps between words."
+
+  - id: "EVT_315_W13_118"
+    title: "Midwinter Feast — No Hum"
+    year: 315
+    season: "winter"
+    day: 325
+    category: "social"
+    location: "Skaldhaven"
+    band_relevant: true
+    summary: "Midwinter night passes in silence. No hum. No green light. No voices. Just the crackle of fires and the sound of people eating together. Rolf raises a cup to absent friends. Everyone drinks."
+
+  - id: "EVT_315_W14_119"
+    title: "Voss Makes a Decision"
+    year: 315
+    season: "winter"
+    day: 345
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 16
+    actors:
+      - "Voss Cold-Eye"
+      - "Gest Ledger"
+      - "Kell Hook"
+      - "Thorne Ash-Born"
+      - "Petra Shepherd"
+      - "Bjorn the Lean"
+      - "Rolf"
+      - "Lump"
+    band_relevant: true
+    summary: "Voss gathers the band. He tells them the world is changing and they must change with it. Not disband — adapt. The Black Axes will take contracts from the council, guard trade routes, clear whatever comes next. Mercenaries with a seat at the table. Nobody argues. Lump wags his tail."
+
+  - id: "EVT_315_W15_120"
+    title: "Ice Cracks on the Fjord"
+    year: 315
+    season: "winter"
+    day: 358
+    category: "weather"
+    band_relevant: true
+    summary: "The first crack of melting ice echoes across the fjord. Year 315 ends. The Rimevegr is scarred, diminished, and still standing. The Black Axes sharpen their weapons and wait for spring."

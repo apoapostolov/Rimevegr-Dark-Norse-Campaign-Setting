@@ -1,0 +1,350 @@
+{
+  "clean_dir": "C:\\git\\lifestyle\\writing\\norse_grit\\notion\\clean",
+  "split_dir": "C:\\git\\lifestyle\\writing\\norse_grit\\notion\\split",
+  "dry_run": false,
+  "max_bytes": 90000,
+  "chapter_count": 24,
+  "split_count": 6,
+  "chapters": [
+    {
+      "chapter_key": "01",
+      "title": "Rimevegr Setting Bible",
+      "is_split": false,
+      "source_bytes": 70108,
+      "estimated_blocks": 651,
+      "part_keys": [
+        "01"
+      ],
+      "part_bytes": [
+        70108
+      ]
+    },
+    {
+      "chapter_key": "02",
+      "title": "Master Index — Iron Ledger: Mercenaries of the Rimevegr",
+      "is_split": false,
+      "source_bytes": 34088,
+      "estimated_blocks": 393,
+      "part_keys": [
+        "02"
+      ],
+      "part_bytes": [
+        34088
+      ]
+    },
+    {
+      "chapter_key": "03",
+      "title": "Geography and Map of the Rimevegr",
+      "is_split": false,
+      "source_bytes": 33103,
+      "estimated_blocks": 98,
+      "part_keys": [
+        "03"
+      ],
+      "part_bytes": [
+        33103
+      ]
+    },
+    {
+      "chapter_key": "04",
+      "title": "Culture and Customs of the Rimevegr",
+      "is_split": false,
+      "source_bytes": 84684,
+      "estimated_blocks": 243,
+      "part_keys": [
+        "04"
+      ],
+      "part_bytes": [
+        84684
+      ]
+    },
+    {
+      "chapter_key": "05",
+      "title": "Economy of the Rimevegr",
+      "is_split": false,
+      "source_bytes": 61375,
+      "estimated_blocks": 570,
+      "part_keys": [
+        "05"
+      ],
+      "part_bytes": [
+        61375
+      ]
+    },
+    {
+      "chapter_key": "06",
+      "title": "Dictionary of Norse Terms — Iron Ledger",
+      "is_split": true,
+      "source_bytes": 158018,
+      "estimated_blocks": 847,
+      "part_keys": [
+        "06A",
+        "06B"
+      ],
+      "part_bytes": [
+        85977,
+        73519
+      ]
+    },
+    {
+      "chapter_key": "07",
+      "title": "Religion of the Rimevegr",
+      "is_split": true,
+      "source_bytes": 172411,
+      "estimated_blocks": 479,
+      "part_keys": [
+        "07A",
+        "07B",
+        "07C"
+      ],
+      "part_bytes": [
+        82651,
+        85645,
+        5300
+      ]
+    },
+    {
+      "chapter_key": "08",
+      "title": "The Magic of Rimevegr",
+      "is_split": true,
+      "source_bytes": 406653,
+      "estimated_blocks": 1312,
+      "part_keys": [
+        "08A",
+        "08B",
+        "08C",
+        "08D",
+        "08E",
+        "08F",
+        "08G"
+      ],
+      "part_bytes": [
+        68882,
+        49716,
+        43954,
+        63513,
+        86612,
+        88314,
+        8397
+      ]
+    },
+    {
+      "chapter_key": "09",
+      "title": "Weather, Seasons, and Hazards",
+      "is_split": false,
+      "source_bytes": 3542,
+      "estimated_blocks": 63,
+      "part_keys": [
+        "09"
+      ],
+      "part_bytes": [
+        3542
+      ]
+    },
+    {
+      "chapter_key": "10",
+      "title": "Calendar and Hidden Events",
+      "is_split": false,
+      "source_bytes": 3097,
+      "estimated_blocks": 61,
+      "part_keys": [
+        "10"
+      ],
+      "part_bytes": [
+        3097
+      ]
+    },
+    {
+      "chapter_key": "11",
+      "title": "Villages and Settlements",
+      "is_split": false,
+      "source_bytes": 53165,
+      "estimated_blocks": 429,
+      "part_keys": [
+        "11"
+      ],
+      "part_bytes": [
+        53165
+      ]
+    },
+    {
+      "chapter_key": "12",
+      "title": "Political Villages — Lore Reference",
+      "is_split": false,
+      "source_bytes": 69667,
+      "estimated_blocks": 433,
+      "part_keys": [
+        "12"
+      ],
+      "part_bytes": [
+        69667
+      ]
+    },
+    {
+      "chapter_key": "13",
+      "title": "Rival Bands and Factions",
+      "is_split": false,
+      "source_bytes": 13621,
+      "estimated_blocks": 125,
+      "part_keys": [
+        "13"
+      ],
+      "part_bytes": [
+        13621
+      ]
+    },
+    {
+      "chapter_key": "14",
+      "title": "Wolfsheads of the Rimevegr",
+      "is_split": true,
+      "source_bytes": 106147,
+      "estimated_blocks": 534,
+      "part_keys": [
+        "14A",
+        "14B"
+      ],
+      "part_bytes": [
+        77621,
+        29482
+      ]
+    },
+    {
+      "chapter_key": "15",
+      "title": "Mercenary Lifestyle Database",
+      "is_split": false,
+      "source_bytes": 15728,
+      "estimated_blocks": 215,
+      "part_keys": [
+        "15"
+      ],
+      "part_bytes": [
+        15728
+      ]
+    },
+    {
+      "chapter_key": "16",
+      "title": "Named Men and Archetypes",
+      "is_split": false,
+      "source_bytes": 5816,
+      "estimated_blocks": 86,
+      "part_keys": [
+        "16"
+      ],
+      "part_bytes": [
+        5816
+      ]
+    },
+    {
+      "chapter_key": "17",
+      "title": "Character Bible — Iron Ledger",
+      "is_split": false,
+      "source_bytes": 40852,
+      "estimated_blocks": 463,
+      "part_keys": [
+        "17"
+      ],
+      "part_bytes": [
+        40852
+      ]
+    },
+    {
+      "chapter_key": "18",
+      "title": "Barrow Atlas of the Rimevegr",
+      "is_split": false,
+      "source_bytes": 18164,
+      "estimated_blocks": 77,
+      "part_keys": [
+        "18"
+      ],
+      "part_bytes": [
+        18164
+      ]
+    },
+    {
+      "chapter_key": "19",
+      "title": "Iron Ledger — Game Content Bible",
+      "is_split": false,
+      "source_bytes": 42187,
+      "estimated_blocks": 624,
+      "part_keys": [
+        "19"
+      ],
+      "part_bytes": [
+        42187
+      ]
+    },
+    {
+      "chapter_key": "20",
+      "title": "Iron Ledger — Simulation Rules",
+      "is_split": true,
+      "source_bytes": 270888,
+      "estimated_blocks": 3411,
+      "part_keys": [
+        "20A",
+        "20B",
+        "20C",
+        "20D"
+      ],
+      "part_bytes": [
+        78416,
+        88939,
+        78123,
+        25631
+      ]
+    },
+    {
+      "chapter_key": "21",
+      "title": "Band Simulation",
+      "is_split": false,
+      "source_bytes": 3262,
+      "estimated_blocks": 36,
+      "part_keys": [
+        "21"
+      ],
+      "part_bytes": [
+        3262
+      ]
+    },
+    {
+      "chapter_key": "22",
+      "title": "Member Statblocks",
+      "is_split": false,
+      "source_bytes": 35520,
+      "estimated_blocks": 416,
+      "part_keys": [
+        "22"
+      ],
+      "part_bytes": [
+        35520
+      ]
+    },
+    {
+      "chapter_key": "23",
+      "title": "Campaign Arcs and Plot Architecture",
+      "is_split": true,
+      "source_bytes": 93111,
+      "estimated_blocks": 924,
+      "part_keys": [
+        "23A",
+        "23B"
+      ],
+      "part_bytes": [
+        86486,
+        7543
+      ]
+    },
+    {
+      "chapter_key": "24",
+      "title": "Vignettes and Scenes",
+      "is_split": false,
+      "source_bytes": 37493,
+      "estimated_blocks": 350,
+      "part_keys": [
+        "24"
+      ],
+      "part_bytes": [
+        37493
+      ]
+    }
+  ]
+}

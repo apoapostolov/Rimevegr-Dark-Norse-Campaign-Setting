@@ -1,0 +1,690 @@
+# Iron Ledger — Mercenary Economics Database
+# All costs in copper. 1 silver = 10 copper.
+# Seasons: thaw, long_sun, harvest, long_dark.
+# Reference band: Voss's Black Axes (~14 fighters).
+
+mercenary_costs:
+
+  # ============================================================
+  # PAY AND MORALE
+  # ============================================================
+  pay_and_morale:
+
+    pay_grades:
+      - rank: "thrall_porter"
+        weekly_retainer_copper: 5
+        daily_mission_copper: 2
+        food_included: false
+        description: "Thrall labor — carries gear, digs latrines. Not a fighter."
+        morale_note: "Does not affect band morale. May flee if battle comes."
+
+      - rank: "camp_follower"
+        weekly_retainer_copper: 8
+        daily_mission_copper: 3
+        food_included: false
+        description: "Cook, farrier, leather-worker. Keeps the camp running."
+        morale_note: "Losing a good cook hurts morale more than losing a fighter."
+
+      - rank: "green"
+        weekly_retainer_copper: 12
+        daily_mission_copper: 4
+        food_included: false
+        description: "First-season fighter. Untested. Holds a spear and hopes."
+        morale_note: "Expendable in the eyes of veterans. Dies first."
+
+      - rank: "common"
+        weekly_retainer_copper: 20
+        daily_mission_copper: 5
+        food_included: false
+        description: "Reliable fighter with at least one season. Holds the line."
+        morale_note: "Backbone of the band. Pay them or lose them."
+
+      - rank: "veteran"
+        weekly_retainer_copper: 30
+        daily_mission_copper: 10
+        food_included: false
+        description: "Scarred, competent, dangerous. Three or more seasons alive."
+        morale_note: "Veterans set the tone. If they grumble, the commons panic."
+
+      - rank: "named_man"
+        weekly_retainer_copper: 50
+        daily_mission_copper: 15
+        food_included: false
+        description: "Named for a deed. Commands respect. May lead a file."
+        morale_note: "Losing a named man shakes the band. Killing one makes enemies."
+
+      - rank: "captain"
+        weekly_retainer_copper: 0
+        daily_mission_copper: 0
+        food_included: true
+        description: "Takes from the treasury as needed. No fixed wage."
+        morale_note: "A captain who takes too much is found dead in the morning."
+
+    bonuses:
+      - id: "PAY_BON_001"
+        name: "Victory Feast"
+        cost_copper: 50
+        per_person: false
+        trigger: "After successful contract completion"
+        morale_effect: "+1 for 1 week"
+        description: "Ale and roasted meat for the band. Expected after a win."
+
+      - id: "PAY_BON_002"
+        name: "Blood Silver"
+        cost_copper: 10
+        per_person: true
+        trigger: "After a battle with casualties"
+        morale_effect: "+1 for 3 days"
+        description: "Extra coin for surviving a real fight. Men expect it."
+
+      - id: "PAY_BON_003"
+        name: "Winter Bonus"
+        cost_copper: 15
+        per_person: true
+        trigger: "Start of long_dark season"
+        morale_effect: "+1 for 2 weeks"
+        description: "A cold-weather payment. Buys loyalty through the worst months."
+
+      - id: "PAY_BON_004"
+        name: "Loot Share (Fair Split)"
+        cost_copper: 0
+        per_person: false
+        trigger: "After looting a barrow, camp, or settlement"
+        morale_effect: "+2 for 1 week"
+        description: "Equal shares after the captain takes his cut. The old way."
+
+      - id: "PAY_BON_005"
+        name: "Named Man Promotion Feast"
+        cost_copper: 30
+        per_person: false
+        trigger: "When a fighter earns a name"
+        morale_effect: "+1 for 3 days"
+        description: "The new name is spoken aloud over mead. A small ceremony."
+
+      - id: "PAY_BON_006"
+        name: "Rest Day (Paid)"
+        cost_copper: 5
+        per_person: true
+        trigger: "Captain declares a rest day"
+        morale_effect: "+1 for 3 days"
+        description: "No marching, no watch beyond skeleton crew. Men sleep late."
+
+    penalties:
+      - id: "PAY_PEN_001"
+        name: "Late Pay (1 week)"
+        morale_effect: "-1 cumulative per week"
+        desertion_chance_percent: 5
+        description: "Men grumble but hold. Sergeants talk behind the captain's back."
+
+      - id: "PAY_PEN_002"
+        name: "Late Pay (2+ weeks)"
+        morale_effect: "-2 cumulative per week"
+        desertion_chance_percent: 15
+        description: "Open talk of leaving. Veterans start packing quietly."
+
+      - id: "PAY_PEN_003"
+        name: "Short Rations"
+        morale_effect: "-1 per week"
+        desertion_chance_percent: 3
+        description: "Half meals. Hunting parties sent out. Men get mean."
+
+      - id: "PAY_PEN_004"
+        name: "Starvation Rations"
+        morale_effect: "-2 per week, -1 TOU after 2 weeks"
+        desertion_chance_percent: 20
+        description: "Boiled leather and bark soup. Fights break out over scraps."
+
+      - id: "PAY_PEN_005"
+        name: "Loot Withheld"
+        morale_effect: "-3 immediate"
+        desertion_chance_percent: 25
+        description: "Captain keeps it all. The fastest way to lose a band."
+
+      - id: "PAY_PEN_006"
+        name: "Comrade Left Behind"
+        morale_effect: "-2 for 1 week"
+        desertion_chance_percent: 10
+        description: "Wounded man abandoned in the field. Men remember."
+
+  # ============================================================
+  # EQUIPMENT REPLACEMENT
+  # ============================================================
+  equipment_replacement:
+
+    weapons:
+      - item: "hand_axe"
+        replace_cost_copper: 30
+        repair_cost_copper: 8
+        lifespan_contracts: 8
+        description: "Chip and crack after heavy use. Can be re-edged 3 times."
+
+      - item: "broad_axe"
+        replace_cost_copper: 60
+        repair_cost_copper: 15
+        lifespan_contracts: 6
+        description: "Heavier head, harder to repair. Good smiths charge more."
+
+      - item: "iron_sword"
+        replace_cost_copper: 100
+        repair_cost_copper: 25
+        lifespan_contracts: 10
+        description: "Status weapon. A bent sword costs a fortune to straighten."
+
+      - item: "seax"
+        replace_cost_copper: 20
+        repair_cost_copper: 5
+        lifespan_contracts: 12
+        description: "Short, thick, hard to break. Every man carries one."
+
+      - item: "spear"
+        replace_cost_copper: 15
+        repair_cost_copper: 4
+        lifespan_contracts: 4
+        description: "Shaft snaps. Iron head is reusable if you find it after."
+
+      - item: "long_spear"
+        replace_cost_copper: 25
+        repair_cost_copper: 6
+        lifespan_contracts: 3
+        description: "Ash shaft, iron head. Cracks in formation fighting."
+
+      - item: "bow"
+        replace_cost_copper: 40
+        repair_cost_copper: 10
+        lifespan_contracts: 5
+        description: "Yew or elm. Loses draw weight in rain. Useless if cracked."
+
+      - item: "arrows_bundle_12"
+        replace_cost_copper: 8
+        repair_cost_copper: 0
+        lifespan_contracts: 1
+        description: "Recover what you can. Bent shafts are firewood."
+
+      - item: "war_hammer"
+        replace_cost_copper: 45
+        repair_cost_copper: 12
+        lifespan_contracts: 10
+        description: "Solid head on an ash haft. Dents but rarely breaks."
+
+      - item: "throwing_axe_set_3"
+        replace_cost_copper: 25
+        repair_cost_copper: 0
+        lifespan_contracts: 2
+        description: "Thrown and lost. Retrieve after battle if you can be bothered."
+
+    armor:
+      - item: "leather_jerkin"
+        replace_cost_copper: 45
+        repair_cost_copper: 12
+        lifespan_contracts: 6
+        description: "Cuts and punctures accumulate. Stinks after 2 contracts."
+
+      - item: "padded_gambeson"
+        replace_cost_copper: 60
+        repair_cost_copper: 15
+        lifespan_contracts: 5
+        description: "Quilted linen over wool. Soaks up blood and rain alike."
+
+      - item: "chainmail_shirt"
+        replace_cost_copper: 250
+        repair_cost_copper: 40
+        lifespan_contracts: 15
+        description: "Rings pop and need replacing. A skilled smith charges 40 copper."
+
+      - item: "iron_helm"
+        replace_cost_copper: 80
+        repair_cost_copper: 20
+        lifespan_contracts: 12
+        description: "Dented helms restrict vision. A good helm is worth more than the man."
+
+      - item: "leather_cap"
+        replace_cost_copper: 15
+        repair_cost_copper: 4
+        lifespan_contracts: 8
+        description: "Better than bare skull. Not by much."
+
+      - item: "arm_wraps_leather"
+        replace_cost_copper: 12
+        repair_cost_copper: 3
+        lifespan_contracts: 4
+        description: "Forearm protection. Slashed to ribbons in close fighting."
+
+      - item: "lamellar_vest"
+        replace_cost_copper: 180
+        repair_cost_copper: 35
+        lifespan_contracts: 10
+        description: "Overlapping plates laced with cord. Cord rots. Plates survive."
+
+      - item: "fur_cloak_winter"
+        replace_cost_copper: 35
+        repair_cost_copper: 8
+        lifespan_contracts: 4
+        description: "Wolf or bear fur. Not armor, but you die without it in long_dark."
+
+    shields:
+      - item: "wooden_shield"
+        replace_cost_copper: 25
+        repair_cost_copper: 8
+        lifespan_contracts: 3
+        description: "Disposable by design. Split shields are firewood."
+
+      - item: "iron_rimmed_shield"
+        replace_cost_copper: 50
+        repair_cost_copper: 15
+        lifespan_contracts: 5
+        description: "Lasts longer but heavier. Iron rim stops the board from splitting."
+
+      - item: "buckler"
+        replace_cost_copper: 15
+        repair_cost_copper: 5
+        lifespan_contracts: 6
+        description: "Small. Fast. No good in a shield wall."
+
+    misc_gear:
+      - item: "wool_cloak"
+        replace_cost_copper: 12
+        repair_cost_copper: 3
+        lifespan_contracts: 6
+        description: "Sheds rain for a season. Then it just holds the wet."
+
+      - item: "boots_leather"
+        replace_cost_copper: 18
+        repair_cost_copper: 5
+        lifespan_contracts: 4
+        description: "Soles wear through on rock. Men with bad boots don't march."
+
+      - item: "belt_and_scabbard"
+        replace_cost_copper: 10
+        repair_cost_copper: 3
+        lifespan_contracts: 10
+        description: "Holds your weapon. Buckle breaks and your sword is in the mud."
+
+      - item: "whetstone"
+        replace_cost_copper: 3
+        repair_cost_copper: 0
+        lifespan_contracts: 20
+        description: "River stone works in a pinch. A good one is worth keeping."
+
+      - item: "rope_10m"
+        replace_cost_copper: 8
+        repair_cost_copper: 0
+        lifespan_contracts: 6
+        description: "Hemp rope. Rots in the wet. Check before you trust your weight."
+
+  # ============================================================
+  # MEDICAL COSTS
+  # ============================================================
+  medical_costs:
+
+    wound_treatment:
+      - severity: "light"
+        healer_cost_copper: 10
+        self_treat_possible: true
+        recovery_days: 2
+        combat_penalty: "none"
+        description: "Cuts, bruises, minor burns. Bandage and rest."
+
+      - severity: "moderate"
+        healer_cost_copper: 25
+        self_treat_possible: true
+        recovery_days: 7
+        combat_penalty: "-1 to relevant stat"
+        description: "Deep cuts, cracked ribs, bad sprains. Stitches needed."
+
+      - severity: "serious"
+        healer_cost_copper: 50
+        self_treat_possible: false
+        recovery_days: 21
+        combat_penalty: "-2 to relevant stat until healed"
+        description: "Broken bone, punctured muscle, head wound. Needs a real healer."
+
+      - severity: "critical"
+        healer_cost_copper: 100
+        self_treat_possible: false
+        recovery_days: 42
+        combat_penalty: "Cannot fight"
+        description: "Gut wound, shattered limb, deep head trauma. May die anyway."
+
+      - severity: "maiming"
+        healer_cost_copper: 150
+        self_treat_possible: false
+        recovery_days: 60
+        combat_penalty: "Permanent stat reduction"
+        description: "Lost fingers, blinded eye, crushed hand. The healer saves the life, not the part."
+
+    chronic_conditions:
+      - condition: "old_wound_ache"
+        ongoing_cost_copper_weekly: 3
+        treatment: "Herbal poultice"
+        description: "Joint pain from old breaks. Common in veterans over 30."
+
+      - condition: "battle_shakes"
+        ongoing_cost_copper_weekly: 5
+        treatment: "Mead and valerian root"
+        description: "Hands tremble before a fight. Worse after Wyrd exposure."
+
+      - condition: "lung_rot"
+        ongoing_cost_copper_weekly: 8
+        treatment: "Honey and thyme steam"
+        description: "Wet camp cough that never clears. Kills in long_dark."
+
+      - condition: "frostbite_scarring"
+        ongoing_cost_copper_weekly: 2
+        treatment: "Rendered fat salve"
+        description: "Fingers stiffen in cold. Grip weakens. Needs daily treatment."
+
+      - condition: "gut_worm"
+        ongoing_cost_copper_weekly: 4
+        treatment: "Wormwood tincture"
+        description: "Stomach cramps, weakness. Caught from bad water or raw meat."
+
+      - condition: "infected_scar"
+        ongoing_cost_copper_weekly: 6
+        treatment: "Heated blade cauterization, poultice"
+        description: "Old wound that weeps and festers. Needs regular cleaning or it spreads."
+
+  # ============================================================
+  # CAMP AND LOGISTICS
+  # ============================================================
+  camp_and_logistics:
+
+    camp_supplies:
+      - item: "tent_large_8_man"
+        cost_copper: 60
+        lasts_weeks: 16
+        description: "Waxed hide over poles. Leaks after the first month."
+
+      - item: "tent_repair_kit"
+        cost_copper: 15
+        lasts_weeks: 8
+        description: "Waxed thread, leather patches, bone needles."
+
+      - item: "cookpot_iron"
+        cost_copper: 20
+        lasts_weeks: 52
+        description: "Heavy but essential. A band without a pot eats raw."
+
+      - item: "firewood_bundle"
+        cost_copper: 2
+        lasts_weeks: 1
+        description: "Bought near settlements. Free if you have time and an axe."
+
+      - item: "salt_pouch"
+        cost_copper: 5
+        lasts_weeks: 2
+        description: "Preserves meat. Worth its weight in the field."
+
+      - item: "lamp_oil_flask"
+        cost_copper: 4
+        lasts_weeks: 2
+        description: "For barrow work and night watch. Smells foul. Burns clean enough."
+
+      - item: "medical_supplies_basic"
+        cost_copper: 12
+        lasts_weeks: 4
+        description: "Clean linen, needle and gut thread, dried moss. Enough for light wounds."
+
+      - item: "water_skins_set_4"
+        cost_copper: 8
+        lasts_weeks: 12
+        description: "Goatskin. Seal the seams with fat or you drink your own sweat."
+
+      - item: "entrenching_tools"
+        cost_copper: 10
+        lasts_weeks: 20
+        description: "Iron-headed spade and pick. For latrines, earthworks, and graves."
+
+      - item: "horse_tack_repair"
+        cost_copper: 6
+        lasts_weeks: 6
+        description: "Leather straps, rivets, spare buckles. Needed if you have horses."
+
+    food:
+      - item: "standard_rations_per_person"
+        cost_copper_weekly: 10
+        description: "Dried fish, hard bread, root vegetables. Keeps a man moving."
+
+      - item: "poor_rations_per_person"
+        cost_copper_weekly: 6
+        description: "Gruel and whatever the hunters bring in. Morale drops."
+
+      - item: "good_rations_per_person"
+        cost_copper_weekly: 15
+        description: "Fresh meat, cheese, ale. Men fight better when fed well."
+
+    transport:
+      - type: "pack_horse"
+        purchase_copper: 150
+        weekly_upkeep_copper: 8
+        carrying_capacity_kg: 80
+        description: "Hardy mountain breed. Not trained for war."
+
+      - type: "war_horse"
+        purchase_copper: 400
+        weekly_upkeep_copper: 15
+        carrying_capacity_kg: 40
+        description: "Trained for battle. Expensive to feed. Dies to a spear like anything else."
+
+      - type: "mule"
+        purchase_copper: 80
+        weekly_upkeep_copper: 5
+        carrying_capacity_kg: 60
+        description: "Stubborn but tough. Survives on scrub. Won't hurry."
+
+      - type: "handcart"
+        purchase_copper: 25
+        weekly_upkeep_copper: 1
+        carrying_capacity_kg: 120
+        description: "Two men pull it. Useless on mountain trails."
+
+      - type: "small_boat_river"
+        purchase_copper: 120
+        weekly_upkeep_copper: 3
+        carrying_capacity_kg: 300
+        description: "Flat-bottomed skiff. Works on the fjord and calm rivers. Leaks."
+
+  # ============================================================
+  # TOLLS AND FEES
+  # ============================================================
+  tolls_and_fees:
+    - id: "TOLL_001"
+      name: "Grimholt Mountain Pass"
+      cost_copper: 10
+      per: "fighter"
+      location: "Grimholt approach"
+      collector: "Ordovast's garrison"
+      description: "Ordovast's men collect at the pass gate. No exceptions."
+
+    - id: "TOLL_002"
+      name: "Beinvegr Ridge Toll"
+      cost_copper: 5
+      per: "fighter"
+      location: "Bone Road, ridge checkpoint"
+      collector: "Ashen Reach scouts"
+      description: "The Pale Widow's scouts demand coin at the ridge. Armed refusal is possible but remembered."
+
+    - id: "TOLL_003"
+      name: "Skaldhaven Harbour Fee"
+      cost_copper: 15
+      per: "boat"
+      location: "Skaldhaven wharf"
+      collector: "Harbour master"
+      description: "Per vessel. Includes one night at the wharf. Overstay and they cut your mooring lines."
+
+    - id: "TOLL_004"
+      name: "Thornwall Gate Tax"
+      cost_copper: 8
+      per: "fighter"
+      location: "Thornwall main gate"
+      collector: "Gate wardens"
+      description: "Flat rate per armed man. Unarmed pass free. Weapons must be peace-tied inside walls."
+
+    - id: "TOLL_005"
+      name: "Vargheim Forest Road"
+      cost_copper: 3
+      per: "fighter"
+      location: "Vargheim approach"
+      collector: "Wolf-runners"
+      description: "Jarl Ulf's outriders. They call it a toll. It is a warning."
+
+    - id: "TOLL_006"
+      name: "Feldwick Occupation Levy"
+      cost_copper: 20
+      per: "band"
+      location: "Feldwick"
+      collector: "Three Wolves"
+      description: "The occupiers take a flat cut from anyone passing through. Pay or fight."
+
+    - id: "TOLL_007"
+      name: "Raven's Perch Approach"
+      cost_copper: 6
+      per: "fighter"
+      location: "Eastern valley approach"
+      collector: "Thane Egil's men"
+      description: "Steep path, narrow chokepoint. They watch you for a mile before they ask for coin."
+
+    - id: "TOLL_008"
+      name: "Fjörðskuggaleið Cliff Crossing"
+      cost_copper: 4
+      per: "fighter"
+      location: "Fjord-Shadow Path, midpoint"
+      collector: "Skaldhaven cliff-watchers"
+      description: "Informal toll. The watchers control the rope-holds on the steepest section."
+
+  # ============================================================
+  # BRIBES
+  # ============================================================
+  bribes:
+    - id: "BRIBE_001"
+      name: "Gate Guard (Look Away)"
+      typical_cost_copper: "20-40"
+      success_chance_percent: 70
+      failure_consequence: "Guard alerts garrison"
+      description: "Standard gate bribe. More in winter when guards are irritable."
+
+    - id: "BRIBE_002"
+      name: "Healer's Silence"
+      typical_cost_copper: "15-25"
+      success_chance_percent: 85
+      failure_consequence: "Healer gossips to settlement leader"
+      description: "Pay the healer not to mention who came in bleeding. Common practice."
+
+    - id: "BRIBE_003"
+      name: "Scout Misdirection"
+      typical_cost_copper: "30-60"
+      success_chance_percent: 55
+      failure_consequence: "Scout reports the bribe attempt to their commander"
+      description: "Get a patrol to report seeing nothing. Unreliable. Double for named scouts."
+
+    - id: "BRIBE_004"
+      name: "Merchant Overcount"
+      typical_cost_copper: "10-20"
+      success_chance_percent: 80
+      failure_consequence: "Merchant spreads word you are thieves"
+      description: "Slip coin to the merchant to look the other way on a short count."
+
+    - id: "BRIBE_005"
+      name: "Thrall Information"
+      typical_cost_copper: "5-10"
+      success_chance_percent: 90
+      failure_consequence: "Thrall tells their master"
+      description: "Thralls see everything and are ignored. Cheap and usually reliable."
+
+    - id: "BRIBE_006"
+      name: "Jarl's Steward (Favorable Contract Terms)"
+      typical_cost_copper: "50-100"
+      success_chance_percent: 60
+      failure_consequence: "Steward takes the money and reports you anyway"
+      description: "The real power behind contract terms. Expensive but moves the needle."
+
+    - id: "BRIBE_007"
+      name: "Dock Worker (Smuggle Cargo)"
+      typical_cost_copper: "15-30"
+      success_chance_percent: 75
+      failure_consequence: "Cargo seized, dock worker imprisoned"
+      description: "Getting goods past the harbour master at Skaldhaven. Night work."
+
+    - id: "BRIBE_008"
+      name: "Rival Band's Green Fighter"
+      typical_cost_copper: "25-50"
+      success_chance_percent: 50
+      failure_consequence: "Target reports the approach; rival band takes offense"
+      description: "Turn a first-season fighter. Coin for desertion and information."
+
+  # ============================================================
+  # FUNERAL AND HONOR
+  # ============================================================
+  funeral_and_honor:
+    - id: "FUN_001"
+      name: "Field Burial"
+      cost_copper: 0
+      morale_effect: "-1 for 1 week"
+      description: "Dig a hole, say a word. The minimum. Men notice."
+
+    - id: "FUN_002"
+      name: "Proper Cairn"
+      cost_copper: 5
+      morale_effect: "neutral"
+      description: "Stone cairn with weapon laid atop. Expected for veterans."
+
+    - id: "FUN_003"
+      name: "Pyre (Warrior's Send-off)"
+      cost_copper: 15
+      morale_effect: "+1 for 3 days"
+      description: "Wood costs coin. The smoke tells the gods and the enemy alike."
+
+    - id: "FUN_004"
+      name: "Full Rites (Gothi Blessing)"
+      cost_copper: 40
+      morale_effect: "+2 for 1 week"
+      requires: "Settlement with temple"
+      description: "A gothi speaks the words. Mead poured. Weapon broken on the pyre. Proper."
+
+    - id: "FUN_005"
+      name: "Named Man's Reckoning"
+      cost_copper: 60
+      morale_effect: "+2 for 2 weeks"
+      requires: "Named Man or higher"
+      description: "His deeds are spoken aloud. His weapon goes with him. A saga-verse is composed."
+
+    - id: "FUN_006"
+      name: "Body Left Behind"
+      cost_copper: 0
+      morale_effect: "-2 for 2 weeks"
+      description: "No burial, no words. Ravens take what's left. The band remembers this."
+
+  # ============================================================
+  # SEASONAL COSTS
+  # ============================================================
+  seasonal_costs:
+    - season: "thaw"
+      camp_modifier: 1.0
+      food_modifier: 1.1
+      equipment_modifier: 1.0
+      medical_modifier: 1.0
+      travel_modifier: 1.2
+      notes: "Trails muddy. Food stores running low from winter. River crossings dangerous with melt-water."
+
+    - season: "long_sun"
+      camp_modifier: 0.8
+      food_modifier: 0.9
+      equipment_modifier: 1.0
+      medical_modifier: 0.9
+      travel_modifier: 0.8
+      notes: "Best season for campaigning. Forage is plentiful. Roads dry. Long days mean long marches."
+
+    - season: "harvest"
+      camp_modifier: 1.0
+      food_modifier: 0.8
+      equipment_modifier: 1.1
+      medical_modifier: 1.0
+      travel_modifier: 1.0
+      notes: "Food is cheap. Settlements are busy and guarded. Smiths raise prices for pre-winter repairs."
+
+    - season: "long_dark"
+      camp_modifier: 1.5
+      food_modifier: 1.5
+      equipment_modifier: 1.2
+      medical_modifier: 1.3
+      travel_modifier: 1.5
+      notes: "Everything costs more. Firewood is currency. Frostbite is constant. Bands that winter without a hall lose men."

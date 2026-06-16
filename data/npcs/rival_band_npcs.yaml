@@ -1,0 +1,1716 @@
+npcs:
+  - id: "NPC_BND_001"
+    name: "Dalla Fenriksdottir"
+    call_name: "Moss-Hand"
+    role: "healer"
+    band: "Voss's Black Axes"
+    description: "Dalla is narrow-shouldered and rope-hard, with smoke-dark hair braided tight against her skull. Her fingertips are permanently stained green from crushed leaves, and a scar at her jaw shines pale when the fire catches it. She smells of pine pitch, boiled linen, and old blood scrubbed from wool."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 5
+      WIT: 8
+      WIL: 6
+      WYR: 2
+    skills:
+      - name: "Heal"
+        rank: 3
+      - name: "Forage"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+      - name: "Spirit-lore"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Bone-hilt seax"
+          type: "blade"
+          base_damage: 4
+        - name: "Ash walking staff"
+          type: "club"
+          base_damage: 2
+      armor:
+        torso: "Quilted wool gambeson under patched leather jerkin"
+        head: "None"
+    personality: "Dalla speaks little and never wastes words on men who want comfort instead of truth. She keeps count of herbs, bandages, and lives in the same tone she uses for weather. Her mercy is practical, not soft."
+    trigger: "If Voss orders wounded men abandoned while there is still a chance to move them, she turns on command."
+    agenda: "Build a hidden herb cache line along the Rimevegr so the Black Axes can survive winter contracts."
+    loyalty: 4
+    secret: "She keeps a wrapped packet of dried monkshood and plans to use it on whichever captain sells Black Axes wounded into thrall chains."
+    relationships:
+      - target: "Gest Ledger"
+        type: "ally"
+        note: "She trusts him to keep medical stores off the captain's sale list."
+      - target: "Svala White-Hand"
+        type: "ally"
+        note: "Heard of Red Tide's captive healer and wants her extracted alive."
+    image_prompt: "Lean Norse field healer with herb-stained hands, jaw scar, layered wool and leather, muted pine-green and ash-gray palette, cold wind, dark fantasy realism."
+
+  - id: "NPC_BND_002"
+    name: "Rurik Alvisson"
+    call_name: "Harefoot"
+    role: "scout"
+    band: "Voss's Black Axes"
+    description: "Rurik is all tendon and quick joints, with a fox-brown beard and a split left ear. His boots are always freshly stitched and caked with peat from places others never notice. He carries himself like a man already halfway to the treeline."
+    stats:
+      MIG: 5
+      NIM: 8
+      TOU: 5
+      WIT: 6
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Track"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+      - name: "Navigate"
+        rank: 2
+      - name: "Bows"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Short yew bow"
+          type: "bow"
+          base_damage: 5
+        - name: "Narrow seax"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Dark wool tunic over light leather vest"
+        head: "Fur-lined hood"
+    horse:
+      has_horse: true
+      name: "Bog-Thread"
+      breed: moor_runner
+      sex: gelding
+      age: 8
+      age_class: prime
+      role: scout_mount
+      condition: steady
+      mood: watchful
+      rider_stability: 72
+      fatigue: 8
+      bond_rider: Rurik Harefoot
+      speed: 5
+      wind: 4
+      foot: 3
+      nerve: 2
+      load: 2
+      sense: 3
+      traits:
+        - fast_break
+        - long_stride
+        - hard_to_catch
+      tricks:
+        - come_to_whistle
+        - sidepass
+      bloodline_tags:
+        - deep_wind
+        - fast_break
+      active_conditions: []
+      tack:
+        saddle: scout_saddle
+        bridle: rawhide_hackamore
+        shoes: light_shod
+      ownership: band
+      notes:
+        - Built for long moor sweeps and messenger work
+        - Runs hotter in shield-noise than Rurik admits
+    personality: "He jokes fast and vanishes faster, but his eyes never stop measuring distance. Rurik likes people in small doses and forests in every dose. He hates camp songs because they drown useful sounds."
+    trigger: "If ordered to burn a woods camp with children still inside, he deserts the same night."
+    agenda: "Map a hidden goat path over the ridge to outflank the Three Wolves."
+    loyalty: 3
+    secret: "He has been trading route scraps to a ferryman in exchange for letters from his younger sister."
+    relationships:
+      - target: "Kell Hook"
+        type: "ally"
+        note: "Runs knife drills with Kell when scouts return."
+      - target: "Ivor Fen-Eye"
+        type: "rival"
+        note: "Each has tracked the other by boot pattern twice."
+    image_prompt: "Wiry Norse scout with split ear, fox-brown beard, peat-stained boots, short bow and hooded silhouette, misty conifer backdrop, muted browns and cold greens."
+
+  - id: "NPC_BND_003"
+    name: "Einar Broksson"
+    call_name: "Green-Split"
+    role: "fighter"
+    band: "Voss's Black Axes"
+    description: "Einar is broad through the chest but still carries a boy's face under fresh stubble. A crooked collarbone lifts his right shoulder where an old training break healed wrong. His shield is new, his knuckles are not."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 6
+      WIT: 4
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Axes"
+        rank: 2
+      - name: "Shields"
+        rank: 2
+      - name: "Brawl"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Bearded hand axe"
+          type: "axe"
+          base_damage: 5
+        - name: "Round shield, limewood"
+          type: "shield"
+          base_damage: 2
+      armor:
+        torso: "Thick wool and boiled leather shoulder plates"
+        head: "Iron cap"
+    personality: "He pushes too hard to be seen as grown and fearless. Praise makes him reckless; shame makes him stubborn. Einar watches Petra like a pupil watches a patient teacher."
+    trigger: "If Petra Shepherd is executed or sold, he attacks whoever gave the order regardless of odds."
+    agenda: "Earn first pick of captured steel before winter by proving himself in shield-line work."
+    loyalty: 4
+    secret: "He forged a false age mark in the band ledger two winters ago; he joined before he was of fighting years."
+    relationships:
+      - target: "Petra Shepherd"
+        type: "ally"
+        note: "She patched his shoulder and taught him to hold line instead of chase kills."
+      - target: "Leif Torch-Son"
+        type: "rival"
+        note: "Competes with Leif for notice from Voss."
+    image_prompt: "Young broad-shouldered Norse axeman with crooked right shoulder, new round shield, iron cap, damp wool and leather, grim campfire lighting, dark realistic style."
+
+  - id: "NPC_BND_004"
+    name: "Signe Arnsdottir"
+    call_name: "Pot-Knife"
+    role: "specialist"
+    band: "Voss's Black Axes"
+    description: "Signe has burn scars across both forearms and a flattened nose from an old brawl. She wears a soot-black apron over armor and keeps a butcher's blade sharper than most swords. Her laugh is short and usually followed by someone obeying."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 6
+      WIT: 6
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Blades"
+        rank: 2
+      - name: "Forage"
+        rank: 2
+      - name: "Shelter"
+        rank: 2
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Long butcher seax"
+          type: "blade"
+          base_damage: 5
+        - name: "Iron spit-staff"
+          type: "spear"
+          base_damage: 4
+      armor:
+        torso: "Layered wool, leather apron, and stitched hide sleeves"
+        head: "None"
+    personality: "Signe runs cookfires like a quartermaster runs coin. She feeds grudges last and scouts first, then claims it is chance. She is patient with hunger and merciless with waste."
+    trigger: "If officers sell food stock to buy drink, she poisons their ale with purge herbs and leaves."
+    agenda: "Secure enough salt and dried fish to keep the Black Axes independent through first thaw."
+    loyalty: 3
+    secret: "She has hidden two sealed grain sacks for a breakaway march if Voss loses command."
+    relationships:
+      - target: "Gest Ledger"
+        type: "ally"
+        note: "They run quiet audits on food theft."
+      - target: "Skarn Chain-Keeper"
+        type: "grudge"
+        note: "Skarn once stole her stores when both worked the same winter port."
+    image_prompt: "Scarred Norse camp cook-warrior with soot-dark apron over leather, butcher seax at hip, steam and embers around her, muted charcoal and rust tones."
+
+  - id: "NPC_BND_005"
+    name: "Leif Jorundsson"
+    call_name: "Torch-Son"
+    role: "fighter"
+    band: "Voss's Black Axes"
+    description: "Leif is narrow-faced with pale lashes singed short from a pitch fire mishap. He keeps tar under his nails and carries coils of wick on his belt beside a spear. Smoke clings to him even after river washing."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+      - name: "Shelter"
+        rank: 1
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Ash spear with fire-hardened spare shaft"
+          type: "spear"
+          base_damage: 5
+        - name: "Pitch torch bundle"
+          type: "special"
+          base_damage: 2
+      armor:
+        torso: "Wool gambeson with leather shoulder cape"
+        head: "Boiled leather skullcap"
+    personality: "Leif wants to be remembered and mistakes noise for legend. He listens hardest when veterans speak about defeats, not victories. He fears dying nameless more than dying young."
+    trigger: "If Voss orders a retreat that leaves band banners behind, Leif disobeys and goes back for them."
+    agenda: "Win a contract raid where his torch crews decide the outcome."
+    loyalty: 3
+    secret: "He keeps letters from a priest of the south who is also his father, a truth that would ruin his standing with half the band."
+    relationships:
+      - target: "Einar Green-Split"
+        type: "rival"
+        note: "Both race for first blood and first notice."
+      - target: "Thorne Ash-Born"
+        type: "fear"
+        note: "Thorne warned him once and burned his sleeve to prove a point."
+    image_prompt: "Young Norse spearman with singed lashes, tar-stained hands, torch wicks on belt, smoke-hazed cloak, cold blue night and ember orange highlights."
+
+  - id: "NPC_BND_006"
+    name: "Ivor Njalsson"
+    call_name: "Fen-Eye"
+    role: "scout"
+    band: "The Three Wolves"
+    description: "Ivor is long-limbed and hollow-cheeked, with one pupil blown wide from marsh fever years ago. He moves quietly despite wolf-tooth charms jangling at his throat. Mud never seems to slow him."
+    stats:
+      MIG: 5
+      NIM: 8
+      TOU: 5
+      WIT: 6
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Track"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+      - name: "Bows"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Elm hunting bow"
+          type: "bow"
+          base_damage: 5
+        - name: "Thin longknife"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Dark gambeson under oil-cloth cloak"
+        head: "Fur cap"
+    dogs:
+      - name: "Mire-Nose"
+        breed: bog_tracker
+        sex: dog
+        age: 5
+        age_class: prime
+        role: tracker
+        mood: watchful
+        condition: worked
+        bond_handler: Ivor Fen-Eye
+        nose: 5
+        speed: 3
+        grit: 3
+        bite: 2
+        sense: 5
+        voice: 3
+        traits:
+          - deep_nose
+          - careful_step
+          - quiet_mouth
+        tricks:
+          - trail_blood
+          - silent_circle
+        bloodline_tags:
+          - deep_nose
+          - marsh_footed
+        active_conditions: []
+        ownership: band
+        notes:
+          - Used to read spoor on soaked ground after rain
+          - Ivor trusts it more than most outriders
+    personality: "Ivor is precise, superstitious, and patient enough to watch a trail for half a day without blinking. He treats Hadric's ambition like weather: dangerous, predictable, and unavoidable. He smiles only when he has an advantage."
+    trigger: "If Hadric orders him to kill a surrendering child witness, Ivor turns informant to a rival band."
+    agenda: "Replace Varis as the eyes Hadric trusts most."
+    loyalty: 2
+    secret: "He keeps a hidden map of Three Wolves cache pits to trade for safe passage if the band fractures."
+    relationships:
+      - target: "Hadric Red Jaw"
+        type: "fear"
+        note: "Knows exactly how quickly Hadric kills failed scouts."
+      - target: "Rurik Harefoot"
+        type: "rival"
+        note: "Obsessed with proving he is the better tracker."
+    image_prompt: "Gaunt Norse marsh scout with one dilated eye, wolf-tooth charms, dark cloak, longbow, wet fen reeds and fog, desaturated grim palette."
+
+  - id: "NPC_BND_007"
+    name: "Jari Osmundsson"
+    call_name: "Wall-Ox"
+    role: "fighter"
+    band: "The Three Wolves"
+    description: "Jari is a massive slab of a man with cauliflower ears and a neck like a post. Old axe scars stripe his shield arm from wrist to shoulder. He plants his feet and moves only when bodies pile at his knees."
+    stats:
+      MIG: 8
+      NIM: 4
+      TOU: 7
+      WIT: 4
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Shields"
+        rank: 3
+      - name: "Axes"
+        rank: 2
+      - name: "Brawl"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Heavy war axe"
+          type: "axe"
+          base_damage: 7
+        - name: "Bossed round shield"
+          type: "shield"
+          base_damage: 2
+      armor:
+        torso: "Mail shirt over padded wool"
+        head: "Iron nasal helm"
+    personality: "Jari is slow to speak and impossible to shove once settled. He respects strength more than rank and remembers every man who broke formation. He does not forgive panic."
+    trigger: "If Hadric retreats first while ordering others to hold, Jari challenges him publicly."
+    agenda: "Keep his shield knot alive through one full campaign season without replacement losses."
+    loyalty: 3
+    secret: "He was paid once to hold a gate closed against farmers, and his own cousin died outside it."
+    relationships:
+      - target: "Crane"
+        type: "ally"
+        note: "Crane's berserker rushes work because Jari's line gives him a hinge point."
+      - target: "Odr Bent-Knee"
+        type: "grudge"
+        note: "Believes Odr's hesitation got two line men killed."
+    image_prompt: "Huge Norse shield-wall anchor in dented mail and nasal helm, scarred arm, heavy axe and broad shield, snow grit and blood-dark mud, harsh low light."
+
+  - id: "NPC_BND_008"
+    name: "Skarn Haldorsson"
+    call_name: "Chain-Keeper"
+    role: "specialist"
+    band: "The Three Wolves"
+    description: "Skarn is lean and rat-faced, with iron keys hanging from a ring at his belt and chain marks on both wrists. His front teeth are filed flat from chewing rawhide strips. He smells of tar, sweat, and old rope."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 6
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Intimidate"
+        rank: 3
+      - name: "Bargain"
+        rank: 2
+      - name: "Deceive"
+        rank: 2
+      - name: "Brawl"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Chain-weight cudgel"
+          type: "club"
+          base_damage: 4
+        - name: "Hooked knife"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Leather coat reinforced with stitched rings"
+        head: "None"
+    personality: "Skarn treats people like inventory, sorted by resale value and risk. He keeps impeccable records in knots and cuts, never on parchment. He avoids fair fights and wins most unfair ones."
+    trigger: "If Hadric tries to make him disposable by assigning him to front-rank spear work, Skarn sabotages camp stores and flees."
+    agenda: "Build a private debt web among thralls and camp followers that survives any captain."
+    loyalty: 2
+    secret: "He has been skimming one in ten silver weights from loot settlement for months."
+    relationships:
+      - target: "Askel Rope"
+        type: "ally"
+        note: "Runs slave-market routes with Red Tide contacts."
+      - target: "Signe Pot-Knife"
+        type: "grudge"
+        note: "She once broke his hand for stealing salt fish."
+    image_prompt: "Lean Norse slaver-handler with key ring and chain scars, leather coat, rope and hook knife, grim dockside camp, muted black-brown-blue tones."
+
+  - id: "NPC_BND_009"
+    name: "Odr Ketilsson"
+    call_name: "Bent-Knee"
+    role: "fighter"
+    band: "The Three Wolves"
+    description: "Odr limps on a badly healed knee that clicks in cold weather. His beard is neatly trimmed despite camp filth, and his hands are those of a former smith: burnt, thick, deliberate. He carries his shield as if it were a burden he still has not accepted."
+    stats:
+      MIG: 6
+      NIM: 4
+      TOU: 6
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 2
+      - name: "Shields"
+        rank: 2
+      - name: "Smithing"
+        rank: 1
+      - name: "Survival"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Leaf-blade spear"
+          type: "spear"
+          base_damage: 5
+        - name: "Notched seax"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Padded wool coat with leather patching"
+        head: "None"
+    personality: "Odr is cautious to the point of being called cowardly by men who never buried family. He follows orders because his wife and son are held in Hadric's orbit. Every fight looks to him like a debt collector."
+    trigger: "If he confirms his family has been moved or killed, he turns on Hadric regardless of consequence."
+    agenda: "Survive long enough to buy his kin free with captured iron and quiet favors."
+    loyalty: 1
+    secret: "He has hidden a sharpened file under Hadric's wagon axle and waits for one night of heavy rain to stage an accident."
+    relationships:
+      - target: "Hadric Red Jaw"
+        type: "fear"
+        note: "Bound by blackmail and hostage leverage."
+      - target: "Jari Wall-Ox"
+        type: "grudge"
+        note: "Jari publicly called him craven after the ford ambush."
+    image_prompt: "Weathered Norse fighter with limp and worn spear, patched wool armor, wary eyes, damp roadside camp with chained wagons, bleak gray-brown palette."
+
+  - id: "NPC_BND_010"
+    name: "Ragna Solbergsdottir"
+    call_name: "Crow-Bride"
+    role: "champion"
+    band: "The Three Wolves"
+    description: "Ragna's hair is shaved at the sides and braided down her back with bronze wire. Her left cheek bears three claw-like cuts she never hides. She fights in stripped sleeves even in frost, skin mapped with old blade lines."
+    stats:
+      MIG: 7
+      NIM: 6
+      TOU: 6
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Blades"
+        rank: 3
+      - name: "Axes"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Pattern-welded short sword"
+          type: "blade"
+          base_damage: 6
+        - name: "Hooked fighting axe"
+          type: "axe"
+          base_damage: 5
+      armor:
+        torso: "Mail vest over red-dyed gambeson"
+        head: "None"
+    horse:
+      has_horse: true
+      name: "Bride-Step"
+      breed: southblood_warhorse
+      sex: mare
+      age: 10
+      age_class: prime
+      role: champion_mount
+      condition: steady
+      mood: eager
+      rider_stability: 76
+      fatigue: 10
+      bond_rider: Ragna Crow-Bride
+      speed: 4
+      wind: 3
+      foot: 3
+      nerve: 3
+      load: 4
+      sense: 2
+      traits:
+        - charge_mass
+        - tall_frame
+        - strong_back
+      tricks:
+        - stand_fire
+        - mount_charge
+      bloodline_tags:
+        - charge_mass
+        - strong_back
+      active_conditions: []
+      tack:
+        saddle: high_war_saddle
+        bridle: curb_bridle
+        shoes: war_shod
+      ownership: personal
+      notes:
+        - Bought dear from a southern broker and kept in hard condition
+        - Impresses Wolves recruits almost as much as Ragna herself
+    personality: "Ragna is theatrical in violence and disciplined in preparation. She openly admires boldness and privately despises sloppy command. Men fear her temper, but they fear her patience more."
+    trigger: "If Hadric sells prisoners she gave quarter to, she challenges his authority in front of the Wolves."
+    agenda: "Take command of the Three Wolves before Hadric gets them all outlawed."
+    loyalty: 2
+    secret: "She has already secured three oath-helpers for a formal challenge at the next Thing."
+    relationships:
+      - target: "Varis"
+        type: "rival"
+        note: "Both are building support among the same veterans."
+      - target: "Merric The Lamp"
+        type: "fear"
+        note: "Knows he would execute her first if Hadric gives the word."
+    image_prompt: "Fierce Norse woman champion with side-shaved braid and cheek scars, sword and hooked axe, red gambeson under mail, ravens circling over a bleak battlefield."
+
+  - id: "NPC_BND_011"
+    name: "Yrsa Suradottir"
+    call_name: "Bone-Daughter"
+    role: "fighter"
+    band: "The Bone Pack"
+    description: "Yrsa has ash-blond hair cut blunt at the jaw and weather-cracked lips from mountain wind. White bone beads are braided into her belt and rattle when she runs. Her nose was broken twice and healed true only once."
+    stats:
+      MIG: 6
+      NIM: 6
+      TOU: 6
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 2
+      - name: "Shields"
+        rank: 2
+      - name: "Track"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Boar-spear"
+          type: "spear"
+          base_damage: 5
+        - name: "Rib-boss round shield"
+          type: "shield"
+          base_damage: 2
+      armor:
+        torso: "Hide jerkin over thick wool"
+        head: "Bone-reinforced leather cap"
+    personality: "Yrsa carries clan law in her posture and hates bargaining away old oaths. She is stern with outsiders and gentler with youths than she admits. Her anger is cold and organized."
+    trigger: "If Sura accepts tyrant silver to fight kin-clan blood, Yrsa breaks from command."
+    agenda: "Keep the Bone Pack kin-bound and independent of city contracts."
+    loyalty: 4
+    secret: "She and Fang share a blood-oath marriage the elder has not sanctioned."
+    relationships:
+      - target: "Pack-Elder Sura"
+        type: "kin"
+        note: "Niece and likely successor if she can hold the clan."
+      - target: "Toke Milk-Tooth"
+        type: "ally"
+        note: "Trains him nightly so he survives first winter."
+    image_prompt: "Hard-eyed Norse kin-clan spearwoman with bone beads and hide armor, wind-burned face, mountain snow and dark pines, muted ivory, gray, and iron tones."
+
+  - id: "NPC_BND_012"
+    name: "Toke Rannulfsson"
+    call_name: "Milk-Tooth"
+    role: "fighter"
+    band: "The Bone Pack"
+    description: "Toke is barely bearded, with a chipped front tooth that gave him his name. His shield rim is wrapped in fresh rawhide and still smells of lime. He stands too straight when elders speak and too close when danger starts."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 4
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Axes"
+        rank: 1
+      - name: "Shields"
+        rank: 1
+      - name: "Track"
+        rank: 1
+      - name: "Survival"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Small bearded axe"
+          type: "axe"
+          base_damage: 5
+        - name: "Training shield"
+          type: "shield"
+          base_damage: 1
+      armor:
+        torso: "Thick homespun wool and boiled hide vest"
+        head: "None"
+    personality: "He is eager, loyal, and easily shamed into bad decisions. Toke mimics veteran habits without understanding why they matter. He wants glory but still writes to his mother when caravans pass."
+    trigger: "If ordered to desecrate a clan burial mound for loot, he refuses and flees."
+    agenda: "Take his first oath-ring as a proven line fighter before midsummer."
+    loyalty: 3
+    secret: "He has been meeting a Grave Wardens initiate in secret at dusk cairns."
+    relationships:
+      - target: "Yrsa Bone-Daughter"
+        type: "ally"
+        note: "Yrsa shields him from elder ridicule."
+      - target: "Alfdis Candle-Breath"
+        type: "ally"
+        note: "They trade carved tokens at old marker stones."
+    image_prompt: "Young Norse recruit with chipped tooth, fresh rawhide shield, simple wool and hide, nervous stance in a stony mountain camp, cold muted palette."
+
+  - id: "NPC_BND_013"
+    name: "Vetr Hallgrimsson"
+    call_name: "Smoke-Seer"
+    role: "specialist"
+    band: "The Bone Pack"
+    description: "Vetr is thin as kindling, with soot-smeared eyelids and braided gray beard beads carved with runes. He carries a brazier bowl wrapped in felt and never lets it leave his hands for long. His voice is low and dry as old bark."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 5
+      WIT: 7
+      WIL: 7
+      WYR: 2
+    skills:
+      - name: "Spirit-lore"
+        rank: 3
+      - name: "Rune-lore"
+        rank: 2
+      - name: "Wyrd-reading"
+        rank: 2
+      - name: "Persuade"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Ash staff with bronze tip"
+          type: "club"
+          base_damage: 2
+        - name: "Ritual seax"
+          type: "blade"
+          base_damage: 3
+      armor:
+        torso: "Heavy wool robe over quilted undertunic"
+        head: "Hooded cowl"
+    personality: "Vetr is calm in storms and uneasy in bright halls. He frames advice as questions so others own the choice and blame. He genuinely believes omens are warnings, not orders."
+    trigger: "If Sura forbids burial rites to save time or silver, Vetr denounces the command publicly."
+    agenda: "Guide the Bone Pack to reclaim three ancestral cairns before spring melt."
+    loyalty: 4
+    secret: "His most feared prophecy was fabricated to stop Sura from taking a doomed contract."
+    relationships:
+      - target: "Pack-Elder Sura"
+        type: "ally"
+        note: "Sura trusts his warnings more than she admits."
+      - target: "Sev the Pale"
+        type: "rival"
+        note: "Competing spiritual claims over barrow rights."
+    image_prompt: "Gaunt Norse spirit-guide with soot-dark eyes, rune beard beads, felt-wrapped brazier, heavy wool cowl, smoke drifting in a night camp of stones and bones."
+
+  - id: "NPC_BND_014"
+    name: "Arnketil Surason"
+    call_name: "Crow-Brother"
+    role: "scout"
+    band: "The Bone Pack"
+    description: "Arnketil is narrow-hipped and long-armed, with a crow feather tied to his right braid. A hunting scar runs from ear to chin where a boar tusk opened him. He smells of cold leather and pine sap."
+    stats:
+      MIG: 5
+      NIM: 7
+      TOU: 5
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Track"
+        rank: 3
+      - name: "Bows"
+        rank: 2
+      - name: "Stealth"
+        rank: 2
+      - name: "Weather-sense"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Recurve hunting bow"
+          type: "bow"
+          base_damage: 5
+        - name: "Bone-handled knife"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Soft leather coat over layered wool"
+        head: "Fur hood"
+    horse:
+      has_horse: true
+      name: "Ash-Crow"
+      breed: spine_pony
+      sex: gelding
+      age: 9
+      age_class: prime
+      role: scout_mount
+      condition: steady
+      mood: calm
+      rider_stability: 70
+      fatigue: 7
+      bond_rider: Arnketil Crow-Brother
+      speed: 2
+      wind: 4
+      foot: 5
+      nerve: 4
+      load: 3
+      sense: 4
+      traits:
+        - cliff_footed
+        - sparse_forager
+        - sure_step
+      tricks:
+        - pick_way
+        - stand_hobble
+      bloodline_tags:
+        - sure_step
+        - good_feet
+      active_conditions: []
+      tack:
+        saddle: hill_scout_saddle
+        bridle: rawhide_hackamore
+        shoes: winter_shod
+      ownership: kin
+      notes:
+        - Sure on bad rock and thin ledges
+        - Slow to start but almost never missteps
+    dogs:
+      - name: "Crow-Fang"
+        breed: black_pine_wolfdog
+        sex: bitch
+        age: 4
+        age_class: prime
+        role: war_dog
+        mood: eager
+        condition: worked
+        bond_handler: Arnketil Crow-Brother
+        nose: 5
+        speed: 4
+        grit: 5
+        bite: 5
+        sense: 3
+        voice: 2
+        traits:
+          - winter_hunter
+          - hard_bite
+          - silent_worker
+        tricks:
+          - hold_fast
+          - guard_master
+        bloodline_tags:
+          - winter_hunter
+          - hard_bite
+        active_conditions: []
+        ownership: kin
+        notes:
+          - Loosed only when a chase is already decided
+          - Arnketil muzzles her in crowded camps
+    personality: "He trusts birds more than men and listens for wingbeats before hoofbeats. Arnketil is dutiful but quietly resentful of elder politics. He keeps his own counsel and his own exit plans."
+    trigger: "If Yrsa is bypassed for succession by outside pressure, he withdraws to kin holdings with half the scouts."
+    agenda: "Secure independent hunting grounds so the Bone Pack can ignore tyrant levies."
+    loyalty: 3
+    secret: "He has already marked a hidden camp where Sura's kin can split if the Pack fractures."
+    relationships:
+      - target: "Yrsa Bone-Daughter"
+        type: "kin"
+        note: "Cousin and field partner on long hunts."
+      - target: "Fang"
+        type: "rival"
+        note: "Both compete for lead-skirmisher prestige."
+    image_prompt: "Lean Norse kin scout with feather braid and jaw scar, hunting bow, fur hood, dark conifer ridge at dawn, muted steel-green and bone-white tones."
+
+  - id: "NPC_BND_015"
+    name: "Maela Ragnildsdottir"
+    call_name: "Needle-Fire"
+    role: "healer"
+    band: "The Silent Oar"
+    description: "Maela has close-cropped hair and burn pocks on her wrists from cautery irons. Her satchel clinks with needles, bone tubes, and waxed thread. She smells like vinegar, smoke, and nettle salve."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 5
+      WIT: 8
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Heal"
+        rank: 3
+      - name: "Forage"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+      - name: "Persuade"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Surgical seax"
+          type: "blade"
+          base_damage: 4
+        - name: "Oak cudgel"
+          type: "club"
+          base_damage: 2
+      armor:
+        torso: "Quilted gambeson with reinforced apron panel"
+        head: "None"
+    personality: "Maela is brisk, unsentimental, and impossible to bluff about pain. She treats rank as a symptom, not a status. Her bedside manner is a shove and a command to breathe."
+    trigger: "If Duve orders her to prioritize officers over salvageable common fighters, she publicly refuses."
+    agenda: "Reduce infection deaths in the Silent Oar by enforcing strict camp sanitation."
+    loyalty: 4
+    secret: "She once let a cruel lieutenant die of fever by delaying a poultice, then forged the treatment log."
+    relationships:
+      - target: "Duve Coldhand Orn"
+        type: "ally"
+        note: "Duve values results and protects her authority in triage."
+      - target: "Svala White-Hand"
+        type: "ally"
+        note: "Wants to trade formulas if she can free the captive healer."
+    image_prompt: "Practical Norse field surgeon with cropped hair, cautery scars, needle satchel, quilted armor, stern expression, dim infirmary tent lit by coals."
+
+  - id: "NPC_BND_016"
+    name: "Rolf Ingvarsson"
+    call_name: "Rune-Tide"
+    role: "specialist"
+    band: "The Silent Oar"
+    description: "Rolf is pale and broad-browed, with ink-black rune marks across his forearms. Salt has bleached streaks into his beard from years at sea. He keeps whale-bone tiles in a leather roll tucked inside his sleeve."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 5
+      WIT: 7
+      WIL: 7
+      WYR: 2
+    skills:
+      - name: "Rune-lore"
+        rank: 3
+      - name: "Wyrd-reading"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+      - name: "Weather-sense"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Bronze-edged seax"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Wool coat beneath ring-reinforced leather"
+        head: "None"
+    personality: "Rolf is formal, ritual-minded, and uncomfortable with improvisation. He speaks in probabilities disguised as omens. Men mock him when drunk and seek him before storms."
+    trigger: "If Duve uses false runes to manipulate troop morale, Rolf denounces him and leaves."
+    agenda: "Recover a tide-stone set lost with his old ship to restore his standing."
+    loyalty: 3
+    secret: "He has concealed that one of his most trusted runes predicts a mutiny within the Silent Oar itself."
+    relationships:
+      - target: "Ked the Nail Sovere"
+        type: "fear"
+        note: "Ked calls him fraud and threatens to gut him if omens fail."
+      - target: "Runi Stone-Thumb"
+        type: "ally"
+        note: "Respects Runi's carving precision and exchanges glyph patterns."
+    image_prompt: "Norse rune-reader with salt-bleached beard, black rune tattoos, whale-bone casting tiles, layered leather and wool, stormy shoreline camp, muted blue-gray palette."
+
+  - id: "NPC_BND_017"
+    name: "Inga Thrandisdottir"
+    call_name: "Ashcloak"
+    role: "fighter"
+    band: "The Silent Oar"
+    description: "Inga's posture still carries hall etiquette, though her cloak is patched and smoke-stained. A signet scar circles one finger where a ring once sat. She keeps her sword clean enough to show faces in it."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 5
+      WIT: 6
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Blades"
+        rank: 3
+      - name: "Command"
+        rank: 2
+      - name: "Persuade"
+        rank: 2
+      - name: "Shields"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Noble cavalry sword, repurposed"
+          type: "blade"
+          base_damage: 6
+        - name: "Round shield"
+          type: "shield"
+          base_damage: 2
+      armor:
+        torso: "Mail vest under charcoal wool cloak"
+        head: "Iron cap"
+    personality: "She is polite in a way that can cut deeper than insult. Inga keeps promises and score with the same precision. She has learned to be ruthless without becoming loud."
+    trigger: "If Duve orders civilians butchered for speed, she forms a refusal bloc among veterans."
+    agenda: "Win enough influence to negotiate the Silent Oar back into lawful service."
+    loyalty: 3
+    secret: "Her former house still lives, and she receives coded messages through dock chapmen."
+    relationships:
+      - target: "Duve Coldhand Orn"
+        type: "ally"
+        note: "Mutual respect between old-officer professionals."
+      - target: "Ragna Crow-Bride"
+        type: "rival"
+        note: "Both court disillusioned fighters from tyrant bands."
+    image_prompt: "Battle-worn former noble Norsewoman in ash-gray cloak over mail, polished sword, restrained bearing amid rough camp tents, muted charcoal and silver tones."
+
+  - id: "NPC_BND_018"
+    name: "Sten Arelsson"
+    call_name: "Old Wake"
+    role: "fighter"
+    band: "The Silent Oar"
+    description: "Sten is weather-cut and stooped from years under mail, with one cloudy eye and a nose set sideways. His voice rasps like rope over wet wood. He oils gear before sleep even when arrows are still falling nearby."
+    stats:
+      MIG: 6
+      NIM: 4
+      TOU: 7
+      WIT: 6
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+      - name: "Weather-sense"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Long thrusting spear"
+          type: "spear"
+          base_damage: 6
+        - name: "Backup seax"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Old riveted mail haubergeon"
+        head: "Iron spangenhelm"
+    personality: "Sten trusts routines more than speeches. He does not panic, does not boast, and does not forget preventable mistakes. Younger fighters call him grim until they survive because of him."
+    trigger: "If officers skip watch rotation for drink or pride, Sten removes them from duty by force."
+    agenda: "Train a successor who can keep formation discipline after his body fails."
+    loyalty: 4
+    secret: "He buried half a chest of pay silver after a mutiny and never told his unit."
+    relationships:
+      - target: "Boot Pask"
+        type: "ally"
+        note: "Old campaign brothers who still read each other in silence."
+      - target: "Hakon Keel-Lock"
+        type: "ally"
+        note: "Trying to temper Hakon's boarding rage into line discipline."
+    image_prompt: "Grizzled Norse veteran with cloudy eye and sideways nose, long spear, old mail and spangenhelm, sleet on a riverside war camp, subdued steel-gray palette."
+
+  - id: "NPC_BND_019"
+    name: "Hakon Tjornsson"
+    call_name: "Keel-Lock"
+    role: "fighter"
+    band: "The Silent Oar"
+    description: "Hakon is thick-armed and barrel-chested, with rope burns layered over older blade scars. His lower lip is split permanently from a boarding hook strike. He walks like a man balancing on a moving deck even on dry land."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 6
+      WIT: 4
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Axes"
+        rank: 2
+      - name: "Brawl"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Boarding axe"
+          type: "axe"
+          base_damage: 6
+        - name: "Rim-hook shield"
+          type: "shield"
+          base_damage: 2
+      armor:
+        torso: "Salt-stiff leather coat over quilted wool"
+        head: "None"
+    personality: "Hakon is direct, loyal to comrades, and reckless with captives he deems raiders. He calms only when given clear, violent work. He distrusts rituals and paperwork equally."
+    trigger: "If Duve bargains with slavers after promising rescue of captives, Hakon mutinies."
+    agenda: "Break Red Tide's river chain operation that once sold his brother."
+    loyalty: 3
+    secret: "He has met with Iron Tide scouts to coordinate a private strike without Duve's approval."
+    relationships:
+      - target: "Ylva the Mute"
+        type: "ally"
+        note: "Uses Ylva's signs to plan silent boarding routes."
+      - target: "Askel Rope"
+        type: "grudge"
+        note: "Swore to cut Rope's hands off for old slave raids."
+    image_prompt: "Powerful Norse boarding fighter with split lip, rope-burned forearms, heavy axe and hooked shield, river fog and dark longboat silhouettes, muted blue-black tones."
+
+  - id: "NPC_BND_020"
+    name: "Jorun Halldorsdottir"
+    call_name: "Salt-Hunger"
+    role: "fighter"
+    band: "The Hollow Hall"
+    description: "Jorun is gaunt from lean seasons, with collarbones like bow limbs and wind-burned cheeks. She wraps her left hand in linen to hide missing fingertips lost to frostbite. Her stare lingers on supply wagons longer than on enemies."
+    stats:
+      MIG: 5
+      NIM: 5
+      TOU: 6
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 2
+      - name: "Forage"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Rust-pitted boar spear"
+          type: "spear"
+          base_damage: 5
+        - name: "Kitchen knife"
+          type: "blade"
+          base_damage: 3
+      armor:
+        torso: "Layered homespun and patched leather"
+        head: "None"
+    personality: "Jorun is practical and humorless where hunger is concerned. She counts calories before courage and considers both forms of survival. She is kinder to children than to armed adults."
+    trigger: "If Brek chooses pride over food for the winter stores, she leads a split for survival."
+    agenda: "Secure a granary contract or raid before first deep freeze."
+    loyalty: 2
+    secret: "She has been trading Hollow Hall route details for sacks of barley."
+    relationships:
+      - target: "Brek Saltmarch"
+        type: "ally"
+        note: "Supports him publicly while quietly testing alternatives."
+      - target: "Torve"
+        type: "grudge"
+        note: "Blames Torve for wasting rations during flood camp."
+    image_prompt: "Starved-looking Norse spearwoman with frostbitten wrapped hand, patched homespun and leather, bleak farmstead camp under gray sky, desaturated earth tones."
+
+  - id: "NPC_BND_021"
+    name: "Dren Sigfusson"
+    call_name: "Mud-Wolf"
+    role: "scout"
+    band: "The Hollow Hall"
+    description: "Dren is narrow and mud-dark, with reed cuts across his shins and a permanent squint from river glare. He keeps fishbone charms sewn into his boot cuffs. His clothes smell of marsh rot and smoke."
+    stats:
+      MIG: 5
+      NIM: 7
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Stealth"
+        rank: 3
+      - name: "Track"
+        rank: 2
+      - name: "Bows"
+        rank: 2
+      - name: "Navigate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Short reed bow"
+          type: "bow"
+          base_damage: 4
+        - name: "Fillet seax"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Dark wool tunic under thin leather jerkin"
+        head: "Hooded cap"
+    personality: "He lies by habit and scouts by instinct. Dren avoids direct fights and wins by choosing when they happen. He is loyal to people, never banners."
+    trigger: "If Mirke One-Ear is killed by friendly betrayal, Dren sells Hollow Hall's camp to their enemies."
+    agenda: "Move his widowed sister and her children into safer land before spring raids."
+    loyalty: 2
+    secret: "He has already marked three Hollow Hall supply pits for Iron Tide payment."
+    relationships:
+      - target: "Mirke One-Ear"
+        type: "ally"
+        note: "Mirke taught him marsh routes when he was twelve."
+      - target: "Olin Rime-Brand"
+        type: "ally"
+        note: "Runs covert message drops with Olin through river stones."
+    image_prompt: "Wiry Norse marsh scout with reed cuts and hooded cap, short bow, mud-streaked clothing, wet reeds and foggy riverbank, muted olive and gray palette."
+
+  - id: "NPC_BND_022"
+    name: "Hella Brynjarssdottir"
+    call_name: "Cracked Oar"
+    role: "fighter"
+    band: "The Hollow Hall"
+    description: "Hella is thick-boned and broad-handed, with a healed split skull hidden under cropped hair. Her right shoulder clicks when she raises a shield, but she raises it anyway. She smells of fish oil and old pine tar."
+    stats:
+      MIG: 6
+      NIM: 4
+      TOU: 7
+      WIT: 4
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Shields"
+        rank: 2
+      - name: "Spears"
+        rank: 2
+      - name: "Brawl"
+        rank: 2
+      - name: "Survival"
+        rank: 1
+    gear:
+      weapons:
+        - name: "River pike"
+          type: "spear"
+          base_damage: 5
+        - name: "Dock hook"
+          type: "club"
+          base_damage: 3
+      armor:
+        torso: "Heavy wool coat with stitched leather scales"
+        head: "None"
+    personality: "Hella is stubborn, blunt, and impossible to frighten with threats she has already lived through. She values people who work over people who talk. She keeps her grief locked behind labor."
+    trigger: "If Brek gives up the village dead for coin or favor, Hella breaks his jaw and takes his place."
+    agenda: "Keep Hollow Hall from becoming another slaver tributary."
+    loyalty: 4
+    secret: "She once fought for Red Tide under another name and fled after watching a child auction."
+    relationships:
+      - target: "Brek Saltmarch"
+        type: "ally"
+        note: "Acts as his blunt instrument and conscience."
+      - target: "Wulfgar the Branded"
+        type: "fear"
+        note: "Believes Wulfgar still hunts deserters from old crews."
+    image_prompt: "Broad Norse woman fighter with cropped hair and weathered face, pike and battered shield, tar-stained wool and leather, rough riverside village under storm clouds."
+
+  - id: "NPC_BND_023"
+    name: "Torald Eiriksson"
+    call_name: "Ice-Brow"
+    role: "fighter"
+    band: "The Iron Tide Remnant"
+    description: "Torald has heavy brows bleached pale by wind and sea glare, making his stare seem frozen. Old whip scars ladder his back beneath a tight mail shirt. He keeps his beard braided with lead sinkers from a lost ship."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 6
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Axes"
+        rank: 2
+      - name: "Shields"
+        rank: 2
+      - name: "Command"
+        rank: 1
+      - name: "Intimidate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Long-haft war axe"
+          type: "axe"
+          base_damage: 6
+        - name: "Iron-rim shield"
+          type: "shield"
+          base_damage: 2
+      armor:
+        torso: "Riveted mail over thick quilt"
+        head: "Nasal helm"
+    personality: "Torald is disciplined, humorless, and deeply loyal to Sigrid's chain of command. He has no patience for theatrics and less for deserter excuses. His steadiness keeps panic from spreading."
+    trigger: "If Sigrid accepts slaver coin to spare her own losses, he challenges and walks."
+    agenda: "Rebuild Iron Tide's reputation as paid professionals, not scavengers."
+    loyalty: 4
+    secret: "He hid three survivors after a failed mutiny and told Sigrid they drowned."
+    relationships:
+      - target: "Sigrid Blackwine"
+        type: "ally"
+        note: "Her strict pragmatism matches his military creed."
+      - target: "Knut Last Mast"
+        type: "ally"
+        note: "Relies on Knut to hold line when plans break."
+    image_prompt: "Hardened Norse remnant fighter with pale brows, scarred back, mail and nasal helm, sea-worn axe and shield, icy shoreline camp, muted slate and iron palette."
+
+  - id: "NPC_BND_024"
+    name: "Freydis Aunarsdottir"
+    call_name: "Harbor-Witch"
+    role: "specialist"
+    band: "The Iron Tide Remnant"
+    description: "Freydis is narrow-faced with ink on her thumbs and a burn across one ear from lamp oil. She wears layered cloaks full of hidden pockets for weights, chalk, and sealed notes. Her eyes flick to exits before faces."
+    stats:
+      MIG: 4
+      NIM: 6
+      TOU: 5
+      WIT: 7
+      WIL: 6
+      WYR: 2
+    skills:
+      - name: "Bargain"
+        rank: 3
+      - name: "Deceive"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+      - name: "Rune-lore"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Needle-thin seax"
+          type: "blade"
+          base_damage: 3
+      armor:
+        torso: "Dark wool and discreet leather vest"
+        head: "None"
+    personality: "Freydis is composed, dryly sarcastic, and relentlessly transactional. She reads rooms like ledgers and people like debts. She calls herself practical; others call her unnerving."
+    trigger: "If Sigrid burns civilian records to hide a failed contract, Freydis leaks proof to the Thing."
+    agenda: "Secure legal contracts that restore Iron Tide's right to dock at three key ports."
+    loyalty: 3
+    secret: "She has a private cipher book naming every captain who paid for illegal transport."
+    relationships:
+      - target: "Sigrid Blackwine"
+        type: "ally"
+        note: "Handles Sigrid's contract terms and risk clauses."
+      - target: "Skarn Chain-Keeper"
+        type: "grudge"
+        note: "Skarn sold one of her informants into chains."
+    image_prompt: "Sharp-featured Norse quartermaster-spy with layered dark cloaks, hidden weights and notes, harbor lantern glow, cold rain, muted navy and charcoal tones."
+
+  - id: "NPC_BND_025"
+    name: "Knut Hallbjornsson"
+    call_name: "Last Mast"
+    role: "fighter"
+    band: "The Iron Tide Remnant"
+    description: "Knut is tall and scar-corded, with a broken nose flattened to one side and salt-stiff hair tied with twine. His left hand is missing the little finger from a rope shearing accident. He keeps old mast splinters carved into prayer tokens."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 7
+      WIT: 4
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+      - name: "Brawl"
+        rank: 2
+      - name: "Survival"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Ship pike"
+          type: "spear"
+          base_damage: 6
+        - name: "Broad seax"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Heavy gambeson with mail shoulder mantle"
+        head: "Iron cap"
+    personality: "Knut is laconic, reliable, and stubborn under pressure. He believes plans fail and discipline must not. He rarely laughs, but when he does it is usually at death's timing."
+    trigger: "If command leaves wounded rowers behind to save coin, Knut refuses to sail."
+    agenda: "Keep the remnant intact until a true flagship can be built."
+    loyalty: 4
+    secret: "He has hidden keel plans from Iron Tide's old shipwright that could make Sigrid uncontested at sea."
+    relationships:
+      - target: "Torald Ice-Brow"
+        type: "ally"
+        note: "Two anchors of the remnant's front line."
+      - target: "Hakon Keel-Lock"
+        type: "ally"
+        note: "Exchanged boarding tactics after a ceasefire parley."
+    image_prompt: "Tall scarred Norse veteran with flattened nose, missing finger, ship pike and worn mail mantle, storm-lashed dock camp, muted steel and sea-green tones."
+
+  - id: "NPC_BND_026"
+    name: "Olin Dyrsson"
+    call_name: "Rime-Brand"
+    role: "scout"
+    band: "The Iron Tide Remnant"
+    description: "Olin is pale and quick, with frostbite whitening the tips of both ears. A blue tattoo mark on his neck shows old naval levy service. He moves like a gull on shifting planks, always balanced."
+    stats:
+      MIG: 5
+      NIM: 7
+      TOU: 5
+      WIT: 6
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Stealth"
+        rank: 2
+      - name: "Track"
+        rank: 2
+      - name: "Navigate"
+        rank: 3
+      - name: "Bows"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Composite short bow"
+          type: "bow"
+          base_damage: 5
+        - name: "Salt-etched seax"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Wool tunic with light leather scales"
+        head: "Fur-trimmed cap"
+    personality: "Olin is curious, sarcastic, and careful with trust. He enjoys mapping danger as if it were a game board. He is loyal to survivors, not ideology."
+    trigger: "If Sigrid signs a contract with Red Tide slavers, Olin leaks route maps to sabotage it."
+    agenda: "Chart a safe winter crossing route no other band controls."
+    loyalty: 3
+    secret: "He has a hidden signal code with Hollow Hall scouts for emergency mutual aid."
+    relationships:
+      - target: "Ylva the Mute"
+        type: "ally"
+        note: "Learns silent trail signals from Ylva whenever paths cross."
+      - target: "Dren Mud-Wolf"
+        type: "ally"
+        note: "Trades river intel through dead drops."
+    image_prompt: "Quick pale Norse scout with frostbitten ears, neck levy tattoo, short bow and fur cap, icy estuary at dusk, muted blue-gray and slate palette."
+
+  - id: "NPC_BND_027"
+    name: "Runi Erlandsson"
+    call_name: "Stone-Thumb"
+    role: "specialist"
+    band: "The Grave Wardens"
+    description: "Runi is thick-wristed with chalk dust permanently packed into his nails. His thumbs are broad and scarred from years of rune chiseling in cold stone. He carries a roll of chisels wrapped in lambskin like a priest carries relics."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 6
+      WIT: 7
+      WIL: 7
+      WYR: 2
+    skills:
+      - name: "Rune-lore"
+        rank: 3
+      - name: "Spirit-lore"
+        rank: 2
+      - name: "Smithing"
+        rank: 1
+      - name: "Persuade"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Stone mallet"
+          type: "club"
+          base_damage: 3
+        - name: "Rune chisel seax"
+          type: "blade"
+          base_damage: 3
+      armor:
+        torso: "Dark wool robe over leather vest"
+        head: "None"
+    personality: "Runi is patient, devout, and maddeningly literal about old rites. He can argue theology for hours and then lift a grave slab without complaint. He values memory more than comfort."
+    trigger: "If Bryn orders false names carved to hide political killings, Runi walks and exposes the lie."
+    agenda: "Restore erased grave markers from the Blood Mist years before elders die."
+    loyalty: 4
+    secret: "One marker he recut belongs to a living bandit captain, not a dead ancestor."
+    relationships:
+      - target: "Elder Bryn Ashmouth"
+        type: "ally"
+        note: "Trusted keeper of burial law and inscriptions."
+      - target: "Sev the Pale"
+        type: "rival"
+        note: "Sev favors visions; Runi favors carved evidence."
+    image_prompt: "Stocky Norse rune-carver with stone-dusted hands, lambskin tool roll, dark robe over leather, standing among frost-covered barrow stones, muted bone and ash tones."
+
+  - id: "NPC_BND_028"
+    name: "Alfdis Torirsdottir"
+    call_name: "Candle-Breath"
+    role: "fighter"
+    band: "The Grave Wardens"
+    description: "Alfdis is young, thin, and hollow-eyed from long night vigils in barrow wind. Candle smoke has yellowed the front of her cloak and roughened her voice. She grips her spear too high when afraid and corrects it mid-breath."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+      - name: "Spirit-lore"
+        rank: 1
+      - name: "Stealth"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Grave-watch spear"
+          type: "spear"
+          base_damage: 5
+        - name: "Small bone knife"
+          type: "blade"
+          base_damage: 3
+      armor:
+        torso: "Wool cloak over padded vest"
+        head: "None"
+    personality: "Alfdis is earnest, dutiful, and eager to prove she belongs among older wardens. Fear sharpens her, but shame can break her rhythm. She listens better than she speaks."
+    trigger: "If ordered to abandon an unsealed grave to pursue coin work, she disobeys outright."
+    agenda: "Complete three winter watches without incident and be named full grave-guard."
+    loyalty: 3
+    secret: "She has been seeing the same dream at every barrow: a chained healer calling her name."
+    relationships:
+      - target: "Norn"
+        type: "ally"
+        note: "Norn drills her in silent guard rotations."
+      - target: "Toke Milk-Tooth"
+        type: "ally"
+        note: "Meets him secretly near old boundary stones."
+    image_prompt: "Young Norse grave initiate with smoke-stained cloak, spear and candle lantern, frost and standing stones under moonlight, muted gray-blue palette."
+
+  - id: "NPC_BND_029"
+    name: "Eydis Halldis"
+    call_name: "Barrow-Hen"
+    role: "healer"
+    band: "The Grave Wardens"
+    description: "Eydis is compact and weathered, with crow-black hair streaked white at the temples. She wears antler needles in her braid and keeps birch-bark packets of salves in her sleeves. Her gaze is sharp enough to pin liars."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 5
+      WIT: 7
+      WIL: 6
+      WYR: 2
+    skills:
+      - name: "Heal"
+        rank: 3
+      - name: "Forage"
+        rank: 2
+      - name: "Spirit-lore"
+        rank: 2
+      - name: "Wyrd-reading"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Curved herb knife"
+          type: "blade"
+          base_damage: 3
+        - name: "Hazel staff"
+          type: "club"
+          base_damage: 2
+      armor:
+        torso: "Layered wool robe with hidden leather panel"
+        head: "Fur-lined cowl"
+    personality: "Eydis mothers no one and mourns everyone. She is blunt about survival odds and quick to strike men who mock rites over graves. Her calm turns frightening when the dead are disturbed."
+    trigger: "If Bryn permits grave robbing by allied bands, she poisons their camp stew and vanishes."
+    agenda: "Preserve old healing rites tied to burial herbs before they are outlawed."
+    loyalty: 3
+    secret: "She treated a wounded Red Tide captive in secret and let him escape to carry a warning."
+    relationships:
+      - target: "Elder Bryn Ashmouth"
+        type: "ally"
+        note: "Bryn trusts her to judge oath-breakers by wound and word."
+      - target: "Svala White-Hand"
+        type: "ally"
+        note: "Wants to rescue Svala before Red Tide ruins her hands."
+    image_prompt: "Compact Norse grave-healer with streaked hair, antler braid needles, layered dark wool, herb packets, standing among barrows in sleet, muted ash and moss colors."
+
+  - id: "NPC_BND_030"
+    name: "Svala Eiriksdottir"
+    call_name: "White-Hand"
+    role: "healer"
+    band: "The Red Tide"
+    description: "Svala's hands are pale and scar-crossed from repeated binding and work in cold water. A slave collar bruise circles her neck above a rough linen wrap. She keeps her eyes down in front of officers and razor-sharp on wounds."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 5
+      WIT: 8
+      WIL: 7
+      WYR: 2
+    skills:
+      - name: "Heal"
+        rank: 3
+      - name: "Forage"
+        rank: 2
+      - name: "Persuade"
+        rank: 2
+      - name: "Deceive"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Bone lancet knife"
+          type: "blade"
+          base_damage: 2
+      armor:
+        torso: "Plain wool under forced leather harness"
+        head: "None"
+    personality: "Svala is controlled, observant, and outwardly compliant. She memorizes guard rhythms while changing bandages. Compassion is her mask and her weapon."
+    trigger: "If Red Tide mutilates captives she has stabilized, she starts killing officers with staged infection."
+    agenda: "Escape with three child captives and reach any band that will protect them."
+    loyalty: 1
+    secret: "She has begun swapping clean and foul dressings to weaken specific Red Tide leaders before a planned breakout."
+    relationships:
+      - target: "Wulfgar the Branded"
+        type: "fear"
+        note: "He keeps her chained between fights to prevent flight."
+      - target: "Dalla Moss-Hand"
+        type: "ally"
+        note: "Has heard coded field signs from Dalla in market crowds."
+    image_prompt: "Captive Norse healer with pale scarred hands and neck bruise, plain wool and leather restraint harness, dim slaver camp, muted whites, bruised purples, and cold grays."
+
+  - id: "NPC_BND_031"
+    name: "Garr Vidarsson"
+    call_name: "Half-Mark"
+    role: "fighter"
+    band: "The Red Tide"
+    description: "Garr has a branded cheek where an old oath rune was burned over with Red Tide iron. One side of his beard grows white from scar tissue. He carries himself like a man always waiting for knives in his sleep."
+    stats:
+      MIG: 6
+      NIM: 6
+      TOU: 6
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Blades"
+        rank: 2
+      - name: "Shields"
+        rank: 2
+      - name: "Deceive"
+        rank: 2
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Broad short sword"
+          type: "blade"
+          base_damage: 6
+        - name: "Notched shield"
+          type: "shield"
+          base_damage: 2
+      armor:
+        torso: "Mail patches sewn onto thick leather coat"
+        head: "Iron cap"
+    personality: "Garr is wary, opportunistic, and excellent at sounding sincere to whoever holds power. He can fight hard when cornered but prefers leverage over heroics. He laughs too quickly at bad jokes from dangerous men."
+    trigger: "If Wulfgar threatens to brand him a second time, Garr betrays Red Tide positions to rivals."
+    agenda: "Survive long enough to erase his old band ties and vanish north with stolen silver."
+    loyalty: 2
+    secret: "He is the traitor who sold Hollow Hall fishing routes to Red Tide two seasons ago."
+    relationships:
+      - target: "Bera Iron-Teeth"
+        type: "fear"
+        note: "Bera suspects his loyalty and tests him in front-line fights."
+      - target: "Hella Cracked Oar"
+        type: "grudge"
+        note: "Hella recognizes him from his old name and wants him dead."
+    image_prompt: "Scarred Norse defector with half-burned cheek mark, patched mail-leather coat, short sword and shield, hostile slaver camp under torchlight, muted rust and black tones."
+
+  - id: "NPC_BND_032"
+    name: "Torfi Keldsson"
+    call_name: "Net-Hook"
+    role: "specialist"
+    band: "The Red Tide"
+    description: "Torfi is rope-thin and long-fingered, with hook scars across both palms. He wears fishnet cords beneath his belt and carries weighted lines coiled like serpents. His grin shows three missing teeth and no shame."
+    stats:
+      MIG: 5
+      NIM: 7
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Stealth"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+      - name: "Navigate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Weighted capture net"
+          type: "special"
+          base_damage: 2
+        - name: "Hooked boarding knife"
+          type: "blade"
+          base_damage: 4
+      armor:
+        torso: "Oiled leather coat with rope loops"
+        head: "None"
+    personality: "Torfi is cruel in crowds and cowardly alone. He enjoys the work of capture more than combat and talks constantly to hide nerves. He obeys whichever superior looks most dangerous at the moment."
+    trigger: "If his share of slaver silver is cut twice in a row, he sells chain keys to captives."
+    agenda: "Earn enough coin to buy his own skiff and leave slaving for smuggling."
+    loyalty: 2
+    secret: "He has been meeting Svala in secret to trade lock timings for pain salves and promises of future protection."
+    relationships:
+      - target: "Askel Rope"
+        type: "ally"
+        note: "Askel taught him knot work and captive handling."
+      - target: "Svala White-Hand"
+        type: "ally"
+        note: "Quietly aiding her planned escape in stages."
+    image_prompt: "Lean Norse slaver specialist with scarred palms, weighted net and hook knife, oiled leather coat, torchlit dock mud, muted tar-black and dirty brass palette."
+
+  - id: "NPC_BND_033"
+    name: "Hrefna Karsdottir"
+    call_name: "Chain-Mother"
+    role: "champion"
+    band: "The Red Tide"
+    description: "Hrefna is broad-shouldered with iron-gray braids and a flattened left hand from an old hammer crush. She wears ringmail under a red wool coat darkened by rain and blood. Her voice carries over surf and screaming alike."
+    stats:
+      MIG: 8
+      NIM: 5
+      TOU: 7
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Axes"
+        rank: 3
+      - name: "Command"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+      - name: "Shields"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Two-handed dane axe"
+          type: "axe"
+          base_damage: 7
+        - name: "Iron-rim shield"
+          type: "shield"
+          base_damage: 2
+      armor:
+        torso: "Ringmail under heavy red wool and leather braces"
+        head: "Nasal helm"
+    personality: "Hrefna is disciplined, ruthless, and oddly protective of captives who obey quickly. She despises chaos because chaos cuts profit. She treats violence like accounting: precise and repeatable."
+    trigger: "If Wulfgar's fury starts losing chain cargo and coin, she backs a coup."
+    agenda: "Take command of Red Tide and convert it into a contract enforcer band with legal cover."
+    loyalty: 3
+    secret: "She has already opened talks with Iron Tide intermediaries about replacing Wulfgar after winter."
+    relationships:
+      - target: "Wulfgar the Branded"
+        type: "rival"
+        note: "Publicly loyal, privately measuring his failures."
+      - target: "Freydis Harbor-Witch"
+        type: "ally"
+        note: "Uses Freydis as a deniable channel for post-coup contracts."
+    image_prompt: "Imposing Norse woman champion in red darkened wool over ringmail, two-handed dane axe, nasal helm, stormy surf and chained posts, muted crimson, iron, and slate tones."

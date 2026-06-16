@@ -1,0 +1,382 @@
+# Iron Ledger — Toasts, Exclamations, Idioms, and Death Euphemisms
+# Project: Iron Ledger -- Mercenaries of the Rimevegr
+# Purpose: Emotional punctuation of Rimevegr speech — what people shout,
+#   how they toast the dead, how they refer to dying without saying the
+#   word, and the idioms that carry cultural freight.
+# Supplements: names_and_language.yaml oaths (15) and battle_cries (10).
+# Cross-reference: 06_DICTIONARY_OF_NORSE_TERMS.md for prose definitions.
+
+expressions:
+  description: >
+    The emotional punctuation of Rimevegr speech — what people shout in
+    surprise, how they toast the dead, how they refer to dying without
+    saying the word, and the idioms that carry cultural freight. These
+    supplement the oaths, battle cries, curses, insults, greetings,
+    farewells, proverbs, and mercenary slang in names_and_language.yaml.
+
+  # -------------------------------------------------------------------
+  # 1. TOASTS (8)
+  # -------------------------------------------------------------------
+  toasts:
+    description: >
+      What people say before drinking. A toast sets the mood, honours the
+      occasion, and commits the speaker to the sentiment. In the Rimevegr,
+      toasts acknowledge death as often as they celebrate life.
+    entries:
+      - id: "TST_001"
+        text: "To the dead who paid our way."
+        context: "Opening toast at a mercenary feast. Captain drinks first."
+        occasion: "After a contract with casualties."
+      - id: "TST_002"
+        text: "To warm halls and cold enemies."
+        context: "A winter toast. Raises a horn to comfort and the misery of rivals."
+        occasion: "Arrival at a settlement after marching in the cold."
+      - id: "TST_003"
+        text: "To the ones who will not stand for this."
+        context: "Funeral toast. The dead cannot rise to drink — unless they do."
+        occasion: "Wake drinking. The unspoken draugr fear makes it land harder."
+      - id: "TST_004"
+        text: "Silver in the hand, steel at the hip, bread on the board."
+        context: "A complete mercenary blessing. Covers pay, defence, and survival."
+        occasion: "Contract completion feast."
+      - id: "TST_005"
+        text: "To the fire that held."
+        context: "Acknowledges the hearth that kept the band alive through a rough stretch."
+        occasion: "Surviving a lean winter camp or a siege."
+      - id: "TST_006"
+        text: "I drink to your name. May someone remember it."
+        context: "A bleak honour-toast. Remembrance is the only immortality mercenaries expect."
+        occasion: "To a comrade before a dangerous contract."
+      - id: "TST_007"
+        text: "To the road behind us, and the poor bastards still on it."
+        context: "Self-congratulatory but earned. Said when the band reaches shelter."
+        occasion: "End of a long march. Victory toast."
+      - id: "TST_008"
+        text: "Hael poured the first cup. We pour the rest."
+        context: "Death comes first; living is what follows. A philosophical opener."
+        occasion: "Formal feast. Captain or host opens with this."
+
+  # -------------------------------------------------------------------
+  # 2. DRINKING RITUALS (6)
+  # -------------------------------------------------------------------
+  drinking_rituals:
+    description: >
+      Mead-hall customs governing who drinks when, what is said, and what
+      gestures carry weight. Breaking these rules is not illegal — it is
+      simply the kind of thing that starts fights.
+    entries:
+      - id: "DRK_001"
+        text: "The captain drinks first. Then the Named Men."
+        context: "Unbreakable hierarchy. A commons man who drinks before a Named Man is challenging rank."
+        ritual: "The captain lifts the horn, drinks, sets it down. Named Men drink in order of seniority. Then the horn goes round."
+      - id: "DRK_002"
+        text: "Pour one for the ground."
+        context: "Libation for the dead. Mead poured onto dirt, stone, or snow before anyone drinks."
+        ritual: "First pour goes to the earth. Whoever names a dead comrade while pouring gets to drink next."
+      - id: "DRK_003"
+        text: "Horn-challenge: 'Match me or sit down.'"
+        context: "Drinking challenge. Refusing is not shameful — losing is. The challenger must finish first."
+        ritual: "Both drink from matched horns. First to lower is the loser. Losers buy the next round or give up their seat by the fire."
+      - id: "DRK_004"
+        text: "Share the last swallow."
+        context: "When a skin or cask runs dry, the last mouthful is split between two. Creates an implicit bond."
+        ritual: "One holds the vessel, the other cups hands beneath. Both drink together. Refusing the share is an insult."
+      - id: "DRK_005"
+        text: "The Quiet Cup."
+        context: "A single horn passed in silence around the fire after a burial. No toasts, no words. Just drinking."
+        ritual: "Anyone who speaks during the Quiet Cup owes the dead a service — a task chosen by the group."
+      - id: "DRK_006"
+        text: "Turning the horn."
+        context: "Rotating the drinking horn so the next drinker places lips where the previous did. A trust gesture."
+        ritual: "Offering a turned horn to a stranger grants temporary guest-right. Wiping the rim before drinking is a public insult."
+
+  # -------------------------------------------------------------------
+  # 3. SURPRISE EXCLAMATIONS (8)
+  # -------------------------------------------------------------------
+  surprise_exclamations:
+    description: >
+      What people shout when startled, amazed, or confronted with the
+      impossible. Not all invoke gods — some are rooted in animals,
+      landscape, or bodily reactions. A good exclamation escapes the
+      mouth before the brain catches up.
+    entries:
+      - id: "SUR_001"
+        text: "Thurr's cracked fist!"
+        context: "The default surprise oath. Invokes the thunder-god's broken knuckles — he hits the world and the world dents him back."
+        intensity: "moderate"
+      - id: "SUR_002"
+        text: "Stones and blood—"
+        context: "Muttered when something goes suddenly wrong. The two things the Rimevegr never runs out of."
+        intensity: "mild"
+      - id: "SUR_003"
+        text: "The Veil take me."
+        context: "Genuine shock. Spoken like a man who cannot believe what his eyes report. Borders on blasphemy — inviting the Veil is not done lightly."
+        intensity: "high"
+      - id: "SUR_004"
+        text: "What in Hael's shadow—"
+        context: "Trailed off. The speaker usually does not finish the thought because the surprise is still unfolding."
+        intensity: "moderate"
+      - id: "SUR_005"
+        text: "Frost and fire."
+        context: "The two extremes. Used when something is so unexpected it breaks the usual categories."
+        intensity: "mild"
+      - id: "SUR_006"
+        text: "I will be crow-food."
+        context: "Self-directed disbelief. 'I'll be damned' equivalent. Ravens and crows are the Rimevegr's cleanup crew."
+        intensity: "mild"
+      - id: "SUR_007"
+        text: "Mother of wolves—"
+        context: "A Black Pine exclamation. The she-wolf is a figure of both awe and terror in the deep forest."
+        intensity: "moderate"
+      - id: "SUR_008"
+        text: "The dead are walking."
+        context: "Not always literal. Said when the impossible happens — but in the Rimevegr, sometimes it IS literal."
+        intensity: "high"
+
+  # -------------------------------------------------------------------
+  # 4. FRUSTRATION EXCLAMATIONS (8)
+  # -------------------------------------------------------------------
+  frustration_exclamations:
+    description: >
+      When things go wrong. The Rimevegr equivalent of swearing — drawn
+      from animals, terrain, weather, and the miserable realities of
+      mercenary life. Not invocations; complaints.
+    entries:
+      - id: "FRU_001"
+        text: "Goat-fucked again."
+        context: "Things went sideways. The goat reference comes from moor settlements where goats are the most stubborn, useless livestock."
+        source: "animal"
+      - id: "FRU_002"
+        text: "Mud and ashes."
+        context: "What remains when plans fail. Everything reduced to wet dirt and burnt scraps."
+        source: "terrain"
+      - id: "FRU_003"
+        text: "This road leads to Hael's door."
+        context: "A plan or situation that is clearly heading toward disaster. Said with resignation, not panic."
+        source: "divine"
+      - id: "FRU_004"
+        text: "Bog-deep in it now."
+        context: "Past the point of retreat. A moor expression — once you sink past the knee, you are committed."
+        source: "terrain"
+      - id: "FRU_005"
+        text: "Lopt's own luck."
+        context: "Everything that could go wrong did. The trickster-god is blamed for cascading failures."
+        source: "divine"
+      - id: "FRU_006"
+        text: "Piss in the mead."
+        context: "Something has spoiled what should have been good. A ruined opportunity."
+        source: "profession"
+      - id: "FRU_007"
+        text: "Another day, another shit-trench."
+        context: "The mercenary's daily grind. Even when nothing goes wrong, the work is still awful."
+        source: "profession"
+      - id: "FRU_008"
+        text: "Wet steel, wet boots, wet everything."
+        context: "A cold-march complaint. When the rain will not stop and nothing dries. Soldiers say it like a mantra."
+        source: "weather"
+
+  # -------------------------------------------------------------------
+  # 5. DEATH EUPHEMISMS (10)
+  # -------------------------------------------------------------------
+  death_euphemisms:
+    description: >
+      How people in the Rimevegr say 'he died' without saying the words.
+      Register ranges from deeply respectful to black-comic. Mercenaries
+      use more euphemisms for death than for anything else — because they
+      need more.
+    entries:
+      - id: "DEU_001"
+        text: "He took Hael's chair."
+        meaning: "He died. Hael keeps an empty seat for every soul."
+        register: "respectful"
+        note: "The standard euphemism. Used by everyone from jarls to commons."
+      - id: "DEU_002"
+        text: "She walks the cold-road."
+        meaning: "She is dying or has died. A slow, solitary departure."
+        register: "respectful"
+        note: "Implies a death with time to know it was coming. Wounds, sickness."
+      - id: "DEU_003"
+        text: "Gone to feed the ravens."
+        meaning: "Dead on the field. Left unburied."
+        register: "common"
+        note: "Not disrespectful — just realistic. The ravens are always there."
+      - id: "DEU_004"
+        text: "His fire went out."
+        meaning: "He died. The defining metaphor — life is fire, death is cold."
+        register: "respectful"
+        note: "Used in eulogies and quiet moments. Never shouted."
+      - id: "DEU_005"
+        text: "Fell off the ledger."
+        meaning: "Removed from the payroll. The mercenary's clinical record of death."
+        register: "dark_humor"
+        note: "The Iron Ledger itself — the band's record — lists the living. Falling off it is final."
+      - id: "DEU_006"
+        text: "Making Hael's bed."
+        meaning: "Dying. Preparing the death-goddess's sleeping place — with your own body."
+        register: "dark_humor"
+        note: "Soldiers use this when a comrade is clearly doomed but still breathing."
+      - id: "DEU_007"
+        text: "He answered the last bone-count."
+        meaning: "Dead. Counted among the casualties."
+        register: "common"
+        note: "The bone-count is the casualty report. The 'last' one is the count you never come back from."
+      - id: "DEU_008"
+        text: "Found the bottom of the cup."
+        meaning: "Dead. Life is a drink; he finished his."
+        register: "dark_humor"
+        note: "Used at wakes. Gets a bitter laugh."
+      - id: "DEU_009"
+        text: "The Veil has him."
+        meaning: "Dead, and possibly worse. Taken by the rime-mist."
+        register: "uneasy"
+        note: "Carries supernatural dread. Used when the body was not recovered."
+      - id: "DEU_010"
+        text: "Paid in full."
+        meaning: "Dead. The final settlement of all debts — with life itself."
+        register: "respectful"
+        note: "Mercenary honour-phrasing. A death that closes all accounts."
+
+  # -------------------------------------------------------------------
+  # 6. OATH VARIATIONS (8)
+  # -------------------------------------------------------------------
+  oath_variations:
+    description: >
+      Escalating levels of promise and commitment — from a handshake
+      equivalent to a binding invocation that costs the swearer everything
+      if broken. Supplements the 15 formal oaths in names_and_language.yaml
+      with emphasis on gradation and situational use.
+    entries:
+      - id: "OVR_001"
+        text: "You have my word."
+        weight: "casual"
+        context: "The lightest oath. Worth exactly as much as the speaker's reputation. No divine invocation."
+        penalty: "Loss of face among those who heard it. Nothing more."
+      - id: "OVR_002"
+        text: "On the fire between us."
+        weight: "moderate"
+        context: "Sworn over a shared hearth. Breaking it means losing fire-right anywhere the story travels."
+        penalty: "Shunned from hearths. Practical death in winter."
+      - id: "OVR_003"
+        text: "My steel answers for it."
+        weight: "serious"
+        context: "The speaker offers their weapon — literally or figuratively — as collateral. Breaking this oath means surrendering the blade."
+        penalty: "The weapon is forfeit. For a mercenary, this is near-total loss."
+      - id: "OVR_004"
+        text: "By the rime on my bones."
+        weight: "serious"
+        context: "Invoking the Rimevegr itself. The cold that shapes everything is called as witness."
+        penalty: "Vague but culturally heavy. The land remembers what the gods may not."
+      - id: "OVR_005"
+        text: "Cut and clasp."
+        weight: "binding"
+        context: "Both parties cut their palms and grip hands. Blood mingles. The oath is physical."
+        penalty: "Blood-oath broken invites blood-price. The wounded party has legal standing to collect."
+      - id: "OVR_006"
+        text: "My name on the ledger for it."
+        weight: "binding"
+        context: "Writing one's name in the Iron Ledger as guarantee. The record outlasts the speaker."
+        penalty: "The ledger records the oath publicly. Breaking it marks the name permanently."
+      - id: "OVR_007"
+        text: "Before Odynn's rope, I am held."
+        weight: "sacred"
+        context: "The One-Hung's rope is the instrument of cosmic knowledge and suffering. Tying yourself to it is not done casually."
+        penalty: "Social death. No band will hire an oath-breaker who invoked the All-Father."
+      - id: "OVR_008"
+        text: "I give it to the Veil."
+        weight: "absolute"
+        context: "The ultimate oath. The speaker offers their passage to the afterlife. If broken, the Veil takes them — not to Hael's hall, but into the mist. No rest. No return."
+        penalty: "Cosmological annihilation. Spoken once in a generation, if that."
+
+  # -------------------------------------------------------------------
+  # 7. IDIOMS (10)
+  # -------------------------------------------------------------------
+  idioms:
+    description: >
+      Everyday expressions with roots in Rimevegr geography, economy,
+      weather, and survival. People use these without thinking about
+      their origins — the way any culture's idioms become invisible
+      with use.
+    entries:
+      - id: "IDM_001"
+        text: "Counting ravens."
+        meaning: "Expecting death. Watching for the birds that arrive before the end."
+        origin: "Ravens gather near the dying and the dead. A man counting ravens has accepted what is coming."
+      - id: "IDM_002"
+        text: "Thin ice holds once."
+        meaning: "A risky plan might work the first time but will not survive repetition."
+        origin: "River crossings in early winter. The ice holds for the first man. The fifth man drowns."
+      - id: "IDM_003"
+        text: "Selling smoke from a dead fire."
+        meaning: "Making promises with nothing behind them. Fraud."
+        origin: "Charcoal traders at Ashen Reach who sold ash and called it coal."
+      - id: "IDM_004"
+        text: "Two axes, one belt."
+        meaning: "Overcommitted. Trying to carry more than you can use."
+        origin: "A warrior with two axes and one hand has not solved a problem — he has created one."
+      - id: "IDM_005"
+        text: "He sleeps with one boot on."
+        meaning: "He does not trust anyone. Always ready to run or fight."
+        origin: "Camp discipline. A man who sleeps fully booted expects a night attack."
+      - id: "IDM_006"
+        text: "Reading the snow."
+        meaning: "Paying close attention to subtle signs. Tracking emerging threats."
+        origin: "Snow tracks reveal everything: who passed, how many, how fast, how heavy. A scout's core skill."
+      - id: "IDM_007"
+        text: "Feeding the hearth with your own bench."
+        meaning: "Destroying what you need to survive in order to solve a short-term problem."
+        origin: "Burning furniture for warmth. You survive the night but have nothing to sit on tomorrow."
+      - id: "IDM_008"
+        text: "Silver-sick."
+        meaning: "Corrupted by wealth. Making bad decisions because the pay is too good to refuse."
+        origin: "Bands that take red contracts against civilians because the silver outweighs the shame."
+      - id: "IDM_009"
+        text: "The moor remembers."
+        meaning: "Actions have long-term consequences. The landscape holds grudges."
+        origin: "Bodies buried in moor peat resurface. Crimes hidden in the bog come back."
+      - id: "IDM_010"
+        text: "Sharpening a broken blade."
+        meaning: "Wasting effort on something already ruined. A plan that cannot be saved."
+        origin: "A blade snapped at the tang cannot be honed back to use. A smith would laugh."
+
+  # -------------------------------------------------------------------
+  # 8. SUPERSTITIONS SPOKEN (8)
+  # -------------------------------------------------------------------
+  superstitions_spoken:
+    description: >
+      What people say to ward off bad luck, appease spirits, or avoid
+      drawing the attention of things that listen. These are not quaint —
+      they are survival habits in a world where the Veil is thin and the
+      dead do not always stay dead.
+    entries:
+      - id: "SUP_001"
+        text: "Name it and it hears you."
+        context: "Never say the specific name of a draugr, alfar, or Veil-creature. Use a description instead. Saying the name gives it a thread to follow."
+        belief: "Widely held. Even skeptics avoid naming the dead near barrows."
+      - id: "SUP_002"
+        text: "Turn iron to the door."
+        context: "Spoken when entering a strange building. An iron blade — even a belt knife — should face the threshold. Iron wards."
+        belief: "Universal. Every settlement hangs iron nails over doorframes."
+      - id: "SUP_003"
+        text: "Spit for Lopt."
+        context: "Spit on the ground after saying Lopt's name. Not respect — bribery. The trickster-god takes the offering and moves on."
+        belief: "Common in the Black Pine and moor settlements. Fjord people consider it low-born."
+      - id: "SUP_004"
+        text: "Do not whistle past Moor's End."
+        context: "Whistling draws alfar attention. The standing stones near Moor's End hum at night; answering them with a whistle is an invitation."
+        belief: "Taken seriously. Even soldiers march silent past the stones. Someone always tells the story of Fenris's cousin."
+      - id: "SUP_005"
+        text: "Step over a dead man's weapon, not on it."
+        context: "A warrior's weapon holds a sliver of his will after death. Stepping on it offends the spirit and may bind it to you."
+        belief: "Mercenary superstition. Observed even by men who claim to believe nothing."
+      - id: "SUP_006"
+        text: "Never count the band before a fight."
+        context: "Counting heads before battle invites Hael to take notice and choose her share. Count them after — the survivors."
+        belief: "Deeply ingrained. Quartermasters count supplies, never people."
+      - id: "SUP_007"
+        text: "Salt in the boot."
+        context: "A pinch of salt in the left boot wards travel-sickness, bad luck, and the attention of water-spirits at river crossings."
+        belief: "Coastal and river settlements. Inland men mock it until they drown."
+      - id: "SUP_008"
+        text: "The third owl is for you."
+        context: "An owl call once is the forest. Twice is chance. Three times is a death-omen — yours specifically. Leave the area or light a fire immediately."
+        belief: "Black Pine and Icebreak. Said with genuine fear. Nobody tests it."

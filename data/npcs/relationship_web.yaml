@@ -1,0 +1,1555 @@
+metadata:
+  total_npcs: 157
+  total_edges: 309
+  categories:
+    settlement: 50
+    band: 33
+    traveling: 30
+    antagonist: 25
+    supernatural: 19
+edges:
+- source_id: NPC_SET_001
+  source_name: Hrothgar Stenborn
+  target: Astrid Veilborn
+  type: rival
+  note: Mutual blackmail disguised as diplomacy.
+- source_id: NPC_SET_001
+  source_name: Hrothgar Stenborn
+  target: Voss
+  type: debt
+  note: Still owes Voss half-payment from the southern barrow contract.
+- source_id: NPC_SET_002
+  source_name: Yrsa Net-Mother
+  target: Olaf Reedson
+  type: ally
+  note: Shared smuggling lane by night river.
+- source_id: NPC_SET_002
+  source_name: Yrsa Net-Mother
+  target: Hrothgar Stenborn
+  type: fear
+  note: He can revoke her dock rights in one decree.
+- source_id: NPC_SET_003
+  source_name: Keld Ironhand
+  target: Haldor Bronze-Brow
+  type: rival
+  note: Competes for the same ore caravans.
+- source_id: NPC_SET_003
+  source_name: Keld Ironhand
+  target: Wulfgar
+  type: fear
+  note: Knows Wulfgar will kill him if the shackle ledger resurfaces.
+- source_id: NPC_SET_004
+  source_name: Astrid Veilborn
+  target: Ordovast Karr
+  type: rival
+  note: Each feeds the other curated intelligence.
+- source_id: NPC_SET_004
+  source_name: Astrid Veilborn
+  target: Dalla Mist-Tongue
+  type: ally
+  note: Primary seidr courier in the inner circle.
+- source_id: NPC_SET_005
+  source_name: Grimvi Ember-Nail
+  target: Bryn Ashmouth
+  type: ally
+  note: Trades experimental iron for barrow samples.
+- source_id: NPC_SET_005
+  source_name: Grimvi Ember-Nail
+  target: Astrid Veilborn
+  type: fear
+  note: Knows she can ruin his trade with one whisper.
+- source_id: NPC_SET_006
+  source_name: Dalla Mist-Tongue
+  target: Astrid Veilborn
+  type: ally
+  note: Bound by blood-oath and leverage.
+- source_id: NPC_SET_006
+  source_name: Dalla Mist-Tongue
+  target: Helga Thornsdottir
+  type: fear
+  note: Caught once in Thornwall and still carries the lash marks.
+- source_id: NPC_SET_007
+  source_name: Eira Ashblood
+  target: Marek Fen-reeve
+  type: ally
+  note: Smuggles medicines to Feldwick families.
+- source_id: NPC_SET_007
+  source_name: Eira Ashblood
+  target: Astrid Veilborn
+  type: fear
+  note: Knows too much of the Widow's triage orders.
+- source_id: NPC_SET_008
+  source_name: Marek Fen-reeve
+  target: Jorund Fen-Track
+  type: ally
+  note: Quiet resistance partnership.
+- source_id: NPC_SET_008
+  source_name: Marek Fen-reeve
+  target: Varis
+  type: fear
+  note: Varis can expose his split ledgers any day.
+- source_id: NPC_SET_009
+  source_name: Thora Rootwife
+  target: Marek Fen-reeve
+  type: ally
+  note: Forces him to reserve food for children first.
+- source_id: NPC_SET_009
+  source_name: Thora Rootwife
+  target: Hadric the Younger
+  type: fear
+  note: Knows retribution comes if the poisoning is traced.
+- source_id: NPC_SET_010
+  source_name: Jorund Fen-Track
+  target: Voss
+  type: ally
+  note: Potential evacuation broker if terms hold.
+- source_id: NPC_SET_010
+  source_name: Jorund Fen-Track
+  target: Marek Fen-reeve
+  type: kin
+  note: Marek is his mother's cousin.
+- source_id: NPC_SET_011
+  source_name: Eydis Salt-Grandam
+  target: Sigrun Hrafnsdottir
+  type: debt
+  note: Holds records from Sigrun's earliest trade years.
+- source_id: NPC_SET_011
+  source_name: Eydis Salt-Grandam
+  target: Inga Stormdottir
+  type: ally
+  note: Barters storm warnings for rope and sailcloth.
+- source_id: NPC_SET_012
+  source_name: Rurik Kelp-Back
+  target: Dalla Mist-Tongue
+  type: debt
+  note: Accepted Widow silver after a failed fishing season.
+- source_id: NPC_SET_012
+  source_name: Rurik Kelp-Back
+  target: Eydis Salt-Grandam
+  type: kin
+  note: Nephew and political headache.
+- source_id: NPC_SET_013
+  source_name: Nanna Gull-Bone
+  target: Olaf Reedson
+  type: debt
+  note: Exchanges silence for river offerings.
+- source_id: NPC_SET_013
+  source_name: Nanna Gull-Bone
+  target: Ragnhild Ice-Seer
+  type: fear
+  note: Ragnhild's dreams reach even her sea rites.
+- source_id: NPC_SET_014
+  source_name: Ordovast Karr
+  target: Sigrun Hrafnsdottir
+  type: rival
+  note: Economic war masked as border security.
+- source_id: NPC_SET_014
+  source_name: Ordovast Karr
+  target: Tormund Skall
+  type: ally
+  note: Absolute trust in his gate captain.
+- source_id: NPC_SET_015
+  source_name: Tormund Skall
+  target: Ordovast Karr
+  type: ally
+  note: Would die on command.
+- source_id: NPC_SET_015
+  source_name: Tormund Skall
+  target: Sigrid Blackwine
+  type: debt
+  note: Shared survival oath from Long Dark Year 309.
+- source_id: NPC_SET_016
+  source_name: Brynja Ore-Mother
+  target: Haldor Bronze-Brow
+  type: ally
+  note: Trades slag ratios and furnace fuel forecasts.
+- source_id: NPC_SET_016
+  source_name: Brynja Ore-Mother
+  target: Ordovast Karr
+  type: fear
+  note: If he audits her mine books, she dies.
+- source_id: NPC_SET_017
+  source_name: Hake Long-Spear
+  target: Ordovast Karr
+  type: ally
+  note: Old campaign lieutenant turned strategist.
+- source_id: NPC_SET_017
+  source_name: Hake Long-Spear
+  target: Helga Thornsdottir
+  type: fear
+  note: She would execute him if the warning letters are traced.
+- source_id: NPC_SET_018
+  source_name: Ketil Smoke-Scribe
+  target: Skari Coin-Tongue
+  type: ally
+  note: Uses Skari's caravans for dead-drop transfers.
+- source_id: NPC_SET_018
+  source_name: Ketil Smoke-Scribe
+  target: Ordovast Karr
+  type: fear
+  note: One confession away from hanging.
+- source_id: NPC_SET_019
+  source_name: Egil Hrafnsson
+  target: Ordovast Karr
+  type: fear
+  note: Pays tribute to avoid direct annexation.
+- source_id: NPC_SET_019
+  source_name: Egil Hrafnsson
+  target: Sigrid Blackwine
+  type: ally
+  note: Rents winter barracks to the Iron Tide Remnant.
+- source_id: NPC_SET_020
+  source_name: Svala Wall-Runner
+  target: Dalla Mist-Tongue
+  type: debt
+  note: Trades route reports for her brother's treatment.
+- source_id: NPC_SET_020
+  source_name: Svala Wall-Runner
+  target: Egil Hrafnsson
+  type: ally
+  note: Primary eyes beyond the watchfires.
+- source_id: NPC_SET_021
+  source_name: Borki Stone-Shoulder
+  target: Egil Hrafnsson
+  type: ally
+  note: Sworn shield to the thane.
+- source_id: NPC_SET_021
+  source_name: Borki Stone-Shoulder
+  target: Ordovast Karr
+  type: debt
+  note: Paid informer trying to break free.
+- source_id: NPC_SET_022
+  source_name: Ulf Vargson
+  target: Astrid Veilborn
+  type: debt
+  note: Owes one major favor from a sickness cure.
+- source_id: NPC_SET_022
+  source_name: Ulf Vargson
+  target: Wulfgar
+  type: rival
+  note: Blood feud over stolen pups and killed wardens.
+- source_id: NPC_SET_023
+  source_name: Yngrid Wolf-Mother
+  target: Ulf Vargson
+  type: ally
+  note: Trusted with kennel bloodlines and keys.
+- source_id: NPC_SET_023
+  source_name: Yngrid Wolf-Mother
+  target: Askel Rope
+  type: rival
+  note: Mutual trap in motion.
+- source_id: NPC_SET_024
+  source_name: Arne Char-Forge
+  target: Sigrid Blackwine
+  type: ally
+  note: Quiet metal trade through Raven's Perch.
+- source_id: NPC_SET_024
+  source_name: Arne Char-Forge
+  target: Ulf Vargson
+  type: fear
+  note: Would lose his forge hand if exposed.
+- source_id: NPC_SET_025
+  source_name: Inga Stormdottir
+  target: Sigrun Hrafnsdottir
+  type: ally
+  note: Trade partnership with recurring tension.
+- source_id: NPC_SET_025
+  source_name: Inga Stormdottir
+  target: Astrid Veilborn
+  type: debt
+  note: Political debt from her rise to office.
+- source_id: NPC_SET_026
+  source_name: Sten Keelwright
+  target: Olaf Reedson
+  type: ally
+  note: Tests hulls on Olaf's crossing route.
+- source_id: NPC_SET_026
+  source_name: Sten Keelwright
+  target: Inga Stormdottir
+  type: debt
+  note: She covered his workshop losses after fire.
+- source_id: NPC_SET_027
+  source_name: Miri Salt-Ledger
+  target: Ketil Smoke-Scribe
+  type: rival
+  note: Counter-intelligence duel across two harbors.
+- source_id: NPC_SET_027
+  source_name: Miri Salt-Ledger
+  target: Inga Stormdottir
+  type: fear
+  note: Inga would drown her for treason if proven.
+- source_id: NPC_SET_028
+  source_name: Brosa Thornmantle
+  target: Ragnhild Ice-Seer
+  type: fear
+  note: Consults her in secret when the stones hum louder.
+- source_id: NPC_SET_028
+  source_name: Brosa Thornmantle
+  target: Ordovast Karr
+  type: debt
+  note: Pays tribute in livestock to avoid occupation.
+- source_id: NPC_SET_029
+  source_name: Ketta Stone-Hearer
+  target: Brosa Thornmantle
+  type: ally
+  note: He funds her vigils despite fear.
+- source_id: NPC_SET_029
+  source_name: Ketta Stone-Hearer
+  target: Audun Kettilson
+  type: rival
+  note: Disputes his claim over rune interpretation rights.
+- source_id: NPC_SET_030
+  source_name: Einar Peat-Cutter
+  target: Pack-Elder Sura
+  type: debt
+  note: Bone Pack paid him in winter herbs and sheep fat.
+- source_id: NPC_SET_030
+  source_name: Einar Peat-Cutter
+  target: Brosa Thornmantle
+  type: ally
+  note: Scouts hazard routes for the elder council.
+- source_id: NPC_SET_031
+  source_name: Torsten Alriksson
+  target: Ordovast Karr
+  type: debt
+  note: Outstanding supply debt with political strings.
+- source_id: NPC_SET_031
+  source_name: Torsten Alriksson
+  target: Sigrun Hrafnsdottir
+  type: ally
+  note: Seeks Compact protection to offset Iron Grip pressure.
+- source_id: NPC_SET_032
+  source_name: Liv Tar-Herb
+  target: Torsten Alriksson
+  type: ally
+  note: Presses him to keep refugee policy humane.
+- source_id: NPC_SET_032
+  source_name: Liv Tar-Herb
+  target: Halldor the Pure
+  type: fear
+  note: His zealots consider her spirit methods suspect.
+- source_id: NPC_SET_033
+  source_name: Odr Pine-Scale
+  target: Miri Salt-Ledger
+  type: ally
+  note: Exchanges manifests and false seals.
+- source_id: NPC_SET_033
+  source_name: Odr Pine-Scale
+  target: Torsten Alriksson
+  type: fear
+  note: Would be exiled if his double books were read aloud.
+- source_id: NPC_SET_034
+  source_name: Sigrun Hrafnsdottir
+  target: Ordovast Karr
+  type: rival
+  note: Strategic and economic conflict is escalating.
+- source_id: NPC_SET_034
+  source_name: Sigrun Hrafnsdottir
+  target: Helga Thornsdottir
+  type: ally
+  note: Mutual defense hinges on sheep-route security.
+- source_id: NPC_SET_035
+  source_name: Haldor Bronze-Brow
+  target: Keld Ironhand
+  type: rival
+  note: Mentor-turned-competitor over ore rights.
+- source_id: NPC_SET_035
+  source_name: Haldor Bronze-Brow
+  target: Sigrun Hrafnsdottir
+  type: ally
+  note: Trusted for strategic forging projects.
+- source_id: NPC_SET_036
+  source_name: Runa Archive-Keeper
+  target: Bryn Ashmouth
+  type: ally
+  note: Exchanges inscriptions and field confirmations.
+- source_id: NPC_SET_036
+  source_name: Runa Archive-Keeper
+  target: Audun Kettilson
+  type: rival
+  note: Competing claims over rune authority.
+- source_id: NPC_SET_037
+  source_name: Vemund Iron-Gate
+  target: Sigrun Hrafnsdottir
+  type: ally
+  note: Trusted with keep security reforms.
+- source_id: NPC_SET_037
+  source_name: Vemund Iron-Gate
+  target: Hake Long-Spear
+  type: kin
+  note: Former campaign brothers on opposite sides now.
+- source_id: NPC_SET_038
+  source_name: Skari Coin-Tongue
+  target: Ketil Smoke-Scribe
+  type: ally
+  note: Trades discreet transport for actionable intelligence.
+- source_id: NPC_SET_038
+  source_name: Skari Coin-Tongue
+  target: Sigrun Hrafnsdottir
+  type: fear
+  note: She audits his books personally when suspicious.
+- source_id: NPC_SET_039
+  source_name: Olaf Reedson
+  target: Ordovast Karr
+  type: fear
+  note: Pays tribute because Iron Grip controls the upstream road.
+- source_id: NPC_SET_039
+  source_name: Olaf Reedson
+  target: Yrsa Net-Mother
+  type: ally
+  note: Runs discreet cargo in shared night windows.
+- source_id: NPC_SET_040
+  source_name: Sif Ropewife
+  target: Olaf Reedson
+  type: ally
+  note: Splits ferry income for medicine stock.
+- source_id: NPC_SET_040
+  source_name: Sif Ropewife
+  target: Wulfgar
+  type: fear
+  note: Knows his slavers pass close in fog.
+- source_id: NPC_SET_041
+  source_name: Dagga Toll-Crow
+  target: Ordovast Karr
+  type: debt
+  note: Placed at Bleakwater by Iron Grip handlers.
+- source_id: NPC_SET_041
+  source_name: Dagga Toll-Crow
+  target: Sigrun Hrafnsdottir
+  type: ally
+  note: Testing defection through low-risk intelligence.
+- source_id: NPC_SET_042
+  source_name: Audun Kettilson
+  target: Runa Archive-Keeper
+  type: rival
+  note: Competing rune schools and access rights.
+- source_id: NPC_SET_042
+  source_name: Audun Kettilson
+  target: Ragnhild Ice-Seer
+  type: fear
+  note: Needs her insights, dreads her price.
+- source_id: NPC_SET_043
+  source_name: Thrain Ink-Finger
+  target: Audun Kettilson
+  type: ally
+  note: Favored but frequently reprimanded apprentice-master dynamic.
+- source_id: NPC_SET_043
+  source_name: Thrain Ink-Finger
+  target: Dalla Mist-Tongue
+  type: fear
+  note: Saw her in archive shadows and told no one.
+- source_id: NPC_SET_044
+  source_name: Elin Wave-Skald
+  target: Sigrid Blackwine
+  type: ally
+  note: Moves battlefield news under cover of performances.
+- source_id: NPC_SET_044
+  source_name: Elin Wave-Skald
+  target: Audun Kettilson
+  type: debt
+  note: Audun sponsors her route in exchange for relic rumors.
+- source_id: NPC_SET_045
+  source_name: Helga Thornsdottir
+  target: Sigrun Hrafnsdottir
+  type: ally
+  note: Mutual defense through trade and arms.
+- source_id: NPC_SET_045
+  source_name: Helga Thornsdottir
+  target: Wulfgar
+  type: rival
+  note: Personal vendetta over stolen Thornwall children.
+- source_id: NPC_SET_046
+  source_name: Mads Thorn-Captain
+  target: Helga Thornsdottir
+  type: ally
+  note: Loyal garrison pillar.
+- source_id: NPC_SET_046
+  source_name: Mads Thorn-Captain
+  target: Dagga Toll-Crow
+  type: debt
+  note: Compromised by one covert crossing.
+- source_id: NPC_SET_047
+  source_name: Yrsa Fleecemother
+  target: Helga Thornsdottir
+  type: ally
+  note: Economic backbone of Helga's route policy.
+- source_id: NPC_SET_047
+  source_name: Yrsa Fleecemother
+  target: Skari Coin-Tongue
+  type: rival
+  note: Competing contract traps and collateral games.
+- source_id: NPC_SET_048
+  source_name: Ragnhild Isarnsdottir
+  target: Audun Kettilson
+  type: ally
+  note: Trades visions for archive fragments.
+- source_id: NPC_SET_048
+  source_name: Ragnhild Isarnsdottir
+  target: Astrid Veilborn
+  type: rival
+  note: Believes the Widow is accelerating the thinning.
+- source_id: NPC_SET_049
+  source_name: Knut Seal-Bone
+  target: Ragnhild Isarnsdottir
+  type: ally
+  note: Primary pathfinder and supply hunter.
+- source_id: NPC_SET_049
+  source_name: Knut Seal-Bone
+  target: Wulfgar
+  type: rival
+  note: Personal ice war after a cousin was taken.
+- source_id: NPC_SET_050
+  source_name: Svanhild Frost-Lantern
+  target: Ragnhild Isarnsdottir
+  type: ally
+  note: Serves as ritual second and witness.
+- source_id: NPC_SET_050
+  source_name: Svanhild Frost-Lantern
+  target: Egil Hrafnsson
+  type: debt
+  note: Receives supplies from Raven's Perch in exchange for omen reports.
+- source_id: NPC_BND_001
+  source_name: Dalla Fenriksdottir
+  target: Gest Ledger
+  type: ally
+  note: She trusts him to keep medical stores off the captain's sale list.
+- source_id: NPC_BND_001
+  source_name: Dalla Fenriksdottir
+  target: Svala White-Hand
+  type: ally
+  note: Heard of Red Tide's captive healer and wants her extracted alive.
+- source_id: NPC_BND_002
+  source_name: Rurik Alvisson
+  target: Kell Hook
+  type: ally
+  note: Runs knife drills with Kell when scouts return.
+- source_id: NPC_BND_002
+  source_name: Rurik Alvisson
+  target: Ivor Fen-Eye
+  type: rival
+  note: Each has tracked the other by boot pattern twice.
+- source_id: NPC_BND_003
+  source_name: Einar Broksson
+  target: Petra Shepherd
+  type: ally
+  note: She patched his shoulder and taught him to hold line instead of chase kills.
+- source_id: NPC_BND_003
+  source_name: Einar Broksson
+  target: Leif Torch-Son
+  type: rival
+  note: Competes with Leif for notice from Voss.
+- source_id: NPC_BND_004
+  source_name: Signe Arnsdottir
+  target: Gest Ledger
+  type: ally
+  note: They run quiet audits on food theft.
+- source_id: NPC_BND_004
+  source_name: Signe Arnsdottir
+  target: Skarn Chain-Keeper
+  type: grudge
+  note: Skarn once stole her stores when both worked the same winter port.
+- source_id: NPC_BND_005
+  source_name: Leif Jorundsson
+  target: Einar Green-Split
+  type: rival
+  note: Both race for first blood and first notice.
+- source_id: NPC_BND_005
+  source_name: Leif Jorundsson
+  target: Thorne Ash-Born
+  type: fear
+  note: Thorne warned him once and burned his sleeve to prove a point.
+- source_id: NPC_BND_006
+  source_name: Ivor Njalsson
+  target: Hadric Red Jaw
+  type: fear
+  note: Knows exactly how quickly Hadric kills failed scouts.
+- source_id: NPC_BND_006
+  source_name: Ivor Njalsson
+  target: Rurik Harefoot
+  type: rival
+  note: Obsessed with proving he is the better tracker.
+- source_id: NPC_BND_007
+  source_name: Jari Osmundsson
+  target: Crane
+  type: ally
+  note: Crane's berserker rushes work because Jari's line gives him a hinge point.
+- source_id: NPC_BND_007
+  source_name: Jari Osmundsson
+  target: Odr Bent-Knee
+  type: grudge
+  note: Believes Odr's hesitation got two line men killed.
+- source_id: NPC_BND_008
+  source_name: Skarn Haldorsson
+  target: Askel Rope
+  type: ally
+  note: Runs slave-market routes with Red Tide contacts.
+- source_id: NPC_BND_008
+  source_name: Skarn Haldorsson
+  target: Signe Pot-Knife
+  type: grudge
+  note: She once broke his hand for stealing salt fish.
+- source_id: NPC_BND_009
+  source_name: Odr Ketilsson
+  target: Hadric Red Jaw
+  type: fear
+  note: Bound by blackmail and hostage leverage.
+- source_id: NPC_BND_009
+  source_name: Odr Ketilsson
+  target: Jari Wall-Ox
+  type: grudge
+  note: Jari publicly called him craven after the ford ambush.
+- source_id: NPC_BND_010
+  source_name: Ragna Solbergsdottir
+  target: Varis
+  type: rival
+  note: Both are building support among the same veterans.
+- source_id: NPC_BND_010
+  source_name: Ragna Solbergsdottir
+  target: Merric The Lamp
+  type: fear
+  note: Knows he would execute her first if Hadric gives the word.
+- source_id: NPC_BND_011
+  source_name: Yrsa Suradottir
+  target: Pack-Elder Sura
+  type: kin
+  note: Niece and likely successor if she can hold the clan.
+- source_id: NPC_BND_011
+  source_name: Yrsa Suradottir
+  target: Toke Milk-Tooth
+  type: ally
+  note: Trains him nightly so he survives first winter.
+- source_id: NPC_BND_012
+  source_name: Toke Rannulfsson
+  target: Yrsa Bone-Daughter
+  type: ally
+  note: Yrsa shields him from elder ridicule.
+- source_id: NPC_BND_012
+  source_name: Toke Rannulfsson
+  target: Alfdis Candle-Breath
+  type: ally
+  note: They trade carved tokens at old marker stones.
+- source_id: NPC_BND_013
+  source_name: Vetr Hallgrimsson
+  target: Pack-Elder Sura
+  type: ally
+  note: Sura trusts his warnings more than she admits.
+- source_id: NPC_BND_013
+  source_name: Vetr Hallgrimsson
+  target: Sev the Pale
+  type: rival
+  note: Competing spiritual claims over barrow rights.
+- source_id: NPC_BND_014
+  source_name: Arnketil Surason
+  target: Yrsa Bone-Daughter
+  type: kin
+  note: Cousin and field partner on long hunts.
+- source_id: NPC_BND_014
+  source_name: Arnketil Surason
+  target: Fang
+  type: rival
+  note: Both compete for lead-skirmisher prestige.
+- source_id: NPC_BND_015
+  source_name: Maela Ragnildsdottir
+  target: Duve Coldhand Orn
+  type: ally
+  note: Duve values results and protects her authority in triage.
+- source_id: NPC_BND_015
+  source_name: Maela Ragnildsdottir
+  target: Svala White-Hand
+  type: ally
+  note: Wants to trade formulas if she can free the captive healer.
+- source_id: NPC_BND_016
+  source_name: Rolf Ingvarsson
+  target: Ked the Nail Sovere
+  type: fear
+  note: Ked calls him fraud and threatens to gut him if omens fail.
+- source_id: NPC_BND_016
+  source_name: Rolf Ingvarsson
+  target: Runi Stone-Thumb
+  type: ally
+  note: Respects Runi's carving precision and exchanges glyph patterns.
+- source_id: NPC_BND_017
+  source_name: Inga Thrandisdottir
+  target: Duve Coldhand Orn
+  type: ally
+  note: Mutual respect between old-officer professionals.
+- source_id: NPC_BND_017
+  source_name: Inga Thrandisdottir
+  target: Ragna Crow-Bride
+  type: rival
+  note: Both court disillusioned fighters from tyrant bands.
+- source_id: NPC_BND_018
+  source_name: Sten Arelsson
+  target: Boot Pask
+  type: ally
+  note: Old campaign brothers who still read each other in silence.
+- source_id: NPC_BND_018
+  source_name: Sten Arelsson
+  target: Hakon Keel-Lock
+  type: ally
+  note: Trying to temper Hakon's boarding rage into line discipline.
+- source_id: NPC_BND_019
+  source_name: Hakon Tjornsson
+  target: Ylva the Mute
+  type: ally
+  note: Uses Ylva's signs to plan silent boarding routes.
+- source_id: NPC_BND_019
+  source_name: Hakon Tjornsson
+  target: Askel Rope
+  type: grudge
+  note: Swore to cut Rope's hands off for old slave raids.
+- source_id: NPC_BND_020
+  source_name: Jorun Halldorsdottir
+  target: Brek Saltmarch
+  type: ally
+  note: Supports him publicly while quietly testing alternatives.
+- source_id: NPC_BND_020
+  source_name: Jorun Halldorsdottir
+  target: Torve
+  type: grudge
+  note: Blames Torve for wasting rations during flood camp.
+- source_id: NPC_BND_021
+  source_name: Dren Sigfusson
+  target: Mirke One-Ear
+  type: ally
+  note: Mirke taught him marsh routes when he was twelve.
+- source_id: NPC_BND_021
+  source_name: Dren Sigfusson
+  target: Olin Rime-Brand
+  type: ally
+  note: Runs covert message drops with Olin through river stones.
+- source_id: NPC_BND_022
+  source_name: Hella Brynjarssdottir
+  target: Brek Saltmarch
+  type: ally
+  note: Acts as his blunt instrument and conscience.
+- source_id: NPC_BND_022
+  source_name: Hella Brynjarssdottir
+  target: Wulfgar the Branded
+  type: fear
+  note: Believes Wulfgar still hunts deserters from old crews.
+- source_id: NPC_BND_023
+  source_name: Torald Eiriksson
+  target: Sigrid Blackwine
+  type: ally
+  note: Her strict pragmatism matches his military creed.
+- source_id: NPC_BND_023
+  source_name: Torald Eiriksson
+  target: Knut Last Mast
+  type: ally
+  note: Relies on Knut to hold line when plans break.
+- source_id: NPC_BND_024
+  source_name: Freydis Aunarsdottir
+  target: Sigrid Blackwine
+  type: ally
+  note: Handles Sigrid's contract terms and risk clauses.
+- source_id: NPC_BND_024
+  source_name: Freydis Aunarsdottir
+  target: Skarn Chain-Keeper
+  type: grudge
+  note: Skarn sold one of her informants into chains.
+- source_id: NPC_BND_025
+  source_name: Knut Hallbjornsson
+  target: Torald Ice-Brow
+  type: ally
+  note: Two anchors of the remnant's front line.
+- source_id: NPC_BND_025
+  source_name: Knut Hallbjornsson
+  target: Hakon Keel-Lock
+  type: ally
+  note: Exchanged boarding tactics after a ceasefire parley.
+- source_id: NPC_BND_026
+  source_name: Olin Dyrsson
+  target: Ylva the Mute
+  type: ally
+  note: Learns silent trail signals from Ylva whenever paths cross.
+- source_id: NPC_BND_026
+  source_name: Olin Dyrsson
+  target: Dren Mud-Wolf
+  type: ally
+  note: Trades river intel through dead drops.
+- source_id: NPC_BND_027
+  source_name: Runi Erlandsson
+  target: Elder Bryn Ashmouth
+  type: ally
+  note: Trusted keeper of burial law and inscriptions.
+- source_id: NPC_BND_027
+  source_name: Runi Erlandsson
+  target: Sev the Pale
+  type: rival
+  note: Sev favors visions; Runi favors carved evidence.
+- source_id: NPC_BND_028
+  source_name: Alfdis Torirsdottir
+  target: Norn
+  type: ally
+  note: Norn drills her in silent guard rotations.
+- source_id: NPC_BND_028
+  source_name: Alfdis Torirsdottir
+  target: Toke Milk-Tooth
+  type: ally
+  note: Meets him secretly near old boundary stones.
+- source_id: NPC_BND_029
+  source_name: Eydis Halldis
+  target: Elder Bryn Ashmouth
+  type: ally
+  note: Bryn trusts her to judge oath-breakers by wound and word.
+- source_id: NPC_BND_029
+  source_name: Eydis Halldis
+  target: Svala White-Hand
+  type: ally
+  note: Wants to rescue Svala before Red Tide ruins her hands.
+- source_id: NPC_BND_030
+  source_name: Svala Eiriksdottir
+  target: Wulfgar the Branded
+  type: fear
+  note: He keeps her chained between fights to prevent flight.
+- source_id: NPC_BND_030
+  source_name: Svala Eiriksdottir
+  target: Dalla Moss-Hand
+  type: ally
+  note: Has heard coded field signs from Dalla in market crowds.
+- source_id: NPC_BND_031
+  source_name: Garr Vidarsson
+  target: Bera Iron-Teeth
+  type: fear
+  note: Bera suspects his loyalty and tests him in front-line fights.
+- source_id: NPC_BND_031
+  source_name: Garr Vidarsson
+  target: Hella Cracked Oar
+  type: grudge
+  note: Hella recognizes him from his old name and wants him dead.
+- source_id: NPC_BND_032
+  source_name: Torfi Keldsson
+  target: Askel Rope
+  type: ally
+  note: Askel taught him knot work and captive handling.
+- source_id: NPC_BND_032
+  source_name: Torfi Keldsson
+  target: Svala White-Hand
+  type: ally
+  note: Quietly aiding her planned escape in stages.
+- source_id: NPC_BND_033
+  source_name: Hrefna Karsdottir
+  target: Wulfgar the Branded
+  type: rival
+  note: Publicly loyal, privately measuring his failures.
+- source_id: NPC_BND_033
+  source_name: Hrefna Karsdottir
+  target: Freydis Harbor-Witch
+  type: ally
+  note: Uses Freydis as a deniable channel for post-coup contracts.
+- source_id: NPC_TRV_001
+  source_name: Torsten Salt-Hide
+  target: NPC_TRV_027
+  type: ally
+  note: Audun reforges his broken wagon axles for reduced rates.
+- source_id: NPC_TRV_002
+  source_name: Edda Amber-Thread
+  target: NPC_TRV_006
+  type: rival
+  note: Orm's relic trade disrupts her legal caravan routes.
+- source_id: NPC_TRV_003
+  source_name: Kolbein Drift-Market
+  target: NPC_TRV_019
+  type: debt
+  note: Pays Hakon monthly silver to avoid inspections.
+- source_id: NPC_TRV_004
+  source_name: Samir ibn Faruq
+  target: NPC_TRV_019
+  type: ally
+  note: Hakon's patrol markers keep his caravans from vanishing in the hills.
+- source_id: NPC_TRV_005
+  source_name: Yngvild Tallow-Hands
+  target: NPC_TRV_018
+  type: ally
+  note: Maret receives wax and clean cloth in exchange for field medicines.
+- source_id: NPC_TRV_006
+  source_name: Orm Gravepurse
+  target: NPC_TRV_013
+  type: rival
+  note: Thora publicly curses his grave-trade whenever she finds proof.
+- source_id: NPC_TRV_007
+  source_name: Leif Crow-Voice
+  target: NPC_TRV_011
+  type: ally
+  note: Bragi feeds him harbor rumors and sailor chants.
+- source_id: NPC_TRV_008
+  source_name: Runa Veil-Touched
+  target: NPC_TRV_012
+  type: ally
+  note: Vesa carves her field runes and receives forbidden notes in return.
+- source_id: NPC_TRV_009
+  source_name: Haldis Honey-Tongue
+  target: NPC_TRV_010
+  type: rival
+  note: Ketil's fearsome songs complicate her quiet information work.
+- source_id: NPC_TRV_010
+  source_name: Ketil Nith-Singer
+  target: NPC_TRV_007
+  type: rival
+  note: Leif calls him necessary; Ketil calls Leif too soft.
+- source_id: NPC_TRV_011
+  source_name: Bragi Oar-Rhyme
+  target: NPC_TRV_023
+  type: ally
+  note: He shares food and news with Inga's displaced family camp.
+- source_id: NPC_TRV_012
+  source_name: Vesa Knot-Bones
+  target: NPC_TRV_008
+  type: ally
+  note: Runa shares Veil notes in exchange for rune-carved travel wards.
+- source_id: NPC_TRV_013
+  source_name: Thora Mist-Mother
+  target: NPC_TRV_006
+  type: rival
+  note: She seeks proof that Orm disturbed protected mountain barrows.
+- source_id: NPC_TRV_014
+  source_name: Arn Ketillson
+  target: NPC_TRV_016
+  type: rival
+  note: Eirik's prophecies publicly accuse Arn of past crimes.
+- source_id: NPC_TRV_015
+  source_name: Bjorn One-Oath
+  target: NPC_TRV_019
+  type: debt
+  note: Hakon once spared him from warrant hunters in exchange for winter watch reports.
+- source_id: NPC_TRV_016
+  source_name: Eirik Reed-Mouth
+  target: NPC_TRV_014
+  type: rival
+  note: He publicly names Arn in visions of false rune trials.
+- source_id: NPC_TRV_017
+  source_name: Svala No-Chain
+  target: NPC_TRV_026
+  type: debt
+  note: Njal once tracked her for slavers; now he quietly warns her of hunts.
+- source_id: NPC_TRV_018
+  source_name: Maret Wormwood
+  target: NPC_TRV_005
+  type: ally
+  note: Yngvild supplies her with wax, cloth, and lamp grease for field surgery.
+- source_id: NPC_TRV_019
+  source_name: Hakon Way-Post
+  target: NPC_TRV_003
+  type: debt
+  note: Kolbein's payments keep one trail watchfire conveniently dark.
+- source_id: NPC_TRV_020
+  source_name: Ragna Pine-Arrow
+  target: NPC_TRV_024
+  type: rival
+  note: She knows his gait even beneath refugee rags.
+- source_id: NPC_TRV_021
+  source_name: Oddi Cairn-Walker
+  target: NPC_TRV_016
+  type: ally
+  note: Eirik's omens help him decide which moor lanes to close.
+- source_id: NPC_TRV_022
+  source_name: Torfi Mire-Hound
+  target: NPC_TRV_025
+  type: kin
+  note: He knows her true identity and cannot decide whether to expose her.
+- source_id: NPC_TRV_023
+  source_name: Inga Ash-Cloak
+  target: NPC_TRV_011
+  type: ally
+  note: Bragi carries her warnings to safer halls ahead of her camp.
+- source_id: NPC_TRV_024
+  source_name: Jorund White-Sack
+  target: NPC_TRV_020
+  type: rival
+  note: Ragna is hunting him and has already found two of his old caches.
+- source_id: NPC_TRV_025
+  source_name: Yrsa Twin-Shadows
+  target: NPC_TRV_022
+  type: kin
+  note: Torfi is her brother and secretly clears marsh routes for her.
+- source_id: NPC_TRV_026
+  source_name: Njal Quiet-Step
+  target: NPC_TRV_017
+  type: debt
+  note: Svala spared him once; he now leaks slaver patrol timings to her.
+- source_id: NPC_TRV_027
+  source_name: Audun Iron-Song
+  target: NPC_TRV_001
+  type: ally
+  note: Torsten transports his coal and billet stock between settlements.
+- source_id: NPC_TRV_028
+  source_name: Freydis Bark-Stitch
+  target: NPC_TRV_018
+  type: debt
+  note: Maret's salves saved her arm from tannery rot two winters ago.
+- source_id: NPC_TRV_029
+  source_name: Kori Pine-Gouge
+  target: NPC_TRV_012
+  type: ally
+  note: Vesa reads his hidden carvings and corrects dangerous symbol drift.
+- source_id: NPC_TRV_030
+  source_name: Dagr Coal-Bellows
+  target: NPC_TRV_026
+  type: debt
+  note: Njal knows who is coercing Dagr and trades warnings for repairs.
+- source_id: NPC_ANT_001
+  source_name: Hakon Split-Banner
+  target: Ordovast
+  type: rival
+  note: Openly loyal, privately preparing his fall.
+- source_id: NPC_ANT_001
+  source_name: Hakon Split-Banner
+  target: The Pale Widow
+  type: ally
+  note: Mutual betrayal pact disguised as cooperation.
+- source_id: NPC_ANT_001
+  source_name: Hakon Split-Banner
+  target: Moor's End
+  type: target
+  note: Needs its levy roll to validate his false orders.
+- source_id: NPC_ANT_002
+  source_name: Astrid Wolf-Mother
+  target: Jarl Ulf Vargson
+  type: rival
+  note: She calls him soft and old.
+- source_id: NPC_ANT_002
+  source_name: Astrid Wolf-Mother
+  target: Vargheim
+  type: target
+  note: Her claimed 'protectorate.'
+- source_id: NPC_ANT_002
+  source_name: Astrid Wolf-Mother
+  target: The Bone Pack
+  type: ally
+  note: Short-term night patrol contract.
+- source_id: NPC_ANT_003
+  source_name: Torleif Gate-Lord
+  target: Ordovast
+  type: rival
+  note: Publicly obedient, privately starving his regime.
+- source_id: NPC_ANT_003
+  source_name: Torleif Gate-Lord
+  target: Molla Grainveil
+  type: ally
+  note: Mutual famine profiteering.
+- source_id: NPC_ANT_003
+  source_name: Torleif Gate-Lord
+  target: Grimholt
+  type: target
+  note: Seeks rule without title.
+- source_id: NPC_ANT_004
+  source_name: Brynja Ash-Cloak
+  target: Jarl Helga Thornwall
+  type: rival
+  note: Undercuts Helga through family law.
+- source_id: NPC_ANT_004
+  source_name: Brynja Ash-Cloak
+  target: Qadir ibn Sarrak
+  type: ally
+  note: Secret arms-for-passage pact.
+- source_id: NPC_ANT_004
+  source_name: Brynja Ash-Cloak
+  target: Thornwall
+  type: target
+  note: Wants its legal heart, not its walls.
+- source_id: NPC_ANT_005
+  source_name: Halldor Ash-Tongue
+  target: The Pale Widow
+  type: rival
+  note: Needs her legitimacy but wants her replaced.
+- source_id: NPC_ANT_005
+  source_name: Halldor Ash-Tongue
+  target: Ashen Reach
+  type: target
+  note: Turning panic into clerical rule.
+- source_id: NPC_ANT_005
+  source_name: Halldor Ash-Tongue
+  target: Ordovast
+  type: ally
+  note: Past covert patronage.
+- source_id: NPC_ANT_006
+  source_name: Yrsa Bone-Chanter
+  target: Ragnhild
+  type: ally
+  note: Receives shelter and weather signs.
+- source_id: NPC_ANT_006
+  source_name: Yrsa Bone-Chanter
+  target: The Pale Widow
+  type: rival
+  note: Rejects the Widow's controlled methods.
+- source_id: NPC_ANT_006
+  source_name: Yrsa Bone-Chanter
+  target: Grimholt
+  type: target
+  note: Wants its dead from the siege fields.
+- source_id: NPC_ANT_007
+  source_name: Morkel Tithe-Crow
+  target: Wulfgar the Branded
+  type: employer
+  note: Pays Red Tide outriders through intermediaries.
+- source_id: NPC_ANT_007
+  source_name: Morkel Tithe-Crow
+  target: Moor's End
+  type: target
+  note: Primary extortion ground.
+- source_id: NPC_ANT_007
+  source_name: Morkel Tithe-Crow
+  target: Halldor Ash-Tongue
+  type: rival
+  note: Competes for fear-based authority.
+- source_id: NPC_ANT_008
+  source_name: Einar Chain-Break
+  target: Kell Hook
+  type: target
+  note: Primary blood-feud objective.
+- source_id: NPC_ANT_008
+  source_name: Einar Chain-Break
+  target: Voss Cold-Eye
+  type: rival
+  note: Assumes Voss sanctioned the betrayal.
+- source_id: NPC_ANT_008
+  source_name: Einar Chain-Break
+  target: Bleakwater Landing
+  type: ally
+  note: Bribed ferrymen relay movement.
+- source_id: NPC_ANT_009
+  source_name: Runa Stag-Knife
+  target: Hadric the Younger
+  type: target
+  note: Personal blood-feud leader target.
+- source_id: NPC_ANT_009
+  source_name: Runa Stag-Knife
+  target: Sigrid Blackwine
+  type: ally
+  note: Covert support through intermediaries.
+- source_id: NPC_ANT_009
+  source_name: Runa Stag-Knife
+  target: Feldwick
+  type: ally
+  note: Locals shelter her despite fear.
+- source_id: NPC_ANT_010
+  source_name: Ofeig Marsh-Hound
+  target: Sigrid Blackwine
+  type: rival
+  note: Old humiliation turned obsession.
+- source_id: NPC_ANT_010
+  source_name: Ofeig Marsh-Hound
+  target: Raven's Perch
+  type: target
+  note: Primary courier interception lane.
+- source_id: NPC_ANT_010
+  source_name: Ofeig Marsh-Hound
+  target: Deepholm
+  type: target
+  note: Sells stolen dispatches there too.
+- source_id: NPC_ANT_011
+  source_name: Ketil Salt-Brand
+  target: The Silent Oar
+  type: target
+  note: Believes they sheltered mutineers.
+- source_id: NPC_ANT_011
+  source_name: Ketil Salt-Brand
+  target: Kolvik
+  type: ally
+  note: Dock poor quietly support him.
+- source_id: NPC_ANT_011
+  source_name: Ketil Salt-Brand
+  target: Wulfgar the Branded
+  type: rival
+  note: Unaware Wulfgar's broker manipulated his list.
+- source_id: NPC_ANT_012
+  source_name: Severin Valeborn
+  target: Skaldhaven
+  type: ally
+  note: Uses scholars as cover and code clerks.
+- source_id: NPC_ANT_012
+  source_name: Severin Valeborn
+  target: Deepholm
+  type: target
+  note: Key to legal annexation strategy.
+- source_id: NPC_ANT_012
+  source_name: Severin Valeborn
+  target: Ordovast
+  type: target
+  note: Too unstable to partner, ideal to weaken.
+- source_id: NPC_ANT_013
+  source_name: Qadir ibn Sarrak
+  target: Wulfgar the Branded
+  type: ally
+  note: Pays for convoy escort and raids.
+- source_id: NPC_ANT_013
+  source_name: Qadir ibn Sarrak
+  target: Brynja Ash-Cloak
+  type: ally
+  note: Trades arms for route access.
+- source_id: NPC_ANT_013
+  source_name: Qadir ibn Sarrak
+  target: Stonebay Hamlet
+  type: target
+  note: Primary embarkation point.
+- source_id: NPC_ANT_014
+  source_name: Marek Amber-Eye
+  target: Severin Valeborn
+  type: employer
+  note: Primary intelligence buyer.
+- source_id: NPC_ANT_014
+  source_name: Marek Amber-Eye
+  target: Kolvik
+  type: target
+  note: Turning its walls into coded signal boards.
+- source_id: NPC_ANT_014
+  source_name: Marek Amber-Eye
+  target: Qadir ibn Sarrak
+  type: ally
+  note: Mutual smuggling support.
+- source_id: NPC_ANT_015
+  source_name: Dagr Worm-Reader
+  target: The Pale Widow
+  type: rival
+  note: Wants her reputation without her discipline.
+- source_id: NPC_ANT_015
+  source_name: Dagr Worm-Reader
+  target: Ashmark
+  type: target
+  note: Uses graveyards as raw material.
+- source_id: NPC_ANT_015
+  source_name: Dagr Worm-Reader
+  target: Torleif Gate-Lord
+  type: ally
+  note: Arms transport arrangement through corpse porters.
+- source_id: NPC_ANT_016
+  source_name: Helga Nine-Knots
+  target: Skaldhaven
+  type: target
+  note: Testing ground for pain-web governance.
+- source_id: NPC_ANT_016
+  source_name: Helga Nine-Knots
+  target: Severin Valeborn
+  type: ally
+  note: Trades influence for southern medicines.
+- source_id: NPC_ANT_016
+  source_name: Helga Nine-Knots
+  target: The Pale Widow
+  type: rival
+  note: Hates being dismissed as provincial.
+- source_id: NPC_ANT_017
+  source_name: Ottar Candle-Eater
+  target: Yrsa Bone-Chanter
+  type: ally
+  note: Swaps ritual sites and corpse access.
+- source_id: NPC_ANT_017
+  source_name: Ottar Candle-Eater
+  target: Ordovast
+  type: employer
+  note: Sells selective war omens through brokers.
+- source_id: NPC_ANT_017
+  source_name: Ottar Candle-Eater
+  target: Vargheim
+  type: target
+  note: Primary exchange zone for Veil trades.
+- source_id: NPC_ANT_018
+  source_name: Knut Two-Scales
+  target: Ordovast
+  type: ally
+  note: Pays for 'exclusive' intelligence.
+- source_id: NPC_ANT_018
+  source_name: Knut Two-Scales
+  target: Sigrun
+  type: ally
+  note: Also pays for 'exclusive' intelligence.
+- source_id: NPC_ANT_018
+  source_name: Knut Two-Scales
+  target: Severin Valeborn
+  type: employer
+  note: Higher bidder for strategic summaries.
+- source_id: NPC_ANT_019
+  source_name: Bera Net-Mother
+  target: Qadir ibn Sarrak
+  type: ally
+  note: Primary buyer and logistics partner.
+- source_id: NPC_ANT_019
+  source_name: Bera Net-Mother
+  target: Wulfgar the Branded
+  type: ally
+  note: Raid supply and intimidation support.
+- source_id: NPC_ANT_019
+  source_name: Bera Net-Mother
+  target: Bleakwater Landing
+  type: target
+  note: Uses quotas to launder captives.
+- source_id: NPC_ANT_020
+  source_name: Styrkar Tar-Lord
+  target: Ashmark
+  type: target
+  note: Turning neutral tar town into dependency node.
+- source_id: NPC_ANT_020
+  source_name: Styrkar Tar-Lord
+  target: Ordovast
+  type: ally
+  note: Iron Grip buys his emergency stock.
+- source_id: NPC_ANT_020
+  source_name: Styrkar Tar-Lord
+  target: Sigrun
+  type: ally
+  note: Compact also buys when desperate.
+- source_id: NPC_ANT_021
+  source_name: Oline Salt-Book
+  target: Kolvik
+  type: target
+  note: Controls dockside salt vault access.
+- source_id: NPC_ANT_021
+  source_name: Oline Salt-Book
+  target: Molla Grainveil
+  type: ally
+  note: Joint scarcity manipulation.
+- source_id: NPC_ANT_021
+  source_name: Oline Salt-Book
+  target: Voss's Black Axes
+  type: target
+  note: Attempting to bind them by ration debt.
+- source_id: NPC_ANT_022
+  source_name: Lady Ragnfrid Thornwall
+  target: Jarl Helga Thornwall
+  type: puppet
+  note: Ceremonial ruler; she governs.
+- source_id: NPC_ANT_022
+  source_name: Lady Ragnfrid Thornwall
+  target: Helga Nine-Knots
+  type: ally
+  note: Supplies omen theater for legal cover.
+- source_id: NPC_ANT_022
+  source_name: Lady Ragnfrid Thornwall
+  target: Allthing
+  type: target
+  note: Wants recognition as lawful regent.
+- source_id: NPC_ANT_023
+  source_name: Councilor Leif Skald-Coin
+  target: Sigrun
+  type: ally
+  note: Nominally serves her council.
+- source_id: NPC_ANT_023
+  source_name: Councilor Leif Skald-Coin
+  target: Ordovast
+  type: ally
+  note: Secret buyer of war-sensitive votes.
+- source_id: NPC_ANT_023
+  source_name: Councilor Leif Skald-Coin
+  target: Severin Valeborn
+  type: employer
+  note: Pays premium for strategic deliberations.
+- source_id: NPC_ANT_024
+  source_name: Molla Grainveil
+  target: Oline Salt-Book
+  type: ally
+  note: Joint scarcity architecture.
+- source_id: NPC_ANT_024
+  source_name: Molla Grainveil
+  target: Torleif Gate-Lord
+  type: ally
+  note: Grimholt grain diversion pipeline.
+- source_id: NPC_ANT_024
+  source_name: Molla Grainveil
+  target: Bleakwater Landing
+  type: target
+  note: First lien conversions begin there.
+- source_id: NPC_ANT_025
+  source_name: Father Ivar Bridge-Quiet
+  target: Councilor Leif Skald-Coin
+  type: target
+  note: Preparing moral takedown dossier.
+- source_id: NPC_ANT_025
+  source_name: Father Ivar Bridge-Quiet
+  target: Lady Ragnfrid Thornwall
+  type: rival
+  note: Competing models of hidden rule.
+- source_id: NPC_ANT_025
+  source_name: Father Ivar Bridge-Quiet
+  target: Skaldhaven
+  type: ally
+  note: Temple base and information intake.
+- source_id: NPC_SUP_001
+  source_name: Eydis Hearth-Ash
+  target: BAR_010
+  type: bound_to
+  note: Her burial niche is behind the third shield-wall carving.
+- source_id: NPC_SUP_001
+  source_name: Eydis Hearth-Ash
+  target: House Vargson
+  type: enemy
+  note: She marks their descendants for vengeance.
+- source_id: NPC_SUP_002
+  source_name: Skorri Iron-Lock
+  target: BAR_009
+  type: bound_to
+  note: Will not cross the treasury threshold.
+- source_id: NPC_SUP_002
+  source_name: Skorri Iron-Lock
+  target: Iron Barrow Hoard
+  type: ward
+  note: Treats every coin as sacred inventory.
+- source_id: NPC_SUP_003
+  source_name: Jorund Wave-Biter
+  target: BAR_002
+  type: bound_to
+  note: Cannot leave the lower flooded galleries.
+- source_id: NPC_SUP_003
+  source_name: Jorund Wave-Biter
+  target: Frostfjord Hollow
+  type: memory
+  note: Remembers the coast before the settlement existed.
+- source_id: NPC_SUP_004
+  source_name: Ketil Rope-Counter
+  target: BAR_015
+  type: bound_to
+  note: Returns to the counting niche before dawn.
+- source_id: NPC_SUP_004
+  source_name: Ketil Rope-Counter
+  target: NPC_SUP_013
+  type: enemy
+  note: Disputes ferry toll debts with Ormund.
+- source_id: NPC_SUP_005
+  source_name: Ragna Twelve-Cuts
+  target: BAR_021
+  type: bound_to
+  note: Appears only where the duel runes are intact.
+- source_id: NPC_SUP_005
+  source_name: Ragna Twelve-Cuts
+  target: The Pale Widow
+  type: enemy
+  note: Recognizes her scent and calls her a grave-thief.
+- source_id: NPC_SUP_006
+  source_name: The Wicker Bride
+  target: BAR_001
+  type: ward
+  note: Maintains old warning function set by the living.
+- source_id: NPC_SUP_006
+  source_name: The Wicker Bride
+  target: NPC_SUP_008
+  type: enemy
+  note: Hates trap-spirits that imitate her lantern.
+- source_id: NPC_SUP_007
+  source_name: Smoke Under Stone
+  target: BAR_025
+  type: bound_to
+  note: Cannot manifest beyond the inner vent shafts.
+- source_id: NPC_SUP_007
+  source_name: Smoke Under Stone
+  target: NPC_SUP_019
+  type: memory
+  note: Recognizes Torleif's voice pattern from old forge days.
+- source_id: NPC_SUP_008
+  source_name: Hrafnhild's Lantern
+  target: BAR_013
+  type: bound_to
+  note: Most active during fog and low tide.
+- source_id: NPC_SUP_008
+  source_name: Hrafnhild's Lantern
+  target: NPC_SUP_006
+  type: enemy
+  note: Imitates the Wicker Bride to lure victims.
+- source_id: NPC_SUP_009
+  source_name: The Ninth Whisper
+  target: BAR_009
+  type: ward
+  note: Treats naming errors as structural threats.
+- source_id: NPC_SUP_009
+  source_name: The Ninth Whisper
+  target: The Grave Wardens
+  type: memory
+  note: Recognizes their older oath formulas.
+- source_id: NPC_SUP_010
+  source_name: Yrsa Back-Speaks
+  target: BAR_001
+  type: memory
+  note: First heard backward whispers there as a child.
+- source_id: NPC_SUP_010
+  source_name: Yrsa Back-Speaks
+  target: NPC_SUP_008
+  type: enemy
+  note: Claims Hrafnhild's Lantern stole her sister.
+- source_id: NPC_SUP_011
+  source_name: Naddi Split-Step
+  target: SUP_VEIL_04
+  type: enemy
+  note: Survived one Rift-Spawn encounter and carries a scar from it.
+- source_id: NPC_SUP_011
+  source_name: Naddi Split-Step
+  target: Kolvik
+  type: memory
+  note: Refuses contracts that endanger his sister's quarter.
+- source_id: NPC_SUP_012
+  source_name: Svanhild Ash-Mouth
+  target: The Pale Widow
+  type: enemy
+  note: Broke with her after witnessing corpse-trade deals.
+- source_id: NPC_SUP_012
+  source_name: Svanhild Ash-Mouth
+  target: NPC_SUP_019
+  type: memory
+  note: Uses fragments of old forge lore from Torleif's echo.
+- source_id: NPC_SUP_013
+  source_name: Ormund Knot-Bone
+  target: NPC_SUP_004
+  type: enemy
+  note: Ketil's old debt records expose Ormund's original crime.
+- source_id: NPC_SUP_013
+  source_name: Ormund Knot-Bone
+  target: BAR_017
+  type: bound_to
+  note: Cannot stray far from the cairn cluster road.
+- source_id: NPC_SUP_014
+  source_name: The Law Between Stones
+  target: Moor's End Standing Stones
+  type: ward
+  note: Fails to manifest if one of nine core runes is broken.
+- source_id: NPC_SUP_014
+  source_name: The Law Between Stones
+  target: NPC_SUP_017
+  type: memory
+  note: Remembers Styrkar's final lawful ruling.
+- source_id: NPC_SUP_015
+  source_name: Rimewatch Bell-Eye
+  target: BAR_025
+  type: ward
+  note: Linked to first-rank runes around the complex.
+- source_id: NPC_SUP_015
+  source_name: Rimewatch Bell-Eye
+  target: Icebreak
+  type: memory
+  note: Tracks every winter breach since the settlement's founding.
+- source_id: NPC_SUP_016
+  source_name: Gnafa Oath-Eater
+  target: Jarl Halvar the Vain
+  type: enemy
+  note: Seeks to expose his contract frauds.
+- source_id: NPC_SUP_016
+  source_name: Gnafa Oath-Eater
+  target: BAR_011
+  type: memory
+  note: Claims the pass tomb holds evidence of old oath crimes.
+- source_id: NPC_SUP_017
+  source_name: Echo of Jarl Styrkar One-Hand
+  target: Grimholt
+  type: memory
+  note: Anchored to the old allthing hearthstone.
+- source_id: NPC_SUP_017
+  source_name: Echo of Jarl Styrkar One-Hand
+  target: NPC_SUP_014
+  type: ward
+  note: Defers legal disputes to the Law Between Stones.
+- source_id: NPC_SUP_018
+  source_name: Mother Brynja of the Winter Hearth
+  target: Frostfjord Hollow
+  type: ward
+  note: Anchored to the central hall's first hearthstone.
+- source_id: NPC_SUP_018
+  source_name: Mother Brynja of the Winter Hearth
+  target: BAR_002
+  type: memory
+  note: Remembers when cellar cold first began.
+- source_id: NPC_SUP_019
+  source_name: Torleif Rune-Split
+  target: BAR_009
+  type: memory
+  note: Helped inscribe one of its secondary lock formulas.
+- source_id: NPC_SUP_019
+  source_name: Torleif Rune-Split
+  target: NPC_SUP_012
+  type: enemy
+  note: Svanhild publicly rejects his coercive forge doctrine.

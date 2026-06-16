@@ -1,0 +1,23 @@
+{
+  "transaction_id": "txn_20260418T071105Z_season_p1",
+  "cursor": {
+    "year": 312,
+    "day_of_year": 94,
+    "season": "Early Dark",
+    "branch": "mainline",
+    "transaction_index": 1
+  },
+  "timeline_state": {
+    "cursor": {
+      "year": 312,
+      "day_of_year": 94,
+      "season": "Early Dark",
+      "branch": "mainline",
+      "transaction_index": 1
+    },
+    "history": [
+      "txn_20260418T064926Z_week_p1"
+    ],
+    "redo_stack": []
+  }
+}

@@ -1,0 +1,1431 @@
+# ============================================================
+# Supplemental Personal & Band Events
+# Character-driven arcs and internal band dynamics for the
+# Iron Ledger across Y312–Y315.
+# IDs use EVT_{year}_PER_{seq} to avoid conflict with main files.
+# chain_order starts at 50+ to not overlap existing ordering.
+# All events: category "personal", band_relevant true.
+# ============================================================
+
+events:
+  # ============================================================
+  # YEAR 312 — INTRODUCTION OF TENSIONS (~15 events)
+  # ============================================================
+
+  # --- Voss Command Arc ---
+
+  - id: "EVT_312_PER_001"
+    title: "Voss Refuses the Easy Contract"
+    year: 312
+    season: "spring"
+    day: 12
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 50
+    location: "Frostfjord Hollow"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Voss turns down a high-paying but dishonourable escort job, and half the band disagrees."
+    detail: |
+      A merchant offers triple rate to guard a slave coffle south. Voss refuses
+      without discussion. Bjorn the Lean argues the money would keep them fed
+      through summer. Voss stares him quiet. Later, by the fire, Gest writes
+      that he saw Voss's hand shake when he poured his ale. Command used to
+      come easy. Now it costs.
+    effects:
+      morale: -2
+      cohesion: -3
+
+  - id: "EVT_312_PER_002"
+    title: "Voss and the Old Scar"
+    year: 312
+    season: "summer"
+    day: 78
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 51
+    location: "Thornwall"
+    actors:
+      - "Voss Cold-Eye"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Gest notices Voss's sword arm stiffening in cold weather — an old wound worsening."
+    detail: |
+      Gest watches Voss drill alone at dawn. The overhead cuts are slower
+      than last year. Voss favours his left side on the recovery. When Gest
+      asks, Voss says it's the cold. It is midsummer. Neither of them
+      mentions this.
+    effects:
+      morale: -1
+
+  # --- Kell Debt Arc ---
+
+  - id: "EVT_312_PER_003"
+    title: "Kell's Creditor Arrives"
+    year: 312
+    season: "spring"
+    day: 18
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 50
+    location: "Frostfjord Hollow"
+    actors:
+      - "Kell Hook"
+    band_relevant: true
+    summary: "A thin man with a ledger appears at the band's camp asking for Kell by his real name."
+    detail: |
+      Nobody calls Kell by his birth name. The thin man does. He has a wax
+      tablet listing amounts, dates, interest. Kell goes pale and takes the
+      man aside. When he returns he says it is nothing. He drinks through
+      supper and does not eat. Petra catches him counting coins behind the
+      latrines after dark.
+    effects:
+      morale: -3
+      cohesion: -2
+
+  - id: "EVT_312_PER_004"
+    title: "Kell's Dice Game Goes Wrong"
+    year: 312
+    season: "summer"
+    day: 85
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 51
+    location: "Deepholm"
+    actors:
+      - "Kell Hook"
+      - "Lump"
+    band_relevant: true
+    summary: "Kell loses badly at dice and borrows from Lump, who doesn't understand lending."
+    detail: |
+      Kell plays bones with harbour men in Deepholm. He loses twice his
+      monthly share. When the harbour men want payment, Lump steps in — not
+      to fight, but to hand over his own coins because Kell asked nicely.
+      Lump thinks giving coins to a friend is just what you do. Kell thanks
+      him and hates himself for it.
+    effects:
+      morale: -2
+
+  # --- Petra Sister Arc ---
+
+  - id: "EVT_312_PER_005"
+    title: "Petra's First Clue"
+    year: 312
+    season: "spring"
+    day: 30
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 50
+    location: "Kolvik"
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "A freed thrall mentions a red-haired woman matching Petra's sister sold south two years ago."
+    detail: |
+      Petra trades a belt-knife for the information. The thrall remembers
+      because the woman fought — bit a handler's ear half off. That sounds
+      like Merte. Petra says nothing to the band but starts asking questions
+      at every port they pass. Gest notices her lingering at slave markets
+      and writes it down without comment.
+    effects:
+      morale: -1
+
+  - id: "EVT_312_PER_006"
+    title: "Petra Asks Voss for a Detour"
+    year: 312
+    season: "autumn"
+    day: 145
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 51
+    location: "Thornwall"
+    actors:
+      - "Petra Shepherd"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Petra requests the band swing south through Ashenmoor where her sister may have been taken."
+    detail: |
+      Voss listens. He does not say yes or no. He asks what Petra would do
+      if they find her sister and the sister doesn't want to come. Petra has
+      no answer. Voss says he will think on it. Three days later the band
+      takes a contract that happens to route through Ashenmoor. Voss never
+      mentions the connection. Petra knows.
+
+  # --- Thorne Curse (Human Side) ---
+
+  - id: "EVT_312_PER_007"
+    title: "Thorne Sleeps Alone"
+    year: 312
+    season: "summer"
+    day: 70
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 50
+    location: "Frostfjord Hollow"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne moves his bedroll away from the common fire. Nobody asks why."
+    detail: |
+      It starts with the smell. Thorne's sweat has gone sour — metallic,
+      like old blood on iron. He notices the others shifting their bedrolls
+      incrementally each night, a foot here, a foot there. So he moves
+      first, to the edge of the firelight. Lump brings him a bowl of stew
+      anyway and sits with him until it gets cold.
+    effects:
+      morale: -2
+      cohesion: -2
+
+  - id: "EVT_312_PER_008"
+    title: "Thorne Tries a Poultice"
+    year: 312
+    season: "autumn"
+    day: 155
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 51
+    location: "Ashenmoor"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne pays a hedge-woman for a poultice that burns his skin black and does nothing."
+    detail: |
+      The woman mixes yarrow, dock-root, and something she won't name. She
+      packs it on Thorne's forearm where the runes are darkest. It burns.
+      When he peels it off, the skin beneath is charred and cracked but the
+      runes are brighter than before. The woman returns his silver and tells
+      him not to come back.
+    effects:
+      morale: -1
+
+  # --- Gest (Unchained) ---
+
+  - id: "EVT_312_PER_009"
+    title: "Gest Finds a Discrepancy"
+    year: 312
+    season: "spring"
+    day: 40
+    category: "personal"
+    location: "Frostfjord Hollow"
+    actors:
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Gest discovers the ledger records a member paid out five years ago — but the payment column is blank."
+    detail: |
+      A man named Harsk. Listed as leaving the band in 307. No severance
+      recorded, which is wrong — everyone gets their share when they leave.
+      Gest asks Voss about Harsk. Voss says he doesn't remember. Voss
+      remembers everything.
+
+  # --- Lump (Unchained) ---
+
+  - id: "EVT_312_PER_010"
+    title: "Lump Adopts a Dog"
+    year: 312
+    season: "spring"
+    day: 25
+    category: "personal"
+    location: "Kolvik"
+    actors:
+      - "Lump"
+    band_relevant: true
+    summary: "Lump finds a three-legged dog and carries it in his pack for a week until it can walk."
+    detail: |
+      The dog bit him twice before it let him pick it up. Lump named it
+      Stumps. He fed it from his own bowl, which meant he ate less, which
+      meant he was slower on march, which meant Bjorn complained. Lump said
+      the dog needed him. Bjorn said the band needed Lump not fainting from
+      hunger. The dog stayed.
+    effects:
+      morale: 2
+
+  # --- Rolf (Unchained) ---
+
+  - id: "EVT_312_PER_011"
+    title: "Rolf's First Watch"
+    year: 312
+    season: "summer"
+    day: 65
+    category: "personal"
+    location: "Thornwall"
+    actors:
+      - "Rolf"
+    band_relevant: true
+    summary: "Rolf is given his first solo night watch and spends it terrified of every sound."
+    detail: |
+      He hears an owl and draws his sword. He hears a fox and nearly wakes
+      the camp. He hears nothing for an hour and that is the worst part.
+      When Kell relieves him at dawn, Rolf's hands are cramped from gripping
+      his spear. Kell says nothing about the white knuckles. Small mercy.
+
+  - id: "EVT_312_PER_012"
+    title: "Rolf Gets Hazed"
+    year: 312
+    season: "summer"
+    day: 90
+    category: "personal"
+    location: "Deepholm"
+    actors:
+      - "Rolf"
+      - "Bjorn the Lean"
+      - "Kell Hook"
+    band_relevant: true
+    summary: "Bjorn and Kell send Rolf to buy 'shield polish' at the Deepholm market."
+    detail: |
+      Rolf walks the entire market twice asking for shield polish before a
+      smith's apprentice takes pity and explains the joke. Rolf returns to
+      camp red-faced with a jar of rendered fat he bought anyway, claiming
+      it works fine. It doesn't. But he never complains, which is the only
+      right answer.
+    effects:
+      cohesion: 1
+
+  # --- Bjorn (Unchained) ---
+
+  - id: "EVT_312_PER_013"
+    title: "Bjorn Counts His Exit Money"
+    year: 312
+    season: "autumn"
+    day: 130
+    category: "personal"
+    location: "Ashenmoor"
+    actors:
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "Bjorn privately calculates how much he'd need to buy a smallholding and leave the band."
+    detail: |
+      He scratches numbers in the dirt with a stick, then scuffs them out.
+      A farm near Kolvik. Two cows, a plough-share, seed grain. Sixty marks
+      silver, maybe seventy. He has nineteen. He stays because the maths
+      doesn't work, not because he wants to. This is the truth he tells
+      no one.
+    effects:
+      cohesion: -1
+
+  # --- Dalla Awakening (Personal Cost) ---
+
+  - id: "EVT_312_PER_014"
+    title: "Dalla's Nosebleed"
+    year: 312
+    season: "summer"
+    day: 80
+    category: "personal"
+    chain: "dalla_awakening"
+    chain_order: 50
+    location: "Thornwall"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "After a vision, Dalla's nose bleeds for an hour. She tells no one."
+    detail: |
+      The blood drips onto the ledger page she borrowed from Gest to practise
+      her letters. She burns the page. Her head aches for three days. She
+      starts sleeping with a rag pressed to her face, telling anyone who
+      asks that she has a cold.
+    effects:
+      morale: -1
+
+  # --- Ash Past Arc ---
+
+  - id: "EVT_312_PER_015"
+    title: "A Stranger Recognizes Ash"
+    year: 312
+    season: "winter"
+    day: 240
+    category: "personal"
+    chain: "ash_past"
+    chain_order: 50
+    location: "Frostfjord Hollow"
+    actors:
+      - "Ash"
+    band_relevant: true
+    summary: "A passing trader stares at Ash and calls him by a different name. Ash denies it."
+    detail: |
+      The trader is drunk and insistent. He says Ash is someone called Eyvind
+      who disappeared from a jarl's retinue four years ago after a killing.
+      Ash says the man is confused. The trader says the scar on Ash's neck
+      is proof. Ash buys the man a drink and steers the conversation elsewhere.
+      Gest writes the name Eyvind in the margin of his ledger with a question
+      mark.
+    effects:
+      cohesion: -1
+
+  # ============================================================
+  # YEAR 313 — WAR PRESSURES (~18 events)
+  # ============================================================
+
+  # --- Voss Command Arc ---
+
+  - id: "EVT_313_PER_001"
+    title: "Voss Sacrifices the Rearguard"
+    year: 313
+    season: "spring"
+    day: 15
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 52
+    location: "Thornwall"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Voss orders three hired men to hold a bridge while the band retreats. None survive."
+    detail: |
+      They weren't Iron Ledger — just spear-carriers taken on for the season.
+      Voss chose them because they were expendable. He chose correctly. The
+      band lives. The three men don't. Rolf asks if they should go back for
+      the bodies. Voss says no. Rolf does not ask again.
+    effects:
+      morale: -5
+      cohesion: -3
+
+  - id: "EVT_313_PER_002"
+    title: "Voss and Bjorn Argue Over Route"
+    year: 313
+    season: "summer"
+    day: 95
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 53
+    location: "Ashenmoor"
+    actors:
+      - "Voss Cold-Eye"
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "Bjorn openly challenges Voss's route choice in front of the band. Voss lets him speak, then overrules."
+    detail: |
+      Bjorn says the coast road is faster and safer. Voss says the hill path
+      avoids Iron Grip patrols. Bjorn says Voss is guessing. Voss says Bjorn
+      is welcome to take the coast road alone. The silence after that is the
+      kind that breaks bands. Then Bjorn picks up his pack and follows Voss
+      up the hill. The argument is over. The damage is not.
+    effects:
+      cohesion: -4
+
+  - id: "EVT_313_PER_003"
+    title: "Voss Sits with the Wounded"
+    year: 313
+    season: "autumn"
+    day: 165
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 54
+    location: "Deepholm"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "After a skirmish, Voss spends the night awake among the wounded, changing bandages himself."
+    detail: |
+      He doesn't have to. They have people for this. But Voss kneels beside
+      each man, checks the wrappings, gives water. He does not speak much. He
+      does not need to. By morning the wounded are quieter and Voss looks ten
+      years older. Gest writes: "The old man remembers what leadership costs."
+    effects:
+      morale: 3
+      cohesion: 2
+
+  # --- Kell Debt Arc ---
+
+  - id: "EVT_313_PER_004"
+    title: "Kell Steals from the Band Chest"
+    year: 313
+    season: "spring"
+    day: 28
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 52
+    location: "Thornwall"
+    actors:
+      - "Kell Hook"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Gest's ledger shows a discrepancy. Someone took eight marks from the common chest. Kell avoids eye contact."
+    detail: |
+      Gest counts the chest twice. Eight marks short. He tells Voss quietly.
+      Voss says nothing to the band but doubles the watch on the stores. Kell
+      knows they know. He repays five marks within a week, claiming he found
+      them. The other three remain a silent accusation.
+    effects:
+      morale: -3
+      cohesion: -5
+
+  - id: "EVT_313_PER_005"
+    title: "Kell's Side Deal"
+    year: 313
+    season: "summer"
+    day: 100
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 53
+    location: "Deepholm"
+    actors:
+      - "Kell Hook"
+    band_relevant: true
+    summary: "Kell sells information about the band's route to a merchant syndicate for quick coin."
+    detail: |
+      The syndicate wants to know which roads are safe. Kell tells them where
+      the band will patrol and where they won't. It's not exactly betrayal —
+      the information is half-public anyway. But it's half-private too, and
+      the wrong person with the right knowledge could set an ambush. Kell
+      pockets twelve marks and tells himself it doesn't matter.
+    effects:
+      cohesion: -3
+
+  - id: "EVT_313_PER_006"
+    title: "Kell Confronted by Creditor's Enforcer"
+    year: 313
+    season: "autumn"
+    day: 170
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 54
+    location: "Frostfjord Hollow"
+    actors:
+      - "Kell Hook"
+      - "Lump"
+    band_relevant: true
+    summary: "A scarred man pins Kell against a wall in an alley. Lump intervenes."
+    detail: |
+      The enforcer has a knife at Kell's kidney. Pay by winter or lose a hand.
+      Standard terms. Lump rounds the corner looking for Kell to return a
+      borrowed whetstone. He sees the knife. He picks the enforcer up by the
+      belt and sets him down three paces away like a misbehaving dog. The
+      enforcer looks at Lump, looks at Kell, and leaves. Kell's hands won't
+      stop shaking for an hour.
+    effects:
+      morale: -4
+
+  # --- Petra Sister Arc ---
+
+  - id: "EVT_313_PER_007"
+    title: "Petra Tracks Through Warzone"
+    year: 313
+    season: "spring"
+    day: 35
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 52
+    location: "Ashenmoor"
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "Petra finds a burned farmstead where her sister was last reported and picks through the ashes for clues."
+    detail: |
+      The farm burned weeks ago. Petra sifts ash with bare hands until her
+      fingers crack and bleed. She finds a hair-pin — worked bronze, the
+      kind her mother made. It could be Merte's. It could be anyone's. Petra
+      pockets it and says nothing at camp, but she doesn't sleep that night.
+    effects:
+      morale: -2
+
+  - id: "EVT_313_PER_008"
+    title: "Petra's Lead Goes Cold"
+    year: 313
+    season: "summer"
+    day: 110
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 53
+    location: "Kolvik"
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "The slave trader who might know Merte's location was killed in the spring raids."
+    detail: |
+      Dead men keep no records. Petra stands at the burned-out trading post
+      where the man once worked. His ledgers are ash. His associates are
+      scattered or dead. The trail ends here unless something new surfaces.
+      Petra kicks a charred beam and walks back to camp with her jaw set.
+    effects:
+      morale: -3
+
+  - id: "EVT_313_PER_009"
+    title: "Petra Receives a Smuggled Message"
+    year: 313
+    season: "winter"
+    day: 280
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 54
+    location: "Frostfjord Hollow"
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "A river trader delivers a scrap of linen with two words in Merte's hand: 'Alive. South.'"
+    detail: |
+      The handwriting is shaky but unmistakable — Petra taught Merte to write
+      and recognizes the crooked 'A'. South could mean anything. The Ashlands,
+      the coastal holds, the barrow country. But alive. That changes everything.
+      Petra shows it to Voss. Voss nods once.
+    effects:
+      morale: 3
+
+  # --- Thorne Curse (Human Side) ---
+
+  - id: "EVT_313_PER_010"
+    title: "Thorne's Nightmare Wakes the Camp"
+    year: 313
+    season: "spring"
+    day: 42
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 52
+    location: "Thornwall"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne screams in his sleep. When they wake him, he doesn't know where he is for a full minute."
+    detail: |
+      He speaks in a language no one recognizes. His eyes are open but seeing
+      something else — something below. Rolf tries to shake him and Thorne
+      grabs the boy's throat before he comes back to himself. The bruises
+      last a week. Thorne apologizes three times. Rolf says it's fine. It
+      is not fine.
+    effects:
+      morale: -3
+      cohesion: -2
+
+  - id: "EVT_313_PER_011"
+    title: "Thorne and Lump Mend Gear"
+    year: 313
+    season: "autumn"
+    day: 180
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 53
+    location: "Deepholm"
+    actors:
+      - "Thorne Ash-Born"
+      - "Lump"
+    band_relevant: true
+    summary: "Lump sits beside Thorne to mend leather, treating the cursed warrior same as always."
+    detail: |
+      The others find excuses to be elsewhere. Lump does not. He sits down,
+      pulls out a half-repaired boot, and starts punching holes with an awl.
+      They work in silence for an hour. Thorne's hands have dark lines under
+      the skin now, like veins made of ink. Lump notices and says nothing.
+      When they finish, Thorne says "Thank you" and means something larger
+      than boot repair.
+    effects:
+      morale: 2
+      cohesion: 1
+
+  # --- Gest (Unchained) ---
+
+  - id: "EVT_313_PER_012"
+    title: "Gest Reads the Ledger Aloud"
+    year: 313
+    season: "summer"
+    day: 75
+    category: "personal"
+    location: "Ashenmoor"
+    actors:
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "To keep morale up during a rainy march, Gest reads old battle accounts from the ledger."
+    detail: |
+      He reads the account of the Stonebridge fight from 309, when the band
+      held a crossing against twice their number. He reads it well — the fear,
+      the mud, the impossible charge that somehow worked. By the end, even
+      Bjorn is grinning. The rain hasn't stopped but nobody notices anymore.
+      Gest closes the book and thinks: this is what the ledger is for.
+    effects:
+      morale: 4
+      cohesion: 2
+
+  - id: "EVT_313_PER_013"
+    title: "Gest Encodes a Sensitive Entry"
+    year: 313
+    season: "winter"
+    day: 300
+    category: "personal"
+    location: "Frostfjord Hollow"
+    actors:
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Gest begins writing certain entries in a cipher only he can read."
+    detail: |
+      The things he records now — Dalla's visions, Thorne's changes, Kell's
+      debts — are too dangerous to leave in plain script. If the ledger is
+      captured or stolen, these entries could destroy the band. So Gest
+      invents a simple substitution cipher using rune variants. It won't
+      fool a scholar, but it will fool a soldier. He tells no one about
+      the key.
+
+  # --- Lump (Unchained) ---
+
+  - id: "EVT_313_PER_014"
+    title: "Lump Carries the Wounded"
+    year: 313
+    season: "autumn"
+    day: 190
+    category: "personal"
+    location: "Thornwall"
+    actors:
+      - "Lump"
+    band_relevant: true
+    summary: "After a skirmish, Lump carries two injured men a full day's march on his shoulders."
+    detail: |
+      One on each shoulder for the flat ground. One at a time for the hills.
+      He does not complain. His knees buckle twice and he gets back up both
+      times. By evening his tunic is soaked through with other men's blood
+      and his own sweat. Voss offers him double rations. Lump asks for extra
+      scraps for Stumps instead.
+    effects:
+      morale: 3
+      cohesion: 3
+
+  # --- Bjorn (Unchained) ---
+
+  - id: "EVT_313_PER_015"
+    title: "Bjorn Scouts an Escape Route"
+    year: 313
+    season: "summer"
+    day: 105
+    category: "personal"
+    location: "Deepholm"
+    actors:
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "Bjorn maps a personal escape route from the band's current position, just in case."
+    detail: |
+      He tells himself it's tactical prudence. Every smart fighter knows two
+      ways out. He notes which boats are unguarded at Deepholm harbour, which
+      forest tracks lead to the eastern valleys, where a man alone could
+      disappear. He has done this at every camp for three years. He has never
+      used any of the routes. That doesn't mean he won't.
+    effects:
+      cohesion: -2
+
+  - id: "EVT_313_PER_016"
+    title: "Bjorn Stays After All"
+    year: 313
+    season: "winter"
+    day: 250
+    category: "personal"
+    location: "Frostfjord Hollow"
+    actors:
+      - "Bjorn the Lean"
+      - "Rolf"
+    band_relevant: true
+    summary: "Bjorn has a chance to desert during a blizzard but stays when he sees Rolf freezing on watch."
+    detail: |
+      The snow is thick enough to cover tracks in minutes. Bjorn has his pack
+      ready. He could be gone before dawn count. Then he sees Rolf at the
+      watch-post, teeth chattering, trying to look brave. Bjorn puts down
+      his pack, wraps his spare cloak around the boy, and takes the watch.
+      He does not pick the pack up again. He tells himself it was the weather.
+    effects:
+      morale: 2
+      cohesion: 2
+
+  # --- Rolf (Unchained) ---
+
+  - id: "EVT_313_PER_017"
+    title: "Rolf's First Kill"
+    year: 313
+    season: "spring"
+    day: 50
+    category: "personal"
+    location: "Thornwall"
+    actors:
+      - "Rolf"
+    band_relevant: true
+    summary: "Rolf kills a man in a skirmish and vomits afterward."
+    detail: |
+      The man was older, slower, already wounded. Rolf's spear went through
+      the gap between helmet and mail. The man made a sound like a question.
+      Rolf pulled the spear out and the man sat down and died. After the fight
+      Rolf found a quiet spot behind a wall and threw up until there was nothing
+      left. Kell found him there and sat with him without speaking. After a
+      while Kell said, "It doesn't get easier. You just get used to it not
+      getting easier."
+    effects:
+      morale: -2
+
+  # --- Ash Past Arc ---
+
+  - id: "EVT_313_PER_018"
+    title: "Ash Recognizes a Dead Man's Tattoo"
+    year: 313
+    season: "autumn"
+    day: 175
+    category: "personal"
+    chain: "ash_past"
+    chain_order: 51
+    location: "Ashenmoor"
+    actors:
+      - "Ash"
+    band_relevant: true
+    summary: "Among battlefield dead, Ash finds a man bearing the tattoo of the jarl he fled — and takes the man's ring."
+    detail: |
+      The ring is stamped with the jarl's seal. Ash pockets it fast. If this
+      man was sent looking for him, there will be others. If it's coincidence,
+      the ring is still valuable. Either way, Ash's hands are steady but his
+      breathing changes. Gest sees the ring later and says nothing. The
+      question mark in the ledger beside "Eyvind" gets a second mark.
+
+  # ============================================================
+  # YEAR 314 — CRISIS AND RESOLUTION (~15 events)
+  # ============================================================
+
+  # --- Voss Command Arc ---
+
+  - id: "EVT_314_PER_001"
+    title: "Voss Admits He Doesn't Know"
+    year: 314
+    season: "spring"
+    day: 20
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 55
+    location: "Frostfjord Hollow"
+    actors:
+      - "Voss Cold-Eye"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "For the first time, Voss tells Gest he has no plan for the barrow threat."
+    detail: |
+      They are alone. The fire is low. Voss says, "I've fought men and beasts
+      and storms. This is none of those." Gest writes it down immediately.
+      Voss does not stop him. That is the most frightening part — Voss has
+      always controlled what goes in the ledger. Now he doesn't care. Or he
+      wants there to be a record.
+    effects:
+      morale: -4
+      cohesion: -2
+
+  - id: "EVT_314_PER_002"
+    title: "Voss Proposes Shared Command"
+    year: 314
+    season: "summer"
+    day: 85
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 56
+    location: "Thornwall"
+    actors:
+      - "Voss Cold-Eye"
+      - "Petra Shepherd"
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "Voss suggests council-style decisions for supernatural threats, keeping military command himself."
+    detail: |
+      It is not weakness — it is adaptation. Voss does not understand the
+      barrow-dead or the galdr-sickness. But Petra reads terrain better than
+      anyone, and Bjorn's pragmatism cuts through panic. So Voss splits the
+      authority: steel and tactics remain his, but route choices near barrow
+      country go to council. Bjorn is surprised. Petra nods. The band does
+      not fracture.
+    effects:
+      morale: 2
+      cohesion: 3
+
+  # --- Kell Debt Arc ---
+
+  - id: "EVT_314_PER_003"
+    title: "Kell Confesses to Voss"
+    year: 314
+    season: "spring"
+    day: 30
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 55
+    location: "Deepholm"
+    actors:
+      - "Kell Hook"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Kell tells Voss everything — the debts, the theft, the sold information."
+    detail: |
+      Voss listens without expression. When Kell finishes, Voss says three
+      things. One: the band will pay Kell's remaining debt to prevent the
+      creditor from becoming an enemy. Two: the amount will be deducted from
+      Kell's share over two years. Three: if Kell sells band information
+      again, Voss will cut off his hands himself. Kell accepts all three
+      terms. He looks like a man who has set down a boulder he has carried
+      for miles.
+    effects:
+      morale: 2
+      cohesion: 3
+
+  - id: "EVT_314_PER_004"
+    title: "Kell Pays the Last Mark"
+    year: 314
+    season: "autumn"
+    day: 160
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 56
+    location: "Frostfjord Hollow"
+    actors:
+      - "Kell Hook"
+    band_relevant: true
+    summary: "The creditor's agent accepts final payment. Kell is free of debt for the first time in years."
+    detail: |
+      He hands over the coins and the agent marks a wax tablet, stamps it,
+      and walks away without a word. Kell stands in the street holding the
+      stamped tablet. He does not celebrate. He goes back to camp, puts the
+      tablet in his kit, and asks if there's stew left. That night he does
+      not gamble. It is the first time anyone can remember.
+    effects:
+      morale: 3
+
+  # --- Petra Sister Arc ---
+
+  - id: "EVT_314_PER_005"
+    title: "Petra Finds Merte"
+    year: 314
+    season: "spring"
+    day: 45
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 55
+    location: "Ashenmoor"
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "Petra locates her sister alive — working as a bonded servant on a farmstead, gaunt but breathing."
+    detail: |
+      Merte is thinner. Her hair is cut short — they do that to servants to
+      mark them. She works the fields alongside three other bonded women. When
+      Petra approaches, Merte does not run to her. She finishes her row of
+      planting, sets down her tool, and walks over like she's walking to
+      a chore. The embrace, when it comes, is fierce and silent.
+    effects:
+      morale: 5
+
+  - id: "EVT_314_PER_006"
+    title: "Merte Refuses to Leave"
+    year: 314
+    season: "summer"
+    day: 75
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 56
+    location: "Ashenmoor"
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "Merte tells Petra she will not leave the farmstead — she has a child here."
+    detail: |
+      The child is two. A boy with Merte's jaw. The father is the farmstead
+      owner's son, and the arrangement is not entirely forced — Merte has a
+      measure of standing here, a roof, a future of sorts. Leaving means
+      becoming a camp follower with a mercenary band and a toddler. Merte
+      has done the same calculation Bjorn does. The maths doesn't work.
+      Petra listens, and for the first time in two years, has nothing to say.
+    effects:
+      morale: -4
+      cohesion: -1
+
+  # --- Thorne Curse (Human Side) ---
+
+  - id: "EVT_314_PER_007"
+    title: "Thorne Asks to Be Chained at Night"
+    year: 314
+    season: "spring"
+    day: 18
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 54
+    location: "Thornwall"
+    actors:
+      - "Thorne Ash-Born"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Thorne requests that someone chain him to a post while he sleeps, afraid of what he might do."
+    detail: |
+      Voss says no. Not because it's unnecessary but because a chained man
+      is a dead man if the camp is attacked. Instead Voss assigns a watcher —
+      someone to sit near Thorne through the night and wake him if the
+      nightmares come. The first volunteer is Lump. The second is Gest, who
+      says he's awake writing anyway.
+    effects:
+      morale: -2
+      cohesion: 1
+
+  - id: "EVT_314_PER_008"
+    title: "Thorne Accepts What He Is Becoming"
+    year: 314
+    season: "autumn"
+    day: 150
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 55
+    location: "Deepholm"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne stops fighting the curse and begins learning to use its effects in battle."
+    detail: |
+      The runes give him endurance no normal man has. Wounds close faster.
+      Cold doesn't touch him. Thorne decides to stop pouring silver into
+      remedies that don't work and start understanding what the dead man's
+      galdr actually did. It is not surrender — it is the pragmatism of a
+      fighter who uses every weapon available, even the ones that came unbidden.
+      Lump says Thorne smells different now. Better. Like winter earth.
+    effects:
+      morale: 1
+      cohesion: 1
+
+  # --- Ash Past Arc ---
+
+  - id: "EVT_314_PER_009"
+    title: "Ash Tells Gest the Truth"
+    year: 314
+    season: "spring"
+    day: 40
+    category: "personal"
+    chain: "ash_past"
+    chain_order: 52
+    location: "Frostfjord Hollow"
+    actors:
+      - "Ash"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Ash admits to Gest he killed a man in the jarl's hall and fled. Self-defence, but unprovable."
+    detail: |
+      The dead man was the jarl's nephew. Drunk, armed, and intent on proving
+      something. Ash — Eyvind — put a knife in his ribs. Self-defence by any
+      honest reckoning, but a jarl's nephew is worth more than a retainer's
+      word. So Eyvind became Ash and walked south until he found a band that
+      didn't ask questions. Gest listens. Then he asks the only question that
+      matters: "Is the jarl still looking?" Ash says he doesn't know. Gest
+      puts the name Eyvind in the ledger, in cipher.
+    effects:
+      cohesion: 1
+
+  - id: "EVT_314_PER_010"
+    title: "The Jarl's Men Come Looking"
+    year: 314
+    season: "summer"
+    day: 95
+    category: "personal"
+    chain: "ash_past"
+    chain_order: 53
+    location: "Kolvik"
+    actors:
+      - "Ash"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Three armed men asking about a fugitive called Eyvind arrive in Kolvik. Voss sends them east."
+    detail: |
+      The men describe Ash perfectly. Voss meets them at the tavern and says
+      the man they're looking for passed through weeks ago, heading for the
+      eastern ports. He is convincing because Voss lies the same way he fights
+      — economically, without flourish. The men leave. Ash watches from a
+      rooftop. That evening Voss tells Ash: "You're Iron Ledger. That's the
+      only name that matters."
+    effects:
+      cohesion: 3
+
+  # --- Dalla Awakening (Personal Cost) ---
+
+  - id: "EVT_314_PER_011"
+    title: "Dalla Loses a Tooth"
+    year: 314
+    season: "summer"
+    day: 80
+    category: "personal"
+    chain: "dalla_awakening"
+    chain_order: 51
+    location: "Thornwall"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "A violent vision costs Dalla a molar — she clenches so hard it cracks."
+    detail: |
+      She is sitting by the fire when it takes her. Her jaw locks, her back
+      arches. When it passes, she spits blood and a piece of tooth into her
+      palm. The vision showed her a barrow collapsing inward, pulling everything
+      down with it. She doesn't know if it's past or future. She wraps the
+      tooth-fragment in cloth and keeps it, though she cannot say why.
+    effects:
+      morale: -2
+
+  # --- Unchained Personal Events ---
+
+  - id: "EVT_314_PER_012"
+    title: "Gest Writes the Band's Obituary"
+    year: 314
+    season: "spring"
+    day: 50
+    category: "personal"
+    location: "Frostfjord Hollow"
+    actors:
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "In a dark moment, Gest writes an ending for the Iron Ledger — just in case."
+    detail: |
+      He writes it in the back of the book, upside down, in his cipher. It
+      records the band's founding, its notable contracts, its dead. It gives
+      fair accounting. When he finishes he reads it back and judges it
+      adequate. Then he turns the book right-way up and continues the daily
+      log. If they survive, no one will ever read it. If they don't, someone
+      might.
+
+  - id: "EVT_314_PER_013"
+    title: "Rolf Earns His Byname"
+    year: 314
+    season: "autumn"
+    day: 140
+    category: "personal"
+    location: "Deepholm"
+    actors:
+      - "Rolf"
+    band_relevant: true
+    summary: "After holding a doorway alone for ten minutes, the band starts calling Rolf 'Door-Rolf'."
+    detail: |
+      It's not a great byname but it's his. The doorway was narrow — one man
+      wide. Rolf stood in it with a hand-axe and a shield while the others
+      pulled a wounded comrade out the back. Ten minutes is a long time in a
+      doorway. When it was over he had three new scars and a name. He
+      grinned for a full day.
+    effects:
+      morale: 3
+      cohesion: 2
+
+  - id: "EVT_314_PER_014"
+    title: "Stumps Finds a Buried Cache"
+    year: 314
+    season: "winter"
+    day: 230
+    category: "personal"
+    location: "Kolvik"
+    actors:
+      - "Lump"
+    band_relevant: true
+    summary: "Lump's three-legged dog digs up a buried pot of old silver coins near a collapsed farmhouse."
+    detail: |
+      Stumps was digging for a rat. Found forty marks in corroded silver
+      instead. Lump brought the pot to Voss, who split it evenly. Bjorn
+      pointed out that Lump could have kept quiet and had the lot. Lump
+      looked confused by the suggestion. "It's band money," he said, as if
+      any other interpretation was genuinely baffling.
+    effects:
+      morale: 4
+      cohesion: 2
+
+  - id: "EVT_314_PER_015"
+    title: "The Band Drinks to the Dead"
+    year: 314
+    season: "winter"
+    day: 260
+    category: "personal"
+    location: "Frostfjord Hollow"
+    actors:
+      - "Voss Cold-Eye"
+      - "Gest Ledger"
+      - "Kell Hook"
+      - "Petra Shepherd"
+      - "Thorne Ash-Born"
+      - "Lump"
+      - "Bjorn the Lean"
+      - "Rolf"
+    band_relevant: true
+    summary: "Midwinter. The whole band gathers and Gest reads every name lost since they formed."
+    detail: |
+      It takes a long time. Forty-six names across all the years. After each
+      name, someone who knew the dead person says one true thing about them.
+      Funny things, stupid things, brave things. Rolf listens and learns names
+      he never heard before. When the list is done they drink and nobody
+      speaks for a while. The fire pops. Stumps snores in Lump's lap.
+      Somewhere outside it is snowing. In here it is warm, and everyone who
+      matters is alive.
+    effects:
+      morale: 5
+      cohesion: 5
+
+  # ============================================================
+  # YEAR 315 — FINAL RESOLUTIONS (~12 events)
+  # ============================================================
+
+  # --- Voss Command Arc ---
+
+  - id: "EVT_315_PER_001"
+    title: "Voss's Final Order"
+    year: 315
+    season: "spring"
+    day: 25
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 57
+    location: "Thornwall"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Voss leads the band into the barrow country, knowing he may not lead them out."
+    detail: |
+      He dresses carefully. Oiled his mail himself — would not let Rolf do it.
+      Sharpened his own blade, which he hasn't done in years. Gest recognizes
+      the ritual: this is how Voss prepared before Stonebridge, before the
+      Ashenmoor rout, before every fight that might be the last. The band
+      watches and understands. Nobody says goodbye because saying it makes it
+      real.
+    effects:
+      morale: -1
+      cohesion: 4
+
+  - id: "EVT_315_PER_002"
+    title: "Voss Adapts"
+    year: 315
+    season: "summer"
+    day: 70
+    category: "personal"
+    chain: "voss_command"
+    chain_order: 58
+    location: "Deepholm"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Voss integrates Dalla's warnings and Thorne's unnatural senses into tactical planning."
+    detail: |
+      The old fighter learns new tricks. Not easily — his pride takes the
+      damage his body used to. But he listens when Dalla says a barrow is
+      awake, and he trusts Thorne's instinct for where the dead walk thickest.
+      Steel and sorcery. It shouldn't work. It works because Voss makes it
+      work, which is what leaders do when the world changes faster than
+      doctrine.
+    effects:
+      morale: 3
+      cohesion: 3
+
+  # --- Petra Sister Arc ---
+
+  - id: "EVT_315_PER_003"
+    title: "Petra Says Goodbye to Merte"
+    year: 315
+    season: "spring"
+    day: 35
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 57
+    location: "Ashenmoor"
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "Petra visits Merte one last time, meets her nephew, and accepts that her sister chose a different life."
+    detail: |
+      The boy has Merte's eyes. He hides behind his mother's leg and peeks
+      out at the woman with the scarred hands and the short sword. Petra
+      gives Merte the bronze hair-pin she found in the ashes. Merte closes
+      her hand around it and does not cry. They stand in the yard of the
+      farmstead and do not hug — they hold each other's forearms, the way
+      their mother taught them. Then Petra walks away and does not look back.
+    effects:
+      morale: -1
+      cohesion: 1
+
+  # --- Ash Past Arc ---
+
+  - id: "EVT_315_PER_004"
+    title: "Ash Burns the Ring"
+    year: 315
+    season: "spring"
+    day: 15
+    category: "personal"
+    chain: "ash_past"
+    chain_order: 54
+    location: "Frostfjord Hollow"
+    actors:
+      - "Ash"
+    band_relevant: true
+    summary: "Ash melts down the jarl's ring and uses the metal to repair his shield boss."
+    detail: |
+      He does it alone at the camp forge, early morning. The seal that could
+      identify him becomes a lump of base metal pressed into his shield.
+      Eyvind disappears into the iron. Ash remains. When Gest asks about it,
+      Ash says he found scrap metal. Gest writes nothing in the margin. Some
+      stories are finished by not writing them down.
+    effects:
+      morale: 1
+
+  # --- Dalla Awakening (Personal Cost) ---
+
+  - id: "EVT_315_PER_005"
+    title: "Dalla Chooses the Visions"
+    year: 315
+    season: "summer"
+    day: 65
+    category: "personal"
+    chain: "dalla_awakening"
+    chain_order: 52
+    location: "Thornwall"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla stops resisting the visions and learns to direct them, at the cost of grey hair at twenty."
+    detail: |
+      She is twenty years old and looks thirty. The visions take years off her
+      the way campaign takes years off a fighter — not in wounds but in the
+      wearing. She can guide them now, aim them like a hunter aims a spear.
+      The cost is physical: nosebleeds, lost teeth, hair gone grey at the
+      temples. Gest records two ages for Dalla in the ledger: her true age
+      and the age she appears.
+    effects:
+      morale: -1
+      cohesion: 1
+
+  # --- Unchained Personal Events ---
+
+  - id: "EVT_315_PER_006"
+    title: "Bjorn Puts Down Roots"
+    year: 315
+    season: "spring"
+    day: 40
+    category: "personal"
+    location: "Kolvik"
+    actors:
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "Bjorn buys a small plot of land near Kolvik — not to desert, but as a future for when the fighting ends."
+    detail: |
+      He uses the money from the Stumps cache and two years of careful saving.
+      The plot is barely an acre — rocky, sloped, with a leaning shed. But
+      it's his. He tells Voss, who nods and says it's wise to plan ahead.
+      Bjorn doesn't leave. But for the first time the exit route leads
+      somewhere specific, and that makes staying a choice rather than a trap.
+    effects:
+      morale: 2
+
+  - id: "EVT_315_PER_007"
+    title: "Rolf Teaches the Next Greenhorn"
+    year: 315
+    season: "summer"
+    day: 80
+    category: "personal"
+    location: "Deepholm"
+    actors:
+      - "Rolf"
+    band_relevant: true
+    summary: "A new recruit joins the band and Rolf finds himself teaching—proving he's no longer the youngest."
+    detail: |
+      The new boy is fifteen, nervous, holding his spear wrong. Rolf corrects
+      his grip the way Kell corrected his, two years ago. He does not send
+      the boy for shield polish. He shows him how to set a watch, how to
+      oil mail, how to eat fast and sleep when you can. The boy calls him
+      sir. Rolf tells him to stop. But he does not hate it.
+    effects:
+      morale: 2
+      cohesion: 1
+
+  - id: "EVT_315_PER_008"
+    title: "Lump Finds Stumps a Mate"
+    year: 315
+    season: "spring"
+    day: 50
+    category: "personal"
+    location: "Kolvik"
+    actors:
+      - "Lump"
+    band_relevant: true
+    summary: "Lump discovers another stray dog and declares it Stumps's wife. The band does not argue."
+    detail: |
+      The second dog has four legs and no manners. Lump calls her Puddle
+      because she drinks from every puddle she sees. Stumps is indifferent.
+      Puddle is devoted. Bjorn says two dogs are too many. Voss says the
+      band's morale is higher than it's been in months and if a dog is the
+      reason he'll take it. The dogs stay.
+    effects:
+      morale: 3
+      cohesion: 1
+
+  - id: "EVT_315_PER_009"
+    title: "Gest Begins a Second Ledger"
+    year: 315
+    season: "summer"
+    day: 90
+    category: "personal"
+    location: "Thornwall"
+    actors:
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "The original Iron Ledger is nearly full. Gest begins a second volume."
+    detail: |
+      He stitches the binding himself from goat-hide and linen thread. The
+      first page of the new ledger reads: "Volume Two of the Iron Ledger,
+      begun in the summer of Year 315, by Gest, called Ledger, who has kept
+      the first volume since 308 and intends to keep this one until his hands
+      fail." It is the most personal thing Gest has ever written. He files
+      it under accounting.
+    effects:
+      cohesion: 2
+
+  - id: "EVT_315_PER_010"
+    title: "Kell Refuses a Dice Game"
+    year: 315
+    season: "autumn"
+    day: 135
+    category: "personal"
+    location: "Deepholm"
+    actors:
+      - "Kell Hook"
+    band_relevant: true
+    summary: "Kell is invited to a high-stakes game and walks away. The band notices."
+    detail: |
+      The stakes are fifty marks. The players are harbour men he knows —
+      men he used to lose to. They wave him over. Kell shakes his head, buys
+      an ale, and sits where he can watch without playing. His hands itch.
+      His chest is tight. But he stays in his seat. Rolf asks if he's feeling
+      well. Kell says he's never felt worse and it's the best he's been
+      in years.
+    effects:
+      morale: 2
+      cohesion: 1
+
+  - id: "EVT_315_PER_011"
+    title: "Thorne Walks Into the Barrow Alone"
+    year: 315
+    season: "autumn"
+    day: 160
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 56
+    location: "Kolvik"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne enters the barrow that cursed him, alone, to negotiate or end it."
+    detail: |
+      He tells no one. Lump wakes and finds Thorne's bedroll empty. By the
+      time the band reaches the barrow mouth, Thorne is already inside. They
+      wait. An hour. Two. The ground hums. Then Thorne walks out, and he
+      looks — different. Not cured. Not worse. Settled. Like a man who has
+      seen the bottom of a deep well and knows the depth. He says: "We have
+      an arrangement." He does not explain further.
+    effects:
+      morale: 2
+      cohesion: 2
+
+  - id: "EVT_315_PER_012"
+    title: "Gest Closes the Entry for Today"
+    year: 315
+    season: "winter"
+    day: 320
+    category: "personal"
+    location: "Frostfjord Hollow"
+    actors:
+      - "Gest Ledger"
+      - "Voss Cold-Eye"
+      - "Kell Hook"
+      - "Petra Shepherd"
+      - "Thorne Ash-Born"
+      - "Lump"
+      - "Bjorn the Lean"
+      - "Rolf"
+      - "Ash"
+      - "Dalla"
+    band_relevant: true
+    summary: "Gest writes the last entry of the year: the band is smaller, harder, and still together."
+    detail: |
+      By the fire, Voss sharpens his knife. Kell plays a string game with
+      his fingers, not dice. Petra cleans her boots. Thorne sits with his
+      sleeves rolled down. Bjorn sketches his farmstead from memory. Rolf
+      dozes. Ash watches the door — old habits. Dalla stares into the flames
+      and sees nothing she hasn't chosen to see. Lump is asleep with a dog
+      on each side. Gest dips his quill and writes: "All present. No losses
+      today." He closes the book. It is enough.
+    effects:
+      morale: 5
+      cohesion: 5

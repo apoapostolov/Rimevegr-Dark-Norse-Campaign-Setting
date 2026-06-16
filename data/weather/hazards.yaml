@@ -1,0 +1,1251 @@
+# ==========================================================================
+# TERRAIN-SPECIFIC ENVIRONMENTAL HAZARDS — Iron Ledger: Mercenaries of the Rimevegr
+# ~95 hazards keyed to terrain type and season.
+# Used by weather.py and for narrative generation.
+#
+# Terrains:
+#   coastal     — Frozen fjords, cliff paths, tidal flats
+#   forest      — Black Pine Wilds, old-growth conifer
+#   moor        — High Rime-Moors, treeless windswept plateau
+#   mountain    — Spine ridges, passes, rockfall zones
+#   marsh       — Bogs, sedge flats, drowned meadows
+#   river_lake  — Crossings, ice-over, flood plains
+#   ice_tundra  — Open snowfield, glacial waste, permafrost
+#   underground — Barrows, cave systems, ruined tunnels
+#
+# Seasons (360-day year):
+#   thaw       — Days 1-30: Ice breaking, floods, mud
+#   long_sun   — Days 31-60: Best conditions, fog, rain
+#   harvest    — Days 61-90: Worsening, early frost
+#   long_dark  — Days 91-360: 270 days of darkness, cold, supernatural danger
+#
+# Severity: mild, moderate, severe, lethal
+# Frequency: common, uncommon, rare, very_rare
+# Stats: MIG (Might), NIM (Nimbleness), TOU (Toughness),
+#        WIT (Wits), WIL (Willpower), WYR (Wyrd)
+# Frostbite: 15% + 10%/day exposed - TOU×2%. +10% no cloak, +15% wounded.
+# ==========================================================================
+
+hazards:
+  metadata:
+    note: "Terrain-specific environmental hazards by season. Used by weather.py and for narrative generation."
+    version: "1.0"
+    total_entries: 95
+
+  # ========================================================================
+  # COASTAL / FJORD
+  # ========================================================================
+  terrain_hazards:
+    coastal:
+      all_seasons:
+        - id: "HAZ_C01"
+          name: "Rogue Wave"
+          severity: severe
+          frequency: rare
+          description: "A wall of grey water surges over the rocks without warning. Anyone within 10 paces of the waterline must react instantly or be dragged in."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Swept into freezing water. Cold water shock: TOU check (difficulty 12) or lose consciousness in 2 minutes."
+          weather_triggers: [rime_storm, driving_snow]
+          prevention: "Stay above the high-water mark. Watch for the sea pulling back."
+          narrative_hooks:
+            - "A man disappears. His shield washes up the next morning."
+            - "The column halts while two men drag a half-drowned comrade from the surf."
+
+        - id: "HAZ_C02"
+          name: "Cliff Path Collapse"
+          severity: severe
+          frequency: uncommon
+          description: "The coastal path crumbles underfoot. Freeze-thaw has rotted the stone. One step, a crack, and the ground tilts toward the sea."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 12
+            failure: "Fall 3-10 paces onto rocks below. MIG check (difficulty 10) to catch a handhold. Failure: broken bones, possible death."
+          weather_triggers: [rime_storm, driving_snow, light_rain]
+          prevention: "Rope the column together. Test each step with a spear butt. Avoid cliff paths in storms."
+          narrative_hooks:
+            - "The mule goes first. Its load scatters across the rocks fifty feet below."
+            - "Gunnar catches the edge with both hands, boots swinging over nothing."
+
+        - id: "HAZ_C03"
+          name: "Tidal Cut-Off"
+          severity: moderate
+          frequency: uncommon
+          description: "The tide comes in faster than expected. A beach crossing or cave route floods, trapping the band between water and cliff."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 10
+            failure: "Trapped for 4-8 hours. Lose a quarter-day's march. Supplies may get wet."
+          weather_triggers: [rime_fog, clear_grey]
+          prevention: "Local knowledge. Read the tideline marks on the rocks."
+          narrative_hooks:
+            - "They sit on a rock shelf and wait, cursing, while the water rises to their ankles."
+            - "Two hours in a cave mouth, watching the sea fill the passage they came through."
+
+      thaw:
+        - id: "HAZ_C04"
+          name: "Ice Shelf Collapse"
+          severity: lethal
+          frequency: uncommon
+          description: "The shore ice, weakened by warming currents, gives way in slabs. Men on it go into water cold enough to stop a heart."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Plunge into freezing fjord water. TOU check (difficulty 14) or cold water shock — unconscious in 90 seconds. Even on success, frostbite risk doubles for 3 days."
+          weather_triggers: [clear_grey, rime_fog]
+          prevention: "Never walk shore ice during Thaw. Test with thrown rocks. Listen for groaning."
+          narrative_hooks:
+            - "The ice booms like a drum. Everyone freezes. Then it splits, and Halvard goes through."
+            - "They fish him out blue-lipped and shaking. He never really warms up again."
+
+      long_sun:
+        - id: "HAZ_C05"
+          name: "Sea Fog Disorientation"
+          severity: moderate
+          frequency: common
+          description: "Thick fog rolls in from the fjord. Visibility drops to arm's length. The path vanishes. The sea sounds like it's everywhere."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 10
+            failure: "Lost for 1d6 hours. Risk walking off a cliff edge (NIM check difficulty 12 to catch yourself)."
+          weather_triggers: [rime_fog]
+          prevention: "Rope the column. Move slowly. Listen for wave direction."
+          narrative_hooks:
+            - "A man walks confidently forward and steps off a two-foot ledge. He's lucky."
+            - "They hear waves on three sides and cannot tell which way is land."
+
+      harvest:
+        - id: "HAZ_C06"
+          name: "Storm Surge"
+          severity: severe
+          frequency: uncommon
+          description: "Autumn storms push the sea inland. Low-lying camps and beached boats get swallowed. The water comes at night."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 12
+            failure: "Camp flooded. Lose supplies, firewood, possibly a tent. NIM check (difficulty 10) to save personal gear."
+          weather_triggers: [rime_storm, driving_snow]
+          prevention: "Camp high. Never trust a beach camp in Harvest."
+          narrative_hooks:
+            - "They wake to cold water around their legs. The fire is already gone."
+            - "Half the provisions float in the surf. They spend the morning salvaging."
+
+      long_dark:
+        - id: "HAZ_C07"
+          name: "Frozen Spray"
+          severity: moderate
+          frequency: common
+          description: "Sea spray freezes on contact with everything — armour, cloaks, rope, skin. The path becomes a sheet of ice."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 10
+            failure: "Frostbite on exposed skin. Movement halved on iced paths. NIM check (difficulty 10) each 100 paces or fall."
+          weather_triggers: [rime_storm, driving_snow, clear_grey]
+          prevention: "Cover all exposed skin. Chip ice from equipment every hour."
+          narrative_hooks:
+            - "His beard freezes into a solid mass. He has to crack it to drink."
+            - "The path gleams like polished steel. Every step is a negotiation."
+
+        - id: "HAZ_C08"
+          name: "Fjord Ice Groan"
+          severity: mild
+          frequency: common
+          description: "The frozen fjord shifts and groans through the night. Deep, stomach-dropping sounds like the earth cracking open. Harmless, but terrifying."
+          mechanical_effect:
+            check: "WIL"
+            difficulty: 8
+            failure: "No rest. -1 to all checks the next day from sleep deprivation."
+          weather_triggers: [clear_grey, the_hush]
+          prevention: "Camp away from the ice. Stuff wool in your ears."
+          narrative_hooks:
+            - "The sound starts at midnight and doesn't stop. No one sleeps."
+            - "A new man bolts upright, hand on his axe, certain the ice is coming for them."
+
+    # ========================================================================
+    # FOREST (Black Pine Wilds)
+    # ========================================================================
+    forest:
+      all_seasons:
+        - id: "HAZ_F01"
+          name: "Deadfall Tangle"
+          severity: mild
+          frequency: common
+          description: "Windblown trees criss-cross the path. Climbing over or crawling under, loaded with gear, in near-darkness under the canopy."
+          mechanical_effect:
+            check: "MIG"
+            difficulty: 8
+            failure: "Slowed to half pace for 1-2 hours. Risk of twisted ankle (NIM check difficulty 8)."
+          weather_triggers: [clear_grey, light_rain, rime_fog]
+          prevention: "Send scouts to find a way around. Carry axes."
+          narrative_hooks:
+            - "The column crawls through like worms through dead wood. It takes two hours to cover a hundred paces."
+            - "A man's pack catches on a branch. He hangs there, swearing, until two others lift him free."
+
+        - id: "HAZ_F02"
+          name: "Hidden Root Pit"
+          severity: moderate
+          frequency: uncommon
+          description: "A carpet of pine needles hides a gap between tree roots. The ground looks solid. It isn't. A man's leg goes in up to the thigh."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 10
+            failure: "Twisted or broken ankle. March speed reduced. If alone, may be stuck until found."
+          weather_triggers: [rime_fog, light_rain]
+          prevention: "Probe the ground with a staff. Walk where others have walked."
+          narrative_hooks:
+            - "He goes in up to the hip and feels his knee bend the wrong way."
+            - "It takes three men and a rope to get him out. The hole smells of rot."
+
+        - id: "HAZ_F03"
+          name: "Whispering Rune-Stone"
+          severity: moderate
+          frequency: rare
+          description: "A moss-covered standing stone among the pines. Those who pass within arm's reach hear words in a language they almost understand. The words pull."
+          mechanical_effect:
+            check: "WIL"
+            difficulty: 12
+            failure: "Compelled to stop and listen for 1d6×10 minutes. WYR check (difficulty 10) or gain one point of dread."
+          weather_triggers: [the_hush, veil_thinning, rime_fog]
+          prevention: "Give the stones wide berth. Don't look directly at the carvings."
+          narrative_hooks:
+            - "Bjorn stops walking. He stands there with his head tilted, like a dog hearing something far away."
+            - "The new man touches the stone. His hand comes away cold. He doesn't speak for two days."
+
+      thaw:
+        - id: "HAZ_F04"
+          name: "Snowmelt Flash Flood"
+          severity: severe
+          frequency: uncommon
+          description: "A dry streambed fills in minutes as snowmelt surges downhill. The water is brown, fast, and carries logs."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Swept downstream. MIG check (difficulty 12) to grab something. TOU check (difficulty 10) against cold exposure."
+          weather_triggers: [clear_grey, light_rain]
+          prevention: "Never camp in dry streambeds. Listen for the roar uphill."
+          narrative_hooks:
+            - "The sound comes first — a deep rushing, like wind through stone. Then the water."
+            - "They lose two packs and a mule. The mule screams once."
+
+      long_sun:
+        - id: "HAZ_F05"
+          name: "Biting Swarm"
+          severity: mild
+          frequency: common
+          description: "Clouds of biting midges and flies descend in the warm damp. They find every gap in clothing and drive men half-mad."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 8
+            failure: "Distraction: -1 to WIT checks. Infected bites possible if scratched (TOU difficulty 8 after 2 days)."
+          weather_triggers: [clear_grey, light_rain, rime_fog]
+          prevention: "Birch-tar smeared on exposed skin. Smoke from the fire. Endure."
+          narrative_hooks:
+            - "By noon every man has a swollen face. The horses stamp and twitch without stopping."
+            - "Sven claims he inhaled one. He coughs for an hour."
+
+      harvest:
+        - id: "HAZ_F06"
+          name: "False Trail"
+          severity: moderate
+          frequency: uncommon
+          description: "Animal paths in the Black Pine look like human trails. They lead deeper into the forest, then nowhere. Hours lost."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 12
+            failure: "Lost for 2-6 hours. Morale check (WIL difficulty 8) if already low on supplies."
+          weather_triggers: [rime_fog, light_rain]
+          prevention: "Mark trees. Keep the sun or wind direction. Don't trust game trails."
+          narrative_hooks:
+            - "The trail narrows to nothing. They stand in a ring of black pines that all look the same."
+            - "Someone carved a rune on this tree. It's old. It doesn't match any they know."
+
+      long_dark:
+        - id: "HAZ_F07"
+          name: "Wolf Pack"
+          severity: severe
+          frequency: uncommon
+          description: "A winter-starved pack trails the column. They don't attack outright — they wait for stragglers, for the wounded, for night."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 12
+            failure: "Surprise attack on rearguard or camp sentries. Combat: 4-8 wolves. They target the weakest."
+          weather_triggers: [driving_snow, clear_grey, the_hush]
+          prevention: "Keep fires burning. Post double watches. Don't leave the wounded behind."
+          narrative_hooks:
+            - "Eyes in the tree-line. They've been there since noon."
+            - "The wolves took Keld's dog in the night. No sound. Just blood in the snow."
+
+        - id: "HAZ_F08"
+          name: "Canopy Snow Load Collapse"
+          severity: moderate
+          frequency: common
+          description: "Heavy snow on pine branches releases without warning — a white curtain dropping on the path. Buries a man in seconds."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 10
+            failure: "Buried under 2-3 feet of snow. MIG check (difficulty 10) to dig out alone. Wet and cold — TOU check (difficulty 8) or frostbite by nightfall."
+          weather_triggers: [driving_snow, clear_grey]
+          prevention: "Watch for overloaded branches. Walk in single file. Carry axes to clear."
+          narrative_hooks:
+            - "The tree dumps its winter on him. He vanishes. They dig him out sputtering."
+            - "A sound like tearing cloth, then white, then silence. The path is gone."
+
+        - id: "HAZ_F09"
+          name: "Barrow Entrance Hidden in Roots"
+          severity: severe
+          frequency: rare
+          description: "A man steps on what he thinks is solid ground and drops into a barrow entrance concealed by tree roots. The dark below is older than the forest."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Fall 5-15 feet into barrow antechamber. Injury from fall. Possible barrow stirring triggered (WYR check difficulty 12)."
+          weather_triggers: [veil_thinning, the_hush]
+          prevention: "Probe the ground near large pines. Avoid old growth clusters that seem too regular."
+          narrative_hooks:
+            - "He falls through the earth like a trapdoor opened under him. The scream echoes wrong."
+            - "They lower a torch on a rope. Something moves at the edge of the light."
+
+    # ========================================================================
+    # MOOR (High Rime-Moors)
+    # ========================================================================
+    moor:
+      all_seasons:
+        - id: "HAZ_M01"
+          name: "Exposure Wind"
+          severity: moderate
+          frequency: common
+          description: "The moor is treeless. Wind comes from every direction with nothing to stop it. It finds every gap, every wet spot, every weakness."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 10
+            failure: "Exhaustion. Movement speed reduced by one-third. Frostbite risk +10% in cold seasons."
+          weather_triggers: [clear_grey, driving_snow, rime_storm]
+          prevention: "Cloaks lashed tight. Move in tight formation. Find a hollow to shelter."
+          narrative_hooks:
+            - "The wind is relentless. It has no walls to break against and no trees to slow it."
+            - "By noon Torsten can't feel his hands. By evening he can't close them."
+
+        - id: "HAZ_M02"
+          name: "Ankle-Breaking Ground"
+          severity: moderate
+          frequency: common
+          description: "Tussock grass hides holes, soft patches, and uneven stone. Every step is a gamble with a man's knees."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 10
+            failure: "Twisted or sprained ankle. March speed reduced. If carrying a heavy load, MIG check (difficulty 10) to avoid a fall."
+          weather_triggers: [rime_fog, light_rain, driving_snow]
+          prevention: "Use a staff. Walk slowly. Follow animal tracks — animals know the solid ground."
+          narrative_hooks:
+            - "Every man develops the moor-walk by the second day — short steps, weight forward, staff out."
+            - "He catches his boot in a tussock hole and goes down hard. His pack pins him."
+
+        - id: "HAZ_M03"
+          name: "Active Barrow Proximity"
+          severity: severe
+          frequency: rare
+          description: "The moors are dotted with barrows. Passing too close at the wrong time draws attention. The ground hums. Lights flicker in the barrow mouth."
+          mechanical_effect:
+            check: "WYR"
+            difficulty: 12
+            failure: "Barrow stirring. Each hour nearby, 15% chance of draugr emergence. WIL check (difficulty 12) to resist compulsion to approach."
+          weather_triggers: [veil_thinning, the_hush, blood_sun]
+          prevention: "Avoid barrow mounds. If forced near, move fast and quiet. No fires, no singing."
+          narrative_hooks:
+            - "The mound glows faintly from within. Like embers the colour of bruises."
+            - "Ari says he heard someone call his father's name from inside the hill."
+
+      thaw:
+        - id: "HAZ_M04"
+          name: "Melt-Water Lakes"
+          severity: moderate
+          frequency: common
+          description: "Snowmelt pools in every hollow. What looks like a shallow puddle may be waist-deep and ice-cold. The moor becomes a maze of water."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 10
+            failure: "March through standing water. Boots soaked. TOU check (difficulty 8) or trench foot within 2 days."
+          weather_triggers: [clear_grey, light_rain]
+          prevention: "Higher ground only. Wring out boots at every halt. Change into dry foot-wraps."
+          narrative_hooks:
+            - "The moor is more lake than land. They wade for hours."
+            - "His boots squelch with every step. The sound becomes the only sound."
+
+      long_sun:
+        - id: "HAZ_M05"
+          name: "Moor Sink"
+          severity: moderate
+          frequency: uncommon
+          description: "Dry-looking heather conceals waterlogged ground. A man sinks to mid-calf, then to the knee. The moor doesn't want to let go."
+          mechanical_effect:
+            check: "MIG"
+            difficulty: 10
+            failure: "Stuck for 10-30 minutes. Requires help to extract. Boots and trousers soaked."
+          weather_triggers: [light_rain, rime_fog]
+          prevention: "Test ground with a staff before each step in suspect areas."
+          narrative_hooks:
+            - "He sinks slowly, like the earth is swallowing him. It takes three men and a rope."
+            - "The peat closes around his boots with a sound like kissing."
+
+      harvest:
+        - id: "HAZ_M06"
+          name: "Early Frost Snap"
+          severity: moderate
+          frequency: common
+          description: "Temperature drops hard overnight. Water in skins freezes. Men who didn't dry their clothes wake stiff and shaking."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 10
+            failure: "Morning stiffness, slowed movement for 2 hours. Wet clothing freezes solid — MIG check (difficulty 8) to break free of frozen bedroll."
+          weather_triggers: [clear_grey]
+          prevention: "Dry everything before sleep. Sleep in layers. Share body heat."
+          narrative_hooks:
+            - "Eirik wakes with his cloak frozen to the ground. He has to cut himself free."
+            - "Ice in the water-skin. Ice in the bread. Ice in the boots."
+
+      long_dark:
+        - id: "HAZ_M07"
+          name: "White-Out"
+          severity: lethal
+          frequency: uncommon
+          description: "Driving snow on open moor. Sky and ground merge into a white nothing. Direction ceases to exist. Men walk in circles until they drop."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 16
+            failure: "Completely lost. TOU check (difficulty 12) every hour or gain one frostbite stage. Separation from group possible."
+          weather_triggers: [driving_snow, rime_storm]
+          prevention: "Rope men together. Halt and dig in. Do NOT try to march."
+          narrative_hooks:
+            - "There is no horizon. There is no ground. There is only white and the wind."
+            - "They find Ketil a hundred paces from camp, walking the wrong way. He swears he was heading back."
+
+        - id: "HAZ_M08"
+          name: "Night Barrow Walk"
+          severity: severe
+          frequency: rare
+          description: "During Long Dark, something walks the moor between barrows. Footsteps heard but no figure seen. It follows the column at a fixed distance."
+          mechanical_effect:
+            check: "WIL"
+            difficulty: 14
+            failure: "Terror. No rest that night. -1 to all checks next day. Anyone who leaves the group to investigate does not return."
+          weather_triggers: [the_hush, veil_thinning]
+          prevention: "Stay together. Don't acknowledge it. Keep fires burning."
+          narrative_hooks:
+            - "The footsteps match their pace. When they stop, it stops. When they walk, it walks."
+            - "Rolf looks into the dark and says he sees a shape. No one else confirms. Rolf doesn't sleep for three nights."
+
+    # ========================================================================
+    # MOUNTAIN
+    # ========================================================================
+    mountain:
+      all_seasons:
+        - id: "HAZ_MT01"
+          name: "Rockfall"
+          severity: severe
+          frequency: uncommon
+          description: "Loose stone dislodges from above. A rattle of pebbles, then fist-sized rocks, then boulders. The mountain shrugs and men die."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Struck by falling stone. 1d6 damage. Armour helps. Critical failure: crushed limb or death."
+          weather_triggers: [rime_storm, driving_snow, light_rain]
+          prevention: "Move quickly through exposed sections. Post an uphill lookout. Don't camp under loose faces."
+          narrative_hooks:
+            - "The rattle starts small. By the time they look up, a boulder the size of a man's torso is already falling."
+            - "Dust and silence. Then a voice from under the rubble."
+
+        - id: "HAZ_MT02"
+          name: "Narrow Ledge"
+          severity: severe
+          frequency: common
+          description: "The path narrows to less than a shoulder's width. Rock wall on one side, drop on the other. A loaded man has to shuffle sideways."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 12
+            failure: "Stumble toward the edge. MIG check (difficulty 10) to catch the wall. Gear may fall."
+          weather_triggers: [driving_snow, rime_storm, rime_fog]
+          prevention: "Unload packs. Ferry gear by rope. One man at a time."
+          narrative_hooks:
+            - "The mule refuses the ledge. They spend an hour blindfolding it and inching it forward."
+            - "Don't look down, someone says. Everyone looks down."
+
+        - id: "HAZ_MT03"
+          name: "Altitude Sickness"
+          severity: moderate
+          frequency: uncommon
+          description: "High passes thin the air. Men who push too fast get headaches, nausea, and a ringing in the ears that won't stop."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 10
+            failure: "Headache, nausea, -1 to all checks until descent. On critical failure, vomiting — lose a meal."
+          weather_triggers: [clear_grey, rime_fog]
+          prevention: "Ascend slowly. Rest at each level. Eat and drink."
+          narrative_hooks:
+            - "Thorvald sits down and puts his head between his knees. He says the sky is spinning."
+            - "Every step above the snow line feels like two. The air doesn't fill the lungs."
+
+      thaw:
+        - id: "HAZ_MT04"
+          name: "Avalanche"
+          severity: lethal
+          frequency: rare
+          description: "The spring sun loosens snow-pack on steep slopes. A crack, a rumble, and a white wall devours the path."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 16
+            failure: "Buried. Suffocation in 5 minutes without rescue. MIG check (difficulty 14) to dig out alone. Rescuers need WIT check (difficulty 12) to find buried men."
+          weather_triggers: [clear_grey, light_rain]
+          prevention: "Avoid snow slopes in warm hours. Cross early morning. One man at a time on suspect slopes."
+          narrative_hooks:
+            - "The mountain coughs. That's what it sounds like. Then the world turns white."
+            - "They dig for an hour. They find Leif's hand first, still gripping his axe."
+
+      long_sun:
+        - id: "HAZ_MT05"
+          name: "Loose Scree Slope"
+          severity: moderate
+          frequency: common
+          description: "Summer-thawed scree shifts underfoot like dry water. Every step slides half a step back. An hour's climb takes three."
+          mechanical_effect:
+            check: "MIG"
+            difficulty: 10
+            failure: "Exhaustion. Lose half a day. Risk of sliding (NIM check difficulty 10) into rocks below."
+          weather_triggers: [clear_grey, light_rain]
+          prevention: "Zigzag. Keep weight low. Use hands. Consider alternate route."
+          narrative_hooks:
+            - "Two steps up, one step back. The mountain mocks them."
+            - "The scree sounds like bones rattling under their feet."
+
+      harvest:
+        - id: "HAZ_MT06"
+          name: "Black Ice on Stone"
+          severity: severe
+          frequency: uncommon
+          description: "First frosts coat rock paths with invisible ice. A man doesn't know it's there until he's already falling."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Fall on rock. Bruised or broken bones. If near a ledge, second NIM check (difficulty 12) to avoid going over."
+          weather_triggers: [clear_grey]
+          prevention: "Scatter sand or gravel. Test footing. Rope together near drops."
+          narrative_hooks:
+            - "Sigurd's feet go out from under him on what looked like dry stone."
+            - "The ice is invisible. The bruises are not."
+
+      long_dark:
+        - id: "HAZ_MT07"
+          name: "Pass Blockage"
+          severity: severe
+          frequency: common
+          description: "Snow fills the pass. Drifts taller than a man. The route is technically open. Practically, it might as well be a wall."
+          mechanical_effect:
+            check: "MIG"
+            difficulty: 14
+            failure: "Cannot proceed. Must find alternate route (WIT check difficulty 14) or wait 1-3 days for wind to shift snow."
+          weather_triggers: [driving_snow, rime_storm]
+          prevention: "Carry shovels. Send scouts to check passes before committing the column."
+          narrative_hooks:
+            - "The pass is gone. Just... gone. Snow from wall to wall, higher than a horse."
+            - "They dig for a day. They advance twenty paces. They turn back."
+
+        - id: "HAZ_MT08"
+          name: "Mountain Wind Chill"
+          severity: lethal
+          frequency: common
+          description: "Wind on the high ridges drops effective temperature far below what clothing can handle. Exposed flesh freezes in minutes."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 14
+            failure: "Frostbite progression: one stage per hour exposed. Frostbite formula applies with +15% from wind."
+          weather_triggers: [driving_snow, rime_storm, clear_grey]
+          prevention: "Full face cover. Move fast through exposed ridges. Shelter immediately if wind picks up."
+          narrative_hooks:
+            - "The wind finds the gap between his hood and neck. It's like a knife made of nothing."
+            - "His fingers stop hurting. That's when he knows it's bad."
+
+    # ========================================================================
+    # MARSH / BOG
+    # ========================================================================
+    marsh:
+      all_seasons:
+        - id: "HAZ_MA01"
+          name: "Bog Pit"
+          severity: severe
+          frequency: uncommon
+          description: "The surface looks like any other patch of moss. Under it: waist-deep black water and sucking peat. A man goes in and the bog holds him."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 12
+            failure: "Sinking. MIG check (difficulty 12) to pull free. Each failed attempt sinks deeper. Others must help with rope/spear."
+          weather_triggers: [rime_fog, light_rain]
+          prevention: "Probe every step with a long pole. Follow local guides. Don't stray from marked paths."
+          narrative_hooks:
+            - "He sinks to the waist in one step. The panic starts immediately."
+            - "The peat is the colour of old blood. It smells like death and iron."
+
+        - id: "HAZ_MA02"
+          name: "Marsh Gas"
+          severity: moderate
+          frequency: uncommon
+          description: "Bubbles of foul gas rise from the bog. The smell is rotten eggs and worse. Near an open flame, the gas ignites."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 10
+            failure: "If near fire: flash ignition. NIM check (difficulty 12) to avoid burns. Without fire: nausea, -1 to all checks for 1 hour."
+          weather_triggers: [clear_grey, rime_fog]
+          prevention: "No open flames in gas-heavy areas. Watch for bubbles. Cover mouth and nose."
+          narrative_hooks:
+            - "The torch flares blue for a heartbeat. Then the air itself catches fire."
+            - "Olaf vomits into the bog. The bog bubbles back."
+
+        - id: "HAZ_MA03"
+          name: "Insect-Borne Fever"
+          severity: moderate
+          frequency: uncommon
+          description: "Biting flies carry marsh sickness. A man bitten enough times develops a slow fever that drains strength over days."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 10
+            failure: "Fever develops over 2-3 days. -1 to all physical checks per day until treated. Untreated for a week: severe illness."
+          weather_triggers: [clear_grey, light_rain]
+          prevention: "Cover exposed skin. Birch-tar repellent. Don't camp in the bog."
+          narrative_hooks:
+            - "The bites seem minor. Two days later, Hakon can't hold his spear steady."
+            - "He sweats through the night, muttering. By morning his skin is hot enough to feel from a hand's width away."
+
+      thaw:
+        - id: "HAZ_MA04"
+          name: "Frozen Bog Trap"
+          severity: severe
+          frequency: uncommon
+          description: "Thin ice over a bog pit. Looks like solid frozen ground. Under the crust: bog water that hasn't frozen because of the gas."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Falls through into bog water. Cold shock + sinking. Combined TOU (difficulty 12) and MIG (difficulty 12) to survive."
+          weather_triggers: [clear_grey, rime_fog]
+          prevention: "Never trust flat ice in marshland. Probe with a pole. Walk on visible tussocks."
+          narrative_hooks:
+            - "He goes through with a crack like a breaking bone. The water is warmer than the ice, and that's worse."
+            - "They see the hole he went through. The water below is black and moving."
+
+      long_sun:
+        - id: "HAZ_MA05"
+          name: "Quicksand Patch"
+          severity: severe
+          frequency: rare
+          description: "Sandy ground near bog streams liquefies underfoot. A man sinks slowly, steadily, and struggling makes it worse."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 12
+            failure: "Sinking. Must stay calm — WIL check (difficulty 10). MIG check (difficulty 10) to spread weight and crawl out. Struggling adds +2 to difficulty."
+          weather_triggers: [light_rain, clear_grey]
+          prevention: "Avoid sandy patches near water. Test ground. Carry rope always."
+          narrative_hooks:
+            - "He's knee-deep before he realizes he's not standing on ground anymore."
+            - "Every movement pulls him deeper. The marsh makes a pleased, sucking sound."
+
+      harvest:
+        - id: "HAZ_MA06"
+          name: "Fog-Bound Bog"
+          severity: moderate
+          frequency: common
+          description: "Autumn fog thickens over the marsh until a man can't see his own feet. Known paths disappear. Unknown paths appear."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 14
+            failure: "Lost in the bog. Every hour, NIM check (difficulty 10) to avoid stepping in a pit. 2-8 hours to find the way out."
+          weather_triggers: [rime_fog]
+          prevention: "Don't enter the bog in fog. If caught, stop and wait."
+          narrative_hooks:
+            - "The fog is so thick it muffles sound. They can hear each other breathing and nothing else."
+            - "Someone in the fog says a name. No one in the band has that name."
+
+      long_dark:
+        - id: "HAZ_MA07"
+          name: "Will-o'-Wisp Lure"
+          severity: severe
+          frequency: rare
+          description: "Cold lights dance over the frozen bog. They move like lanterns carried by someone just out of sight. Men follow them and don't come back."
+          mechanical_effect:
+            check: "WIL"
+            difficulty: 14
+            failure: "Compelled to follow the light. WYR check (difficulty 12) each 100 paces or keep walking. Leads to deep bog or barrow."
+          weather_triggers: [veil_thinning, the_hush, rime_fog]
+          prevention: "Don't look at the lights. Bind the suggestible. Post watchers on the weak-willed."
+          narrative_hooks:
+            - "The light looks warm. That's the worst part. It looks like safety."
+            - "They tie Jormund to a tree after he walks toward the lights for the third time."
+
+        - id: "HAZ_MA08"
+          name: "Frozen Bog Crossing"
+          severity: moderate
+          frequency: common
+          description: "The bog freezes unevenly. Some patches hold a man's weight. Some don't. There's no way to tell which until you're standing on one."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 12
+            failure: "Falls through weak ice into shallow bog. Soaked to waist. TOU check (difficulty 10) or frostbite."
+          weather_triggers: [clear_grey, driving_snow]
+          prevention: "Spread weight — crawl if necessary. Follow animal tracks. Test with poles."
+          narrative_hooks:
+            - "He goes through up to the waist. The cold hits like a fist."
+            - "They crawl across on their bellies, spread like starfish. It takes an hour to cross fifty paces."
+
+    # ========================================================================
+    # RIVER / LAKE
+    # ========================================================================
+    river_lake:
+      all_seasons:
+        - id: "HAZ_R01"
+          name: "Swift Current Crossing"
+          severity: severe
+          frequency: uncommon
+          description: "The ford looked passable from the bank. Knee-deep becomes waist-deep. The current grabs at legs and pulls."
+          mechanical_effect:
+            check: "MIG"
+            difficulty: 12
+            failure: "Swept off feet. NIM check (difficulty 10) to grab a rope or rock. Failure: carried downstream. TOU check (difficulty 10) against cold."
+          weather_triggers: [light_rain, clear_grey]
+          prevention: "Rope across first. Cross in pairs, linked. Unload heavy gear and ferry it."
+          narrative_hooks:
+            - "The water hits his thighs like a battering ram. He leans into it and prays."
+            - "They form a human chain across the ford. The river tries to snap the weakest links."
+
+        - id: "HAZ_R02"
+          name: "Waterlogged Equipment"
+          severity: mild
+          frequency: common
+          description: "A botched crossing or a sudden rain soaks packs, bowstrings, and food supplies. Wet gear is heavy gear."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 8
+            failure: "Bowstrings useless until dry. Food spoiled. Packs gain weight. -1 to march speed for a day."
+          weather_triggers: [light_rain, driving_snow, rime_storm]
+          prevention: "Waterproof packs with waxed leather. Carry spare bowstrings in oiled pouches."
+          narrative_hooks:
+            - "The bread is paste. The dried fish is wet fish. The bowstrings are rope."
+            - "Everything drips. The packs weigh twice as much. Morale weighs less."
+
+      thaw:
+        - id: "HAZ_R03"
+          name: "Spring Flood"
+          severity: severe
+          frequency: common
+          description: "Rivers swell with snowmelt. Known fords become impassable. The water is brown, cold, and carries debris."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 12
+            failure: "Route blocked. Must find alternate crossing (1-3 days detour) or wait (1-7 days)."
+          weather_triggers: [light_rain, clear_grey]
+          prevention: "Check ford conditions before committing. Have alternate routes planned."
+          narrative_hooks:
+            - "The ford is gone. There's just river where the path used to be."
+            - "A dead horse floats past. Then a door. Then something they don't look at too closely."
+
+        - id: "HAZ_R04"
+          name: "Ice Dam Burst"
+          severity: lethal
+          frequency: very_rare
+          description: "An ice dam upstream gives way. A wall of water and ice chunks descends on anyone near the river. No warning beyond a distant crack."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 16
+            failure: "Swept away by debris-filled flood. MIG check (difficulty 14) to survive. Equipment lost."
+          weather_triggers: [clear_grey]
+          prevention: "Camp well above the waterline. Never camp in a river gorge during Thaw."
+          narrative_hooks:
+            - "The sound is like the world breaking. Then the water comes, and it has teeth — ice chunks turning end over end."
+            - "The camp was there. Now there's river. They count heads and come up short."
+
+      long_sun:
+        - id: "HAZ_R05"
+          name: "Algae Sickness"
+          severity: moderate
+          frequency: uncommon
+          description: "Stagnant lake water breeds green-brown slime. Men who drink without boiling spend the next day emptying their guts."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 10
+            failure: "Violent illness for 1-2 days. -2 to all physical checks. Dehydration risk if water lost to vomiting."
+          weather_triggers: [clear_grey, light_rain]
+          prevention: "Boil all standing water. Drink from flowing streams. Check for green scum."
+          narrative_hooks:
+            - "Half the band is squatting in the bushes by noon. The other half is smug until evening."
+            - "He drinks deep and announces it tastes fine. By midnight, he takes it back."
+
+      harvest:
+        - id: "HAZ_R06"
+          name: "Freezing Rain on Boats"
+          severity: moderate
+          frequency: uncommon
+          description: "Freezing rain coats boats and oars with ice. The vessel gets heavier, handling worse, and the oars become clubs."
+          mechanical_effect:
+            check: "MIG"
+            difficulty: 12
+            failure: "Loss of boat control. WIT check (difficulty 10) to avoid grounding or capsizing."
+          weather_triggers: [driving_snow, rime_storm]
+          prevention: "Get to shore immediately. Chip ice from the vessel continuously."
+          narrative_hooks:
+            - "The oars are so heavy with ice that two men can barely lift one."
+            - "The boat sits lower in the water with every passing hour. They chip and row, chip and row."
+
+      long_dark:
+        - id: "HAZ_R07"
+          name: "Thin Lake Ice"
+          severity: lethal
+          frequency: uncommon
+          description: "The lake looks frozen solid. It isn't. Somewhere near the middle, where currents run underneath, the ice is a hand's width thick."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 14
+            failure: "Falls through. Cold water shock: TOU check (difficulty 14) or unconscious in 90 seconds. Ice edges break when climbed. Rescue: MIG check (difficulty 14)."
+          weather_triggers: [clear_grey, rime_fog]
+          prevention: "Test ice every 20 paces. Spread weight — lie flat if cracking sounds. Carry ice picks."
+          narrative_hooks:
+            - "The crack sounds like a whip. He goes through to the shoulders and his scream goes underwater."
+            - "They belly-crawl to him with a plank and a rope. The ice groans under them the whole way."
+
+        - id: "HAZ_R08"
+          name: "Frozen Waterfall Collapse"
+          severity: severe
+          frequency: rare
+          description: "A frozen waterfall — beautiful, blue-white, treacherous. The ice gives way when the wind changes, sending tons of frozen water down."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Struck by falling ice. 1d6+2 damage. Armour partially effective. Risk of being trapped under debris."
+          weather_triggers: [clear_grey, rime_storm]
+          prevention: "Don't camp near frozen falls. Don't climb them. Give them a wide berth."
+          narrative_hooks:
+            - "It looked like a cathedral of ice. Then it fell."
+            - "The crash echoed off the valley walls for what felt like a full minute."
+
+    # ========================================================================
+    # ICE / TUNDRA
+    # ========================================================================
+    ice_tundra:
+      all_seasons:
+        - id: "HAZ_I01"
+          name: "Crevasse"
+          severity: lethal
+          frequency: uncommon
+          description: "A crack in the ice, hidden by a snow bridge. A man walks over it and the bridge breaks. The crevasse is deep enough that you can't see the bottom."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Fall into crevasse. Depth varies — 10-60 feet. MIG check (difficulty 14) to arrest fall. Rescue requires rope and time."
+          weather_triggers: [clear_grey, driving_snow, rime_fog]
+          prevention: "Rope the column. Probe ahead with poles. Spread weight on suspect areas."
+          narrative_hooks:
+            - "One moment he's there. The next, a hole in the snow and a scream that gets quieter."
+            - "They can hear him down there. He sounds calm. 'Throw me a rope,' he says. 'I can see my breath freeze.'"
+
+        - id: "HAZ_I02"
+          name: "Snow Blindness"
+          severity: moderate
+          frequency: common
+          description: "White glare from unbroken snowfields. By midday a man is squinting. By evening he's blind, eyes streaming, the light like hot sand."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 10
+            failure: "Temporary blindness for 1-3 days. -3 to all checks requiring vision. Pain like grit in the eyes."
+          weather_triggers: [clear_grey, blood_sun]
+          prevention: "Soot smeared under the eyes. Slitted bone or bark eyepieces. Don't stare at the snow."
+          narrative_hooks:
+            - "He sees halos around everything. Then he sees nothing at all."
+            - "By the second day, three men are being led by the hand. The band has half as many eyes."
+
+      thaw:
+        - id: "HAZ_I03"
+          name: "Ice Sheet Breakup"
+          severity: severe
+          frequency: uncommon
+          description: "The tundra ice begins to fracture into plates that shift and tilt. What was solid ground becomes a puzzle that moves."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Caught on a shifting plate. Risk of falling between plates into water. MIG check (difficulty 12) to jump to stable ground."
+          weather_triggers: [clear_grey]
+          prevention: "Don't cross open ice during Thaw. Stick to land-fast ice near shore."
+          narrative_hooks:
+            - "The ice moves under them. Not fast — slow as breath. But it moves."
+            - "A gap opens between two plates. A man's width. Then two. Then too far to jump."
+
+      long_sun:
+        - id: "HAZ_I04"
+          name: "Meltwater Stream"
+          severity: mild
+          frequency: common
+          description: "Surface melt carves channels across the ice. Shin-deep, freezing cold, and everywhere. Boots don't stay dry."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 8
+            failure: "Wet feet all day. Frostbite risk +5%. Blisters and raw skin by evening."
+          weather_triggers: [clear_grey, light_rain]
+          prevention: "Waterproof boots with tallow. Change foot-wraps at every halt."
+          narrative_hooks:
+            - "The ice weeps from every crack. By noon they're wading through a shallow, freezing river."
+            - "His feet are white and wrinkled. He doesn't want to look at them."
+
+      harvest:
+        - id: "HAZ_I05"
+          name: "Polar Bear"
+          severity: lethal
+          frequency: very_rare
+          description: "A white shape on white snow. It's closer than it looks. It's always closer than it looks. And it is not afraid of men."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 14
+            failure: "Surprise encounter. Combat with a polar bear — lethal. It attacks the front of the column and doesn't stop."
+          weather_triggers: [clear_grey, rime_fog]
+          prevention: "Post lookouts with long sight lines. Make noise. Travel in groups. Don't camp near seal-holes."
+          narrative_hooks:
+            - "Someone points. 'Snow drift,' they say. The snow drift stands up."
+            - "It kills the lead man before anyone draws a weapon. Then it turns to the second."
+
+      long_dark:
+        - id: "HAZ_I06"
+          name: "Lethal Exposure"
+          severity: lethal
+          frequency: common
+          description: "Temperatures on the open tundra in Long Dark can kill a healthy man in hours. The cold is not weather — it is a predator."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 14
+            failure: "Frostbite formula at maximum: 15% + 10%/hour - TOU×2% + all applicable modifiers. Without shelter, lethal within 6-12 hours."
+          weather_triggers: [driving_snow, rime_storm, clear_grey]
+          prevention: "Never cross open tundra in Long Dark without guaranteed shelter every 4 hours."
+          narrative_hooks:
+            - "The cold doesn't creep. It arrives all at once, like walking into a wall."
+            - "He stops shivering. Everyone knows what that means."
+
+        - id: "HAZ_I07"
+          name: "Tundra Hallucination"
+          severity: moderate
+          frequency: uncommon
+          description: "The featureless white, the exhaustion, the cold — the mind breaks before the body. Men see settlements, campfires, people who aren't there."
+          mechanical_effect:
+            check: "WIL"
+            difficulty: 12
+            failure: "Hallucination. May wander off toward the mirage. WIT check (difficulty 10) for companions to notice in time."
+          weather_triggers: [clear_grey, the_hush, rime_fog]
+          prevention: "Keep men talking. Regular head-counts. Pair the exhausted with the alert."
+          narrative_hooks:
+            - "He swears he sees smoke. There is no smoke. He walks toward it anyway."
+            - "Three men see the same hall in the distance. It has light in the windows. It does not exist."
+
+        - id: "HAZ_I08"
+          name: "Aurora Madness"
+          severity: moderate
+          frequency: rare
+          description: "The northern lights blaze green and red across the sky. Beautiful. But during Veil-thinning, they whisper. Men who stare too long hear voices."
+          mechanical_effect:
+            check: "WYR"
+            difficulty: 12
+            failure: "Gain one point of dread. Disturbed sleep (WIL check difficulty 10). Particularly sensitive men may receive visions — not always helpful."
+          weather_triggers: [veil_thinning, clear_grey]
+          prevention: "Don't stare at the lights during Veil-thinning. Sleep facing away from them."
+          narrative_hooks:
+            - "The sky burns green. Orm stares up and his eyes go wide. 'They're talking,' he says."
+            - "The lights ripple like cloth. Under them, the snow turns colours. It's beautiful. It's wrong."
+
+    # ========================================================================
+    # UNDERGROUND / BARROW
+    # ========================================================================
+    underground:
+      all_seasons:
+        - id: "HAZ_U01"
+          name: "Passage Collapse"
+          severity: severe
+          frequency: uncommon
+          description: "Ancient stonework gives way. Dust, noise, and a wall of rubble where the passage used to be. Anyone under it dies."
+          mechanical_effect:
+            check: "NIM"
+            difficulty: 14
+            failure: "Caught in collapse. MIG check (difficulty 14) to survive. Trapped: suffocation in 30 minutes without rescue."
+          weather_triggers: [rime_storm]
+          prevention: "Prop suspect ceilings. Move quietly — sound vibrations trigger weak stone. Post a listener."
+          narrative_hooks:
+            - "A groan from the ceiling. Then dust. Then the ceiling isn't there anymore."
+            - "They're cut off. Torch-light on a wall of fresh rubble. The air starts getting thin."
+
+        - id: "HAZ_U02"
+          name: "Cold Spot"
+          severity: moderate
+          frequency: common
+          description: "A section of barrow where the temperature drops ten degrees in two steps. Breath frosts. Torch flames shrink. Something is here, or was here, or will be."
+          mechanical_effect:
+            check: "WYR"
+            difficulty: 10
+            failure: "Gain one point of dread. WIL check (difficulty 10) or flee the area. Torches dim to half brightness."
+          weather_triggers: [veil_thinning, the_hush]
+          prevention: "Move through quickly. Don't linger. Don't speak the names of the dead."
+          narrative_hooks:
+            - "The cold hits him like a door opening onto winter. His torch gutters and almost dies."
+            - "Frost forms on the walls in patterns. They look almost like runes."
+
+        - id: "HAZ_U03"
+          name: "Barrow Gas"
+          severity: severe
+          frequency: uncommon
+          description: "Sealed chambers hold foul air. Opening a door or breaking a wall releases it — odourless, invisible, deadly. A man breathes it and goes dizzy, then goes down."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 12
+            failure: "Lightheaded, then unconscious in 2 minutes. Without fresh air, death in 10 minutes."
+          weather_triggers: []
+          prevention: "Open sealed chambers from a distance. Watch the torch — if it dims or changes colour, retreat."
+          narrative_hooks:
+            - "His torch burns blue. He doesn't notice. He's already swaying."
+            - "They drag him out by the ankles. His lips are the colour of a bruise."
+
+      thaw:
+        - id: "HAZ_U04"
+          name: "Meltwater Flooding"
+          severity: moderate
+          frequency: common
+          description: "Spring melt finds its way into barrow passages. Ankle-deep becomes knee-deep. Lower chambers may be fully submerged."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 10
+            failure: "Supplies ruined by water. Retreat necessary if flooding continues. Hypothermia risk from cold water."
+          weather_triggers: [light_rain, clear_grey]
+          prevention: "Check barrow water levels before entering in Thaw. Bring high ground options."
+          narrative_hooks:
+            - "The water rises an inch while they stand there debating. They stop debating."
+            - "The lower passage is flooded to the ceiling. Something glints beneath the surface."
+
+      long_sun:
+        - id: "HAZ_U05"
+          name: "Fungal Bloom"
+          severity: moderate
+          frequency: uncommon
+          description: "Warm air meets underground damp. Growths cover walls and ceilings — pale, luminous, releasing clouds of spores when disturbed."
+          mechanical_effect:
+            check: "TOU"
+            difficulty: 10
+            failure: "Coughing fits for 1-2 days. -1 to all checks. Heavy exposure (critical fail): fever and lung sickness."
+          weather_triggers: []
+          prevention: "Cover mouth and nose. Move through quickly. Don't touch or cut the growths."
+          narrative_hooks:
+            - "The passage glows faintly. The light comes from the fungus, and it moves when they breathe on it."
+            - "He brushes the wall and a cloud of white spores engulfs his head. He's coughing blood by evening."
+
+      harvest:
+        - id: "HAZ_U06"
+          name: "Barrow Waking — Minor"
+          severity: moderate
+          frequency: uncommon
+          description: "As the Veil thins toward Long Dark, barrow dead grow restless. Not active — but close. Scratching sounds from behind sealed doors. Cold drafts from nowhere."
+          mechanical_effect:
+            check: "WIL"
+            difficulty: 12
+            failure: "Fear. -1 to all checks inside the barrow. WYR check (difficulty 10) or gain one point of dread."
+          weather_triggers: [veil_thinning]
+          prevention: "Don't enter barrows in late Harvest. If inside, leave before nightfall."
+          narrative_hooks:
+            - "Something knocks from the other side of the wall. Three times. Slow. Deliberate."
+            - "The scratching is faint. Rhythmic. Like fingernails on the inside of a box."
+
+      long_dark:
+        - id: "HAZ_U07"
+          name: "Draugr Stirring"
+          severity: severe
+          frequency: common
+          description: "The dead rise. 15% chance per night spent near a barrow. They come from alcoves, from behind doors, from the earth itself."
+          mechanical_effect:
+            check: "WYR"
+            difficulty: 12
+            failure: "Draugr encounter: 1-4 undead. Combat in close quarters. They are cold, strong, and untiring."
+          weather_triggers: [veil_thinning, the_hush, blood_sun]
+          prevention: "Don't camp in barrows. If sheltering, barricade the entrances. Post sentries with iron weapons."
+          narrative_hooks:
+            - "It steps out of the wall like the stone means nothing. Its eyes are the colour of old ice."
+            - "They hear armour. In a place where all the armour should be lying still."
+
+        - id: "HAZ_U08"
+          name: "The Whispering"
+          severity: moderate
+          frequency: common
+          description: "Voices in the dark. Not echoes — voices. They know names. They make promises. Some men listen."
+          mechanical_effect:
+            check: "WIL"
+            difficulty: 14
+            failure: "Compelled to follow the voice deeper. WYR check (difficulty 12) or wander away from the group. Each minute adds +1 to recovery difficulty."
+          weather_triggers: [the_hush, veil_thinning]
+          prevention: "Never go alone. Keep talking to each other — fill the silence. Sing if you must."
+          narrative_hooks:
+            - "It speaks his mother's name. He stops. 'That's my mother,' he says. It isn't."
+            - "The whisper offers warmth. It offers rest. It offers an end to all of this. Three men listen."
+
+        - id: "HAZ_U09"
+          name: "Animated Guardian"
+          severity: lethal
+          frequency: rare
+          description: "An older, stronger dead. Not a mindless draugr — this one was a chieftain or a priest. It has purpose, weapons, and sometimes sorcery."
+          mechanical_effect:
+            check: "WYR"
+            difficulty: 14
+            failure: "Combat with a powerful undead. It targets the leader or the one carrying stolen grave goods. May use a rune-word that stuns (WIL check difficulty 14)."
+          weather_triggers: [veil_thinning, blood_sun]
+          prevention: "Don't disturb the central burial. Don't take the best grave goods. Leave an offering."
+          narrative_hooks:
+            - "It sits up. Not fast — deliberate. Like a man waking from sleep. It reaches for the sword across its lap."
+            - "The runes on its armour glow. It speaks, and the word hits like a fist in the chest."
+
+        - id: "HAZ_U10"
+          name: "Spatial Disorientation"
+          severity: severe
+          frequency: uncommon
+          description: "The passage turns. And turns. And turns again. The torches say they've been walking for an hour. The passage says they're back where they started."
+          mechanical_effect:
+            check: "WIT"
+            difficulty: 14
+            failure: "Lost in the barrow. Each hour lost, WIL check (difficulty 10) or panic. Torch supply diminishes. Eventually: darkness."
+          weather_triggers: [veil_thinning, the_hush]
+          prevention: "Mark the walls. Leave chalk marks or string. Assign a dedicated navigator."
+          narrative_hooks:
+            - "That scratch on the wall. He made that scratch. An hour ago. They've been walking in a circle."
+            - "The passages don't make sense. The map says straight. The torchlight says otherwise."
+
+  # ========================================================================
+  # CROSS-TERRAIN HAZARDS (apply to all terrains in specific conditions)
+  # ========================================================================
+  universal_hazards:
+    - id: "HAZ_X01"
+      name: "The Hush"
+      severity: severe
+      frequency: rare
+      description: "Total silence descends. No wind, no birds, no breath-sound. It lasts 1-30 minutes. All sound-based actions fail. Fear rises from the gut."
+      applicable_terrains: ["all"]
+      applicable_seasons: ["all"]
+      mechanical_effect:
+        check: "WIL"
+        difficulty: 12
+        failure: "Fear. -2 to all checks during The Hush. WYR check (difficulty 10) or gain one point of dread. Sound-based communication impossible."
+      weather_triggers: [the_hush]
+      prevention: "Cannot be prevented. Endure. Keep visual contact. Use hand signals."
+      narrative_hooks:
+        - "The world goes silent. Not quiet — silent. Like the air itself has died."
+        - "He opens his mouth to shout and nothing comes out. Nothing at all."
+
+    - id: "HAZ_X02"
+      name: "Veil Thinning — Boundary Breach"
+      severity: severe
+      frequency: very_rare
+      description: "The boundary between the living world and what lies beyond thins to nothing. The dead can see the living. The living can see the dead. Both are frightened."
+      applicable_terrains: ["all"]
+      applicable_seasons: [long_dark]
+      mechanical_effect:
+        check: "WYR"
+        difficulty: 14
+        failure: "Vision of the dead. WIL check (difficulty 14) or paralysing terror for 1d6 minutes. Nearby barrows always stir during a breach."
+      weather_triggers: [veil_thinning, blood_sun]
+      prevention: "Iron carried openly. Salt scattered in a circle. Ward-runes inscribed. Pray, if you still know how."
+      narrative_hooks:
+        - "He sees his dead brother standing at the edge of camp. His dead brother sees him back."
+        - "The air tears like wet cloth, and through it: a hall. A grey hall full of grey people who turn to look."
+
+    - id: "HAZ_X03"
+      name: "Frostbite Onset"
+      severity: moderate
+      frequency: common
+      description: "The cold eats extremities first. Fingers, toes, nose, ears. It starts with pain. Then numbness. Then the flesh turns white."
+      applicable_terrains: ["all"]
+      applicable_seasons: [harvest, long_dark]
+      mechanical_effect:
+        check: "TOU"
+        difficulty: 10
+        failure: "Frostbite formula applies: 15% + 10%/day exposed - TOU×2%. +10% no cloak, +15% wounded. Treatment needed or permanent damage."
+      weather_triggers: [driving_snow, rime_storm, clear_grey]
+      prevention: "Dry clothes. Full coverage. Keep moving. Eat well. Check extremities regularly."
+      narrative_hooks:
+        - "His fingers are white. He didn't notice. That's how it starts."
+        - "She peels off his boot and the toes are the colour of tallow. Two of them don't bend."
+
+    - id: "HAZ_X04"
+      name: "Hypothermia — Progressive"
+      severity: lethal
+      frequency: uncommon
+      description: "Core temperature drops. Shivering stops — that's the dangerous part. Confusion, poor decisions, then a strange warmth. Then sleep."
+      applicable_terrains: ["all"]
+      applicable_seasons: [harvest, long_dark]
+      mechanical_effect:
+        check: "TOU"
+        difficulty: 14
+        failure: "Stage 1: Shivering, -1 to all checks. Stage 2: Confusion, -2, poor decisions. Stage 3: Paradoxical warmth, undressing. Stage 4: Death."
+      weather_triggers: [driving_snow, rime_storm]
+      prevention: "Stay dry. Stay warm. Eat. Get shelter. If shivering stops, it's an emergency."
+      narrative_hooks:
+        - "He stops shivering and smiles. 'I'm warm now,' he says. They pull him into the shelter by force."
+        - "He starts taking off his cloak. It takes two men to stop him."
+
+    - id: "HAZ_X05"
+      name: "Mud Trap"
+      severity: moderate
+      frequency: common
+      description: "Thaw and rain turn any trail into a sucking mire. Boots, wheels, hooves — everything sinks. Every step is a battle."
+      applicable_terrains: [forest, moor, marsh, river_lake]
+      applicable_seasons: [thaw, long_sun]
+      mechanical_effect:
+        check: "MIG"
+        difficulty: 10
+        failure: "March speed halved. Lose a boot (NIM check difficulty 8). Carts stuck — hours lost digging out."
+      weather_triggers: [light_rain]
+      prevention: "Corduroy roads over the worst patches. Go around. Accept the delay."
+      narrative_hooks:
+        - "The mud takes his boot. He stands there, one foot bare in the mire, swearing."
+        - "The cart sinks to the axle. It takes the whole band and two ropes to free it."
+
+    - id: "HAZ_X06"
+      name: "Blood Sun"
+      severity: moderate
+      frequency: very_rare
+      description: "The sun rises red — not dawn-red, but the red of an open wound. The light is wrong. Animals go silent. The Veil thins to nothing."
+      applicable_terrains: ["all"]
+      applicable_seasons: [long_dark]
+      mechanical_effect:
+        check: "WYR"
+        difficulty: 12
+        failure: "All supernatural hazard frequencies increase one step. Barrow stirring chance doubled. WIL check (difficulty 12) or gain one dread."
+      weather_triggers: [blood_sun]
+      prevention: "Cannot be prevented. Stay away from barrows. Don't travel. Shelter and wait."
+      narrative_hooks:
+        - "The sun comes up red. Not the red of morning. The red of something that shouldn't be seen."
+        - "Every dog in the camp lies flat and whimpers. The horses won't face east."
+
+    - id: "HAZ_X07"
+      name: "Dehydration"
+      severity: moderate
+      frequency: uncommon
+      description: "Cold air is dry air. Men forget to drink when they're not sweating. Water skins freeze. Dehydration creeps in under the cold."
+      applicable_terrains: [moor, mountain, ice_tundra]
+      applicable_seasons: [long_dark]
+      mechanical_effect:
+        check: "WIT"
+        difficulty: 10
+        failure: "Headache, fatigue, -1 to all checks. If not corrected in 2 days, TOU check (difficulty 12) or serious illness."
+      weather_triggers: [clear_grey, driving_snow]
+      prevention: "Melt snow for water. Keep water skins inside clothing to prevent freezing. Drink regularly."
+      narrative_hooks:
+        - "He hasn't drunk since yesterday. The water skin is a block of ice."
+        - "His lips crack and bleed. His eyes are sunken. He says he's fine. He's not."
+
+    - id: "HAZ_X08"
+      name: "Campfire Failure"
+      severity: severe
+      frequency: uncommon
+      description: "Wet wood, wind, or no fuel at all. The fire won't start, or won't stay lit. In Long Dark, this can be a death sentence."
+      applicable_terrains: [moor, ice_tundra, mountain]
+      applicable_seasons: [harvest, long_dark]
+      mechanical_effect:
+        check: "WIT"
+        difficulty: 12
+        failure: "No fire. No cooked food. No warmth. TOU check (difficulty 10) per night without fire. Frostbite risk +15%."
+      weather_triggers: [driving_snow, rime_storm, light_rain]
+      prevention: "Carry dry tinder always. Protect fire materials. Scout for fuel before stopping."
+      narrative_hooks:
+        - "The tinder is damp. The wood is wet. The wind is laughing."
+        - "Three men huddle together for warmth. It's not enough. By morning, none of them can straighten their fingers."

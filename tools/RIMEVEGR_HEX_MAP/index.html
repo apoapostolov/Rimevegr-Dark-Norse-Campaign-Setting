@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rimevegr Hex Map - Iron Ledger Campaign</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #1a1a1a;
+        color: #e0e0e0;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .map-area {
+        flex: 1;
+        background: #0a0a0a;
+        border: 2px solid #444;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      canvas {
+        display: block;
+        background: linear-gradient(135deg, #1a2a3a 0%, #0a1a2a 100%);
+        width: 100%;
+        height: 100%;
+      }
+
+      .sidebar {
+        width: 300px;
+        background: #2a2a2a;
+        border: 2px solid #444;
+        border-radius: 8px;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .sidebar h2 {
+        color: #00bfff;
+        border-bottom: 2px solid #00bfff;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .sidebar h3 {
+        color: #ffaa00;
+        font-size: 14px;
+        margin-top: 15px;
+        margin-bottom: 8px;
+      }
+
+      .legend {
+        display: grid;
+        gap: 10px;
+      }
+
+      .legend-item {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 10px;
+        align-items: center;
+        font-size: 13px;
+      }
+
+      .legend-color {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #666;
+        border-radius: 4px;
+      }
+
+      .settlements-list {
+        max-height: 300px;
+        overflow-y: auto;
+        border: 1px solid #444;
+        padding: 10px;
+        border-radius: 4px;
+        background: #1a1a1a;
+      }
+
+      .settlement-item {
+        font-size: 12px;
+        padding: 8px;
+        margin: 4px 0;
+        background: #2a2a2a;
+        border-left: 3px solid #ffaa00;
+        cursor: pointer;
+        transition: all 0.2s;
+        border-radius: 3px;
+      }
+
+      .settlement-item:hover {
+        background: #3a3a3a;
+        transform: translateX(4px);
+      }
+
+      .settlement-item.selected {
+        background: #00bfff;
+        color: #000;
+        border-left-color: #00ff00;
+      }
+
+      .info-panel {
+        border: 1px solid #444;
+        padding: 15px;
+        border-radius: 4px;
+        background: #1a1a1a;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .info-panel h4 {
+        color: #00ff00;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #555;
+        padding-bottom: 5px;
+      }
+
+      .info-panel p {
+        margin: 5px 0;
+        color: #b0b0b0;
+      }
+
+      .terrain {
+        color: #00bfff;
+        font-weight: bold;
+      }
+
+      .size {
+        color: #ffaa00;
+      }
+
+      .authority {
+        color: #ff6b6b;
+      }
+
+      .controls {
+        display: grid;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px;
+        background: #00bfff;
+        color: #000;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 12px;
+      }
+
+      button:hover {
+        background: #00ff00;
+        transform: scale(1.05);
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+
+      .scale-info {
+        text-align: center;
+        font-size: 11px;
+        color: #888;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #444;
+      }
+
+      .location-tooltip {
+        position: absolute;
+        background: #1a1a1a;
+        color: #e0e0e0;
+        border: 2px solid #00bfff;
+        border-radius: 4px;
+        padding: 10px 15px;
+        font-size: 11px;
+        line-height: 1.5;
+        pointer-events: none;
+        display: none;
+        max-width: 250px;
+        box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+        z-index: 1000;
+        word-wrap: break-word;
+      }
+
+      .location-tooltip.barrow {
+        border-color: #ff0000;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      }
+
+      .location-tooltip .title {
+        font-weight: bold;
+        color: #00bfff;
+        margin-bottom: 5px;
+      }
+
+      .location-tooltip.barrow .title {
+        color: #ff6b6b;
+      }
+
+      .location-tooltip.settlement {
+        border-color: #ffaa00;
+        box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+      }
+
+      .location-tooltip.settlement .title {
+        color: #ffaa00;
+      }
+
+      .zoom-controls {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .zoom-controls button {
+        flex: 1;
+        padding: 8px;
+        font-size: 11px;
+      }
+
+      @media (max-width: 1024px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          height: 200px;
+        }
+
+        .map-area {
+          flex: 1;
+        }
+      }
+
+      .scrollable::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .scrollable::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+
+      .scrollable::-webkit-scrollbar-thumb {
+        background: #444;
+        border-radius: 4px;
+      }
+
+      .scrollable::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .layer-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .layer-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+      }
+
+      .layer-item input[type="checkbox"] {
+        cursor: pointer;
+        accent-color: #00bfff;
+      }
+
+      .layer-item label {
+        cursor: pointer;
+        flex: 1;
+      }
+
+      .spoiler-warning {
+        color: #ff6b6b;
+      }
+
+      /* Spoiler Warning Modal */
+      #spoilerModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .modal-content {
+        background: #2a2a2a;
+        border: 3px solid #ff0000;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 400px;
+        text-align: center;
+        color: #e0e0e0;
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+      }
+
+      .modal-content h3 {
+        color: #ff6b6b;
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+
+      .modal-content p {
+        margin-bottom: 15px;
+        line-height: 1.5;
+      }
+
+      .modal-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .modal-buttons button {
+        padding: 10px 20px;
+        font-size: 14px;
+        border: 1px solid #444;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .modal-buttons button.accept {
+        background: #8b0000;
+        color: white;
+        border: 1px solid #ff0000;
+      }
+
+      .modal-buttons button.accept:hover {
+        background: #bb0000;
+      }
+
+      .modal-buttons button.cancel {
+        background: #333;
+        color: #e0e0e0;
+      }
+
+      .modal-buttons button.cancel:hover {
+        background: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="map-area">
+        <canvas id="mapCanvas" width="1200" height="800"></canvas>
+        <div id="locationTooltip" class="location-tooltip">
+          <div class="title"></div>
+          <div class="content"></div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div>
+          <h2>Rimevegr Map</h2>
+          <p style="font-size: 12px; color: #888">
+            6-mile hexagonal grid • 15 settlements • 6 major routes
+          </p>
+        </div>
+
+        <div class="controls">
+          <div class="zoom-controls">
+            <button onclick="zoomIn()">Zoom +</button>
+            <button onclick="zoomOut()">Zoom -</button>
+          </div>
+          <button onclick="resetView()">Reset View</button>
+        </div>
+
+        <div>
+          <h3>Terrain Types</h3>
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-color" style="background: #1a4d7a"></div>
+              <span>Coast (Fjords)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #2d5a3d"></div>
+              <span>Forest (Dense)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #6b7550"></div>
+              <span>Moorland</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #5a5a6b"></div>
+              <span>Mountains</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #4a6b7a"></div>
+              <span>Bog/Marsh</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #a0a8c0"></div>
+              <span>Ice/Snow</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Map Layers</h3>
+          <div class="layer-controls">
+            <div class="layer-item">
+              <input
+                type="checkbox"
+                id="showTerrain"
+                checked
+                onchange="
+                  hexMap.layers.terrain = this.checked;
+                  hexMap.render();
+                "
+              />
+              <label for="showTerrain">Terrain</label>
+            </div>
+            <div class="layer-item">
+              <input
+                type="checkbox"
+                id="showRoads"
+                checked
+                onchange="
+                  hexMap.layers.roads = this.checked;
+                  hexMap.render();
+                "
+              />
+              <label for="showRoads">Roads & Routes</label>
+            </div>
+            <div class="layer-item">
+              <input
+                type="checkbox"
+                id="showSettlements"
+                checked
+                onchange="
+                  hexMap.layers.settlements = this.checked;
+                  hexMap.render();
+                "
+              />
+              <label for="showSettlements">Settlements</label>
+            </div>
+            <div class="layer-item">
+              <input
+                type="checkbox"
+                id="showPasses"
+                checked
+                onchange="
+                  hexMap.layers.passes = this.checked;
+                  hexMap.render();
+                "
+              />
+              <label for="showPasses">Mountain Passes</label>
+            </div>
+            <div class="layer-item">
+              <input
+                type="checkbox"
+                id="showLocations"
+                checked
+                onchange="
+                  hexMap.layers.locations = this.checked;
+                  hexMap.render();
+                "
+              />
+              <label for="showLocations">Points of Interest</label>
+            </div>
+            <div class="layer-item">
+              <input
+                type="checkbox"
+                id="showBarrows"
+                onchange="hexMap.toggleBarrowLayer()"
+              />
+              <label for="showBarrows" class="spoiler-warning"
+                >⚠ Barrows (Spoilers)</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Settlements</h3>
+          <div class="settlements-list scrollable" id="settlementsList"></div>
+        </div>
+
+        <div class="info-panel" id="infoPanel">
+          <h4>Select a settlement to view details</h4>
+          <p style="color: #888">
+            Click on any settlement marker on the map or in the list to see its
+            information.
+          </p>
+        </div>
+
+        <div class="scale-info">
+          <strong>Scale:</strong> Each hex = 6 miles<br />
+          <strong>Zoom:</strong> <span id="zoomLevel">100%</span><br />
+          <strong>Coordinates:</strong> <span id="coords">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spoiler Warning Modal -->
+    <div id="spoilerModal">
+      <div class="modal-content">
+        <h3>⚠ SPOILER WARNING</h3>
+        <p>
+          <strong
+            >Showing barrow locations reveals major campaign secrets.</strong
+          >
+        </p>
+        <p>
+          Barrows contain spoiler information about supernatural threats,
+          ancient sites, and mystical knowledge.
+        </p>
+        <p>
+          Only enable this layer if you accept spoilers or are outside play
+          sessions.
+        </p>
+        <div class="modal-buttons">
+          <button class="accept" onclick="hexMap.acceptSpoilers()">
+            I Accept Spoilers
+          </button>
+          <button class="cancel" onclick="hexMap.rejectSpoilers()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="map.js"></script>
+  </body>
+</html>

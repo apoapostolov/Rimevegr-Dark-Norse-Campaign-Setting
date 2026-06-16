@@ -1,0 +1,2235 @@
+room_templates:
+  # ==========================================================================
+  # ENTRY / APPROACH (10 rooms)
+  # ==========================================================================
+
+  - id: "ROOM_ENTRY_01"
+    name: "Standard Entry Chamber"
+    category: "entry"
+    description: "A low-ceilinged stone space carved from the hillside. The air is heavy with earth-smell and the faint sweetness of old decay. Chisel marks visible on the walls where someone cut this hole a long time ago."
+    dimensions:
+      width_paces: 6
+      length_paces: 8
+      height_paces: 2
+    features:
+      - "Chisel marks on walls"
+      - "Packed earth floor"
+      - "Stone lintel over inner door"
+    possible_encounters:
+      - tier: [1, 2]
+        types: ["UND_DRAUGR_01", "ANI_VERM_01"]
+        chance_pct: 30
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_02", "UND_SKEL_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1]
+        items: ["corroded_blade", "bone_fragments"]
+        chance_pct: 40
+    traps:
+      - name: "Weighted threshold stone"
+        detection_difficulty: "easy"
+        damage: "d6 crushing"
+        description: "Stone drops from lintel when weight shifts beneath the entry slab."
+    hazards:
+      - "Stale air (torch flicker warning)"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_ENTRY_02"
+    name: "Collapsed Entrance"
+    category: "entry"
+    description: "Half the ceiling has come down. Broken slabs lean against each other forming a narrow triangle of access. Cold air seeps through gaps in the rubble. The smell of wet stone and crushed lichen."
+    dimensions:
+      width_paces: 5
+      length_paces: 4
+      height_paces: 1
+    features:
+      - "Rubble pile blocking half the space"
+      - "Narrow crawl-through gap"
+      - "Cracked ceiling beams"
+      - "Lichen on exposed stone faces"
+    possible_encounters:
+      - tier: [1]
+        types: ["ANI_VERM_01", "ANI_HAZ_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1]
+        items: ["cracked_pottery"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Collapse risk — loud sounds or heavy impact may bring more ceiling down"
+      - "Tight crawl space — armoured men must strip plate or wedge"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_ENTRY_03"
+    name: "Hidden Entrance"
+    category: "entry"
+    description: "Behind a shelf of turf and tangled roots, a slot in the hillside barely wide enough for a man's shoulders. The opening was sealed with fitted stones at some point—someone pried them loose. Fingernail scratches in the dirt around the edges."
+    dimensions:
+      width_paces: 3
+      length_paces: 5
+      height_paces: 2
+    features:
+      - "Dislodged sealing stones stacked outside"
+      - "Scratch marks around opening"
+      - "Root tendrils hanging from ceiling"
+      - "Narrow entry requires single file"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_01"]
+        chance_pct: 15
+    possible_loot:
+      - tier: [1]
+        items: ["crude_iron_prybar"]
+        chance_pct: 30
+    traps:
+      - name: "Tripwire string of gut"
+        detection_difficulty: "moderate"
+        damage: "none — alerts inhabitants"
+        description: "Dried animal gut stretched ankle-height across the entry. Snapping it dislodges a small stone that clatters deeper inside."
+    hazards: []
+    connections: ["corridor"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_ENTRY_04"
+    name: "False Entrance"
+    category: "entry"
+    description: "A convincing stone doorway that leads eight paces into solid earth and stops at a blank wall. Carved runes above the lintel warn of death inside—but this passage holds nothing but cold air and the bones of someone who believed it was real."
+    dimensions:
+      width_paces: 4
+      length_paces: 8
+      height_paces: 2
+    features:
+      - "Warning runes above entrance"
+      - "Dead-end wall"
+      - "Skeleton slumped against far wall"
+      - "Empty pack and broken lantern"
+    possible_encounters: []
+    possible_loot:
+      - tier: [1]
+        items: ["bone_fragments", "rusted_knife", "rotted_leather_scraps"]
+        chance_pct: 60
+    traps:
+      - name: "Collapsing false floor"
+        detection_difficulty: "hard"
+        damage: "d8 crushing + trapped"
+        description: "Five paces in, the stone floor is a thin shelf over a pit. Body weight cracks it."
+    hazards:
+      - "Dead air — no ventilation at depth"
+    connections: []
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_ENTRY_05"
+    name: "Trapped Threshold"
+    category: "entry"
+    description: "A proper stone entrance, well-cut, with grooves in the floor and walls where something once slid. The builders anticipated visitors. Iron pins jut from the walls at knee height. Rust stains streak the stone below them like old blood."
+    dimensions:
+      width_paces: 4
+      length_paces: 6
+      height_paces: 3
+    features:
+      - "Mechanical grooves in walls and floor"
+      - "Iron pins at knee height"
+      - "Rust stains on stone"
+      - "Well-fitted stone blocks"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_01", "UND_SKEL_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1, 2]
+        items: ["iron_mechanisms", "corroded_blade"]
+        chance_pct: 35
+    traps:
+      - name: "Swinging stone slab"
+        detection_difficulty: "moderate"
+        damage: "d10 crushing"
+        description: "Pressure plate triggers a counterweighted slab that swings from the ceiling across the passage at waist height."
+      - name: "Floor spike pit"
+        detection_difficulty: "moderate"
+        damage: "d8 piercing"
+        description: "Second pressure plate drops a hinged section of floor into a shallow pit lined with corroded iron spikes."
+    hazards: []
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_ENTRY_06"
+    name: "Descent Stair"
+    category: "entry"
+    description: "Stone steps cut into the hillside, descending at a steep angle. Water trickles down the centre groove worn by centuries of runoff. The steps are slick with moisture and a film of green-black algae. Each step lower, the temperature drops."
+    dimensions:
+      width_paces: 3
+      length_paces: 15
+      height_paces: 3
+    features:
+      - "Steep stone staircase"
+      - "Central drainage groove"
+      - "Algae-slick steps"
+      - "Temperature drop as you descend"
+    possible_encounters:
+      - tier: [1]
+        types: ["ANI_VERM_01"]
+        chance_pct: 15
+    possible_loot: []
+    traps:
+      - name: "Greased step"
+        detection_difficulty: "easy"
+        damage: "d4 + fall to bottom"
+        description: "Animal fat smeared on a middle step. Old trap, possibly set by prior explorers, possibly by something that lives here."
+    hazards:
+      - "Slippery footing — fall risk on steep descent"
+      - "Water runoff in rain — flash flooding possible"
+    connections: ["corridor", "chamber", "entry"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient", "recent"]
+
+  - id: "ROOM_ENTRY_07"
+    name: "Animal-Gnawed Opening"
+    category: "entry"
+    description: "Something dug here. A fox den or badger sett broke through the outer wall of the barrow, and weather widened the hole. Claw marks gouge the packed earth. Tufts of fur caught on stone edges. The burrow angles down into darkness that smells of wet animal and something older underneath."
+    dimensions:
+      width_paces: 2
+      length_paces: 6
+      height_paces: 1
+    features:
+      - "Animal burrow entrance"
+      - "Claw marks in packed earth"
+      - "Tufts of animal fur on stones"
+      - "Narrow — belly-crawl for armoured men"
+    possible_encounters:
+      - tier: [1]
+        types: ["ANI_VERM_01", "ANI_VERM_02", "ANI_HAZ_01"]
+        chance_pct: 50
+      - tier: [2]
+        types: ["ANI_WOLF_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1]
+        items: ["gnawed_bone", "animal_pelts"]
+        chance_pct: 30
+    traps: []
+    hazards:
+      - "Extremely tight — shields and large packs must be left behind"
+      - "Unstable earth ceiling"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_ENTRY_08"
+    name: "Root-Choked Crawl"
+    category: "entry"
+    description: "Tree roots have broken through the barrow ceiling and walls, creating a lattice of wood and earth. You push through a curtain of hanging roots, each one cold and wet. Dirt falls in your hair. The roots are thick—whatever tree stands above is old and deep-rooted."
+    dimensions:
+      width_paces: 3
+      length_paces: 7
+      height_paces: 1
+    features:
+      - "Dense root network"
+      - "Dripping moisture"
+      - "Falling earth from disturbance"
+      - "Natural support structure from roots"
+    possible_encounters:
+      - tier: [1]
+        types: ["ANI_VERM_01"]
+        chance_pct: 20
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Entanglement risk — roots snag gear and limbs"
+      - "Limited visibility through root curtain"
+      - "Noise discipline impossible — roots snap and scrape"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_ENTRY_09"
+    name: "Ice-Sealed Mouth"
+    category: "entry"
+    description: "The entrance is a dark slit in the hillside, the stone around it glazed with ice. Water seeps from above and freezes in sheets across the opening. The ice is cloudy, grey-white, and in places you can see the stone behind it like a tooth inside a gum. Breaking through sends shards ringing on the floor."
+    dimensions:
+      width_paces: 4
+      length_paces: 5
+      height_paces: 2
+    features:
+      - "Ice sheet across entrance"
+      - "Frozen water seepage on walls"
+      - "Sub-zero temperature"
+      - "Ice fragments on floor after entry"
+    possible_encounters:
+      - tier: [1, 2]
+        types: ["UND_DRAUGR_01"]
+        chance_pct: 15
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Extreme cold — exposed skin risk"
+      - "Slippery ice floor"
+      - "Breaking ice creates loud noise (encounter check)"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_ENTRY_10"
+    name: "Eroded Slope"
+    category: "entry"
+    description: "Rain and snowmelt have carved a gully down the hillside that cuts into the barrow's outer wall. The entrance is accidental—erosion exposed the stonework, and weather cracked it open. Mud and gravel slope steeply downward into the gap. Water pools at the bottom."
+    dimensions:
+      width_paces: 5
+      length_paces: 10
+      height_paces: 2
+    features:
+      - "Muddy slope descent"
+      - "Exposed stonework"
+      - "Standing water at base"
+      - "Gravel and loose earth"
+    possible_encounters:
+      - tier: [1]
+        types: ["ANI_VERM_01", "ANI_HAZ_02"]
+        chance_pct: 20
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Slippery descent — mud and loose gravel"
+      - "Standing water hides floor hazards"
+      - "Slope difficult to climb back up quickly"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_ENTRY_11"
+    name: "Warded Doorway"
+    category: "entry"
+    description: "A proper doorway, framed in dressed stone with a heavy lintel carved in animal-head terminals. Iron nails driven into the frame in a deliberate pattern — not structural, ritual. The nails are hand-forged, each one different, driven deep into the stone at a cost of serious labour. Whatever is inside was meant to stay inside."
+    dimensions:
+      width_paces: 4
+      length_paces: 5
+      height_paces: 3
+    features:
+      - "Dressed stone door frame"
+      - "Animal-head carved terminals"
+      - "Ritual iron nail pattern"
+      - "Each nail hand-forged and unique"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_02", "UND_SPEC_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1, 2]
+        items: ["iron_nail", "carved_lintel_fragment"]
+        chance_pct: 30
+    traps:
+      - name: "Warding collapse"
+        detection_difficulty: "hard"
+        damage: "d8 crushing"
+        description: "Removing the iron nails weakens the lintel. The third nail pulled brings the heavy stone down on whoever stands beneath."
+    hazards:
+      - "The ward pattern may have spiritual function — removing it has consequences"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  # ==========================================================================
+  # CORRIDORS (12 rooms)
+  # ==========================================================================
+
+  - id: "ROOM_CORR_01"
+    name: "Straight Corridor"
+    category: "corridor"
+    description: "A passage cut through packed earth and stone, straight as a spear-shaft. The walls are damp and the ceiling just high enough to stand. Your torchlight reaches the far end where the corridor opens into something else. Footsteps echo."
+    dimensions:
+      width_paces: 3
+      length_paces: 15
+      height_paces: 2
+    features:
+      - "Straight passage"
+      - "Damp stone walls"
+      - "Echo carries sound"
+    possible_encounters:
+      - tier: [1, 2]
+        types: ["UND_DRAUGR_01", "UND_SKEL_01"]
+        chance_pct: 25
+      - tier: [3]
+        types: ["UND_DRAUGR_02", "UND_DRAUGR_03"]
+        chance_pct: 20
+    possible_loot: []
+    traps:
+      - name: "Pressure-plate dart"
+        detection_difficulty: "moderate"
+        damage: "d4 piercing (poisoned — d6 additional over time)"
+        description: "Stone plate in floor triggers a bone needle fired from a wall slot at shin height."
+    hazards: []
+    connections: ["entry", "corridor", "chamber", "hazard", "discovery"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient", "recent"]
+
+  - id: "ROOM_CORR_02"
+    name: "Collapse Corridor"
+    category: "corridor"
+    description: "The passage was once wider. One wall has buckled inward, spilling rubble across the floor. You have to pick your way over broken stone, crouching where the ceiling sags. Timber braces have rotted through—the ones that remain are soft under a finger's pressure."
+    dimensions:
+      width_paces: 2
+      length_paces: 12
+      height_paces: 1
+    features:
+      - "Partially collapsed wall"
+      - "Rubble-strewn floor"
+      - "Rotted timber braces"
+      - "Sagging ceiling"
+    possible_encounters:
+      - tier: [1]
+        types: ["ANI_VERM_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1]
+        items: ["stone_fragments", "rotted_wood"]
+        chance_pct: 15
+    traps: []
+    hazards:
+      - "Further collapse risk — vibration or loud noise"
+      - "Restricted movement — no room to swing weapons"
+      - "Dust clouds if ceiling shifts"
+    connections: ["entry", "corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_CORR_03"
+    name: "Flooded Passage"
+    category: "corridor"
+    description: "Water covers the floor from wall to wall. Black, still, cold. The surface reflects your torchlight as a wavering orange smear. You cannot see the bottom. Something about the water smells wrong—mineral and old, like water that has sat in stone for years without moving."
+    dimensions:
+      width_paces: 3
+      length_paces: 12
+      height_paces: 2
+    features:
+      - "Standing water — knee to thigh depth"
+      - "Zero floor visibility"
+      - "Mineral smell"
+      - "Still surface — no current"
+    possible_encounters:
+      - tier: [1, 2]
+        types: ["ANI_HAZ_01", "ANI_HAZ_02"]
+        chance_pct: 30
+      - tier: [3]
+        types: ["UND_DRAUGR_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1, 2]
+        items: ["waterlogged_leather", "corroded_coin"]
+        chance_pct: 25
+    traps:
+      - name: "Submerged pit"
+        detection_difficulty: "hard"
+        damage: "d6 + submersion"
+        description: "The floor drops away suddenly into a deeper section. Water closes over your head."
+    hazards:
+      - "Cold water — stamina drain"
+      - "Hidden floor hazards"
+      - "Noise from wading (encounter check)"
+      - "Torches extinguished if dropped"
+    connections: ["entry", "corridor", "chamber", "hazard"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CORR_04"
+    name: "Trapped Corridor"
+    category: "corridor"
+    description: "This passage is too clean. The floor stones are fitted too well, the walls too smooth. Everything about it says the builders wanted you to walk down here—and wanted you to regret it. Thin seams between stones mark where mechanisms hide."
+    dimensions:
+      width_paces: 3
+      length_paces: 10
+      height_paces: 3
+    features:
+      - "Precisely fitted floor stones"
+      - "Smooth walls with thin seams"
+      - "Mechanical slots at various heights"
+      - "Faint scratches on walls from previous activations"
+    possible_encounters: []
+    possible_loot: []
+    traps:
+      - name: "Ceiling drop-stones"
+        detection_difficulty: "moderate"
+        damage: "d8 crushing"
+        description: "Pressure plates release stone blocks from ceiling cavities. Three plates spaced along the corridor."
+      - name: "Wall spear-thrust"
+        detection_difficulty: "hard"
+        damage: "d10 piercing"
+        description: "A floor trigger releases corroded iron spear-points from wall slots at chest height. Range covers the full corridor width."
+      - name: "Ankle-breaker step"
+        detection_difficulty: "moderate"
+        damage: "d6 + immobilized"
+        description: "A floor stone tilts when stepped on, trapping the foot in a V-groove underneath."
+    hazards: []
+    connections: ["entry", "corridor", "chamber", "discovery"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CORR_05"
+    name: "Branching Passage"
+    category: "corridor"
+    description: "The corridor splits. One branch goes left, slightly downward, the air colder and damper. The other goes right and level, a faint draft suggesting it connects to somewhere with ventilation. Scratch marks on the wall at the fork—someone marked the left path with a crude arrow. Whether as guidance or warning is unclear."
+    dimensions:
+      width_paces: 5
+      length_paces: 8
+      height_paces: 2
+    features:
+      - "T-junction or Y-fork"
+      - "Scratch-mark directions on wall"
+      - "Temperature difference between branches"
+      - "Draft from one direction"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_01", "UND_SKEL_01"]
+        chance_pct: 25
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Navigation confusion — easy to get turned around"
+    connections: ["corridor", "chamber", "hazard", "discovery"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient", "recent"]
+
+  - id: "ROOM_CORR_06"
+    name: "Spiral Descent"
+    category: "corridor"
+    description: "The passage curves to the left and drops, winding deeper in a slow spiral. The inner wall is rough-cut, the outer wall smoother where hands have trailed along it. The slope is gradual but relentless. After three full turns you are well below the surface and the air is heavy and still."
+    dimensions:
+      width_paces: 3
+      length_paces: 30
+      height_paces: 2
+    features:
+      - "Spiralling descent"
+      - "Smooth outer wall from hand-contact"
+      - "Increasing depth"
+      - "Heavier air at bottom"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_02", "UND_SKEL_02"]
+        chance_pct: 20
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Disorientation — direction sense compromised"
+      - "Bad air at depth — torch burns low"
+    connections: ["corridor", "chamber", "special"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CORR_07"
+    name: "Bone-Lined Walkway"
+    category: "corridor"
+    description: "Human bones set into the walls. Not thrown in—placed. Femurs laid horizontal like bricks, skulls at regular intervals facing the passage, jaw-bones arranged in rows. The floor is packed earth but bone fragments crunch underfoot where pieces have fallen. The arrangement is deliberate. Someone spent a long time doing this."
+    dimensions:
+      width_paces: 3
+      length_paces: 12
+      height_paces: 2
+    features:
+      - "Bones set into walls in patterns"
+      - "Skulls at regular intervals"
+      - "Bone fragments on floor"
+      - "The craftsmanship is unsettling"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_SKEL_01", "UND_SKEL_02"]
+        chance_pct: 35
+      - tier: [4]
+        types: ["UND_DRAUGR_04", "UND_SPEC_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [2]
+        items: ["intact_skull", "bone_tool"]
+        chance_pct: 25
+    traps: []
+    hazards:
+      - "Morale check — sustained proximity to arranged human remains"
+    connections: ["corridor", "chamber", "discovery", "special"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CORR_08"
+    name: "Rune-Carved Tunnel"
+    category: "corridor"
+    description: "Every surface is carved. Runes cover the walls floor to ceiling, so dense they overlap in places. The carving is not decorative—it reads like text, pages and pages of it compressed into stone. The torch makes the incised lines cast tiny shadows that shift as you move. It feels like walking through someone's thoughts."
+    dimensions:
+      width_paces: 3
+      length_paces: 10
+      height_paces: 2
+    features:
+      - "Dense runic text on all surfaces"
+      - "Overlapping inscriptions"
+      - "Shadow-play from torchlight"
+      - "Some runes deeper-cut than others"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_SPEC_01", "UND_SPEC_02", "SUP_SPIRIT_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [2, 3]
+        items: ["runic_rubbing", "translation_fragment"]
+        chance_pct: 30
+    traps: []
+    hazards:
+      - "Concentration drain — the sheer volume of text is disorienting"
+      - "Those who read runes may become fixated"
+    connections: ["corridor", "chamber", "discovery", "special"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_CORR_09"
+    name: "Rubble-Choked Squeeze"
+    category: "corridor"
+    description: "A cave-in has reduced this passage to a gap barely wide enough to pull yourself through. Sharp stone edges catch on clothing and skin. You can feel the weight of the earth above—the stone groans when you press against it. It is the kind of space that kills men who panic."
+    dimensions:
+      width_paces: 1
+      length_paces: 6
+      height_paces: 1
+    features:
+      - "Extreme constriction"
+      - "Sharp stone edges"
+      - "Audible stone stress"
+      - "Torn cloth fragments from prior explorers"
+    possible_encounters: []
+    possible_loot:
+      - tier: [1]
+        items: ["torn_cloth", "dropped_knife"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Trapped — armour or large body may wedge"
+      - "Panic risk in tight space"
+      - "Collapse possible — the stability is marginal"
+      - "Cannot fight or defend while in squeeze"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_CORR_10"
+    name: "Wind Passage"
+    category: "corridor"
+    description: "A steady, cold draft funnels through this passage, strong enough to make torches gutter and lean. The wind moans against stone edges—a low, uneven sound that could be mistaken for a voice. The air is cleaner here than elsewhere in the barrow. Something connects to the surface."
+    dimensions:
+      width_paces: 2
+      length_paces: 14
+      height_paces: 3
+    features:
+      - "Strong cold draft"
+      - "Moaning wind sound"
+      - "Cleaner air"
+      - "Torch instability"
+    possible_encounters:
+      - tier: [2]
+        types: ["UND_SPEC_01", "SUP_SPIRIT_01"]
+        chance_pct: 15
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Torch may extinguish — wind gusts"
+      - "Sound masking — cannot hear approach over wind"
+    connections: ["entry", "corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CORR_11"
+    name: "Sinking Floor Passage"
+    category: "corridor"
+    description: "The floor here is not stone but compacted earth over timber planking, and the timber is rotten. Each step sinks slightly. You can feel the flex underfoot, hear the creak of wood giving way. Somewhere below the planking there is a drop—how far, you cannot tell."
+    dimensions:
+      width_paces: 3
+      length_paces: 10
+      height_paces: 2
+    features:
+      - "Timber floor over void"
+      - "Rotted planking"
+      - "Visible flex and sag"
+      - "Creaking with each step"
+    possible_encounters: []
+    possible_loot: []
+    traps:
+      - name: "Floor collapse"
+        detection_difficulty: "easy"
+        damage: "d8 falling + d4 from debris"
+        description: "Weight concentrated on a single plank breaks through. The drop is two body-lengths into mud and old timber."
+    hazards:
+      - "Unstable floor — weight distribution critical"
+      - "Cannot run without collapse risk"
+    connections: ["corridor", "chamber", "hazard"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CORR_12"
+    name: "Charnel Drag-Way"
+    category: "corridor"
+    description: "This corridor slopes gently downward, and the floor shows long parallel grooves worn into the stone. Something heavy was dragged this way, many times. The grooves are too wide for a plough, too regular for erosion. Bodies. Wrapped in hides and dragged by their feet to wherever lies at the end."
+    dimensions:
+      width_paces: 4
+      length_paces: 12
+      height_paces: 2
+    features:
+      - "Drag grooves in stone floor"
+      - "Gentle downward slope"
+      - "Residue of old organic matter in grooves"
+      - "Faint sweetish smell"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_01", "UND_DRAUGR_02"]
+        chance_pct: 30
+    possible_loot:
+      - tier: [1]
+        items: ["hide_scraps", "corroded_pin"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Slippery organic residue on slopes"
+    connections: ["corridor", "chamber", "special"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CORR_13"
+    name: "Echo Gallery"
+    category: "corridor"
+    description: "A long passage where the ceiling vaults upward unexpectedly. Every sound bounces and returns distorted — footsteps become drumbeats, whispers become shouts. The acoustics are an accident of construction, but they serve as an alarm system. Nothing moves through here silently."
+    dimensions:
+      width_paces: 4
+      length_paces: 16
+      height_paces: 5
+    features:
+      - "Vaulted ceiling unusually high"
+      - "Amplifying acoustics"
+      - "Sound returns distorted"
+      - "Natural alarm system"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_02", "UND_SKEL_01"]
+        chance_pct: 35
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Sound amplification — all noise carries to adjacent rooms"
+      - "Disorienting echo — direction of sounds unclear"
+      - "Stealth impossible"
+    connections: ["entry", "corridor", "chamber", "special"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  # ==========================================================================
+  # CHAMBERS (18 rooms)
+  # ==========================================================================
+
+  - id: "ROOM_CHAM_01"
+    name: "Burial Alcove"
+    category: "chamber"
+    description: "A small side-chamber, just wide enough for a stone shelf and the body it holds. The corpse is desiccated, skin drawn tight over bone, burial clothes rotted to threads. Personal effects arranged around the body—a comb, a cup, a blade. The air in here has been still for a very long time."
+    dimensions:
+      width_paces: 3
+      length_paces: 4
+      height_paces: 2
+    features:
+      - "Stone burial shelf"
+      - "Desiccated corpse"
+      - "Personal grave goods"
+      - "Undisturbed dust"
+    possible_encounters:
+      - tier: [2]
+        types: ["UND_DRAUGR_01"]
+        chance_pct: 40
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_03", "UND_HAUG_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1]
+        items: ["bone_comb", "clay_cup", "corroded_blade"]
+        chance_pct: 60
+      - tier: [2, 3]
+        items: ["silver_arm_ring", "bronze_brooch"]
+        chance_pct: 30
+    traps: []
+    hazards:
+      - "Disturbing the body may trigger encounter"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient", "recent"]
+
+  - id: "ROOM_CHAM_02"
+    name: "Bone Pit"
+    category: "chamber"
+    description: "The floor drops into a depression filled with bones. Not one body—dozens. Skulls, ribs, femurs, vertebrae, all mixed together without order. The bones are dry and grey-white, stacked four or five deep. Some are cracked, some gnawed. The smell is old—dust and calcium, not rot."
+    dimensions:
+      width_paces: 8
+      length_paces: 8
+      height_paces: 3
+    features:
+      - "Central bone-filled depression"
+      - "Mixed remains of many individuals"
+      - "Some bones show tool marks"
+      - "Ledge around the edge of the pit"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_SKEL_01", "UND_SKEL_02", "UND_SKEL_03"]
+        chance_pct: 45
+      - tier: [4]
+        types: ["UND_DRAUGR_04", "UND_APT_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1]
+        items: ["bone_fragments", "teeth"]
+        chance_pct: 50
+      - tier: [2]
+        items: ["bronze_ring", "intact_skull"]
+        chance_pct: 25
+    traps: []
+    hazards:
+      - "Unstable footing on bones"
+      - "Bones may conceal hidden items or hazards"
+      - "Noise from walking on bones (encounter check)"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_03"
+    name: "Rune Chamber"
+    category: "chamber"
+    description: "A square room with every wall carved in runes, deeper and more deliberate than the corridor inscriptions. The ceiling too — someone lay on their back and carved upward. A flat stone in the centre of the room served as a work-table or altar. Iron chisels lie where they were last set down, orange with rust."
+    dimensions:
+      width_paces: 6
+      length_paces: 6
+      height_paces: 3
+    features:
+      - "Runic inscriptions on all surfaces including ceiling"
+      - "Central flat stone (altar or work surface)"
+      - "Rusted iron chisels"
+      - "Deeper carving than corridors"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_SPEC_01", "UND_SPEC_02", "SUP_SPIRIT_02"]
+        chance_pct: 30
+    possible_loot:
+      - tier: [2]
+        items: ["iron_chisel_set", "runic_rubbing"]
+        chance_pct: 40
+      - tier: [3]
+        items: ["rune_stone_fragment", "carved_bone_token"]
+        chance_pct: 25
+    traps: []
+    hazards:
+      - "Prolonged study of runes may attract spectral attention"
+    connections: ["corridor", "chamber", "discovery"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_CHAM_04"
+    name: "Offering Hall"
+    category: "chamber"
+    description: "A long room with stone shelves on both sides, each holding the remains of offerings. Clay pots cracked and empty, metal vessels corroded green, the bones of animals — sheep, dogs, horses — laid out in rows. The offerings were generous once. Now it all smells of dust and rust."
+    dimensions:
+      width_paces: 6
+      length_paces: 12
+      height_paces: 3
+    features:
+      - "Stone shelves on both walls"
+      - "Remains of clay and metal vessels"
+      - "Animal bones in offering positions"
+      - "Residue of old food offerings"
+    possible_encounters:
+      - tier: [2]
+        types: ["UND_DRAUGR_01", "ANI_VERM_01"]
+        chance_pct: 25
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_03", "UND_SPEC_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1]
+        items: ["clay_shards", "corroded_vessel"]
+        chance_pct: 50
+      - tier: [2]
+        items: ["bronze_offering_bowl", "glass_beads"]
+        chance_pct: 35
+      - tier: [3]
+        items: ["silver_cup", "gold_arm_ring_fragment"]
+        chance_pct: 15
+    traps: []
+    hazards: []
+    connections: ["corridor", "chamber", "discovery", "special"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_05"
+    name: "Throne Room"
+    category: "chamber"
+    description: "A high-ceilinged chamber, the largest in the barrow. At the far end, a stone seat cut from a single block, wide enough for a big man in a fur cloak. The stone is stained dark where hands once rested. Before the throne, the floor is worn smooth from kneeling. This was where someone held power even after death."
+    dimensions:
+      width_paces: 10
+      length_paces: 14
+      height_paces: 4
+    features:
+      - "Stone throne at far end"
+      - "High vaulted ceiling"
+      - "Worn floor before throne"
+      - "Wall niches for torches or offerings"
+      - "Faded paint traces on walls"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_04", "UND_DRAUGR_05", "UND_HAUG_01"]
+        chance_pct: 50
+      - tier: [5]
+        types: ["UND_HAUG_02", "UND_HAUG_03"]
+        chance_pct: 35
+    possible_loot:
+      - tier: [3]
+        items: ["iron_crown_fragment", "throne_stone_chip"]
+        chance_pct: 30
+      - tier: [4]
+        items: ["chieftain_ring", "carved_sceptre"]
+        chance_pct: 20
+    traps:
+      - name: "Throne pressure mechanism"
+        detection_difficulty: "hard"
+        damage: "d10 crushing + sealed doors"
+        description: "Sitting on the throne activates counterweights that drop stone slabs over the doorways."
+    hazards:
+      - "Strong undead presence — multiple encounters likely"
+    connections: ["corridor", "chamber", "special"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_06"
+    name: "Weapon Cache"
+    category: "chamber"
+    description: "Weapons racked along the walls and in stone troughs on the floor. Spears bundled in fives, axe-heads piled in a corner, swords laid flat on stone shelves. Most are corroded past use—orange and black, blades fused to scabbards. But the quantity speaks to someone who expected to need an army after death."
+    dimensions:
+      width_paces: 6
+      length_paces: 8
+      height_paces: 2
+    features:
+      - "Weapon racks on walls"
+      - "Stone troughs holding bundled spears"
+      - "Heavy corrosion on most items"
+      - "The volume suggests warband supply, not personal collection"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_02", "UND_SKEL_02"]
+        chance_pct: 30
+    possible_loot:
+      - tier: [1]
+        items: ["corroded_axe_head", "fused_blade", "spear_shaft"]
+        chance_pct: 60
+      - tier: [2, 3]
+        items: ["serviceable_seax", "iron_spear_point"]
+        chance_pct: 35
+      - tier: [4]
+        items: ["pattern_welded_blade", "chieftain_axe"]
+        chance_pct: 10
+    traps:
+      - name: "Weighted weapon rack"
+        detection_difficulty: "moderate"
+        damage: "d8 crushing"
+        description: "Removing a weapon from certain racks releases a counterweight that drops a stone shelf from above."
+    hazards: []
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_07"
+    name: "Guard Post"
+    category: "chamber"
+    description: "A small chamber at a junction, with a stone bench and sight-lines down two or three passages. A body in corroded mail sits against the wall, sword across its knees, skull tilted back. The guard never left his post. His shield is splintered but still bears traces of paint."
+    dimensions:
+      width_paces: 4
+      length_paces: 5
+      height_paces: 2
+    features:
+      - "Stone bench"
+      - "Multiple passage sight-lines"
+      - "Seated armoured corpse"
+      - "Splintered shield with paint traces"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_02", "UND_DRAUGR_03"]
+        chance_pct: 55
+      - tier: [4]
+        types: ["UND_DRAUGR_05"]
+        chance_pct: 30
+    possible_loot:
+      - tier: [2]
+        items: ["corroded_mail_scraps", "rusted_sword", "shield_boss"]
+        chance_pct: 50
+    traps: []
+    hazards:
+      - "The guard corpse animates when inner chambers are approached"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_08"
+    name: "Assembly Hall"
+    category: "chamber"
+    description: "A broad room with stone benches along both walls, enough to seat thirty men. The floor between the benches is worn down to bare stone. At the far end, a raised step where a speaker would stand. The acoustics are deliberate—a whisper at the step carries to every bench."
+    dimensions:
+      width_paces: 10
+      length_paces: 16
+      height_paces: 4
+    features:
+      - "Stone benches for thirty along walls"
+      - "Central walkway worn smooth"
+      - "Raised speaker's platform"
+      - "Deliberate acoustics"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_02", "UND_DRAUGR_03", "UND_SKEL_02"]
+        chance_pct: 35
+      - tier: [5]
+        types: ["UND_SPEC_03", "SUP_SPIRIT_02"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [2]
+        items: ["carved_bench_fragment", "stone_cup"]
+        chance_pct: 25
+    traps: []
+    hazards:
+      - "Acoustics carry sound — any noise alerts entire barrow"
+    connections: ["corridor", "chamber", "special"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_09"
+    name: "Embalming Chamber"
+    category: "chamber"
+    description: "The smell hits first — old herbs and something chemical, sharp and sweet at the same time. Stone slabs at waist height, grooved to drain fluids into channels in the floor. Clay jars along the wall hold desiccated substances. Dark stains on every surface. This is where they prepared the dead."
+    dimensions:
+      width_paces: 6
+      length_paces: 8
+      height_paces: 3
+    features:
+      - "Stone preparation slabs with drainage grooves"
+      - "Floor channels for fluid drainage"
+      - "Clay jars of desiccated herbs and compounds"
+      - "Pervasive chemical-herbal smell"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_01", "UND_APT_01"]
+        chance_pct: 30
+    possible_loot:
+      - tier: [1, 2]
+        items: ["herb_residue", "embalming_tools", "clay_jar"]
+        chance_pct: 45
+      - tier: [3]
+        items: ["preserved_herbs", "bronze_surgical_tools"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Chemical residue — skin irritation on contact"
+      - "Toxic if ingested — old preservatives"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_10"
+    name: "Trophy Room"
+    category: "chamber"
+    description: "Weapons and armour taken from enemies, mounted on the walls. Foreign blades, shields of unfamiliar design, a coat of mail cut for a man far larger than average. The trophies are arranged with care — this was a display of victories. Some items bear marks of violent use. Not collected. Won."
+    dimensions:
+      width_paces: 6
+      length_paces: 8
+      height_paces: 3
+    features:
+      - "Enemy weapons and armour on walls"
+      - "Foreign designs from distant lands"
+      - "Battle damage visible on displayed items"
+      - "Arrangement suggests chronological ordering"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_DRAUGR_03", "UND_SPEC_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [2]
+        items: ["foreign_blade", "exotic_shield_boss", "mail_fragment"]
+        chance_pct: 45
+      - tier: [3, 4]
+        items: ["frankish_sword", "byzantine_scale_mail", "eastern_helm"]
+        chance_pct: 25
+    traps:
+      - name: "Weighted trophy hook"
+        detection_difficulty: "moderate"
+        damage: "d6 piercing"
+        description: "Removing a trophy from its mount releases a spring-loaded spike from the wall behind it."
+    hazards: []
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old"]
+
+  - id: "ROOM_CHAM_11"
+    name: "Chieftain's Bedchamber"
+    category: "chamber"
+    description: "A private chamber. A stone platform serves as a bed-frame, the wood and hides that once covered it reduced to dust and scraps. A stone shelf holds the remains of personal items — a comb, a mirror of polished metal gone dark, small carved figures. It is oddly intimate. A private space behind all the ceremony."
+    dimensions:
+      width_paces: 5
+      length_paces: 6
+      height_paces: 2
+    features:
+      - "Stone bed platform"
+      - "Personal items shelf"
+      - "Remains of wooden furniture"
+      - "More domestic than ceremonial"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_04", "UND_HAUG_01"]
+        chance_pct: 40
+    possible_loot:
+      - tier: [2]
+        items: ["walrus_ivory_comb", "tarnished_mirror", "carved_figure"]
+        chance_pct: 50
+      - tier: [3, 4]
+        items: ["silver_brooch", "gold_thread_scraps", "amber_pendant"]
+        chance_pct: 30
+    traps: []
+    hazards:
+      - "Strong presence of the dead — the room feels occupied"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old"]
+
+  - id: "ROOM_CHAM_12"
+    name: "Feast Hall of the Dead"
+    category: "chamber"
+    description: "A long hall with stone trestles down the centre. Clay cups and plates still set out, food long since rotted to black stains. At the head of the table, a larger seat. The place settings number fourteen. Whatever feast was laid here was never eaten—or was laid for guests who eat differently than the living."
+    dimensions:
+      width_paces: 8
+      length_paces: 18
+      height_paces: 4
+    features:
+      - "Stone trestle table down centre"
+      - "Clay cups and plates set for fourteen"
+      - "Head seat at table's end"
+      - "Residue of decomposed food offerings"
+      - "Faint smell of old mead"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_03", "UND_DRAUGR_04", "UND_SPEC_02"]
+        chance_pct: 40
+      - tier: [5]
+        types: ["UND_HAUG_01", "SUP_SPIRIT_03"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [2]
+        items: ["clay_cup", "corroded_knife", "drinking_horn_rim"]
+        chance_pct: 40
+      - tier: [3]
+        items: ["silver_cup", "bronze_ladle"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "The feast may resume — sitting down or eating triggers encounter"
+      - "Morale check — the silence of a feast that never happened"
+    connections: ["corridor", "chamber", "special"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_13"
+    name: "Storage Vault"
+    category: "chamber"
+    description: "Practical and unadorned. Wooden barrels have collapsed into staves and iron rings. Cloth bales are grey wads of fibre. Grain stored in stone bins has petrified into solid blocks. This was the provision store — someone expected the dead to need supplies for a very long journey."
+    dimensions:
+      width_paces: 5
+      length_paces: 7
+      height_paces: 2
+    features:
+      - "Collapsed barrel remains"
+      - "Stone grain bins"
+      - "Remnants of cloth bales"
+      - "Iron barrel rings on floor"
+    possible_encounters:
+      - tier: [1, 2]
+        types: ["ANI_VERM_01", "ANI_VERM_02"]
+        chance_pct: 35
+    possible_loot:
+      - tier: [1]
+        items: ["iron_barrel_rings", "petrified_grain", "cloth_scraps"]
+        chance_pct: 50
+      - tier: [2]
+        items: ["intact_iron_fitting", "preserved_rope"]
+        chance_pct: 25
+    traps: []
+    hazards:
+      - "Rat infestation likely"
+      - "Mold spores — breathing difficulty"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_14"
+    name: "Well Chamber"
+    category: "chamber"
+    description: "A round chamber built around a natural spring. Water surfaces through cracked stone into a basin carved from the bedrock, overflows into a channel that disappears into the wall. The water is clear and very cold. The sound of dripping fills the silence. The stone around the spring is stained white with mineral deposits."
+    dimensions:
+      width_paces: 6
+      length_paces: 6
+      height_paces: 3
+    features:
+      - "Natural spring in carved basin"
+      - "Overflow channel"
+      - "Mineral deposits on stone"
+      - "Constant dripping sound"
+      - "Water is clear and potable"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["SUP_SPIRIT_01", "UND_SPEC_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [2]
+        items: ["coin_in_spring", "corroded_offering"]
+        chance_pct: 30
+    traps: []
+    hazards:
+      - "Wet floor — slippery"
+      - "Water may carry illness from deeper sources"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_15"
+    name: "Meditation Cell"
+    category: "chamber"
+    description: "Barely a room. A niche cut into the rock just large enough for one person to sit cross-legged. The walls are smooth from body contact over years. A single rune is carved at eye height, deep and clean. The space has a weight to it. Whoever sat here, sat here often and for a long time."
+    dimensions:
+      width_paces: 2
+      length_paces: 2
+      height_paces: 2
+    features:
+      - "Smoothed walls from body contact"
+      - "Single deep-carved rune"
+      - "Space for one person only"
+      - "Worn seating groove in floor"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["SUP_SPIRIT_01", "SUP_SPIRIT_02", "UND_SPEC_02"]
+        chance_pct: 30
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Prolonged occupation induces trance-like state"
+      - "The rune draws the eye — hard to look away"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_CHAM_16"
+    name: "Slave Burial Pit"
+    category: "chamber"
+    description: "A rough-cut hole with bodies thrown in without ceremony. No grave goods, no arrangement. The bones are heaped and broken. Some skulls show killing blows — a sharp edge to the back of the head. These were the people buried with the chieftain. Not honoured. Spent."
+    dimensions:
+      width_paces: 5
+      length_paces: 5
+      height_paces: 2
+    features:
+      - "Disordered bone heap"
+      - "Evidence of violent death on remains"
+      - "No grave goods present"
+      - "Rough-cut walls — less care than other rooms"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_SKEL_01", "UND_SKEL_02"]
+        chance_pct: 40
+      - tier: [4]
+        types: ["UND_APT_01", "UND_APT_02"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1]
+        items: ["bone_fragments", "iron_shackle"]
+        chance_pct: 35
+    traps: []
+    hazards:
+      - "Restless dead more likely here — angry spirits"
+      - "Morale check — evidence of human sacrifice"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_CHAM_17"
+    name: "Kennel"
+    category: "chamber"
+    description: "Animal bones, but arranged differently from the offering hall. These are dog skeletons, chained to iron rings set in the wall. War-dogs or hunting hounds, buried alive with their master. The chains are still attached. The scratch marks on the stone floor tell you they did not go quietly."
+    dimensions:
+      width_paces: 5
+      length_paces: 6
+      height_paces: 2
+    features:
+      - "Iron chain-rings in walls"
+      - "Dog skeletons still chained"
+      - "Deep scratch marks on floor and walls"
+      - "Gnaw marks on chain links"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["ANI_WOLF_01", "ANI_WOLF_02"]
+        chance_pct: 35
+      - tier: [4]
+        types: ["UND_DRAUGR_02"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1]
+        items: ["iron_chain_length", "dog_skull"]
+        chance_pct: 40
+    traps: []
+    hazards:
+      - "Spectral howling when room is entered"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old"]
+
+  - id: "ROOM_CHAM_18"
+    name: "Ship Burial Chamber"
+    category: "chamber"
+    description: "The chamber is enormous, carved to hold a ship. The vessel is still here — or what remains. The hull has collapsed, ribs jutting up like the bones of a whale. The mast-step is visible, the keel cracked but intact. Grave goods surround the wreck: weapons, tools, chests now rotted open. This was someone important enough to sail into death."
+    dimensions:
+      width_paces: 12
+      length_paces: 25
+      height_paces: 5
+    features:
+      - "Collapsed ship hull"
+      - "Visible keel and ribs"
+      - "Scattered grave goods around vessel"
+      - "Remains of chests and cargo"
+      - "The scale of the chamber is imposing"
+    possible_encounters:
+      - tier: [4, 5]
+        types: ["UND_DRAUGR_05", "UND_HAUG_02", "UND_HAUG_03"]
+        chance_pct: 50
+    possible_loot:
+      - tier: [3]
+        items: ["iron_rivets", "ship_timber", "corroded_chest_fitting"]
+        chance_pct: 50
+      - tier: [4, 5]
+        items: ["silver_hoard", "frankish_glass", "chieftain_sword"]
+        chance_pct: 30
+    traps:
+      - name: "Collapsing hull section"
+        detection_difficulty: "moderate"
+        damage: "d10 crushing"
+        description: "The remaining ship structure is unstable. Climbing through the ribs risks a heavy timber collapse."
+    hazards:
+      - "Unstable ship structure — collapse risk"
+      - "The spiritual weight of the chamber is oppressive"
+    connections: ["corridor", "chamber", "special"]
+    barrow_size_min: "vast"
+    barrow_age_affinity: ["old"]
+
+  # ==========================================================================
+  # HAZARD ROOMS (10 rooms)
+  # ==========================================================================
+
+  - id: "ROOM_HAZ_01"
+    name: "Gas Pocket"
+    category: "hazard"
+    description: "The air here is wrong. Your torch flame changes colour — yellower, duller — and breathing feels thick. A pocket of foul gas has collected in this low-ceilinged space, seeping from cracks in the stone. The smell is faint, sweet, and wrong. Men who linger here stop thinking clearly before they stop breathing."
+    dimensions:
+      width_paces: 5
+      length_paces: 6
+      height_paces: 2
+    features:
+      - "Torch flame colour change"
+      - "Sweet, wrong smell"
+      - "Low ceiling traps gas"
+      - "Cracks in stone floor where gas seeps"
+    possible_encounters: []
+    possible_loot: []
+    traps: []
+    hazards:
+      - "Poisonous gas — d4 damage per round of exposure"
+      - "Torch flame warning — watch for colour shift"
+      - "Confusion and drowsiness precede collapse"
+      - "Open flame may ignite gas pocket (d12 explosion)"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_HAZ_02"
+    name: "Ice Vault"
+    category: "hazard"
+    description: "The temperature plummets. Breath clouds thick and white. Ice coats every surface — walls, floor, ceiling — in a clear, hard glaze. The cold is physical, aggressive, an ache that bites through clothing in seconds. Something about this room holds winter in it regardless of the season above."
+    dimensions:
+      width_paces: 6
+      length_paces: 8
+      height_paces: 3
+    features:
+      - "Total ice coverage on all surfaces"
+      - "Extreme sub-zero temperature"
+      - "Visible breath"
+      - "Ice preserves anything within"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_03", "UND_DRAUGR_04"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [2, 3]
+        items: ["ice_preserved_provisions", "frozen_weapon"]
+        chance_pct: 35
+    traps: []
+    hazards:
+      - "Extreme cold — d4 damage per round without protection"
+      - "Slippery ice floor — any sudden movement requires agility"
+      - "Metal weapons and armour conduct cold — painful to hold"
+      - "Frostbite risk on exposed skin within minutes"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_HAZ_03"
+    name: "Flooding Chamber"
+    category: "hazard"
+    description: "Water comes in through the walls. Not a steady flow — it pulses, rising and falling with some underground rhythm. The floor is already ankle-deep and the waterline on the walls shows it rises much higher. Stains on the ceiling confirm it. This room fills completely and drains, fills and drains, like the barrow is breathing."
+    dimensions:
+      width_paces: 7
+      length_paces: 7
+      height_paces: 3
+    features:
+      - "Water seeping through walls"
+      - "Fluctuating water level"
+      - "High-water stains on ceiling"
+      - "Rhythmic flooding and draining"
+    possible_encounters:
+      - tier: [2]
+        types: ["ANI_HAZ_01", "ANI_HAZ_02"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1, 2]
+        items: ["waterlogged_bones", "corroded_coin"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Drowning risk — room fills to ceiling on cycle"
+      - "Water cycle timing unpredictable"
+      - "Exit may be submerged during high water"
+      - "Hypothermia from cold water immersion"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_HAZ_04"
+    name: "Unstable Ceiling"
+    category: "hazard"
+    description: "The ceiling is a lattice of cracked stone held together by friction and habit. Dust sifts down in thin streams. Every few minutes, something shifts overhead — a grinding sound, a click, a small shower of grit. The floor is littered with stone chunks that have already fallen. It is a matter of when, not if."
+    dimensions:
+      width_paces: 8
+      length_paces: 10
+      height_paces: 3
+    features:
+      - "Cracked ceiling with visible fracture lines"
+      - "Dust sifting down continuously"
+      - "Fallen stone debris on floor"
+      - "Periodic grinding sounds"
+    possible_encounters: []
+    possible_loot:
+      - tier: [1]
+        items: ["crushed_remains", "stone_fragments"]
+        chance_pct: 25
+    traps: []
+    hazards:
+      - "Collapse triggered by loud sound, impact, or vibration"
+      - "d12 crushing damage from major collapse"
+      - "Partial collapse blocks exits"
+      - "Dust cloud blinds for several rounds after collapse"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_HAZ_05"
+    name: "Pit Trap Room"
+    category: "hazard"
+    description: "The floor is a patchwork of real stone and thin-shelled covers over deep pits. The covers are stone slabs balanced on narrow ledges, dusted with dirt to match the surrounding floor. Below them — darkness and the smell of old blood. Something has used these pits recently. The blood is not ancient."
+    dimensions:
+      width_paces: 8
+      length_paces: 10
+      height_paces: 3
+    features:
+      - "Multiple concealed pit traps"
+      - "Thin stone covers over pits"
+      - "Fresh blood smell from below"
+      - "Three to five pits in the room"
+    possible_encounters:
+      - tier: [1, 2]
+        types: ["ANI_VERM_01", "ANI_HAZ_01"]
+        chance_pct: 30
+    possible_loot:
+      - tier: [1]
+        items: ["bones_of_prior_victim", "rusted_equipment"]
+        chance_pct: 40
+    traps:
+      - name: "Concealed pit (multiple)"
+        detection_difficulty: "moderate"
+        damage: "d8 falling + d4 spikes"
+        description: "Thin stone covers collapse under body weight. Pits are three body-lengths deep with corroded iron spikes at the bottom."
+    hazards:
+      - "Multiple pits — navigating the room is a puzzle"
+      - "Falling in attracts scavengers from below"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_HAZ_06"
+    name: "Poison-Needle Hall"
+    category: "hazard"
+    description: "A narrow hall with walls perforated by hundreds of tiny holes. Behind the holes are hollow bone needles loaded with desiccated paste — once a potent poison, now degraded but still dangerous. Pressure plates in the floor trigger bursts of needles from alternating walls. The floor is littered with old needles from past activations."
+    dimensions:
+      width_paces: 3
+      length_paces: 14
+      height_paces: 3
+    features:
+      - "Perforated walls with needle holes"
+      - "Spent needles on floor"
+      - "Visible pressure plates with careful observation"
+      - "Residue of dark paste around holes"
+    possible_encounters: []
+    possible_loot: []
+    traps:
+      - name: "Needle wall barrage"
+        detection_difficulty: "moderate"
+        damage: "d4 piercing + poison (d6 over time)"
+        description: "Pressure plates fire volleys of bone needles coated in degraded alkaloid paste. The paste causes numbness, then paralysis in high doses."
+    hazards:
+      - "Poison still partially active — numbness and weakness"
+      - "Multiple trigger plates along the hall"
+      - "Spent needles on floor may puncture feet"
+    connections: ["corridor", "chamber", "discovery"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_HAZ_07"
+    name: "Crushing Walls"
+    category: "hazard"
+    description: "The walls are not quite parallel. The room narrows toward the far end, and the grooves in the floor show the walls were designed to move. A mechanism — counterweights, levers, or shaped stone on rollers — allows the walls to close. The trigger is somewhere. The scratches on the narrowing walls are fingernail marks."
+    dimensions:
+      width_paces: 6
+      length_paces: 10
+      height_paces: 3
+    features:
+      - "Walls narrower at far end"
+      - "Movement grooves in floor"
+      - "Fingernail scratches on walls"
+      - "Hidden mechanism"
+    possible_encounters: []
+    possible_loot:
+      - tier: [1]
+        items: ["crushed_bones", "flattened_equipment"]
+        chance_pct: 30
+    traps:
+      - name: "Crushing walls mechanism"
+        detection_difficulty: "hard"
+        damage: "d12 crushing per round (escalating)"
+        description: "Entering the chamber starts a slow mechanism. Walls close over sixty heartbeats. Can be jammed with strong enough braces or reversed by finding the counterweight lever."
+    hazards:
+      - "Enclosed space panic"
+      - "Time pressure — mechanism is relentless"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_HAZ_08"
+    name: "Fire Pit"
+    category: "hazard"
+    description: "A rectangular pit in the floor still holds the remains of a great fire. Charcoal, ash, and burnt bone fill it to within a hand-span of the rim. The walls are blackened with soot to the ceiling. Vents in the walls fed air to the fire. The purpose is unclear — cremation, cooking, or something worse. The walls are still warm."
+    dimensions:
+      width_paces: 6
+      length_paces: 8
+      height_paces: 3
+    features:
+      - "Central fire pit filled with ash and charcoal"
+      - "Soot-blackened walls and ceiling"
+      - "Air vents in walls"
+      - "Residual warmth in stone"
+      - "Burnt bone fragments in ash"
+    possible_encounters:
+      - tier: [3]
+        types: ["UND_DRAUGR_03", "UND_APT_02"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1]
+        items: ["charcoal", "burnt_bone", "iron_grate_piece"]
+        chance_pct: 35
+      - tier: [2, 3]
+        items: ["heat_resistant_stone", "clinker_iron"]
+        chance_pct: 15
+    traps:
+      - name: "Gas ignition"
+        detection_difficulty: "hard"
+        damage: "d10 fire"
+        description: "Disturbing the ash releases flammable gas trapped beneath. Open flame ignites it."
+    hazards:
+      - "Hidden hot spots in ash — burns if stepped in"
+      - "Gas accumulation beneath ash layer"
+      - "Soot falls from ceiling when vibrated"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_HAZ_09"
+    name: "Toxic Mold Growth"
+    category: "hazard"
+    description: "The walls are covered in a growth — black, grey-green, and in places a vivid orange that seems wrong underground. The mold is thick, fibrous, and it covers everything: walls, floor, ceiling, even old bones. The smell is sharp and earthy, thick enough to taste. Breathing feels laboured. Something in the air wants to grow in your lungs."
+    dimensions:
+      width_paces: 6
+      length_paces: 7
+      height_paces: 2
+    features:
+      - "Dense mold coverage on all surfaces"
+      - "Multiple mold types and colours"
+      - "Mold-covered bones and objects"
+      - "Heavy spore-laden air"
+    possible_encounters:
+      - tier: [1]
+        types: ["ANI_VERM_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1]
+        items: ["mold_covered_tool", "corroded_treasure"]
+        chance_pct: 25
+    traps: []
+    hazards:
+      - "Spore inhalation — d4 damage per round without face covering"
+      - "Prolonged exposure causes lung sickness (ongoing d2 for days)"
+      - "Disturbing mold releases thick spore cloud — visibility zero"
+      - "Skin contact with orange mold causes blistering"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_HAZ_10"
+    name: "Acidic Pools"
+    category: "hazard"
+    description: "Shallow pools of water on the floor, but the water is wrong. It eats at stone, leaving pitted, eroded surfaces with a chalky white film. An old boot sits in one pool, leather dissolving to fibre. The acid is slow — not instantly dangerous, but it will ruin metal and burn skin given time. The fumes sting your eyes."
+    dimensions:
+      width_paces: 8
+      length_paces: 8
+      height_paces: 2
+    features:
+      - "Multiple shallow acidic pools"
+      - "Pitted, eroded stone surfaces"
+      - "Dissolving organic material in pools"
+      - "White chalky residue on stone"
+      - "Eye-stinging fumes"
+    possible_encounters: []
+    possible_loot:
+      - tier: [2]
+        items: ["acid_resistant_stone", "partially_dissolved_coin"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Contact with acid — d4 damage and equipment degradation"
+      - "Fumes — eye irritation and disorientation"
+      - "Prolonged exposure destroys leather and corrodes metal"
+      - "Cannot be waded safely — must be navigated around"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_HAZ_11"
+    name: "Subsidence Shaft"
+    category: "hazard"
+    description: "The floor has partly given way, opening a ragged hole into a lower cavity. Broken stone slabs tilt over the edge. The drop is uncertain — torchlight shows loose earth and stone at the bottom, maybe two body-lengths down, maybe more. The remaining floor groans underfoot and the edges of the hole crumble when touched."
+    dimensions:
+      width_paces: 7
+      length_paces: 8
+      height_paces: 3
+    features:
+      - "Ragged floor collapse hole"
+      - "Tilted stone slabs at edge"
+      - "Lower cavity visible"
+      - "Crumbling edges"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["ANI_VERM_02", "UND_SKEL_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1, 2]
+        items: ["fallen_explorer_pack", "corroded_tool"]
+        chance_pct: 30
+    traps: []
+    hazards:
+      - "Fall risk — d8 damage from full drop"
+      - "Floor continues to deteriorate — each round on the edge risks more collapse"
+      - "Lower cavity may contain separate threats"
+      - "Climbing back up is difficult without rope"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  # ==========================================================================
+  # DISCOVERY ROOMS (10 rooms)
+  # ==========================================================================
+
+  - id: "ROOM_DISC_01"
+    name: "Map Chamber"
+    category: "discovery"
+    description: "A flat stone table dominates the room, its surface carved with a map. Lines represent rivers, raised bumps are hills, scratched marks denote settlements. The geography is recognizable but the names are old — some places no longer exist. Routes are marked between locations. A war-planning room, preserved in stone."
+    dimensions:
+      width_paces: 6
+      length_paces: 8
+      height_paces: 3
+    features:
+      - "Carved stone map table"
+      - "Recognizable regional geography"
+      - "Obsolete place names"
+      - "Military route markings"
+    possible_encounters:
+      - tier: [2, 3]
+        types: ["UND_SPEC_01", "SUP_SPIRIT_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [2, 3]
+        items: ["map_rubbing", "carved_stone_token"]
+        chance_pct: 45
+    traps: []
+    hazards: []
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_DISC_02"
+    name: "Chronicle Wall"
+    category: "discovery"
+    description: "One entire wall is a carved chronicle — figures in sequence, scenes of battle, ships, animals, a progression of events from left to right. The carving is crude but readable. A story told in stone by someone who wanted it remembered. The final scene, at the far right, shows a burial. This barrow's burial, most likely."
+    dimensions:
+      width_paces: 4
+      length_paces: 12
+      height_paces: 3
+    features:
+      - "Narrative stone carving covering one wall"
+      - "Sequential scenes left to right"
+      - "Battle, voyage, and burial imagery"
+      - "The chronicle predates the barrow's sealing"
+    possible_encounters:
+      - tier: [3]
+        types: ["SUP_SPIRIT_01", "SUP_SPIRIT_02"]
+        chance_pct: 15
+    possible_loot:
+      - tier: [2]
+        items: ["chronicle_rubbing", "stone_fragment"]
+        chance_pct: 35
+    traps: []
+    hazards: []
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_DISC_03"
+    name: "Hidden Vault"
+    category: "discovery"
+    description: "Behind a false wall — thin stone over a cavity — a small room packed tight with valuables. Whoever built this barrow kept the real treasure separate from the offering hall. Gold arm-rings, hack-silver, foreign coins, a bag of amber beads gone cloudy with age. Everything arranged in wooden chests now rotted to fragments."
+    dimensions:
+      width_paces: 3
+      length_paces: 4
+      height_paces: 2
+    features:
+      - "False wall access"
+      - "Tight-packed treasure storage"
+      - "Rotted wooden chest remains"
+      - "The air is remarkably dry"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_DRAUGR_04", "UND_HAUG_01"]
+        chance_pct: 35
+    possible_loot:
+      - tier: [3]
+        items: ["hack_silver", "foreign_coins", "amber_beads"]
+        chance_pct: 65
+      - tier: [4, 5]
+        items: ["gold_arm_ring", "silver_torque", "jewelled_brooch"]
+        chance_pct: 40
+    traps:
+      - name: "Trigger stone alarm"
+        detection_difficulty: "hard"
+        damage: "none — summons guardian encounter"
+        description: "Removing items from the vault disturbs a balanced stone that releases a weight, producing a deep grinding sound audible throughout the barrow."
+    hazards: []
+    connections: ["chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_DISC_04"
+    name: "Corpse of Prior Explorer"
+    category: "discovery"
+    description: "Someone got here before you. A body sits against the wall, more recent than the barrow's occupants. Leather armour, a short sword, a pack. The face is leathered and drawn but not skeletal — months dead, not centuries. Whatever killed them left no visible wound. A smudged charcoal note on leather: directions, warnings, half-readable."
+    dimensions:
+      width_paces: 4
+      length_paces: 5
+      height_paces: 2
+    features:
+      - "Recent corpse (months old)"
+      - "Explorer's gear and pack"
+      - "Charcoal notes on leather"
+      - "No visible cause of death"
+    possible_encounters:
+      - tier: [2]
+        types: ["UND_DRAUGR_01"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [1, 2]
+        items: ["short_sword", "leather_armour", "pack_with_supplies"]
+        chance_pct: 70
+      - tier: [2]
+        items: ["partial_barrow_map", "warning_notes"]
+        chance_pct: 50
+    traps: []
+    hazards:
+      - "Whatever killed the explorer is still here"
+      - "The notes may contain misinformation"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "small"
+    barrow_age_affinity: ["old", "ancient", "recent"]
+
+  - id: "ROOM_DISC_05"
+    name: "Sealed Reliquary"
+    category: "discovery"
+    description: "A stone box, waist-high, sealed with lead poured around the lid. Whatever is inside was not meant to be retrieved. The seal is intact — no one has opened this since it was closed. The stone is carved with binding runes, repeated. Around the reliquary, the floor is bare, swept clean by design or obsession."
+    dimensions:
+      width_paces: 4
+      length_paces: 4
+      height_paces: 2
+    features:
+      - "Lead-sealed stone box"
+      - "Binding runes on all faces"
+      - "Swept floor around the reliquary"
+      - "Intentionally isolated from other objects"
+    possible_encounters:
+      - tier: [4, 5]
+        types: ["UND_HAUG_01", "UND_VEIL_01", "SUP_VEIL_01"]
+        chance_pct: 45
+    possible_loot:
+      - tier: [4, 5]
+        items: ["sealed_relic", "binding_rune_stone", "unknown_object"]
+        chance_pct: 80
+    traps:
+      - name: "Release ward"
+        detection_difficulty: "hard"
+        damage: "none — releases bound entity"
+        description: "Breaking the seal releases whatever was bound inside. The runes exist for a reason."
+    hazards:
+      - "The binding runes suggest extreme danger"
+      - "Opening may release something that should stay contained"
+    connections: ["chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_DISC_06"
+    name: "Altar"
+    category: "discovery"
+    description: "A blood-groove stone at the centre of the room, hip-height, dark-stained so deep the stone has changed colour. Iron rings at each corner for rope or chain. The wall behind the altar is painted — red and black, figures and animals, a scene of offering. The paint is flaking but the image is clear. This is where they made their payments to the gods."
+    dimensions:
+      width_paces: 6
+      length_paces: 8
+      height_paces: 3
+    features:
+      - "Blood-grooved sacrifice stone"
+      - "Iron restraint rings"
+      - "Painted wall (red and black)"
+      - "Offering scene depicted"
+      - "Dark-stained floor around altar"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_SPEC_02", "UND_SPEC_03", "SUP_SPIRIT_03"]
+        chance_pct: 35
+    possible_loot:
+      - tier: [2]
+        items: ["ritual_knife", "iron_ring"]
+        chance_pct: 40
+      - tier: [3, 4]
+        items: ["carved_idol", "silver_offering_bowl", "rune_marked_blade"]
+        chance_pct: 25
+    traps: []
+    hazards:
+      - "Blood on the altar reacts — fresh blood especially"
+      - "Spiritual presence strongest here"
+    connections: ["corridor", "chamber", "special"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_DISC_07"
+    name: "Oracle Stone"
+    category: "discovery"
+    description: "A natural stone formation — a boulder of quartz or crystal set into the chamber floor, its surface ground smooth. In torchlight it seems to hold light longer than stone should. The walls around it are scarred with thousands of small cuts, each one a tally-mark. Someone came here to listen to the stone and kept count of the visits."
+    dimensions:
+      width_paces: 5
+      length_paces: 5
+      height_paces: 3
+    features:
+      - "Natural quartz formation in floor"
+      - "Polished smooth surface"
+      - "Thousands of tally marks on walls"
+      - "Holds light strangely"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["SUP_SPIRIT_02", "SUP_SPIRIT_03", "UND_VEIL_01"]
+        chance_pct: 30
+    possible_loot:
+      - tier: [3]
+        items: ["quartz_fragment", "oracle_stone_chip"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Staring at the stone induces trance — may receive vision or confusion"
+      - "Time distortion — minutes may pass as hours"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_DISC_08"
+    name: "Spirit Well"
+    category: "discovery"
+    description: "A shaft cut straight down through the floor, so deep the bottom is invisible. Drop a stone and count — a long time before the faint click of impact. Cold air rises from the well, and with it a sound that might be wind or might be whispering. The edge of the well is smooth and the rim stones are mortared with something darker than clay."
+    dimensions:
+      width_paces: 5
+      length_paces: 5
+      height_paces: 3
+    features:
+      - "Deep shaft in floor"
+      - "Cold updraft"
+      - "Whispering wind sound"
+      - "Dark mortar on rim stones"
+      - "The depth is unknowable"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["SUP_SPIRIT_03", "SUP_SPIRIT_04", "SUP_VEIL_01"]
+        chance_pct: 35
+      - tier: [5]
+        types: ["SUP_VEIL_02", "SUP_VEIL_03"]
+        chance_pct: 20
+    possible_loot:
+      - tier: [3]
+        items: ["rim_stone_fragment", "dark_mortar_sample"]
+        chance_pct: 15
+    traps: []
+    hazards:
+      - "Falling into the well — fatal"
+      - "Whispers may compel listeners closer to the edge"
+      - "The cold rising from below saps warmth rapidly"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_DISC_09"
+    name: "Dream Chamber"
+    category: "discovery"
+    description: "The walls are smooth and the room is round — unusual in a barrow. Dried herbs hang from the ceiling in bunches, their scent faint but present: mugwort, henbane, something that catches in the throat. A stone platform in the centre, body-length, with a shallow head-rest carved at one end. This is where someone came to dream on purpose."
+    dimensions:
+      width_paces: 5
+      length_paces: 5
+      height_paces: 2
+    features:
+      - "Round chamber (unusual geometry)"
+      - "Dried herb bunches on ceiling"
+      - "Stone dream-platform with head-rest"
+      - "Smooth, featureless walls"
+      - "Lingering herbal scent"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["SUP_SPIRIT_01", "SUP_SPIRIT_02", "SUP_VEIL_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [2]
+        items: ["dried_herb_bundle", "carved_headrest_fragment"]
+        chance_pct: 30
+      - tier: [3]
+        items: ["dream_herb_pouch", "bone_pipe"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Herb fumes induce drowsiness — risk of unwanted sleep"
+      - "Dreams in this room are vivid, possibly prophetic, possibly lies"
+      - "Sleeping here may attract spiritual attention"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_DISC_10"
+    name: "Ancestor Gallery"
+    category: "discovery"
+    description: "Stone niches line both walls, each holding a skull. Dozens of them, arranged by size and age — the bone colour darkens as you go deeper, from yellow-white to brown to nearly black. Each skull sits on a small shelf with a carved name-stone below it. The oldest names are in a script no one reads anymore. A family line, stored in bone."
+    dimensions:
+      width_paces: 4
+      length_paces: 14
+      height_paces: 3
+    features:
+      - "Skull niches along both walls"
+      - "Dozens of skulls arranged chronologically"
+      - "Carved name-stones below each"
+      - "Oldest names in archaic script"
+      - "Bone colour progression from recent to ancient"
+    possible_encounters:
+      - tier: [3, 4]
+        types: ["UND_SPEC_01", "UND_SPEC_02", "SUP_SPIRIT_02"]
+        chance_pct: 30
+      - tier: [5]
+        types: ["UND_SPEC_04", "SUP_SPIRIT_04"]
+        chance_pct: 15
+    possible_loot:
+      - tier: [2]
+        items: ["name_stone", "ancient_skull"]
+        chance_pct: 30
+      - tier: [3, 4]
+        items: ["lineage_record", "rune_carved_name_stone"]
+        chance_pct: 20
+    traps: []
+    hazards:
+      - "Removing a skull disturbs the entire lineage — mass encounter"
+      - "The weight of ancestral memory is palpable"
+    connections: ["corridor", "chamber", "special"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_DISC_11"
+    name: "Failed Excavation"
+    category: "discovery"
+    description: "A side-tunnel dug by someone after the barrow was sealed. The technique is different — cruder, rushed. Broken tools left where they fell. A half-dug shaft angles toward where the main burial chamber should be, but the diggers hit bedrock and gave up. Or were stopped. A gnawed leather water-skin and cold fire-ring suggest they camped here for days."
+    dimensions:
+      width_paces: 4
+      length_paces: 8
+      height_paces: 2
+    features:
+      - "Crude secondary tunnel"
+      - "Broken digging tools"
+      - "Dead-end at bedrock"
+      - "Abandoned camp remains"
+      - "Different construction from the barrow proper"
+    possible_encounters:
+      - tier: [1, 2]
+        types: ["ANI_VERM_01", "UND_DRAUGR_01"]
+        chance_pct: 25
+    possible_loot:
+      - tier: [1, 2]
+        items: ["broken_pickaxe", "leather_water_skin", "fire_ring_charcoal"]
+        chance_pct: 45
+    traps: []
+    hazards:
+      - "Unstable secondary tunnel — not built to last"
+      - "The diggers' fate is unknown and possibly relevant"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "medium"
+    barrow_age_affinity: ["old", "ancient"]
+
+  # ==========================================================================
+  # SPECIAL / BOSS (6 rooms)
+  # ==========================================================================
+
+  - id: "ROOM_SPEC_01"
+    name: "Barrow-King Throne"
+    category: "special"
+    description: "The end of the barrow. A chamber built for one purpose: to seat the dead forever. The throne is massive — cut from a single block of dark stone, carved with interlocking animal patterns worn smooth by the touch of dead hands. Before it, the floor is grooved in concentric circles. Behind it, the wall is blank. Nothing else matters in this room but the throne and what sits in it."
+    dimensions:
+      width_paces: 12
+      length_paces: 14
+      height_paces: 5
+    features:
+      - "Massive carved stone throne"
+      - "Concentric floor grooves"
+      - "Animal-pattern carvings"
+      - "The occupant may still be seated"
+      - "Oppressive spiritual weight"
+    possible_encounters:
+      - tier: [4, 5]
+        types: ["UND_HAUG_02", "UND_HAUG_03"]
+        chance_pct: 75
+    possible_loot:
+      - tier: [4]
+        items: ["iron_crown", "grave_sword", "chieftain_torque"]
+        chance_pct: 60
+      - tier: [5]
+        items: ["king_ring", "ancient_blade", "barrow_crown"]
+        chance_pct: 45
+    traps:
+      - name: "Throne ward"
+        detection_difficulty: "hard"
+        damage: "none — awakens the king"
+        description: "Approaching within three paces of the throne triggers the occupant to stir. Touching it guarantees animation of the barrow-king and his guard."
+    hazards:
+      - "The strongest undead in the barrow is here"
+      - "Retreat may be blocked by summoned guards"
+      - "The room's spiritual pressure affects willpower"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_SPEC_02"
+    name: "Haugbui Nest"
+    category: "special"
+    description: "Not a built room. A natural cavity that something has shaped — walls scored with claw marks, the floor a depression lined with scraps of cloth, leather, and bone. The air is thick with the smell of old meat and cold earth. Something lives here. Something that waits in the dark and does not need to eat but remembers how."
+    dimensions:
+      width_paces: 8
+      length_paces: 10
+      height_paces: 3
+    features:
+      - "Claw-scored walls"
+      - "Nest depression lined with debris"
+      - "Thick charnel smell"
+      - "Gnawed bones scattered throughout"
+      - "Signs of repeated occupancy"
+    possible_encounters:
+      - tier: [4, 5]
+        types: ["UND_HAUG_01", "UND_HAUG_02"]
+        chance_pct: 80
+    possible_loot:
+      - tier: [3]
+        items: ["gnawed_arm_ring", "torn_mail", "half_digested_silver"]
+        chance_pct: 50
+      - tier: [4]
+        items: ["prior_explorer_gear", "hoard_fragment"]
+        chance_pct: 30
+    traps: []
+    hazards:
+      - "The haugbui is present and aware of intruders"
+      - "Limited space for manoeuvre in the nest"
+      - "The smell is overpowering — nausea check"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_SPEC_03"
+    name: "Veil-Thin Chamber"
+    category: "special"
+    description: "The walls shimmer. Not with light — with absence. Shadows move independently of the torchlight. The air feels heavy and thin at the same time, as if the room exists in two places. Sound behaves wrong — your voice comes back a heartbeat late, from the wrong direction. The boundary between this world and whatever comes after is worn thin here. You can almost see through."
+    dimensions:
+      width_paces: 8
+      length_paces: 8
+      height_paces: 4
+    features:
+      - "Independent shadow movement"
+      - "Sound delay and displacement"
+      - "Visual shimmer on walls"
+      - "Temperature fluctuations without source"
+      - "The sense that someone is standing just behind you"
+    possible_encounters:
+      - tier: [4, 5]
+        types:
+          [
+            "SUP_VEIL_01",
+            "SUP_VEIL_02",
+            "SUP_VEIL_03",
+            "UND_VEIL_01",
+            "UND_VEIL_02",
+          ]
+        chance_pct: 60
+    possible_loot:
+      - tier: [4, 5]
+        items: ["veil_fragment", "spirit_touched_stone", "otherworld_token"]
+        chance_pct: 35
+    traps: []
+    hazards:
+      - "Reality instability — perception checks constantly"
+      - "Prolonged exposure risks partial crossing"
+      - "Entities from the other side may cross"
+      - "Compasses and direction sense fail"
+    connections: ["corridor", "chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_SPEC_04"
+    name: "Primordial Grave"
+    category: "special"
+    description: "Older than the barrow. The builders found this when they were digging and built around it. A burial of a different kind — no Norse craftsmanship, no runes, no iron. The body is in a foetal position in a stone-lined pit, huge, the bones too thick and the skull too heavy. Whoever this was, they predate everything above. The barrow-builders left offerings to it. They were afraid of it."
+    dimensions:
+      width_paces: 10
+      length_paces: 10
+      height_paces: 5
+    features:
+      - "Pre-Norse burial pit"
+      - "Oversized skeletal remains"
+      - "Foetal position burial"
+      - "Primitive stone lining"
+      - "Norse offerings placed around the pit (they feared this)"
+    possible_encounters:
+      - tier: [5]
+        types: ["SUP_WILD_01", "SUP_WILD_02", "SUP_CORR_01"]
+        chance_pct: 50
+    possible_loot:
+      - tier: [4, 5]
+        items:
+          ["ancient_bone_fragment", "pre_norse_stone_tool", "primordial_tooth"]
+        chance_pct: 40
+    traps: []
+    hazards:
+      - "The age of this place is disorienting — existential dread"
+      - "The offerings suggest the Norse builders propitiated whatever is here"
+      - "Something older than human memory stirs"
+    connections: ["chamber"]
+    barrow_size_min: "vast"
+    barrow_age_affinity: ["ancient"]
+
+  - id: "ROOM_SPEC_05"
+    name: "Cursed Forge"
+    category: "special"
+    description: "An underground smithy. The anvil is stone, not iron, and the forge basin is carved into the bedrock. Charcoal dust covers everything. Unfinished blades lie on a work-shelf, half-shaped, the metal discoloured and wrong — dark veins running through it as if the iron were sick. The tools are intact but everything they made went bad. The smith was making something that should not be made."
+    dimensions:
+      width_paces: 8
+      length_paces: 10
+      height_paces: 3
+    features:
+      - "Stone anvil"
+      - "Bedrock forge basin"
+      - "Unfinished blades with dark veining"
+      - "Smithing tools intact"
+      - "Charcoal dust on everything"
+      - "The metal is visibly corrupted"
+    possible_encounters:
+      - tier: [4, 5]
+        types: ["UND_DRAUGR_05", "UND_VEIL_03", "SUP_CORR_02"]
+        chance_pct: 55
+    possible_loot:
+      - tier: [3]
+        items: ["smithing_tools", "charcoal_dust", "unfinished_blade"]
+        chance_pct: 50
+      - tier: [4, 5]
+        items: ["cursed_blade", "dark_iron_ingot", "forge_rune_stone"]
+        chance_pct: 35
+    traps:
+      - name: "Forge ignition"
+        detection_difficulty: "hard"
+        damage: "d10 fire"
+        description: "Disturbing the forge basin releases trapped gas. Any spark or flame ignites it in a burst that fills the room."
+    hazards:
+      - "The corrupted metal is dangerous to handle — d2 ongoing"
+      - "The forge wants to be lit — compulsion on those with smithing knowledge"
+    connections: ["chamber"]
+    barrow_size_min: "large"
+    barrow_age_affinity: ["old", "ancient"]
+
+  - id: "ROOM_SPEC_06"
+    name: "Summoning Circle"
+    category: "special"
+    description: "The floor is a single carved design — a circle within a circle, with symbols in the space between. The outer circle is cracked in one place, a break that runs through two symbols. The inner circle is intact. Iron nails are driven into the stone at cardinal points, their heads flat against the floor. Stains radiate outward from the centre like a starburst. Something was called here. Whether it answered, or whether it left, is not clear."
+    dimensions:
+      width_paces: 10
+      length_paces: 10
+      height_paces: 4
+    features:
+      - "Double circle carved into floor"
+      - "Symbolic inscriptions between circles"
+      - "Crack in outer circle"
+      - "Iron nails at cardinal points"
+      - "Radial stains from centre"
+    possible_encounters:
+      - tier: [4, 5]
+        types: ["SUP_VEIL_02", "SUP_VEIL_03", "SUP_VEIL_04", "SUP_CORR_03"]
+        chance_pct: 55
+    possible_loot:
+      - tier: [3, 4]
+        items: ["iron_nail", "carved_symbol_stone", "circle_dust"]
+        chance_pct: 40
+      - tier: [5]
+        items: ["binding_relic", "summoner_journal", "veil_key"]
+        chance_pct: 25
+    traps:
+      - name: "Reactivation"
+        detection_difficulty: "hard"
+        damage: "none — reactivates the summoning"
+        description: "Stepping into the inner circle with blood on you (even a scratch) feeds the design. The crack in the outer ring means containment has failed."
+    hazards:
+      - "The circle is partially active — the crack means it leaks"
+      - "Blood or life-force near the circle energises it"
+      - "The boundary between worlds is permeable here"
+      - "Standing in the centre is a profoundly bad idea"
+    connections: ["chamber"]
+    barrow_size_min: "vast"
+    barrow_age_affinity: ["ancient"]

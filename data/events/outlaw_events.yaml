@@ -1,0 +1,284 @@
+# Iron Ledger — Outlaw Events
+# Narrative events triggered by outlaw pressure and wolfshead interactions.
+# Cross-references: 20_SIMULATION_RULES.md §18.14 (Outlawry and Settlement),
+#   data/culture/outlawry_system.yaml, data/wolfshead_bands.yaml,
+#   data/bestiary/encounters.yaml (ENC_WHEAD_ entries).
+# Trigger frequency: checked each week during the campaign tick.
+
+events:
+  # --- Settlement-level outlaw events (triggered by outlaw_pressure) ---
+
+  - id: "EVT_OUTLAW_001"
+    name: "Outlaw Raid"
+    trigger:
+      condition: "outlaw_pressure >= 2"
+      check: "weekly"
+      chance_base: 15 # % per week, modified by pressure
+      chance_formula: "base + (outlaw_pressure - 2) × 10"
+    description: >
+      Wolfsheads hit a farmstead on the settlement outskirts. Livestock
+      taken, outbuildings burned. One farmer killed. The headman demands
+      action — hire mercenaries or organize the militia.
+    effects:
+      trade_modifier: -10
+      morale_modifier: -1
+      outlaw_pressure_change: 0 # Already high; doesn't increase
+      casualties: "1d4 farmers"
+    resolution_options:
+      - "Hire mercenary pursuit (50 copper, pressure -1)"
+      - "Organize militia response (20 copper, pressure -1, feud risk +1)"
+      - "Absorb losses — no action (pressure +1 next season)"
+    narrative_weight: "high"
+
+  - id: "EVT_OUTLAW_002"
+    name: "Outlaw Parley"
+    trigger:
+      condition: "outlaw_pressure >= 3"
+      check: "seasonal"
+      chance_base: 30
+    description: >
+      A wolfshead leader approaches under truce-sign. He does not beg.
+      He names a price — copper, supplies, safe passage — and explains
+      what happens if the settlement refuses. This is not a threat.
+      It is a transaction.
+    effects:
+      outlaw_pressure_change: 0 # Depends on response
+    resolution_options:
+      - "Accept terms — pay tribute (30 copper/season, pressure -1)"
+      - "Reject and prepare defenses (pressure +1, militia readiness +1)"
+      - "Feign acceptance, ambush the delegation (pressure -2, honor -1)"
+      - "Counter-offer — work arrangement (complex negotiation)"
+    narrative_weight: "very_high"
+
+  - id: "EVT_OUTLAW_003"
+    name: "Outlaw Joins Band"
+    trigger:
+      condition: "band_within_1_hex_of_outlaw_camp"
+      check: "per_encounter"
+      chance_base: 20
+    description: >
+      A lone figure approaches camp at dusk, hands visible, no weapons
+      drawn. An outlaw — fjörbaugsgarðr or worse — wants to join the
+      company. He can fight. He is cheap. He is also someone else's
+      legal problem.
+    effects:
+      recruitment_option: true
+      harboring_risk: true
+    resolution_options:
+      - "Recruit — gain fighter, accept legal risk"
+      - "Refuse — outlaw leaves, no consequence"
+      - "Demand information in exchange for food (info + no risk)"
+      - "Turn in to nearest settlement (reputation +1, outlaw hostile)"
+    narrative_weight: "medium"
+    notes: >
+      See data/culture/honor_contract_system.yaml harboring_outlaws
+      section for legal risk calculations.
+
+  - id: "EVT_OUTLAW_004"
+    name: "Wolfshead War"
+    trigger:
+      condition: "two_or_more_outlaw_bands_same_region"
+      check: "seasonal"
+      chance_base: 25
+    description: >
+      Two wolfshead bands claim the same territory. The dispute escalates
+      from threats to raids to open fighting. Nearby settlements watch
+      nervously — the survivors will be stronger and angrier.
+    effects:
+      outlaw_pressure_change: "+1 during war, -1 after (one band eliminated)"
+      regional_instability: true
+    resolution_options:
+      - "Stay out of it — let them weaken each other"
+      - "Support one side — gain ally, gain enemy"
+      - "Contract with settlement to exploit the chaos"
+      - "Ambush the weakened winner after the war ends"
+    narrative_weight: "high"
+
+  - id: "EVT_OUTLAW_005"
+    name: "Night Market"
+    trigger:
+      condition: "outlaw_pressure >= 2"
+      check: "weekly"
+      chance_base: 10
+      chance_formula: "outlaw_pressure × 15 + season_modifier"
+    description: >
+      Word passes through the camp followers: tonight, outside the
+      south wall, there will be a market. No names. No receipts.
+      Barrow trinkets, stolen weapons, foreign spices. Pay in copper,
+      ask no questions, leave before dawn.
+    effects:
+      rare_goods_available: true
+      disease_risk: 5 # percent
+      stolen_property_risk: 20 # percent
+      reputation_risk: "-1 if discovered by contracting settlement"
+    resolution_options:
+      - "Attend — access rare goods and intelligence"
+      - "Avoid — no risk, no reward"
+      - "Raid the market (if contracted to suppress it)"
+      - "Observe and report to settlement headman (reputation +1)"
+    narrative_weight: "medium"
+
+  - id: "EVT_OUTLAW_006"
+    name: "Amnesty Offer"
+    trigger:
+      condition: "outlaw_pressure >= 4"
+      check: "seasonal"
+      chance_base: 20
+    description: >
+      The settlement headman is desperate. He proposes amnesty for
+      select outlaws willing to serve — militia, labor, road clearing.
+      The ting must approve. The community is divided. Some see
+      pragmatism. Others see weakness.
+    effects:
+      outlaw_pressure_change: -2 # if successful
+      community_tension: +1
+    resolution_options:
+      - "Support the amnesty (help negotiate, risk reputation)"
+      - "Oppose the amnesty (maintain hard line, pressure continues)"
+      - "Offer to escort the amnestied outlaws (contract opportunity)"
+      - "Exploit the chaos — the amnesty vote reveals political lines"
+    narrative_weight: "high"
+    notes: >
+      See 20_SIMULATION_RULES.md §18.14.2 for amnesty_chance formula.
+
+  - id: "EVT_OUTLAW_007"
+    name: "Mercenary Band Declared Outlaw"
+    trigger:
+      condition: "contract_breach + settlement_anger_high"
+      check: "per_event"
+      chance_base: 0 # Triggered by specific conditions
+    description: >
+      The worst outcome. A settlement declares the band outlawed.
+      Maybe the contract failed. Maybe the headman is corrupt.
+      Maybe someone made a political move. The result is the same:
+      the gates close, the road turns hostile, and the thin line
+      between mercenary and wolfshead vanishes.
+    effects:
+      reputation_change: -3 # In declaring settlement
+      contract_status: "void"
+      outlaw_status: "lesser or full, depending on severity"
+    resolution_options:
+      - "Accept ruling, pay weregild, leave territory"
+      - "Contest at ting (requires patron or witness)"
+      - "Refuse to accept — fight or flee (full outlawry)"
+      - "Negotiate through intermediary (expensive)"
+    narrative_weight: "very_high"
+    notes: >
+      This event fundamentally changes the campaign dynamic.
+      See data/culture/honor_contract_system.yaml the_thin_line
+      for the specific cascading scenarios.
+
+  # --- Band-level outlaw events ---
+
+  - id: "EVT_OUTLAW_008"
+    name: "Former Comrade"
+    trigger:
+      condition: "encounter_with_wolfshead_band"
+      check: "per_encounter"
+      chance_base: 15
+    description: >
+      One of the wolfsheads steps forward. He knows a name. One of
+      your fighters knows his. They served together — a different
+      company, a different season. Now one is legitimate and one is
+      not. The encounter changes tone.
+    effects:
+      morale_check: "affected_fighter"
+      loyalty_test: true
+    resolution_options:
+      - "Ignore the connection — business is business"
+      - "Private conversation — learn what happened"
+      - "Recruit the former comrade (harboring risk)"
+      - "Let the fighter decide (loyalty check)"
+    narrative_weight: "high"
+
+  - id: "EVT_OUTLAW_009"
+    name: "Bounty Target Sighted"
+    trigger:
+      condition: "active_bounty_contract + wolfshead_encounter"
+      check: "per_encounter"
+      chance_base: 30
+    description: >
+      The bounty target is here — among this group, or camped
+      nearby. The contract says dead or alive. The target may
+      not know he is being hunted. Or he may know exactly why
+      your band is in this territory.
+    effects:
+      contract_completion_opportunity: true
+      combat_likely: true
+    resolution_options:
+      - "Engage — complete the bounty"
+      - "Parley — negotiate surrender for reduced sentence"
+      - "Pass — pretend you did not see him"
+      - "Warn the target — betray the contract (reputation -2)"
+    narrative_weight: "medium"
+
+  - id: "EVT_OUTLAW_010"
+    name: "Desperation Approach"
+    trigger:
+      condition: "winter + outlaw_band_nearby"
+      check: "weekly"
+      chance_base: 20
+    description: >
+      Starving outlaws approach the camp. Not to fight — to beg.
+      Three men and a woman, gaunt, frostbitten, weapons hanging
+      loose. They will trade information, labor, anything. They
+      will die in a week without food.
+    effects:
+      moral_choice: true
+      supply_cost: "2 rations per person per week"
+    resolution_options:
+      - "Feed them and send them on — costs supplies, gains nothing"
+      - "Feed them in exchange for information"
+      - "Recruit them (cheap labor, harboring risk)"
+      - "Refuse — they leave, 50% chance they die"
+      - "Rob them of whatever they have left"
+    narrative_weight: "high"
+
+  - id: "EVT_OUTLAW_011"
+    name: "Outlaw Intelligence"
+    trigger:
+      condition: "reputation_with_outlaws >= 1"
+      check: "seasonal"
+      chance_base: 25
+    description: >
+      A wolfshead you traded with before sends word through a camp
+      follower. Intelligence: troop movements, caravan routes, a
+      jarl's secret weakness. Good information. Information that
+      was stolen, overheard, or beaten out of someone. Information
+      you can use.
+    effects:
+      intelligence_gained: true
+      moral_ambiguity: true
+    resolution_options:
+      - "Accept intelligence — use it for current contract"
+      - "Accept and pass to patron (reputation +1 with patron)"
+      - "Refuse — do not deal with outlaws"
+      - "Accept and sell to highest bidder"
+    narrative_weight: "medium"
+
+  - id: "EVT_OUTLAW_012"
+    name: "The Thin Line"
+    trigger:
+      condition: "failed_contract + winter + low_supplies"
+      check: "per_event"
+      chance_base: 0 # Triggered by cascading conditions
+    description: >
+      The contract is gone. The settlement closed its gates. Copper
+      is short and winter is long. The captain looks at the farmstead
+      smoke on the horizon and knows what his fighters are thinking.
+      One raid. One barn. Nobody has to die. But once you cross
+      that line, you do not come back.
+    effects:
+      campaign_defining: true
+      crosses_thin_line: true
+    resolution_options:
+      - "Raid — cross the line (begin wolfshead transition)"
+      - "Starve — hold discipline (morale -3, possible desertions)"
+      - "Negotiate desperately — approach any settlement willing to listen"
+      - "Split the band — those who will raid, and those who will not"
+    narrative_weight: "critical"
+    notes: >
+      This is the signature event of the outlawry system. It should
+      occur at most once per campaign. If the band raids, see
+      data/culture/honor_contract_system.yaml the_thin_line for the
+      full cascading consequences.

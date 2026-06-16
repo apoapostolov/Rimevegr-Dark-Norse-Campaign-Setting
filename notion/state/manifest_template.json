@@ -1,0 +1,29 @@
+{
+  "pipeline_version": "0.1.0",
+  "notion_api_version": "2026-03-11",
+  "project_root_page_id": null,
+  "chapters": [
+    {
+      "key": "05",
+      "title": "Economy of Rimevegr",
+      "source_file": "05_ECONOMY_OF_RIMEVEGR.md",
+      "chapter_page_id": null,
+      "source_hash": null,
+      "clean_hash": null,
+      "ignored": false,
+      "ignored_reason": null,
+      "subpages": [
+        {
+          "key": "05A",
+          "title": "Economy of Rimevegr — Part A",
+          "notion_page_id": null,
+          "source_hash": null,
+          "clean_hash": null,
+          "block_count": null,
+          "byte_count": null,
+          "is_index_only": false
+        }
+      ]
+    }
+  ]
+}

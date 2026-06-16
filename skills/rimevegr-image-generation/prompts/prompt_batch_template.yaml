@@ -1,0 +1,78 @@
+batch_name: replace_with_batch_name
+model: auto
+defaults:
+  aspect_ratio: 16:9
+  operation: create
+  model_preference: auto
+  number_of_images: 1
+  reference_images: []
+  negative_prompt: >-
+    cartoon, glossy, ornate high fantasy, anime, plastic skin, neon magic,
+    heroic poster art
+scene_routing:
+  scene_family: outdoor settlement life
+  sub_scene: market yard
+  subject_lens: small band of 3 to 5
+  material_pressure:
+    - dwindling stores
+  social_pressure:
+    - bargaining pressure
+  environmental_pressure:
+    - weak light at dusk
+  violence_pressure: []
+  veil_level: none
+  hush_type: none
+  cracking: none
+  emotion: hungry opportunism
+  color_family: fjord steel
+prompt_policy:
+  selection_mode: minimal_relevant
+  include_scene_routing: auto
+  include_identity_lock: auto
+  include_change_request: if_present
+  include_continuity: if_needed
+  max_pressure_details: 3
+  max_identity_traits: 3
+items:
+  - id: replace_me_01
+    operation: create
+    prompt: REPLACE WITH FINAL RIMEVEGR PROMPT
+    structured_prompt:
+      subject: unnamed subject or named character
+      action: clear visual action
+      setting: grounded place and weather
+      mood: restrained emotional tone
+      camera: medium-wide live-action framing
+    identity_lock:
+      identity_anchor: one-line stable identity description
+      attractiveness_scale: 1
+      immutable_traits:
+        - stable facial trait
+        - stable material or rank marker
+      weathering_cues:
+        - wind-burned skin
+        - broken nose
+      flexible_traits:
+        - weather wear
+        - cloak position
+      allowed_scene_changes:
+        - indoor to outdoor relighting
+      forbidden_drift:
+        - no polished fantasy armor
+        - no younger makeover
+      reference_images: []
+      continuity_notes:
+        - keep the silhouette readable
+    locked_elements:
+      - item that must stay fixed
+    change_request: optional revision note
+    continuity_notes: optional continuity note
+    aspect_ratio: 16:9
+    reference_images: []
+    notes: Optional production note
+  - id: replace_me_02
+    operation: preserve and restage
+    prompt: REPLACE WITH FINAL RIMEVEGR PROMPT
+    aspect_ratio: 4:5
+    reference_images: []
+    notes: Optional production note

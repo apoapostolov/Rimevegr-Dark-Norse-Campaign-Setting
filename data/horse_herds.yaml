@@ -1,0 +1,228 @@
+horse_herds:
+- herd_id: band_voss_black_axes
+  owner_type: band
+  owner_name: Voss's Black Axes
+  location: On campaign
+  breeding_policy: Practical remount stock; quality over count.
+  horses:
+  - name: Ice-Mane
+    breed: rimefjord_pony
+    sex: gelding
+    age: 12
+    age_class: prime
+    role: captain_mount
+    owner_ref: Voss Cold-Eye
+    species: horse
+    max_hp: 30
+    hp: 30
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  - name: Reed-Step
+    breed: moor_runner
+    sex: mare
+    age: 10
+    age_class: prime
+    role: scout_mount
+    owner_ref: Petra Ash-Strand
+    species: horse
+    max_hp: 30
+    hp: 30
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  breeding_pairs: []
+  foals: []
+  breeding_history: []
+- herd_id: settlement_thornwall_riding_stock
+  owner_type: settlement
+  owner_name: Thornwall
+  location: Thornwall outer pens
+  breeding_policy: Rideable pasture stock with a small scout line.
+  horses:
+  - name: Gate-Rime
+    breed: pine_cob
+    sex: stallion
+    age: 14
+    age_class: prime
+    role: stud
+    owner_ref: Thornwall remount pen
+    species: horse
+    max_hp: 30
+    hp: 30
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  - name: Heather-Step
+    breed: moor_runner
+    sex: mare
+    age: 11
+    age_class: prime
+    role: broodmare
+    owner_ref: Thornwall remount pen
+    species: horse
+    max_hp: 30
+    hp: 30
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  - name: Wall-Mist
+    breed: rimefjord_pony
+    sex: mare
+    age: 13
+    age_class: prime
+    role: broodmare
+    owner_ref: Thornwall remount pen
+    species: horse
+    max_hp: 30
+    hp: 30
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  breeding_pairs:
+  - dam: Wall-Mist
+    sire: Gate-Rime
+    target_season: Y312-S3
+  foals:
+  - name: Step-Gate
+    breed: pine_cob
+    display_breed: Pine-cob
+    sex: mare
+    age: 0
+    age_class: foal
+    role: breeding
+    mood: calm
+    condition: fresh
+    bond_rider: null
+    traits:
+    - dead_pull
+    - patient
+    - throws_big
+    tricks: []
+    bloodline_tags:
+    - hot_blooded
+    - strong_back
+    inheritance:
+    - dam strong stat speed -> 5
+    - sire strong stat load -> 5
+    speed: 5
+    wind: 3
+    foot: 3
+    nerve: 5
+    load: 5
+    sense: 3
+    foal_quirk: throws_big
+    estimated_value_silver: 33
+    season_born: Y312-S2
+    sire: Gate-Rime
+    dam: Heather-Step
+    age_seasons: 2
+    species: horse
+    max_hp: 66
+    hp: 66
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  breeding_history:
+  - season: Y312-S2
+    dam: Heather-Step
+    sire: Gate-Rime
+    foal: Step-Gate
+    breed: pine_cob
+    estimated_value_silver: 33
+- herd_id: settlement_deepholm_stud
+  owner_type: settlement
+  owner_name: Deepholm
+  location: Deepholm south paddocks
+  breeding_policy: Maintain one prestige war line and one courier line.
+  horses:
+  - name: Brass-Shoulder
+    breed: southblood_warhorse
+    sex: stallion
+    age: 15
+    age_class: prime
+    role: stud
+    owner_ref: Deepholm stud
+    species: horse
+    max_hp: 30
+    hp: 30
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  - name: Blue-Rush
+    breed: moor_runner
+    sex: mare
+    age: 10
+    age_class: prime
+    role: broodmare
+    owner_ref: Deepholm stud
+    species: horse
+    max_hp: 30
+    hp: 30
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  - name: Harbor-Ash
+    breed: southblood_warhorse
+    sex: mare
+    age: 12
+    age_class: prime
+    role: broodmare
+    owner_ref: Deepholm stud
+    species: horse
+    max_hp: 30
+    hp: 30
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  breeding_pairs:
+  - dam: Blue-Rush
+    sire: Brass-Shoulder
+    target_season: Y312-S4
+  foals:
+  - name: Ash-Shoulder
+    breed: southblood_warhorse
+    display_breed: Southblood warhorse
+    sex: stallion
+    age: 0
+    age_class: foal
+    role: breeding
+    mood: calm
+    condition: fresh
+    bond_rider: null
+    traits:
+    - charge_mass
+    - tall_frame
+    - ice_wise
+    tricks: []
+    bloodline_tags:
+    - strong_back
+    - charge_mass
+    inheritance:
+    - dam strong stat load -> 4
+    - sire strong stat load -> 4
+    speed: 4
+    wind: 3
+    foot: 4
+    nerve: 3
+    load: 4
+    sense: 2
+    foal_quirk: ice_wise
+    estimated_value_silver: 89
+    season_born: Y312-S2
+    sire: Brass-Shoulder
+    dam: Harbor-Ash
+    age_seasons: 2
+    species: horse
+    max_hp: 58
+    hp: 58
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  breeding_history:
+  - season: Y312-S2
+    dam: Harbor-Ash
+    sire: Brass-Shoulder
+    foal: Ash-Shoulder
+    breed: southblood_warhorse
+    estimated_value_silver: 89

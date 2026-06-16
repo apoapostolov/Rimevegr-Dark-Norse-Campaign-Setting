@@ -1,0 +1,1294 @@
+# ============================================================
+# Supplemental Supernatural Chain Events
+# Deepens the waking_barrows, thorne_curse, dalla_awakening,
+# and grave_wardens chains across Y312–Y315.
+# IDs use EVT_{year}_SUP_{seq} to avoid conflict with main files.
+# chain_order starts at 50+ to not overlap existing ordering.
+# ============================================================
+
+events:
+
+  # ============================================================
+  # YEAR 312 — STIRRING (~10 events)
+  # ============================================================
+
+  - id: "EVT_312_SUP_001"
+    title: "Dead Cattle at Kolvik Barrow"
+    year: 312
+    season: "spring"
+    day: 22
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 50
+    location: "Kolvik"
+    band_relevant: false
+    summary: "Three cows found dead beside Kolvik's minor barrow, blood pooled in their ears, no wound visible."
+    detail: |
+      A farmer discovers three of his best milkers lying in a half-circle around
+      the barrow's capstone. No predator marks. The blood has seeped from their
+      ears and nostrils, already black and crusted. The ground beneath them is
+      warm to the touch despite a cold morning. The farmer burns the carcasses
+      rather than butcher them. His neighbors say he is wasteful. He says the
+      meat smelled wrong.
+    effects:
+      fear: 1
+
+  - id: "EVT_312_SUP_002"
+    title: "Dalla's First Unwanted Vision"
+    year: 312
+    season: "spring"
+    day: 35
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 50
+    location: "Thornwall"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla collapses during a meal and describes a barrow she has never visited in exact detail."
+    detail: |
+      Mid-sentence, Dalla goes rigid. Her eyes roll white. She speaks in a low
+      monotone, describing the interior of a sealed barrow — stone shelves,
+      a bronze mirror, a corpse with braided hair holding a staff across its
+      chest. When she comes to, she remembers nothing. Voss and two others
+      heard every word. Nobody recognizes the barrow she described, but the
+      detail is too precise for invention. Dalla is shaken and refuses to
+      discuss it.
+    effects:
+      morale: -1
+
+  - id: "EVT_312_SUP_003"
+    title: "Thorne's Scars Weep in the Storm"
+    year: 312
+    season: "spring"
+    day: 42
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 50
+    location: "Ashen Reach"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: false
+    summary: "During a thunderstorm, the rune-scars on Thorne's forearms split open and leak dark fluid."
+    detail: |
+      Thorne shelters under a pine when lightning hits close. His old scars —
+      the ones cut with a cursed blade years ago — crack like dried mud and
+      weep a thin, dark liquid that is not blood. It smells of iron and wet
+      stone. The fluid stains his wrappings and will not wash out. By morning
+      the scars have sealed again, but they are wider than before. Thorne
+      tells no one.
+    effects:
+      dark_arts: 1
+
+  - id: "EVT_312_SUP_004"
+    title: "Herdsman Vanishes near Kolvik"
+    year: 312
+    season: "summer"
+    day: 68
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 51
+    location: "Kolvik"
+    band_relevant: false
+    summary: "A Kolvik herdsman goes to check the upper pasture near the barrow and does not return."
+    detail: |
+      Erling Goat-Counter left at dawn with his dog and crook. His wife
+      expected him back by midday. A search party finds the dog at the
+      barrow's edge, whining, refusing to go closer. Erling's crook lies
+      on the capstone. No drag marks, no blood, no tracks beyond his own
+      leading to the mound. The searchers do not open the barrow. They
+      nail a rowan cross to the capstone and leave. Erling is not seen again.
+    effects:
+      fear: 2
+
+  - id: "EVT_312_SUP_005"
+    title: "Rune-Stones Glow at Icebreak"
+    year: 312
+    season: "summer"
+    day: 79
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 52
+    location: "Icebreak"
+    band_relevant: false
+    summary: "The ancient rune-stones ringing Icebreak's barrow complex emit a faint blue glow after sunset."
+    detail: |
+      Fishermen returning late see the glow first — a cold blue light tracing
+      the carved lines on the standing stones above the old barrow complex.
+      It lasts from dusk until the stars are fully out, then fades. The next
+      night it happens again, slightly brighter. By the third night, children
+      dare each other to touch the stones. One boy does and says his fingers
+      went numb for an hour. The elders order the area fenced with rope and
+      salt.
+    effects:
+      dark_arts: 2
+      fear: 1
+
+  - id: "EVT_312_SUP_006"
+    title: "Grave Wardens Burn Through Silver"
+    year: 312
+    season: "autumn"
+    day: 135
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 50
+    location: "Deepholm"
+    factions:
+      - "The Grave Wardens"
+    actors:
+      - "Bryn"
+    band_relevant: true
+    summary: "Bryn reports the Grave Wardens are spending silver for warding twice as fast as last year."
+    detail: |
+      At a tavern in Deepholm, Bryn buys Voss a drink and lays out the
+      numbers. They used to re-silver their weapons once a season. Now it
+      is every six weeks. The salt they pack into barrow seals dissolves
+      faster. Iron nails they drive into lintels rust through in days rather
+      than months. Something is corroding their wards. Bryn does not say
+      the word "magic" but he implies it. He asks if the Black Axes have
+      seen anything strange. The answer is yes, though nobody says so plainly.
+    effects:
+      dark_arts: 1
+
+  - id: "EVT_312_SUP_007"
+    title: "The First Hush"
+    year: 312
+    season: "autumn"
+    day: 158
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 53
+    location: "Thornwall"
+    band_relevant: true
+    summary: "For one hour at dusk, every animal in Thornwall falls silent — no birds, dogs, or livestock make a sound."
+    detail: |
+      It begins without warning. The dogs stop barking. The goats stop
+      bleating. The ravens that roost on the hall's ridge sit motionless.
+      Even the wind seems to pause. People speak in whispers without knowing
+      why. The silence lasts exactly one hour by the sand-clock in the hall.
+      Then a rooster crows and the world snaps back. Old Gunhild calls it
+      a Hush — says her grandmother told her stories of them. They happen
+      when something underground is listening. Nobody sleeps well that night.
+    effects:
+      fear: 3
+      morale: -1
+
+  - id: "EVT_312_SUP_008"
+    title: "Dalla Dreams the Barrow Map"
+    year: 312
+    season: "autumn"
+    day: 172
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 51
+    location: "Thornwall"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla wakes screaming and draws a crude map showing barrow locations she has never been told about."
+    detail: |
+      In the dead of night Dalla wakes the camp with a scream. She grabs a
+      charred stick and scratches lines on a plank — eight dots connected
+      by curving lines, like a spider's web. She labels three of them with
+      names: Kolvik, Icebreak, Deepholm. The other five she marks with
+      symbols nobody recognizes. When calm, she says she saw them from above
+      — as if flying — and each dot pulsed like a heartbeat. The map matches
+      known barrow locations with disturbing accuracy. The unnamed dots
+      suggest barrows nobody has yet found.
+    effects:
+      dark_arts: 3
+
+  - id: "EVT_312_SUP_009"
+    title: "Thorne Senses the Kolvik Dead"
+    year: 312
+    season: "winter"
+    day: 235
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 51
+    location: "Kolvik"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: false
+    summary: "Passing Kolvik's barrow, Thorne freezes and says there are seven awake inside — he can feel them."
+    detail: |
+      Thorne is traveling with a small party along the coast road. As they
+      pass within a hundred paces of the Kolvik barrow, he stops dead. His
+      scars glow faintly under his wrappings. He says, quietly, that he
+      can feel seven presences inside — not sleeping, not fully awake, but
+      turning over like men in a fitful dream. His companions see nothing.
+      When they move past, the sensation fades. Thorne does not speak of
+      it again but that night he sits awake by the fire, staring at his
+      hands.
+    effects:
+      dark_arts: 2
+      fear: 1
+
+  - id: "EVT_312_SUP_010"
+    title: "Midwinter Barrow Frost"
+    year: 312
+    season: "winter"
+    day: 280
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 54
+    location: "Ashen Reach"
+    band_relevant: false
+    summary: "The barrow outside Ashen Reach develops a ring of black frost that does not melt even at noon."
+    detail: |
+      Snow covers the region, but around Ashen Reach's major barrow the
+      frost is different — black rather than white, forming a perfect circle
+      ten paces from the mound's base. Sunlight does not melt it. A woodsman
+      chips a piece free and holds it over a candle; it melts into water that
+      smells faintly of rot. The frost ring grows a handspan wider each week
+      through the winter. By spring it will be fifteen paces out. Dogs will
+      not cross the line.
+    effects:
+      dark_arts: 2
+      fear: 2
+
+  # ============================================================
+  # YEAR 313 — SPREADING (~15 events)
+  # ============================================================
+
+  - id: "EVT_313_SUP_001"
+    title: "Draugr Confirmed at Vargheim"
+    year: 313
+    season: "spring"
+    day: 8
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 55
+    location: "Vargheim"
+    band_relevant: false
+    summary: "A woodcutter kills a walking corpse outside Vargheim with an axe. The body is centuries old."
+    detail: |
+      The woodcutter, a large man named Torsten, finds the thing standing
+      in his clearing at dawn. Grey skin, empty eye sockets, wearing rusted
+      ring-mail that crumbles at the joints. It lurches toward him and he
+      splits its skull with his felling axe. The corpse drops but twitches
+      for an hour. Torsten drags it into the open and burns it. The bones
+      inside are brittle and ancient. This is the first confirmed draugr
+      kill in the region in living memory. The rumor spreads fast.
+    effects:
+      fear: 3
+
+  - id: "EVT_313_SUP_002"
+    title: "Dalla Hears the Barrow Hum"
+    year: 313
+    season: "spring"
+    day: 18
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 52
+    location: "Deepholm"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Near Deepholm, Dalla hears a low hum from underground that nobody else can detect."
+    detail: |
+      Walking past a field south of Deepholm, Dalla stops and presses her
+      palm to the earth. She says there is a hum — deep and constant, like
+      a throat-song from below the soil. She can feel it in her teeth. Nobody
+      else hears it. She follows the vibration for half a league and points
+      to a low rise covered in scrub. The locals say there is nothing there.
+      But when Dalla walks away, she tells a companion that the hum is
+      loudest at the rise — and that she heard the same tone in her barrow
+      dream.
+    effects:
+      dark_arts: 2
+
+  - id: "EVT_313_SUP_003"
+    title: "Grave Wardens Lose a Man"
+    year: 313
+    season: "spring"
+    day: 28
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 51
+    location: "Icebreak"
+    factions:
+      - "The Grave Wardens"
+    actors:
+      - "Bryn"
+    band_relevant: true
+    summary: "A Grave Warden is dragged into a barrow at Icebreak during a routine sealing and not recovered."
+    detail: |
+      The Wardens are re-salting the entrance to an Icebreak barrow when
+      the interior dark seems to move. A hand — grey and fast — seizes
+      Jorik by the ankle and pulls him through the opening before anyone
+      can react. They hear him scream once. Bryn orders the entrance sealed
+      immediately with stones and iron. They do not attempt recovery. It is
+      the first Warden death to the dead in three years. Bryn scratches
+      Jorik's name into his shield-boss and says nothing more.
+    effects:
+      fear: 2
+      morale: -2
+
+  - id: "EVT_313_SUP_004"
+    title: "Thorne Drawn to Ashen Reach"
+    year: 313
+    season: "spring"
+    day: 40
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 52
+    location: "Ashen Reach"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: false
+    summary: "Thorne travels to Ashen Reach without clear reason, saying the scars pull him there."
+    detail: |
+      Thorne leaves his lodgings in Kolvik at night and walks south toward
+      Ashen Reach. When asked later why, he says the scars on his forearms
+      burned and the only direction that eased the pain was south. He walks
+      for two days and arrives at Ashen Reach's barrow. Standing at the
+      black frost ring, the pain stops. He says the barrow felt like it
+      was breathing. He stayed an hour, then left. The scars did not
+      trouble him for a week afterward.
+    effects:
+      dark_arts: 3
+
+  - id: "EVT_313_SUP_005"
+    title: "Night Sightings on the Coast Road"
+    year: 313
+    season: "summer"
+    day: 65
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 56
+    location: "Stonebay Hamlet"
+    band_relevant: false
+    summary: "Multiple travelers report seeing figures on the coast road at night that vanish when approached."
+    detail: |
+      Over three weeks, five separate parties report the same thing: tall,
+      still figures standing at the roadside between Stonebay and Deepholm,
+      visible by moonlight. When riders approach, the figures are gone.
+      One merchant says he saw a face — hollow-cheeked, with dark pits
+      where eyes should be. A tinker claims a figure raised its arm and
+      pointed toward the hills before disappearing. Trade after dark on
+      the coast road drops to nothing. Merchants add surcharges for
+      daylight-only routes.
+    effects:
+      fear: 2
+
+  - id: "EVT_313_SUP_006"
+    title: "The Six-Hour Hush"
+    year: 313
+    season: "summer"
+    day: 82
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 57
+    location: "Thornwall"
+    band_relevant: true
+    summary: "A silence descends over the entire region from dusk to midnight — six times longer than the first Hush."
+    detail: |
+      Like the autumn Hush of 312 but vastly worse. This time the silence
+      covers not just Thornwall but reports come from Kolvik, Deepholm, and
+      Ashen Reach — the same hour, the same dead quiet. Animals freeze.
+      Fires burn without crackle. Voices carry strangely, as if muffled
+      by wool. It lasts six hours. During the silence, Dalla has her most
+      vivid vision yet — she sees the barrow map from her dream, and this
+      time every dot is pulsing in unison, like a shared heartbeat. When
+      the Hush ends, dogs across the region howl for an hour.
+    effects:
+      fear: 5
+      morale: -2
+      dark_arts: 3
+
+  - id: "EVT_313_SUP_007"
+    title: "Dalla Finds a Teacher"
+    year: 313
+    season: "summer"
+    day: 91
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 53
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "An old seiðr-woman in Ashen Reach recognizes Dalla's ability and offers to teach her control."
+    detail: |
+      The woman calls herself Gudrid and lives in a turf house at the edge
+      of Ashen Reach. She has been watching since the Hush. When Dalla
+      arrives seeking the source of the barrow hum, Gudrid meets her at
+      the door and says simply, "You hear it too." Gudrid explains that
+      Dalla has the seiðr-sight — rare, untrained, and dangerous without
+      discipline. She offers to teach Dalla how to control the visions
+      rather than be controlled by them. The price is unclear. Gudrid says
+      that will come later.
+    effects:
+      dark_arts: 2
+
+  - id: "EVT_313_SUP_008"
+    title: "Draugr Attack on Deepholm Farm"
+    year: 313
+    season: "summer"
+    day: 105
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 58
+    location: "Deepholm"
+    band_relevant: true
+    summary: "Three draugr attack a farmstead outside Deepholm at night, killing two people before being driven off."
+    detail: |
+      The Haraldsson farm sits half a league from Deepholm's walls. At
+      the wolf-hour, three walking dead break through the barn wall. They
+      kill the farmhand and the eldest daughter before the farmer drives
+      them back with a torch and a boar-spear. One draugr he pins to the
+      ground; it keeps moving until he severs the head. The other two
+      retreat toward the hills. This is the first multi-draugr attack on
+      a settlement. Deepholm's headman sends riders to every nearby
+      holdfast with the news.
+    effects:
+      fear: 4
+      morale: -2
+
+  - id: "EVT_313_SUP_009"
+    title: "Thorne's Curse Gives Warning"
+    year: 313
+    season: "autumn"
+    day: 130
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 53
+    location: "Thornwall"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne's scars flare hours before a draugr emerges near Thornwall, proving his ability to sense the dead."
+    detail: |
+      Thorne is in Thornwall when his scars begin to burn and weep the
+      dark fluid again. He tells the gate guards that something dead is
+      coming. They think him mad until, four hours later, a draugr stumbles
+      from the tree line and walks toward the gate. The guards kill it with
+      silver-tipped arrows. Word spreads that Thorne knew before anyone.
+      Some call it useful. Others call it proof he is tainted. Thorne says
+      nothing in his own defense. His scars are quiet again by morning.
+    effects:
+      dark_arts: 2
+      fear: 1
+
+  - id: "EVT_313_SUP_010"
+    title: "Veil-Thin: Time Slips at Icebreak"
+    year: 313
+    season: "autumn"
+    day: 148
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 59
+    location: "Icebreak"
+    band_relevant: false
+    summary: "A hunting party near Icebreak's barrows experiences time displacement — they lose two days they cannot account for."
+    detail: |
+      Four hunters enter the hills above Icebreak at dawn on a Tuesday.
+      They walk a route they have walked dozens of times. When they return,
+      the village tells them it is Thursday evening. The hunters insist
+      they were gone only hours. They have no game, no memory of sleeping,
+      and their waterskins are still full. One hunter's beard has grown
+      noticeably. Another has a cut on his hand he does not remember
+      receiving. They refuse to hunt in those hills again.
+    effects:
+      fear: 3
+      dark_arts: 2
+
+  - id: "EVT_313_SUP_011"
+    title: "Dalla's First Controlled Vision"
+    year: 313
+    season: "autumn"
+    day: 165
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 54
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Under Gudrid's guidance, Dalla enters a vision deliberately and sees the barrow network pulsing in unison."
+    detail: |
+      In Gudrid's turf house, surrounded by smoke and muttered galdr,
+      Dalla closes her eyes and reaches for the hum. For the first time
+      she enters the vision willingly. She sees the barrow web from above,
+      every node connected by lines of cold light. They pulse together —
+      not randomly, but in a rhythm, like something breathing. She sees
+      one node brighter than the rest, deep in the hills beyond Deepholm.
+      Gudrid pulls her out before she goes deeper. Dalla is exhausted but
+      calm. She says the bright node is the source. Gudrid calls it the
+      Iron Barrow and goes very quiet.
+    effects:
+      dark_arts: 4
+
+  - id: "EVT_313_SUP_012"
+    title: "Ghost Structures at Vargheim"
+    year: 313
+    season: "autumn"
+    day: 185
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 60
+    location: "Vargheim"
+    band_relevant: false
+    summary: "A longhouse that has been ruins for centuries appears intact at twilight near Vargheim, then vanishes by full dark."
+    detail: |
+      Shepherds see it first — the old foundation stones near the Vargheim
+      barrow are suddenly topped by walls, a roof, smoke rising from a
+      hole in the thatch. Figures move inside. A child runs to fetch the
+      village headman. By the time he arrives, the longhouse is fading
+      like mist burning off. Within an hour, only the old stones remain.
+      The next evening it happens again, briefer. By the third evening,
+      nothing. The headman bars anyone from going near the stones. He
+      sends word to Thornwall asking for help.
+    effects:
+      fear: 3
+      dark_arts: 3
+
+  - id: "EVT_313_SUP_013"
+    title: "Wardens Hire Silver in Bulk"
+    year: 313
+    season: "autumn"
+    day: 195
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 52
+    location: "Deepholm"
+    factions:
+      - "The Grave Wardens"
+    actors:
+      - "Bryn"
+    band_relevant: true
+    summary: "Bryn negotiates a bulk silver purchase from Deepholm's smith, spending the Wardens' entire reserve."
+    detail: |
+      The Grave Wardens are broke. Bryn lays every coin they have on the
+      smith's table in Deepholm and buys silver ingots — enough to re-coat
+      every weapon and make a hundred ward-nails. The smith asks why the
+      rush. Bryn says they are going through silver like water and if the
+      rate holds they will be unarmed by midwinter. The smith doubles his
+      price, knowing desperation when he sees it. Bryn pays without
+      haggling. On the way out he tells his second that they need contracts
+      or allies — the Wardens cannot fund this alone.
+    effects:
+      morale: -1
+
+  - id: "EVT_313_SUP_014"
+    title: "Thorne Speaks to a Draugr"
+    year: 313
+    season: "winter"
+    day: 230
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 54
+    location: "Kolvik"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: false
+    summary: "Thorne encounters a draugr that does not attack him — it speaks a single word in Old Norse before collapsing."
+    detail: |
+      On the road outside Kolvik, Thorne meets a draugr walking south.
+      His scars blaze but the thing does not lunge. It stops three paces
+      from him and opens its ruined mouth. A sound comes out — not a
+      groan but a word. Thorne hears it clearly: "Binda." To bind. Then
+      the draugr crumples as if its strings were cut and does not move
+      again. Thorne stands over it for a long time. He knows the dead
+      sense him because of the curse. This is the first time one of
+      them tried to talk. He does not know if it was a warning or a
+      command.
+    effects:
+      dark_arts: 4
+      fear: 2
+
+  - id: "EVT_313_SUP_015"
+    title: "Dalla Reads the Rune-Stones"
+    year: 313
+    season: "winter"
+    day: 260
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 55
+    location: "Icebreak"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla touches the glowing rune-stones at Icebreak and reads their inscription — a galdr binding formula."
+    detail: |
+      Gudrid told her not to go alone. Dalla goes anyway. At Icebreak's
+      standing stones she lays her palms on the carvings and the blue
+      glow flares bright. The runes become legible to her — not as letters
+      but as meaning, poured directly into her mind. They are a binding
+      formula: instructions for containing what sleeps in the barrows. But
+      the binding is old, cracked, and failing. She understands now that
+      the glow is not the runes waking up — it is the runes dying. When
+      she lifts her hands she is shaking. She returns to Gudrid and for
+      the first time asks to learn galdr, not just seiðr-sight.
+    effects:
+      dark_arts: 5
+
+  # ============================================================
+  # YEAR 314 — CRISIS (~15 events)
+  # ============================================================
+
+  - id: "EVT_314_SUP_001"
+    title: "Draugr Raid on Kolvik"
+    year: 314
+    season: "spring"
+    day: 5
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 61
+    location: "Kolvik"
+    band_relevant: true
+    summary: "A coordinated group of eight draugr attacks Kolvik's stockade at night — the first organized assault."
+    detail: |
+      Not wandering dead but a formation. Eight draugr approach from different
+      directions at the same hour, hitting the stockade at three points. They
+      batter through a weak section of fence and kill five defenders before
+      the garrison rallies. A silver-armed militia man cuts down two. The
+      rest withdraw — withdraw, not flee — at a pace that suggests direction.
+      Kolvik's headman sends desperate word to every band and lord within
+      three days' ride. The bounty for barrow-clearing doubles overnight.
+    effects:
+      fear: 5
+      morale: -3
+
+  - id: "EVT_314_SUP_002"
+    title: "Wardens Overwhelmed at Icebreak"
+    year: 314
+    season: "spring"
+    day: 15
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 53
+    location: "Icebreak"
+    factions:
+      - "The Grave Wardens"
+    actors:
+      - "Bryn"
+    band_relevant: true
+    summary: "The Grave Wardens attempt to re-seal Icebreak's barrow complex and are driven back with three wounded."
+    detail: |
+      Bryn leads twelve Wardens into the Icebreak complex with silver
+      weapons and fresh salt. They make it through the first two chambers
+      before the dead come — not one or two but a press of corpses filling
+      the tunnel. The Wardens fight a retreating action, losing ground
+      by the yard. Three men take wounds. One has his arm broken by a
+      draugr that grips like a vice. They seal the entrance with rubble
+      and iron but Bryn knows it will not hold. He tells anyone who will
+      listen: the Wardens cannot contain this alone. They need war-bands.
+    effects:
+      fear: 3
+      morale: -2
+
+  - id: "EVT_314_SUP_003"
+    title: "Dalla Learns Galdr-Speech"
+    year: 314
+    season: "spring"
+    day: 25
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 56
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla speaks her first galdr word and a ward-stone near Gudrid's house flares to life briefly."
+    detail: |
+      Gudrid has been teaching Dalla the old syllables for weeks — sounds
+      that are not words in any living tongue but carry intent. Dalla
+      speaks one, correctly stressed, with feeling behind it. A flat stone
+      near the door that bears a faded rune-mark suddenly glows blue-white
+      for three heartbeats, then goes dark. Gudrid stares at it. She says
+      she has been trying to light that stone for thirty years. Dalla is
+      frightened. Gudrid is frightened too, but for different reasons. She
+      says Dalla is not just a seer — she is a galdr-speaker, and there
+      have not been any in this region for generations.
+    effects:
+      dark_arts: 5
+
+  - id: "EVT_314_SUP_004"
+    title: "Settlements Offer Premium for Protection"
+    year: 314
+    season: "spring"
+    day: 38
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 62
+    location: "Deepholm"
+    band_relevant: true
+    summary: "Deepholm, Kolvik, and Thornwall jointly offer triple rates for any band willing to patrol barrow approaches."
+    detail: |
+      The three headmen meet at Deepholm and pool resources. They cannot
+      afford to hire enough fighters at normal rates, so they triple the
+      bounty and add provisions. Any band that camps within sight of a
+      known barrow and holds the perimeter earns three silver per week
+      plus food and firewood. Several small bands take the contracts. The
+      Black Axes receive a personal appeal. The headmen are scared — this
+      is not bandits or wolves, and their militias are not equipped for
+      the dead.
+    effects:
+      morale: 1
+
+  - id: "EVT_314_SUP_005"
+    title: "Dark Arts Practitioners Emerge"
+    year: 314
+    season: "summer"
+    day: 70
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 63
+    location: "Ashen Reach"
+    band_relevant: false
+    summary: "Three self-proclaimed dark arts practitioners arrive in Ashen Reach, offering services for steep fees."
+    detail: |
+      They come separately within a week of each other. A gaunt man with
+      tattooed hands. A woman carrying a staff wrapped in raven feathers.
+      A youth with clouded eyes who claims to see the dead. Each offers
+      to ward homes, bless weapons, or divine the barrows' intent — for
+      silver. Their abilities range from genuine to fraudulent, but the
+      terrified populace pays regardless. Gudrid watches them with contempt
+      and tells Dalla that two are charlatans and one is dangerous. She
+      does not say which is which.
+    effects:
+      dark_arts: 3
+
+  - id: "EVT_314_SUP_006"
+    title: "Thorne's Curse Deepens"
+    year: 314
+    season: "summer"
+    day: 78
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 55
+    location: "Thornwall"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne's rune-scars have spread to his chest, and he can now sense draugr at half a league's distance."
+    detail: |
+      The scars are growing. What began as lines on his forearms now branches
+      across his shoulders and onto his ribs — dark, raised ridges that
+      pulse with his heartbeat. His ability to sense the dead has sharpened
+      alarmingly. He can tell direction, distance, and rough numbers. Bands
+      seek him as a scout. But there is a cost: the dead can sense him too.
+      Draugr that would wander aimlessly now turn toward him when he is
+      near. He is a beacon. A weapon and a liability in the same body.
+    effects:
+      dark_arts: 4
+      fear: 1
+
+  - id: "EVT_314_SUP_007"
+    title: "The Iron Barrow Groans"
+    year: 314
+    season: "summer"
+    day: 95
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 64
+    location: "Deepholm"
+    band_relevant: true
+    summary: "A deep, grinding sound emanates from the hill above Deepholm where the Iron Barrow lies buried."
+    detail: |
+      It begins at noon, which is wrong — supernatural events happen at
+      night, not in broad daylight. A low groan, like stone moving against
+      stone, rolls from the hillside above Deepholm. It lasts ten minutes,
+      stops, then repeats an hour later. The ground trembles faintly.
+      Cracks appear in the hillside soil. Deepholm's headman evacuates the
+      nearest farms. When silence returns, scouts find that the sealed
+      entrance to the Iron Barrow — a massive lintel stone that took
+      twenty men to place generations ago — has shifted three inches.
+      Something inside is pushing.
+    effects:
+      fear: 5
+      dark_arts: 4
+      morale: -3
+
+  - id: "EVT_314_SUP_008"
+    title: "Pale Widow's Barrow Interest"
+    year: 314
+    season: "summer"
+    day: 110
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 65
+    location: "Ashen Reach"
+    actors:
+      - "The Pale Widow"
+    band_relevant: true
+    summary: "The Pale Widow is seen entering Ashen Reach's barrow alone at night and emerging unharmed at dawn."
+    detail: |
+      A Warden on watch sees her — unmistakable in her white furs — walk
+      past the black frost ring without hesitation, press her palm to the
+      barrow's sealed entrance, and step through as if the stone were not
+      there. He watches all night. At first light she emerges, brushing
+      dust from her sleeves. She sees the Warden, smiles, and walks away
+      toward town. She carries a small object wrapped in cloth. Bryn
+      demands she be confronted. The headman refuses — the Pale Widow
+      has too many connections. But the question burns: what is she
+      trading with, and what did she take out?
+    effects:
+      dark_arts: 5
+      fear: 2
+
+  - id: "EVT_314_SUP_009"
+    title: "Dalla Sees the Galdr-Forge"
+    year: 314
+    season: "autumn"
+    day: 125
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 57
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "In a deep vision, Dalla sees a chamber inside the Iron Barrow containing a stone forge that hums with galdr power."
+    detail: |
+      Gudrid guides her deeper than before. Dalla's seiðr-sight plunges
+      through earth and stone, following the lines of the barrow network
+      to their brightest node. Inside the Iron Barrow she sees a vast
+      chamber carved from living rock. At its center sits a stone anvil
+      surrounded by rune-covered pillars. The anvil hums — the same tone
+      she first heard in the fields outside Deepholm, but a hundred times
+      louder. Tools lie on the floor as if the smith stepped away moments
+      ago. The air shimmers with unspent galdr. This is what is waking
+      the barrows: the forge is active, and its power is bleeding through
+      the earth into every connected burial site. Dalla surfaces gasping.
+      She knows the source now. But she has no idea how to stop it.
+    effects:
+      dark_arts: 6
+
+  - id: "EVT_314_SUP_010"
+    title: "Organized Draugr Besiege Thornwall"
+    year: 314
+    season: "autumn"
+    day: 142
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 66
+    location: "Thornwall"
+    band_relevant: true
+    summary: "Twenty draugr approach Thornwall in formation and hold position outside bowshot for three hours before withdrawing."
+    detail: |
+      Not an attack — a show of force. Twenty walking dead arranged in
+      a rough line, standing motionless at the edge of the cleared ground
+      around Thornwall. The garrison mans the walls but the draugr do not
+      advance into arrow range. They simply stand. Watching. Then, as if
+      given a signal, they turn and walk north in file toward the hills.
+      This is the most disturbing event yet. Mindless dead do not form
+      lines. They do not hold position. And they do not withdraw on
+      command. Something is directing them. The garrison commander
+      doubles the night watch and sends for every available mercenary.
+    effects:
+      fear: 6
+      morale: -3
+
+  - id: "EVT_314_SUP_011"
+    title: "Thorne Resists the Pull"
+    year: 314
+    season: "autumn"
+    day: 160
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 56
+    location: "Deepholm"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "The Iron Barrow calls to Thorne through his scars. He collapses fighting the compulsion to walk toward it."
+    detail: |
+      Near Deepholm, Thorne feels the pull again — but immensely stronger
+      than the draw to Ashen Reach in 313. Every scar on his body burns.
+      His feet want to walk north toward the hill. He fights it, digging
+      his fingers into the earth, teeth clenched. His companions hold him
+      down. The pull lasts an hour. When it fades, Thorne is drenched in
+      sweat and the dark fluid has soaked through every bandage. He says
+      the barrow wants him inside. He says he knows, with certainty, that
+      if he enters the Iron Barrow his curse will either break or consume
+      him entirely. There is no middle ground.
+    effects:
+      dark_arts: 5
+      fear: 2
+
+  - id: "EVT_314_SUP_012"
+    title: "Gudrid's Warning"
+    year: 314
+    season: "autumn"
+    day: 178
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 58
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Gudrid tells Dalla the forge cannot be sealed from outside — a galdr-speaker must enter the Iron Barrow to shut it down."
+    detail: |
+      Gudrid has been researching since Dalla described the vision. She
+      has old texts — fragments of sagas, rune-annotated hide scraps passed
+      down from teacher to teacher. The galdr-forge was built by the
+      ancients to bind the dead in service. It was sealed when the binding
+      went wrong. Now it has reactivated — whether by accident, decay of
+      the wards, or someone's deliberate action. The only way to shut it
+      down is from the inside: a galdr-speaker must stand at the forge and
+      speak the unbinding. Gudrid is too old. Dalla is the only candidate.
+      Gudrid says this flatly, without comfort.
+    effects:
+      dark_arts: 4
+
+  - id: "EVT_314_SUP_013"
+    title: "Grave Wardens Make Alliance with Black Axes"
+    year: 314
+    season: "autumn"
+    day: 195
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 54
+    location: "Thornwall"
+    factions:
+      - "The Grave Wardens"
+    actors:
+      - "Bryn"
+    band_relevant: true
+    summary: "Bryn formally proposes a joint operation with the Black Axes to assault the Iron Barrow."
+    detail: |
+      In Thornwall's hall, Bryn lays out everything the Wardens know:
+      the barrow network, the escalation pattern, the organized dead,
+      the Iron Barrow as the source. He says the Wardens can navigate
+      the barrows but do not have the numbers to fight through to the
+      Iron Barrow's heart. They need a war-band. He offers the Wardens'
+      silver, silver weapons, and barrow expertise in exchange for the
+      Black Axes' combat strength. It is the first time the Wardens
+      have asked for open military alliance. The situation is that dire.
+    effects:
+      morale: 2
+
+  - id: "EVT_314_SUP_014"
+    title: "Pale Widow's Trade Revealed"
+    year: 314
+    season: "winter"
+    day: 220
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 67
+    location: "Ashen Reach"
+    actors:
+      - "The Pale Widow"
+    band_relevant: true
+    summary: "A captured associate of the Pale Widow confesses she has been recovering artifacts from barrows and selling them."
+    detail: |
+      A thief caught breaking into a Deepholm storehouse carries a
+      pouch of rune-inscribed bone fragments. Under pressure he admits
+      the Pale Widow hired him to deliver them to a buyer in the south.
+      She has been entering barrows for months — not to worship or
+      commune with the dead but to loot. The bone fragments are galdr
+      components, worth enormous sums to the right buyers. Whether her
+      looting caused the awakening or merely exploited it is unclear.
+      But she has been profiting from the crisis while others die.
+      Bryn wants her arrested. The headmen want proof. The Widow
+      has already vanished from her usual haunts.
+    effects:
+      dark_arts: 3
+      fear: 1
+
+  - id: "EVT_314_SUP_015"
+    title: "Iron Barrow Entrance Unseals"
+    year: 314
+    season: "winter"
+    day: 250
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 68
+    location: "Deepholm"
+    band_relevant: true
+    summary: "The massive lintel stone at the Iron Barrow's entrance cracks and falls inward, leaving the barrow open."
+    detail: |
+      No one is there to see it happen. A Deepholm patrol finds the
+      entrance in the morning — the lintel stone that held for centuries
+      has split down the middle and collapsed into the passage. Cold air
+      flows from the opening, carrying the hum that Dalla has described.
+      Anyone standing near the entrance feels the vibration in their
+      bones. The patrol does not enter. They build a fire at the mouth
+      and post a guard. Within a day, Deepholm, Thornwall, and every
+      allied band receives word: the Iron Barrow is open. Whatever is
+      inside is no longer contained. The clock is running.
+    effects:
+      fear: 6
+      dark_arts: 5
+      morale: -4
+
+  # ============================================================
+  # YEAR 315 — CLIMAX (~10 events)
+  # ============================================================
+
+  - id: "EVT_315_SUP_001"
+    title: "Draugr Surge across the Region"
+    year: 315
+    season: "spring"
+    day: 3
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 69
+    location: "Thornwall"
+    band_relevant: true
+    summary: "With the Iron Barrow open, draugr activity triples — every known barrow is now disgorging dead."
+    detail: |
+      The open Iron Barrow acts like a bellows on embers. Every connected
+      barrow in the network surges. Kolvik, Icebreak, Vargheim, Ashen
+      Reach — all report nightly draugr emergence. The walking dead are
+      not yet an army, but they are no longer isolated wanderers. Patrols
+      encounter groups of five to fifteen. Farms within half a league
+      of any barrow are abandoned. The population contracts into walled
+      settlements. Trade between towns requires armed escort. The region
+      is under siege by its own buried dead.
+    effects:
+      fear: 7
+      morale: -4
+
+  - id: "EVT_315_SUP_002"
+    title: "Dalla Prepares for the Iron Barrow"
+    year: 315
+    season: "spring"
+    day: 15
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 59
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla begins intensive galdr-training with Gudrid, memorizing the unbinding formula for the forge."
+    detail: |
+      There is no more time for gradual learning. Gudrid drills Dalla
+      on the unbinding galdr — a sequence of seventeen syllables that
+      must be spoken in exact rhythm at the forge-anvil. One mistake
+      and the galdr either does nothing or backfires. Dalla practices
+      until she speaks the words in her sleep. She is terrified. She
+      has never been inside a barrow. She has never faced a draugr.
+      But she is the only person alive who can speak galdr with
+      enough power to reach the forge. Gudrid gives her a rune-carved
+      bone amulet that she says will buy her sixty heartbeats of
+      protection inside the barrow. After that, Dalla is on her own.
+    effects:
+      dark_arts: 5
+
+  - id: "EVT_315_SUP_003"
+    title: "Thorne Accepts His Role"
+    year: 315
+    season: "spring"
+    day: 25
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 57
+    location: "Deepholm"
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Thorne volunteers to lead the way into the Iron Barrow, using his curse to navigate past the dead."
+    detail: |
+      At the war council in Deepholm, Thorne speaks for the first time
+      about his curse in full. He shows the network of scars — now
+      covering his torso, arms, and neck. He explains that the dead
+      sense him but also hesitate around him, as if confused by what
+      he is. He believes he can walk among them long enough to cut a
+      path to the forge chamber. The curse pulls him there anyway —
+      fighting it costs more than following it. He says it plainly:
+      the barrow wants him inside. He might as well go on his own
+      terms. The room is silent. Bryn nods once.
+    effects:
+      dark_arts: 3
+      morale: 1
+
+  - id: "EVT_315_SUP_004"
+    title: "Joint Force Assembled"
+    year: 315
+    season: "spring"
+    day: 35
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 55
+    location: "Deepholm"
+    factions:
+      - "The Grave Wardens"
+    actors:
+      - "Bryn"
+    band_relevant: true
+    summary: "Grave Wardens, Black Axes, and volunteers from three settlements form the Iron Barrow expedition."
+    detail: |
+      The force numbers forty-three: twelve Grave Wardens with silver
+      weapons, the Black Axes core, and volunteers from Deepholm,
+      Thornwall, and Kolvik. Bryn commands the Warden contingent.
+      Equipment is distributed — silvered blades, salt pouches, torches
+      soaked in tallow and rowan oil. Dalla carries nothing but Gudrid's
+      amulet and the words in her head. Thorne wraps his scarred arms
+      and takes point. It is the largest armed expedition into a barrow
+      in living memory. No one pretends they all expect to come back.
+    effects:
+      morale: 2
+
+  - id: "EVT_315_SUP_005"
+    title: "Descent into the Iron Barrow"
+    year: 315
+    season: "summer"
+    day: 62
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 70
+    location: "Deepholm"
+    actors:
+      - "Thorne Ash-Born"
+      - "Dalla"
+      - "Bryn"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "The joint expedition enters the Iron Barrow. Thorne navigates the dead tunnels. Fighting is immediate."
+    detail: |
+      They enter at dawn with torches and silver. The passage drops
+      steeply. The hum is audible to everyone now — a deep vibration
+      that loosens teeth and blurs vision. Thorne's scars glow in the
+      dark, casting grey light on the walls. The first draugr come
+      within two hundred paces. They fight through three chambers,
+      losing two volunteers and a Warden. The dead are thick here,
+      densely packed, and they fight with purpose. Thorne walks ahead
+      and the draugr part slightly around him, buying seconds that
+      the fighters use to cut forward. It is brutal, close, dark work.
+    effects:
+      dark_arts: 6
+      fear: 5
+      morale: -3
+
+  - id: "EVT_315_SUP_006"
+    title: "The Forge Chamber"
+    year: 315
+    season: "summer"
+    day: 63
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 60
+    location: "Deepholm"
+    actors:
+      - "Dalla"
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Dalla and Thorne reach the galdr-forge at the barrow's heart. The forge is active and ancient."
+    detail: |
+      Past the last guardian dead, through a passage too narrow for
+      formation fighting, Dalla and Thorne enter the forge chamber.
+      It is exactly as Dalla saw in her vision — the rune-pillars,
+      the stone anvil, the shimmering air. The hum is deafening here.
+      Tools lie scattered as if the ancient smith left mid-work.
+      On the anvil sits a half-finished rune-blade, still glowing.
+      Whatever activated the forge set it to resume its last task —
+      and the power required is what has been waking every barrow
+      for leagues. Dalla faces the anvil. Thorne stands at her back.
+      His scars are bleeding freely and the draugr in the tunnels
+      behind them are pressing forward.
+    effects:
+      dark_arts: 8
+
+  - id: "EVT_315_SUP_007"
+    title: "The Unbinding"
+    year: 315
+    season: "summer"
+    day: 63
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 61
+    location: "Deepholm"
+    actors:
+      - "Dalla"
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "Dalla speaks the unbinding galdr. The forge resists. Thorne's curse becomes the conduit that breaks it."
+    detail: |
+      Dalla speaks the seventeen syllables. The forge flares. The rune-
+      pillars scream — a sound of tearing metal. But the forge does not
+      stop. The galdr is not enough. The binding is too deep, too old.
+      Dalla falters. Then Thorne steps forward and presses his scarred
+      hands to the anvil. The curse — the rune-marks cut into his flesh
+      years ago — are the same language as the forge. His body becomes
+      the bridge between Dalla's galdr and the forge's heart. Power
+      flows through him. The scars split open entirely. Dalla speaks
+      the words again and this time the forge hears. The hum cracks.
+      The glow dies pillar by pillar. The half-forged blade on the
+      anvil goes dark and cold.
+    effects:
+      dark_arts: 10
+
+  - id: "EVT_315_SUP_008"
+    title: "The Cost"
+    year: 315
+    season: "summer"
+    day: 64
+    category: "supernatural"
+    chain: "thorne_curse"
+    chain_order: 58
+    location: "Deepholm"
+    actors:
+      - "Thorne Ash-Born"
+      - "Dalla"
+    band_relevant: true
+    summary: "Thorne survives but his scars have turned white and inert. Dalla's hair is streaked grey. The forge is silent."
+    detail: |
+      They find them in the chamber: Dalla on her knees, trembling,
+      barely conscious. Thorne slumped against the dead anvil, breathing.
+      His scars — the dark, weeping rune-marks that have defined him
+      for years — are white. Smooth. Silent. The curse is gone, burned
+      out in the forge's collapse. He can no longer sense the dead. He
+      looks at his hands and the expression on his face is unreadable —
+      relief and loss in equal measure. Dalla's black hair is streaked
+      with grey at the temples. She is twenty-three years old. Gudrid's
+      amulet is ash in her pocket. They are carried out by the survivors.
+    effects:
+      dark_arts: -5
+
+  - id: "EVT_315_SUP_009"
+    title: "The Dead Lie Down"
+    year: 315
+    season: "summer"
+    day: 70
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 71
+    location: "Thornwall"
+    band_relevant: true
+    summary: "Across the region, draugr activity ceases within a week of the forge's deactivation."
+    detail: |
+      Reports come in over days. At Kolvik, a draugr mid-stride simply
+      collapses and does not move. At Vargheim, the barrow's green glow
+      dies. At Icebreak, the rune-stones go dark. The Wardens find
+      draugr in the tunnels lying in their niches as if they had never
+      risen. The hum is gone. The silence that follows is not the Hush
+      — it is natural quiet. Animals return to pastures near barrows.
+      The black frost ring at Ashen Reach melts in a single day. It is
+      over. The region exhales. But nobody forgets what came out of
+      the earth, and nobody will look at a barrow mound the same way.
+    effects:
+      fear: -5
+      morale: 5
+
+  - id: "EVT_315_SUP_010"
+    title: "Dalla's Choice"
+    year: 315
+    season: "autumn"
+    day: 125
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 62
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla decides whether to continue studying galdr with Gudrid or return to the band — the knowledge is dangerous."
+    detail: |
+      The forge is dead but Dalla's ability is not. She can still hear
+      echoes of the barrow network — faint, dormant, but present. Gudrid
+      tells her that galdr knowledge does not go away; it can only be
+      deepened or neglected. Neglect is dangerous — uncontrolled power
+      finds its own outlets. Dalla must choose: stay in Ashen Reach and
+      train properly, becoming something the region has not seen in
+      generations, or return to the band and try to forget. Either path
+      has costs. She sits by the dead forge's collapsed entrance and
+      thinks for a long time.
+    effects:
+      dark_arts: 3

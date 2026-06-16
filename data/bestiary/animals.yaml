@@ -1,0 +1,907 @@
+enemies:
+  # ==========================================================================
+  # WOLVES (ANI_WOLF_01 through ANI_WOLF_03)
+  # ==========================================================================
+
+  - id: "ANI_WOLF_01"
+    name: "Timber Wolf"
+    category: "animal"
+    subcategory: "predator"
+    tier: 2
+    description: "A lean grey wolf, ribs faintly visible through coarse winter fur. Yellow eyes low to the ground, watching. The ears swivel independently. It does not growl — the growl comes from the ones you have not seen yet."
+    stats:
+      MIG: 4
+      NIM: 6
+      TOU: 4
+      WIT: 3
+      WIL: 3
+      WYR: 1
+    hp: 8
+    skills:
+      - name: "Brawl"
+        rank: 3
+      - name: "Track"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Jaws"
+          type: "natural"
+          speed: 4
+          base_damage: 4
+      armor: {}
+    tactics: "Pack flanking. Two wolves circle to draw attention. The third lunges from behind. They isolate the smallest or most injured target and rotate bites."
+    morale_break: "Flees if 2+ pack members killed or wounded."
+    group_size: "3-8"
+    abilities:
+      - "Pack Tactics: +1 to hit per adjacent packmate (max +3)"
+      - "Hamstring: on critical hit, target speed halved for 1d6 rounds"
+    resistances: []
+    weaknesses: ["fire", "loud_noise"]
+    sim_traits: ["pack_tactics", "hamstring"]
+    encounter_conditions:
+      terrain: ["forest", "moor", "mountain"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: ["wolf_pelt", "wolf_teeth"]
+    image_prompt: |
+      A lean grey wolf standing at the edge of a dark pine forest, ribs
+      showing through winter fur. Yellow eyes catch low light. Behind it,
+      three more shapes in the undergrowth, barely visible. Snow on the
+      ground, blue-grey dusk. Breath visible in the cold air.
+
+  - id: "ANI_WOLF_02"
+    name: "Lone Wolf"
+    category: "animal"
+    subcategory: "predator"
+    tier: 1
+    description: "An old wolf, one ear torn to a stump, muzzle scarred white. Expelled from the pack or the last of it. Ribs like a washboard. It circles camps at night, testing courage, waiting for someone to fall asleep on watch."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 3
+      WIT: 3
+      WIL: 2
+      WYR: 1
+    hp: 5
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Stealth"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Jaws"
+          type: "natural"
+          speed: 3
+          base_damage: 3
+      armor: {}
+    tactics: "Ambush only. Approaches sleeping or incapacitated targets. Flees from any coordinated response. Will steal food if combat seems too risky."
+    morale_break: "Flees after taking any wound."
+    group_size: "1"
+    abilities:
+      - "Scavenger's Patience: can track a group for days without being noticed (Stealth vs group's best WIT)"
+    resistances: []
+    weaknesses: ["fire", "loud_noise", "outnumbered"]
+    sim_traits: ["scavenger"]
+    encounter_conditions:
+      terrain: ["forest", "moor", "road"]
+      season: ["autumn", "winter", "spring"]
+    loot:
+      silver_range: [0, 0]
+      items: ["mangy_pelt", "wolf_teeth"]
+    image_prompt: |
+      A scarred old wolf with one torn ear, standing alone on a frost-covered
+      ridge at night. Thin, ribs visible. Muzzle scarred white. Single pair
+      of yellow eyes catching distant firelight from a camp below. Starless
+      overcast sky.
+
+  - id: "ANI_WOLF_03"
+    name: "Winter-Starved Pack"
+    category: "animal"
+    subcategory: "predator"
+    tier: 3
+    description: "Twelve wolves moving as one body through the snow, silent except for the crunch underfoot. Deep winter has killed the deer and the rabbits both. Their fear of fire is gone. Their fear of men is gone. Nothing left in those yellow eyes but hunger."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 4
+      WIL: 5
+      WYR: 1
+    hp: 14
+    skills:
+      - name: "Brawl"
+        rank: 4
+      - name: "Track"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Jaws"
+          type: "natural"
+          speed: 5
+          base_damage: 5
+      armor: {}
+    tactics: "Surrounds camp at night. Attacks from all directions simultaneously. Will pursue fleeing targets for miles. No hesitation — charges into firelight."
+    morale_break: "Flees only if half the pack killed. Fire does NOT deter."
+    group_size: "8-15"
+    abilities:
+      - "Pack Tactics: +1 to hit per adjacent packmate (max +3)"
+      - "Starvation Frenzy: ignores first wound penalty"
+      - "Relentless Pursuit: group can track and chase at full speed for hours"
+    resistances: ["fear", "cold"]
+    weaknesses: ["loud_noise"]
+    sim_traits: ["pack_tactics", "starvation_frenzy"]
+    encounter_conditions:
+      terrain: ["forest", "moor", "mountain", "road"]
+      season: ["winter"]
+    loot:
+      silver_range: [0, 0]
+      items: ["wolf_pelt", "wolf_teeth", "wolf_meat"]
+    image_prompt: |
+      A massive pack of wolves pouring out of a dark treeline onto a snowy
+      road. At least a dozen, moving low and fast. The lead wolf is gaunt,
+      every rib defined. Snow kicked up behind them. A distant campfire
+      reflects in dozens of yellow eyes. Deep winter, heavy overcast.
+
+  # ==========================================================================
+  # BEARS (ANI_BEAR_01 through ANI_BEAR_02)
+  # ==========================================================================
+
+  - id: "ANI_BEAR_01"
+    name: "Brown Bear"
+    category: "animal"
+    subcategory: "predator"
+    tier: 3
+    description: "Five hundred pounds of muscle and bad temper standing on its hind legs, forepaws spread wide enough to palm a man's skull. The fur is dark brown, matted with burrs. It huffs — a sound you feel in your chest before you hear it. Not hunting. Warning."
+    stats:
+      MIG: 8
+      NIM: 3
+      TOU: 7
+      WIT: 2
+      WIL: 4
+      WYR: 1
+    hp: 16
+    skills:
+      - name: "Brawl"
+        rank: 4
+      - name: "Intimidation"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Claws"
+          type: "natural"
+          speed: 3
+          base_damage: 6
+        - name: "Bite"
+          type: "natural"
+          speed: 2
+          base_damage: 7
+      armor:
+        torso: "Thick Hide (AR 2)"
+    tactics: "Stands ground and roars. Charges if approached within 20 paces. Mauls with alternating claw swipes. Will break off if given clear retreat path."
+    morale_break: "Withdraws if seriously wounded (below half HP) and given space to retreat."
+    group_size: "1"
+    abilities:
+      - "Terrifying Charge: first melee attack after charge gets +2 damage"
+      - "Thick Hide: natural armor 2 on torso"
+      - "Maul: on successful grapple, automatic bite damage each round"
+    resistances: ["cold", "pain"]
+    weaknesses: ["fire", "spear_set"]
+    sim_traits: ["terrifying_charge", "maul_bite", "thick_hide_2"]
+    encounter_conditions:
+      terrain: ["forest", "mountain", "river"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [0, 0]
+      items: ["bear_pelt", "bear_claws", "bear_fat", "bear_meat"]
+    image_prompt: |
+      A massive brown bear rearing on hind legs in a forest clearing, forepaws
+      spread wide. Dark matted fur with burrs. Mouth open showing yellowed
+      teeth. Dappled forest light, birch trees behind. Ground torn up from
+      previous digging. Late summer, warm tones.
+
+  - id: "ANI_BEAR_02"
+    name: "Cave Bear"
+    category: "animal"
+    subcategory: "predator"
+    tier: 4
+    description: "Bigger than any bear has a right to be. Shoulders brush the cave ceiling. The skull is broad as a table, scarred from decades of territorial fights. Bones crunch under its feet — elk, deer, and some that look human. It has not left this den in years. Everything that enters becomes food."
+    stats:
+      MIG: 10
+      NIM: 2
+      TOU: 9
+      WIT: 2
+      WIL: 5
+      WYR: 1
+    hp: 22
+    skills:
+      - name: "Brawl"
+        rank: 5
+      - name: "Intimidation"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Massive Claws"
+          type: "natural"
+          speed: 3
+          base_damage: 8
+        - name: "Crushing Bite"
+          type: "natural"
+          speed: 2
+          base_damage: 9
+      armor:
+        torso: "Dense Hide (AR 3)"
+        head: "Thick Skull (AR 2)"
+    tactics: "Blocks cave entrance. Swipes at anything in reach. In open ground, charges and attempts to pin under its weight. Does not chase far from den."
+    morale_break: "Will not flee from its den. Fights to the death within it. Retreats into den if wounded in open ground."
+    group_size: "1"
+    abilities:
+      - "Den Fighter: +2 to all attacks within its lair"
+      - "Crushing Weight: on successful grapple, deals 4 automatic damage per round from body weight"
+      - "Thick Hide: natural armor 3 on torso, 2 on head"
+      - "Territorial Rage: below half HP, gains +1 to all attack rolls"
+    resistances: ["cold", "pain", "fear"]
+    weaknesses: ["fire", "spear_set", "lured_from_den"]
+    sim_traits:
+      [
+        "den_fighter",
+        "maul_bite",
+        "crushing_weight",
+        "territorial_rage",
+        "thick_hide_3",
+      ]
+    encounter_conditions:
+      terrain: ["cave", "barrow", "mountain"]
+      season: ["winter", "spring"]
+    loot:
+      silver_range: [0, 5]
+      items:
+        ["cave_bear_pelt", "cave_bear_skull", "bear_fat", "barrow_detritus"]
+    image_prompt: |
+      An enormous bear filling a cave entrance, skull impossibly broad,
+      scarred from old fights. Bones scattered on the cave floor — elk
+      antlers, smaller skulls. Eyes reflecting torchlight from deep sockets.
+      Cave walls glistening with moisture. Darkness behind the shape. Heavy
+      breath visible in cold air.
+
+  # ==========================================================================
+  # OTHER PREDATORS (ANI_PRED_01 through ANI_PRED_03)
+  # ==========================================================================
+
+  - id: "ANI_PRED_01"
+    name: "Wild Boar"
+    category: "animal"
+    subcategory: "predator"
+    tier: 2
+    description: "Low to the ground, bristle-backed, built like a battering ram wrapped in leather. The tusks are yellowed and curved upward, sharp enough to open a thigh to the bone. Small eyes, absolutely furious. It was here first."
+    stats:
+      MIG: 6
+      NIM: 4
+      TOU: 6
+      WIT: 2
+      WIL: 4
+      WYR: 1
+    hp: 10
+    skills:
+      - name: "Brawl"
+        rank: 3
+      - name: "Intimidation"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Tusks"
+          type: "natural"
+          speed: 4
+          base_damage: 5
+      armor:
+        torso: "Bristle Hide (AR 1)"
+    tactics: "Lowers head and charges in a straight line. Gores with tusks on impact. Circles and charges again. Does not stop until threat is down or it is."
+    morale_break: "Rarely flees. Breaks only if badly wounded and unblocked path exists."
+    group_size: "1-2"
+    abilities:
+      - "Gore Charge: charge attack deals +3 damage and knocks target prone on critical"
+      - "Low Profile: -1 to hit with ranged attacks against the boar"
+      - "Stubborn: ignores first morale check"
+    resistances: ["pain"]
+    weaknesses: ["spear_set", "pit_trap"]
+    encounter_conditions:
+      terrain: ["forest", "thicket", "farmland"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [0, 0]
+      items: ["boar_hide", "boar_tusks", "boar_meat"]
+    image_prompt: |
+      A bristle-backed wild boar in a forest thicket, head low, yellowed
+      tusks curved upward. Small angry eyes. Mud caked on the flanks. Broken
+      branches around it from previous charges. Dappled forest floor, ferns
+      and fallen logs. Aggressive posture, weight shifted forward.
+
+  - id: "ANI_PRED_02"
+    name: "Territorial Elk"
+    category: "animal"
+    subcategory: "predator"
+    tier: 2
+    description: "A bull elk in full rut, antlers spanning six feet of bone tines. Neck swollen, eyes bloodshot. It scrapes the ground with a forehoof the size of a dinner plate. Every tree in fifty paces is scarred from antler-raking. It does not see you as a predator. It sees you as a rival."
+    stats:
+      MIG: 7
+      NIM: 4
+      TOU: 6
+      WIT: 2
+      WIL: 3
+      WYR: 1
+    hp: 12
+    skills:
+      - name: "Brawl"
+        rank: 3
+      - name: "Intimidation"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Antlers"
+          type: "natural"
+          speed: 3
+          base_damage: 6
+        - name: "Hooves"
+          type: "natural"
+          speed: 4
+          base_damage: 4
+      armor:
+        torso: "Thick Hide (AR 1)"
+    tactics: "Charges head-on with antlers lowered. Attempts to catch target in antler tines and toss. Stomps fallen targets with hooves. Disengages if intruder retreats beyond territory."
+    morale_break: "Stops pursuing once intruders leave its territory (roughly 100 paces)."
+    group_size: "1"
+    abilities:
+      - "Antler Toss: on hit with antlers, target must pass MIG contest or be thrown 2d6 paces and knocked prone"
+      - "Rutting Fury: immune to Intimidation during autumn rut"
+    resistances: ["cold"]
+    weaknesses: ["fire", "calming_effects"]
+    encounter_conditions:
+      terrain: ["forest", "moor", "clearing"]
+      season: ["autumn"]
+    loot:
+      silver_range: [0, 0]
+      items: ["elk_antlers", "elk_hide", "elk_meat"]
+    image_prompt: |
+      A massive bull elk in an autumn clearing, antlers spanning wide with
+      sharp tines. Neck swollen from rut, breath steaming. One forehoof
+      scraping the ground. Scarred birch trees behind. Golden-brown autumn
+      light, fallen leaves. Aggressive display posture, head tilted to
+      present antlers.
+
+  - id: "ANI_PRED_03"
+    name: "Wild Dog Pack"
+    category: "animal"
+    subcategory: "predator"
+    tier: 1
+    description: "A dozen feral dogs of mixed breed, ribs showing, mange patching their coats. Former farm dogs gone wild after a burned village. They snarl and snap but scatter from a swung blade. The real danger is the filth they carry."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 2
+      WIT: 2
+      WIL: 1
+      WYR: 1
+    hp: 4
+    skills:
+      - name: "Brawl"
+        rank: 1
+      - name: "Stealth"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Bite"
+          type: "natural"
+          speed: 4
+          base_damage: 2
+      armor: {}
+    tactics: "Circles and nips at legs. Targets the already wounded. Darts in and out. More nuisance than lethal, but wounds fester badly."
+    morale_break: "Scatters if any dog killed or a weapon is swung aggressively."
+    group_size: "5-12"
+    abilities:
+      - "Disease Carrier: any wound inflicted has 50% chance of causing infection (TOU check at -1 or wound festers)"
+      - "Cowardly Rush: attacks only when target is outnumbered or distracted"
+    resistances: []
+    weaknesses: ["intimidation", "loud_noise", "any_weapon"]
+    encounter_conditions:
+      terrain: ["road", "ruin", "farmland", "village"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: ["dog_teeth", "mangy_pelt"]
+    image_prompt: |
+      A pack of a dozen feral dogs on a muddy road near a burned-out
+      farmstead. Mixed breeds, mangy coats, ribs visible. Some snarling,
+      others circling warily. Mud and ash. Overcast grey sky. Charred
+      fence posts in the background.
+
+  # ==========================================================================
+  # BIRDS (ANI_BIRD_01 through ANI_BIRD_02)
+  # ==========================================================================
+
+  - id: "ANI_BIRD_01"
+    name: "Raven Swarm"
+    category: "animal"
+    subcategory: "bird"
+    tier: 1
+    description: "Thirty or forty ravens lifting off a battlefield at once, wings clapping like wet leather. They have been feeding. One lands on a fencepost nearby and stares with an eye like polished obsidian. They are bolder than they should be. Some Norsemen say they are Odin's, but Odin's ravens do not go for the eyes of the living."
+    stats:
+      MIG: 1
+      NIM: 6
+      TOU: 1
+      WIT: 4
+      WIL: 2
+      WYR: 1
+    hp: 3
+    skills:
+      - name: "Brawl"
+        rank: 1
+      - name: "Track"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Beak and Talons"
+          type: "natural"
+          speed: 6
+          base_damage: 1
+      armor: {}
+    tactics: "Dive and peck at eyes and exposed skin. Retreat upward out of melee reach. Repeat. More distraction than damage — but a blinded man dies fast."
+    morale_break: "Scatters from any ranged attack or thrown object."
+    group_size: "10-40"
+    abilities:
+      - "Eye Attack: on critical hit, target must pass NIM check or suffer -2 to ranged attacks for 1d6 rounds (eye wound)"
+      - "Omen Bearers: ravens circling overhead give -1 to WIL checks for superstitious characters"
+      - "Flying: immune to melee attacks unless swooping"
+    resistances: []
+    weaknesses: ["ranged_attack", "loud_noise", "fire"]
+    encounter_conditions:
+      terrain: ["battlefield", "field", "road", "settlement"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: ["raven_feather"]
+    image_prompt: |
+      A rising cloud of ravens lifting off a muddy battlefield strewn with
+      corpses. Dozens of black shapes against a grey sky. One raven in the
+      foreground on a broken spear shaft, beak bloody, staring directly at
+      the viewer. Overcast, muted palette, wet ground.
+
+  - id: "ANI_BIRD_02"
+    name: "Eagle"
+    category: "animal"
+    subcategory: "bird"
+    tier: 1
+    description: "A white-tailed eagle with a wingspan wider than a man is tall. Circling high, patient. It takes no interest in men unless they carry something small and bright, or unless its nest is near. Then it folds its wings and drops like a hurled stone."
+    stats:
+      MIG: 3
+      NIM: 7
+      TOU: 2
+      WIT: 4
+      WIL: 3
+      WYR: 1
+    hp: 4
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Track"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Talons"
+          type: "natural"
+          speed: 6
+          base_damage: 3
+      armor: {}
+    tactics: "Stoops from altitude. Snatches small items (pouches, amulets, small weapons) and climbs away. If defending a nest, repeated dive attacks at the head."
+    morale_break: "Breaks off after one unsuccessful stoop unless defending nest."
+    group_size: "1-2"
+    abilities:
+      - "Diving Stoop: first attack from altitude deals double damage"
+      - "Snatch: can grab and carry off items up to 3 kg on a successful hit (NIM contest to hold on)"
+      - "Flying: immune to melee attacks unless swooping"
+      - "Eagle Eye: cannot be surprised, detects hidden creatures within 500 paces"
+    resistances: []
+    weaknesses: ["ranged_attack", "net"]
+    encounter_conditions:
+      terrain: ["mountain", "coast", "cliff", "lake"]
+      season: ["spring", "summer"]
+    loot:
+      silver_range: [0, 0]
+      items: ["eagle_feather", "eagle_talon"]
+    image_prompt: |
+      A white-tailed eagle mid-dive against a mountain backdrop, wings folded,
+      talons extended forward. Massive wingspan partially visible. Rocky cliff
+      face behind with a stick nest. Blue sky with high clouds. Sharp detail
+      on feathers and talons. Sense of speed and power.
+
+  # ==========================================================================
+  # VERMIN (ANI_VERM_01 through ANI_VERM_02)
+  # ==========================================================================
+
+  - id: "ANI_VERM_01"
+    name: "Rat Swarm"
+    category: "animal"
+    subcategory: "vermin"
+    tier: 1
+    description: "A seething carpet of brown and grey bodies pouring out of the grain store. Tails whipping, teeth clicking. They are in the bedrolls by morning. In the flour by noon. In the wounds of the sleeping by nightfall. You cannot fight rats. You can only move and hope they do not follow."
+    stats:
+      MIG: 1
+      NIM: 5
+      TOU: 1
+      WIT: 2
+      WIL: 1
+      WYR: 1
+    hp: 2
+    skills:
+      - name: "Brawl"
+        rank: 1
+      - name: "Stealth"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Gnawing Teeth"
+          type: "natural"
+          speed: 6
+          base_damage: 1
+      armor: {}
+    tactics: "Swarms over sleeping or stationary targets. Gnaws through leather and cloth. Flees from active defenders but returns within the hour. The real damage is to supplies, not to men."
+    morale_break: "Scatters from fire, stamping, or cats. Returns when disturbance stops."
+    group_size: "20-100"
+    abilities:
+      - "Disease Carrier: any wound inflicted has 75% chance of causing infection (TOU check or wound festers within 2 days)"
+      - "Supply Spoilage: each night in camp, lose 1d6 rations to gnawing"
+      - "Tiny: -3 to hit with melee weapons (area attacks at normal)"
+    resistances: []
+    weaknesses: ["fire", "area_attack", "cats", "sealed_containers"]
+    encounter_conditions:
+      terrain: ["settlement", "ruin", "ship", "camp"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: ["rat_tail"]
+    image_prompt: |
+      A mass of brown and grey rats pouring across a wooden floor in a dim
+      storage building. Grain sacks gnawed open, flour scattered. Dozens
+      of small eyes reflecting candlelight. Tails overlapping. Dark corners,
+      rough-hewn timber walls, overturned clay pots.
+
+  - id: "ANI_VERM_02"
+    name: "Serpent"
+    category: "animal"
+    subcategory: "vermin"
+    tier: 1
+    description: "A northern viper, thick as a man's thumb, coiled between the rocks where someone was about to put their hand. Brown and black zigzag pattern on the back. Head flat and triangular. The bite is not immediately deadly, but a swollen hand in the field means you cannot grip a sword for a week."
+    stats:
+      MIG: 1
+      NIM: 6
+      TOU: 1
+      WIT: 2
+      WIL: 1
+      WYR: 1
+    hp: 1
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Stealth"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Venomous Fangs"
+          type: "natural"
+          speed: 7
+          base_damage: 1
+      armor: {}
+    tactics: "Strikes once and retreats into cover. Does not pursue. The venom does the work."
+    morale_break: "Immediately flees after first strike. Will not fight."
+    group_size: "1-3"
+    abilities:
+      - "Ambush Strike: first attack against unaware target is automatic hit"
+      - "Venom: on hit, TOU check or suffer -2 to all actions using affected limb for 1d6 days. Critical failure = fever and 1 HP damage per day until treated"
+      - "Tiny: -3 to hit with melee weapons"
+      - "Hidden: WIT check to notice before stepping on it"
+    resistances: []
+    weaknesses: ["cold_weather", "stomping", "fire"]
+    encounter_conditions:
+      terrain: ["ruin", "rocky_ground", "forest", "barrow"]
+      season: ["spring", "summer"]
+    loot:
+      silver_range: [0, 0]
+      items: ["snake_venom_sac", "snakeskin"]
+    image_prompt: |
+      A northern viper coiled between grey rocks, zigzag pattern on its back,
+      head flat and triangular, tongue flickering. A human hand reaching
+      toward the rocks, not yet seeing the snake. Mossy stone, low sunlight,
+      forest floor with dead leaves. Close-up, tense moment.
+
+  # ==========================================================================
+  # ENVIRONMENTAL HAZARDS (ANI_HAZ_01 through ANI_HAZ_06)
+  # ==========================================================================
+
+  - id: "ANI_HAZ_01"
+    name: "Avalanche"
+    category: "animal"
+    subcategory: "hazard"
+    tier: 4
+    description: "A low crack from the ridge above, like a bone breaking. Then the entire mountainside moves. White wall descending faster than a horse can gallop. Trees snapping like kindling. The sound arrives after the snow does. You have three heartbeats to decide which way to run."
+    stats:
+      MIG: 10
+      NIM: 1
+      TOU: 10
+      WIT: 1
+      WIL: 1
+      WYR: 1
+    hp: 0
+    skills:
+      - name: "Brawl"
+        rank: 6
+    gear:
+      weapons:
+        - name: "Wall of Snow and Rock"
+          type: "environmental"
+          speed: 1
+          base_damage: 12
+      armor: {}
+    tactics: "Triggered by noise, warmth, or weight on unstable snow. One massive attack roll against all targets in path. Buried targets take suffocation damage each round. Survivors must be dug out (MIG check, 1d6 rounds per buried person)."
+    morale_break: "N/A — event resolves in 1-2 rounds."
+    group_size: "1"
+    abilities:
+      - "Area Attack: hits all targets in a 50-pace-wide path"
+      - "Burial: targets hit and failing NIM check are buried under snow. TOU check each round or take 2 suffocation damage"
+      - "Debris: buried targets lose all carried items unless recovered by digging"
+      - "Triggered: NIM check to dodge to high ground. Failure = full damage + burial"
+    resistances: ["all_physical", "fire"]
+    weaknesses: ["avoidance", "high_ground", "reading_terrain"]
+    encounter_conditions:
+      terrain: ["mountain", "mountain_pass"]
+      season: ["winter", "spring"]
+    loot:
+      silver_range: [0, 0]
+      items: ["debris", "buried_equipment"]
+    image_prompt: |
+      A massive avalanche cascading down a steep mountain slope, white wall
+      of snow engulfing dark pine trees. Tiny figures on a mountain path
+      below, caught mid-stride. Debris of broken timber in the snow cloud.
+      Bright winter light, blue shadows on the snow above. Sense of
+      overwhelming scale and speed.
+
+  - id: "ANI_HAZ_02"
+    name: "Bog-Sink"
+    category: "animal"
+    subcategory: "hazard"
+    tier: 2
+    description: "The ground looks solid — sphagnum moss, a few tufts of sedge grass. Then a foot goes through and the cold black water grabs the ankle. Every movement drives you deeper. The mud underneath has the suction of a living mouth. Waist-deep in thirty seconds if you panic."
+    stats:
+      MIG: 6
+      NIM: 1
+      TOU: 8
+      WIT: 1
+      WIL: 1
+      WYR: 1
+    hp: 0
+    skills:
+      - name: "Brawl"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Sucking Mud"
+          type: "environmental"
+          speed: 1
+          base_damage: 0
+      armor: {}
+    tactics: "Target steps onto unstable ground (WIT check to spot, NIM check to avoid). Once sinking, MIG contest against the bog each round. Failure = sink one stage deeper (ankle → knee → waist → chest → submerged). Rope or branch from outside is +2 to MIG check."
+    morale_break: "N/A — hazard persists until escaped or submerged."
+    group_size: "1"
+    abilities:
+      - "Progressive Sinking: each failed MIG check sinks one stage deeper. Five stages to full submersion"
+      - "Panic Penalty: -1 to MIG checks for each failed escape attempt (struggling makes it worse)"
+      - "Cold Exposure: sinking targets take 1 cold damage per round below waist"
+      - "Equipment Loss: armor and heavy gear give -2 to escape MIG checks. Can drop gear for +2"
+    resistances: ["all_physical", "fire"]
+    weaknesses: ["rope", "branch", "crawling_flat", "light_load"]
+    encounter_conditions:
+      terrain: ["moor", "bog", "swamp"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [0, 3]
+      items: ["bog_iron", "preserved_bones"]
+    image_prompt: |
+      A figure sinking waist-deep in dark bog water, arms outstretched,
+      sphagnum moss and sedge grass around. The surface looks deceptively
+      solid nearby. Dark peaty water. Mist low over the bog, distant
+      silhouettes of scrubby trees. Muted earth-tone palette, grey
+      overcast sky. Desperation on the figure's face.
+
+  - id: "ANI_HAZ_03"
+    name: "Ice-Crack"
+    category: "animal"
+    subcategory: "hazard"
+    tier: 3
+    description: "A sharp report like an axe striking wood, and a dark line appears in the ice underfoot, racing outward in both directions. The white surface tilts. Black water appears in the crack, steaming slightly in the cold air. The ice is still holding — but not for long, and not for everyone."
+    stats:
+      MIG: 4
+      NIM: 1
+      TOU: 6
+      WIT: 1
+      WIL: 1
+      WYR: 1
+    hp: 0
+    skills:
+      - name: "Brawl"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Freezing Water"
+          type: "environmental"
+          speed: 1
+          base_damage: 3
+      armor: {}
+    tactics: "Ice cracks under weight (heavier characters crack first). NIM check to leap to solid ice. Failure = fall into water. In water: TOU check each round or take 3 cold damage. MIG check to climb out onto ice (ice may crack again). Armor gives -2 to swim."
+    morale_break: "N/A — hazard resolves when all targets are on solid ground or submerged."
+    group_size: "1"
+    abilities:
+      - "Weight Sensitive: armored characters and heavy loads crack ice first. Unarmored get +2 to initial NIM check"
+      - "Hypothermia: in water, TOU check each round. Failure = 3 cold damage and -1 cumulative to all checks"
+      - "Drowning Risk: at 0 HP from cold damage in water, TOU check or submerge"
+      - "Slippery Surface: all movement on cracked ice at half speed, NIM check or fall prone"
+    resistances: ["all_physical", "fire"]
+    weaknesses: ["rope", "spreading_weight", "crawling", "ice_axe"]
+    encounter_conditions:
+      terrain: ["river", "lake", "fjord"]
+      season: ["winter", "early_spring"]
+    loot:
+      silver_range: [0, 0]
+      items: ["lost_equipment"]
+    image_prompt: |
+      A frozen lake surface with a jagged dark crack running across it, black
+      water visible below. A figure mid-fall as ice tilts, arms windmilling.
+      White ice, grey sky, distant snow-covered shore. Steam rising from the
+      exposed water. Sharp diagonal composition, sense of sudden catastrophe.
+
+  - id: "ANI_HAZ_04"
+    name: "Rockfall"
+    category: "animal"
+    subcategory: "hazard"
+    tier: 2
+    description: "A clatter from above, then a stone the size of a fist bounces past your ear. Then another. Then a boulder. The cliff face is shearing away in a curtain of dust and grinding stone. The path ahead is gone. The path behind is about to be."
+    stats:
+      MIG: 7
+      NIM: 1
+      TOU: 7
+      WIT: 1
+      WIL: 1
+      WYR: 1
+    hp: 0
+    skills:
+      - name: "Brawl"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Falling Stone"
+          type: "environmental"
+          speed: 2
+          base_damage: 8
+      armor: {}
+    tactics: "Triggered by vibration, rain-loosened stone, or age. NIM check to dodge into cover. Failure = damage from falling rocks. Shield can be used overhead for +2 to NIM check (shield takes damage). Multiple waves possible in caves."
+    morale_break: "N/A — event resolves in 1-3 rounds."
+    group_size: "1"
+    abilities:
+      - "Area Attack: affects all targets in a 20-pace stretch"
+      - "Pinned: on critical failure of NIM check, target pinned under rock. MIG check to free (others can assist)"
+      - "Path Blocked: after rockfall, passage may be blocked. MIG group check to clear, or find alternate route"
+      - "Dust Cloud: -2 to all visibility-based checks for 1d6 rounds after"
+    resistances: ["all_physical"]
+    weaknesses: ["shelter", "shield_overhead", "avoidance"]
+    encounter_conditions:
+      terrain: ["mountain", "cave", "cliff", "canyon"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: ["loose_stone", "buried_equipment"]
+    image_prompt: |
+      Rocks and boulders cascading down a narrow mountain path, dust cloud
+      billowing. A figure pressing against the cliff wall with a shield
+      raised overhead. Shattered stone debris on the path. Steep canyon
+      walls, narrow strip of grey sky above. Motion blur on falling rocks.
+      Dust-choked air.
+
+  - id: "ANI_HAZ_05"
+    name: "Flash Flood"
+    category: "animal"
+    subcategory: "hazard"
+    tier: 3
+    description: "The stream that was ankle-deep an hour ago is now a brown wall of water carrying trees and dead livestock. It fills the valley floor in minutes. The roar drowns all speech. There is no fighting water. There is only getting above it or being taken by it."
+    stats:
+      MIG: 9
+      NIM: 1
+      TOU: 9
+      WIT: 1
+      WIL: 1
+      WYR: 1
+    hp: 0
+    skills:
+      - name: "Brawl"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Torrent"
+          type: "environmental"
+          speed: 1
+          base_damage: 7
+      armor: {}
+    tactics: "Advancing wall of water. WIT check to hear it coming (1 round warning). NIM check to reach high ground. Failure = swept away. In water: MIG check each round to grab something solid. Failure = carried downstream, taking bludgeoning damage from debris."
+    morale_break: "N/A — hazard resolves when water subsides (1d6 hours)."
+    group_size: "1"
+    abilities:
+      - "Area Attack: affects entire valley floor and any low-ground camp"
+      - "Sweep Away: targets in water must pass MIG check each round or be carried 3d6 paces downstream"
+      - "Debris Impact: targets in water take 2 bludgeoning damage per round from floating debris"
+      - "Equipment Loss: carried targets lose 1d6 items (random, unsecured items first)"
+      - "Camp Destruction: any camp on low ground is destroyed. Supplies scattered or lost"
+    resistances: ["all_physical", "fire"]
+    weaknesses: ["high_ground", "rope_to_tree", "early_warning"]
+    encounter_conditions:
+      terrain: ["valley", "river", "canyon", "lowland"]
+      season: ["spring", "autumn"]
+    loot:
+      silver_range: [0, 0]
+      items: ["driftwood", "drowned_livestock", "scattered_supplies"]
+    image_prompt: |
+      A brown wall of churning water filling a narrow valley, carrying
+      uprooted trees and debris. A camp in the foreground being engulfed,
+      tent canvas and loose timber spinning in the current. Figures
+      scrambling uphill. Heavy rain, dark clouds. Violent spray where water
+      hits rock walls. Raw power of water.
+
+  - id: "ANI_HAZ_06"
+    name: "Whiteout Blizzard"
+    category: "animal"
+    subcategory: "hazard"
+    tier: 3
+    description: "The wind arrives first, a wall of cold that steals the breath. Then the snow. In sixty heartbeats you cannot see your own outstretched hand. North is gone. The ground is gone. Sound is dead. There is only white and the cold pressing in like a living thing. Men walk in circles in this and die ten paces from shelter."
+    stats:
+      MIG: 3
+      NIM: 1
+      TOU: 8
+      WIT: 1
+      WIL: 6
+      WYR: 1
+    hp: 0
+    skills:
+      - name: "Intimidation"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Killing Cold"
+          type: "environmental"
+          speed: 1
+          base_damage: 2
+      armor: {}
+    tactics: "Endurance hazard. Every hour of exposure: TOU check or take 2 cold damage. Every hour of travel: WIT check or become lost (move in random direction). WIL check each hour or suffer -1 cumulative to all checks from despair. Lasts 2d6 hours."
+    morale_break: "N/A — blizzard lasts 2d6 hours regardless of actions."
+    group_size: "1"
+    abilities:
+      - "Zero Visibility: all ranged attacks impossible. Melee only at adjacent range. -3 to Track and navigation"
+      - "Exposure Damage: TOU check each hour. Failure = 2 cold damage. Wet clothing doubles damage"
+      - "Disorientation: WIT check each hour of travel. Failure = random direction. Critical failure = walk in circles"
+      - "Despair: WIL check each hour. Failure = -1 cumulative to all checks (hypothermia confusion)"
+      - "Rope Line: characters roped together cannot become separated. +2 to WIT navigation checks"
+    resistances: ["all_physical"]
+    weaknesses:
+      ["shelter", "fire", "fur_clothing", "rope_line", "experienced_guide"]
+    encounter_conditions:
+      terrain: ["mountain", "moor", "coast", "open_field"]
+      season: ["winter"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+    image_prompt: |
+      A complete whiteout - barely visible silhouettes of two figures
+      leaning into horizontal wind, cloaks snapping. Snow so thick the
+      background is pure white. One figure reaching blindly ahead. Ground
+      and sky indistinguishable. Tiny detail of a rope between the two
+      figures. Monochrome white and grey, brutal wind direction visible
+      in the snow streaks.

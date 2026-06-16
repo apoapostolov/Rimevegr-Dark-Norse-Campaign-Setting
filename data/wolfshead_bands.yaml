@@ -1,0 +1,1261 @@
+# Iron Ledger — Wolfshead Bands of the Rimevegr
+# Active outlaw bands operating outside the law. The dark mirror
+# of legitimate svarthird companies like Voss's Black Axes.
+# Cross-references: 13_RIVAL_BANDS_AND_FACTIONS.md,
+#   data/culture/outlawry_system.yaml, 01_RIMEVEGR_SETTING_BIBLE.md.
+# Currency: 1 silver = 10 copper. Merc retainer: 2 silver/week.
+# Stats: MIG/NIM/TOU/WIT/WIL/WYR (1-10). Skills rank 1-5.
+
+wolfshead_bands:
+  # ---------------------------------------------------------------
+  # WOLF_001 — Former legitimate mercenary company (charter lost)
+  # ---------------------------------------------------------------
+  - id: "WOLF_001"
+    name: "The Burnt Charter"
+    leader:
+      name: "Tormund Halvsen"
+      call_name: "Ash-Tongue"
+      age: "late 30s"
+      stats:
+        MIG: 6
+        NIM: 5
+        TOU: 6
+        WIT: 7
+        WIL: 6
+        WYR: 1
+      hp: 32
+      skills:
+        - name: "Axes"
+          rank: 3
+        - name: "Command"
+          rank: 3
+        - name: "Bargain"
+          rank: 2
+        - name: "Shields"
+          rank: 2
+      description: >
+        Broad-shouldered man running to lean. The fat left him two
+        winters ago and never came back. Brown beard going grey at
+        the jaw, trimmed short with a knife because he still keeps
+        the habit. Burns on both hands from the night the charter
+        hall caught fire — the skin is waxy, pink, and splits in
+        cold weather. He wraps his knuckles in linen strips stained
+        dark with tallow. Speaks quietly, precisely, the way a man
+        does when he has learned that shouting costs more than it
+        earns. His eyes do the shouting now.
+    size: 14
+    origin_story: >
+      The Halvsen Company held a lawful charter under Jarl Hrothgar
+      of Frostfjord for six years. Solid work: garrison contracts,
+      escort details on the Beinvegr ridge, one barrow clearance
+      that cost them three men but earned enough silver to winter
+      well. Tormund inherited the captaincy from his uncle Bjarte
+      when a chest wound went sour in the third year.
+
+      The contract that killed them was a border dispute between
+      Frostfjord and Ashen Reach. Hrothgar hired the Halvsen
+      Company to hold the Beinvegr corridor against Pale Widow's
+      outriders for the duration of the autumn ting negotiations.
+      Standard work. Except Hrothgar's lawspeaker negotiated a
+      peace while the company was still deployed and never sent
+      word. The Halvsen men held the ridge for eleven days past
+      the settlement date. In that time, they stopped a trade
+      caravan bound for Ashen Reach — legitimate trade that Hrothgar
+      had agreed to permit. The merchants filed a damage claim.
+      Hrothgar, needing to prove good faith to the Pale Widow,
+      declared the Halvsen Company in contract default and stripped
+      their charter at the winter ting. Tormund argued. The ting
+      ruled against him. Three days' grace. They took what they
+      could carry and walked into the Black Pine in the first
+      snow of Y314.
+    territory: "Southern Black Pine, between Ashmark and the Beinvegr ridge"
+    camp_type: "abandoned charcoal kiln camp — three stone-walled huts with sod roofs, hidden in a ravine"
+    survival_strategy: "toll-taking on the Beinvegr, escort work for smugglers avoiding Frostfjord tolls, occasional poaching"
+    threat_tier: 2
+    named_members:
+      - name: "Eska Bjartesdottir"
+        role: "Second / Sergeant"
+        stats: { MIG: 7, NIM: 5, TOU: 6, WIT: 5, WIL: 6, WYR: 1 }
+        hp: 30
+        skills:
+          [
+            { name: "Spears", rank: 3 },
+            { name: "Shields", rank: 2 },
+            { name: "Command", rank: 1 },
+          ]
+        description: >
+          Tormund's cousin. Built like a fieldstone wall — short, square,
+          immovable. Red hair braided tight against her skull, a white
+          scar bisecting her left eyebrow where a sling-stone cracked
+          the bone three summers ago. She was the company's best
+          shieldwoman before the charter fell. Now she is the reason
+          fourteen people still follow orders instead of scattering.
+          Dry humour. Rarely smiles. When she does, something is about
+          to go badly for someone else.
+      - name: "Petter 'Inkfingers'"
+        role: "Clerk / Forager"
+        stats: { MIG: 4, NIM: 6, TOU: 4, WIT: 8, WIL: 5, WYR: 1 }
+        hp: 22
+        skills:
+          [
+            { name: "Lore", rank: 3 },
+            { name: "Forage", rank: 2 },
+            { name: "Bargain", rank: 2 },
+          ]
+        description: >
+          Former company clerk who kept the ledger. Thin, balding, ink
+          stains on his right hand that never wash clean — oak-gall ink
+          gets into the skin. Still carries the company ledger in an
+          oilskin wrap, still makes entries. The last page of legitimate
+          contracts is three years old. Everything after that is an
+          accounting of what they have stolen to survive. He considers
+          this important.
+    relationship_to_mercenaries: "wary — they were mercenaries, they know the game, they do not want a fight with a band that still has a charter"
+    disposition: "principled"
+    narrative_hook: >
+      Tormund has the Halvsen Company's original charter document — the
+      actual signed parchment — hidden in the camp. If a legitimate
+      company captain brought the charter to Jarl Hrothgar and argued
+      the original default was unjust, the case could be reopened at
+      the spring ting. Tormund cannot do this himself because he is
+      outlawed. Voss could. The question is what Tormund would offer
+      in return, and whether Voss wants to make an enemy of Hrothgar
+      to rehabilitate a rival captain.
+    camp_defenses: "Ravine approach is narrow — two men abreast. Deadfall traps on the eastern slope. A lookout post on the ridgeline with a clear view of the Beinvegr. Horn signal system, three blasts."
+    winter_strategy: "The kiln huts are insulated and the ravine blocks wind. They cache smoked venison and stolen grain in a sealed pit. Two or three of the band hire out as anonymous muscle in Ashmark during the worst months — silver for the group, no questions."
+    notes: "Petter's ledger contains intelligence on Frostfjord patrol schedules and trade caravan timing. Worth silver to anyone planning operations in the region."
+
+  # ---------------------------------------------------------------
+  # WOLF_002 — Family blood-feud exile group
+  # ---------------------------------------------------------------
+  - id: "WOLF_002"
+    name: "The Ketilsons"
+    leader:
+      name: "Dagny Ketilsdottir"
+      call_name: "Mother Ketil"
+      age: "mid-40s"
+      stats:
+        MIG: 5
+        NIM: 4
+        TOU: 6
+        WIT: 7
+        WIL: 8
+        WYR: 2
+      hp: 28
+      skills:
+        - name: "Bargain"
+          rank: 3
+        - name: "Lore"
+          rank: 2
+        - name: "Intimidate"
+          rank: 2
+        - name: "Forage"
+          rank: 2
+      description: >
+        Heavyset woman with greying brown hair worn loose past her
+        shoulders. Face like a weathered cliff — broad, lined, the
+        kind of face that was handsome thirty years ago and is now
+        simply hard. Missing the last two fingers of her left hand,
+        taken by a woodsman's stroke when the Ketilsons fought
+        their way out of Feldwick. She hides the hand in her
+        sleeve when dealing with strangers. Voice like gravel in
+        a wooden bowl. Not a fighter — she is the reason the
+        fighters have not yet killed each other.
+    size: 19
+    origin_story: >
+      The Ketilson blood-feud with the Thorvaldsen clan started
+      over a disputed bride-price in Y309 and has consumed both
+      families since. Ketil Rognvaldsen — Dagny's father — killed
+      Thorvald's nephew in a drunken fight over the bride-gift
+      valuation. The weregild negotiations failed because Thorvald
+      demanded blood-price plus the bride herself, which Ketil
+      refused. Thorvald brought the case to the ting at Feldwick.
+      The lawspeaker ruled lesser outlawry on Ketil, with
+      weregild set at 400 copper.
+
+      Ketil paid. But Thorvald's sons did not consider the debt
+      settled. They burned Ketil's farmstead the following spring
+      while the family slept. Ketil died in the fire. Two of his
+      grandchildren died. The survivors — Dagny, her brothers
+      Rolf and Stein, their wives, children, and three farmhands
+      — killed two of Thorvald's sons in the retribution raid.
+      The ting declared the entire Ketilson lineage under
+      skóggangr. Nineteen people walked out of Feldwick: seven
+      adults who can fight, four women who keep the group fed,
+      and eight children ranging from four to fifteen winters.
+      They have been in the forest for two years.
+    territory: "Eastern Black Pine, north of Feldwick"
+    camp_type: "deep forest settlement — four lean-tos and a central cook-hut built around a granite outcrop that blocks wind from the north"
+    survival_strategy: "poaching, foraging, and small-scale raiding on isolated farmsteads that trade with the Thorvaldsens — targeted revenge, not random violence"
+    threat_tier: 2
+    named_members:
+      - name: "Rolf Ketilsen"
+        role: "War Leader"
+        stats: { MIG: 7, NIM: 6, TOU: 6, WIT: 4, WIL: 5, WYR: 1 }
+        hp: 30
+        skills:
+          [
+            { name: "Axes", rank: 3 },
+            { name: "Track", rank: 2 },
+            { name: "Brawl", rank: 2 },
+          ]
+        description: >
+          Dagny's younger brother. Tall, raw-boned, moves like a
+          man who has been angry his entire adult life and has
+          organised the anger into something useful. Red-brown
+          beard, never trimmed. A jagged burn scar down the left
+          side of his neck from the farmstead fire — keloid, raised,
+          the skin smooth and hairless. He touches it when he is
+          thinking about what comes next, which is always killing
+          a Thorvaldsen.
+      - name: "Yrsa Ketilsdottir"
+        role: "Scout / Hunter"
+        stats: { MIG: 4, NIM: 7, TOU: 4, WIT: 6, WIL: 5, WYR: 1 }
+        hp: 24
+        skills:
+          [
+            { name: "Bows", rank: 3 },
+            { name: "Track", rank: 3 },
+            { name: "Stealth", rank: 2 },
+          ]
+        description: >
+          Dagny's eldest daughter, sixteen winters. Thin as a birch
+          whip, dark-eyed, quiet. She was twelve when they burned
+          the farmstead. Four years in the forest made her the best
+          hunter in the band — she can drop a hare at forty paces
+          and track a deer through snow for hours. She does not talk
+          about the fire. She does not talk about much. The bow is
+          her conversation.
+    relationship_to_mercenaries: "wary — they do not want to fight mercenaries but will defend the children without hesitation"
+    disposition: "principled"
+    narrative_hook: >
+      The Thorvaldsens have hired a mercenary company — the Three
+      Wolves — to hunt the Ketilsons down. Hadric the Younger
+      took the contract because it pays well and he enjoys the
+      work. If Voss's band encounters the Ketilsons first, there
+      is room for negotiation: the Ketilsons will trade
+      intelligence on Thorvaldsen holdings and Three Wolves
+      movements in exchange for being left alone. Or Voss could
+      take the Thorvaldsen contract instead. Or he could walk away.
+      The children make the decision harder.
+    camp_defenses: "Dense forest with no clear approach. Trip-lines of braided sinew with bone rattles. Rolf has dug concealed pits on the two game trails that lead to the camp. The children know three scatter-routes to a fallback cave two kilometres north."
+    winter_strategy: "The granite outcrop reflects firelight and holds heat. They have built a stone-and-turf root cellar for preserved food. In the worst months, Dagny sends Yrsa to trade smoked venison at isolated farmsteads outside Thorvaldsen territory — the girl is young enough and unknown enough to pass as a wandering hunter."
+    notes: "The eight children are the complication. Everything the Ketilsons do is shaped by the need to keep them alive and fed. A band that threatens the children makes permanent enemies. One that helps feed them makes permanent allies."
+
+  # ---------------------------------------------------------------
+  # WOLF_003 — Charismatic outlaw "king" with shadow-settlement
+  # ---------------------------------------------------------------
+  - id: "WOLF_003"
+    name: "Grimketil's Hold"
+    leader:
+      name: "Grimketil Oddsen"
+      call_name: "The Forest King"
+      age: "early 40s"
+      stats:
+        MIG: 6
+        NIM: 5
+        TOU: 6
+        WIT: 8
+        WIL: 7
+        WYR: 2
+      hp: 30
+      skills:
+        - name: "Command"
+          rank: 4
+        - name: "Bargain"
+          rank: 3
+        - name: "Intimidate"
+          rank: 2
+        - name: "Sagas"
+          rank: 2
+        - name: "Blades"
+          rank: 2
+      description: >
+        Handsome in the way a wolf is handsome — you notice the
+        teeth first. Sharp-featured, clean-shaven (unusual, which
+        is the point), dark hair oiled back and tied with a bronze
+        ring. Dresses better than any outlaw should: a dyed wool
+        cloak, good leather boots, a silver arm-ring he never
+        removes. Smiles often, laughs easily, and his laugh fills
+        a room. The smile does not reach his eyes. Behind the
+        performance is a mind that calculates cost and benefit
+        before the laugh ends. He sits at the head of a plank
+        table in a forest clearing and holds court like a jarl.
+        Because he believes he is one.
+    size: 25
+    origin_story: >
+      Grimketil was a merchant's son from Skaldhaven who talked
+      his way into a huskarl's position in Jarl Hrothgar's hall.
+      Clever, charming, and utterly without loyalty to anyone but
+      himself. He embezzled from Hrothgar's trade caravans for
+      two years, skimming a copper here and a copper there,
+      building a cache of silver in the forest. When the
+      lawspeaker's audit found the shortfall, Grimketil was tried
+      at the autumn ting of Y311 and declared skóggangr.
+
+      Most men under full outlawry vanish. Grimketil recruited.
+      He found the scattered, the lost, the newly outlawed, and
+      he offered them something no one else did: order. A camp
+      with rules. A share of the take. A fire and a roof and
+      someone who listened to their problems and appeared to care.
+      Over five years he has built a shadow-settlement deep in the
+      Black Pine — twenty-five people living in a clearing with
+      log walls, a central hall, vegetable plots, and a smithy
+      that turns out arrowheads and nails. He holds ting for his
+      people. He settles disputes. He takes a jarl's share of
+      everything they steal.
+
+      He is not kind. He is useful. That is more valuable.
+    territory: "Deep Black Pine, roughly ten kilometres north-east of Vargheim"
+    camp_type: "permanent forest settlement — log palisade, central hall, six dwellings, smithy, root cellar, livestock pen with three goats and a dozen chickens"
+    survival_strategy: "protection racket on isolated farmsteads, smuggling goods between settlements avoiding toll stations, trading stolen goods through middlemen in Ashmark"
+    threat_tier: 3
+    named_members:
+      - name: "Solveig 'Needle'"
+        role: "Enforcer / Second"
+        stats: { MIG: 7, NIM: 7, TOU: 5, WIT: 5, WIL: 6, WYR: 1 }
+        hp: 28
+        skills:
+          [
+            { name: "Blades", rank: 3 },
+            { name: "Stealth", rank: 2 },
+            { name: "Intimidate", rank: 3 },
+          ]
+        description: >
+          Lean, silent, and patient in the way a trap is patient.
+          Short-cropped black hair, a face all angles, a thin scar
+          from her left ear to the corner of her mouth that she
+          received from a man who is no longer alive. She carries
+          two seaxes and uses them with a calm efficiency that
+          suggests the work brings her no pleasure and no regret.
+          Where Grimketil talks, Solveig acts. He calls her his
+          needle because she does the stitching that holds the
+          settlement together.
+      - name: "Bork Flatnose"
+        role: "Smith / Camp Master"
+        stats: { MIG: 8, NIM: 3, TOU: 7, WIT: 5, WIL: 5, WYR: 1 }
+        hp: 32
+        skills:
+          [
+            { name: "Smithing", rank: 3 },
+            { name: "Brawl", rank: 2 },
+            { name: "Shelter", rank: 2 },
+          ]
+        description: >
+          Enormous, slow-moving man with hands like shovels and a
+          nose that has been broken so many times it sits flat
+          against his face like a pressed mushroom. Former thrall
+          from Grimholt who escaped east and found Grimketil's
+          camp. He does not talk about his time in the mines. He
+          builds things instead — the smithy, two of the cabins,
+          the palisade gate. Loyal to Grimketil because Grimketil
+          treats him like a man, which is not something he is
+          accustomed to.
+    relationship_to_mercenaries: "occasionally cooperative — Grimketil buys and sells information, offers shelter for a price, and would happily play two companies against each other"
+    disposition: "pragmatic"
+    narrative_hook: >
+      Grimketil wants legitimacy. His shadow-settlement is growing
+      and he has begun to imagine himself petitioning a jarl for
+      formal recognition — an outlaw seeking to become the thing
+      he fled from. He would trade handsomely for a legitimate
+      captain's sponsorship at a ting hearing. Voss could become
+      the man who turns an outlaw camp into a chartered settlement,
+      which would earn Grimketil's loyalty and the enmity of every
+      jarl who sees outlaws as wolves to be hunted. The question
+      is whether Grimketil's charm hides something Voss cannot
+      afford to trust.
+    camp_defenses: "Log palisade with a single gate, crossbar-locked. Two watchtowers (tree platforms with rope ladders). Solveig runs a three-person patrol rotation on the forest trails. The approach is deliberately confusing — trail markers are moved weekly."
+    winter_strategy: "The settlement is self-sustaining in mild winters: stored grain, salted meat, the goats and chickens. In hard winters, Grimketil sends raiding parties to steal grain from farms under Vargheim's protection, which is slowly making Jarl Ulf Vargson angry enough to do something about it."
+    notes: "Grimketil keeps a chest of silver — estimated 40 silver — hidden under the hall floor. The settlement's economy runs on his personal treasury. If the silver were stolen or seized, the settlement would collapse within a month."
+
+  # ---------------------------------------------------------------
+  # WOLF_004 — Berserker pack too violent for employment
+  # ---------------------------------------------------------------
+  - id: "WOLF_004"
+    name: "The Red Mouths"
+    leader:
+      name: "Hrafn Skallagrimsen"
+      call_name: "Hrafn the Hollow"
+      age: "late 20s"
+      stats:
+        MIG: 9
+        NIM: 6
+        TOU: 8
+        WIT: 3
+        WIL: 3
+        WYR: 3
+      hp: 38
+      skills:
+        - name: "Axes"
+          rank: 4
+        - name: "Brawl"
+          rank: 3
+        - name: "Intimidate"
+          rank: 3
+      description: >
+        Built like a young bull. Shoulders wider than a doorframe,
+        arms roped with muscle and scarred from wrist to neck with
+        old blade-marks and what look like bite wounds — his own
+        teeth. When the rage takes him, he bites his shield rim
+        until his lips bleed. The blood dries in his beard and he
+        does not wipe it. Hence the name. Pale blue eyes that go
+        empty in combat, staring through whatever he is killing at
+        something the rest of them cannot see. Between rages, he
+        is quiet, almost gentle — strokes the camp dog, stares at
+        fires, speaks in short sentences. The contrast is what
+        makes him terrifying. The man who scratches a dog's ears
+        and the man who split a merchant's ribcage open with one
+        axe-stroke are the same man, and neither one can control
+        the other.
+    size: 7
+    origin_story: >
+      The Red Mouths were four berserkers who served with the
+      Iron Tide before its collapse. They fought well — too well.
+      On a contract near Grimholt in Y312, Hrafn's pack broke
+      formation during a night raid on a bandit camp and kept
+      killing after the bandits surrendered. Three prisoners
+      dead, one of them a woman. The Iron Tide's captain expelled
+      them on the spot.
+
+      Hrafn took it calmly. He always takes things calmly until
+      he does not. The four walked east into the rime-moors.
+      They picked up three more — a deserter from Ordovast's
+      iron-guard, a farmboy who wanted to be a warrior and
+      discovered he had the rage in him, and a woman named Sigga
+      who fights with a wood-axe and does not speak about where
+      she came from. No jarl will charter them. No company will
+      hire them. Two tried: the first time, Hrafn broke a
+      client's arm during a contract negotiation because the
+      man raised his voice. The second time, the Red Mouths
+      killed a surrendered prisoner the client wanted alive. Word
+      spread. Now they survive by taking what they want from
+      people too weak to stop them.
+    territory: "Eastern rime-moors, between Grimholt and the Black Pine edge"
+    camp_type: "mobile — they carry their gear and sleep where they drop, rarely staying more than three nights in one place"
+    survival_strategy: "raiding — they hit isolated farmsteads, travellers, and small trade caravans, take what they need, and move on"
+    threat_tier: 2
+    named_members:
+      - name: "Sigga"
+        role: "Fighter"
+        stats: { MIG: 7, NIM: 5, TOU: 7, WIT: 4, WIL: 4, WYR: 2 }
+        hp: 30
+        skills:
+          [
+            { name: "Axes", rank: 2 },
+            { name: "Brawl", rank: 3 },
+            { name: "Forage", rank: 1 },
+          ]
+        description: >
+          Square-jawed woman with cropped grey-streaked hair and
+          the flat eyes of someone who decided a long time ago
+          that she does not care whether she lives through the
+          week. Fights with a wood-splitting axe — not a weapon,
+          a tool, which makes the damage worse. Arms scarred with
+          deliberate cuts in parallel lines, old and white. She
+          does not berserker. She is something else: calm, hollow,
+          methodical. The berserkers respect her because she does
+          not flinch and does not stop.
+      - name: "Kveld 'Dogboy'"
+        role: "Scout / Forager"
+        stats: { MIG: 5, NIM: 7, TOU: 5, WIT: 5, WIL: 3, WYR: 2 }
+        hp: 26
+        skills:
+          [
+            { name: "Track", rank: 2 },
+            { name: "Forage", rank: 2 },
+            { name: "Stealth", rank: 2 },
+          ]
+        description: >
+          The farmboy. Seventeen winters. Lean, dirty, feral in a
+          way that suggests he did not grow up so much as survive
+          into his own body. Reddish hair matted into clumps. He
+          discovered the battle-rage on his family's farm when
+          raiders came and now he cannot quite come back from it.
+          Between episodes he is jittery, flinching, eager to
+          please. He follows Hrafn the way a lost dog follows the
+          first person who feeds it. His name is Kveld. No one
+          uses it.
+    relationship_to_mercenaries: "hostile — they attack anyone they think they can take, including smaller mercenary bands"
+    disposition: "mad"
+    narrative_hook: >
+      Hrafn is dying. Not visibly — he is the strongest man most
+      people will ever meet — but the rages are getting longer and
+      the silences between them shorter. The fits leave him blind
+      for hours afterward. He has maybe a year before his body
+      gives out or his mind does. He knows this. In a rare lucid
+      moment, he approached a völva near Grimholt and asked her
+      to lift the curse. She told him the rage is not a curse — it
+      is a door, and he walked through it willingly. She also told
+      him the door can be closed, but only by a seiðr-worker of
+      rank three or higher, and the price is a year of the
+      berserker's remaining life. Hrafn would submit to this.
+      His pack would not. Voss could broker the deal — or exploit
+      the division.
+    camp_defenses: "None. They are the defense. Seven people willing to fight to the death with no concern for personal survival is its own fortification."
+    winter_strategy: "They take a farmstead. They move in. The original occupants leave or die. When spring comes, they leave the wreckage and move on. This is why the eastern moor-farms now keep dogs and bar their doors at the first snow."
+    notes: "Kveld is salvageable. Get him away from Hrafn and into a structured band with discipline and the boy might become a useful fighter instead of a dead one. He is also the easiest member to approach — he is lonely and scared and does not know how to ask for help."
+
+  # ---------------------------------------------------------------
+  # WOLF_005 — Escaped thralls
+  # ---------------------------------------------------------------
+  - id: "WOLF_005"
+    name: "The Unchained"
+    leader:
+      name: "Steinarr"
+      call_name: "No-Name"
+      age: "mid-30s"
+      stats:
+        MIG: 7
+        NIM: 6
+        TOU: 7
+        WIT: 5
+        WIL: 7
+        WYR: 1
+      hp: 34
+      skills:
+        - name: "Brawl"
+          rank: 3
+        - name: "Blades"
+          rank: 2
+        - name: "Stealth"
+          rank: 2
+        - name: "Forage"
+          rank: 2
+      description: >
+        Steinarr is not his birth name. He chose it from a
+        rune-stone he passed on the night he ran. Broad, dark-
+        skinned — Sami blood, or further east, no one asks and
+        he does not say. Iron-collar scars around his throat,
+        raw even after three years free; the skin healed badly
+        and rubs against any neckline. He keeps his throat bare
+        in all weather. It is a statement. Short black hair, a
+        flattened nose broken by an overseer's fist, hands that
+        are too large for his frame and grip a seax like they
+        are still gripping the iron of a chain they cannot quite
+        believe is gone. He does not give orders. He asks. The
+        others follow because he asked them to run and they lived.
+    size: 9
+    origin_story: >
+      The Deepholm iron mines consume thralls faster than the
+      jarls can buy them. Warchief Ordovast purchases between
+      ten and twenty thralls per season from coastal slavers,
+      works them in the deep shafts until they break, and buries
+      them in the slag heaps outside Grimholt. The standing joke
+      in the mines is that the iron veins run red because the
+      mountain drinks.
+
+      Steinarr was purchased in Y310 and survived four years
+      underground. Most do not last two. In the autumn of Y313
+      he killed his overseer with a loose chain-link — swung it
+      into the man's temple during a shift change — and ran for
+      the surface. Eight other thralls followed. They killed a
+      second guard at the shaft entrance and fled east into the
+      rime-moors at night.
+
+      Ordovast sent iron-guard patrols after them for two weeks.
+      The patrols found three and brought them back in pieces as
+      an example. The remaining nine vanished into the Black Pine.
+      They have been moving ever since, never staying anywhere
+      long enough for word to travel. They kill slavers. They
+      kill bounty hunters. They free thralls when they find them.
+      They do not negotiate with anyone who owns human beings.
+    territory: "Nomadic — rotate between the eastern rime-moors and the southern Black Pine, never within a day's march of Grimholt"
+    camp_type: "mobile — temporary shelters built from branches and hides, broken down every two to three days"
+    survival_strategy: "poaching, foraging, and targeted raids on slaver caravans moving between the coast and Grimholt"
+    threat_tier: 2
+    named_members:
+      - name: "Hild"
+        role: "Fighter / Camp Leader"
+        stats: { MIG: 6, NIM: 5, TOU: 6, WIT: 6, WIL: 6, WYR: 1 }
+        hp: 28
+        skills:
+          [
+            { name: "Axes", rank: 2 },
+            { name: "Shelter", rank: 2 },
+            { name: "Forage", rank: 3 },
+          ]
+        description: >
+          Norse-born woman, mid-twenties, sold into thralldom by
+          her own father to settle a debt. Blonde hair she keeps
+          hacked short with a knife. Strong hands, a quiet voice,
+          and an expression that suggests she is permanently
+          evaluating whether the person she is speaking to is a
+          threat. She runs the camp — fires, food, shelter, watch
+          rotation — while Steinarr runs the fights. The division
+          is clean and unspoken.
+      - name: "Kolli"
+        role: "Scout / Tracker"
+        stats: { MIG: 5, NIM: 7, TOU: 5, WIT: 6, WIL: 5, WYR: 1 }
+        hp: 26
+        skills:
+          [
+            { name: "Track", rank: 3 },
+            { name: "Stealth", rank: 3 },
+            { name: "Bows", rank: 1 },
+          ]
+        description: >
+          Small, wiry, fast. Sami features, dark eyes that miss
+          nothing. He was a boy when he was taken and he does not
+          remember where from. The mines gave him a limp — crushed
+          left foot, healed crooked — but above ground he compensates
+          with a tracker's instinct that borders on the uncanny. He
+          can smell iron-guard leather oil at fifty paces. He can
+          read a boot-print in half-frozen mud and tell you how
+          many men, how heavy, and how long ago. The foot hurts
+          every step. He does not mention it.
+    relationship_to_mercenaries: "hostile — mercenaries enforce the system that enslaved them. They will not attack a band that leaves them alone, but they will not trust one either"
+    disposition: "principled"
+    narrative_hook: >
+      Ordovast has posted a bounty: 10 silver for the band, alive.
+      He wants them returned to the mines as an example. Multiple
+      mercenary companies have considered the contract. None have
+      taken it yet — the reputation cost of hunting escaped thralls
+      is high, and the Unchained fight like cornered animals. If
+      Voss encounters them, he faces a choice: take the bounty
+      (good silver, bad reputation), leave them alone (no profit,
+      clean hands), or help them reach the coast and a ship south
+      (no profit, possible future ally, and Ordovast's permanent
+      enmity). The moral calculus has no clean answer.
+    camp_defenses: "Mobility is the defense. They never sleep at the same site twice in a month. Kolli runs counter-trails to confuse trackers. When cornered, they fight to the death — none of them will be taken alive."
+    winter_strategy: "The hardest months. They seek deep forest shelter and build snow-wall dens insulated with pine boughs. Steinarr's rule: no fires visible from above, no smoke during daylight. They burn small and low. Two winters they have survived this way. The third will be the test."
+    notes: "There are more thralls in the Deepholm mines who know Steinarr escaped and lived. Every season, the idea spreads. Ordovast's overseer problem is getting worse, and Steinarr has not even tried to recruit from the inside yet."
+
+  # ---------------------------------------------------------------
+  # WOLF_006 — Seiðr-wife and followers, outlawed for witchcraft
+  # ---------------------------------------------------------------
+  - id: "WOLF_006"
+    name: "The Veil-Watchers"
+    leader:
+      name: "Aud Hallbjörnsdottir"
+      call_name: "Aud the Pale"
+      age: "early 50s"
+      stats:
+        MIG: 3
+        NIM: 4
+        TOU: 4
+        WIT: 8
+        WIL: 8
+        WYR: 5
+      hp: 20
+      skills:
+        - name: "Seiðr"
+          rank: 4
+        - name: "Lore"
+          rank: 3
+        - name: "Wyrd-reading"
+          rank: 3
+        - name: "Forage"
+          rank: 2
+      description: >
+        Thin to the point of translucence. Pale skin stretched over
+        fine bones, the veins visible at her temples and wrists like
+        blue thread under linen. White hair — not grey, white, gone
+        colourless the way hair does when the wyrd burns through it —
+        worn in a single braid past her waist. Eyes that were brown
+        once and now have a milky film, as if the Veil got into them.
+        She can still see, but not entirely with her eyes. She moves
+        slowly, carefully, a woman carrying something heavy that no
+        one else can see. When she speaks, people listen, not because
+        her voice is loud but because the air changes — a pressure
+        drop, a stillness. Dogs whine and look away. Her hands are
+        steady and cold. She smells of birch smoke and something
+        underneath it, like turned earth after rain.
+    size: 8
+    origin_story: >
+      Aud practised seiðr openly in Skaldhaven for twenty years.
+      The Hall of Sagas tolerated her because she was useful: she
+      could read the Veil's thickness, predict its surges, warn
+      when a barrow was waking. The settlement paid her in food
+      and shelter for this service. She lived in a hut on the
+      sea-cliff above the town and kept to herself.
+
+      In the spring of Y313, a child in Skaldhaven fell sick with
+      a wasting illness that no healer could treat. The child's
+      mother begged Aud for help. Aud performed a seiðr-working
+      that required crossing the Veil boundary to find the
+      sickness's source. She found it — a barrow-wight feeding
+      on the child's warmth through a thin point in the Veil
+      near the family's home. She drove it back and sealed the
+      thin point. The child recovered.
+
+      The problem: the working cracked the Veil further before
+      sealing it. For three days, the dead whispered in the
+      streets of Skaldhaven. Windows frosted from the inside.
+      A rune-stone in the Hall of Sagas bled. The settlement
+      panicked. The ting declared Aud guilty of intentional
+      Veil-thinning — skóggangr, immediate. She had three days.
+      Seven people followed her into exile: two apprentices, a
+      former lover who refused to stay, and four people who
+      owed her their lives and considered the debt unpaid.
+    territory: "The sea-cliffs south of Skaldhaven, in the Kveldsarm inlet and the caves below"
+    camp_type: "sea-cave complex — three connected caves above the high-tide line, accessible only by a cliff path or by boat during calm water"
+    survival_strategy: "Aud trades seiðr services — divination, Veil-reading, curse-lifting — to anyone desperate enough to seek out an outlawed witch. Payment in food, not silver. She does not accumulate. She survives."
+    threat_tier: 2
+    named_members:
+      - name: "Vigdis"
+        role: "Apprentice / Defender"
+        stats: { MIG: 5, NIM: 6, TOU: 5, WIT: 7, WIL: 6, WYR: 3 }
+        hp: 24
+        skills:
+          [
+            { name: "Seiðr", rank: 2 },
+            { name: "Blades", rank: 2 },
+            { name: "Lore", rank: 2 },
+          ]
+        description: >
+          Aud's senior apprentice. Mid-twenties, sharp-faced,
+          dark-haired, with the nervous energy of a person
+          standing between two worlds and comfortable in neither.
+          She carries a seax and knows how to use it — a
+          concession to the reality that seiðr does not stop a
+          knife in the dark. The wyrd is growing in her and she
+          is afraid of it, which Aud considers healthy. Her Left
+          hand has a permanent tremor that worsens after workings.
+      - name: "Birger"
+        role: "Guard / Provider"
+        stats: { MIG: 6, NIM: 5, TOU: 6, WIT: 4, WIL: 6, WYR: 1 }
+        hp: 28
+        skills:
+          [
+            { name: "Spears", rank: 2 },
+            { name: "Fishing", rank: 3 },
+            { name: "Shelter", rank: 2 },
+          ]
+        description: >
+          Aud's former lover. A fisherman, not a fighter, but
+          solid and dependable. Weathered face, salt-white
+          stubble, hands scarred with fish-hook marks and net-
+          burns. He left Skaldhaven because he could not imagine
+          staying while she walked into exile. He does not talk
+          about love. He baits hooks, mends nets, catches fish,
+          and makes sure the cave fire does not go out. That is
+          his way of saying it.
+    relationship_to_mercenaries: "wary — Aud will trade seiðr services for protection or supplies, but she distrusts armed men on principle"
+    disposition: "principled"
+    narrative_hook: >
+      Aud knows something the jarls do not: the Veil is thinning
+      faster than anyone realizes. She has been monitoring it from
+      the sea-caves and her readings show a pattern — the thin
+      points are not random, they are converging on the Deepholm
+      mining tunnels. Something in the deep rock is pulling the
+      Veil apart from below. She cannot investigate alone and she
+      cannot hire anyone because she is outlawed. A mercenary
+      captain who brought her intelligence from the Deepholm
+      interior would receive, in exchange, the most accurate
+      Veil-map in the Rimevegr — worth a fortune in contract
+      planning.
+    camp_defenses: "The cliff path is narrow and exposed — one person at a time, and Vigdis watches it from above. The sea approach requires a boat and knowledge of the rocks. Aud has placed seiðr-wards on the cave entrance: anyone who enters without invitation feels a sudden terror, a conviction that something is watching from the dark. It is not real. It feels real."
+    winter_strategy: "The caves are above tide and insulated by rock. Birger fishes year-round — the inlet is sheltered enough for a small boat even in winter storms. They burn driftwood and dried kelp. The smoke smells terrible. They are warm."
+    notes: "Aud is the most powerful seiðr practitioner outside of a jarl's service in the Rimevegr. She is also dying — the Veil-workings have cost her more than anyone knows. The milky film in her eyes is spreading. She has perhaps two or three years. She wants to train Vigdis to replace her, but the girl is not ready and Aud is running out of time."
+
+  # ---------------------------------------------------------------
+  # WOLF_007 — Young huskarls' sons gone feral
+  # ---------------------------------------------------------------
+  - id: "WOLF_007"
+    name: "The Skinned Wolves"
+    leader:
+      name: "Kjartan Ulfsen"
+      call_name: "Kjartan Bloodcloak"
+      age: "early 20s"
+      stats:
+        MIG: 7
+        NIM: 7
+        TOU: 5
+        WIT: 4
+        WIL: 4
+        WYR: 1
+      hp: 28
+      skills:
+        - name: "Blades"
+          rank: 3
+        - name: "Brawl"
+          rank: 2
+        - name: "Intimidate"
+          rank: 2
+        - name: "Stealth"
+          rank: 1
+      description: >
+        Twenty-two winters and already carrying more scars than
+        men twice his age. Tall, rangy, all sinew and speed with
+        none of the weight that comes from years of carrying a
+        shield. Sandy hair shaved at the sides in a style he
+        copied from a saga he half-remembers. Wears a wolf-skin
+        cloak he took from the first man he killed — the skin is
+        badly cured and stinks in warm weather, but he will not
+        give it up. Angular face, sharp jaw, a permanent sneer
+        that he thinks makes him look dangerous and actually makes
+        him look young. Because he is young. The confidence is
+        real. The judgment is not.
+    size: 6
+    origin_story: >
+      Six boys from Vargheim. Huskarls' sons and free-farmers'
+      sons who grew up hearing their fathers' war stories and
+      decided the farm life was beneath them. Kjartan was the
+      ringleader — Jarl Ulf Vargson's own nephew, raised in
+      the hall, fed on saga-stories and the idea that violence
+      is glory.
+
+      It started as petty crimes: stealing ale from the hall
+      stores, fighting other boys, killing a neighbour's goat
+      for sport. It escalated when Kjartan and two others beat
+      a travelling merchant unconscious on the Svartfuruvegr
+      and stole his goods in the autumn of Y315. The merchant
+      survived and reported it. Jarl Ulf, mortified that his
+      own blood had dishonoured the settlement, declared lesser
+      outlawry on Kjartan and banished him publicly. The other
+      five chose to follow rather than face their own fathers'
+      judgment.
+
+      They have been in the forest for eight months. They are
+      hungry, angry, and increasingly reckless. None of them
+      knows how to build a proper shelter. None of them can
+      preserve meat for longer than three days. They are good
+      at fighting and bad at everything else, which is a death
+      sentence in the Black Pine without luck.
+    territory: "Western Black Pine, near the Svartfuruvegr between Vargheim and Feldwick"
+    camp_type: "forest den — a rough lean-to against a boulder, poorly insulated, frequently moved because they do not know how to hide their tracks"
+    survival_strategy: "raiding travellers on the Svartfuruvegr, stealing from isolated charcoal camps, poorly executed"
+    threat_tier: 1
+    named_members:
+      - name: "Bryn Ketilsen"
+        role: "Fighter / Kjartan's Second"
+        stats: { MIG: 6, NIM: 6, TOU: 5, WIT: 5, WIL: 4, WYR: 1 }
+        hp: 26
+        skills:
+          [
+            { name: "Axes", rank: 2 },
+            { name: "Brawl", rank: 2 },
+            { name: "Track", rank: 1 },
+          ]
+        description: >
+          Bryn is the quiet one. Stocky, brown-haired, practical
+          where Kjartan is reckless. He followed Kjartan out of
+          loyalty, not conviction, and is beginning to realize
+          the difference matters. He is the one who tries to
+          build fires that last and shelters that do not leak,
+          failing at both because no one taught him. He watches
+          Kjartan with the expression of someone calculating
+          whether the ride is worth the destination.
+      - name: "Solmund 'Fishguts'"
+        role: "Forager / Lookout"
+        stats: { MIG: 4, NIM: 6, TOU: 4, WIT: 6, WIL: 4, WYR: 1 }
+        hp: 22
+        skills:
+          [
+            { name: "Forage", rank: 2 },
+            { name: "Stealth", rank: 2 },
+            { name: "Fishing", rank: 1 },
+          ]
+        description: >
+          Smallest of the group. Sixteen winters. Freckled face,
+          red hair, perpetually runny nose. He was never a fighter
+          — he came along because his older brother did, and his
+          brother died of a fever three months into exile. Now
+          Solmund is alone in a group of boys playing at being
+          men, and he is the only one who seems to understand
+          they are all going to die out here if nothing changes.
+          He catches fish and digs roots and does not complain.
+          He cries at night when he thinks no one can hear.
+    relationship_to_mercenaries: "hostile — they attack anyone they encounter because they do not know how to negotiate and are too proud to ask"
+    disposition: "desperate"
+    narrative_hook: >
+      Jarl Ulf Vargson wants his nephew back. Not out of love —
+      out of politics. Kjartan is the last male of Ulf's bloodline,
+      and if the boy dies in the forest, the succession question
+      splits Vargheim's council. Ulf will not send his own men
+      because recapturing an outlaw you declared yourself looks
+      weak. He would pay a discreet mercenary company to bring
+      Kjartan home alive. The problem: Kjartan does not want to
+      go home. He has tasted freedom (which is actually starvation)
+      and believes he is destined for greatness (he is destined for
+      a shallow grave). Voss would have to decide whether to drag
+      the boy back by force, talk him into it, or leave him to
+      learn the lesson the forest will teach.
+    camp_defenses: "A boy on a tree branch with a horn. That is it. They have not thought further than that."
+    winter_strategy: "They do not have one. Their first winter approaches and they are burning green wood, sleeping in wet clothes, and eating raw game because no one knows how to smoke it. At the current trajectory, two or three will die before spring. The rest will beg to be taken in by anyone willing."
+    notes: "Kjartan has his uncle's silver arm-ring, stolen the night he left. It is worth eight silver and is the most valuable thing in the camp. He wears it openly. Every outlaw in the forest knows he has it."
+
+  # ---------------------------------------------------------------
+  # WOLF_008 — Mixed Norse-Sami group
+  # ---------------------------------------------------------------
+  - id: "WOLF_008"
+    name: "The Dusk-Walkers"
+    leader:
+      name: "Njáll Eiriksen"
+      call_name: "Half-Blood"
+      age: "mid-30s"
+      stats:
+        MIG: 5
+        NIM: 7
+        TOU: 5
+        WIT: 7
+        WIL: 6
+        WYR: 2
+      hp: 28
+      skills:
+        - name: "Track"
+          rank: 3
+        - name: "Bows"
+          rank: 3
+        - name: "Navigate"
+          rank: 3
+        - name: "Forage"
+          rank: 2
+      description: >
+        Lean and weather-dark, with the high cheekbones and wide-
+        set eyes that mark Sami blood and the Norse jaw and bearing
+        that mark the other half. Neither people claims him fully.
+        He wears a Sami hat of reindeer hide in winter and a Norse
+        iron arm-ring in summer and does not explain either. Long
+        dark hair tied back with a leather cord. A thin scar across
+        the bridge of his nose where a thrown stone split the skin
+        open in a Grimholt market when he was fourteen. He learned
+        then that half-blood means half-welcome everywhere. Moves
+        through the forest like water through a crack — he was born
+        between the trees and the tundra and he knows both.
+    size: 11
+    origin_story: >
+      Njáll's father was a Norse trapper who married a Sami woman
+      against both peoples' customs. They lived on the northern
+      edge of the Rimevegr, between the tree-line and the tundra,
+      belonging to neither community. When Eirik died of a fever
+      in Y307, the Sami band his wife had come from refused to
+      take her back with a half-blood son. She died that winter.
+
+      Njáll survived. He drifted south into Norse territory and
+      found others like himself: mixed-blood children, Norse
+      outcasts who had lived too long among the Sami, Sami
+      hunters who had been expelled for trading with Norsemen.
+      People who existed in the gap between two cultures and
+      found no floor beneath them. By Y312 they were eleven,
+      living in the northern Black Pine, moving with the seasons
+      the way the Sami do but fighting when pressed the way
+      Norsemen do.
+
+      They are not formally outlawed — no specific crime, no
+      ting ruling. They are simply outside. No settlement
+      welcomes them. No jarl claims them. They trade at the
+      edges, barter furs and game for iron and salt at farmsteads
+      where the farmer is practical enough to deal with anyone
+      who has goods, and they vanish before anyone can decide
+      whether to report them or not.
+    territory: "Northern Black Pine and the tundra edge, rotating seasonally"
+    camp_type: "Sami-style lavvu tents — reindeer-hide structures around central firepits, portable, set up and broken down in an hour"
+    survival_strategy: "trapping, hunting, fur trading at the margins of Norse settlements — they are not raiders, they are traders who are not allowed to trade openly"
+    threat_tier: 1
+    named_members:
+      - name: "Ravna"
+        role: "Hunter / Healer"
+        stats: { MIG: 4, NIM: 6, TOU: 5, WIT: 7, WIL: 6, WYR: 3 }
+        hp: 24
+        skills:
+          [
+            { name: "Forage", rank: 3 },
+            { name: "Lore", rank: 2 },
+            { name: "Bows", rank: 2 },
+            { name: "Healing", rank: 2 },
+          ]
+        description: >
+          Full Sami, mid-thirties. Round face, dark eyes, a calm
+          that comes from knowing exactly where she is in relation
+          to everything around her. She reads weather in the
+          behaviour of birds and the colour of snow and is right
+          more often than the best Norse sky-watchers. She is
+          also the closest thing the band has to a healer — Sami
+          herb-knowledge combined with practical bone-setting
+          and wound-cleaning. Her wyrd is higher than she admits.
+          She dreams of things before they happen and does not
+          call it seiðr because to call it seiðr would make her
+          a target. She calls it noticing.
+      - name: "Gunnarr 'Stone-Ear'"
+        role: "Fighter / Trader"
+        stats: { MIG: 6, NIM: 5, TOU: 6, WIT: 5, WIL: 5, WYR: 1 }
+        hp: 28
+        skills:
+          [
+            { name: "Axes", rank: 2 },
+            { name: "Bargain", rank: 2 },
+            { name: "Brawl", rank: 2 },
+          ]
+        description: >
+          Norse-born, deaf in the left ear from a childhood
+          infection. Thick-set, blunt-featured, hair the colour
+          of old straw. He was a farmhand near Feldwick who took
+          up with a Sami woman and was driven out when her people
+          came south for the winter trade and his employer learned
+          who she was. He joined Njáll's band five years ago and
+          has become the face they use for Norse dealings — he
+          looks right, talks right, and can negotiate a trade
+          without anyone realizing who he represents until the
+          goods are paid for and the band has gone.
+    relationship_to_mercenaries: "wary — they avoid contact but will trade intelligence about the northern country for supplies if approached respectfully"
+    disposition: "pragmatic"
+    narrative_hook: >
+      The Dusk-Walkers know the northern territory better than
+      anyone in the Rimevegr. The tundra edge, the deep northern
+      pine, the permafrost line — ground that no jarl controls
+      and no Norse band enters willingly. If Voss needs to pursue
+      a contract into the northern reaches — a barrow expedition,
+      a hunt for something that fled beyond the tree-line — Njáll
+      is the only guide available. His price: a winter camp on
+      settled land, protected by a legitimate company's contract,
+      where his people can trade openly for one season. That is
+      all he wants. It is also politically impossible for most
+      jarls to grant.
+    camp_defenses: "They relocate every five to seven days. The lavvu tents leave minimal trace. Njáll scouts the back-trail every evening. Ravna's weather sense gives them a day's warning of storms, which they use to move while pursuers shelter."
+    winter_strategy: "They move north, not south. The Sami members know how to build snow shelters, trap in deep winter, and navigate by stars when the sun does not rise. The Norse members suffered the first two winters and adapted. They follow the reindeer herds the way the Sami always have. They eat what the land gives and they do not waste."
+    notes: "Ravna's growing wyrd-sensitivity is a liability. If a jarl's seiðr-advisor detects her abilities, the band gains an enemy. If a seiðr-worker like Aud found her, there would be an attempt to recruit."
+
+  # ---------------------------------------------------------------
+  # WOLF_009 — Former jarl's household guard
+  # ---------------------------------------------------------------
+  - id: "WOLF_009"
+    name: "The Grey Shields"
+    leader:
+      name: "Halvar Greymantle"
+      call_name: "Old Grey"
+      age: "late 40s"
+      stats:
+        MIG: 6
+        NIM: 4
+        TOU: 7
+        WIT: 6
+        WIL: 7
+        WYR: 1
+      hp: 32
+      skills:
+        - name: "Shields"
+          rank: 4
+        - name: "Axes"
+          rank: 2
+        - name: "Command"
+          rank: 3
+        - name: "Sagas"
+          rank: 2
+        - name: "Intimidate"
+          rank: 1
+      description: >
+        Old for a fighting man and it shows in the right places.
+        Grey hair cropped close, grey beard, grey cloak — the
+        colour was not chosen, it is what happened when the dye
+        ran out and he stopped caring. Deep-set eyes under heavy
+        brows, the face of a man who has been disappointed so
+        many times that the expression settled in permanently.
+        Carries his shield like an old friend: scarred poplar
+        with an iron boss, repainted three times and showing the
+        layered colours at every gouge. He walks with a slight
+        hitch in his right knee — an old spear wound that healed
+        stiff. He cannot run, but he can stand in a shield line
+        longer than men half his age because he learned thirty
+        years ago that running is for men who forgot to hold.
+    size: 12
+    origin_story: >
+      Halvar served Jarl Torsten of Kolvik for eighteen years.
+      Captain of the household guard, sworn huskarl, the man
+      who stood behind the chair at every ting and slept across
+      the hall door. Torsten was a decent jarl — fair, cautious,
+      not clever. When the Frostfjord-Ashen Reach feud widened
+      in Y312, Torsten chose the wrong side. He backed Hrothgar,
+      but his port sat between the two jarls' supply routes and
+      Harbour-Master Eadric's loyalty was always to silver first
+      and oaths second.
+
+      The Pale Widow sent a raiding party. Eadric opened the
+      port gate at night. Torsten died in his hall with a spear
+      in his gut and Halvar standing over him, still fighting,
+      when the rest of the guard broke and ran. The Pale Widow
+      installed her own man. She offered Halvar amnesty if he
+      swore to the new jarl. He refused. He walked out of
+      Kolvik with twelve men — the ones who would not kneel —
+      and the Pale Widow declared them all skóggangr as
+      insurance. They have been on the coast ever since, twelve
+      men with good armour, good discipline, and nowhere to go.
+    territory: "The coastal cliffs between Kolvik and Stonebay"
+    camp_type: "abandoned fishing station — a stone hut with a collapsed roof they repaired with driftwood and sailcloth, overlooking a shingle beach"
+    survival_strategy: "fishing, coastal foraging, and small-scale piracy — intercepting trade boats in the coastal channels and taking a cut of cargo as 'passage fee'"
+    threat_tier: 2
+    named_members:
+      - name: "Arne Skeggsen"
+        role: "Second / Helmsman"
+        stats: { MIG: 5, NIM: 6, TOU: 5, WIT: 6, WIL: 6, WYR: 1 }
+        hp: 26
+        skills:
+          [
+            { name: "Navigate", rank: 3 },
+            { name: "Spears", rank: 2 },
+            { name: "Sailing", rank: 3 },
+          ]
+        description: >
+          Former harbour pilot under Eadric. Norse-born, wiry,
+          salt-cured skin and sun-squinted eyes that never fully
+          open. He left Kolvik voluntarily when Eadric betrayed
+          Torsten — not out of loyalty to the jarl, but out of
+          disgust at the harbour-master. He knows every current,
+          rock, and tidal pattern on the coast. He is the reason
+          the Grey Shields can intercept trade boats without
+          wrecking their own stolen fishing-craft on the rocks.
+      - name: "Thora 'Shield-Sister'"
+        role: "Fighter"
+        stats: { MIG: 6, NIM: 5, TOU: 7, WIT: 4, WIL: 7, WYR: 1 }
+        hp: 30
+        skills:
+          [
+            { name: "Shields", rank: 3 },
+            { name: "Axes", rank: 2 },
+            { name: "Brawl", rank: 1 },
+          ]
+        description: >
+          Last of Torsten's sworn shieldmaidens. Wide-shouldered,
+          blunt-nosed, with a jaw like a rock shelf and hands that
+          could crack walnuts bare. She fought beside Halvar the
+          night the hall fell and she carries the same rage he
+          carries, except hers is louder. She wants Kolvik back.
+          Halvar tells her to be patient. She is not patient. She
+          is loyal, which is the only reason she has not gone back
+          alone and died trying.
+    relationship_to_mercenaries: "wary — they respect professional soldiers but will not submit to anyone's authority after what happened"
+    disposition: "principled"
+    narrative_hook: >
+      Halvar wants Kolvik back. Not for himself — for Torsten's
+      memory and for the men who followed him out. The new jarl
+      is weak, Eadric's loyalty is for sale, and the Pale Widow's
+      raiding party withdrew south after the installation. A
+      disciplined force of thirty men could retake Kolvik in a
+      night. Halvar has twelve. He needs eighteen more. A
+      mercenary captain who joined the assault would share in
+      whatever Kolvik's treasury holds, gain a harbour ally, and
+      earn the permanent loyalty of a dozen experienced fighters.
+      The risk: the Pale Widow does not forget, and retaking
+      Kolvik means war with Ashen Reach.
+    camp_defenses: "The fishing station sits on a cliff shelf accessible by a single trail from above or by boat from the beach below. Halvar runs the camp like a garrison: watch rotation, discipline, assigned posts. Two men on the cliff-top at all times. Fire only at night, banked and smokeless."
+    winter_strategy: "The stone hut holds heat well once sealed. Arne keeps the fishing-craft seaworthy year-round. They fish, they raid supply boats during calm spells, and they ration grimly. Halvar keeps discipline by keeping routine: morning drills, evening sagas, shared meals. The men hold because the routine holds."
+    notes: "Halvar's twelve include three with serious old wounds — a man with a crushed shoulder, another with half-sight, a third with lung damage from a smoke inhalation the night of the coup. These men cannot fight in a shield line but can crew a boat, keep watch, and fish. A full-strength assessment puts the Grey Shields at nine combat-effective."
+
+  # ---------------------------------------------------------------
+  # WOLF_010 — Lone wolf with desperate followers
+  # ---------------------------------------------------------------
+  - id: "WOLF_010"
+    name: "Skarv's Dogs"
+    leader:
+      name: "Skarv Thorsen"
+      call_name: "Skarv the Crow"
+      age: "late 20s"
+      stats:
+        MIG: 6
+        NIM: 7
+        TOU: 5
+        WIT: 6
+        WIL: 5
+        WYR: 1
+      hp: 28
+      skills:
+        - name: "Blades"
+          rank: 3
+        - name: "Stealth"
+          rank: 3
+        - name: "Track"
+          rank: 2
+        - name: "Forage"
+          rank: 1
+      description: >
+        Lean as a stray dog and just as wary. Narrow face, dark
+        eyes set deep in shadowed sockets — he does not sleep
+        enough and it sits in his face like a permanent bruise.
+        Black hair, lank, pushed behind his ears. A knife-scar
+        on his right forearm he keeps visible because it is
+        proof he lived through the cut that gave it to him. Wears
+        layers of stolen clothing, none of it matching, all of it
+        patched. Moves with a feral quickness that suggests he
+        has been running from something his entire adult life and
+        has gotten very good at it. He is not a leader. He is a
+        survivor that other survivors attached themselves to, the
+        way loose iron finds a lodestone.
+    size: 5
+    origin_story: >
+      Skarv killed a man in Thornwall over a woman. Not a grand
+      feud — a tavern fight that went wrong. The man grabbed the
+      woman. Skarv grabbed a knife. The man died on the floor
+      with his ale still settling. Skarv had no silver for
+      weregild and no kin to pay on his behalf. The ting at
+      Thornwall declared skóggangr in the autumn of Y314.
+
+      He ran east. The moors nearly killed him the first winter.
+      He stole food from a farmstead near the Járnvegr and the
+      farmer's son chased him with a dog. He killed the dog.
+      He felt worse about the dog than the man in the tavern.
+      By the second spring he had picked up four others: a
+      deserter from Ordovast's iron-guard who went over the
+      wall after his sergeant beat him half-blind; a shepherd
+      boy accused of stealing sheep he had actually lost in a
+      storm; a woman named Dalla who had been a camp follower
+      for two mercenary bands before both dissolved and left
+      her with nothing; and an old man called Vidar who never
+      explains why he is outlawed and whom no one presses
+      because he is the only one who can set a snare that
+      actually catches anything.
+    territory: "Rime-moors, east of Thornwall, drifting between the Járnvegr and the southern forest edge"
+    camp_type: "whatever shelter they find — shepherd's huts, abandoned turf walls, overhangs, holes in the ground"
+    survival_strategy: "scavenging, petty theft, snaring small game — they are too small and too poorly armed to raid anything that can fight back"
+    threat_tier: 1
+    named_members:
+      - name: "Dalla"
+        role: "Cook / Negotiator"
+        stats: { MIG: 4, NIM: 5, TOU: 5, WIT: 6, WIL: 5, WYR: 1 }
+        hp: 22
+        skills:
+          [
+            { name: "Bargain", rank: 2 },
+            { name: "Forage", rank: 2 },
+            { name: "Cooking", rank: 2 },
+          ]
+        description: >
+          Mid-twenties, plain-faced, brown hair tied under a
+          cloth. Camp follower's hands — calloused from washing,
+          cooking, mending, the invisible labour that keeps men
+          alive and never earns a saga-verse. She has a talent
+          for making something from nothing: a pot of soup from
+          roots and bones, a trade from goods worth less than the
+          words she uses to sell them. She is the group's only
+          link to the settled world — she can walk into a
+          farmstead and talk, buy, trade, because she looks like
+          what she is: a woman doing domestic work. No one sees
+          the outlaw.
+      - name: "Vidar"
+        role: "Trapper / Elder"
+        stats: { MIG: 3, NIM: 4, TOU: 4, WIT: 7, WIL: 6, WYR: 1 }
+        hp: 18
+        skills:
+          [
+            { name: "Forage", rank: 3 },
+            { name: "Track", rank: 2 },
+            { name: "Lore", rank: 2 },
+          ]
+        description: >
+          Old. How old, no one asks. White-bearded, stooped,
+          missing most of his teeth. Hands that shake until he
+          sets a snare, and then they are steady as iron. He
+          knows the moors — every hollow, every stream, every
+          shepherd's shelter, every place where hares run and
+          grouse nest. He walked these moors before Ordovast
+          built his first forge. He does not talk about what
+          drove him out. He talks about the weather, the moon,
+          and where the game will be tomorrow. He is usually right.
+    relationship_to_mercenaries: "actively recruiting — Skarv would join a legitimate band in an instant if any captain would take a man under skóggangr, which none will"
+    disposition: "desperate"
+    narrative_hook: >
+      Skarv is not dangerous. He is not principled. He is not
+      mad. He is a young man who made one bad decision and cannot
+      find the way back. If Voss encountered him, the most useful
+      outcome is recruitment: Skarv is fast, quiet, good with a
+      knife, and desperate to serve anyone who offers structure
+      and a fire. The legal problem is that taking a man under
+      skóggangr into a chartered band violates the charter. Voss
+      would have to either hide Skarv's status (risky), petition
+      for his outlawry to be lifted (expensive, slow), or keep
+      him as an off-books asset (useful, deniable, morally grey).
+      Dalla and Vidar come with the package — Dalla as a capable
+      camp follower, Vidar as a local guide worth his weight in
+      dried meat.
+    camp_defenses: "Vidar sleeps light and hears everything. That is the defense. Five people with two knives, a hand-axe, and a sling between them do not have defensive options. They rely on being too small and too pathetic for anyone to bother hunting."
+    winter_strategy: "Find a shelter. Any shelter. Share body heat. Eat what Vidar catches. Dalla stretches every scrap of food into soup. Last winter they survived by finding an abandoned turf hut near the Járnvegr and staying in it for six weeks, heating stones in the fire and packing them into their bedding. Two of them had frostbite. All of them are thinner than they should be."
+    notes: "Skarv's dogs — plural — is a bitter joke. He had one dog, the one he killed on the farmer's property. The name stuck. He does not find it funny."

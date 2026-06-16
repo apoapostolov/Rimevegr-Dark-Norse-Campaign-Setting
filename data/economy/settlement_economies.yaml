@@ -1,0 +1,1366 @@
+# Iron Ledger — Settlement Economic Profiles
+# Detailed production, trade, market, and wartime data for all 15 settlements.
+# Prices relative to base (1.0 = standard). Currency: 1 silver = 10 copper.
+# Common mercenary retainer: 2 silver/week.
+# Cross-references: settlements.yaml, geography/routes.yaml
+
+settlement_economies:
+  # ─────────────────────────────────────────────
+  # 1. FROSTFJORD HOLLOW — Fjord fishing village
+  # ─────────────────────────────────────────────
+  - settlement: "Frostfjord Hollow"
+    population: 87
+    size: "village"
+    terrain: "fjord"
+
+    production:
+      - good: "dried_cod"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_FOOD_002"
+        notes: "Primary export. Fleet of 12 small boats, salt-curing sheds on the quay."
+      - good: "rope"
+        quantity_weekly: "low"
+        trade_good_id: "TG_TOOL_004"
+        notes: "Rope-walk near harbour. Walrus-hide and seal-gut cordage."
+      - good: "whale_oil"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FUEL_002"
+        notes: "Rendered from drift-whale carcasses. Unreliable — depends on beachings."
+      - good: "salt_fish"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_FOOD_005"
+        notes: "Herring and flatfish. Lesser quality than dried cod but cheaper."
+
+    imports:
+      - good: "iron_ingot"
+        source: "Grimholt or Deepholm"
+        urgency: "high"
+        notes: "No local iron. Dependent on mountain trade for tools and nails."
+      - good: "timber"
+        source: "Ashen Reach or Vargheim"
+        urgency: "high"
+        notes: "Fjord has few trees. Boat repair consumes most supply."
+      - good: "grain"
+        source: "Thornwall or Ashen Reach"
+        urgency: "medium"
+        notes: "Cannot grow enough locally. Porridge grain lasts three weeks in store."
+      - good: "wool_cloth"
+        source: "Feldwick or Thornwall"
+        urgency: "low"
+        notes: "Local weaving is poor. Imports supplement winter clothing."
+
+    exports:
+      - good: "dried_cod"
+        destinations: ["Grimholt", "Deepholm", "Ashen Reach"]
+        volume: "high"
+      - good: "salt_fish"
+        destinations: ["Skaldhaven", "Kolvik"]
+        volume: "medium"
+      - good: "rope"
+        destinations: ["Kolvik", "Skaldhaven"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "deep-water harbour"
+        military_value: "Ships can dock and shelter. Blockade-vulnerable from the fjord mouth."
+      - resource: "fishing fleet"
+        military_value: "12 boats. Can be conscripted for coastal patrol, troop transport, or supply runs."
+      - resource: "salt stores"
+        military_value: "Curing salt for preserving rations. Worth seizing for a long campaign."
+
+    market:
+      market_day: "every Thorsdag"
+      stall_count: 4
+      visiting_traders: "occasional"
+      exotic_goods: false
+      price_modifier: 1.1
+      notes: "Small quayside market. Hrothgar taxes visiting traders 10%. Fish is cheap, everything else is marked up."
+
+    economic_vulnerabilities:
+      - "Fishing fleet dependent on calm fjord waters — winter storms halt production"
+      - "Single trade road to Ashen Reach (Beinvegr) — easily blockaded"
+      - "No smithy skilled enough for weapon production — only basic tool repair"
+      - "Hrothgar's 10% trader tax discourages visiting merchants"
+
+    trade_routes:
+      - to: "Ashen Reach"
+        route_id: "RTE_001"
+        goods_flow: "cod and salt fish out, timber and tar in"
+        frequency: "weekly"
+      - to: "Skaldhaven"
+        route_id: "RTE_002"
+        goods_flow: "cod and rope out, rune-craft and saga services in"
+        frequency: "monthly"
+
+    wartime_impact:
+      food_security: "moderate"
+      siege_endurance_weeks: 2
+      essential_imports_at_risk: ["iron_ingot", "timber", "grain"]
+      notes: "Can fish from harbour even under land siege, but iron and timber run out within two weeks. Palisade repairs impossible without wood imports."
+
+  # ─────────────────────────────────────────────
+  # 2. ASHEN REACH — Forest industrial village
+  # ─────────────────────────────────────────────
+  - settlement: "Ashen Reach"
+    population: 142
+    size: "large_village"
+    terrain: "forest"
+
+    production:
+      - good: "pine_tar"
+        quantity_weekly: "high"
+        trade_good_id: "TG_CRAFT_001"
+        notes: "Tar-works east of settlement. Controlled forest burns feed production. Regional monopoly."
+      - good: "iron_bloom"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_METAL_003"
+        notes: "Local bog-iron smelter. Lower quality than Grimholt ore but steady output."
+      - good: "timber"
+        quantity_weekly: "high"
+        trade_good_id: "TG_WOOD_001"
+        notes: "Vast pine forest. Logging crews work year-round. Export-grade planks and beams."
+      - good: "charcoal"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_FUEL_001"
+        notes: "By-product of tar-works and forest clearing. Feeds the smelter and trades outward."
+
+    imports:
+      - good: "dried_cod"
+        source: "Frostfjord Hollow"
+        urgency: "medium"
+        notes: "Forest provides game but fish protein needed to supplement diet."
+      - good: "salt"
+        source: "Kolvik or coastal traders"
+        urgency: "medium"
+        notes: "Required for preserving meat through winter. No local source."
+      - good: "wool_cloth"
+        source: "Thornwall or Feldwick"
+        urgency: "low"
+        notes: "Forest folk prefer leather but need wool for winter layers."
+
+    exports:
+      - good: "pine_tar"
+        destinations: ["Kolvik", "Frostfjord Hollow", "Deepholm"]
+        volume: "high"
+      - good: "timber"
+        destinations: ["Frostfjord Hollow", "Kolvik", "Skaldhaven"]
+        volume: "high"
+      - good: "iron_bloom"
+        destinations: ["Feldwick", "Thornwall"]
+        volume: "medium"
+      - good: "charcoal"
+        destinations: ["Ashmark", "Grimholt"]
+        volume: "medium"
+
+    strategic_resources:
+      - resource: "tar-works"
+        military_value: "Pine tar is essential for ship maintenance and fire-defence. Controlling this settlement controls naval readiness for the whole fjord."
+      - resource: "iron smelter"
+        military_value: "Produces low-grade iron suitable for tools, nails, and arrowheads. Not weapon-quality but vital for resupply."
+      - resource: "deep forest"
+        military_value: "Near-infinite concealment. A warband could hide in the Black Pine for weeks without detection."
+      - resource: "skilled woodcutters"
+        military_value: "Can build siege works, palisades, and rafts on short notice. The Pale Widow has used them as sappers."
+
+    market:
+      market_day: "every Tyrsdag and Freyjudag"
+      stall_count: 8
+      visiting_traders: "regular"
+      exotic_goods: false
+      price_modifier: 1.0
+      notes: "Largest market after Deepholm. The Pale Widow encourages trade — no tax on resident merchants, 5% on visitors. Twice-weekly market draws from Ashmark, Feldwick, and occasionally Thornwall."
+
+    economic_vulnerabilities:
+      - "Tar-works are a fire risk — an arson attack could destroy the primary industry"
+      - "Bog-iron smelter depends on charcoal supply from the forest"
+      - "Hostile relationship with Frostfjord Hollow threatens the cod supply"
+      - "The Pale Widow's intrigue drives away cautious traders"
+
+    trade_routes:
+      - to: "Frostfjord Hollow"
+        route_id: "RTE_001"
+        goods_flow: "tar and timber out, cod and rope in"
+        frequency: "weekly"
+      - to: "Thornwall"
+        route_id: "RTE_003"
+        goods_flow: "iron and tar out, wool and mutton in"
+        frequency: "fortnightly"
+      - to: "Ashmark"
+        route_id: "RTE_004"
+        goods_flow: "charcoal and tar out, herbs and smelted goods in"
+        frequency: "weekly"
+      - to: "Feldwick"
+        route_id: "RTE_013"
+        goods_flow: "iron tools out, wool in"
+        frequency: "fortnightly"
+
+    wartime_impact:
+      food_security: "moderate"
+      siege_endurance_weeks: 3
+      essential_imports_at_risk: ["dried_cod", "salt"]
+      notes: "Forest provides game and forage. Can survive without imports longer than most, but salt shortage means preserved meat runs out by week four. The Pale Widow has stockpiled grain in hidden caches."
+
+  # ─────────────────────────────────────────────
+  # 3. FELDWICK — Occupied moor village
+  # ─────────────────────────────────────────────
+  - settlement: "Feldwick"
+    population: 61
+    size: "village"
+    terrain: "moors"
+
+    production:
+      - good: "sheep_wool"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_CLOTH_001"
+        notes: "Primary livelihood. Flocks of ~200 sheep on the moors. Shearing twice a year."
+      - good: "root_vegetables"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_003"
+        notes: "Turnips, parsnips, and beetroot. Thin soil limits yield."
+      - good: "mutton"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_006"
+        notes: "Slaughtered for the Three Wolves occupiers. Flock is shrinking."
+
+    imports:
+      - good: "iron_tools"
+        source: "Ashen Reach"
+        urgency: "high"
+        notes: "No smithy. Every knife, axe, and shearing blade comes from outside."
+      - good: "salt"
+        source: "Kolvik via Ashen Reach"
+        urgency: "high"
+        notes: "Needed for cheese-making and meat preservation. Supply disrupted by occupation."
+      - good: "grain"
+        source: "Ashen Reach or Thornwall"
+        urgency: "medium"
+        notes: "Cannot grow cereals on moorland soil."
+
+    exports:
+      - good: "sheep_wool"
+        destinations: ["Ashen Reach", "Thornwall"]
+        volume: "medium"
+      - good: "root_vegetables"
+        destinations: ["Ashen Reach"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "sheep flocks"
+        military_value: "Walking rations. An occupying force can feed itself from the flocks — which is exactly what the Three Wolves are doing."
+      - resource: "moorland position"
+        military_value: "Open terrain with long sight-lines. Hard to approach unseen. Also hard to defend with 61 people."
+
+    market:
+      market_day: "no regular market"
+      stall_count: 0
+      visiting_traders: "none"
+      exotic_goods: false
+      price_modifier: 1.8
+      notes: "Occupation has killed trade. The Three Wolves confiscate anything valuable. Villagers barter among themselves. Prices for imported goods — when available at all — are extortionate."
+
+    economic_vulnerabilities:
+      - "Occupation by Three Wolves — economy is collapsing"
+      - "Flock shrinking as occupiers slaughter sheep faster than breeding"
+      - "No smithy — tools wear out and cannot be replaced"
+      - "Damaged palisade deters traders even if occupation ends"
+      - "Population may drop below survival threshold if occupation continues through winter"
+
+    trade_routes:
+      - to: "Ashen Reach"
+        route_id: "RTE_013"
+        goods_flow: "wool out, iron tools and salt in — currently disrupted"
+        frequency: "suspended"
+      - to: "Vargheim"
+        route_id: "RTE_011"
+        goods_flow: "wool out, furs and charcoal in — currently disrupted"
+        frequency: "suspended"
+      - to: "Kolvik"
+        route_id: "RTE_016"
+        goods_flow: "wool out, salt fish in — currently disrupted"
+        frequency: "suspended"
+
+    wartime_impact:
+      food_security: "poor"
+      siege_endurance_weeks: 1
+      essential_imports_at_risk: ["iron_tools", "salt", "grain"]
+      notes: "Already under occupation. Food stores looted. Villagers subsist on root vegetables and whatever the Three Wolves leave behind. Liberation would require immediate resupply."
+
+  # ─────────────────────────────────────────────
+  # 4. STONEBAY HAMLET — Remote fishing hamlet
+  # ─────────────────────────────────────────────
+  - settlement: "Stonebay Hamlet"
+    population: 23
+    size: "hamlet"
+    terrain: "coast"
+
+    production:
+      - good: "fresh_fish"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_001"
+        notes: "Subsistence fishing from two boats. Some surplus in summer."
+      - good: "dried_kelp"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_008"
+        notes: "Harvested from rocks at low tide. Used as animal feed and poor man's food."
+      - good: "seabird_eggs"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_009"
+        notes: "Seasonal. Cliff-nesting birds. Dangerous to collect."
+
+    imports:
+      - good: "iron_tools"
+        source: "Kolvik"
+        urgency: "high"
+        notes: "Fish hooks, knives, boat-nails. Replacement rate: one trip to Kolvik per season."
+      - good: "grain"
+        source: "Kolvik"
+        urgency: "medium"
+        notes: "Cannot grow anything on cliff-shelf. Trade fish for barley."
+
+    exports:
+      - good: "fresh_fish"
+        destinations: ["Kolvik"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "hidden cove"
+        military_value: "Small boats can shelter unseen from the cliff-top. Useful for smuggling or coastal raiding parties."
+      - resource: "cliff-top lookout"
+        military_value: "Clear view of the coast for miles. Early warning against seaborne raids."
+
+    market:
+      market_day: "no regular market"
+      stall_count: 0
+      visiting_traders: "none"
+      exotic_goods: false
+      price_modifier: 1.4
+      notes: "No market. Barter only. A visiting trader is a rare event — the cliff descent deters most."
+
+    economic_vulnerabilities:
+      - "Single cliff-path access — one rockfall isolates the hamlet completely"
+      - "Two boats is the entire fleet — losing one halves the food supply"
+      - "No healer, no smithy, no resources to repair anything complex"
+      - "Too small to interest traders or defend against any threat"
+
+    trade_routes:
+      - to: "Kolvik"
+        route_id: "RTE_014"
+        goods_flow: "fish out, tools and grain in"
+        frequency: "monthly"
+
+    wartime_impact:
+      food_security: "moderate"
+      siege_endurance_weeks: 1
+      essential_imports_at_risk: ["iron_tools", "grain"]
+      notes: "Can fish indefinitely if boats survive, but no stored grain. Nobody would bother besieging Stonebay — there is nothing to take."
+
+  # ─────────────────────────────────────────────
+  # 5. GRIMHOLT — Mountain iron stronghold
+  # ─────────────────────────────────────────────
+  - settlement: "Grimholt"
+    population: 118
+    size: "large_village"
+    terrain: "mountain"
+
+    production:
+      - good: "iron_ore"
+        quantity_weekly: "high"
+        trade_good_id: "TG_METAL_001"
+        notes: "Surface mines. Raw ore exported to Deepholm smelters and Ashmark for processing."
+      - good: "iron_ingot"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_METAL_002"
+        notes: "Local smelting for tools and weapons. Skilled smithy but below Deepholm quality."
+      - good: "weapons"
+        quantity_weekly: "low"
+        trade_good_id: "TG_WEAPON_001"
+        notes: "Axes, spear-heads, knife-blades. Functional quality. Ordovast keeps most production for his warband."
+      - good: "slag_gravel"
+        quantity_weekly: "high"
+        trade_good_id: "TG_MATERIAL_001"
+        notes: "By-product of smelting. Used to surface the Iron Road. No trade value but strategic for road maintenance."
+
+    imports:
+      - good: "grain"
+        source: "Thornwall"
+        urgency: "high"
+        notes: "Mountain soil grows nothing. Entirely dependent on moor agriculture."
+      - good: "timber"
+        source: "Ashmark or Vargheim"
+        urgency: "high"
+        notes: "Mine supports, building material, charcoal production. Above treeline — no local wood."
+      - good: "dried_cod"
+        source: "Frostfjord Hollow"
+        urgency: "medium"
+        notes: "Protein supplement. Mountain diet is otherwise game and goat."
+      - good: "charcoal"
+        source: "Ashmark or Ashen Reach"
+        urgency: "high"
+        notes: "Feeds smelting operations. Cannot produce locally — no forest."
+
+    exports:
+      - good: "iron_ore"
+        destinations: ["Deepholm", "Ashmark"]
+        volume: "high"
+      - good: "iron_ingot"
+        destinations: ["Thornwall", "Ashen Reach", "Kolvik"]
+        volume: "medium"
+      - good: "weapons"
+        destinations: ["Thornwall"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "iron mines"
+        military_value: "Primary iron source in the Rimevegr. Whoever holds Grimholt controls weapon production for the region."
+      - resource: "stone fortification"
+        military_value: "Defensibility 4. Strong walls, watchtower, and narrow approach. Can withstand a siege by any force in the region short of Deepholm's full garrison."
+      - resource: "Ordovast's warband"
+        military_value: "Standing force of ~25 armed men. Brutal, experienced, and loyal to Ordovast personally."
+      - resource: "iron-guard patrols"
+        military_value: "Mounted outriders patrol the Iron Road and Rime-Moor Road. Intelligence network for eastern Rimevegr."
+
+    market:
+      market_day: "every Odinsdag"
+      stall_count: 6
+      visiting_traders: "regular"
+      exotic_goods: false
+      price_modifier: 1.0
+      notes: "Iron trade draws merchants regularly. Ordovast takes a 15% cut on all transactions. Weapons sales are controlled — outsiders cannot buy without Ordovast's seal."
+
+    economic_vulnerabilities:
+      - "Entirely dependent on food imports — a blockade of the Rime-Moor Road and Iron Road starves Grimholt in three weeks"
+      - "Charcoal shortage halts smelting within days"
+      - "Ordovast's expansionism alienates potential trade partners"
+      - "Mine output declining — deeper seams require timber supports they cannot source locally"
+
+    trade_routes:
+      - to: "Deepholm"
+        route_id: "RTE_007"
+        goods_flow: "iron ore out, finished goods and food in"
+        frequency: "twice weekly"
+      - to: "Ashmark"
+        route_id: "RTE_008"
+        goods_flow: "iron ore out, charcoal and timber in"
+        frequency: "weekly"
+      - to: "Thornwall"
+        route_id: "RTE_006"
+        goods_flow: "iron ingots out, grain and wool in"
+        frequency: "weekly"
+
+    wartime_impact:
+      food_security: "poor"
+      siege_endurance_weeks: 3
+      essential_imports_at_risk: ["grain", "timber", "charcoal"]
+      notes: "Strong walls buy time but the mountain grows no food. Ordovast stockpiles 25 days of grain — after that, his warband eats the goats, and after that, the settlement starves. The iron mines are worthless without charcoal to smelt."
+
+  # ─────────────────────────────────────────────
+  # 6. RAVEN'S PERCH — Mountain lookout village
+  # ─────────────────────────────────────────────
+  - settlement: "Raven's Perch"
+    population: 74
+    size: "village"
+    terrain: "mountain"
+
+    production:
+      - good: "goat_hides"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_HIDE_001"
+        notes: "Mountain goat herds. Hides tanned locally — rough quality but durable."
+      - good: "iron_ore"
+        quantity_weekly: "low"
+        trade_good_id: "TG_METAL_001"
+        notes: "Small surface seam. Lower yield than Grimholt but independent supply."
+      - good: "mountain_herbs"
+        quantity_weekly: "low"
+        trade_good_id: "TG_HERB_002"
+        notes: "High-altitude herbs valued by healers. Grows only above the treeline."
+      - good: "raven_feathers"
+        quantity_weekly: "low"
+        trade_good_id: "TG_MISC_001"
+        notes: "Gathered from the rookery. Ritual and decorative value. Skaldhaven buys them."
+
+    imports:
+      - good: "grain"
+        source: "Deepholm"
+        urgency: "high"
+        notes: "Cannot grow food at altitude. Resupply via Deepholm tunnels."
+      - good: "timber"
+        source: "Deepholm or Ashmark"
+        urgency: "medium"
+        notes: "Above treeline. All building wood must be carried up the switchbacks."
+      - good: "salt"
+        source: "Deepholm"
+        urgency: "medium"
+        notes: "For hide-curing and food preservation."
+
+    exports:
+      - good: "goat_hides"
+        destinations: ["Deepholm", "Grimholt"]
+        volume: "medium"
+      - good: "iron_ore"
+        destinations: ["Deepholm"]
+        volume: "low"
+      - good: "mountain_herbs"
+        destinations: ["Deepholm", "Skaldhaven"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "mountain lookout"
+        military_value: "Overlooks the eastern valley. On clear days, half the Rimevegr is visible. Unmatched early-warning position."
+      - resource: "narrow approach"
+        military_value: "Defensibility 4. The switchback trail (RTE_010) allows a handful of defenders to hold against a much larger force."
+      - resource: "raven rookery"
+        military_value: "Trained ravens used as message carriers. Thane Egil maintains contact with Deepholm and Grimholt even when trails are closed."
+
+    market:
+      market_day: "no regular market"
+      stall_count: 1
+      visiting_traders: "none"
+      exotic_goods: false
+      price_modifier: 1.3
+      notes: "Single trade-stall by Egil's tower. Everything must be carried up the mountain — prices reflect the effort. Barter preferred."
+
+    economic_vulnerabilities:
+      - "Winter isolation — the Sky Climb (RTE_010) is impassable for up to four months"
+      - "Entirely dependent on Deepholm for grain and timber"
+      - "Small iron seam may exhaust within a few years"
+      - "Raven population decline reported — cause unknown"
+
+    trade_routes:
+      - to: "Deepholm"
+        route_id: "RTE_010"
+        goods_flow: "goat hides and ore out, grain and timber in"
+        frequency: "monthly (summer only)"
+
+    wartime_impact:
+      food_security: "poor"
+      siege_endurance_weeks: 1
+      essential_imports_at_risk: ["grain", "timber", "salt"]
+      notes: "Can survive on goat milk and stored meat short-term, but grain runs out in days. The switchback approach is a natural defense — but also a trap if supplies are cut. In winter, the garrison either survives on stores or dies."
+
+  # ─────────────────────────────────────────────
+  # 7. VARGHEIM — Forest wolf-hunter village
+  # ─────────────────────────────────────────────
+  - settlement: "Vargheim"
+    population: 165
+    size: "large_village"
+    terrain: "forest"
+
+    production:
+      - good: "charcoal"
+        quantity_weekly: "high"
+        trade_good_id: "TG_FUEL_001"
+        notes: "Multiple kilns in the Black Pine. Primary export. Feeds smelters across the region."
+      - good: "wolf_pelts"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_HIDE_003"
+        notes: "Wolf-wardens hunt year-round. Premium pelts fetch twice the price of common fur."
+      - good: "furs"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_HIDE_002"
+        notes: "Fox, marten, beaver. Trapped in the deep pine."
+      - good: "timber"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_WOOD_001"
+        notes: "Logging secondary to charcoal. Lumber crews work the forest edge."
+      - good: "cured_game"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_007"
+        notes: "Venison, boar, and hare. Smoked over charcoal kilns."
+
+    imports:
+      - good: "iron_tools"
+        source: "Grimholt or Ashmark"
+        urgency: "high"
+        notes: "Axes, trap-parts, and knife-blades wear out fast in forest work."
+      - good: "grain"
+        source: "Thornwall or Ashen Reach"
+        urgency: "medium"
+        notes: "Forest clearings grow some barley but not enough for 165 people."
+      - good: "salt"
+        source: "Kolvik"
+        urgency: "medium"
+        notes: "For curing pelts and preserving meat."
+
+    exports:
+      - good: "charcoal"
+        destinations: ["Grimholt", "Ashmark", "Deepholm"]
+        volume: "high"
+      - good: "wolf_pelts"
+        destinations: ["Deepholm", "Thornwall"]
+        volume: "medium"
+      - good: "furs"
+        destinations: ["Deepholm", "Ashen Reach", "Kolvik"]
+        volume: "medium"
+      - good: "timber"
+        destinations: ["Ashen Reach", "Kolvik"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "Black Pine forest"
+        military_value: "Near-impenetrable concealment. Vargheim wolf-hunters operate as guerrilla scouts — they know every trail and den."
+      - resource: "wolf-warden kennel"
+        military_value: "Trained hunting wolves. Used for tracking, scouting, and intimidation. Cannot be replicated elsewhere."
+      - resource: "charcoal kilns"
+        military_value: "Control charcoal supply and you control every smelter in the Rimevegr. Destroying Vargheim's kilns would cripple iron production region-wide."
+
+    market:
+      market_day: "every Freyjudag"
+      stall_count: 5
+      visiting_traders: "occasional"
+      exotic_goods: false
+      price_modifier: 1.05
+      notes: "Fur market draws trappers from the surrounding forest. Jarl Ulf takes a modest 5% share. Outsiders are watched but not taxed extra."
+
+    economic_vulnerabilities:
+      - "Wolf pack raiding livestock — currently an active problem"
+      - "Forest fire would destroy kilns and timber reserves simultaneously"
+      - "Single-resource economy — charcoal demand decline would hollow out the settlement"
+      - "Deep forest isolation makes resupply slow in emergencies"
+
+    trade_routes:
+      - to: "Feldwick"
+        route_id: "RTE_011"
+        goods_flow: "furs and charcoal out, wool in"
+        frequency: "fortnightly"
+      - to: "Ashmark"
+        route_id: "RTE_012"
+        goods_flow: "charcoal and timber out, iron tools in"
+        frequency: "weekly"
+
+    wartime_impact:
+      food_security: "good"
+      siege_endurance_weeks: 4
+      essential_imports_at_risk: ["iron_tools", "grain", "salt"]
+      notes: "Forest provides game, water, and concealment. Vargheim is functionally impossible to besiege — the defenders melt into the Black Pine and return at will. Weakness is iron — without imported tools, the charcoal operation degrades within a month."
+
+  # ─────────────────────────────────────────────
+  # 8. KOLVIK — Coastal shipwright village
+  # ─────────────────────────────────────────────
+  - settlement: "Kolvik"
+    population: 95
+    size: "village"
+    terrain: "coast"
+
+    production:
+      - good: "ship_repair"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_SERVICE_001"
+        notes: "Only shipwright between Frostfjord and Grimholt. Dry-dock handles one vessel at a time."
+      - good: "dried_fish"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_FOOD_002"
+        notes: "Smoking sheds on the harbour. Cod, herring, and mackerel."
+      - good: "salt"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_010"
+        notes: "Sea-salt evaporation pans. Small scale but consistent."
+      - good: "rope"
+        quantity_weekly: "low"
+        trade_good_id: "TG_TOOL_004"
+        notes: "Ship-grade cordage. Higher quality than Frostfjord's output."
+
+    imports:
+      - good: "timber"
+        source: "Ashen Reach or Vargheim"
+        urgency: "high"
+        notes: "Ship repair consumes large quantities of quality planking."
+      - good: "pine_tar"
+        source: "Ashen Reach"
+        urgency: "high"
+        notes: "Essential for waterproofing hulls. No local substitute."
+      - good: "iron_nails"
+        source: "Grimholt or Deepholm"
+        urgency: "high"
+        notes: "Boat-nails are specialist items. No local smithy — Harbour-Master Inga has petitioned for one."
+      - good: "wool_cloth"
+        source: "Feldwick or Thornwall"
+        urgency: "low"
+        notes: "Sailcloth repairs and winter clothing."
+
+    exports:
+      - good: "ship_repair"
+        destinations: ["any vessel owner"]
+        volume: "medium"
+      - good: "dried_fish"
+        destinations: ["Skaldhaven", "Feldwick"]
+        volume: "medium"
+      - good: "salt"
+        destinations: ["Vargheim", "Ashen Reach", "Feldwick"]
+        volume: "low"
+      - good: "rope"
+        destinations: ["Frostfjord Hollow", "Skaldhaven"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "dry-dock"
+        military_value: "The only facility capable of repairing warships. Controlling Kolvik means controlling naval power in the region."
+      - resource: "harbour chain"
+        military_value: "Iron chain across the harbour mouth. Can block vessel entry. Low wall provides minimal land defense."
+      - resource: "coastal position"
+        military_value: "Central coast location. Can observe and intercept sea traffic between Frostfjord and Stonebay."
+
+    market:
+      market_day: "every Odinsdag"
+      stall_count: 5
+      visiting_traders: "regular"
+      exotic_goods: false
+      price_modifier: 1.0
+      notes: "Harbour market. Ship crews and coastal traders pass through regularly. Inga charges a 2-copper harbour fee per vessel but no trade tax."
+
+    economic_vulnerabilities:
+      - "No smithy — entirely dependent on imported iron and nails"
+      - "Dry-dock handles one vessel at a time — bottleneck during storm season"
+      - "Low wall defense — vulnerable to land attack"
+      - "Pine tar supply dependent on Ashen Reach — political disruption upstream halts ship repair"
+
+    trade_routes:
+      - to: "Skaldhaven"
+        route_id: "RTE_015"
+        goods_flow: "fish and salt out, knowledge services and rope in"
+        frequency: "weekly"
+      - to: "Stonebay Hamlet"
+        route_id: "RTE_014"
+        goods_flow: "tools and grain out, fish in"
+        frequency: "monthly"
+      - to: "Feldwick"
+        route_id: "RTE_016"
+        goods_flow: "salt and fish out, wool in"
+        frequency: "fortnightly"
+
+    wartime_impact:
+      food_security: "moderate"
+      siege_endurance_weeks: 2
+      essential_imports_at_risk: ["timber", "pine_tar", "iron_nails"]
+      notes: "Can fish from the harbour, but the dry-dock is the real target. A raider who takes Kolvik does not need to hold it — burning the dry-dock is enough to cripple regional shipping for years."
+
+  # ─────────────────────────────────────────────
+  # 9. MOOR'S END — Isolated moor hamlet
+  # ─────────────────────────────────────────────
+  - settlement: "Moor's End"
+    population: 31
+    size: "hamlet"
+    terrain: "moors"
+
+    production:
+      - good: "sheep_wool"
+        quantity_weekly: "low"
+        trade_good_id: "TG_CLOTH_001"
+        notes: "Small flock of ~60 moor sheep. Hardy breed, coarse wool."
+      - good: "peat"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_FUEL_003"
+        notes: "Cut from the surrounding bog. Primary fuel for Thornwall. Hard, dirty work."
+      - good: "mutton"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_006"
+        notes: "Surplus animals culled before winter. Not enough for export after feeding the hamlet."
+
+    imports:
+      - good: "iron_tools"
+        source: "Thornwall"
+        urgency: "high"
+        notes: "Peat-cutting irons, sheep-shears, knives. One delivery per season."
+      - good: "grain"
+        source: "Thornwall"
+        urgency: "high"
+        notes: "Cannot grow cereals in boggy soil. Porridge barley is the lifeline."
+      - good: "salt"
+        source: "Thornwall"
+        urgency: "medium"
+        notes: "For mutton preservation. Small quantities traded with Thornwall's market."
+
+    exports:
+      - good: "peat"
+        destinations: ["Thornwall"]
+        volume: "medium"
+      - good: "sheep_wool"
+        destinations: ["Thornwall"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "standing stones"
+        military_value: "No military value. Supernatural significance — locals report humming since last Veil-Thinning. May attract or repel entities."
+      - resource: "peat bog"
+        military_value: "Natural obstacle. Anyone attacking from across the bog risks losing men and horses in sinkholes."
+
+    market:
+      market_day: "no regular market"
+      stall_count: 0
+      visiting_traders: "none"
+      exotic_goods: false
+      price_modifier: 1.3
+      notes: "No market. Barter with Thornwall's peat-carts is the only commerce. Elder Brosa handles all trade negotiations personally."
+
+    economic_vulnerabilities:
+      - "Entirely dependent on Thornwall for tools, grain, and salt"
+      - "Standing stones unnerve the population — some families have considered leaving"
+      - "Peat-cutting is seasonal — winter halts production"
+      - "Too small to survive if Thornwall's supply line is cut"
+
+    trade_routes:
+      - to: "Thornwall"
+        route_id: "RTE_005"
+        goods_flow: "peat and wool out, tools and grain in"
+        frequency: "fortnightly"
+
+    wartime_impact:
+      food_security: "poor"
+      siege_endurance_weeks: 1
+      essential_imports_at_risk: ["iron_tools", "grain", "salt"]
+      notes: "Moor's End survives because nobody wants what it has — except peat. If Thornwall falls or is blockaded, Moor's End starves within two weeks."
+
+  # ─────────────────────────────────────────────
+  # 10. ASHMARK — Forest smelter village
+  # ─────────────────────────────────────────────
+  - settlement: "Ashmark"
+    population: 82
+    size: "village"
+    terrain: "forest"
+
+    production:
+      - good: "pine_tar"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_CRAFT_001"
+        notes: "Tar pit east of settlement. Smaller operation than Ashen Reach but closer to Grimholt buyers."
+      - good: "medicinal_herbs"
+        quantity_weekly: "low"
+        trade_good_id: "TG_HERB_001"
+        notes: "Healer's lodge gathers from the forest. Woundwort, feverfew, and birch-bark tonic."
+      - good: "smelted_iron"
+        quantity_weekly: "low"
+        trade_good_id: "TG_METAL_004"
+        notes: "Processes Grimholt and Deepholm ore using local charcoal. Small output but valued — neutral ground means no political strings."
+      - good: "charcoal"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FUEL_001"
+        notes: "Supplementary production. Most charcoal consumed by the local smelter."
+
+    imports:
+      - good: "iron_ore"
+        source: "Grimholt or Deepholm"
+        urgency: "high"
+        notes: "Smelter depends on imported ore. Local deposits are exhausted."
+      - good: "grain"
+        source: "Thornwall or Ashen Reach"
+        urgency: "medium"
+        notes: "Forest clearings produce some food but not enough."
+      - good: "dried_fish"
+        source: "Kolvik"
+        urgency: "low"
+        notes: "Protein supplement for smelter workers."
+
+    exports:
+      - good: "pine_tar"
+        destinations: ["Grimholt", "Kolvik"]
+        volume: "medium"
+      - good: "medicinal_herbs"
+        destinations: ["Deepholm", "Grimholt", "Ashen Reach"]
+        volume: "low"
+      - good: "smelted_iron"
+        destinations: ["Ashen Reach", "Vargheim"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "neutral ground"
+        military_value: "Ashmark sits between Ashen Reach and Grimholt territories. Both sides trade here. Burning Ashmark harms everyone."
+      - resource: "healer's lodge"
+        military_value: "Best healer between Deepholm and the coast. Wounded fighters from any faction seek treatment here."
+      - resource: "iron smelter"
+        military_value: "Processes ore from either mountain settlement. An alternative supply chain if Deepholm or Grimholt is blockaded."
+
+    market:
+      market_day: "every Tyrsdag"
+      stall_count: 3
+      visiting_traders: "occasional"
+      exotic_goods: false
+      price_modifier: 1.05
+      notes: "Small but honest market. Reeve Torsten enforces fair dealing — no taxes but cheats are expelled permanently. Attracts traders who want to avoid Grimholt's and Ashen Reach's political games."
+
+    economic_vulnerabilities:
+      - "Bone Pack mercenaries demanding winter shelter — may escalate to extortion"
+      - "Ore supply depends on goodwill from both Grimholt and Deepholm"
+      - "Neutrality is fragile — one political shift and Ashmark becomes a target"
+      - "No dedicated defense force — palisade is basic"
+
+    trade_routes:
+      - to: "Ashen Reach"
+        route_id: "RTE_004"
+        goods_flow: "herbs and smelted iron out, charcoal and tar in"
+        frequency: "weekly"
+      - to: "Grimholt"
+        route_id: "RTE_008"
+        goods_flow: "charcoal and tar out, iron ore in"
+        frequency: "weekly"
+      - to: "Deepholm"
+        route_id: "RTE_009"
+        goods_flow: "charcoal out, iron ore and finished goods in"
+        frequency: "weekly"
+      - to: "Vargheim"
+        route_id: "RTE_012"
+        goods_flow: "iron tools out, charcoal and timber in"
+        frequency: "fortnightly"
+
+    wartime_impact:
+      food_security: "moderate"
+      siege_endurance_weeks: 2
+      essential_imports_at_risk: ["iron_ore", "grain"]
+      notes: "Ashmark's value is as a neutral processing hub. Any faction that burns it harms its own supply chain. This is the settlement's best defence — and its greatest vulnerability if someone decides to make a point."
+
+  # ─────────────────────────────────────────────
+  # 11. DEEPHOLM — Mountain trade town
+  # ─────────────────────────────────────────────
+  - settlement: "Deepholm"
+    population: 520
+    size: "small_town"
+    terrain: "mountain"
+
+    production:
+      - good: "iron_ingot"
+        quantity_weekly: "high"
+        trade_good_id: "TG_METAL_002"
+        notes: "Underground mining halls. Deepest and richest deposits in the Rimevegr."
+      - good: "bronze"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_METAL_005"
+        notes: "Tin imported from unknown southern source. Bronze-work is a Deepholm specialty."
+      - good: "weapons_masterwork"
+        quantity_weekly: "low"
+        trade_good_id: "TG_WEAPON_002"
+        notes: "Masterwork smithy. Named blades, pattern-welded axes, reinforced byrnies. Months-long waiting list."
+      - good: "galdr_services"
+        quantity_weekly: "low"
+        trade_good_id: "TG_SERVICE_003"
+        notes: "Galdr workshop provides rune-enchantment and divination services. Expensive."
+      - good: "tools"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_TOOL_001"
+        notes: "Standard iron tools exported region-wide. Reliable quality."
+
+    imports:
+      - good: "grain"
+        source: "Thornwall"
+        urgency: "high"
+        notes: "520 mouths to feed and no arable land. Grain convoys from Thornwall are Deepholm's lifeline."
+      - good: "timber"
+        source: "Ashmark or Vargheim"
+        urgency: "high"
+        notes: "Mine supports, construction, charcoal. Enormous demand."
+      - good: "charcoal"
+        source: "Vargheim, Ashmark, Ashen Reach"
+        urgency: "high"
+        notes: "Smelting operations consume charcoal faster than any single supplier can provide."
+      - good: "dried_fish"
+        source: "Frostfjord Hollow, Kolvik"
+        urgency: "medium"
+        notes: "Protein for miners and garrison. Steady demand."
+
+    exports:
+      - good: "iron_ingot"
+        destinations:
+          ["Grimholt", "Ashmark", "Kolvik", "Thornwall", "Ashen Reach"]
+        volume: "high"
+      - good: "bronze"
+        destinations: ["Grimholt", "Thornwall", "Skaldhaven"]
+        volume: "medium"
+      - good: "weapons_masterwork"
+        destinations: ["any buyer who can pay"]
+        volume: "low"
+      - good: "tools"
+        destinations: ["all settlements"]
+        volume: "high"
+
+    strategic_resources:
+      - resource: "underground mining halls"
+        military_value: "Deep tunnels serve as shelters during siege. Garrison of 40 can hold the iron gate indefinitely. Assault requires mining or starvation."
+      - resource: "masterwork smithy"
+        military_value: "Only site in the Rimevegr capable of producing pattern-welded steel and reinforced armour. A conquering force that preserves the smithy gains regional military superiority."
+      - resource: "galdr workshop"
+        military_value: "Rune-enchantment and divination. Sigrun's galdr-speaker provides intelligence and magical support that no other settlement can match."
+      - resource: "garrison"
+        military_value: "40 professional soldiers. Well-armed, well-fed, and stationed behind stone walls with an iron gate. The strongest permanent military force in the Rimevegr."
+      - resource: "barrow archive"
+        military_value: "Historical records and rune-stone catalogues. Intelligence value — knowledge of barrow locations and their contents."
+
+    market:
+      market_day: "daily"
+      stall_count: 20
+      visiting_traders: "frequent"
+      exotic_goods: true
+      price_modifier: 0.9
+      notes: "The only daily market in the Rimevegr. Competition keeps prices low. Foreign traders occasionally appear with southern luxuries — glass beads, spices, fine cloth. Sigrun levies a 5% trade tax and enforces standardised weights. Black market exists in the lower tunnels."
+
+    economic_vulnerabilities:
+      - "Food dependency — 520 people on imported grain. A two-week supply interruption causes riots."
+      - "Charcoal dependency — three separate suppliers needed to keep smelters running"
+      - "Bronze production depends on tin from an unreliable southern source"
+      - "Rivalry with Grimholt could escalate to trade war — Ordovast wants Deepholm's market share"
+      - "Lower tunnel black market undermines Sigrun's tax revenue"
+
+    trade_routes:
+      - to: "Grimholt"
+        route_id: "RTE_007"
+        goods_flow: "finished goods out, raw ore in"
+        frequency: "twice weekly"
+      - to: "Ashmark"
+        route_id: "RTE_009"
+        goods_flow: "tools and ingots out, charcoal in"
+        frequency: "daily (mule trains)"
+      - to: "Raven's Perch"
+        route_id: "RTE_010"
+        goods_flow: "grain and supplies out, goat hides and ore in"
+        frequency: "monthly (summer only)"
+
+    wartime_impact:
+      food_security: "moderate"
+      siege_endurance_weeks: 6
+      essential_imports_at_risk: ["grain", "timber", "charcoal"]
+      notes: "45 days of stored food means Deepholm can outlast any siege in the region. The garrison is professional and the walls are stone. The weakness is not military — it is logistical. Cut the grain supply and Sigrun must choose between feeding civilians and feeding soldiers. She will choose soldiers."
+
+  # ─────────────────────────────────────────────
+  # 12. BLEAKWATER LANDING — River ferry hamlet
+  # ─────────────────────────────────────────────
+  - settlement: "Bleakwater Landing"
+    population: 18
+    size: "hamlet"
+    terrain: "river"
+
+    production:
+      - good: "ferry_service"
+        quantity_weekly: "low"
+        trade_good_id: "TG_SERVICE_002"
+        notes: "Ferryman Olaf runs the only river crossing for 30 miles. 2 copper per man, 5 copper per horse."
+      - good: "river_fish"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FOOD_001"
+        notes: "Eel, pike, and trout. Net-fishing from the bank."
+      - good: "reed_thatch"
+        quantity_weekly: "low"
+        trade_good_id: "TG_MATERIAL_002"
+        notes: "Cut from the riverbank. Local roofing material, occasionally traded."
+
+    imports:
+      - good: "iron_tools"
+        source: "Deepholm or Ashmark"
+        urgency: "high"
+        notes: "Ferry maintenance requires nails, chain-links, and rope fittings."
+      - good: "grain"
+        source: "Ashmark or Vargheim"
+        urgency: "high"
+        notes: "Riverside soil is too wet for crops. All food is traded or fished."
+      - good: "rope"
+        source: "Frostfjord Hollow or Kolvik"
+        urgency: "medium"
+        notes: "Ferry hawser wears through every two seasons. Replacement is expensive."
+
+    exports:
+      - good: "ferry_service"
+        destinations: ["all travellers"]
+        volume: "low"
+      - good: "river_fish"
+        destinations: ["Ashmark"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "river crossing"
+        military_value: "Only ford or ferry for 30 miles. Controlling Bleakwater controls east-west movement across the river. Destroying the ferry adds days to any march."
+      - resource: "river intelligence"
+        military_value: "Olaf sees everyone who crosses. He knows more about regional troop movements than most jarls — if he can be made to talk."
+
+    market:
+      market_day: "no regular market"
+      stall_count: 0
+      visiting_traders: "none"
+      exotic_goods: false
+      price_modifier: 1.5
+      notes: "No market. Olaf trades fish for supplies with anyone who crosses. The frozen corpse found downstream suggests the landing is not as safe as it appears."
+
+    economic_vulnerabilities:
+      - "One ferry — if Olaf's raft is damaged, the crossing is gone"
+      - "18 people cannot defend against any military force"
+      - "Frozen corpse suggests criminal activity — may deter travellers"
+      - "Spring flooding submerges the landing for weeks"
+
+    trade_routes:
+      - to: "Ashmark"
+        goods_flow: "river fish out, tools and grain in"
+        frequency: "monthly"
+      - to: "Vargheim"
+        goods_flow: "ferry service, fish out"
+        frequency: "as needed"
+
+    wartime_impact:
+      food_security: "poor"
+      siege_endurance_weeks: 0
+      essential_imports_at_risk: ["iron_tools", "grain", "rope"]
+      notes: "Bleakwater cannot be besieged because there is nothing to besiege. A warband takes it in an hour. Its value is the crossing point — burn the ferry and move on, or garrison it and control traffic."
+
+  # ─────────────────────────────────────────────
+  # 13. SKALDHAVEN — Fjord knowledge village
+  # ─────────────────────────────────────────────
+  - settlement: "Skaldhaven"
+    population: 110
+    size: "village"
+    terrain: "fjord"
+
+    production:
+      - good: "saga_services"
+        quantity_weekly: "low"
+        trade_good_id: "TG_SERVICE_004"
+        notes: "Skalds compose, perform, and record sagas for payment. Reputation-making or reputation-breaking."
+      - good: "rune_craft"
+        quantity_weekly: "low"
+        trade_good_id: "TG_SERVICE_005"
+        notes: "Rune-carving, reading, and consultation. Audun's apprentices handle minor work; Audun himself takes on complex commissions."
+      - good: "dried_fish"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_FOOD_002"
+        notes: "Fjord fishing. Not as large an operation as Frostfjord but reliable."
+      - good: "ink_and_vellum"
+        quantity_weekly: "low"
+        trade_good_id: "TG_CRAFT_002"
+        notes: "Iron-gall ink and prepared calfskin. Required for saga-recording and rune-work."
+
+    imports:
+      - good: "timber"
+        source: "Ashen Reach"
+        urgency: "medium"
+        notes: "Fjord terrain limits tree growth. Building material imported."
+      - good: "iron_tools"
+        source: "Deepholm or Grimholt"
+        urgency: "medium"
+        notes: "Basic smithy handles only simple repairs."
+      - good: "grain"
+        source: "Kolvik or Frostfjord Hollow"
+        urgency: "medium"
+        notes: "Fish-heavy diet supplemented with traded barley and oats."
+
+    exports:
+      - good: "saga_services"
+        destinations: ["any patron who pays"]
+        volume: "low"
+      - good: "rune_craft"
+        destinations: ["Deepholm", "Frostfjord Hollow", "Grimholt"]
+        volume: "low"
+      - good: "dried_fish"
+        destinations: ["Kolvik", "Frostfjord Hollow"]
+        volume: "medium"
+      - good: "ink_and_vellum"
+        destinations: ["Deepholm"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "Hall of Sagas"
+        military_value: "Historical records of every feud, oath, and alliance in the Rimevegr. Intelligence value is immense — if the records can be accessed."
+      - resource: "rune archive"
+        military_value: "Sealed after an apprentice disappeared. Contains galdr-knowledge that most settlements lack. A conquering force that opens the archive gains magical advantage."
+      - resource: "sea-cliff approach"
+        military_value: "Natural defense. The palisade guards the landward approach; the cliffs guard the sea-side. Attackers must come single-file."
+      - resource: "skald network"
+        military_value: "Skalds travel everywhere and hear everything. Audun's network is an informal intelligence operation. Controlling Skaldhaven means controlling the narrative."
+
+    market:
+      market_day: "every Sunnadag"
+      stall_count: 3
+      visiting_traders: "occasional"
+      exotic_goods: false
+      price_modifier: 1.1
+      notes: "Small market trading fish, minor crafts, and knowledge services. Skalds from other settlements visit for training. Audun does not tax trade but expects a saga-gift from every trader — a story, a rumour, a piece of news."
+
+    economic_vulnerabilities:
+      - "Knowledge economy is fragile — if Audun dies, the settlement loses its primary value"
+      - "Sealed rune archive represents lost income and lost knowledge"
+      - "Cliff access limits trade volume — no pack-mule trains can reach the harbour easily"
+      - "Dependent on external food and iron for survival"
+
+    trade_routes:
+      - to: "Frostfjord Hollow"
+        route_id: "RTE_002"
+        goods_flow: "rune-craft and sagas out, cod in"
+        frequency: "monthly"
+      - to: "Kolvik"
+        route_id: "RTE_015"
+        goods_flow: "fish out, salt and tools in"
+        frequency: "weekly"
+
+    wartime_impact:
+      food_security: "moderate"
+      siege_endurance_weeks: 2
+      essential_imports_at_risk: ["timber", "iron_tools", "grain"]
+      notes: "Skaldhaven's real defense is that nobody wants to be the jarl who burned the Hall of Sagas. Destroying Skaldhaven is a reputation-destroying act. But an ambitious warlord who does not care about skalds' opinions could take it with thirty men."
+
+  # ─────────────────────────────────────────────
+  # 14. THORNWALL — Moor wool stronghold
+  # ─────────────────────────────────────────────
+  - settlement: "Thornwall"
+    population: 180
+    size: "large_village"
+    terrain: "moors"
+
+    production:
+      - good: "sheep_wool"
+        quantity_weekly: "high"
+        trade_good_id: "TG_CLOTH_001"
+        notes: "Largest flocks in the Rimevegr. ~800 sheep on the moors. High-quality long-fibre wool."
+      - good: "mutton"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_FOOD_006"
+        notes: "Surplus livestock slaughtered and salted for export."
+      - good: "thorn_hedge_craft"
+        quantity_weekly: "low"
+        trade_good_id: "TG_CRAFT_003"
+        notes: "Living thorn barriers. Thornwall's specialty — takes years to grow but impenetrable without axes."
+      - good: "woven_cloth"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_CLOTH_002"
+        notes: "Looms produce finished cloth from local wool. Better quality than raw fleece trade."
+      - good: "grain"
+        quantity_weekly: "medium"
+        trade_good_id: "TG_FOOD_004"
+        notes: "Moor-edge fields grow barley and oats. Surplus feeds Grimholt and Deepholm."
+
+    imports:
+      - good: "iron_ingot"
+        source: "Grimholt or Deepholm"
+        urgency: "high"
+        notes: "Skilled smithy but no local metal. Every tool and weapon depends on mountain iron."
+      - good: "timber"
+        source: "Ashmark or Vargheim"
+        urgency: "medium"
+        notes: "Treeless moors mean all construction timber is imported."
+      - good: "pine_tar"
+        source: "Ashen Reach or Ashmark"
+        urgency: "low"
+        notes: "For waterproofing buildings and treating leather."
+
+    exports:
+      - good: "sheep_wool"
+        destinations: ["Deepholm", "Grimholt", "Ashen Reach"]
+        volume: "high"
+      - good: "grain"
+        destinations: ["Grimholt", "Deepholm"]
+        volume: "medium"
+      - good: "mutton"
+        destinations: ["Grimholt", "Deepholm", "Moor's End"]
+        volume: "medium"
+      - good: "woven_cloth"
+        destinations: ["Deepholm", "Kolvik"]
+        volume: "medium"
+
+    strategic_resources:
+      - resource: "thorn-hedge wall"
+        military_value: "Living barrier surrounding the settlement. Fire-resistant, axe-resistant, and constantly growing. Attackers must spend hours cutting through or find the gate."
+      - resource: "sheep flocks"
+        military_value: "Walking rations for an army. 800 sheep can feed a large warband for weeks. Also wool for winter gear."
+      - resource: "grain surplus"
+        military_value: "Thornwall is the breadbasket of the eastern Rimevegr. Grimholt and Deepholm both depend on Thornwall grain. Whoever controls Thornwall controls who eats."
+      - resource: "moor outriders"
+        military_value: "Jarl Helga maintains mounted scouts who patrol the moor. Early warning and pursuit capability."
+
+    market:
+      market_day: "every Thorsdag and Sunnadag"
+      stall_count: 10
+      visiting_traders: "regular"
+      exotic_goods: false
+      price_modifier: 0.95
+      notes: "Second-largest market after Deepholm. Sheep market on Thorsdag, general market on Sunnadag. Helga taxes traders 8% but keeps the roads patrolled. Wool exchange sets regional fleece prices."
+
+    economic_vulnerabilities:
+      - "Red Tide slavers spotted on eastern horizon — a raid would devastate the flocks"
+      - "Open moor terrain means flocks are indefensible against mounted raiders"
+      - "Grain production is weather-dependent — one bad harvest and Grimholt/Deepholm go hungry"
+      - "Iron dependency — Helga's smithy is skilled but starves without imports"
+
+    trade_routes:
+      - to: "Ashen Reach"
+        route_id: "RTE_003"
+        goods_flow: "wool and grain out, timber and tar in"
+        frequency: "fortnightly"
+      - to: "Moor's End"
+        route_id: "RTE_005"
+        goods_flow: "tools and grain out, peat in"
+        frequency: "fortnightly"
+      - to: "Grimholt"
+        route_id: "RTE_006"
+        goods_flow: "grain and wool out, iron in"
+        frequency: "weekly"
+
+    wartime_impact:
+      food_security: "excellent"
+      siege_endurance_weeks: 4
+      essential_imports_at_risk: ["iron_ingot", "timber"]
+      notes: "Thornwall is self-sufficient in food — the only large settlement that can say this. The thorn-hedge and stone gatehouse give time, and 16 days of grain stores plus ongoing sheep slaughter means the settlement can hold for a month. Weakness is iron — without resupply, the smithy cannot repair weapons or tools."
+
+  # ─────────────────────────────────────────────
+  # 15. ICEBREAK — Ice-reach subsistence hamlet
+  # ─────────────────────────────────────────────
+  - settlement: "Icebreak"
+    population: 12
+    size: "hamlet"
+    terrain: "ice"
+
+    production:
+      - good: "seal_blubber"
+        quantity_weekly: "low"
+        trade_good_id: "TG_FUEL_004"
+        notes: "Seal hunting on the ice shelf. Primary fuel and food source. Everything depends on the seal migration."
+      - good: "walrus_ivory"
+        quantity_weekly: "low"
+        trade_good_id: "TG_LUXURY_001"
+        notes: "Occasional walrus kill. Ivory is the only trade good worth the journey to export."
+      - good: "seidr_divination"
+        quantity_weekly: "low"
+        trade_good_id: "TG_SERVICE_006"
+        notes: "Hermit Ragnhild (WYR 5) offers divination for a blood price. Dangerous and unreliable but sought after."
+
+    imports:
+      - good: "iron_tools"
+        source: "Deepholm (if any)"
+        urgency: "high"
+        notes: "Every blade and hook is irreplaceable. A broken knife is a survival crisis."
+      - good: "grain"
+        source: "none regular"
+        urgency: "low"
+        notes: "Diet is seal meat, blubber, and whatever they can scavenge. Grain is a luxury they rarely see."
+
+    exports:
+      - good: "walrus_ivory"
+        destinations: ["Deepholm"]
+        volume: "low"
+      - good: "seidr_divination"
+        destinations: ["any pilgrim willing to make the journey"]
+        volume: "low"
+
+    strategic_resources:
+      - resource: "Veil-thinning zone"
+        military_value: "Ragnhild claims the Veil between worlds is permanently weakening here. No conventional military value — but galdr-seekers and desperate war-leaders may seek Ragnhild's sight."
+      - resource: "ice cave shrine"
+        military_value: "Ritual site. Unknown properties. Attracts the desperate and the curious."
+      - resource: "extreme isolation"
+        military_value: "No rational military force would march to Icebreak. 70 km across ice shelf from the nearest settlement. Perfect hiding place — if you can survive."
+
+    market:
+      market_day: "no regular market"
+      stall_count: 0
+      visiting_traders: "none"
+      exotic_goods: false
+      price_modifier: 2.0
+      notes: "No market. No trade. No visitors except the lost, the mad, and the desperate. Ragnhild accepts payment in blood, not silver."
+
+    economic_vulnerabilities:
+      - "Seal migration failure means starvation — no alternative food source"
+      - "12 people is below minimum viable community — one harsh winter could end Icebreak"
+      - "Complete isolation from all supply networks"
+      - "Ragnhild's Veil claims may attract dangerous attention (rivals, zealots, entities)"
+
+    trade_routes:
+      - to: "Bleakwater Landing"
+        route_id: "RTE_018"
+        goods_flow: "walrus ivory out (if any), nothing in"
+        frequency: "yearly (summer only, if at all)"
+
+    wartime_impact:
+      food_security: "poor"
+      siege_endurance_weeks: 0
+      essential_imports_at_risk: ["iron_tools"]
+      notes: "Icebreak cannot be besieged, supplied, reinforced, or meaningfully attacked. It exists outside the war economy entirely. Its only value is Ragnhild — and she answers to no jarl."

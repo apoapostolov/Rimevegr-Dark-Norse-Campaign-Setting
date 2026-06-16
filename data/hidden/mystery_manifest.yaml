@@ -1,0 +1,151 @@
+# Mystery Manifest — Iron Ledger: Mercenaries of the Rimevegr
+# Tracks the six encoded mysteries of Section 6 in 08_MAGIC_OF_RIMEVEGR.md.
+# Each mystery has an encoded resolution in data/hidden/magic_truth.txt.
+# decoded_state: false = resolution not yet revealed in narrative.
+
+mysteries:
+  - mystery_id: MYS_001
+    title: "What the Cracking Released"
+    encoded_truth_ref: MAGIC_TRUTH_001
+    decoded_state: false
+    difficulty_tier: 3
+    summary: >
+      The Cracking did not destroy the gods — it consumed them. Something came
+      through the thinning Veil before it broke and fed on the divine until
+      nothing remained. The thing is still here, behind the Veil, pressing.
+    clue_locations:
+      - doc: 01_RIMEVEGR_SETTING_BIBLE.md
+        section: "The Veil and Its Phenomena"
+        note: "Veil described as 'built' rather than 'formed' — implies construction, implies a builder"
+      - doc: 08_MAGIC_OF_RIMEVEGR.md
+        section: "Section 6, Mystery 1"
+        note: "Three theories presented; Theory 3 (Fabric-Decay) contains the narrowest clue set"
+      - doc: data/events/supernatural_chain_events.yaml
+        section: "escalation chain"
+        note: "The chain tracks something feeding on wards, not just causing passive decay"
+
+  - mystery_id: MYS_002
+    title: "The Source of Rune-Power"
+    encoded_truth_ref: MAGIC_TRUTH_003
+    decoded_state: false
+    difficulty_tier: 2
+    summary: >
+      Runes are parasitic. They draw power from the carver's lifespan, not from
+      any divine or cosmic source. The gods found this acceptable. Heavy
+      galdr-workers die young, aged beyond their years, hands white-scarred.
+      Ash is burning faster than he knows.
+    clue_locations:
+      - doc: 01_RIMEVEGR_SETTING_BIBLE.md
+        section: "Magic as Trade"
+        note: "Galdr-workers' shortened lifespans noted as cultural fact without explanation"
+      - doc: 22_MEMBER_STATBLOCKS.md
+        section: "Ash statblock"
+        note: "Rank 3 galdr, white scar lines on palms, damage track shows rune-cost"
+      - doc: 08_MAGIC_OF_RIMEVEGR.md
+        section: "Section 2 — Galdr and the Rune-System"
+        note: "Cost mechanics explained mechanically; biological mechanism left implicit"
+
+  - mystery_id: MYS_003
+    title: "The Censored Dead"
+    encoded_truth_ref: MAGIC_TRUTH_002
+    decoded_state: false
+    difficulty_tier: 3
+    summary: >
+      The dead are being edited. Something filters what ghosts say, what bone-lots
+      reveal, what seers receive from beyond the Veil. The entity that consumed
+      the gods does not want the living to receive accurate information from the
+      dead. The censorship is selective and purposeful.
+    clue_locations:
+      - doc: 08_MAGIC_OF_RIMEVEGR.md
+        section: "Section 3 — Seidr and the Dead"
+        note: "Visions described as fragmentary; official explanation is Veil thinning; alternative is filtering"
+      - doc: data/events/supernatural_chain_events.yaml
+        section: "seidr failure chain"
+        note: "Pattern of failures is selective — certain topics produce blank results"
+      - doc: 23_CAMPAIGN_ARCS_AND_PLOT_SEEDS.md
+        section: "Chain B: The Censored Dead"
+        note: "Arc tracks the pattern; the cause is not stated in the arc description"
+
+  - mystery_id: MYS_004
+    title: "The Hush Is Not One Thing"
+    encoded_truth_ref: MAGIC_TRUTH_004
+    decoded_state: false
+    difficulty_tier: 2
+    summary: >
+      Three separate phenomena share the name Hush: rune-death zones (fixed,
+      permanent galdr failure), attention events (mobile, entity-driven, dangerous),
+      and death-echo zones (fixed, fading, mass-death residue). Petra's blank
+      bone-lot casting was a death-echo, not a failure of skill.
+    clue_locations:
+      - doc: 08_MAGIC_OF_RIMEVEGR.md
+        section: "Section 3 — Seidr"
+        note: "Petra's blank casting mentioned; attributed to Hush without further analysis"
+      - doc: 08_MAGIC_OF_RIMEVEGR.md
+        section: "Section 6, Mystery 4"
+        note: "Three types presented with behavioral differences; duration/mobility data distinguishes them"
+      - doc: data/weather/weather_events.yaml
+        section: "Hush event entries"
+        note: "Hush events vary in duration and behavior — the variance is the clue"
+      - doc: 01_RIMEVEGR_SETTING_BIBLE.md
+        section: "The Veil and Its Phenomena"
+        note: "Added note: the Hush is not a single phenomenon — its duration varies too widely"
+
+  - mystery_id: MYS_005
+    title: "What Walks in Thorne's Skin"
+    encoded_truth_ref: MAGIC_TRUTH_005
+    decoded_state: false
+    difficulty_tier: 4
+    summary: >
+      Thorne Ash-Born is a draugr who does not know what he is. He died in the
+      fire. His mother's rune-amulet activated at death and bound him. His
+      wyrd-reading is kinship with death, not precognition. The binding weakens
+      each year. When it fails, he dies for real or wakes into full draugr
+      awareness. Either outcome ends the band's trust.
+    clue_locations:
+      - doc: 22_MEMBER_STATBLOCKS.md
+        section: "Thorne Ash-Born statblock"
+        note: "Cold hands, frostbitten fingertips, no illness history, flinch from fire"
+      - doc: data/events/personal_band_events.yaml
+        section: "Thorne event chain"
+        note: "Sour metallic sweat, isolation, no witnessed sleep — classified as curse progression"
+      - doc: 08_MAGIC_OF_RIMEVEGR.md
+        section: "Section 5 — The Walking Dead"
+        note: "Draugr markers listed; all apply to Thorne"
+      - doc: 06_DICTIONARY_OF_NORSE_TERMS.md
+        section: "draugr entry"
+        note: "Entry describes functional dead retaining identity; Thorne is the unnamed example"
+      - doc: 24_VIGNETTES_AND_SCENES.md
+        section: "Thorne's Warning (lines 628-647)"
+        note: "Instinct framing; reread as death-kinship rather than precognition"
+      - doc: data/events/supernatural_chain_events.yaml
+        section: "Iron Barrow calls to Thorne"
+        note: "Barrows call to the dead"
+
+  - mystery_id: MYS_006
+    title: "The Pattern in the Barrows"
+    encoded_truth_ref: MAGIC_TRUTH_006
+    decoded_state: false
+    difficulty_tier: 3
+    summary: >
+      Barrow awakenings radiate outward from the Iron Barrow (BAR_005) in the
+      Grimholt mining district. The Iron Barrow is not a tomb — it is a seal
+      over the Cracking's fracture-point. The ancient dead inside were sacrificed
+      as structural reinforcement. The galdr-forge is the original ward mechanism.
+      Everything radiates from here. The fracture-point is underground, not in
+      the far north.
+    clue_locations:
+      - doc: data/barrows/barrows.yaml
+        section: "BAR_005 entry"
+        note: "Anomalous construction; pre-mine; galdr-forge documented; awakening date earliest in dataset"
+      - doc: data/geography/atlas.yaml
+        section: "Grimholt mining district"
+        note: "Iron-stained water attributed to ore leeching; actual cause is Cracking scar in rock"
+      - doc: 23_CAMPAIGN_ARCS_AND_PLOT_SEEDS.md
+        section: "Chain A: The Waking Barrows"
+        note: "Arc escalation does not identify BAR_005 as center; geographic line hint added"
+      - doc: 01_RIMEVEGR_SETTING_BIBLE.md
+        section: "The Veil and Its Phenomena"
+        note: "Cracking assumed to originate at world's edge; Iron Barrow clue contradicts this"
+      - doc: 08_MAGIC_OF_RIMEVEGR.md
+        section: "Section 6, Mystery 6"
+        note: "Full geographic analysis; awakening sequence data; pattern is arithmetic"

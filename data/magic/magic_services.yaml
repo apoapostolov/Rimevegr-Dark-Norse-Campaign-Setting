@@ -1,0 +1,367 @@
+# Iron Ledger — Magic Services Price List
+# Canonical pricing for magical services across the Rimevegr.
+# Cross-references: 08_MAGIC_OF_RIMEVEGR.md §7, data/economy/trade_goods.yaml.
+# Currency: 1 silver = 10 copper. Common merc retainer: 2 silver/week.
+# Prices are base rates. Wartime, urgency, and reputation modify.
+
+magic_services:
+  # =================================================================
+  # GALDR SERVICES
+  # =================================================================
+
+  galdr:
+    - id: "MSVC_GAL_001"
+      name: "Trail-Mark"
+      galdr_rank_required: 1
+      base_price_copper: 5
+      duration: "1 day"
+      material_cost_copper: 0
+      description: >
+        Rune scratched on stone or tree to mark a path. Glows faintly
+        at night for the carver's party. Fades by dawn. Every galdr
+        apprentice can do this. Barely qualifies as magic.
+      availability: "common"
+      providers: ["any galdr-worker"]
+      notes: "Often done for free within a band. Charged only to outsiders."
+
+    - id: "MSVC_GAL_002"
+      name: "One-Night Ward"
+      galdr_rank_required: 1
+      base_price_copper: 15
+      duration: "1 night (dusk to dawn)"
+      material_cost_copper: 0
+      description: >
+        Ward carved on a door-frame or tent-pole. Keeps minor dead
+        from crossing the threshold. Does not stop draugr. Does not
+        stop the living. Stops the restless — the category of dead
+        that wanders without purpose.
+      availability: "common"
+      providers: ["any galdr-worker"]
+      notes: "Standard camp ward. Ash carves these every relocation."
+
+    - id: "MSVC_GAL_003"
+      name: "Seasonal Ward (building)"
+      galdr_rank_required: 2
+      base_price_copper: 60
+      duration: "1 season (90 days)"
+      material_cost_copper: 10
+      description: >
+        Ward-set carved into a building's door-frame and corner-posts.
+        Holds for one season. Requires renewal. Keeps restless dead
+        and minor supernatural incursion at bay. Standard protection
+        for a grain-store or longhouse.
+      availability: "uncommon"
+      providers: ["Skaldhaven", "Deepholm", "travelling galdr-workers"]
+      notes: "Most settlements need 3-5 of these. Annual cost: 720-1200 copper."
+
+    - id: "MSVC_GAL_004"
+      name: "Annual Ward (building)"
+      galdr_rank_required: 3
+      base_price_copper: 250
+      duration: "1 year (360 days)"
+      material_cost_copper: 30
+      description: >
+        Full rune-set carved and blooded. Holds through the Long Dark
+        without renewal. Effective against restless dead and minor
+        draugr. The standard a jarl expects for his longhouse. Few
+        galdr-workers can deliver this reliably.
+      availability: "rare"
+      providers: ["Skaldhaven (Audun)", "Deepholm (galdr-speaker)"]
+      notes: >
+        A single annual ward costs more than the building it protects
+        if the building is modest. This is the price of sleeping through
+        the Long Dark without waking to something in your doorway.
+
+    - id: "MSVC_GAL_005"
+      name: "Ward-Stone (permanent installation)"
+      galdr_rank_required: 3
+      base_price_copper: 450
+      duration: "2-5 years (degrading)"
+      material_cost_copper: 50
+      description: >
+        Standing stone carved with deep binding runes and blooded at
+        installation. Marks a boundary — settlement edge, barrow
+        perimeter, road junction. Degrades over years. Requires
+        inspection and maintenance. The most valuable fixed magical
+        asset in the Rimevegr.
+      availability: "rare"
+      providers: ["Skaldhaven (Audun)", "Deepholm (galdr-speaker)"]
+      notes: >
+        Ward-stones around Frostfjord Hollow (pre-Cracking) still
+        functional after 300 years. Modern ward-stones last 2-5.
+        The gap is the clearest evidence of galdr's decline.
+
+    - id: "MSVC_GAL_006"
+      name: "Barrow Sealing"
+      galdr_rank_required: 4
+      base_price_copper: 500
+      duration: "5-20 years (variable)"
+      material_cost_copper: 80
+      description: >
+        Complete rune-binding on a barrow entrance. Requires multiple
+        sessions, blood sacrifice, and rare materials. Seals the dead
+        inside. Duration depends on barrow age, occupant power, and
+        quality of the original construction. Few living workers can
+        attempt this.
+      availability: "exotic"
+      providers: ["Audun (declining capability)", "Deepholm (reluctant)"]
+      notes: >
+        The old sealings lasted centuries. New sealings last decades
+        at best. The difference is the core mystery of galdr decline.
+
+    - id: "MSVC_GAL_007"
+      name: "Weapon Rune (temporary)"
+      galdr_rank_required: 2
+      base_price_copper: 40
+      duration: "1 day"
+      material_cost_copper: 5
+      description: >
+        Rune carved into a weapon blade or haft. Grants +1 damage for
+        one day. The rune burns out after use. Standard pre-battle
+        service for units that can afford it.
+      availability: "uncommon"
+      providers: ["any rank 2+ galdr-worker"]
+      notes: "Ash provides this for the band. One of his most common tasks."
+
+    - id: "MSVC_GAL_008"
+      name: "Weapon Rune (permanent)"
+      galdr_rank_required: 4
+      base_price_copper: 300
+      duration: "permanent (until weapon breaks)"
+      material_cost_copper: 40
+      description: >
+        Deep-carved binding rune on a forged weapon. Requires the
+        weapon to be made with the rune in mind — the carving happens
+        during the forging, not after. Named weapons carry these.
+        Masterwork swords from Deepholm sometimes include this service.
+      availability: "exotic"
+      providers: ["Deepholm (galdr workshop + forge collaboration)"]
+      notes: "Price does not include the weapon. Total cost: 500+ copper."
+
+    - id: "MSVC_GAL_009"
+      name: "Rune Consultation"
+      galdr_rank_required: 2
+      base_price_copper: 30
+      duration: "1 session"
+      material_cost_copper: 5
+      description: >
+        A rune-caster reads the staves for a question. Answers come in
+        riddles. Useful if you know how to listen. Cross-reference:
+        TG_SRV_006 in trade_goods.yaml.
+      availability: "uncommon"
+      providers: ["Skaldhaven (Audun)", "Icebreak", "Deepholm"]
+      notes: >
+        Audun at Skaldhaven is the most trusted. Ragnhild at Icebreak
+        sees deeper but her price is blood not copper.
+
+    - id: "MSVC_GAL_010"
+      name: "Niding-Pole (curse installation)"
+      galdr_rank_required: 4
+      base_price_copper: 200
+      duration: "until removed or carver dies"
+      material_cost_copper: 30
+      description: >
+        Horse-skull on a pole carved with curse-runes. Directed at a
+        named target. Legal status varies — ting arbitration per
+        §11.8.3 in 20_SIMULATION_RULES.md. The carver stakes reputation
+        on the grievance being legitimate.
+      availability: "rare"
+      providers: ["rank 4+ galdr-workers willing to accept social risk"]
+      notes: "Political weapon. Price reflects risk to carver's reputation."
+
+  # =================================================================
+  # SEIDR SERVICES
+  # =================================================================
+
+  seidr:
+    - id: "MSVC_SDR_001"
+      name: "Spirit Sensing"
+      seidr_rank_required: 1
+      base_price_copper: 10
+      duration: "immediate"
+      material_cost_copper: 0
+      description: >
+        Seidr-wife senses whether spirits are present in a location.
+        Yes/no answer. No communion, no detail. The cheapest spirit
+        service — confirms a haunting or absence.
+      availability: "uncommon"
+      providers: ["any seidr practitioner"]
+      notes: "Often done as part of a larger consultation."
+
+    - id: "MSVC_SDR_002"
+      name: "Dead Consultation (fresh)"
+      seidr_rank_required: 2
+      base_price_copper: 50
+      duration: "1 session (1 hour trance)"
+      material_cost_copper: 5
+      description: >
+        Communion with a recently dead person (within 3 days). One
+        question. Answer may be fragmentary, evasive, or censored
+        (see MAGIC_TRUTH_002 — the dead are being edited). Requires
+        trance state. Practitioner is vulnerable during trance.
+      availability: "rare"
+      providers: ["seidr-wives with Spirit-lore 2+"]
+      notes: >
+        Standard rate. Dalla performs these for the band without charge.
+        Market value: 50 copper. What the band pays: nothing.
+
+    - id: "MSVC_SDR_003"
+      name: "Dead Consultation (old)"
+      seidr_rank_required: 3
+      base_price_copper: 100
+      duration: "1 session (2-3 hour trance)"
+      material_cost_copper: 15
+      description: >
+        Communion with long-dead spirits. Answers are more fragmentary
+        than fresh consultations. Risk of hostile contact. Requires
+        material components — barrow dust, raven feathers, veil-touched
+        water for the deepest reachings.
+      availability: "exotic"
+      providers: ["Ragnhild (Icebreak)", "experienced seidr-wives"]
+      notes: "Ragnhild charges blood, not copper. Literal blood."
+
+    - id: "MSVC_SDR_004"
+      name: "Ting Testimony (seidr)"
+      seidr_rank_required: 2
+      base_price_copper: 100
+      duration: "ting session"
+      material_cost_copper: 10
+      description: >
+        Formal seidr testimony before a ting or Allthing. Subject to
+        admissibility rules per §11.8.2. Testimony weight formula
+        determines evidential value. Forbidden in Iron Grip territories.
+        Required in Whispering Circle territories.
+      availability: "rare"
+      providers: ["seidr-wives with standing in the relevant union"]
+      notes: >
+        Social cost on top of silver cost. A seidr-wife who testifies
+        publicly becomes a political target.
+
+    - id: "MSVC_SDR_005"
+      name: "Land-Spirit Negotiation"
+      seidr_rank_required: 3
+      base_price_copper: 80
+      duration: "1-3 sessions"
+      material_cost_copper: 20
+      description: >
+        Communion with land-spirits to negotiate passage, shelter, or
+        cessation of hostility. Used before road construction, new
+        settlement founding, or when a site becomes supernaturally
+        active. Not always successful — land-spirits have their own
+        agenda.
+      availability: "exotic"
+      providers: ["experienced seidr-wives"]
+      notes: "Success not guaranteed. Price is for the attempt."
+
+    - id: "MSVC_SDR_006"
+      name: "Healing (seidr-assisted)"
+      seidr_rank_required: 1
+      base_price_copper: 20
+      duration: "1 session"
+      material_cost_copper: 5
+      description: >
+        Herbal healing supplemented by minor spirit-work. The herbs do
+        the real work. The seidr component speeds recovery or identifies
+        non-obvious injuries. Dalla's primary daily service.
+      availability: "uncommon"
+      providers: ["seidr-wives with Heal skill"]
+      notes: "Dalla does this for the band as part of her standard share."
+
+  # =================================================================
+  # WYRD-READING SERVICES
+  # =================================================================
+
+  wyrd_reading:
+    - id: "MSVC_WYR_001"
+      name: "Daily Lot-Cast"
+      wyrd_rank_required: 1
+      base_price_copper: 5
+      duration: "immediate"
+      material_cost_copper: 0
+      description: >
+        General fortune reading for the day. Good omen or bad omen.
+        Vague but useful for deciding whether to travel or stay. The
+        cheapest divination service.
+      availability: "common"
+      providers: ["any wyrd-reader"]
+      notes: "Petra does this for the band most mornings. No charge."
+
+    - id: "MSVC_WYR_002"
+      name: "Specific Question (bone lots)"
+      wyrd_rank_required: 2
+      base_price_copper: 20
+      duration: "1 session"
+      material_cost_copper: 0
+      description: >
+        Bone-lot casting for a specific yes/no question. Answer is
+        cryptic. Interpretation is the reader's skill — the lots
+        show patterns, not words.
+      availability: "uncommon"
+      providers: ["wyrd-readers with rank 2+"]
+      notes: "Less reliable than seidr consultation. Much cheaper."
+
+    - id: "MSVC_WYR_003"
+      name: "Person Reading (wyrd of an individual)"
+      wyrd_rank_required: 3
+      base_price_copper: 40
+      duration: "1 session"
+      material_cost_copper: 5
+      description: >
+        Reading the wyrd of a named person. Reveals hidden loyalties,
+        sickness, or imminent danger. Requires proximity to subject
+        or a personal object. Used for pre-hiring assessment, loyalty
+        checks, and ting disputes.
+      availability: "rare"
+      providers: ["experienced wyrd-readers"]
+      notes: "Thorne's wyrd-reading works because the dead always know where death is coming from (MAGIC_TRUTH_005)."
+
+    - id: "MSVC_WYR_004"
+      name: "Pre-Battle Reading"
+      wyrd_rank_required: 2
+      base_price_copper: 30
+      duration: "1 session"
+      material_cost_copper: 0
+      description: >
+        Lot-casting before a battle or dangerous contract. Indicates
+        general outcome likelihood. Does not predict specifics — shows
+        whether the lots favor the enterprise. Commanders pay for
+        confidence, not accuracy.
+      availability: "uncommon"
+      providers: ["wyrd-readers attached to bands or settlements"]
+      notes: "Voss does not pay for this. He should."
+
+  # =================================================================
+  # PRICE MODIFIERS
+  # =================================================================
+
+  price_modifiers:
+    urgency:
+      description: "Service needed within hours rather than days."
+      multiplier: 2.0
+    wartime:
+      description: "Active conflict in the region."
+      multiplier: 1.5
+    long_dark:
+      description: "Service requested during winter season."
+      multiplier: 1.3
+    reputation:
+      description: >
+        High-reputation practitioner. Audun charges more than an
+        unnamed journeyman.
+      multiplier: 1.5
+    danger_premium:
+      description: >
+        Service involves entering a barrow, hostile territory, or
+        supernaturally active zone.
+      multiplier: 2.0
+    political_risk:
+      description: >
+        Service carries social or legal risk to the practitioner
+        (e.g. niding-pole, forbidden seidr testimony).
+      multiplier: 1.5
+    blood_price:
+      description: >
+        Practitioner demands literal blood instead of copper.
+        Ragnhild's standard arrangement. Amount varies.
+      multiplier: ~
+      notes: "Not copper-convertible. A separate currency."

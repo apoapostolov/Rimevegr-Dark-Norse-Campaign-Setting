@@ -1,0 +1,163 @@
+horse_breeds:
+  rimefjord_pony:
+    display_name: "Rimefjord pony"
+    base_value_silver: 22
+    stats:
+      speed: 2
+      wind: 4
+      foot: 4
+      nerve: 4
+      load: 3
+      sense: 4
+    common_traits:
+      - cold_hardy
+      - calm_mouth
+      - good_feet
+    common_weaknesses:
+      - lacks_burst
+    common_bloodline_tags:
+      - cold_hardy
+      - good_feet
+      - soft_mouth
+      - sure_step
+  moor_runner:
+    display_name: "Moor-runner"
+    base_value_silver: 27
+    stats:
+      speed: 5
+      wind: 4
+      foot: 3
+      nerve: 2
+      load: 2
+      sense: 3
+    common_traits:
+      - fast_break
+      - long_stride
+      - hard_to_catch
+    common_weaknesses:
+      - hot_blooded
+      - feed_sensitive
+    common_bloodline_tags:
+      - deep_wind
+      - hot_blooded
+      - fast_break
+      - long_stride
+  pine_cob:
+    display_name: "Pine-cob"
+    base_value_silver: 20
+    stats:
+      speed: 2
+      wind: 3
+      foot: 3
+      nerve: 5
+      load: 5
+      sense: 3
+    common_traits:
+      - dead_pull
+      - patient
+      - strong_back
+    common_weaknesses:
+      - poor_acceleration
+    common_bloodline_tags:
+      - strong_back
+      - calm_mouth
+      - hard_keeper
+      - good_feet
+  spine_pony:
+    display_name: "Spine pony"
+    base_value_silver: 30
+    stats:
+      speed: 2
+      wind: 4
+      foot: 5
+      nerve: 4
+      load: 3
+      sense: 4
+    common_traits:
+      - cliff_footed
+      - sparse_forager
+      - sure_step
+    common_weaknesses:
+      - crowd_sour
+    common_bloodline_tags:
+      - sure_step
+      - good_feet
+      - cold_hardy
+      - night_sure
+  southblood_warhorse:
+    display_name: "Southblood warhorse"
+    base_value_silver: 75
+    stats:
+      speed: 4
+      wind: 3
+      foot: 3
+      nerve: 3
+      load: 4
+      sense: 2
+    common_traits:
+      - charge_mass
+      - tall_frame
+      - strong_back
+    common_weaknesses:
+      - cold_soft
+      - hot_blooded
+    common_bloodline_tags:
+      - charge_mass
+      - strong_back
+      - hot_blooded
+      - tall_frame
+
+foal_quirks:
+  steady_mouth:
+    stat_mods:
+      sense: 1
+    add_traits:
+      - steady_mouth
+  late_maturing:
+    stat_mods: {}
+    add_traits:
+      - late_maturing
+  bad_feeder:
+    stat_mods:
+      wind: -1
+    add_traits:
+      - bad_feeder
+  crowd_shy:
+    stat_mods:
+      nerve: -1
+    add_traits:
+      - crowd_shy
+  ice_wise:
+    stat_mods:
+      foot: 1
+    add_traits:
+      - ice_wise
+  hard_keeper:
+    stat_mods:
+      wind: 1
+    add_traits:
+      - hard_keeper
+  throws_big:
+    stat_mods:
+      load: 1
+    add_traits:
+      - throws_big
+  throws_small:
+    stat_mods:
+      speed: 1
+      load: -1
+    add_traits:
+      - throws_small
+
+bloodline_bonus_tags:
+  good_feet: 4
+  deep_wind: 5
+  cold_hardy: 4
+  sure_step: 4
+  strong_back: 4
+  soft_mouth: 3
+  charge_mass: 6
+  hot_blooded: -3
+  crowd_sour: -4
+  night_spook: -5
+  bad_feeder: -3

@@ -1,0 +1,128 @@
+{
+  "raw_dir": "C:\\git\\lifestyle\\writing\\norse_grit\\notion\\raw",
+  "clean_dir": "C:\\git\\lifestyle\\writing\\norse_grit\\notion\\clean",
+  "dry_run": false,
+  "normalized_count": 24,
+  "files": [
+    {
+      "filename": "01_RIMEVEGR_SETTING_BIBLE.md",
+      "source_bytes": 70593,
+      "clean_bytes": 70108
+    },
+    {
+      "filename": "02_MASTER_INDEX.md",
+      "source_bytes": 34088,
+      "clean_bytes": 34088
+    },
+    {
+      "filename": "03_GEOGRAPHY_AND_MAP.md",
+      "source_bytes": 33153,
+      "clean_bytes": 33103
+    },
+    {
+      "filename": "04_CULTURE_AND_CUSTOMS.md",
+      "source_bytes": 84684,
+      "clean_bytes": 84684
+    },
+    {
+      "filename": "05_ECONOMY_OF_RIMEVEGR.md",
+      "source_bytes": 61401,
+      "clean_bytes": 61375
+    },
+    {
+      "filename": "06_DICTIONARY_OF_NORSE_TERMS.md",
+      "source_bytes": 158032,
+      "clean_bytes": 158018
+    },
+    {
+      "filename": "07_RELIGION_OF_RIMEVEGR.md",
+      "source_bytes": 172535,
+      "clean_bytes": 172411
+    },
+    {
+      "filename": "08_MAGIC_OF_RIMEVEGR.md",
+      "source_bytes": 406810,
+      "clean_bytes": 406653
+    },
+    {
+      "filename": "09_WEATHER_SEASONS_AND_HAZARDS.md",
+      "source_bytes": 3548,
+      "clean_bytes": 3542
+    },
+    {
+      "filename": "10_CALENDAR_AND_HIDDEN_EVENTS.md",
+      "source_bytes": 3120,
+      "clean_bytes": 3097
+    },
+    {
+      "filename": "11_VILLAGES_AND_SETTLEMENTS.md",
+      "source_bytes": 53359,
+      "clean_bytes": 53165
+    },
+    {
+      "filename": "12_POLITICAL_VILLAGES_AND_UNIONS.md",
+      "source_bytes": 69667,
+      "clean_bytes": 69667
+    },
+    {
+      "filename": "13_RIVAL_BANDS_AND_FACTIONS.md",
+      "source_bytes": 13763,
+      "clean_bytes": 13621
+    },
+    {
+      "filename": "14_WOLFSHEADS_OF_RIMEVEGR.md",
+      "source_bytes": 106212,
+      "clean_bytes": 106147
+    },
+    {
+      "filename": "15_MERCENARY_LIFESTYLE.md",
+      "source_bytes": 15730,
+      "clean_bytes": 15728
+    },
+    {
+      "filename": "16_NAMED_MEN_AND_ARCHETYPES.md",
+      "source_bytes": 5838,
+      "clean_bytes": 5816
+    },
+    {
+      "filename": "17_CHARACTER_BIBLE.md",
+      "source_bytes": 41361,
+      "clean_bytes": 40852
+    },
+    {
+      "filename": "18_BARROWS_OF_RIMEVEGR.md",
+      "source_bytes": 18164,
+      "clean_bytes": 18164
+    },
+    {
+      "filename": "19_GAME_CONTENT_BIBLE.md",
+      "source_bytes": 42193,
+      "clean_bytes": 42187
+    },
+    {
+      "filename": "20_SIMULATION_RULES.md",
+      "source_bytes": 271093,
+      "clean_bytes": 270888
+    },
+    {
+      "filename": "21_BAND_SIMULATION.md",
+      "source_bytes": 3262,
+      "clean_bytes": 3262
+    },
+    {
+      "filename": "22_MEMBER_STATBLOCKS.md",
+      "source_bytes": 36664,
+      "clean_bytes": 35520
+    },
+    {
+      "filename": "23_CAMPAIGN_ARCS_AND_PLOT_SEEDS.md",
+      "source_bytes": 93113,
+      "clean_bytes": 93111
+    },
+    {
+      "filename": "24_VIGNETTES_AND_SCENES.md",
+      "source_bytes": 37493,
+      "clean_bytes": 37493
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "tool": "RIMEVEGR-TIME-MANAGER",
+  "tracked_documents": [
+    {
+      "path": "data/contracts/desperate_contracts.yaml",
+      "sha256": "b7f2dfa4da3b243e5d8031a6758dd300154671098ba67a4955541c701bdc8718",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/contracts/faction_contracts.yaml",
+      "sha256": "bf28c2172ba1a3117a293cbb95e2ee44bc0d19da9acfc7b2bc6fd3e075e2b22a",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/contracts/settlement_contracts.yaml",
+      "sha256": "d814dde11e9907ae9f462da43dc7e8287d93aada6b7cdedd6aa4e348cdd9f9a6",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/contracts/supernatural_contracts.yaml",
+      "sha256": "cce1b4d30ab2f26804382a019940c8fc5d1415b8fe613c81984ee52435189991",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/dog_kennels.yaml",
+      "sha256": "5a0d14afdec95281a92f6fea47b6938589dd6083622704ff972c05d7ae7dbcad",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/economy/settlement_economies.yaml",
+      "sha256": "016fd616227dfb2c5eb89c05b3aed50ed97eda243e3c88a435a21af9ed12f31d",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/geography/routes.yaml",
+      "sha256": "42ee9f4ac10b6f50a4e705503184ba95b2ef701f59d58085e521a932d1ca6438",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/horse_herds.yaml",
+      "sha256": "4b97fdcbee894f509b5a4a06b23856dd15549c6f7c6a0671d866b595f8f0ad21",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/political_state.yaml",
+      "sha256": "804683c6710dabdf7163cfd6f663a358646577f79309da8f75b86fb6964d1938",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/settlements.yaml",
+      "sha256": "618fdd3bc52f2e777a39202f0835cac9376fa3bd94106eb31b74f62f4cde5d95",
+      "parse_mode": "pyyaml-safe"
+    },
+    {
+      "path": "data/wolfshead_bands.yaml",
+      "sha256": "bcdd79aff92dfab1f92a4ef95d76906007d01ebce07da1672105df9d3071e10e",
+      "parse_mode": "pyyaml-safe"
+    }
+  ],
+  "issue_count": 0
+}

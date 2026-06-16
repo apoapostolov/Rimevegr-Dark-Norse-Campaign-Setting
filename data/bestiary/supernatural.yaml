@@ -1,0 +1,1275 @@
+enemies:
+  # ==========================================================================
+  # SPIRITS (SUP_SPIRIT_01 through SUP_SPIRIT_04)
+  # ==========================================================================
+
+  - id: "SUP_SPIRIT_01"
+    name: "Mara"
+    category: "supernatural"
+    subcategory: "spirit"
+    tier: 3
+    description: "Not truly visible — more a weight on the chest, a shape caught at the edge of failing torchlight. A hunched thing with too-long fingers pressing down on the sleeper's ribs. The face shifts: sometimes an old woman, sometimes a horse skull, sometimes nothing at all. Smells of sweat and stale breath that isn't yours."
+    stats:
+      MIG: 2
+      NIM: 7
+      TOU: 3
+      WIT: 6
+      WIL: 8
+      WYR: 7
+    hp: 6
+    skills:
+      - name: "Stealth"
+        rank: 4
+      - name: "Seidr-Sense"
+        rank: 3
+      - name: "Intimidation"
+        rank: 3
+    gear:
+      weapons: []
+      armor: {}
+    tactics: "Waits until the target sleeps. Settles on the chest and begins the paralysis. If the target wakes and resists, the Mara breaks contact and retreats to a shadow corner to wait. Will not fight directly. Flees if iron is presented or rune-wards flare."
+    morale_break: "Banished by iron held above the sleeper, active rune-wards, or dawn light. Cannot be killed by weapons — only driven away."
+    group_size: "1"
+    abilities:
+      - "Sleep Paralysis: target cannot move for d6 rounds, WIL test each round to break free"
+      - "Nightmare Drain: WIL contest each night or lose 1 WIL permanently — death at WIL 0"
+      - "Incorporeal: physical weapons pass through without effect"
+      - "Seidr-Sight Only: invisible to normal vision, visible to those with Veil-touched eyes or active seidr"
+    combat_phases:
+      pre_battle:
+        - name: "Sleep-Weight Descends"
+          description: "Heavy drowsiness settles over the area. WIL test or become drowsy (-2 WIT and NIM) for d6 rounds."
+      on_death:
+        - name: "Nightmare Taint"
+          description: "If banished, leaves residual nightmare energy on the area. All who sleep within 20 paces suffer bad dreams for d6 nights — WIL test each night or lose 1 WIL temporarily."
+    resistances: ["physical_weapons", "cold", "poison", "bleeding"]
+    weaknesses: ["iron", "rune_wards", "dawn_light", "seidr_counterspells"]
+    sim_traits:
+      ["incorporeal", "nightmare_drain", "sleep_paralysis", "sleep_weight"]
+    encounter_conditions:
+      terrain: ["settlement", "camp", "barrow_vicinity", "crossroads"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "Leaves nightmare residue on bedding — valuable seidr component if scraped and preserved"
+    image_prompt: |
+      A translucent hunched figure crouching on a sleeping man's chest in
+      a dark longhouse. Too-long fingers pressing into ribs. The face is
+      wrong — shifting between old woman and horse skull. Faint blue-grey
+      outline against firelight embers. The sleeper's mouth open in silent
+      scream. Sweat on skin. Folk horror atmosphere, not fantasy.
+
+  - id: "SUP_SPIRIT_02"
+    name: "Land-Wight"
+    category: "supernatural"
+    subcategory: "spirit"
+    tier: 3
+    description: "The shape depends on what it guards. Near a spring, it looks like moss shaped into a crouching figure with water for eyes. In a grove, it's a trunk-thick silhouette with bark-plate skin and antler branches. Always the wrong number of joints. It doesn't speak. It makes the trees creak in a pattern that means leave."
+    stats:
+      MIG: 6
+      NIM: 3
+      TOU: 7
+      WIT: 5
+      WIL: 7
+      WYR: 6
+    hp: 14
+    skills:
+      - name: "Brawl"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+      - name: "Nature-Sense"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Root-Limbs"
+          type: "unarmed"
+          speed: 1
+          base_damage: 5
+      armor:
+        torso: "Bark-Plate (natural)"
+        head: "None"
+    tactics: "Warns intruders first — strange sounds, falling branches, animals fleeing. If ignored, attacks with terrain: roots trip, stones shift, branches lash. Within its domain, it controls the ground. Will not pursue beyond its boundary — literally cannot."
+    morale_break: "Cannot leave its domain. If intruders retreat past the boundary, it stops. Can be placated with offerings (milk, blood, carved runes of respect)."
+    group_size: "1"
+    abilities:
+      - "Domain-Bound: +3 to all stats within its territory, stats drop to 1 outside (and it begins to dissolve)"
+      - "Terrain Control: within domain, can shift ground, move roots, collapse paths — NIM test to avoid hazards"
+      - "Nature Warning: animals in the area flee when the wight is angry, providing advance notice"
+      - "Offering-Calm: proper offerings (milk, mead, blood on a stone) suppress hostility for one day"
+    combat_phases:
+      pre_battle:
+        - name: "Domain Warning"
+          description: "Animals flee, trees creak, temperature drops sharply. The Land-Wight gains +3 to all stats while within its domain."
+      maneuvers:
+        - name: "Root Snare"
+          description: "Roots erupt from the ground to grab a target. NIM test or immobilized for 1 round."
+          cost: "Free action"
+        - name: "Stone Throw"
+          description: "Hurls a boulder at a target within 10 paces. 6 damage, NIM test to dodge."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Domain Rage"
+          trigger: "Below 50% HP (7 HP)"
+          description: "Terrain effects intensify — ground splits, roots erupt violently. All enemies in the domain must pass NIM test or be knocked prone."
+      on_death:
+        - name: "Land Sickness"
+          description: "The land within 100 paces sickens — crops wither, water sours, the area becomes barren for one full season."
+    resistances: ["cold", "poison", "fear"]
+    weaknesses: ["fire", "iron_axe", "desecration_of_domain"]
+    sim_traits: ["domain_bonus_3", "bound_territory", "domain_warning"]
+    encounter_conditions:
+      terrain: ["forest_grove", "spring", "hilltop", "ancient_tree"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "If destroyed, the land it guarded sickens — crops fail, water sours. Seidr practitioners can harvest wight-essence from the spot for one lunar cycle."
+    image_prompt: |
+      A figure made of moss, bark, and twisted roots standing in a forest
+      clearing beside an ancient spring. Water drips from where eyes should
+      be. Too many joints in the limbs. Antler-like branches grow from the
+      head. Ferns curl around its feet. Overcast light filtering through
+      canopy. The surrounding trees lean slightly toward it. Earthy greens
+      and wet browns. Unsettling, not majestic.
+
+  - id: "SUP_SPIRIT_03"
+    name: "Nykr"
+    category: "supernatural"
+    subcategory: "spirit"
+    tier: 3
+    description: "Appears as a grey horse standing at the water's edge, mane dripping. Beautiful in the way a trap is beautiful. Or as a pale young man sitting on a rock, playing a tune that pulls your feet toward the river. Or as fog rolling off the lake surface in a shape that almost makes sense. The water where it lives is always colder than it should be and deeper than it looks."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 7
+      WIL: 7
+      WYR: 8
+    hp: 10
+    skills:
+      - name: "Deception"
+        rank: 4
+      - name: "Brawl"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+      - name: "Music"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Drowning Grip"
+          type: "unarmed"
+          speed: 2
+          base_damage: 4
+      armor: {}
+    tactics: "Lures first, always. Appears as something that draws the target to water — a horse to ride, a person to help, music to follow. Once the victim touches the water, it grabs and drags under. In water, it is vastly stronger. On land, it is diminished and will flee."
+    morale_break: "Retreats into deep water if confronted with iron or if a victim escapes its grip. Speaking its true name forces it to release a held victim."
+    group_size: "1"
+    abilities:
+      - "Shapeshifter: can appear as grey horse, pale human, or waterside fog — WIT test to see through"
+      - "Lure Song: WIL test or move toward the water involuntarily for d4 rounds"
+      - "Water Strength: +3 MIG and +2 TOU while submerged or in contact with its home water"
+      - "Drowning Grip: grapple in water, MIG contest at -2 for victim due to water drag"
+    combat_phases:
+      pre_battle:
+        - name: "Glamour Shift"
+          description: "Changes form as a free action — grey horse, pale human, or fog. Resets surprise; targets must pass WIT test to recognize the threat."
+      maneuvers:
+        - name: "Tidal Pull"
+          description: "Drags a grappled target 3 paces deeper into water per round. Automatic MIG contest each round to resist."
+          cost: "Replaces attack"
+        - name: "Water Lash"
+          description: "Strikes all targets within 3 paces while in water. d4 damage each, NIM test to dodge."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "True Form Revealed"
+          trigger: "Below 50% HP (5 HP)"
+          description: "Drops all glamour involuntarily. All witnesses must pass WIL test or be stunned for 1 round from horror. Gains +2 NIM while in water."
+      on_death:
+        - name: "Cursed Waters"
+          description: "The water source becomes cursed for d6 months. Anyone drinking must pass WIL test or hear luring music at dusk, drawn toward the water."
+    resistances: ["cold", "physical_weapons_on_land", "fear"]
+    weaknesses: ["iron", "true_name_spoken", "drought", "fire"]
+    sim_traits: ["shapeshifter", "lure_song", "water_strength", "glamour_shift"]
+    encounter_conditions:
+      terrain: ["river", "lake", "ford", "waterfall", "fog_bank"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [0, 8]
+      items: ["drowned_traveler_coin_pouch", "waterlogged_arm_ring"]
+      special: "Water from its home pool holds seidr charge for seven days — can be used in divination rituals"
+    image_prompt: |
+      A grey horse standing perfectly still at the edge of a fog-covered
+      lake, mane dripping wet, coat too smooth. The water behind it is
+      unnaturally dark and still. Reflected light doesn't behave correctly
+      on the surface. Overcast sky, birch trees in background. The horse
+      is looking directly at the viewer. Something deeply wrong about how
+      still it stands. Muted grey-blue palette.
+
+  - id: "SUP_SPIRIT_04"
+    name: "Rune-Ghost"
+    category: "supernatural"
+    subcategory: "spirit"
+    tier: 2
+    description: "A flickering shape standing near carved standing stones. Not quite solid — the outline shimmers like heat haze. Wears clothes from a time no one remembers. Mouth moves constantly, repeating the same words in a language that's almost recognizable. The runes on the stone behind it glow faintly in the same rhythm as its speech."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 2
+      WIT: 5
+      WIL: 6
+      WYR: 5
+    hp: 4
+    skills:
+      - name: "Lore"
+        rank: 3
+      - name: "Intimidation"
+        rank: 2
+    gear:
+      weapons: []
+      armor: {}
+    tactics: "Does not attack unless provoked. Repeats its message endlessly. If someone touches the standing stone or attempts to damage the runes, it lashes out with a burst of cold energy. Returns to repeating after the threat leaves the stone alone."
+    morale_break: "Cannot leave the standing stone's vicinity (10 paces). Dissipates if the runes are destroyed, but this may have other consequences."
+    group_size: "1"
+    abilities:
+      - "Rune-Bound: tied to specific standing stone, cannot move beyond 10 paces"
+      - "Cold Burst: if provoked, releases wave of cold — TOU test or take d6 cold damage in area"
+      - "Ancient Message: speaks in Old Tongue, WIT test to partially understand — may contain warnings or directions"
+      - "Incorporeal: physical weapons pass through"
+    resistances: ["physical_weapons", "cold", "fear", "bleeding"]
+    weaknesses: ["rune_destruction", "seidr_counterspells", "dawn_light"]
+    sim_traits: ["incorporeal", "cold_burst_aoe"]
+    encounter_conditions:
+      terrain: ["standing_stones", "crossroads", "hilltop", "ancient_path"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "The standing stone itself is valuable to seidr practitioners — the runes contain fragments of old galdr. Transcribing them requires WYR test."
+    image_prompt: |
+      A translucent human figure standing beside a tall carved standing
+      stone on a windswept hilltop. The figure flickers like heat haze,
+      wearing garments from a forgotten age. Mouth moving, repeating
+      something. The runes carved into the stone glow faintly blue-white
+      in the same rhythm as the speech. Grey sky, long grass bending in
+      wind that doesn't touch the ghost. Eerie but not aggressive.
+
+  # ==========================================================================
+  # VEIL ENTITIES (SUP_VEIL_01 through SUP_VEIL_04)
+  # ==========================================================================
+
+  - id: "SUP_VEIL_01"
+    name: "Veil-Shadow"
+    category: "supernatural"
+    subcategory: "veil_entity"
+    tier: 2
+    description: "Not a creature in any useful sense. A patch of darkness that moves against the light. Where it passes, breath fogs and courage drains like water through sand. It has no face, no limbs, no sound. It's the shape of something missing. They mass near thin spots in the Veil like flies on a wound."
+    stats:
+      MIG: 1
+      NIM: 5
+      TOU: 2
+      WIT: 3
+      WIL: 6
+      WYR: 5
+    hp: 3
+    skills:
+      - name: "Stealth"
+        rank: 4
+    gear:
+      weapons: []
+      armor: {}
+    tactics: "Drifts toward living warmth. Does not chase. Envelops the target in cold darkness. Multiple Veil-Shadows converge on the same victim, stacking their drain effect. They are drawn to despair and exhaustion."
+    morale_break: "Dispersed by strong firelight, iron proximity, or active rune-wards. Reforms after minutes unless the Veil thin-spot is sealed."
+    group_size: "3-8"
+    abilities:
+      - "Warmth Drain: contact causes d4 cold damage per round and -1 to WIL tests while in contact"
+      - "Courage Sap: WIL test each round in contact or flee in blind panic"
+      - "Formless: immune to physical weapons — can only be dispersed by light, fire, or seidr"
+      - "Veil-Drawn: always found near Veil thin-spots, never far from their source"
+    combat_phases:
+      pre_battle:
+        - name: "Cold Creep"
+          description: "Temperature drops noticeably — breath fogs, candles gutter, exposed skin prickles with cold."
+      on_death:
+        - name: "Dispersal Chill"
+          description: "Burst of cold in a 2-pace radius. TOU test or suffer -1 NIM for 1 hour from deep chill."
+    resistances: ["physical_weapons", "cold", "poison", "bleeding", "fear"]
+    weaknesses: ["fire", "strong_light", "rune_wards", "seidr_counterspells"]
+    sim_traits: ["incorporeal", "warmth_drain", "courage_sap"]
+    encounter_conditions:
+      terrain: ["veil_thin_spot", "barrow", "deep_forest", "fog"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "Veil residue where they dissipate — can be collected in sealed clay vessels, used in seidr to thin or reinforce the Veil locally"
+    image_prompt: |
+      A patch of absolute darkness moving through a twilight forest,
+      shaped vaguely like a person but wrong — no edges, no features.
+      Where it passes, the grass frosts. Breath visible in the air around
+      it. Several more patches drift in the background between trees.
+      The light from a distant campfire bends away from them. Muted
+      blue-black palette with warm fire in the far distance.
+
+  - id: "SUP_VEIL_02"
+    name: "The Hush"
+    category: "supernatural"
+    subcategory: "veil_entity"
+    tier: 5
+    description: "Not a creature. A phenomenon. An area where all sound stops. Your sword leaves the scabbard — nothing. You shout — nothing. Your heartbeat vanishes and for one terrible moment you don't know if it's still beating. The Hush spreads outward from a Veil rupture like blood in water. Inside it, things move that shouldn't be there. You see them in the corner of your eye. When the sound comes back, people are dead and no one saw what killed them."
+    stats:
+      MIG: 0
+      NIM: 0
+      TOU: 10
+      WIT: 9
+      WIL: 10
+      WYR: 9
+    hp: 0
+    skills:
+      - name: "Suppression"
+        rank: 5
+    gear:
+      weapons: []
+      armor: {}
+    tactics: "The Hush does not attack. It exists. Within the Hush, other Veil entities move freely and unseen. The Hush suppresses sound-based communication, verbal seidr components, morale coordination, and warning shouts. It turns organized groups into isolated, terrified individuals."
+    morale_break: "The Hush lifts on its own after d6 hours, or can be disrupted by powerful seidr at the source point. Running from the area is the only reliable response."
+    group_size: "1 (area effect)"
+    abilities:
+      - "Total Silence: all sound ceases within a spreading radius (starts 50 paces, grows to 500)"
+      - "Verbal Seidr Nullification: any galdr, incantation, or spoken rune-work fails automatically"
+      - "Isolation Effect: WIL test each 10 minutes or gain Panic condition — no rally possible without sound"
+      - "Veil-Thin Gateway: other Veil entities can cross freely within the Hush zone"
+      - "Cannot Be Fought: no HP, no physical form — it is a condition, not a creature"
+    resistances: ["all_damage", "all_magic", "all_physical"]
+    weaknesses: ["powerful_seidr_at_source", "natural_dissipation", "distance"]
+    sim_traits: []
+    encounter_conditions:
+      terrain: ["veil_rupture", "battlefield", "barrow_complex", "ancient_ruin"]
+      season: ["winter", "deep_autumn"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "Ground zero of a Hush event is permanently Veil-thin — valuable and dangerous. Seidr practitioners can use the site for powerful workings but at extreme risk."
+    image_prompt: |
+      A forest clearing where everything is wrong. People with mouths
+      open in silent screams. A dog barking with no sound. A sword drawn
+      from a scabbard but no ring of steel. In the background, barely
+      visible, shapes that don't belong — suggestions of limbs and eyes
+      at impossible angles. The air itself looks thick, like looking
+      through old glass. Muted, washed-out colors. Pure dread.
+
+  - id: "SUP_VEIL_03"
+    name: "Veil-Watcher"
+    category: "supernatural"
+    subcategory: "veil_entity"
+    tier: 3
+    description: "You don't see it. You feel it. That crawling sensation on the back of your neck near a barrow mouth. The certainty that something is looking at you from just behind reality. Seidr-sight reveals it: a single enormous eye, amber and slitted, floating in the space between here and there. It blinks slowly. It is watching. It has always been watching."
+    stats:
+      MIG: 0
+      NIM: 0
+      TOU: 4
+      WIT: 9
+      WIL: 8
+      WYR: 8
+    hp: 8
+    skills:
+      - name: "Seidr-Sense"
+        rank: 5
+      - name: "Stealth"
+        rank: 5
+    gear:
+      weapons: []
+      armor: {}
+    tactics: "Does not attack. Observes. Its observation has weight — those being watched feel mounting dread. Extended watching erodes willpower. If attacked through the Veil, it simply closes the eye and opens it elsewhere. Some believe Veil-Watchers report to something deeper."
+    morale_break: "Cannot be driven away permanently. Closing the eye requires a direct seidr attack targeting its Veil position. It reopens elsewhere within hours."
+    group_size: "1"
+    abilities:
+      - "Omniscient Gaze: sees through all mundane stealth, darkness, and concealment within its watch area"
+      - "Dread Aura: WIL test each hour spent being watched or suffer -1 WIL (temporary, recovers after leaving area)"
+      - "Between-Spaces: exists partially in the Veil — physical attacks cannot reach it"
+      - "Information Conduit: things the Watcher sees may be known to other Veil entities in the region"
+    resistances: ["all_physical", "cold", "fire", "poison"]
+    weaknesses:
+      ["seidr_counterspells", "veil_sealing_rituals", "blinding_rune_flash"]
+    sim_traits: ["incorporeal", "dread_aura"]
+    encounter_conditions:
+      terrain:
+        ["veil_thin_spot", "barrow_entrance", "standing_stones", "deep_forest"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "If somehow forced to fully manifest (requiring legendary seidr), its amber fluid can be used to brew Veil-sight potions"
+    image_prompt: |
+      A single enormous amber eye with a vertical slit pupil, floating
+      in a space that looks like reality is peeling apart. The edges of
+      the eye blur into nothing. Behind it, a suggestion of vast dark
+      space. In the foreground, a Viking-age warrior clutching the back
+      of his neck, feeling the gaze. Standing stones in the background.
+      The eye is partially transparent, as if existing in a different
+      layer of the same image. Cold amber light.
+
+  - id: "SUP_VEIL_04"
+    name: "Rift-Spawn"
+    category: "supernatural"
+    subcategory: "veil_entity"
+    tier: 4
+    description: "When the Veil tears, things come through. This is one of them. It has limbs but the joints bend the wrong way. It has a mouth but it's in the wrong place. The sound it makes is like a word spoken backward underwater. It moves in stuttering lurches as if reality keeps rejecting it and it keeps forcing itself back in. It smells of ozone and nothing."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 6
+      WIT: 4
+      WIL: 7
+      WYR: 8
+    hp: 16
+    skills:
+      - name: "Brawl"
+        rank: 4
+      - name: "Intimidation"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Wrong-Angled Limbs"
+          type: "unarmed"
+          speed: 2
+          base_damage: 7
+      armor:
+        torso: "Reality-Reject Skin (acts as mail)"
+        head: "None"
+    tactics: "Moves erratically — difficult to predict. Attacks the nearest living thing with limbs that shouldn't reach as far as they do. Drawn to seidr users. If the Veil tear closes, it weakens rapidly. Multiple Rift-Spawn never cooperate — they seem barely aware of each other."
+    morale_break: "If the Veil tear that spawned it is sealed, it loses 2 HP per round and becomes desperate. Does not flee — becomes more erratic and dangerous until it dissolves."
+    group_size: "1-3"
+    abilities:
+      - "Wrong Geometry: its reach is 2 paces longer than its limbs suggest — NIM test to avoid surprise strikes"
+      - "Reality Stutter: moves in lurches, -2 to hit it with ranged attacks"
+      - "Seidr Hunger: drawn to active seidr, attacks seidr users first, gains +1 MIG after consuming seidr energy"
+      - "Veil-Tethered: takes d4 damage per round if more than 100 paces from its source tear"
+    combat_phases:
+      pre_battle:
+        - name: "Reality Warping"
+          description: "Distances in the area seem wrong. All ranged attacks suffer -1 penalty until the attacker adjusts (3 rounds)."
+      maneuvers:
+        - name: "Dimensional Grab"
+          description: "Reaches through a fold in space to attack from behind, ignoring shield bonus. +3 to hit."
+          cost: "Once per encounter"
+        - name: "Phase Lunge"
+          description: "Teleports up to 5 paces and attacks immediately. Target must pass NIM test or be struck before reacting."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Reality Hemorrhage"
+          trigger: "Below 50% HP (8 HP)"
+          description: "The rift widens — d4 damage per round to everyone within 5 paces from spatial distortion. Creature becomes more erratic (+2 NIM, -2 WIT)."
+      on_death:
+        - name: "Veil Snap"
+          description: "Reality violently reasserts. Everyone within 10 paces takes d8 damage (WIL test to halve) from the whiplash. Crystallized veil-matter left behind."
+    resistances: ["cold", "fear", "poison"]
+    weaknesses: ["iron", "sealing_the_rift", "silver", "fire"]
+    sim_traits:
+      ["wrong_geometry", "reality_stutter", "seidr_hunger", "reality_warping"]
+    encounter_conditions:
+      terrain: ["veil_rupture", "barrow_complex", "battlefield_aftermath"]
+      season: ["winter", "during_hush_events"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "When destroyed, leaves a residue of crystallized Veil-matter — extremely dangerous to handle but invaluable for seidr work. Must be stored in iron containers."
+    image_prompt: |
+      A humanoid shape with joints bending the wrong way, standing in a
+      clearing where the air itself looks torn — a vertical rip in space
+      behind it showing absolute darkness. The creature's limbs are too
+      long and its mouth is on its chest. The ground around its feet
+      is scorched in geometric patterns. It moves in a frozen-frame
+      stutter. Ozone-blue light leaking from the rift. Nauseating
+      wrongness. Dark, desaturated palette except the rift glow.
+
+  # ==========================================================================
+  # FOREST / WILDERNESS (SUP_WILD_01 through SUP_WILD_03)
+  # ==========================================================================
+
+  - id: "SUP_WILD_01"
+    name: "Forest Troll"
+    category: "supernatural"
+    subcategory: "wilderness"
+    tier: 4
+    description: "Three times the height of a man and half as wide. Skin like grey granite with patches of actual lichen growing in the cracks. Flat face with small eyes deep in the skull. Fingers like tree trunks. It moves slowly and deliberately, each step leaving a print six inches deep in forest soil. Has been here longer than the trees. Smells of wet stone and rotting wood."
+    stats:
+      MIG: 9
+      NIM: 2
+      TOU: 9
+      WIT: 2
+      WIL: 5
+      WYR: 4
+    hp: 24
+    skills:
+      - name: "Brawl"
+        rank: 4
+      - name: "Intimidation"
+        rank: 4
+      - name: "Stealth"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Boulder Fists"
+          type: "unarmed"
+          speed: 0
+          base_damage: 9
+        - name: "Uprooted Tree"
+          type: "improvised"
+          speed: 0
+          base_damage: 10
+      armor:
+        torso: "Stone Skin (natural, as plate)"
+        head: "Stone Skin (natural)"
+    tactics: "Ambushes by standing still among boulders — surprisingly effective for something so large. Attacks by grabbing and crushing, or swinging whatever is nearby (trees, boulders, a horse). Slow but each hit is devastating. Will chase but cannot keep up with a running human for long."
+    morale_break: "Retreats from sustained fire. Flees from direct sunlight — turns to stone if caught in it for more than a few minutes. The transformation is slow enough to escape."
+    group_size: "1"
+    abilities:
+      - "Stone Skin: natural armor equivalent to plate, immune to cutting damage from normal weapons"
+      - "Sunlight Petrification: direct sunlight causes d6 damage per round, petrifies permanently after 3 rounds"
+      - "Boulder Ambush: while motionless among rocks, nearly impossible to spot (Stealth +4 bonus)"
+      - "Crushing Grip: grapple deals d8 damage per round, MIG contest at -3 to escape"
+      - "Regeneration: heals 1 HP per hour in darkness or deep shade"
+    combat_phases:
+      pre_battle:
+        - name: "Ground Tremor"
+          description: "Heavy footsteps shake the ground. NIM test or stumble (-1 to next action). Horses must pass WIL test or panic."
+      maneuvers:
+        - name: "Boulder Hurl"
+          description: "Throws a massive rock at a target within 15 paces. 10 damage, NIM test to dodge."
+          cost: "Replaces attack"
+        - name: "Backhand Sweep"
+          description: "Sweeps a limb through a 3-pace arc hitting all enemies. 7 damage each, NIM test to duck."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Berserk Rage"
+          trigger: "Below 50% HP (12 HP)"
+          description: "+2 MIG, -1 NIM, attacks twice per round but can no longer distinguish friend from foe. Regeneration doubles to 2 HP per round in darkness."
+      on_death:
+        - name: "Petrification Cascade"
+          description: "Body rapidly turns to stone. Anyone grappled or adjacent must pass NIM test or have a limb trapped in solidifying stone. The stone corpse remains as a permanent obstacle."
+    resistances: ["cold", "cutting_weapons", "poison", "fear"]
+    weaknesses: ["sunlight", "fire", "seidr_counterspells"]
+    sim_traits:
+      [
+        "stone_skin",
+        "sunlight_petrification",
+        "crushing_grip_3",
+        "regeneration_1",
+        "ground_tremor",
+      ]
+    encounter_conditions:
+      terrain: ["deep_forest", "mountain_pass", "cave_mouth", "boulder_field"]
+      season: ["any_but_midsummer"]
+    loot:
+      silver_range: [0, 0]
+      items: ["troll_stone_fragment"]
+      special: "Petrified troll-stone can be ground into powder — powerful seidr component for ward-making and protection runes. A single troll yields enough for dozens of uses."
+    image_prompt: |
+      An enormous humanoid shape made of grey stone and lichen, standing
+      among boulders in a dark forest so still it's nearly invisible.
+      Small deep-set eyes catching faint moonlight. Fingers like cracked
+      pillars. Lichen and moss growing in the seams of its skin. One hand
+      resting on a boulder the size of a man. Pine trees around it look
+      small. Dark green and stone-grey palette. Sense of ancient, patient
+      menace. Not fantasy — more like discovering a geological formation
+      that is breathing.
+
+  - id: "SUP_WILD_02"
+    name: "Frost-Wraith"
+    category: "supernatural"
+    subcategory: "wilderness"
+    tier: 3
+    description: "A shape in the blizzard that walks against the wind. Humanoid but too thin, limbs like icicles, a face that's all angles and no features. Where it steps, the snow doesn't crunch — it cracks like breaking glass. The cold around it isn't weather. It's malice. Touch it and your skin blackens in seconds."
+    stats:
+      MIG: 4
+      NIM: 6
+      TOU: 4
+      WIT: 4
+      WIL: 6
+      WYR: 6
+    hp: 8
+    skills:
+      - name: "Stealth"
+        rank: 3
+      - name: "Brawl"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Freezing Touch"
+          type: "unarmed"
+          speed: 2
+          base_damage: 3
+      armor: {}
+    tactics: "Appears during blizzards and extreme cold. Walks toward the warmest target. Its touch freezes flesh instantly — contact causes frostbite damage that spreads. Will circle a camp, approaching from downwind. Fires keep it at bay but don't harm it. Only retreats when the blizzard passes."
+    morale_break: "Dissipates when the storm ends or when exposed to large sustained fire. Cannot exist indoors if a hearth is lit."
+    group_size: "1-2"
+    abilities:
+      - "Killing Cold: melee contact causes d6 cold damage plus d4 ongoing frostbite damage per round until warmed"
+      - "Cold Aura: all within 5 paces suffer -1 to NIM and MIG from numbing cold"
+      - "Storm-Born: invisible during blizzards, +3 Stealth in any snowfall"
+      - "Fire Aversion: cannot approach within 3 paces of a large fire, takes d4 damage per round from sustained flames"
+    combat_phases:
+      pre_battle:
+        - name: "Temperature Plunge"
+          description: "Campfires shrink, water begins to freeze, exposed skin stings. All creatures in the area suffer -1 TOU."
+      maneuvers:
+        - name: "Frost Lance"
+          description: "Projects a line of freezing cold out to 5 paces. d8 cold damage, TOU test to halve."
+          cost: "Replaces attack"
+        - name: "Ice Grasp"
+          description: "On hit, target's weapon freezes to their hand. MIG test to release or take d4 cold damage pulling free."
+          cost: "Free action"
+      bloodied:
+        - name: "Blizzard Scream"
+          trigger: "Below 50% HP (4 HP)"
+          description: "Localized blizzard erupts. Visibility drops to 2 paces, all movement halved, d3 cold damage per round to everyone in 10-pace area."
+      on_death:
+        - name: "Flash Freeze"
+          description: "Everything within 3 paces flash-freezes. Weapons become brittle (-1 damage until warmed), water skins shatter, exposed skin takes d6 frostbite."
+    resistances: ["cold", "physical_weapons", "poison", "fear"]
+    weaknesses: ["fire", "hearth_warmth", "sunlight", "end_of_storm"]
+    sim_traits:
+      [
+        "incorporeal",
+        "killing_cold_contact",
+        "cold_aura",
+        "fire_aversion",
+        "temperature_plunge",
+      ]
+    encounter_conditions:
+      terrain: ["mountain_pass", "open_field", "frozen_lake", "tundra"]
+      season: ["winter"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "When it dissipates, leaves a patch of unnaturally cold ground. Ice from this spot doesn't melt for days and can be used in seidr to summon or repel cold spirits."
+    image_prompt: |
+      A skeletal humanoid shape made of ice and howling wind, standing in
+      a blizzard. Limbs like icicles, no features on the face — just
+      angular planes of frost. Walking toward the viewer against the wind
+      direction. Snow around its feet has cracked like glass. A faint blue
+      glow where its chest would be. In the far background, the dim
+      orange light of a campfire. Monochrome white and ice-blue with that
+      one point of distant warmth.
+
+  - id: "SUP_WILD_03"
+    name: "Bog-Thing"
+    category: "supernatural"
+    subcategory: "wilderness"
+    tier: 3
+    description: "A human body — or what's left of one — preserved in peat for centuries and reanimated by seeping Veil energy. Skin tanned dark brown like leather, compressed flat. Still wearing fragments of wool and rope. Moves with horrible flexibility, boneless almost, sliding through shallow water like an eel. Grabs ankles from beneath the surface. The bog water where it lurks smells of iron and decay."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 6
+      WIT: 2
+      WIL: 4
+      WYR: 5
+    hp: 10
+    skills:
+      - name: "Stealth"
+        rank: 4
+      - name: "Brawl"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Peat-Hardened Fingers"
+          type: "unarmed"
+          speed: 2
+          base_damage: 4
+        - name: "Garrote Rope (burial binding)"
+          type: "garrote"
+          speed: 1
+          base_damage: 3
+      armor:
+        torso: "Peat-Tanned Skin (as leather)"
+        head: "None"
+    tactics: "Hides beneath bog water, completely submerged. Grabs ankles as targets wade through. Drags victims under the surface — drowning is the kill method, not brute force. Multiple Bog-Things coordinate to pull from different angles. On dry land, it's slow and awkward."
+    morale_break: "Retreats to deeper water if victims escape to solid ground. Fire on the bog surface (burning marsh gas) drives them away temporarily."
+    group_size: "2-4"
+    abilities:
+      - "Submerged Ambush: invisible beneath black bog water, Stealth +3 when submerged"
+      - "Ankle Grab: target must pass NIM test or be pulled prone into water"
+      - "Drowning Hold: grappled targets in water take d4 drowning damage per round"
+      - "Bog-Bound: -2 to all stats on dry land, cannot venture more than 20 paces from water"
+      - "Peat-Preserved: resistant to cutting — blades stick in the compressed flesh"
+    combat_phases:
+      pre_battle:
+        - name: "Water Darkening"
+          description: "The water turns opaque — impossible to see the bottom. Bog-Thing gains Stealth +3 while submerged."
+      maneuvers:
+        - name: "Drag Under"
+          description: "Pulls a grappled target fully submerged. Drowning begins immediately — d4 damage per round."
+          cost: "Replaces attack"
+        - name: "Peat Noose"
+          description: "Garrote attack from behind using burial rope. +2 to grapple, target cannot call for help while held."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Desperate Thrashing"
+          trigger: "Below 50% HP (5 HP)"
+          description: "The water churns violently. Everyone in the bog must pass NIM test or fall prone. The Bog-Thing gains +1 MIG from desperation."
+      on_death:
+        - name: "Peat Release"
+          description: "Body dissolves into the bog water, which becomes toxic for d6 hours. Anyone immersed must pass TOU test or vomit (-2 to all actions for 10 minutes)."
+    resistances: ["cutting_weapons", "cold", "poison"]
+    weaknesses: ["fire", "dragging_to_dry_land", "decapitation", "iron"]
+    encounter_conditions:
+      terrain: ["bog", "marsh", "flooded_field", "peat_moor"]
+      season: ["spring", "autumn"]
+    loot:
+      silver_range: [0, 3]
+      items: ["ancient_wool_fragment", "bog_iron_bead"]
+      special: "Bog-preserved bodies sometimes wear Bronze Age jewelry — valuable to collectors and seidr practitioners interested in anchoring old spirits"
+    image_prompt: |
+      A dark brown, leather-skinned human body emerging from black bog
+      water, compressed flat by centuries of peat. Boneless flexibility
+      as it reaches up from the surface. Fragments of wool and rope still
+      attached. The face is featureless — pressed shut by the peat. Water
+      ripples around it. Reeds and marsh grass. Overcast sky reflected in
+      the dark water. Other shapes barely visible beneath the surface
+      nearby. Sepia and black-water palette.
+
+  # ==========================================================================
+  # SEIDR-CORRUPTED (SUP_CORR_01 through SUP_CORR_04)
+  # ==========================================================================
+
+  - id: "SUP_CORR_01"
+    name: "Seidr-Corrupted Wolf"
+    category: "supernatural"
+    subcategory: "seidr_corrupted"
+    tier: 2
+    description: "A wolf, but wrong. Larger than any natural wolf by half again. The eyes don't reflect firelight — they produce their own, a faint amber glow. The fur along the spine stands permanently on end, shot through with threads of grey that might be age or might be something else. Moves in a pack but the coordination is too perfect, too silent. They don't howl. They don't need to."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 4
+      WIT: 4
+      WIL: 5
+      WYR: 4
+    hp: 8
+    skills:
+      - name: "Brawl"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+      - name: "Tracking"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Veil-Touched Jaws"
+          type: "bite"
+          speed: 3
+          base_damage: 5
+      armor:
+        torso: "Thick Corrupted Fur (as padded)"
+        head: "None"
+    tactics: "Pack hunts with supernatural coordination — no vocalizations, yet they move as one. Flanks and encircles. The alpha strikes first, the rest drag down whoever stumbles. They target the weakest or most seidr-active member of a group. Fires don't deter them the way they deter natural wolves."
+    morale_break: "If the alpha is killed, the pack scatters and reverts to near-normal wolf behavior for several days. Iron weapons cause them visible pain."
+    group_size: "4-8"
+    abilities:
+      - "Silent Pack: communicate without sound — cannot be heard approaching"
+      - "Seidr-Sense: detect active seidr use within 200 paces, prioritize seidr users as targets"
+      - "Glowing Eyes: provide dim light from eyes — visible in darkness at 50 paces"
+      - "Corrupted Bite: wounds from their bite heal at half normal rate"
+    combat_phases:
+      pre_battle:
+        - name: "Silent Encirclement"
+          description: "Pack surrounds target without sound. Victim may not realize they are surrounded until attacked — WIT test to notice."
+      maneuvers:
+        - name: "Coordinated Takedown"
+          description: "When 2+ wolves attack the same target, one attempts a trip attack. Target must pass NIM test or be knocked prone."
+          cost: "Free action"
+      bloodied:
+        - name: "Corruption Flare"
+          trigger: "Below 50% HP (4 HP)"
+          description: "Amber eyes blaze — d4 seidr damage to nearest non-wolf within 3 paces. Nearby wolves become enraged (+1 MIG for d4 rounds)."
+      on_death:
+        - name: "Veil Howl"
+          description: "Releases a supernatural howl audible for 1 mile. All seidr-sensitive beings and undead in range are alerted. Wolves in the pack lose 1 round (no actions) from confusion."
+    resistances: ["cold", "fear"]
+    weaknesses: ["iron", "killing_the_alpha", "fire_sustained"]
+    encounter_conditions:
+      terrain: ["forest", "barrow_vicinity", "veil_thin_spot", "mountain_trail"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 2]
+      items: ["corrupted_wolf_pelt", "veil_touched_fang"]
+      special: "Veil-touched fangs hold faint seidr charge — can be used in ward-making or ground into powder for tracking seidr"
+    image_prompt: |
+      A wolf half again larger than natural, standing at the edge of
+      firelight in a winter forest. Eyes producing their own faint amber
+      glow. Fur along the spine standing on end with grey threads. Behind
+      it, three more pairs of glowing eyes in the darkness, perfectly
+      spaced. No breath visible despite the cold. Absolutely silent. Snow
+      on the ground, pine trees, dying campfire light. The wolves are
+      too still, too coordinated. Unsettling amber-and-dark palette.
+
+  - id: "SUP_CORR_02"
+    name: "Seidr-Corrupted Bear"
+    category: "supernatural"
+    subcategory: "seidr_corrupted"
+    tier: 4
+    description: "Found near barrows and Veil thin-spots. A brown bear grown to impossible size, shoulders as high as a mounted rider. Rune-like marks have appeared in the fur — not carved or branded, grown in, the hair itself forming angular patterns that shift when you aren't looking directly at them. The eyes are human. That's the worst part. Something is looking out through this bear that understands what it's doing."
+    stats:
+      MIG: 9
+      NIM: 3
+      TOU: 8
+      WIT: 5
+      WIL: 6
+      WYR: 6
+    hp: 22
+    skills:
+      - name: "Brawl"
+        rank: 4
+      - name: "Intimidation"
+        rank: 4
+      - name: "Tracking"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Rune-Marked Claws"
+          type: "claw"
+          speed: 2
+          base_damage: 8
+        - name: "Crushing Bite"
+          type: "bite"
+          speed: 1
+          base_damage: 7
+      armor:
+        torso: "Corrupted Hide (as mail)"
+        head: "Thick Skull (as helmet)"
+    tactics: "Hunts with unsettling intelligence. Sets ambushes. Waits downwind. Targets the seidr user or the one carrying iron first — it knows which threats matter. Charges through camp, scattering the fire first, then attacks in the dark where its senses dominate. Does not bluff-charge. Every charge is real."
+    morale_break: "Sustained fire and multiple iron weapons can drive it off. If badly wounded (below 6 HP), it retreats toward the nearest barrow. Killing it near a Veil thin-spot may cause the corruption to transfer to another animal."
+    group_size: "1"
+    abilities:
+      - "Corrupted Intelligence: human-level tactical thinking, can plan ambushes and identify threats"
+      - "Rune-Marked: the shifting runes on its fur disrupt seidr targeting — seidr attacks against it are at -2"
+      - "Barrow-Drawn: heals 2 HP per hour when within 100 paces of a barrow or Veil thin-spot"
+      - "Terrifying Charge: when charging, WIL test or freeze for one round (fear response)"
+      - "Scatter the Fire: deliberately targets campfires first to remove light advantage"
+    combat_phases:
+      pre_battle:
+        - name: "Intelligent Stalk"
+          description: "Observes camp for hours before attacking. Identifies seidr users and iron-carriers. First attack always targets the campfire."
+      maneuvers:
+        - name: "Rune-Claw Swipe"
+          description: "The shifting runes on its claws disrupt any active seidr effect on the target — one spell or ward is broken on hit."
+          cost: "Replaces attack"
+        - name: "Pin and Crush"
+          description: "If both claw attacks hit the same target, bear pins them. d10 crushing damage per round, MIG contest at -3 to escape."
+          cost: "Free action"
+      bloodied:
+        - name: "Rune Surge"
+          trigger: "Below 50% HP (11 HP)"
+          description: "Fur-runes flare bright amber. All seidr within 10 paces is suppressed for d4 rounds. The bear heals d6 HP from absorbed seidr energy."
+      on_death:
+        - name: "Corruption Transfer"
+          description: "Veil energy seeks a new host. Nearest animal within 100 paces must pass WIL test or begin slow corruption (visible within d6 days). The body smolders with fading rune-light for hours."
+    resistances: ["cold", "fear", "seidr_direct"]
+    weaknesses: ["iron", "fire_sustained", "silver", "distance_from_barrow"]
+    encounter_conditions:
+      terrain:
+        ["barrow_vicinity", "deep_forest", "veil_thin_spot", "mountain_cave"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 0]
+      items: ["corrupted_bear_pelt", "rune_marked_claw"]
+      special: "The rune-marked pelt retains its shifting patterns for weeks after death — seidr practitioners can read fragmentary messages from the Veil in the patterns. The claws hold enough seidr charge for several ward-inscriptions."
+    image_prompt: |
+      An enormous brown bear with rune-like patterns visible in its fur,
+      standing on hind legs at the entrance to a barrow. The runes seem
+      to shift and move. The bear's eyes are wrong — too aware, too
+      human, looking directly at the viewer with intelligence. Shoulders
+      higher than a man. One paw resting on a toppled standing stone.
+      Forest behind, overcast sky. The scale is wrong — the bear is too
+      large. Dark browns and muted greens. An intelligence that shouldn't
+      be there.
+
+  - id: "SUP_CORR_03"
+    name: "Rune-Sick Raven Swarm"
+    category: "supernatural"
+    subcategory: "seidr_corrupted"
+    tier: 2
+    description: "A hundred ravens moving as one body. They circle, land, take off in perfect unison — no natural flock does this. Some of them speak. Not mimicry — fragments of sentences in the Old Tongue, snatches of conversation from people who died near the Veil. The words come from different birds in sequence, stitching together messages that almost make sense. Their eyes are milky white. They peck at the living."
+    stats:
+      MIG: 3
+      NIM: 7
+      TOU: 2
+      WIT: 5
+      WIL: 5
+      WYR: 5
+    hp: 6
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Stealth"
+        rank: 2
+      - name: "Intimidation"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Hundred Beaks"
+          type: "swarm"
+          speed: 3
+          base_damage: 3
+      armor: {}
+    tactics: "Circles overhead first, speaking in dead voices. Then dives in waves — pecking at eyes, hands, any exposed skin. The swarm splits to attack from multiple angles, reforms to dive again. Targets anyone who responds to the spoken words first. Can be distracted by fresh meat."
+    morale_break: "Scatters if half the swarm is killed (3 HP damage) but reforms within hours. Sustained fire or smoke drives them off temporarily. Will not enter enclosed spaces."
+    group_size: "1 (swarm counts as single entity)"
+    abilities:
+      - "Dead Speech: speaks fragments of Old Tongue from the dead — WIL test or become fascinated for d4 rounds"
+      - "Swarm Attack: targets all exposed skin simultaneously, -2 to defend against swarm"
+      - "Eye Peck: on critical hit, targets eyes specifically — TOU test or blinded in one eye"
+      - "Reform: if scattered but not fully destroyed, reforms at the next dusk"
+    combat_phases:
+      pre_battle:
+        - name: "Dead Man's Warning"
+          description: "The swarm circles overhead speaking names of the dead in the area. WIL test or -1 to all actions from dread."
+      maneuvers:
+        - name: "Eye Dive"
+          description: "Concentrated dive at one target's face. NIM test at -2 or blinded for d4 rounds."
+          cost: "Once per encounter"
+      on_death:
+        - name: "Feather Fall"
+          description: "Rune-sick feathers rain down. Anyone touched must pass WIL test or hear dead whispers for d6 hours (distracting, -1 WIT)."
+    resistances: ["fear", "single_target_weapons"]
+    weaknesses: ["fire", "smoke", "area_attacks", "enclosed_spaces"]
+    encounter_conditions:
+      terrain:
+        ["barrow_vicinity", "battlefield", "standing_stones", "veil_thin_spot"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 0]
+      items: ["rune_sick_feather"]
+      special: "Rune-sick feathers can be used as writing implements for seidr inscriptions — they leave marks that shimmer faintly in Veil-light"
+    image_prompt: |
+      A massive swarm of ravens moving in perfect unison against an
+      overcast sky above standing stones. Individual birds have milky
+      white eyes. Some have beaks open as if speaking. The swarm forms
+      a shape that's almost a rune before breaking apart and reforming.
+      Below, a figure with arms raised to protect their face. Black
+      feathers falling like ash. The coordination is mechanical, wrong.
+      Dark grey sky, black birds, pale stone. A still from a nightmare.
+
+  - id: "SUP_CORR_04"
+    name: "Barrow-Rat King"
+    category: "supernatural"
+    subcategory: "seidr_corrupted"
+    tier: 2
+    description: "A mass of rats fused together at the tails by knotted tendon and dark energy. A hundred bodies moving as one grotesque unit, tails radiating from a central knot that pulses with faint phosphorescence. They flow like water through barrow corridors, over walls, across ceilings. Individual rats on the edges serve as scouts and feeders. The central mass is the brain. It squeaks in patterns that sound like counting."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 3
+      WIT: 4
+      WIL: 4
+      WYR: 4
+    hp: 8
+    skills:
+      - name: "Stealth"
+        rank: 4
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Hundred Biting Mouths"
+          type: "swarm"
+          speed: 3
+          base_damage: 3
+      armor: {}
+    tactics: "Scouts with individual rats first — they appear normal. The mass follows through the darkest paths. Engulfs targets from below, flowing up legs and biting everywhere simultaneously. Targets food stores and sleeping people. Avoids direct confrontation with alert, armed groups."
+    morale_break: "Scatters if the central tail-knot is severed (requires targeted attack at -3). Fire on the mass causes panic and retreat. Smoke drives them from enclosed spaces."
+    group_size: "1 (mass counts as single entity)"
+    abilities:
+      - "Swarm Intelligence: coordinates through the fused tail-knot — smarter than any individual rat"
+      - "Flow Movement: can move through any space a single rat can fit, including walls and ceilings"
+      - "Disease Carrier: bite wounds have 1-in-6 chance of festering infection (TOU test or lose 1 HP per day)"
+      - "Scout Network: individual rats range ahead, giving the mass awareness of the surrounding area"
+      - "Engulf: surrounds prone or sleeping target, automatic d6 damage per round from hundreds of bites"
+    combat_phases:
+      pre_battle:
+        - name: "Scout Wave"
+          description: "Individual rats appear hours before the mass, checking for food and weakness. Camp may be infested before anyone notices."
+      maneuvers:
+        - name: "Tail-Knot Pulse"
+          description: "The phosphorescent knot pulses. All within 5 paces must pass TOU test or be nauseated for d4 rounds (-2 to all actions)."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Swarm Split"
+          trigger: "Below 50% HP (4 HP)"
+          description: "Mass divides into two smaller groups (4 HP each), attacking from two directions simultaneously."
+      on_death:
+        - name: "Scattering Plague"
+          description: "Surviving rats scatter into the environment carrying disease. TOU test for anyone bitten or risk infection over the next d6 days."
+    resistances: ["single_target_weapons", "cold"]
+    weaknesses: ["fire", "smoke", "severing_the_knot", "flooding"]
+    encounter_conditions:
+      terrain: ["barrow", "ruins", "settlement_cellar", "sewer"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 0]
+      items: ["phosphorescent_tail_knot"]
+      special: "The fused tail-knot retains a faint glow for days after the rats die — seidr component for binding and connection rituals"
+    image_prompt: |
+      A writhing mass of rats fused together at the tails, flowing across
+      a stone barrow floor like a living carpet. The central tail-knot
+      glows faintly phosphorescent. Individual rats at the edges scout
+      ahead while the mass moves with disturbing coordination. Narrow
+      stone corridor, torch flicker on wet walls. The mass is climbing
+      the wall. Hundreds of small eyes reflecting light. Dark browns and
+      sick yellow-green glow. Visceral, nauseating. A thing that should
+      not exist.
+
+  # ==========================================================================
+  # UNIQUE SUPERNATURAL (SUP_UNIQUE_01 through SUP_UNIQUE_03)
+  # ==========================================================================
+
+  - id: "SUP_UNIQUE_01"
+    name: "Draugr-King"
+    category: "supernatural"
+    subcategory: "unique"
+    tier: 5
+    description: "Not a mindless corpse. A dead chieftain who refused to stay dead through sheer will and accumulated seidr. Sits on a stone throne in the deepest barrow chamber, perfectly preserved except for the skin — grey-blue and tight as a drum. Wears corroded but intact war-gear. Gold arm rings green with verdigris. The eyes are open, aware, and furious. It speaks in the Old Tongue with a voice like grinding stone. Every draugr in the region answers to it."
+    stats:
+      MIG: 8
+      NIM: 4
+      TOU: 8
+      WIT: 7
+      WIL: 9
+      WYR: 8
+    hp: 28
+    skills:
+      - name: "Swords"
+        rank: 4
+      - name: "Shields"
+        rank: 3
+      - name: "Seidr"
+        rank: 4
+      - name: "Intimidation"
+        rank: 5
+      - name: "Leadership"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Rune-Etched War Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 8
+      armor:
+        torso: "Ancient Mail preserved by seidr"
+        head: "Bronze-Inlaid Helm"
+        shield: "Iron-Rimmed Round Shield"
+    tactics: "Commands lesser draugr to attack first while it assesses threats from its throne. Rises only to deal with worthy opponents or seidr users. Fights with ancient martial skill combined with galdr — curses opponents mid-combat. Targets leaders and seidr users. Will negotiate if addressed with proper respect in the Old Tongue."
+    morale_break: "Does not flee its barrow. Can be negotiated with — it wants tribute, respect, and its territory undisturbed. If severely damaged, retreats deeper and seals passages with seidr."
+    group_size: "1 (with d6+2 draugr servants)"
+    abilities:
+      - "Command Dead: controls all draugr within the barrow complex — they act on its will"
+      - "Death Curse: can pronounce a curse on a living person — WIL contest or suffer permanent -1 to one stat"
+      - "Galdr User: can speak rune-magic (frost bolt d8 damage, fear aura, darkness)"
+      - "Ancient Warrior: fights with the skill of a seasoned war-chief, parries and ripostes"
+      - "Undying Will: at 0 HP, makes WIL test — success means it continues fighting at 1 HP for d6 more rounds"
+      - "Regional Authority: all undead within several miles feel its will and move toward its barrow"
+    combat_phases:
+      pre_battle:
+        - name: "Throne Command"
+          description: "Rises from throne — all lesser draugr in the barrow activate simultaneously. Temperature drops to freezing. His voice echoes through the corridors."
+      maneuvers:
+        - name: "Death Curse Strike"
+          description: "Sword blow carries a curse. On hit, target must pass WIL test at -2 or suffer permanent -1 to one stat of the Draugr-King's choice."
+          cost: "Once per encounter"
+        - name: "Command Surge"
+          description: "All lesser draugr in the chamber attack the same target this round."
+          cost: "Free action"
+      bloodied:
+        - name: "Ancient Fury"
+          trigger: "Below 50% HP (14 HP)"
+          description: "+2 MIG and +1 NIM. Speaks power-words that cause d4 seidr damage per round to everyone in the chamber. Can raise one fresh corpse per round as Shambling Corpse."
+      on_death:
+        - name: "Barrow Collapse"
+          description: "The will holding the barrow structure fails. Ceiling begins to crumble — all combatants have d6 rounds to escape before total collapse. All lesser draugr go dormant. His curse lifts from any living victims."
+    resistances:
+      ["cold", "fear", "poison", "bleeding", "physical_weapons_non_magical"]
+    weaknesses:
+      [
+        "silver",
+        "fire",
+        "sunlight",
+        "seidr_counterspells",
+        "proper_funeral_rites",
+      ]
+    encounter_conditions:
+      terrain: ["barrow_throne_room", "deep_barrow"]
+      season: ["any"]
+    loot:
+      silver_range: [50, 200]
+      items:
+        [
+          "rune_etched_war_sword",
+          "gold_arm_rings",
+          "bronze_helm",
+          "ancient_mail",
+        ]
+      special: "The throne itself is a seidr anchor — destroying it weakens all draugr in the region. The Draugr-King's sword retains galdr enchantment and functions as a seidr-active weapon."
+    image_prompt: |
+      A dead chieftain sitting upright on a carved stone throne in a deep
+      barrow chamber. Grey-blue skin, perfectly preserved, pulled tight
+      over heavy bone. Gold arm rings corroded green. Ancient mail still
+      intact, a rune-etched sword across the knees. Bronze-inlaid helm.
+      The eyes are OPEN — aware, intelligent, furious. Torchlight from
+      the approaching intruders illuminating the chamber. Lesser draugr
+      standing motionless along the walls like an honor guard. Carved
+      runes on every surface glowing faintly. Overwhelming presence.
+      This thing ruled in life and rules still.
+
+  - id: "SUP_UNIQUE_02"
+    name: "Galdr-Forge Echo"
+    category: "supernatural"
+    subcategory: "unique"
+    tier: 4
+    description: "Not alive. Not dead. Not a spirit. A loop of ancient seidr energy imprinted on stone. In the deepest chamber of the Iron Barrow, where the old masters worked their galdr, the walls remember. Walk into the room and the air thickens. Runes on the walls light up in sequence — the same sequence, every time. A voice speaks words of power that shake your teeth. Shapes form in the air: hands working invisible metal, pouring nothing into nothing. The echo doesn't know it's an echo. It will treat you as an apprentice or an intruder, depending on what you do."
+    stats:
+      MIG: 0
+      NIM: 0
+      TOU: 7
+      WIT: 8
+      WIL: 7
+      WYR: 9
+    hp: 0
+    skills:
+      - name: "Seidr"
+        rank: 5
+      - name: "Lore"
+        rank: 5
+    gear:
+      weapons: []
+      armor: {}
+    tactics: "The Echo is a loop. It performs the same sequence of galdr-working every time it activates. If interrupted at the wrong point, it lashes out with residual seidr energy — not malicious, reflexive. If a seidr user follows the sequence correctly, the Echo treats them as an apprentice and teaches. Disrupting the runes on the walls damages the Echo."
+    morale_break: "Cannot flee. Disrupting the wall-runes weakens it — destroying all runes ends the phenomenon permanently, but also destroys irreplaceable galdr knowledge."
+    group_size: "1 (phenomenon)"
+    abilities:
+      - "Galdr Sequence: performs ancient rune-magic in a repeating loop — seidr users can learn from it (WYR test)"
+      - "Reflexive Discharge: if interrupted, releases d8 seidr damage in the chamber — WIL test to halve"
+      - "Teaching Mode: if a seidr user mimics the sequence correctly, grants temporary +2 to Seidr skill for one day"
+      - "Chamber-Bound: cannot leave the forge chamber — exists only where the runes are intact"
+      - "Cannot Be Fought: has no HP, no physical form — can only be disrupted by destroying the runes"
+    resistances: ["all_physical", "cold", "fire", "poison"]
+    weaknesses:
+      [
+        "rune_destruction",
+        "seidr_counterspells_targeted_at_walls",
+        "time_erosion",
+      ]
+    encounter_conditions:
+      terrain: ["iron_barrow_forge_chamber"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "The knowledge contained in the Echo is the real treasure — galdr techniques lost for centuries. A seidr user who spends a week studying the loop can permanently learn one ancient rune-form. The wall-runes themselves can be transcribed but require WYR 6+ to copy accurately."
+    image_prompt: |
+      A dark stone chamber deep underground. Runes carved into every wall
+      surface are glowing in sequence — blue-white, activating one after
+      another like a circuit. In the center, translucent shapes of hands
+      working at an invisible forge, pouring nothing into nothing. The air
+      is thick, distorted. A voice seems to come from the walls themselves.
+      A lone figure stands at the entrance, torch held up, watching the
+      ancient loop repeat. The technology is clearly beyond anything the
+      current age understands. Stone walls, rune-light, deep darkness
+      beyond. Awe and danger in equal measure.
+
+  - id: "SUP_UNIQUE_03"
+    name: "Veil-Walker"
+    category: "supernatural"
+    subcategory: "unique"
+    tier: 5
+    description: "Something that lives on both sides of the Veil simultaneously. It exists here and there at the same time. When it moves, it steps sideways into nothing and reappears three paces to the left. Its shape flickers — sometimes humanoid, sometimes a column of folded space, sometimes a hole in the air with teeth. It does not think like anything that evolved under a sun. When it speaks — and it does speak, in perfect contemporary Norse — the words make grammatical sense but describe concepts that have no referent in human experience."
+    stats:
+      MIG: 6
+      NIM: 8
+      TOU: 6
+      WIT: 9
+      WIL: 9
+      WYR: 9
+    hp: 18
+    skills:
+      - name: "Seidr"
+        rank: 5
+      - name: "Stealth"
+        rank: 4
+      - name: "Intimidation"
+        rank: 5
+      - name: "Deception"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Phase-Touch"
+          type: "unarmed"
+          speed: 3
+          base_damage: 6
+      armor:
+        torso: "Veil-Fold Skin (attacks partially pass through)"
+        head: "None"
+    tactics: "Approaches with alien curiosity. May attempt communication first — the conversation will be disturbing but not immediate hostile. If threatened, phases between realities to avoid attacks and strikes from unexpected angles. Targets seidr users with fascination. May attempt to take a living person across the Veil. Its motives are incomprehensible."
+    morale_break: "Does not experience morale in any recognizable sense. Sustained iron contact causes it pain and it will avoid iron-wielders. Powerful seidr barriers can trap it on one side of the Veil, making it vulnerable. It may simply lose interest and leave."
+    group_size: "1"
+    abilities:
+      - "Phase Shift: can step between Veil and reality at will — untargetable for 1 round after shifting"
+      - "Bilocation: exists on both sides simultaneously — can see and act in both reality and Veil-space"
+      - "Alien Communication: speaks perfect Norse but describes impossible concepts — WIL test or gain Confused condition for d6 rounds"
+      - "Veil Drag: can attempt to pull a target partially into the Veil — MIG + WIL contest, failure means d8 damage and partial phasing (target becomes translucent, -2 to all physical actions for d6 hours)"
+      - "Reality Rejection: physical attacks have 50% chance of passing through harmlessly"
+      - "Seidr Fascination: drawn to seidr users, will prioritize interaction (not necessarily hostile) with them"
+    combat_phases:
+      pre_battle:
+        - name: "Spatial Distortion"
+          description: "The area warps — distances become unreliable. All movement costs double. Compasses spin uselessly."
+      maneuvers:
+        - name: "Veil Rip"
+          description: "Tears a hole in reality at a point within 10 paces. d6 damage to all within 3 paces from spatial shearing. Veil-Shadows may emerge from the tear."
+          cost: "Replaces attack"
+        - name: "Phase Strike"
+          description: "Strikes from an impossible angle. Target cannot use shield bonus for this attack."
+          cost: "Free action, once per 3 rounds"
+      bloodied:
+        - name: "Dimensional Bleed"
+          trigger: "Below 50% HP (9 HP)"
+          description: "Becomes semi-transparent. Physical attacks now have 75% chance of passing through (up from 50%). Can pull one target partially into the Veil each round — contested WIL test."
+      on_death:
+        - name: "Veil Scar"
+          description: "Permanent tear in reality at the death-site. Veil entities are drawn to it permanently. Within 10 paces, the living see ghosts and the dead see the living. The scar cannot be sealed by any known means."
+    resistances: ["physical_weapons_partial", "cold", "fire", "poison", "fear"]
+    weaknesses:
+      [
+        "iron_sustained_contact",
+        "seidr_barriers",
+        "veil_sealing_rituals",
+        "silver",
+      ]
+    encounter_conditions:
+      terrain:
+        [
+          "veil_rupture",
+          "veil_thin_spot",
+          "barrow_deep",
+          "standing_stones_at_solstice",
+        ]
+      season: ["winter_solstice", "equinox", "during_hush_events"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "If somehow destroyed (extremely difficult), it leaves a permanent Veil scar — a point where reality is always thin. This scar can be used as a stable gateway for seidr workings but attracts other Veil entities permanently. Its phase-residue is the rarest seidr component known — enables workings that bridge realities."
+    image_prompt: |
+      A figure that exists wrong. Humanoid one moment, a folded column
+      of space the next, then a hole in the air with the suggestion of
+      teeth. It flickers between states like a badly spliced image.
+      Standing at a crossroads near standing stones under a winter sky.
+      The ground beneath it shows two shadows pointing in different
+      directions. One hand is reaching toward a terrified Norse warrior,
+      the other hand isn't in this reality. The air around it is visually
+      distorted like heat haze. Stars visible through its body where
+      stars shouldn't be. The most unsettling thing in the bestiary.
+      Cosmic wrongness wearing a human-shaped mask. Desaturated palette
+      with occasional flickers of impossible color.

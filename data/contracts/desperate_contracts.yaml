@@ -1,0 +1,985 @@
+# Iron Ledger — Desperate Contracts
+# The worst jobs in the Rimevegr. Low pay, high cost, no glory.
+# These contracts appear when the band is broke, blacklisted, or out of options.
+# Every one of them takes something from the people who do the work.
+# Generated per 14_GAME_CONTENT_BIBLE.md §6 contract rules (desperate tier).
+
+contracts:
+  # ===================================================================
+  # MORALLY COMPROMISED (6)
+  # ===================================================================
+
+  - id: "CONT_DES_001"
+    type: "escort"
+    title: "Transport the Thralls to Grimholt"
+    employer: "Merchant Arn (unlicensed)"
+    settlement: "Kolvik"
+    region: "coastal"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 40
+    bonus: null
+    advance_silver: 20
+    duration_days: 12
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["intimidate", "navigate"]
+    moral_cost:
+      type: "slavery"
+      description: "Escorting enslaved people to a buyer. Some are children."
+      reputation_risk: "If discovered by Fjord Compact, -2 standing with all member settlements"
+      band_morale_effect: -2
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 0
+        silver_earned: 40
+        standing_change: { "Grimholt": 1 }
+        dark_reputation: 1
+      failure:
+        reputation_change: -1
+        standing_change: { "Kolvik": -2 }
+        narrative_consequence: "Thralls escape. Merchant Arn blames the band publicly."
+    narrative_hook: >-
+      Arn finds you in a tavern when the silver's running out. He doesn't
+      explain what's in the covered wagon. He just names a price. You hear
+      muffled sounds from inside.
+    desperation_trigger: "Band silver below 50 or no other contracts available"
+    notes: "Band members with strong moral codes may refuse (cohesion test)"
+
+  - id: "CONT_DES_002"
+    type: "enforcement"
+    title: "Clear the Squatters from Ordovast's Land"
+    employer: "Warchief Ordovast"
+    settlement: "Grimholt"
+    region: "mountain"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 25
+    bonus: null
+    advance_silver: 10
+    duration_days: 5
+    risk: "low"
+    band_size_min: 4
+    skills_valued: ["intimidate", "command"]
+    moral_cost:
+      type: "cruelty"
+      description: >-
+        Three families of moor-folk have been farming a strip of land
+        near Moor's End for two generations. Ordovast says it's his.
+        The families have nowhere to go. It's Ironmoon. You're putting
+        women and children out in the cold.
+      reputation_risk: "Word spreads to Moor's End. Standing -2 permanently."
+      band_morale_effect: -1
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 0
+        silver_earned: 25
+        standing_change: { "Grimholt": 1, "Moor's End": -2 }
+        dark_reputation: 1
+      failure:
+        reputation_change: 0
+        standing_change: { "Grimholt": -1 }
+        narrative_consequence: >-
+          The families refuse to leave. If the band walks away,
+          Ordovast sends his own men and remembers every band
+          that took his coin and didn't finish the work.
+    narrative_hook: >-
+      Ordovast doesn't call it eviction. He calls it a land survey.
+      The silver he offers wouldn't cover a week's food. The families
+      have been there since before Ordovast was born. None of that
+      matters. He has the iron and you need the coin.
+    desperation_trigger: "Band silver below 40 or standing with Grimholt below -1"
+    notes: >-
+      Refusing after accepting advance triggers Ordovast as enemy.
+      One of the families has a child who is sick. Moving them will
+      likely kill the child.
+
+  - id: "CONT_DES_003"
+    type: "sabotage"
+    title: "Foul the Spring at Thornwall"
+    employer: "Anonymous (dead drop at Bleakwater Landing)"
+    settlement: "Bleakwater Landing"
+    region: "river"
+    season: "any"
+    year_range: [312, 314]
+    min_reputation: 0
+    payment_silver: 70
+    bonus: null
+    advance_silver: 35
+    duration_days: 8
+    risk: "high"
+    band_size_min: 3
+    skills_valued: ["stealth", "navigate"]
+    moral_cost:
+      type: "murder"
+      description: >-
+        Poison a settlement's only clean water source with rotting
+        animal carcasses and nightshade. Thornwall has 180 people.
+        The old, the young, and the sick will die first. This is
+        siege warfare against civilians, dressed up as a contract.
+      reputation_risk: "If traced, every settlement in the region becomes hostile. Outlaw status."
+      band_morale_effect: -3
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 0
+        silver_earned: 70
+        standing_change: {}
+        dark_reputation: 3
+      failure:
+        reputation_change: -3
+        standing_change: { "Thornwall": -5, "Deepholm": -3 }
+        narrative_consequence: >-
+          The band is caught near the spring. Thornwall's garrison
+          gives chase. If captured, they are executed publicly. If
+          they escape, Jarl Helga puts a bounty on the entire band.
+    narrative_hook: >-
+      A leather pouch wrapped in oilcloth, stuffed under a loose
+      plank at Bleakwater Landing. Inside: half the silver and a
+      scrap of vellum with a map, a target, and the word FOUL in
+      runic script. No name. No face. No way to know who benefits.
+    desperation_trigger: "Band silver below 30 or outlaw status in 2+ settlements"
+    notes: >-
+      Most likely employer: someone with a grudge against the Fjord
+      Compact (Ordovast?). The contract destroys Thornwall's ability
+      to support Deepholm in a conflict. Band members who participate
+      carry this for the rest of their lives. No amount of silver
+      makes this right. That's the point.
+
+  - id: "CONT_DES_004"
+    type: "escort"
+    title: "Deliver the Marked Man to Raven's Perch"
+    employer: "Thane Egil Raven-Eye"
+    settlement: "Raven's Perch"
+    region: "mountain"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 45
+    bonus: null
+    advance_silver: 15
+    duration_days: 10
+    risk: "moderate"
+    band_size_min: 5
+    skills_valued: ["intimidate", "track"]
+    moral_cost:
+      type: "murder"
+      description: >-
+        The man is a debtor who owes Egil iron. Egil wants him
+        alive for a blood-eagle ceremony. Everyone who takes this
+        contract knows what "deliver alive to Egil" means. The man
+        will beg. He'll offer to pay double. He has a family in
+        Kolvik who will never see him again.
+      reputation_risk: "Known associates of Egil's blood-court. -1 standing with Kolvik."
+      band_morale_effect: -2
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 0
+        silver_earned: 45
+        standing_change: { "Raven's Perch": 1, "Kolvik": -1 }
+        dark_reputation: 2
+      failure:
+        reputation_change: -1
+        standing_change: { "Raven's Perch": -2 }
+        narrative_consequence: >-
+          The man escapes or is killed in transit. Egil considers
+          this a personal insult and puts a bounty on the band's
+          second-in-command. Refusing after accepting the advance
+          is treated the same as failure.
+    narrative_hook: >-
+      Egil's man finds you on the road. He's polite. He describes
+      the debtor — a cooper named Haldor who lives in Kolvik. Bring
+      him to the Perch alive and whole. What happens after delivery
+      is not your concern. He says that last part twice.
+    desperation_trigger: "Band silver below 50 or no contracts available for 14+ days"
+    notes: >-
+      Letting the man go requires returning Egil's advance and
+      accepting him as an enemy. There is no clean exit.
+
+  - id: "CONT_DES_005"
+    type: "escort"
+    title: "Bring the Bride to Vargheim"
+    employer: "Jarl Ulf Vargson"
+    settlement: "Vargheim"
+    region: "forest"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 35
+    bonus: null
+    advance_silver: 15
+    duration_days: 8
+    risk: "moderate"
+    band_size_min: 5
+    skills_valued: ["intimidate", "navigate"]
+    moral_cost:
+      type: "cruelty"
+      description: >-
+        Ulf has arranged a marriage with the daughter of a dead
+        rival. The girl is fifteen. She doesn't want to go. Her
+        mother is powerless to stop it. The band's job is to
+        collect her from Ashmark and deliver her to Vargheim.
+        She'll fight, cry, and try to run. The contract says
+        deliver her unharmed. Nothing about willing.
+      reputation_risk: "Known in Ashmark as Ulf's enforcement arm. -1 standing permanently."
+      band_morale_effect: -2
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 0
+        silver_earned: 35
+        standing_change: { "Vargheim": 1, "Ashmark": -1 }
+        dark_reputation: 1
+      failure:
+        reputation_change: -1
+        standing_change: { "Vargheim": -2 }
+        narrative_consequence: >-
+          The girl escapes into the Black Pine. Ulf blames the
+          band personally. His wolf-wardens track them for weeks.
+    narrative_hook: >-
+      Ulf frames it as a family matter. A girl returning to her
+      betrothed. He's jovial about it. When you meet the girl in
+      Ashmark, she has packed nothing and is staring at the door
+      like a trapped animal.
+    desperation_trigger: "Band silver below 40 or reputation below 2"
+    notes: >-
+      The girl's mother will offer the band her dead husband's
+      sword — worth 30 silver — to let the girl escape. Taking it
+      and betraying Ulf creates a powerful enemy. Not taking it
+      means dragging a screaming child through the woods.
+
+  - id: "CONT_DES_006"
+    type: "sabotage"
+    title: "Burn the Archive at Skaldhaven"
+    employer: "Anonymous (contact at Grimholt tavern)"
+    settlement: "Grimholt"
+    region: "mountain"
+    season: "any"
+    year_range: [312, 314]
+    min_reputation: 0
+    payment_silver: 60
+    bonus: null
+    advance_silver: 30
+    duration_days: 10
+    risk: "high"
+    band_size_min: 4
+    skills_valued: ["stealth", "navigate"]
+    moral_cost:
+      type: "sacrilege"
+      description: >-
+        The rune archive at Skaldhaven holds generations of galdr
+        knowledge, saga records, and genealogical histories. Burning
+        it destroys irreplaceable cultural heritage. The employer
+        wants specific bloodline records destroyed — the fire is
+        meant to cover the targeted theft. This is not just arson.
+        It's the murder of memory.
+      reputation_risk: "Skaldhaven and all allied settlements declare the band outlaw."
+      band_morale_effect: -2
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: -1
+        silver_earned: 60
+        standing_change: { "Skaldhaven": -5 }
+        dark_reputation: 2
+      failure:
+        reputation_change: -2
+        standing_change: { "Skaldhaven": -3, "Deepholm": -2 }
+        narrative_consequence: >-
+          Lore-Keeper Audun's apprentices catch the fire early.
+          The band is identified. Audun places a curse-mark on
+          their names — no galdr-speaker in the region will aid them.
+    narrative_hook: >-
+      A man you don't know buys you a drink in Grimholt. He talks
+      about old grudges and older records. He says some histories
+      are better forgotten. He puts silver on the table and a
+      sketch of Skaldhaven's archive hall. He doesn't say who he is.
+      He doesn't need to.
+    desperation_trigger: "Band silver below 30 or outlaw status in 1+ settlement"
+    notes: >-
+      Likely employer: someone whose bloodline records in the
+      archive contain damaging truths (illegitimate claim, kinslaying).
+      The fire will also destroy medical herb lore and star-charts
+      that the healer in Ashmark depends on.
+
+  # ===================================================================
+  # SUICIDALLY DANGEROUS (5)
+  # ===================================================================
+
+  - id: "CONT_DES_007"
+    type: "escort"
+    title: "Winter March Through the Ice-Reach"
+    employer: "Jarl Sigrun of Deepholm"
+    settlement: "Deepholm"
+    region: "mountain"
+    season: "long_dark"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 120
+    bonus: "Wintering rights at Deepholm"
+    advance_silver: 40
+    duration_days: 21
+    risk: "extreme"
+    band_size_min: 10
+    skills_valued: ["navigate", "forage", "shelter", "endurance"]
+    moral_cost:
+      type: "cowardice"
+      description: >-
+        The march will kill some of your people. Not maybe. The
+        Ice-Reach in deepest winter claims one in four. Sigrun
+        needs a supply train escorted to a mountain outpost and she
+        can't spare her own garrison. She's spending mercenary lives
+        instead of her people's lives. That's the calculation. You
+        take the contract because you need the silver, knowing some
+        of your band won't come back.
+      reputation_risk: "Survivors may desert. -1 to -3 band members lost to cold and exposure."
+      band_morale_effect: -1
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 1
+        silver_earned: 120
+        standing_change: { "Deepholm": 2 }
+        dark_reputation: 0
+        casualties_expected: "1d4 band members lost to exposure and frostbite"
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -1 }
+        narrative_consequence: >-
+          The supply train is lost. The mountain outpost starves.
+          Sigrun does not forgive. The band stumbles back to
+          Deepholm with half its number, frost-black and hollow.
+    narrative_hook: >-
+      Sigrun offers it calmly over her map table. She traces the
+      route through the Ice-Reach with one finger. She names the
+      outpost that will starve without resupply. She names the
+      price. She does not name the odds. She doesn't need to — you
+      can read a winter map.
+    desperation_trigger: "Band silver below 60 or no winter shelter secured"
+    notes: >-
+      The pay is fair. The job is lethal. The math is simple:
+      120 silver minus funeral costs for the men you lose. Band
+      members over 40 are at double risk. The cold does not
+      negotiate.
+
+  - id: "CONT_DES_008"
+    type: "barrow_clear"
+    title: "Enter the Howling Barrow Before the Veil Thins"
+    employer: "Lore-Keeper Audun"
+    settlement: "Skaldhaven"
+    region: "fjord"
+    season: "veil_thinning"
+    year_range: [312, 314]
+    min_reputation: 0
+    payment_silver: 90
+    bonus: "One relic from the barrow (if any survive)"
+    advance_silver: 45
+    duration_days: 3
+    risk: "extreme"
+    band_size_min: 1
+    skills_valued: ["rune_lore", "wyr", "endurance"]
+    moral_cost:
+      type: "sacrilege"
+      description: >-
+        The Howling Barrow is a Veil-critical site. Entering it near
+        the Thinning risks waking things that should stay buried.
+        Audun needs a rune-stone rubbing from the deepest chamber.
+        He won't send his own people. The last person who went in
+        came out three days later, unable to speak, and hanged
+        herself within the week. Audun still wants his rubbing.
+      reputation_risk: "If the Veil tears, blame falls on whoever was inside. Regional hostility."
+      band_morale_effect: -2
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 1
+        silver_earned: 90
+        standing_change: { "Skaldhaven": 2 }
+        dark_reputation: 0
+        wyr_exposure: "Participant gains +1 Wyr and 1 permanent mental scar"
+      failure:
+        reputation_change: -2
+        standing_change: { "Skaldhaven": -1 }
+        narrative_consequence: >-
+          The participant does not return. Or returns changed. The
+          barrow remains unsealed. Strange sounds carry on the wind
+          for months.
+    narrative_hook: >-
+      Audun shows you a drawing of the rune-stone. He explains what
+      he needs with the precision of a man who has thought about this
+      for years. When you ask about the last person he sent, he
+      pauses just long enough for you to see the answer in his face.
+    desperation_trigger: "Band silver below 40 or band needs galdr-related information"
+    notes: >-
+      This contract requires a single volunteer. Band vote to decide
+      who goes. The volunteer may refuse at the barrow entrance
+      without shame — but the silver stays with Audun.
+
+  - id: "CONT_DES_009"
+    type: "assassination"
+    title: "Kill Jarl Ulf in His Own Hall"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "forest"
+    season: "any"
+    year_range: [312, 314]
+    min_reputation: 0
+    payment_silver: 150
+    bonus: null
+    advance_silver: 50
+    duration_days: 14
+    risk: "extreme"
+    band_size_min: 3
+    skills_valued: ["stealth", "axes", "disguise"]
+    moral_cost:
+      type: "murder"
+      description: >-
+        Assassination of a seated jarl in his own hall. Ulf is a
+        brute, but he has the protection of guest-right, custom,
+        and fifty wolf-wardens. The Pale Widow wants his territory
+        and she wants it to look like a feud killing, not a paid
+        hit. If the band succeeds, a jarl is dead and the old
+        ways are spat on. If they fail, they die in Vargheim.
+      reputation_risk: "If traced to any employer, every jarl in the region sees the band as assassins."
+      band_morale_effect: -2
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: -1
+        silver_earned: 150
+        standing_change: { "Ashen Reach": 3, "Vargheim": -5 }
+        dark_reputation: 3
+      failure:
+        reputation_change: -3
+        standing_change: { "Vargheim": -5, "Ashen Reach": -2 }
+        narrative_consequence: >-
+          Participants are killed or captured. Ulf makes an
+          example. The Pale Widow denies all knowledge. The
+          surviving band is hunted.
+    narrative_hook: >-
+      The Pale Widow meets you alone, after dark, in a building
+      that isn't hers. She speaks quietly. She names Ulf and she
+      names a price. She says the word "accident" and watches your
+      face. She does not blink.
+    desperation_trigger: "Band silver below 30 or band already hostile with Vargheim"
+    notes: >-
+      Refusing this contract has no consequences — the Widow is
+      too careful to make enemies over a declined offer. But
+      she remembers who said no, and better contracts dry up.
+
+  - id: "CONT_DES_010"
+    type: "retrieval"
+    title: "Recover the Dead from Feldwick"
+    employer: "Elder Brosa of Moor's End"
+    settlement: "Moor's End"
+    region: "moors"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 30
+    bonus: null
+    advance_silver: 10
+    duration_days: 6
+    risk: "extreme"
+    band_size_min: 6
+    skills_valued: ["stealth", "navigate", "endurance"]
+    moral_cost:
+      type: "cowardice"
+      description: >-
+        Feldwick is occupied by the Three Wolves. Brosa's son died
+        during the occupation and his body lies in the village. Brosa
+        wants his son's corpse for proper burial. The job is to
+        infiltrate an occupied settlement, find one dead man among
+        the wreckage, and carry him out without being seen by a
+        hostile warband. The pay is thirty silver because that's
+        everything Brosa has. It's not enough. You know it. He
+        knows it. His hands shake when he counts the coins.
+      reputation_risk: "If caught by Three Wolves, the band is exposed as hostile. -3 standing."
+      band_morale_effect: -1
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 1
+        silver_earned: 30
+        standing_change: { "Moor's End": 2 }
+        dark_reputation: 0
+      failure:
+        reputation_change: -1
+        standing_change: { "Moor's End": 0 }
+        narrative_consequence: >-
+          The Three Wolves catch the retrieval team. If they
+          survive, the Three Wolves now consider the band a
+          threat. Brosa gets nothing. His son rots in a
+          conquered village.
+    narrative_hook: >-
+      Brosa finds you at a campfire outside Moor's End. He's old
+      and his back is bent. He puts a leather bag on the ground
+      between you. It clinks. He says his son's name. He says
+      where the body is. He says please. Once.
+    desperation_trigger: "Band silver below 40 or band has obligation to Moor's End"
+    notes: >-
+      This contract pays almost nothing for extreme risk. The band
+      takes it because sometimes a broken old man asks for his son
+      back and you can't say no. It's the contract that tests
+      whether the band has anything left worth keeping.
+
+  - id: "CONT_DES_011"
+    type: "combat"
+    title: "Hold the Rearguard at Ashmark"
+    employer: "Reeve Torsten of Ashmark"
+    settlement: "Ashmark"
+    region: "forest"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 80
+    bonus: null
+    advance_silver: 30
+    duration_days: 3
+    risk: "extreme"
+    band_size_min: 8
+    skills_valued: ["shields", "spears", "command"]
+    moral_cost:
+      type: "cowardice"
+      description: >-
+        The Bone Pack is advancing on Ashmark. Torsten is evacuating
+        the settlement to Deepholm. He needs someone to hold the
+        palisade gate for two days while the civilians flee. The
+        rearguard is not expected to survive. Torsten is honest
+        about this. He is also honest that he cannot pay more.
+        The choice: die for strangers, or walk away and let
+        Ashmark burn with its people still inside.
+      reputation_risk: "Survivors will carry stories of what the band did. +2 reputation if any live."
+      band_morale_effect: -1
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 3
+        silver_earned: 80
+        standing_change: { "Ashmark": 3, "Deepholm": 1 }
+        dark_reputation: 0
+        casualties_expected: "2d4 band members killed in the defense"
+      failure:
+        reputation_change: 0
+        standing_change: {}
+        narrative_consequence: >-
+          The line breaks. The band routs. Some civilians are
+          caught in the open. Ashmark burns. Survivors do not
+          blame the band — they blame the Bone Pack. But the
+          band knows it ran.
+    narrative_hook: >-
+      Torsten stands in the gate of his own palisade with an axe
+      he clearly doesn't know how to use. Behind him, families are
+      loading carts. He looks at your weapons, then at the tree
+      line where cooking fires mark the Bone Pack's camp. He asks
+      if your band has ever held a gate. He asks what it costs.
+    desperation_trigger: "Band is in Ashmark when the Bone Pack advances, or band has standing 2+ with Ashmark"
+    notes: >-
+      The only desperate contract that can build real reputation.
+      The cost is paid in bodies. Refusing is not cowardice — the
+      band owes Ashmark nothing. But saying no when children are
+      loading carts behind you has its own weight.
+
+  # ===================================================================
+  # REPUTATION-DESTROYING (3)
+  # ===================================================================
+
+  - id: "CONT_DES_012"
+    type: "guard"
+    title: "Personal Guard for Ordovast's Tax Collection"
+    employer: "Warchief Ordovast"
+    settlement: "Grimholt"
+    region: "mountain"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 55
+    bonus: "Wintering rights at Grimholt (one season)"
+    advance_silver: 20
+    duration_days: 30
+    risk: "low"
+    band_size_min: 8
+    skills_valued: ["intimidate", "command", "shields"]
+    moral_cost:
+      type: "cruelty"
+      description: >-
+        Stand behind Ordovast while he squeezes tribute from hamlets
+        that can't afford it. Bleakwater Landing. Moor's End. Places
+        where losing a month's food means someone starves. The band's
+        job is to look dangerous. To be the threat behind the demand.
+        At each hamlet, someone will look at the band and remember
+        their faces. That memory becomes permanent.
+      reputation_risk: "Every hamlet visited: -1 standing. Band becomes known as Ordovast's dogs."
+      band_morale_effect: -1
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: -1
+        silver_earned: 55
+        standing_change:
+          "Grimholt": 2
+          "Bleakwater Landing": -2
+          "Moor's End": -2
+          "Raven's Perch": -1
+        dark_reputation: 2
+      failure:
+        reputation_change: -1
+        standing_change: { "Grimholt": -3 }
+        narrative_consequence: >-
+          Ordovast expected obedience. Anything less — hesitation
+          at a hamlet, letting a family keep their seed grain —
+          is insubordination. He docks pay and spreads word that
+          the band is unreliable.
+    narrative_hook: >-
+      Ordovast doesn't negotiate. He tells you the route, the
+      hamlets, the schedule. He tells you what the band will wear
+      — his colours. For thirty days you are not Voss's Black Axes.
+      You are Ordovast's arm, and everyone in the Rimevegr will
+      know it.
+    desperation_trigger: "Band silver below 40 or no winter shelter secured"
+    notes: >-
+      Refusing Ordovast after he's made the offer costs -1 standing
+      with Grimholt. He views refusal as weakness. Easy money, but
+      the band becomes a tool of oppression and every small
+      settlement remembers.
+
+  - id: "CONT_DES_013"
+    type: "sabotage"
+    title: "Deliver Hrothgar's Battle Plans to the Pale Widow"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "forest"
+    season: "any"
+    year_range: [312, 314]
+    min_reputation: 0
+    payment_silver: 65
+    bonus: null
+    advance_silver: 25
+    duration_days: 14
+    risk: "high"
+    band_size_min: 3
+    skills_valued: ["stealth", "bargain", "disguise"]
+    moral_cost:
+      type: "betrayal"
+      description: >-
+        The band has worked for Hrothgar. Eaten his bread. Slept
+        under his roof. Now another employer wants what Hrothgar
+        told the band in confidence — troop positions, garrison
+        rotations, the weak point in Frostfjord's palisade. Selling
+        this information could get Hrothgar killed. It will
+        certainly get Frostfjord's people killed when the Widow
+        moves against them.
+      reputation_risk: "If discovered, permanent outlaw status in Frostfjord and all allied settlements."
+      band_morale_effect: -3
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: -2
+        silver_earned: 65
+        standing_change: { "Ashen Reach": 2, "Frostfjord Hollow": -5 }
+        dark_reputation: 3
+      failure:
+        reputation_change: -3
+        standing_change: { "Frostfjord Hollow": -5, "Ashen Reach": -1 }
+        narrative_consequence: >-
+          Hrothgar discovers the betrayal. He puts a blood-price
+          on the captain's head. Every band in the Rimevegr hears
+          that Voss's Black Axes sell out their employers. No one
+          hires oath-breakers.
+    narrative_hook: >-
+      The Widow's agent meets you outside Ashen Reach. She knows
+      you worked for Hrothgar last season. She knows you know his
+      defenses. She asks how much that knowledge is worth. She
+      asks it like she already knows the answer.
+    desperation_trigger: "Band silver below 30 or standing with Frostfjord already below -2"
+    notes: >-
+      This contract only appears if the band has previously worked
+      for Hrothgar. The betrayal is personal, and the Widow knows it.
+      Taking it destroys the band's reputation for loyalty — the one
+      currency that keeps mercenaries employed.
+
+  - id: "CONT_DES_014"
+    type: "raid"
+    title: "Loot the Sealed Barrow at Moor's End"
+    employer: "Self-initiated (fence at Kolvik)"
+    settlement: "Kolvik"
+    region: "moors"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 0
+    bonus: "Keep all relics (estimated value 80-200 silver)"
+    advance_silver: 0
+    duration_days: 7
+    risk: "high"
+    band_size_min: 5
+    skills_valued: ["rune_lore", "endurance", "axes"]
+    moral_cost:
+      type: "sacrilege"
+      description: >-
+        The standing stones at Moor's End mark a sealed barrow.
+        The locals say it was closed for a reason. The dead inside
+        were put there with grave goods — bronze, silver, galdr
+        bones. A fence in Kolvik will buy anything you bring out.
+        The barrow has been humming since the last Veil-Thinning.
+        Opening it is desecration. What comes out after the relics
+        are taken is the village's problem.
+      reputation_risk: "If locals discover the breach, -3 standing with Moor's End. Galdr-speakers may refuse to work with the band."
+      band_morale_effect: -2
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: -1
+        silver_earned: 0
+        relics_value_range: [80, 200]
+        standing_change: {}
+        dark_reputation: 2
+        wyr_exposure: "Barrow breach may release restless dead. Moor's End endangered."
+      failure:
+        reputation_change: -2
+        standing_change: { "Moor's End": -3 }
+        narrative_consequence: >-
+          The barrow fights back. Restless dead stir. Band members
+          are wounded or killed. The humming gets louder. Moor's
+          End blames the band for whatever comes next.
+    narrative_hook: >-
+      No one offers you this job. You offer it to yourselves. The
+      treasury is empty, the food stores are low, and someone
+      remembers the fence in Kolvik who buys old bronze. Someone
+      else remembers the barrow at Moor's End. The standing stones.
+      The humming. The silver inside. You sit around a cold fire
+      and decide what you're willing to become.
+    desperation_trigger: "Band silver below 20 and no employer will hire the band"
+    notes: >-
+      Self-initiated. No advance, no contract, no employer to blame.
+      This is the band deciding to rob graves because the alternative
+      is starvation. The fence in Kolvik pays 40% of true relic value
+      because he knows desperate sellers have no leverage.
+
+  # ===================================================================
+  # BIZARRE / UNUSUAL (3)
+  # ===================================================================
+
+  - id: "CONT_DES_015"
+    type: "investigation"
+    title: "Find the Iron Tide Remnant"
+    employer: "Thane Egil Raven-Eye"
+    settlement: "Raven's Perch"
+    region: "mountain"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 50
+    bonus: "Salvage rights to the band's equipment"
+    advance_silver: 20
+    duration_days: 14
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["track", "navigate", "endurance"]
+    moral_cost:
+      type: "cowardice"
+      description: >-
+        The Iron Tide Remnant — twelve fighters — went into the
+        mountain passes to clear a disputed trade route. That was
+        forty days ago. Egil wants them found. The band will find
+        them. They are dead. All of them. Whatever killed them —
+        cold, ambush, the mountain — did it thoroughly. The real
+        job is carrying dead men back down a frozen mountain and
+        telling Egil what happened. The salvage rights mean
+        stripping the corpses. Egil's people. Men who had names.
+      reputation_risk: "Seen stripping the dead. Other bands may view the salvage as grave-robbing."
+      band_morale_effect: -1
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 0
+        silver_earned: 50
+        salvage_value_range: [30, 70]
+        standing_change: { "Raven's Perch": 1 }
+        dark_reputation: 0
+      failure:
+        reputation_change: -1
+        standing_change: { "Raven's Perch": -1 }
+        narrative_consequence: >-
+          The band can't find the bodies or gets lost themselves.
+          The mountain takes its due. Egil pays nothing.
+    narrative_hook: >-
+      Egil stands at his lookout tower, watching the mountain pass.
+      He hasn't heard from his men in forty days. He says "find
+      them" like a man who already knows the answer but needs
+      someone else to say it out loud. The mountain is still
+      blowing snow.
+    desperation_trigger: "Band silver below 60 or band passing through Raven's Perch territory"
+    notes: >-
+      The Iron Tide Remnant died in an avalanche triggered by their
+      own fires. The survivors froze. Their bodies are preserved by
+      the cold. One of them left a carved message in a rock outcrop:
+      just his wife's name.
+
+  - id: "CONT_DES_016"
+    type: "escort"
+    title: "Escort the Seidr-Wife to the Standing Stones"
+    employer: "Lore-Keeper Audun"
+    settlement: "Skaldhaven"
+    region: "fjord"
+    season: "veil_thinning"
+    year_range: [312, 314]
+    min_reputation: 0
+    payment_silver: 45
+    bonus: null
+    advance_silver: 20
+    duration_days: 10
+    risk: "high"
+    band_size_min: 5
+    skills_valued: ["navigate", "endurance", "wyr"]
+    moral_cost:
+      type: "sacrilege"
+      description: >-
+        The seidr-wife is named Vigdis. She has not spoken in
+        coherent sentences for three months. She laughs at nothing.
+        She knows things she shouldn't — names of dead men, the
+        contents of sealed letters. Audun says she needs to reach
+        the standing stones at Moor's End during the Veil-Thinning
+        to perform a rite that will "settle her." He does not say
+        what the rite involves. He does not say whether Vigdis will
+        survive it. The band's job is to keep her safe on a ten-day
+        march while she talks to things that aren't there and
+        occasionally tells you exactly how you're going to die.
+      reputation_risk: "Association with dangerous galdr. Superstitious settlements may refuse the band entry."
+      band_morale_effect: -2
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 0
+        silver_earned: 45
+        standing_change: { "Skaldhaven": 2 }
+        dark_reputation: 1
+        wyr_exposure: "All escort members gain +1 Wyr exposure from proximity"
+      failure:
+        reputation_change: -1
+        standing_change: { "Skaldhaven": -1 }
+        narrative_consequence: >-
+          Vigdis wanders off in the night, or the band abandons
+          her. She is found weeks later, dead at a crossroads,
+          arranged in a pattern that no animal or man made. Audun
+          does not speak to the band again.
+    narrative_hook: >-
+      Audun introduces Vigdis in his hall. She sits in the corner,
+      drawing runes on the floor with her fingernail. When you
+      enter, she looks up and says your captain's mother's name —
+      a woman dead fifteen years. Then she goes back to drawing.
+      Audun says she needs to reach the stones by the third night
+      of the Thinning. He says it like a man describing a walk to
+      market.
+    desperation_trigger: "Band silver below 50 or band needs galdr favor from Skaldhaven"
+    notes: >-
+      Vigdis is not insane in the conventional sense. She is
+      Veil-touched — her mind exists partly across the boundary.
+      She will accurately predict one future event during the
+      march. She will also describe in detail the death of a
+      band member who is present. Both predictions are correct.
+      Neither is welcome.
+
+  - id: "CONT_DES_017"
+    type: "guard"
+    title: "Guard the Quarantine at Stonebay"
+    employer: "No employer (community request)"
+    settlement: "Stonebay Hamlet"
+    region: "coastal"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 20
+    bonus: null
+    advance_silver: 10
+    duration_days: 30
+    risk: "extreme"
+    band_size_min: 6
+    skills_valued: ["command", "intimidate", "endurance"]
+    moral_cost:
+      type: "cruelty"
+      description: >-
+        Stonebay has plague. The surrounding hamlets have asked
+        someone — anyone — to keep the sick from leaving. The
+        band's job is to stand at the perimeter and turn people
+        back. Families trying to flee. Fishermen trying to reach
+        their boats. A mother with a child who shows no symptoms
+        yet. No one leaves. That is the job. Some of the people
+        behind the line will die because help cannot reach them
+        in time. Some would have survived if they could have
+        reached a healer in Kolvik. The band keeps them in. For
+        twenty silver and the knowledge that they did what the
+        healthy villages were afraid to do themselves.
+      reputation_risk: "If anyone escapes, the band is blamed. If no one escapes, the dead are remembered."
+      band_morale_effect: -3
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: null
+    consequences:
+      success:
+        reputation_change: 0
+        silver_earned: 20
+        standing_change: { "Kolvik": 1 }
+        dark_reputation: 1
+        plague_risk: "Each band member has a 15% chance of contracting the illness"
+      failure:
+        reputation_change: -2
+        standing_change: { "Kolvik": -2, "Stonebay Hamlet": -2 }
+        narrative_consequence: >-
+          Someone breaks through the line. Plague spreads to
+          Kolvik. Harbour-Master Inga names the band responsible.
+          The dead are counted. The number is not small.
+    narrative_hook: >-
+      There is no formal offer. A fisherman from Kolvik finds the
+      band on the road and says Stonebay is dying. He says the
+      healthy villages pooled twenty silver to keep the sick
+      contained. He says no one else will do it. He's right.
+      You can see the smoke from Stonebay's huts. It smells wrong —
+      they're burning the dead already.
+    desperation_trigger: "Band is near Stonebay and silver below 30, or no other contracts available"
+    notes: >-
+      Thirty days watching people die. Some will beg. Some will
+      try to fight through. A child will stand at the perimeter
+      line and stare at the band every morning until one morning
+      she doesn't come. The band earns twenty silver and loses
+      something that doesn't have a price. This contract has no
+      good outcome. The plague runs its course or it doesn't.
+      The band holds the line or it doesn't. Either way, they
+      were there, and they did what they did.

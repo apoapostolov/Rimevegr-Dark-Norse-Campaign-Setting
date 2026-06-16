@@ -1,0 +1,2229 @@
+# Iron Ledger — Seasonal Flora & Fauna Database
+# Drives foraging/hunting simulation and narrative descriptions.
+# 360-day year: Thaw (1-30), Long Sun (31-60), Harvest (61-90), Long Dark (91-360).
+
+seasonal_life:
+  metadata:
+    setting: "Sub-arctic Norse — roughly equivalent to northern Norway/Iceland"
+    note: "The Rimevegr is colder and darker than historical Scandinavia. The Long Dark lasts 270 days."
+    season_map:
+      thaw:
+        {
+          days: "1-30",
+          alias: "Spring",
+          description: "Ice breaking, snowmelt, first growth",
+        }
+      long_sun:
+        {
+          days: "31-60",
+          alias: "Summer",
+          description: "Peak growth, best foraging, midnight sun",
+        }
+      harvest:
+        {
+          days: "61-90",
+          alias: "Autumn",
+          description: "Last productive days, killing frosts return",
+        }
+      long_dark:
+        {
+          days: "91-360",
+          alias: "Winter",
+          description: "270 days of darkness, bitter cold, deep snow",
+        }
+
+  # ==========================================================================
+  # FLORA — 27 entries
+  # ==========================================================================
+  flora:
+    # --- BERRIES & FRUIT ---
+
+    - id: "FL_001"
+      name: "Crowberry"
+      norse_name: "Krækiber"
+      type: shrub
+      biomes: [moor, mountain, coastal]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "First to appear under retreating snow",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Peak fruiting mid-season",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Main berry harvest — gather as much as the band can carry",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Frozen and buried. Cached berries keep if dried properly.",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Eaten raw or dried for winter stores"
+        - "Mixed with rendered fat as trail food (like pemmican)"
+        - "Juice stains used as dye marker"
+      description: >
+        Low creeping shrub with waxy black berries. Tart and slightly bitter, with a resinous
+        aftertaste that sticks to the teeth. The only reliable berry on the high moors. Birds
+        compete fiercely for it — if you see a clean-picked bush, you are late.
+
+    - id: "FL_002"
+      name: "Cloudberry"
+      norse_name: "Molteber"
+      type: herb
+      biomes: [moor, marsh]
+      seasons:
+        thaw:
+          {
+            available: false,
+            abundance: none,
+            notes: "Leaves emerging, no fruit yet",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Golden-orange berries ripen late in the season",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Last fruits, soft and overripe — eat immediately or lose them",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Dead above ground. Roots survive under snow.",
+          }
+      foraging_difficulty: moderate
+      uses:
+        - "Eaten fresh — considered a luxury on the march"
+        - "Preserved in birch-bark containers with honey or whey"
+        - "Mild laxative effect in large quantities"
+      description: >
+        Amber-gold berries on low stems rising from boggy ground. Sweet and tart, with a
+        texture like wet velvet. Bruise if you look at them wrong. Finding a good cloudberry
+        patch is worth remembering — and worth not telling anyone else about.
+
+    - id: "FL_003"
+      name: "Lingonberry"
+      norse_name: "Tyttiber"
+      type: shrub
+      biomes: [forest, moor]
+      seasons:
+        thaw: { available: false, abundance: none, notes: "Green growth only" }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Berries forming, still sour",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Peak harvest, stores well raw or cooked",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Frozen. Dried lingonberry keeps all winter.",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Eaten raw, though very tart"
+        - "Cooked down with fat and honey as preserve"
+        - "Mild antiseptic — crushed berries on shallow wounds"
+      description: >
+        Small red berries in clusters on low evergreen shrubs. Mouth-puckeringly sour when
+        fresh. The taste improves after frost — experienced foragers wait for the first freeze
+        before serious gathering. Stores better than any other berry because of its natural
+        acidity. The smell of cooking lingonberries is one of the few pleasant things about
+        the last days before the Long Dark.
+
+    - id: "FL_004"
+      name: "Juniper"
+      norse_name: "Einir"
+      type: shrub
+      biomes: [forest, moor, mountain]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Last year's dried berries still on branches",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "New growth, green berries forming",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Ripe blue-black berries",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Dried berries persist on branches through winter — the only berry available",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Berries flavour meat stews and smoked fish"
+        - "Burned wood produces aromatic smoke for meat preservation"
+        - "Chewed berries settle the stomach"
+        - "Tea from berries and needles — warming and mildly medicinal"
+      description: >
+        Tough, twisted shrubs with blue-black berries and sharp needles. The berries taste
+        of pine resin and pepper. Juniper smoke has a clean, sharp smell that drives off
+        insects and flavours smoked meat. One of the few plants that keeps its berries
+        through the Long Dark — frozen and hard as pebbles, but edible if thawed by the fire.
+
+    # --- EDIBLE GREENS & ROOTS ---
+
+    - id: "FL_005"
+      name: "Angelica"
+      norse_name: "Hvönn"
+      type: herb
+      biomes: [coastal, marsh, river]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "First shoots — eagerly sought after winter",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Full growth, stems thick as a thumb",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Goes to seed, stems woody but roots still good",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Dead above ground. Roots can be dug if you know the spot and the ground isn't frozen solid.",
+          }
+      foraging_difficulty: moderate
+      uses:
+        - "Young stems peeled and eaten raw — sweet and fragrant"
+        - "Roots dried and ground as flour supplement"
+        - "Seeds chewed to sweeten foul breath"
+        - "Tea from leaves relieves cough and chest tightness"
+      description: >
+        Tall hollow-stemmed plant that smells of celery and anise. The young stems are the
+        first fresh green food after the Long Dark — men have been known to argue over a
+        patch of early angelica. The roots are as long as a forearm and taste of earth and
+        parsnip. Prized enough that settlements fence their angelica gardens.
+
+    - id: "FL_006"
+      name: "Scurvy Grass"
+      norse_name: "Skarfakál"
+      type: herb
+      biomes: [coastal, marsh]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "One of the earliest greens",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Thick patches near the shore",
+          }
+        harvest:
+          { available: true, abundance: sparse, notes: "Toughening, bitter" }
+        long_dark:
+          { available: false, abundance: none, notes: "Gone completely" }
+      foraging_difficulty: easy
+      uses:
+        - "Eaten raw — prevents scurvy, the curse of the Long Dark"
+        - "Bitter and peppery, but the body craves it after months without greens"
+      description: >
+        Low fleshy-leafed plant growing in salt spray zones. Tastes like bitter watercress
+        crossed with horseradish. Nobody eats it for pleasure. Everybody eats it in Thaw
+        because their gums have been bleeding since Frostmoon. Experienced bands force
+        march to the coast in early Thaw specifically for this plant.
+
+    - id: "FL_007"
+      name: "Sorrel"
+      norse_name: "Súra"
+      type: herb
+      biomes: [forest, moor, river]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Small leaves in sheltered spots",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Lush growth, best eating",
+          }
+        harvest:
+          { available: true, abundance: moderate, notes: "Tough and very sour" }
+        long_dark: { available: false, abundance: none, notes: "Dead" }
+      foraging_difficulty: easy
+      uses:
+        - "Leaves eaten raw in handfuls — sharp lemon-sour taste"
+        - "Added to stews for flavour and nutrition"
+        - "Juice cleans rust from iron — useful for blade maintenance"
+      description: >
+        Arrow-shaped leaves with a clean sour taste like biting into a green lemon. Children
+        eat it as a snack. Mercenaries eat it because it cuts the monotony of barley porridge.
+        Grows in dense patches at forest edges. Wilts within hours of picking.
+
+    - id: "FL_008"
+      name: "Sea Kale"
+      norse_name: "Strandkál"
+      type: herb
+      biomes: [coastal]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Pale sprouts push through gravel beaches",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Full rosettes, thick fleshy stems",
+          }
+        harvest:
+          { available: true, abundance: sparse, notes: "Going to seed, tough" }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Roots survive but cannot be dug from frozen shingle",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Young stems blanched in hot water — tastes like cabbage"
+        - "Eaten raw when nothing else is available"
+      description: >
+        Waxy blue-green leaves on thick stems, growing in beach gravel. Salt-resistant and
+        tough. Tastes of mild cabbage with a mineral edge from the sea. Bland but filling,
+        and reliable where little else grows.
+
+    - id: "FL_009"
+      name: "Wild Garlic"
+      norse_name: "Skóglaukr"
+      type: herb
+      biomes: [forest, river]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Carpets of pointed leaves in damp hollows — smell it before you see it",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "White star-flowers, strong garlic scent",
+          }
+        harvest:
+          { available: false, abundance: none, notes: "Died back completely" }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Bulbs dormant underground",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Leaves chopped into stew — the best flavouring in the wilds"
+        - "Bulbs dug and dried for winter seasoning"
+        - "Rubbed on skin as weak insect repellent"
+        - "Poultice of crushed leaves on infected wounds"
+      description: >
+        You smell wild garlic before you find it — a sharp, green, pungent wave that hits
+        you twenty paces downwind. Broad pointed leaves carpet damp forest hollows. Adding a
+        double handful to the pot transforms camp stew from survival into something approaching
+        a meal. The men whose foraging turn produces wild garlic eat better than captains.
+
+    # --- SEAWEED & AQUATIC ---
+
+    - id: "FL_010"
+      name: "Dulse"
+      norse_name: "Söl"
+      type: aquatic
+      biomes: [coastal]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "New growth on rocks exposed by spring tides",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Peak harvest from tidal rocks",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Still harvestable but growth slowing",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Survives in cold water — harvestable if the shore isn't ice-locked",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Eaten raw — chewy, salty, faintly smoky"
+        - "Dried and stored — keeps indefinitely"
+        - "Crumbled into porridge for salt and flavour"
+        - "Rich in iron — recommended for blood loss"
+      description: >
+        Dark red-purple sheets clinging to tidal rocks. Tastes of the sea rendered solid —
+        salt, iron, and a faint smoky undertone that intensifies when dried. Coastal bands
+        carry sacks of dried dulse as a winter staple. Lightweight, calorie-poor but
+        nutrient-rich, and the only green food available in the Long Dark to those near the sea.
+
+    - id: "FL_011"
+      name: "Kelp"
+      norse_name: "Þari"
+      type: aquatic
+      biomes: [coastal]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Washed ashore by spring storms",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Thick forests in shallow water",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Storm-cast kelp on beaches",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Winter storms tear loose kelp and throw it on shore — harvest what the sea gives",
+          }
+      foraging_difficulty: trivial
+      uses:
+        - "Boiled as vegetable — slippery and bland"
+        - "Dried and burned for ash rich in potash (soap-making, fertiliser)"
+        - "Wraps for steam-cooking fish in fire pits"
+        - "Emergency food — fills the stomach, little sustenance"
+      description: >
+        Brown rubbery blades as long as a man, washed up in tangled heaps after storms.
+        Smells of rot and brine. Not pleasant eating, but free and abundant. Coastal
+        settlements burn enormous kelp pyres in autumn to produce potash — the smoke is
+        greasy and white and stinks for miles.
+
+    # --- MEDICINAL & USEFUL ---
+
+    - id: "FL_012"
+      name: "Yarrow"
+      norse_name: "Vallarfífill"
+      type: herb
+      biomes: [moor, forest, coastal]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Feathery leaves in sheltered spots",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "White flower clusters, peak potency",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Dry flowering tops for winter medicine stores",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Dead. Dried yarrow is a critical medicine supply.",
+          }
+      foraging_difficulty: moderate
+      uses:
+        - "Crushed leaves packed into wounds to slow bleeding — the most important field medicine"
+        - "Tea reduces fever"
+        - "Chewed leaves ease toothache temporarily"
+      description: >
+        Feathery green leaves and flat-topped white flower clusters. The smell is sharp and
+        slightly bitter — like pine needles and camphor mixed. Called 'wound-wort' by every
+        healer in the Rimevegr. A man who finds yarrow growing near his camp has a better
+        chance of keeping his wounded alive. Every experienced band member knows this plant
+        by sight. Those who do not are the ones who bleed out.
+
+    - id: "FL_013"
+      name: "Bog Myrtle"
+      norse_name: "Pors"
+      type: shrub
+      biomes: [marsh, moor]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Aromatic leaves appearing",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Full growth, intensely fragrant",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Dried leaves retain scent well",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Deciduous — bare twigs only",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Flavours ale in place of hops — the standard Rimevegr brewing herb"
+        - "Crushed leaves repel biting insects — rubbed on exposed skin"
+        - "Dried leaves burned as incense to fumigate sick-rooms"
+      description: >
+        Resinous-smelling shrub growing waist-high in boggy ground. Crush a leaf and the
+        scent hits sharp — sweet, resinous, slightly peppery. The primary brewing herb
+        outside settlements with hop gardens. Bog myrtle ale is the taste of the Rimevegr
+        itself — bitter, aromatic, and faintly wild.
+
+    - id: "FL_014"
+      name: "Sphagnum Moss"
+      norse_name: "Mýramosi"
+      type: moss
+      biomes: [marsh, moor, forest]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Exposed as snow retreats",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Thick green carpets in wet areas",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Best time to gather and dry for storage",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Frozen but can be hacked from bogs in mild spells",
+          }
+      foraging_difficulty: trivial
+      uses:
+        - "Wound dressing — naturally antiseptic, absorbs blood and fluid"
+        - "Diaper and menstrual material"
+        - "Insulation stuffed into boots and gloves"
+        - "Fire-starting tinder when dry"
+      description: >
+        Pale green-gold spongy moss in thick beds across every bog and damp hollow. Holds
+        twenty times its weight in water. The poor man's bandage and the wise man's
+        insulation. Healers who know their trade prefer sphagnum over linen for wound
+        packing — it resists infection better than any cloth. Smells of damp earth and
+        nothing else.
+
+    - id: "FL_015"
+      name: "Iceland Moss"
+      norse_name: "Fjallagrös"
+      type: lichen
+      biomes: [mountain, moor, tundra]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Exposed on thawing rocks",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Peak growth on exposed rock faces",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Gather and dry in bulk — critical winter food",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Persists under snow — can be scraped from exposed rocks in calm weather",
+          }
+      foraging_difficulty: moderate
+      uses:
+        - "Boiled into thick porridge — bland but filling"
+        - "Dried and ground into flour mixed with grain"
+        - "Emergency ration — keeps indefinitely when dry"
+      description: >
+        Not a moss but a lichen — grey-brown, tough, curling fronds on wind-blasted rocks.
+        Must be soaked and boiled to remove bitter acids before eating. The result is a
+        grey, gelatinous, flavourless porridge that sustains life without enriching it. In
+        the deep Long Dark, men eat it and are grateful. In the Long Sun, they would not
+        touch it. Survival tastes of nothing.
+
+    # --- FUNGI ---
+
+    - id: "FL_016"
+      name: "Birch Bolete"
+      norse_name: "Bjarksveppr"
+      type: fungus
+      biomes: [forest]
+      seasons:
+        thaw:
+          { available: false, abundance: none, notes: "Too cold for fruiting" }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Appearing in birch stands after rain",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Peak season, large caps",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Frozen ground, no fruiting",
+          }
+      foraging_difficulty: moderate
+      uses:
+        - "Sliced and fried in fat — rich earthy flavour"
+        - "Dried in thin slices for winter stores"
+        - "Added to stew for body and depth"
+      description: >
+        Brown-capped mushroom with a pale spongy underside, growing under birch trees on
+        damp forest floor. The cap is slightly slimy when fresh. Tastes of earth and nuts
+        when cooked — one of the few truly pleasant foods the forest offers. Finding a
+        cluster of fresh boletes improves camp morale more than a speech from the captain.
+
+    - id: "FL_017"
+      name: "Chaga"
+      norse_name: "Birkikylfa"
+      type: fungus
+      biomes: [forest]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Visible on trunks as snow retreats",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Grows slowly, always present",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Best time to harvest — highest potency",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Persists on birch trunks year-round — the only fresh medicinal in deep winter",
+          }
+      foraging_difficulty: hard
+      uses:
+        - "Hacked from birch trunks and brewed as medicinal tea"
+        - "Stomach tonic — settles cramps and diarrhea"
+        - "Outer crust used as slow-match for carrying fire between camps"
+      description: >
+        Black, cracked, charcoal-like growth on living birch trunks. Looks like the tree
+        has a tumour. Hard as wood — requires a hatchet to harvest. The tea tastes of
+        burnt bark and forest floor. Unpleasant. Effective. Healers swear by it. One of
+        the very few medicinal resources available in the Long Dark, which makes it
+        priceless by Frostmoon.
+
+    - id: "FL_018"
+      name: "Birch Polypore"
+      norse_name: "Bjarkaskjöldr"
+      type: fungus
+      biomes: [forest]
+      seasons:
+        thaw:
+          { available: true, abundance: sparse, notes: "On dead birch trunks" }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "New brackets forming",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Mature brackets, best for cutting",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Persists on dead wood through winter",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Thin strips used as wound dressing — mildly antiseptic"
+        - "Dried and used as strop for sharpening blades"
+        - "Inner flesh smoulders slowly — good ember-carrier for fire transport"
+      description: >
+        Smooth, kidney-shaped bracket fungus on dead birch. White-grey, firm, with a faint
+        sweet smell. Not eaten — too tough and bitter. But its uses are so many that
+        experienced woodsmen never pass one without harvesting it. The man carrying a birch
+        polypore in his belt pouch has bandages, a blade strop, and fire insurance.
+
+    # --- TIMBER & STRUCTURAL ---
+
+    - id: "FL_019"
+      name: "Scots Pine"
+      norse_name: "Fura"
+      type: tree
+      biomes: [forest, mountain]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Sap rising — best time for bark flour",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Full canopy, resinous scent in heat",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Resin collection, timber felling season",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Standing timber. Inner bark edible in emergency.",
+          }
+      foraging_difficulty: hard
+      uses:
+        - "Timber for construction, ship repair, fuel"
+        - "Inner bark (cambium) scraped, dried, ground into flour — desperation food"
+        - "Resin for waterproofing, torch-making, wound-sealing"
+        - "Needles boiled as tea — prevents scurvy"
+      description: >
+        The dominant tree of the Black Pine Wilds. Tall, straight, red-barked at the crown,
+        scaling to grey-brown plates below. The forest floor under pines smells of resin and
+        dry needles. Pine bark flour tastes of desperation — gritty, faintly sweet, with a
+        resinous bitterness that coats the mouth. Men who eat it survive. Men who refuse it
+        die. The choice is that simple in the Long Dark.
+
+    - id: "FL_020"
+      name: "Birch"
+      norse_name: "Björk"
+      type: tree
+      biomes: [forest, river, mountain]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Sap running — tapped for sweet water",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Full leaf, white bark peeling",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Leaves turning gold, last sap run",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Standing timber. Bark always available.",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Bark for containers, fire-starting (burns even when damp), writing material"
+        - "Sap tapped in Thaw — sweet water, fermentable into mild wine"
+        - "Wood for tools, utensils, fuel — burns clean and hot"
+        - "Twigs bundled for besoms (brooms) and bath whisks"
+      description: >
+        White-barked trees in stands along rivers and lower mountain slopes. The bark
+        peels in paper-thin sheets that curl and catch fire from a single spark — the
+        kindling of choice, the fire-starter's friend. Birch sap in Thaw is the first
+        sweet taste after winter — thin, cold, faintly sugary. Men drill holes in the
+        trunks and hang bark cups beneath. A good birch stand during sap-run produces
+        enough sweet water to lift the spirits of the whole band.
+
+    # --- POISONOUS / DANGEROUS ---
+
+    - id: "FL_021"
+      name: "Water Hemlock"
+      norse_name: "Eitrlaukr"
+      type: herb
+      biomes: [marsh, river]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Shoots resemble angelica — DEADLY confusion",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "White umbrella flowers, strong smell",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Dying back but roots still lethal",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Dead above ground. Roots persist and remain toxic.",
+          }
+      foraging_difficulty: moderate
+      poisonous: true
+      uses:
+        - "POISON — no safe use. Included as a hazard."
+        - "Root resembles parsnip — a handful has killed experienced foragers"
+        - "Used for poison if the user has no conscience"
+      description: >
+        Looks almost exactly like angelica to the untrained eye. Smells different — sharper,
+        more acrid, lacking angelica's sweetness. The root is the most toxic part: a piece
+        the size of a walnut kills a grown man in seizures within the hour. In Thaw, when
+        men are desperate for greens, water hemlock in a stew pot has ended more lives than
+        wolves. Every forager learns this plant first. The ones who do not learn it are the
+        cautionary tales that teach the others.
+
+    - id: "FL_022"
+      name: "Destroying Angel"
+      norse_name: "Helsveppr"
+      type: fungus
+      biomes: [forest]
+      seasons:
+        thaw: { available: false, abundance: none, notes: "Too cold" }
+        long_sun:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Rare, in deep birch-pine mixed stands",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Peak season — appears after warm rain",
+          }
+        long_dark: { available: false, abundance: none, notes: "Frozen" }
+      foraging_difficulty: hard
+      poisonous: true
+      uses:
+        - "LETHAL POISON — no safe use. Death in 2-3 days from organ failure."
+        - "Resembles edible field mushrooms to the careless"
+      description: >
+        Pure white mushroom with a delicate ring on the stem and a cup-like base hidden in
+        leaf litter. Beautiful. Odourless. Tastes mild and pleasant — which is the cruelest
+        part. Symptoms do not appear for 6-12 hours, by which time the poison has destroyed
+        the liver. Death follows in days, badly. The name the völvas give it translates as
+        'Hel's mushroom,' because by the time you know you have eaten it, you are already
+        hers.
+
+    - id: "FL_023"
+      name: "Monkshood"
+      norse_name: "Úlfsbani"
+      type: herb
+      biomes: [mountain, river]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Dark green shoots in damp mountain soil",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Distinctive blue-purple hooded flowers",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Seeds ripe, entire plant toxic",
+          }
+        long_dark:
+          {
+            available: false,
+            abundance: none,
+            notes: "Dead above ground. Roots still lethal if dug.",
+          }
+      foraging_difficulty: moderate
+      poisonous: true
+      uses:
+        - "LETHAL POISON — roots, leaves, flowers all toxic"
+        - "Root paste applied to arrowheads for hunting — wolf-killer"
+        - "Seidr practitioners use micro-doses in trance rituals (extremely dangerous)"
+      description: >
+        Tall plant with deeply divided leaves and blue-purple hooded flowers that grow
+        along mountain streams. Called 'wolf-bane' because root extracts on arrowheads
+        bring down wolves. Handling the plant with bare hands causes numbness and tingling
+        within minutes. The name tells you everything: úlfsbani means wolf-killer. It does
+        not distinguish between wolves and men.
+
+    # --- OTHER USEFUL PLANTS ---
+
+    - id: "FL_024"
+      name: "Willow"
+      norse_name: "Víðir"
+      type: tree
+      biomes: [river, marsh, forest]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Earliest catkins, bark soft and peelable",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Full growth along waterways",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Bark harvest for medicine stores",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Bare branches but bark still usable if not ice-encased",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Bark chewed or brewed as tea — eases pain, reduces fever (contains salicin)"
+        - "Flexible branches for wicker, fish traps, shelter frames"
+        - "Charcoal from willow burns clean — preferred for indoor fires"
+      description: >
+        Flexible-branched trees leaning over every stream and river. The bark is smooth and
+        bitter. Chewing willow bark does not make pain disappear — it makes pain bearable.
+        The difference matters when you have three more days of marching on a bad knee. Every
+        healer carries dried willow bark. Every experienced fighter knows what it tastes like.
+
+    - id: "FL_025"
+      name: "Reindeer Lichen"
+      norse_name: "Hreindýramosi"
+      type: lichen
+      biomes: [tundra, mountain, moor]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Exposed as snow retreats from high ground",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Grey-white carpets across open ground",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Dry and easy to gather in bulk",
+          }
+        long_dark:
+          {
+            available: true,
+            abundance: sparse,
+            notes: "Under snow — reindeer dig for it, and so can you",
+          }
+      foraging_difficulty: easy
+      uses:
+        - "Boiled repeatedly to remove acids, then eaten as starchy paste"
+        - "Mixed with fat and berries as emergency trail food"
+        - "Where reindeer lichen grows thick, reindeer herds follow — useful for tracking game"
+      description: >
+        Pale grey-white branching lichen covering open ground in thick cushions. Crunches
+        underfoot when dry. Must be boiled in multiple changes of water to remove the bitter
+        acids — shortcutting this step guarantees stomach cramps. The result is a starchy,
+        flavourless gel. Not food by choice. Food by necessity. In the deep Long Dark, a
+        man on his knees scraping lichen from under snow has made his peace with dignity.
+
+    - id: "FL_026"
+      name: "Meadowsweet"
+      norse_name: "Mjöðurt"
+      type: herb
+      biomes: [river, marsh, moor]
+      seasons:
+        thaw: { available: false, abundance: none, notes: "Just emerging" }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Creamy flower clusters, intense sweet scent",
+          }
+        harvest:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Flowers drying, still useful",
+          }
+        long_dark: { available: false, abundance: none, notes: "Dead" }
+      foraging_difficulty: easy
+      uses:
+        - "Flowers flavour mead and ale — the origin of its name"
+        - "Tea from flowers eases headache and stomach pain"
+        - "Strewn on floors to sweeten the air in longhouses"
+      description: >
+        Tall stems topped with dense clusters of tiny cream-white flowers that smell
+        overwhelmingly of honey and almonds. The sweetest smell in the Rimevegr. Standing
+        in a meadowsweet patch on a Long Sun evening is one of the few things that makes a
+        man forget he is a paid killer living on borrowed time.
+
+    - id: "FL_027"
+      name: "Horsetail"
+      norse_name: "Elfting"
+      type: herb
+      biomes: [river, marsh, forest]
+      seasons:
+        thaw:
+          {
+            available: true,
+            abundance: moderate,
+            notes: "Pale shoots pushing through wet ground",
+          }
+        long_sun:
+          {
+            available: true,
+            abundance: abundant,
+            notes: "Full growth, distinctive segmented stems",
+          }
+        harvest:
+          { available: true, abundance: moderate, notes: "Tough and wiry" }
+        long_dark:
+          { available: false, abundance: none, notes: "Dead above ground" }
+      foraging_difficulty: easy
+      uses:
+        - "Abrasive stems used to scour pots and polish metal (high silica content)"
+        - "Tea used as wound wash — mildly astringent"
+        - "Young shoots edible in desperation — rubbery and tasteless"
+      description: >
+        Segmented green stems like tiny bamboo, growing in damp ground near water. Pull a
+        section apart and it pops like a joint. The stems are rough as fine sandstone — rub
+        one along a blade edge and it polishes the steel. The camp scouring brush, growing
+        free by every stream. Not food, but not nothing either.
+
+  # ==========================================================================
+  # FAUNA — 22 entries
+  # ==========================================================================
+  fauna:
+    # --- SMALL MAMMALS ---
+
+    - id: "FA_001"
+      name: "Arctic Hare"
+      norse_name: "Snæheri"
+      type: mammal
+      biomes: [moor, mountain, tundra]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Breeding, transitioning from white to grey-brown",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Grey summer coat, feeding heavily on new growth",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Fattening, coat whitening",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "White coat, deep scrapes in snow, extremely hard to spot and catch",
+          }
+      hunting_difficulty: moderate
+      meat_yield: "1-2 rations"
+      other_uses:
+        - "Fur for mittens and boot linings — white winter pelts most valued"
+        - "Sinew for bow-string wrapping and fine sewing"
+      description: >
+        Changes coat with the seasons — white in winter, grey-brown in summer. On open
+        ground, a white hare against white snow is nearly invisible until it bolts. Quick,
+        zigzagging, and maddening to chase. Snaring is more reliable than hunting. The meat
+        is lean and slightly gamey. A hare alone will not feed a band, but three hares in
+        the pot is the difference between hunger and sufficiency.
+
+    - id: "FA_002"
+      name: "Red Fox"
+      norse_name: "Refr"
+      type: mammal
+      biomes: [forest, moor, coastal]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Denning, raising kits",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Hunting widely, young dispersing",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Thick coat growing in, caching food",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Hunting near settlements, stealing scraps, bold from hunger",
+          }
+      hunting_difficulty: hard
+      meat_yield: "1 ration"
+      other_uses:
+        - "Fur is valuable trade goods — winter pelts fetch highest price"
+        - "Tail worn as decoration or luck charm"
+      description: >
+        Sharp-faced and amber-eyed, moving through undergrowth like smoke. Fox meat is
+        strong-tasting and stringy — most hunters want the pelt, not the flesh. In the Long
+        Dark, foxes grow bold, circling camps and snatching whatever is left unguarded. A
+        fox raiding the food cache is a serious problem. A fox in the snare line is a bonus.
+
+    - id: "FA_003"
+      name: "Ermine"
+      norse_name: "Hreysiköttr"
+      type: mammal
+      biomes: [forest, moor, mountain]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Moulting to brown, hunting voles aggressively",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Brown coat, raising young",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "White coat coming in",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Pure white except black tail-tip, nearly invisible against snow",
+          }
+      hunting_difficulty: hard
+      meat_yield: "0 rations (too small to eat)"
+      other_uses:
+        - "White winter pelts are extremely valuable — luxury trade item"
+        - "Pelts used to trim jarls' cloaks"
+      description: >
+        Tiny, ferocious, and faster than the eye. An ermine is a brown weasel in summer and
+        a white ghost with a black-tipped tail in winter. Kills prey larger than itself with
+        a bite to the skull base. No meat value, but a bundle of winter ermine pelts buys
+        silver. Trapped, not hunted — no weapon is appropriate for something the size of
+        your forearm.
+
+    # --- LARGE MAMMALS ---
+
+    - id: "FA_004"
+      name: "Red Deer"
+      norse_name: "Hjörtr"
+      type: mammal
+      biomes: [forest, moor]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Moving to higher ground, new antler growth",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Feeding heavily, fat building, antlers in velvet",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Rutting — stags aggressive and careless, good hunting",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Descend to valleys, shelter in forest, thin and wary",
+          }
+      hunting_difficulty: moderate
+      meat_yield: "15-25 rations"
+      other_uses:
+        - "Hide for leather, clothing, shield covers"
+        - "Antlers for tool handles, toggles, combs"
+        - "Sinew for cord and bowstrings"
+        - "Tallow rendered for candles and waterproofing"
+        - "Bones for needles, awls, gaming pieces"
+      description: >
+        The most important game animal in the Rimevegr. A mature stag provides enough meat
+        for a twelve-man band for two days, plus hide, sinew, bone, and antler. During the
+        autumn rut, stags bugle challenges that echo through the forest — and their attention
+        is on each other, not on hunters. The best time to fill the larder. Venison slow-
+        roasted over coals is the finest meal the wilds offer. Venison jerky, dried in strips
+        over the smoke rack, is what gets you through Frostmoon.
+
+    - id: "FA_005"
+      name: "Elk"
+      norse_name: "Elgr"
+      type: mammal
+      biomes: [forest, marsh, river]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Moving to wetlands, calves born",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Feeding in marshes and river shallows, antlers growing",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Rutting, bulls dangerous and unpredictable",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Deep forest, browsing bark and twigs, lean but tough",
+          }
+      hunting_difficulty: hard
+      meat_yield: "30-50 rations"
+      other_uses:
+        - "Hide thicker than deer — excellent for heavy cloaks and tent panels"
+        - "Antlers massive — tool material for months"
+        - "Hooves boiled for glue"
+      description: >
+        Enormous. A bull elk stands taller than a man at the shoulder and weighs as much as
+        four. The antlers spread wider than a man's arms. Killing an elk feeds the band for
+        days. Failing to kill an elk — wounding it and angering it — can crush a man's ribs
+        with a single kick. They look slow and stupid. They are neither. A cow with a calf
+        is more dangerous than a bear with less warning.
+
+    - id: "FA_006"
+      name: "Wild Boar"
+      norse_name: "Villisvín"
+      type: mammal
+      biomes: [forest]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Sows with piglets, aggressive if cornered",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Rooting in forest floor, fattening",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Peak fat, best meat quality — prime hunting season",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Deep forest, rooting under snow, lean and mean",
+          }
+      hunting_difficulty: hard
+      meat_yield: "10-20 rations"
+      other_uses:
+        - "Tusks as trophies and trade goods"
+        - "Bristles for brushes"
+        - "Hide tough enough for light armour patches"
+      description: >
+        Low-slung, black-bristled, and angry about everything. A boar's tusks are sharpened
+        by constant grinding — the lower tusks against the upper, honed like a blade. A
+        wounded boar charges. It does not bluff. A tusk opens a man's thigh to the bone in
+        one slash. The meat, though — dark, rich, marbled with fat — is worth the risk. Pork
+        fat rendered into lard is the most valuable cooking grease in the Rimevegr.
+
+    - id: "FA_007"
+      name: "Reindeer"
+      norse_name: "Hreindýr"
+      type: mammal
+      biomes: [tundra, mountain, moor]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Migrating north to summer pastures, calving",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Grazing lichen and sedges on high ground in herds",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Migrating south, fat from summer grazing — best time for mass hunts",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "In sheltered valleys, thin, surviving on lichen",
+          }
+      hunting_difficulty: moderate
+      meat_yield: "12-18 rations"
+      other_uses:
+        - "Hide for cold-weather clothing — superior insulation"
+        - "Antlers for tools (both sexes grow antlers)"
+        - "Sinew for sewing and cord"
+        - "Leg-skin for waterproof boot uppers"
+      description: >
+        Move in herds across the tundra, following the lichen. Both sexes carry antlers — an
+        oddity that still confuses southern traders. During the harvest migration south, Sámi
+        and Norse alike drive herds through narrow valleys for mass kills. A successful
+        reindeer drive provides the majority of winter meat for entire settlements. Miss the
+        migration window and the Long Dark gets much longer.
+
+    - id: "FA_008"
+      name: "Brown Bear"
+      norse_name: "Björn"
+      type: mammal
+      biomes: [forest, mountain, river]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Emerging from dens, thin, hungry, and extremely dangerous",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Fishing rivers, stripping berries, territory marking",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Gorging for hibernation, fat and slow — relatively easier to hunt",
+          }
+        long_dark:
+          {
+            present: false,
+            abundance: none,
+            behavior: "Hibernating. Disturbing a bear den in winter is suicide.",
+          }
+      hunting_difficulty: expert
+      meat_yield: "40-60 rations"
+      other_uses:
+        - "Fur for cloaks and bedrolls — the warmest single garment"
+        - "Claws and teeth as status trophies"
+        - "Fat rendered into grease — weeks of cooking fuel"
+        - "Skull kept as ward against evil spirits"
+      description: >
+        The lord of the forest, and it knows it. A mature brown bear weighs as much as three
+        men and can outrun a horse over short distances. The claws are as long as a man's
+        fingers and backed by enough force to break a spine. Hunting a bear is not called
+        hunting — it is called a bear-fight, because the bear always has a vote on the
+        outcome. The meat is dark, greasy, and rich. The fat is liquid gold. The fur keeps
+        a man warm through the worst of the Long Dark. Killing a bear is the single highest-
+        value hunting outcome in the Rimevegr. It is also how the second-most men die.
+
+    - id: "FA_009"
+      name: "Grey Wolf"
+      norse_name: "Úlfr"
+      type: mammal
+      biomes: [forest, moor, mountain, tundra]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Denning, pups born, pack territorial",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Hunting widely, pups learning",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Pack at full strength, following deer migration",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Packs bold, desperate, approaching camps — the Long Dark belongs to them",
+          }
+      hunting_difficulty: hard
+      meat_yield: "3-5 rations (rarely eaten by choice)"
+      other_uses:
+        - "Fur for winter cloaks"
+        - "Teeth as amulets"
+        - "Pack threat to camps, livestock, and the wounded"
+      description: >
+        Not hunted for food. Hunted because they hunt you. A wolf pack in the Long Dark is
+        an ongoing strategic problem — they follow bands at a distance, testing, probing,
+        waiting for someone to fall behind. The howl carries for miles and freezes something
+        in the gut that no amount of experience fully quiets. Killing the alpha disrupts the
+        pack for days. They learn. They remember who hurts them. They come back.
+
+    # --- BIRDS ---
+
+    - id: "FA_010"
+      name: "Ptarmigan"
+      norse_name: "Rjúpa"
+      type: bird
+      biomes: [moor, mountain, tundra]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Moulting to brown, nesting on open ground",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Brown mottled plumage, chicks following hens",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Flocking, whitening",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "White plumage, snow burrows, incredibly hard to see — walk on them before you spot them",
+          }
+      hunting_difficulty: easy
+      meat_yield: "0.5-1 ration"
+      other_uses:
+        - "Feathers for arrow fletching"
+      description: >
+        Round, plump, dull-witted birds that sit tight on the ground and rely on camouflage
+        rather than flight. In summer, brown as the heather. In winter, white as the snow
+        they sit on. You can nearly step on one before it explodes upward in a blur of wings.
+        Easy to snare, easy to knock down with a thrown stick. Not much meat per bird, but
+        they flock — where there is one, there are twenty.
+
+    - id: "FA_011"
+      name: "Raven"
+      norse_name: "Hrafn"
+      type: bird
+      biomes: [forest, moor, mountain, coastal, tundra]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Nesting, paired, territorial displays",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Raising young, scavenging widely",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Following hunting parties and wolf packs",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Scavenging battlefield dead, camp refuse, anything they can find",
+          }
+      hunting_difficulty: hard
+      meat_yield: "0.5 ration (tough and foul-tasting)"
+      other_uses:
+        - "Feathers for fletching"
+        - "OMEN — killing ravens angers Odin. Most men will not do it."
+        - "Following ravens leads to carrion, which leads to deer kills, which leads to hunting ground"
+      description: >
+        Black, heavy-billed, and disturbingly intelligent. Ravens follow war-bands and wolf
+        packs alike — they know that violence means food. A raven circling overhead is Odin's
+        eye, and men act accordingly. In the Long Dark, ravens are among the few birds that
+        do not leave. They sit in dead trees, watching, waiting. Their croak carries in cold
+        air like a stone on stone. Eating raven meat is technically possible. Most men would
+        rather starve.
+
+    - id: "FA_012"
+      name: "Eider Duck"
+      norse_name: "Æðr"
+      type: bird
+      biomes: [coastal]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Returning to nesting islands",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Nesting, eiderdown harvest from nests",
+          }
+        harvest:
+          { present: true, abundance: moderate, behavior: "Departing south" }
+        long_dark:
+          { present: false, abundance: none, behavior: "Migrated south" }
+      hunting_difficulty: easy
+      meat_yield: "2-3 rations"
+      other_uses:
+        - "Eiderdown — the finest insulation known, worth more per weight than silver"
+        - "Eggs gathered in nesting season"
+      description: >
+        Fat, slow-flying sea ducks that nest in dense colonies on coastal islands. The
+        females line their nests with breast-down so fine and warm that a small bag of it
+        insulates a sleeping man through the worst frost. Settlements that control eider
+        nesting grounds guard them with the seriousness of a silver mine. The meat is rich
+        and slightly fishy.
+
+    - id: "FA_013"
+      name: "Gyrfalcon"
+      norse_name: "Valr"
+      type: bird
+      biomes: [mountain, moor, tundra]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Nesting on cliff ledges",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Hunting ptarmigan and hares",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Young fledged, dispersing",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Remains year-round, hunting in open country",
+          }
+      hunting_difficulty: legendary
+      meat_yield: "0.5 ration (never eaten)"
+      other_uses:
+        - "EXTREME VALUE alive — a trained gyrfalcon is worth more than a thrall"
+        - "White gyrfalcons given as gifts to kings"
+        - "Feathers prized for fletching the finest arrows"
+      description: >
+        The largest and most powerful falcon. A white gyrfalcon in flight is one of the most
+        beautiful things in the Rimevegr — sleek, silent, and faster than thought in a stoop.
+        Eating one would be like burning a ship for firewood. Live capture of a young bird
+        from a cliff nest is one of the most dangerous and lucrative pursuits in the north.
+        Men have died for gyrfalcons. More men have lied about having caught one.
+
+    - id: "FA_014"
+      name: "Snow Owl"
+      norse_name: "Snæugla"
+      type: bird
+      biomes: [tundra, moor, mountain]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Nesting on ground hummocks",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Hunting voles and lemmings day and night",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Dispersing from breeding grounds",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Silent hunter in dim light, ghostly white against grey sky",
+          }
+      hunting_difficulty: hard
+      meat_yield: "1 ration"
+      other_uses:
+        - "Feathers valued for fletching"
+        - "Considered an omen bird — seeing one before battle can mean wisdom or death"
+      description: >
+        White and silent and enormous — a wingspan wider than a man's reach. Hunts in near-
+        total darkness, dropping on prey without a sound. Seeing a snow owl in the Long Dark
+        is an experience that stays — the white shape materializes from grey nothing, hangs
+        for a moment on spread wings, and vanishes. Men have different opinions on whether
+        this means good fortune or bad. The owl has no opinion on the matter.
+
+    # --- FISH ---
+
+    - id: "FA_015"
+      name: "Atlantic Cod"
+      norse_name: "Þorskr"
+      type: fish
+      biomes: [coastal]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Spawning runs — peak fishing season, the most important food event of the year",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Dispersing into deeper water",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Returning to shallower water, second fishing window",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Deep water, hard to reach, ice may close harbours",
+          }
+      hunting_difficulty: moderate
+      meat_yield: "3-6 rations per large fish"
+      other_uses:
+        - "Dried as stockfish — the primary trade commodity and winter food"
+        - "Liver rendered into oil — nutritious and burns in lamps"
+        - "Heads and frames boiled for stock"
+        - "Air-dried stockfish keeps for years if stored properly"
+      description: >
+        The silver that swims. Cod is the foundation of coastal economy — the Thaw spawning
+        run draws every able-bodied person to the fishing grounds. Split, salted, and hung on
+        wooden racks in the wind, stockfish feeds the Rimevegr through the Long Dark. The
+        dried planks of fish are hard as wood and must be beaten with a mallet and soaked for
+        days before they are edible. They taste of salt, wind, and survival. A man with a
+        shed full of stockfish is richer than a man with silver and nothing to eat.
+
+    - id: "FA_016"
+      name: "Herring"
+      norse_name: "Síld"
+      type: fish
+      biomes: [coastal]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Schooling in fjords",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Massive shoals in shallow water — net fishing at peak",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Shoals breaking up, moving offshore",
+          }
+        long_dark:
+          {
+            present: false,
+            abundance: none,
+            behavior: "Deep ocean, inaccessible",
+          }
+      hunting_difficulty: easy
+      meat_yield: "0.5 ration per fish (caught in huge numbers)"
+      other_uses:
+        - "Salted and barrel-packed for winter"
+        - "Smoked herring keeps for months"
+        - "Oil pressed from surplus — lamp fuel and leather treatment"
+      description: >
+        Silver-sided fish that arrive in shoals so thick the water turns dark. A single net
+        haul can feed a settlement for a week. Herring is the workhorse fish — salted,
+        smoked, pickled, eaten fresh, eaten dried. The smell of a herring-processing beach
+        carries for a mile and attracts every gull and raven in the district. Salted herring
+        in wooden barrels is traded inland — the coast's currency for grain and iron.
+
+    - id: "FA_017"
+      name: "River Trout"
+      norse_name: "Laxsilungr"
+      type: fish
+      biomes: [river, lake]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Active in snowmelt-swollen streams",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Feeding heavily on insects, easy to catch",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Spawning run upstream, concentrated at falls",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Sluggish in cold water, can be caught through ice holes",
+          }
+      hunting_difficulty: easy
+      meat_yield: "1-2 rations"
+      other_uses:
+        - "Skin cured for small pouches and bindings"
+      description: >
+        Speckled brown and gold, lurking in pools behind rocks. The most accessible fish for
+        inland bands — every river holds trout. In the Long Sun, a man with a hook and line
+        and the patience to sit still can catch supper in an hour. In the spawning run, they
+        crowd at the base of falls and a spear-fisher can take a dozen in a morning. Trout
+        cooked fresh over coals, skin crisping and fat bubbling — one of the small mercies
+        the Rimevegr allows.
+
+    - id: "FA_018"
+      name: "Atlantic Salmon"
+      norse_name: "Lax"
+      type: fish
+      biomes: [river, coastal]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "First arrivals in coastal rivers",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Main run upstream, leaping falls, concentrated at narrows",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Peak spawning run — the second great food event after cod",
+          }
+        long_dark:
+          {
+            present: false,
+            abundance: none,
+            behavior: "Spawned out or dead. Smoked salmon from the harvest feeds the band.",
+          }
+      hunting_difficulty: moderate
+      meat_yield: "4-8 rations per large fish"
+      other_uses:
+        - "Smoked salmon is a luxury food and trade good"
+        - "Roe salted as delicacy"
+        - "Skin surprisingly strong — used for small bags"
+      description: >
+        The king of fish. Bright silver from the sea, turning red and hook-jawed as they
+        fight upstream to spawn. Salmon leaping a waterfall is a sight that draws crowds —
+        and spear-fishers standing at every narrowing of the river. The pink flesh is rich,
+        fatty, and smokes beautifully. A successful salmon harvest means smoked fish hanging
+        in every longhouse, oil-rich and dense, the luxury that makes the Long Dark bearable.
+        A poor salmon run means hunger. The river decides.
+
+    # --- SEA MAMMALS ---
+
+    - id: "FA_019"
+      name: "Grey Seal"
+      norse_name: "Selr"
+      type: mammal
+      biomes: [coastal]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Hauled out on rocks, pupping",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "Feeding in rich summer waters, basking on skerries",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Fat from summer feeding — prime hunting",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Hauled out on ice, hard to approach, blubber at peak thickness",
+          }
+      hunting_difficulty: moderate
+      meat_yield: "8-15 rations"
+      other_uses:
+        - "Blubber rendered for lamp oil — the primary light source in the Long Dark"
+        - "Skin waterproof — used for boat covers, bags, outer clothing"
+        - "Intestines cleaned and used as waterproof containers"
+      description: >
+        Big, dark-eyed, and strangely dog-like in the face. Seals watch boats with an
+        unnerving intelligence that feeds the folk-tales about selkies. The meat is dark,
+        oily, and tastes of fish and iron. The blubber is the real prize — rendered seal oil
+        burns in lamps through the Long Dark, providing the light that keeps settlement life
+        possible when the sun does not rise for months. Seal-hunting is not glamorous work.
+        It is necessary work.
+
+    # --- INSECTS ---
+
+    - id: "FA_020"
+      name: "Biting Midges"
+      norse_name: "Mýfluga"
+      type: insect
+      biomes: [marsh, moor, river, forest]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Hatching from standing water",
+          }
+        long_sun:
+          {
+            present: true,
+            abundance: abundant,
+            behavior: "SWARMS — the worst plague of the Rimevegr summer",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Dying off with first frosts",
+          }
+        long_dark:
+          {
+            present: false,
+            abundance: none,
+            behavior: "Frozen. The one mercy of winter.",
+          }
+      hunting_difficulty: trivial
+      meat_yield: "0 rations"
+      other_uses:
+        - "No use whatsoever"
+        - "Bog myrtle smoke and grease on skin are the only defenses"
+      description: >
+        The Rimevegr's true predator. Microscopic, silent, arriving in clouds that turn the
+        air dark. They crawl into eyes, ears, nostrils, under clothing. The bites raise welts
+        that itch for days. A man camped near standing water in the Long Sun without bog
+        myrtle or a smoky fire will be driven half-mad by morning. The Long Dark kills with
+        cold. The Long Sun kills with insects. Men who say they prefer winter are not joking.
+
+    # --- SUPERNATURAL ---
+
+    - id: "FA_021"
+      name: "Corpse-Lights"
+      norse_name: "Draugaeldr"
+      type: supernatural
+      biomes: [marsh, moor]
+      seasons:
+        thaw:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Faint flickering over thawing bogs at dusk",
+          }
+        long_sun:
+          {
+            present: false,
+            abundance: none,
+            behavior: "Absent in constant light",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Growing bolder as darkness returns — seen further from bogs",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Dancing over frozen marshes, leading travellers onto thin ice or into snowdrifts",
+          }
+      hunting_difficulty: legendary
+      meat_yield: "0 rations"
+      other_uses:
+        - "Seidr practitioners claim the light can be trapped in prepared vessels"
+        - "Following them always leads to death — of the follower, never the light"
+        - "Presence near a camp means unquiet dead nearby"
+      description: >
+        Pale blue-green flames that hover and drift over boggy ground, always just ahead,
+        always moving away. The rational explanation is marsh gas. The local explanation is
+        that they are the souls of the unburied dead, trying to lead the living to join them.
+        Both explanations are true. Following a corpse-light over a frozen marsh puts you on
+        thin ice, into deep snow, or over a bluff edge. By the time you realise you have been
+        following one, you are lost. The only correct response is to turn your back. This is
+        harder than it sounds — the light pulls at something behind the eyes.
+
+    - id: "FA_022"
+      name: "Barrow-Wight"
+      norse_name: "Haugbúi"
+      type: supernatural
+      biomes: [moor, mountain]
+      seasons:
+        thaw:
+          {
+            present: false,
+            abundance: none,
+            behavior: "Dormant in sealed barrows",
+          }
+        long_sun:
+          {
+            present: false,
+            abundance: none,
+            behavior: "Dormant — daylight suppresses them",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "First stirrings as darkness grows — cold spots near barrow entrances",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: moderate,
+            behavior: "Fully active. Emerge from barrows in deep winter. Hunt the living.",
+          }
+      hunting_difficulty: legendary
+      meat_yield: "0 rations"
+      other_uses:
+        - "Barow-wight lairs contain grave goods — the only reason anyone goes near them"
+        - "Bones of a defeated wight have seidr value"
+        - "Iron and fire are the only reliable weapons"
+      description: >
+        The restless dead who guard their burial mounds. In the Long Dark, when the world
+        belongs to cold and darkness, the barrow-doors open. The wight emerges — grey-skinned,
+        swollen, stinking of grave-earth and old iron. Its grip is inhumanly strong. It does
+        not tire. It does not feel pain the way the living do. Cutting it makes it angry.
+        Fire makes it retreat. Iron disrupts whatever holds it together. A band camped within
+        sight of a barrow mound in the Long Dark will post double watches and sleep poorly.
+        The ones who sleep well are the ones who do not understand what they are sleeping near.
+
+    - id: "FA_023"
+      name: "Draugr-Whale"
+      norse_name: "Hvaldraugr"
+      type: supernatural
+      biomes: [coastal]
+      seasons:
+        thaw: { present: false, abundance: none, behavior: "Absent" }
+        long_sun:
+          {
+            present: false,
+            abundance: none,
+            behavior: "Absent — too much light",
+          }
+        harvest:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "First sightings in autumn fog, far offshore",
+          }
+        long_dark:
+          {
+            present: true,
+            abundance: sparse,
+            behavior: "Appears in storms and deep fog — a rotting whale shape surfacing near boats, capsizing them",
+          }
+      hunting_difficulty: legendary
+      meat_yield: "0 rations (its flesh is poison and illusion)"
+      other_uses:
+        - "Its appearance is an omen of mass drowning"
+        - "Seidr-workers say it is the collective rage of drowned sailors given form"
+      description: >
+        A vast shape in the fog — the outline of a whale, but wrong. The proportions shift.
+        The blowhole vents something that is not breath — a greyish mist that smells of
+        rotting fish and deep water. It surfaces near boats in storms, and the wave it
+        creates capsizes them. Survivors describe the eye — a single pale disc the size of a
+        shield, looking up from just below the surface. Fishermen who have seen it do not go
+        out in fog again. Not because they are cowards. Because they understand what is out
+        there.
+
+  # ==========================================================================
+  # FORAGING CALENDAR
+  # ==========================================================================
+  foraging_calendar:
+    thaw:
+      days: "1-30"
+      description: >
+        First signs of life after 270 days of darkness. Snowmelt reveals overwintered
+        tubers and roots. Streams swell. The coastal ice breaks. Every band marches toward
+        food — the coast for scurvy grass and seaweed, the forest for birch sap and angelica
+        shoots. Men weep at the taste of something green. This is not poetic exaggeration.
+        After nine months of dried fish, bark flour, and lichen porridge, fresh food triggers
+        a physical reaction. The body knows what it needs.
+      best_biomes: [coastal, river, forest]
+      worst_biomes: [tundra, mountain]
+      key_resources:
+        - "Scurvy grass (coastal) — anti-scurvy, the first priority"
+        - "Birch sap (forest) — sweet water from tapped trees"
+        - "Angelica shoots (coastal, marsh) — first real greens"
+        - "Seaweed — dulse and kelp from tidal zones"
+        - "Pine needle tea — vitamin-rich, available in forest"
+        - "Overwintered root vegetables near abandoned gardens"
+      foraging_yield: moderate
+      hunting_notes: >
+        Game is thin and poor after winter. Bears emerging from hibernation are dangerously
+        hungry. Cod spawning run begins — the most critical food event. Ptarmigan nesting
+        on open ground provides easy snaring. Seal pups on rocky coastlines.
+
+    long_sun:
+      days: "31-60"
+      description: >
+        The land explodes with life. Everything grows, breeds, feeds, and fattens at once.
+        The midnight sun means foraging from dawn to dawn — which is to say, continuously.
+        This is the window. Every berry picked, fish smoked, and herb dried in these thirty
+        days is a day of survival in the Long Dark. Bands that waste the Long Sun die in
+        Frostmoon. There is no second chance.
+      best_biomes: [forest, coastal, river, moor]
+      worst_biomes: [tundra]
+      key_resources:
+        - "All berries — crowberry, cloudberry, lingonberry reaching harvestable levels"
+        - "Wild garlic, sorrel, sea kale — greens at peak"
+        - "Mushrooms beginning in birch stands"
+        - "Herring shoals — net fishing at peak, salt and smoke everything"
+        - "Trout and salmon runs in rivers"
+        - "Yarrow, meadowsweet, bog myrtle — medicinal harvest"
+        - "Dulse and kelp — dry and store in bulk"
+        - "Eider down collection from nesting colonies"
+      foraging_yield: abundant
+      hunting_notes: >
+        Deer and elk fattening with summer coat. Hares abundant. Bird eggs available early
+        in the season. Seal basking on skerries. Bear fishing at river falls — approach with
+        extreme caution. Boar rooting in forest clearings. The midges are appalling. The
+        bounty is worth the suffering.
+
+    harvest:
+      days: "61-90"
+      description: >
+        The last productive days. Urgency governs everything. First frosts kill tender
+        plants. Berries that are not picked this week rot on the stem. Fish not smoked
+        this month will not keep. The Long Dark is thirty days away, and every man, woman,
+        and child who has survived one before works with a grim, wordless efficiency that
+        outsiders mistake for panic. It is not panic. It is the accumulated knowledge of
+        what happens to those who are not ready.
+      best_biomes: [forest, coastal, moor]
+      worst_biomes: [tundra, mountain]
+      key_resources:
+        - "Lingonberry — peak harvest after first frost sweetens them"
+        - "Crowberry — bulk gathering for drying"
+        - "Mushrooms — birch boletes at peak, dry everything"
+        - "Iceland moss and reindeer lichen — gather and process for winter flour"
+        - "Salmon spawning run — the second great harvest"
+        - "Juniper berries — last of the fresh spices"
+        - "Angelica root — dig and dry before ground freezes"
+        - "Willow bark — strip and dry for winter medicine"
+        - "Chaga — hack from birch trunks and store dry"
+      foraging_yield: moderate
+      hunting_notes: >
+        Deer rutting season — stags careless and aggressive, good hunting. Reindeer
+        migration south provides mass hunting opportunity. Boar at peak fat — the best
+        pork of the year. Bears gorging before hibernation — fat and somewhat less
+        agile, but still lethal. Seals hauling out on autumn beaches. Ptarmigan flocking.
+        This is the killing season. No sentiment. Fill the larder or starve.
+
+    long_dark:
+      days: "91-360"
+      description: >
+        Two hundred and seventy days. Nine months. The sun does not rise above the horizon
+        for most of it. Temperatures drop to where exposed flesh freezes in minutes.
+        Nothing grows. Almost nothing can be foraged. What you cached, smoked, salted,
+        and dried in the ninety days of light is what you have. When it runs out — and it
+        always runs out before the Thaw — you eat bark flour, lichen porridge, and the
+        leather of your own boots. The Long Dark is not a season. It is a siege.
+      best_biomes: [coastal]
+      worst_biomes: [tundra, mountain, marsh]
+      key_resources:
+        - "Dried dulse and kelp (coastal) — the only 'fresh' forage available"
+        - "Juniper berries — frozen on branches but edible"
+        - "Iceland moss — scraped from exposed rocks in calm weather"
+        - "Pine bark flour — inner bark of living pines, ground and baked"
+        - "Chaga — hacked from birch trunks, brewed as medicinal tea"
+        - "Birch polypore — wound dressing and fire material"
+        - "Ice fishing — river trout through holes in lake ice, cod if harbor is open"
+        - "Seal — hunting on ice is dangerous but blubber is critical for lamp oil"
+        - "Cached and preserved food — stockfish, smoked salmon, salted herring, dried berries, dried mushrooms"
+      foraging_yield: minimal
+      hunting_notes: >
+        Hunting is survival-critical and increasingly dangerous. Arctic hares in white
+        coat are nearly invisible. Ptarmigan in snow burrows require luck to find. Wolf
+        packs are bold and follow bands openly. Reindeer in sheltered valleys are thin
+        and wary. Ice fishing is reliable but tedious. Seal hunting on shore ice risks
+        falls through thin ice. Bear dens should not be approached — a hibernating bear
+        woken in its den is the most dangerous animal in the Rimevegr. Everything about
+        hunting in the Long Dark is harder, slower, colder, and more likely to kill the
+        hunter than the hunted. The men who come back with a deer carcass are heroes.
+        The men who do not come back are statistics.

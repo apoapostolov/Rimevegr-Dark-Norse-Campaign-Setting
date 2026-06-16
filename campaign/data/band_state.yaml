@@ -1,0 +1,39 @@
+# Campaign Band State — DM's Player-Run Band
+# Schema mirrors /data/band_state.yaml. Customise for your table.
+# Use scripts from /scripts/ against this file for simulation support.
+
+band:
+  name: "BAND_NAME"
+  captain: "CAPTAIN_NAME"
+  archetype: standard
+  reputation: 1
+  morale: 4 # Steady
+  treasury_silver: 20
+  treasury_goods_value: 0
+  debts_owed: 0
+  credits_pending: 0
+  year: 312
+  day_of_year: 1 # Deepwinter, day 1
+  location: "STARTING_LOCATION"
+  notes: []
+  history:
+    - event: band_created
+      details: "Band formed. Campaign start."
+
+  current_contract: null
+
+  feud_tracker: {}
+
+  allegiances: []
+
+  grievances: []
+
+  weekly_retainer_cost_copper: 0 # Calculate from roster
+  daily_mission_cost_copper: 0
+
+# --- Members ---
+# Add player characters and NPC members following the schema in
+# /data/band_state.yaml. Each member needs:
+#   name, rank, background, gender, age, description,
+#   attributes (mig, nim, tou, wit, wil, wyr), skills
+members: []

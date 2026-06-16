@@ -1,0 +1,2401 @@
+# Iron Ledger — Settlement Contract Pool
+# 65 contracts sourced from the 15 settlements of the Rimevegr.
+# Schema matches contracts.py CONTRACT_TYPES and contracts_available.yaml.
+# Payment scales with settlement wealth and contract risk.
+# Chain contracts use `unlocks` to gate follow-up work.
+
+contracts:
+  # ==========================================================================
+  # FROSTFJORD HOLLOW (village, fjord, Jarl Hrothgar) — 5 contracts
+  # Economy: dried cod, basic goods. Weekly income 8-15 silver.
+  # Tensions: feud with Black Axes, barrow proximity, wolf pressure.
+  # ==========================================================================
+
+  - id: "CONT_SET_001"
+    type: "guard"
+    title: "Guard Frostfjord Through Wolfmoot"
+    employer: "Jarl Hrothgar of Frostfjord"
+    settlement: "Frostfjord Hollow"
+    region: "frostfjord"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 55
+    bonus: null
+    advance_silver: 0
+    duration_days: 30
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 8
+    skills_valued: ["command", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Frostfjord Hollow": 1 }
+        unlocks: ["CONT_SET_002"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Frostfjord Hollow": -1 }
+    narrative_hook: >-
+      Hrothgar's scouts spotted wolf packs massing beyond the tree line.
+      He wants armed men on his walls before the deep cold sets in.
+    notes: null
+
+  - id: "CONT_SET_002"
+    type: "barrow_clear"
+    title: "Silence the Whispering Barrow"
+    employer: "Jarl Hrothgar of Frostfjord"
+    settlement: "Frostfjord Hollow"
+    region: "frostfjord"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 80
+    bonus: "1 thrall from Hrothgar's household"
+    advance_silver: 20
+    duration_days: 10
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["rune_lore", "spears"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Frostfjord Hollow": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Frostfjord Hollow": -1 }
+    narrative_hook: >-
+      The southern rune-stone hums louder each night. Shepherds refuse
+      to graze near it. Hrothgar wants the barrow cleared before
+      whatever stirs inside decides to walk.
+    notes: "Chain: unlocked by completing CONT_SET_001."
+
+  - id: "CONT_SET_003"
+    type: "patrol"
+    title: "Patrol the Fjord Approaches"
+    employer: "Jarl Hrothgar of Frostfjord"
+    settlement: "Frostfjord Hollow"
+    region: "frostfjord"
+    season: "spring"
+    year_range: [312, 314]
+    min_reputation: 1
+    payment_silver: 40
+    bonus: null
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "low"
+    band_size_min: 5
+    skills_valued: ["navigate", "track"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Frostfjord Hollow": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Frostfjord Hollow": 0 }
+    narrative_hook: >-
+      Thaw brings strangers. Hrothgar wants eyes on the fjord path and
+      the ridge trail. Report who comes and goes — and stop anyone
+      who shouldn't.
+    notes: null
+
+  - id: "CONT_SET_004"
+    type: "bounty"
+    title: "Bring Back the Black Axe Scout"
+    employer: "Jarl Hrothgar of Frostfjord"
+    settlement: "Frostfjord Hollow"
+    region: "frostfjord"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 50
+    bonus: null
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["track", "bows"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Frostfjord Hollow": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Frostfjord Hollow": -1 }
+    narrative_hook: >-
+      A Black Axe scout was seen watching the cod-drying racks from the
+      ridge. Hrothgar wants him dragged back alive if possible, dead
+      if not. Alive pays double.
+    notes: "Higher reputation gain if target is returned alive."
+
+  - id: "CONT_SET_005"
+    type: "escort"
+    title: "Escort the Cod Shipment to Kolvik"
+    employer: "Jarl Hrothgar of Frostfjord"
+    settlement: "Frostfjord Hollow"
+    region: "frostfjord"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 30
+    bonus: null
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "low"
+    band_size_min: 5
+    skills_valued: ["command", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Frostfjord Hollow": 1, "Kolvik": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Frostfjord Hollow": -1 }
+    narrative_hook: >-
+      Two carts of dried cod headed for trade in Kolvik. Easy road in
+      summer, but Hrothgar lost a shipment to bandits last year and
+      won't risk it again.
+    notes: null
+
+  # ==========================================================================
+  # ASHEN REACH (large village, forest, The Pale Widow) — 6 contracts
+  # Economy: pine tar, iron. Weekly income 15-25 silver.
+  # Politics: hostile to Frostfjord, subtle intrigue, hidden bounties.
+  # ==========================================================================
+
+  - id: "CONT_SET_006"
+    type: "investigation"
+    title: "The Widow's Suspicion"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "ashen_reach"
+    season: "autumn"
+    year_range: [312, 314]
+    min_reputation: 2
+    payment_silver: 65
+    bonus: "Political favor with the Widow"
+    advance_silver: 15
+    duration_days: 14
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 3
+    skills_valued: ["persuade", "track", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 1
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Ashen Reach": 2 }
+        unlocks: ["CONT_SET_008"]
+      failure:
+        reputation_change: 0
+        standing_change: { "Ashen Reach": -1 }
+    narrative_hook: >-
+      The Widow believes someone in her iron smelter is selling
+      production secrets to Grimholt. She wants proof — names, method,
+      and the contact — before she acts.
+    notes: "Chain: success unlocks CONT_SET_008 (sabotage)."
+
+  - id: "CONT_SET_007"
+    type: "escort"
+    title: "Escort Pine Tar to Deepholm"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "ashen_reach"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 40
+    bonus: null
+    advance_silver: 0
+    duration_days: 12
+    deadline_day: null
+    risk: "low"
+    band_size_min: 5
+    skills_valued: ["command", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Ashen Reach": 1, "Deepholm": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Ashen Reach": -1 }
+    narrative_hook: >-
+      Three barrels of pine tar bound for Deepholm's shipwright. The
+      mountain road is long and the Widow wants her cargo to arrive
+      intact — and her traders alive.
+    notes: null
+
+  - id: "CONT_SET_008"
+    type: "sabotage"
+    title: "Burn the Smuggler's Cache"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "ashen_reach"
+    season: "spring"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 70
+    bonus: null
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["stealth", "axes"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 1
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Ashen Reach": 2, "Grimholt": -2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Ashen Reach": -1, "Grimholt": 1 }
+    narrative_hook: >-
+      The investigation uncovered a hidden cache where stolen iron
+      samples are staged for transport to Grimholt. The Widow wants
+      it burned, the trail destroyed, and no witnesses.
+    notes: "Chain: requires CONT_SET_006 completion. Damages Grimholt standing."
+
+  - id: "CONT_SET_009"
+    type: "guard"
+    title: "Defend the Iron Works Through Longnight"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "ashen_reach"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 70
+    bonus: null
+    advance_silver: 10
+    duration_days: 45
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 8
+    skills_valued: ["command", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Ashen Reach": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Ashen Reach": -2 }
+    narrative_hook: >-
+      The smelter runs day and night even in winter. The Widow cannot
+      afford to lose production to opportunistic raiders or desperate
+      bands looking for warm shelter and easy iron.
+    notes: null
+
+  - id: "CONT_SET_010"
+    type: "bounty"
+    title: "Bring Back the Deserter"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "ashen_reach"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 45
+    bonus: null
+    advance_silver: 0
+    duration_days: 21
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["track", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Ashen Reach": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Ashen Reach": 0 }
+    narrative_hook: >-
+      One of the Widow's sworn men fled with a pouch of silver and
+      knowledge of her defenses. She wants him returned — breathing,
+      if you can. Silent, if you can't.
+    notes: "Moral ambiguity: target may have fled legitimate abuse."
+
+  - id: "CONT_SET_011"
+    type: "diplomatic_escort"
+    title: "Escort the Widow's Emissary to Thornwall"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "ashen_reach"
+    season: "autumn"
+    year_range: [312, 314]
+    min_reputation: 3
+    payment_silver: 75
+    bonus: "Political favor with Jarl Helga"
+    advance_silver: 15
+    duration_days: 14
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["persuade", "navigate", "command"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 1
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Ashen Reach": 1, "Thornwall": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Ashen Reach": -2, "Thornwall": -1 }
+    narrative_hook: >-
+      The Widow seeks alliance with Jarl Helga against Grimholt's
+      expansion. Her emissary carries sealed terms. The moor road
+      passes through territory where Ordovast's scouts have been seen.
+    notes: null
+
+  # ==========================================================================
+  # FELDWICK (village, moors, occupied by Three Wolves) — 4 contracts
+  # Economy: sheep wool, root vegetables. Weekly income 3-6 silver.
+  # Crisis: occupied, desperate population, damaged defenses.
+  # ==========================================================================
+
+  - id: "CONT_SET_012"
+    type: "rescue"
+    title: "Liberate Feldwick"
+    employer: "Feldwick Elders (in exile)"
+    settlement: "Feldwick"
+    region: "feldwick"
+    season: "spring"
+    year_range: [312, 314]
+    min_reputation: 2
+    payment_silver: 35
+    bonus: "Free winter shelter in Feldwick"
+    advance_silver: 0
+    duration_days: 5
+    deadline_day: null
+    risk: "high"
+    band_size_min: 10
+    skills_valued: ["command", "axes", "stealth"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Feldwick": 3 }
+        unlocks: ["CONT_SET_015"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Feldwick": -1 }
+    narrative_hook: >-
+      Feldwick's elders pooled everything they have — which isn't much.
+      The Three Wolves hold the village for the second time this year.
+      The pay is poor. The people are starving. Someone has to do it.
+    notes: "Chain: success unlocks CONT_SET_015. Low pay reflects desperate employer."
+
+  - id: "CONT_SET_013"
+    type: "raid"
+    title: "Strike the Three Wolves' Camp"
+    employer: "Feldwick Elders"
+    settlement: "Feldwick"
+    region: "feldwick"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 45
+    bonus: "Loot rights on the camp"
+    advance_silver: 0
+    duration_days: 5
+    deadline_day: null
+    risk: "high"
+    band_size_min: 10
+    skills_valued: ["axes", "stealth", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Feldwick": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Feldwick": -1 }
+    narrative_hook: >-
+      The Three Wolves keep a moor camp two days east. Even with
+      Feldwick freed, they'll come back unless their teeth are pulled.
+      Burn their tents. Take their silver. End them.
+    notes: "Chain: best attempted after CONT_SET_015."
+
+  - id: "CONT_SET_014"
+    type: "investigation"
+    title: "Who Opened the Gate"
+    employer: "Feldwick Elders"
+    settlement: "Feldwick"
+    region: "feldwick"
+    season: "winter"
+    year_range: [312, 314]
+    min_reputation: 1
+    payment_silver: 20
+    bonus: null
+    advance_silver: 0
+    duration_days: 10
+    deadline_day: null
+    risk: "low"
+    band_size_min: 3
+    skills_valued: ["persuade", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Feldwick": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Feldwick": 0 }
+    narrative_hook: >-
+      Feldwick fell twice in one year. The palisade was damaged, yes,
+      but someone opened the gate from inside. The elders want a name
+      — and they want outsiders asking the questions so no one lies.
+    notes: "The traitor is a desperate father whose daughter was held hostage."
+
+  - id: "CONT_SET_015"
+    type: "guard"
+    title: "Hold Feldwick After Liberation"
+    employer: "Feldwick Elders"
+    settlement: "Feldwick"
+    region: "feldwick"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 25
+    bonus: "Food and shelter for the band"
+    advance_silver: 0
+    duration_days: 30
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 8
+    skills_valued: ["command", "shelter"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Feldwick": 2 }
+        unlocks: ["CONT_SET_013"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Feldwick": -2 }
+    narrative_hook: >-
+      Feldwick is free but broken. The palisade has gaps, half the
+      stores are gone, and the Three Wolves may return any day.
+      Someone needs to stand on the wall while the village rebuilds.
+    notes: "Chain: unlocked by CONT_SET_012. Success unlocks CONT_SET_013."
+
+  # ==========================================================================
+  # STONEBAY HAMLET (hamlet, coast, Elder) — 3 contracts
+  # Economy: fishing, subsistence. Weekly income 1-3 silver.
+  # Character: isolated, poor, too small for trouble — usually.
+  # ==========================================================================
+
+  - id: "CONT_SET_016"
+    type: "beast_hunt"
+    title: "Kill the Shore Serpent"
+    employer: "Elder of Stonebay"
+    settlement: "Stonebay Hamlet"
+    region: "stonebay"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 30
+    bonus: "Serpent hide (valuable)"
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["track", "spears", "bows"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Stonebay Hamlet": 2 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Stonebay Hamlet": 0 }
+    narrative_hook: >-
+      Something long and dark has been pulling nets under at dawn.
+      Two fishermen drowned this month. Stonebay cannot lose another.
+      They'll pay what they have — which is almost nothing — plus
+      whatever you can carve from the creature.
+    notes: "Payment is poor but the serpent hide is worth 40+ silver in trade."
+
+  - id: "CONT_SET_017"
+    type: "patrol"
+    title: "Watch the Coastal Approaches"
+    employer: "Elder of Stonebay"
+    settlement: "Stonebay Hamlet"
+    region: "stonebay"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 15
+    bonus: null
+    advance_silver: 0
+    duration_days: 10
+    deadline_day: null
+    risk: "low"
+    band_size_min: 3
+    skills_valued: ["navigate", "track"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Stonebay Hamlet": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Stonebay Hamlet": 0 }
+    narrative_hook: >-
+      Strange sails were spotted south of the headland. Probably
+      traders blown off course. Probably. The Elder wants someone
+      to walk the cliff path and make sure.
+    notes: "Low-risk scout work. Good for building local goodwill."
+
+  - id: "CONT_SET_018"
+    type: "rescue"
+    title: "Find the Lost Fishermen"
+    employer: "Elder of Stonebay"
+    settlement: "Stonebay Hamlet"
+    region: "stonebay"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 15
+    bonus: null
+    advance_silver: 0
+    duration_days: 5
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["track", "navigate", "shelter"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Stonebay Hamlet": 2 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Stonebay Hamlet": 0 }
+    narrative_hook: >-
+      Three men went ice-fishing two days ago and haven't returned.
+      The Elder can't spare bodies to search. The pay is a sack of
+      dried fish and whatever silver the families can scrape together.
+    notes: "The fishermen are alive but trapped by ice shelf collapse."
+
+  # ==========================================================================
+  # GRIMHOLT (large village, mountain, Warchief Ordovast) — 6 contracts
+  # Economy: iron mining. Weekly income 20-35 silver.
+  # Politics: brutal, expansionist, demands loyalty. High danger employer.
+  # ==========================================================================
+
+  - id: "CONT_SET_019"
+    type: "guard"
+    title: "Reinforce the Grimholt Garrison"
+    employer: "Warchief Ordovast the Iron-Grip"
+    settlement: "Grimholt"
+    region: "grimholt"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 80
+    bonus: null
+    advance_silver: 10
+    duration_days: 45
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 8
+    skills_valued: ["command", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Grimholt": 1 }
+        unlocks: ["CONT_SET_020"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Grimholt": -2 }
+    narrative_hook: >-
+      Ordovast always needs swords. He pays well and feeds well, but
+      every man who stands on his wall owes him obedience. Accept his
+      silver and you're his — for the duration. Cross him and he'll
+      make an example.
+    notes: "Chain: success unlocks CONT_SET_020. Employer is dangerous."
+
+  - id: "CONT_SET_020"
+    type: "war_band"
+    title: "March With Ordovast's Host"
+    employer: "Warchief Ordovast the Iron-Grip"
+    settlement: "Grimholt"
+    region: "grimholt"
+    season: "summer"
+    year_range: [313, 315]
+    min_reputation: 3
+    payment_silver: 180
+    bonus: "Loot share (1/20th of plunder)"
+    advance_silver: 30
+    duration_days: 60
+    deadline_day: null
+    risk: "extreme"
+    band_size_min: 12
+    skills_valued: ["command", "shields", "axes"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 1
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Grimholt": 2, "Deepholm": -2 }
+        unlocks: null
+      failure:
+        reputation_change: -2
+        standing_change: { "Grimholt": -3 }
+    narrative_hook: >-
+      Ordovast is done negotiating with Sigrun. He's gathering every
+      sword he can buy or bully into his host. If you've proved
+      yourself on his walls, he'll let you march. The pay is heavy
+      but so are the graves.
+    notes: "Chain: requires CONT_SET_019. War against Deepholm. Extreme risk."
+
+  - id: "CONT_SET_021"
+    type: "raid"
+    title: "Raid the Mountain Outlaw Fort"
+    employer: "Warchief Ordovast the Iron-Grip"
+    settlement: "Grimholt"
+    region: "grimholt"
+    season: "spring"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 100
+    bonus: null
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "high"
+    band_size_min: 10
+    skills_valued: ["axes", "stealth", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Grimholt": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Grimholt": -1 }
+    narrative_hook: >-
+      Outlaws have fortified an abandoned mine shaft two days north.
+      They've been hitting Ordovast's ore wagons. He wants them
+      dug out and put down. No quarter, no prisoners.
+    notes: null
+
+  - id: "CONT_SET_022"
+    type: "debt_collection"
+    title: "Collect Iron Debts From Ashmark"
+    employer: "Warchief Ordovast the Iron-Grip"
+    settlement: "Grimholt"
+    region: "grimholt"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 35
+    bonus: null
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "low"
+    band_size_min: 4
+    skills_valued: ["intimidate", "bargain"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Grimholt": 1, "Ashmark": -1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Grimholt": -1 }
+    narrative_hook: >-
+      Reeve Torsten of Ashmark owes Ordovast for three shipments of
+      iron nails. He's stopped answering messages. Ordovast wants his
+      silver or equivalent goods, and he wants it collected by men
+      who look like they mean business.
+    notes: "Moral ambiguity: Ashmark may have legitimate grievance."
+
+  - id: "CONT_SET_023"
+    type: "escort"
+    title: "Escort Iron Through the Snow Pass"
+    employer: "Warchief Ordovast the Iron-Grip"
+    settlement: "Grimholt"
+    region: "grimholt"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 60
+    bonus: null
+    advance_silver: 10
+    duration_days: 10
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["command", "navigate", "shelter"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Grimholt": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Grimholt": -1 }
+    narrative_hook: >-
+      Even in winter, Ordovast moves iron. A sled caravan of ingots
+      needs to reach the lowland trade post. The snow pass is
+      treacherous and wolves follow the scent of pack animals.
+    notes: null
+
+  - id: "CONT_SET_024"
+    type: "bounty"
+    title: "Ordovast Wants a Head"
+    employer: "Warchief Ordovast the Iron-Grip"
+    settlement: "Grimholt"
+    region: "grimholt"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 70
+    bonus: null
+    advance_silver: 0
+    duration_days: 21
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["track", "axes"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Grimholt": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Grimholt": -1 }
+    narrative_hook: >-
+      A karl named Sven Halfhand defected to Deepholm and took mining
+      maps with him. Ordovast doesn't want the maps back. He wants
+      Sven's head on a stake outside the gate as a lesson.
+    notes: "Moral ambiguity: Sven fled because Ordovast blinded his brother."
+
+  # ==========================================================================
+  # RAVEN'S PERCH (village, mountain, Thane Egil) — 4 contracts
+  # Economy: goat hides, iron ore. Weekly income 5-10 silver.
+  # Character: lookout post, raven rookery, barrow proximity.
+  # ==========================================================================
+
+  - id: "CONT_SET_025"
+    type: "barrow_clear"
+    title: "Clear the Raven Barrow"
+    employer: "Thane Egil Raven-Eye"
+    settlement: "Raven's Perch"
+    region: "ravens_perch"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 75
+    bonus: "First pick of barrow relics"
+    advance_silver: 15
+    duration_days: 5
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["rune_lore", "spears"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Raven's Perch": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Raven's Perch": -1 }
+    narrative_hook: >-
+      The ravens have been circling the eastern barrow for weeks,
+      landing on the capstone and screaming. Egil's grandfather is
+      buried there. Something has upset the dead and Egil wants it
+      settled before winter seals the entrance.
+    notes: "Skaldhaven pays well for any rune-stones or inscriptions found."
+
+  - id: "CONT_SET_026"
+    type: "patrol"
+    title: "Patrol the Eastern Valley"
+    employer: "Thane Egil Raven-Eye"
+    settlement: "Raven's Perch"
+    region: "ravens_perch"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 35
+    bonus: null
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "low"
+    band_size_min: 4
+    skills_valued: ["navigate", "track"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Raven's Perch": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Raven's Perch": 0 }
+    narrative_hook: >-
+      Egil wants the eastern approaches watched during high summer.
+      Goatherds range far this time of year and he can't spare
+      his own men to cover the valley floor.
+    notes: null
+
+  - id: "CONT_SET_027"
+    type: "beast_hunt"
+    title: "Cull the Mountain Cats"
+    employer: "Thane Egil Raven-Eye"
+    settlement: "Raven's Perch"
+    region: "ravens_perch"
+    season: "spring"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 45
+    bonus: null
+    advance_silver: 0
+    duration_days: 10
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 5
+    skills_valued: ["track", "bows", "spears"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Raven's Perch": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Raven's Perch": 0 }
+    narrative_hook: >-
+      Mountain cats have come down from the high crags. Three kids
+      from the goat herd killed in a week. Egil needs hunters who
+      can work the scree slopes without falling to their deaths.
+    notes: null
+
+  - id: "CONT_SET_028"
+    type: "investigation"
+    title: "What the Ravens Know"
+    employer: "Thane Egil Raven-Eye"
+    settlement: "Raven's Perch"
+    region: "ravens_perch"
+    season: "winter"
+    year_range: [313, 315]
+    min_reputation: 2
+    payment_silver: 50
+    bonus: null
+    advance_silver: 10
+    duration_days: 14
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 3
+    skills_valued: ["rune_lore", "persuade"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Raven's Perch": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Raven's Perch": 0 }
+    narrative_hook: >-
+      The ravens gather in unnatural numbers. They sit on the
+      watchtower and stare south. Egil has tried reading their
+      movements but he's no rune-speaker. He wants someone who
+      knows the old ways to tell him what the birds are watching.
+    notes: "May require consulting Skaldhaven or Icebreak for answers."
+
+  # ==========================================================================
+  # VARGHEIM (large village, forest, Jarl Ulf) — 5 contracts
+  # Economy: charcoal, furs, wolf-pelts. Weekly income 12-20 silver.
+  # Character: deep forest, wolf-wardens, Black Pine territory.
+  # ==========================================================================
+
+  - id: "CONT_SET_029"
+    type: "beast_hunt"
+    title: "Hunt the Great Grey"
+    employer: "Jarl Ulf Vargson"
+    settlement: "Vargheim"
+    region: "vargheim"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 85
+    bonus: "Great Grey pelt (trophy)"
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["track", "spears", "bows"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Vargheim": 2 }
+        unlocks: ["CONT_SET_033"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Vargheim": -1 }
+    narrative_hook: >-
+      A wolf the size of a yearling bull has been leading pack raids
+      on the livestock pens. Ulf's wolf-wardens tracked it but lost
+      three dogs and a man. He needs outside hunters who don't have
+      sentiment about wolves.
+    notes: "Chain: success unlocks CONT_SET_033. Ulf's wolf-wardens resent outsiders."
+
+  - id: "CONT_SET_030"
+    type: "guard"
+    title: "Guard the Charcoal Kilns"
+    employer: "Jarl Ulf Vargson"
+    settlement: "Vargheim"
+    region: "vargheim"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 55
+    bonus: null
+    advance_silver: 0
+    duration_days: 30
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["command", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Vargheim": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Vargheim": -1 }
+    narrative_hook: >-
+      The charcoal kilns run day and night before winter. Last year
+      someone burned one down — Ulf suspects rival charcoal-burners
+      from downriver. This year he's posting guards.
+    notes: null
+
+  - id: "CONT_SET_031"
+    type: "patrol"
+    title: "Deep Forest Patrol"
+    employer: "Jarl Ulf Vargson"
+    settlement: "Vargheim"
+    region: "vargheim"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 45
+    bonus: null
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 5
+    skills_valued: ["navigate", "track", "stealth"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Vargheim": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Vargheim": -1 }
+    narrative_hook: >-
+      Ulf wants the deep Black Pine mapped and watched. His trappers
+      report something moving through the old growth that isn't wolves,
+      isn't men, and isn't any beast they recognize.
+    notes: "What they find may require a beast_hunt or barrow_clear follow-up."
+
+  - id: "CONT_SET_032"
+    type: "escort"
+    title: "Escort Furs to Deepholm Market"
+    employer: "Jarl Ulf Vargson"
+    settlement: "Vargheim"
+    region: "vargheim"
+    season: "spring"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 40
+    bonus: null
+    advance_silver: 0
+    duration_days: 10
+    deadline_day: null
+    risk: "low"
+    band_size_min: 5
+    skills_valued: ["command", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Vargheim": 1, "Deepholm": 0 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Vargheim": -1 }
+    narrative_hook: >-
+      Winter furs need to reach the Deepholm market before the spring
+      buyers move on. Two pack mules, one trader, a forest road, and
+      the usual hazards.
+    notes: null
+
+  - id: "CONT_SET_033"
+    type: "raid"
+    title: "Burn the Bone Pack's Den"
+    employer: "Jarl Ulf Vargson"
+    settlement: "Vargheim"
+    region: "vargheim"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 3
+    payment_silver: 100
+    bonus: null
+    advance_silver: 20
+    duration_days: 7
+    deadline_day: null
+    risk: "high"
+    band_size_min: 10
+    skills_valued: ["axes", "stealth", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Vargheim": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Vargheim": -2 }
+    narrative_hook: >-
+      The Bone Pack — a band of feral outlaws who wear animal skulls
+      — has denned somewhere in the deep forest. They've been raiding
+      trappers and stealing pelts. Ulf wants their nest found, burned,
+      and salted.
+    notes: "Chain: unlocked by CONT_SET_029. Winter forest raid is brutal."
+
+  # ==========================================================================
+  # KOLVIK (village, coast, Harbour-Master Inga) — 5 contracts
+  # Economy: ship repair, dried fish. Weekly income 8-14 silver.
+  # Character: only shipwright in the region, trade hub.
+  # ==========================================================================
+
+  - id: "CONT_SET_034"
+    type: "guard"
+    title: "Guard the Harbour Through Trade Season"
+    employer: "Harbour-Master Inga"
+    settlement: "Kolvik"
+    region: "kolvik"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 55
+    bonus: null
+    advance_silver: 0
+    duration_days: 30
+    deadline_day: null
+    risk: "low"
+    band_size_min: 6
+    skills_valued: ["command", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Kolvik": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Kolvik": -2 }
+    narrative_hook: >-
+      Summer trade brings ships and strangers. Inga needs reliable
+      swords to keep order on the docks, break up brawls, and ensure
+      no one helps themselves to cargo.
+    notes: null
+
+  - id: "CONT_SET_035"
+    type: "escort"
+    title: "Escort Ship Timber From Vargheim"
+    employer: "Harbour-Master Inga"
+    settlement: "Kolvik"
+    region: "kolvik"
+    season: "spring"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 35
+    bonus: null
+    advance_silver: 0
+    duration_days: 8
+    deadline_day: null
+    risk: "low"
+    band_size_min: 5
+    skills_valued: ["command", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Kolvik": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Kolvik": -1 }
+    narrative_hook: >-
+      Kolvik's dry-dock needs timber. A supply of seasoned planks is
+      waiting in Vargheim. Walk it down the forest road and don't
+      let anyone take it.
+    notes: null
+
+  - id: "CONT_SET_036"
+    type: "investigation"
+    title: "Someone's Stealing From the Dock"
+    employer: "Harbour-Master Inga"
+    settlement: "Kolvik"
+    region: "kolvik"
+    season: "autumn"
+    year_range: [312, 314]
+    min_reputation: 1
+    payment_silver: 40
+    bonus: null
+    advance_silver: 0
+    duration_days: 10
+    deadline_day: null
+    risk: "low"
+    band_size_min: 3
+    skills_valued: ["persuade", "track"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Kolvik": 1 }
+        unlocks: ["CONT_SET_037"]
+      failure:
+        reputation_change: 0
+        standing_change: { "Kolvik": 0 }
+    narrative_hook: >-
+      Cargo has been going missing from the dry-dock. Small amounts —
+      nails, tar, rope — but it's adding up. Inga suspects one of
+      her own dock workers but she can't prove it without outside eyes.
+    notes: "Chain: success unlocks CONT_SET_037."
+
+  - id: "CONT_SET_037"
+    type: "sabotage"
+    title: "Sink the Smuggler's Knarr"
+    employer: "Harbour-Master Inga"
+    settlement: "Kolvik"
+    region: "kolvik"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 60
+    bonus: null
+    advance_silver: 0
+    duration_days: 5
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["stealth", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Kolvik": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Kolvik": -1 }
+    narrative_hook: >-
+      The investigation revealed stolen goods are being loaded onto
+      a knarr anchored in a cove south of town. Inga wants the ship
+      holed and sunk before it sails. Quietly, at night, with no
+      trace back to her.
+    notes: "Chain: requires CONT_SET_036 completion."
+
+  - id: "CONT_SET_038"
+    type: "bounty"
+    title: "The Thief in the Fish-Sheds"
+    employer: "Harbour-Master Inga"
+    settlement: "Kolvik"
+    region: "kolvik"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 40
+    bonus: null
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "low"
+    band_size_min: 3
+    skills_valued: ["track", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Kolvik": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Kolvik": 0 }
+    narrative_hook: >-
+      A drifter has been breaking into the fish-smoking sheds at night.
+      Not a threat — just a hungry wretch. But Inga can't have it.
+      Find him, drag him to the dock, and let her decide what happens.
+    notes: "Moral ambiguity: the thief is a child."
+
+  # ==========================================================================
+  # MOOR'S END (hamlet, moors, Elder Brosa) — 3 contracts
+  # Economy: sheep, peat. Weekly income 1-3 silver.
+  # Character: isolated, standing stones, supernatural dread.
+  # ==========================================================================
+
+  - id: "CONT_SET_039"
+    type: "barrow_clear"
+    title: "Silence the Standing Stones"
+    employer: "Elder Brosa"
+    settlement: "Moor's End"
+    region: "moors_end"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 40
+    bonus: null
+    advance_silver: 0
+    duration_days: 5
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["rune_lore", "spears"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Moor's End": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Moor's End": -1 }
+    narrative_hook: >-
+      The standing stones have been humming since the last Veil-Thinning.
+      Sheep won't graze within earshot. The locals are terrified. Brosa
+      wants someone — anyone — to go out there and make it stop.
+    notes: "May connect to Icebreak Veil-thinning events."
+
+  - id: "CONT_SET_040"
+    type: "rescue"
+    title: "Find Brosa's Grandson"
+    employer: "Elder Brosa"
+    settlement: "Moor's End"
+    region: "moors_end"
+    season: "spring"
+    year_range: [312, 314]
+    min_reputation: 0
+    payment_silver: 15
+    bonus: null
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["track", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Moor's End": 2 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Moor's End": -1 }
+    narrative_hook: >-
+      Brosa's grandson Kari went to check the sheep pens three days ago
+      and never returned. The moor fog rolled in thick and the old man
+      can't walk far enough to search. He'll give you every copper he
+      has. It's not much.
+    notes: "The boy is alive, sheltering in a fallen stone circle."
+
+  - id: "CONT_SET_041"
+    type: "patrol"
+    title: "Watch the Moor Edge"
+    employer: "Elder Brosa"
+    settlement: "Moor's End"
+    region: "moors_end"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 10
+    bonus: "Shelter and hot food"
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "low"
+    band_size_min: 3
+    skills_valued: ["navigate", "track"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Moor's End": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Moor's End": 0 }
+    narrative_hook: >-
+      In winter the moor fog creeps close. Brosa wants someone watching
+      the eastern edge where the standing stones are. Walk the circuit,
+      report what you see, and try not to listen to the humming.
+    notes: "Low pay but includes shelter — useful for bands in need."
+
+  # ==========================================================================
+  # ASHMARK (village, forest, Reeve Torsten) — 4 contracts
+  # Economy: pine tar, herbs. Weekly income 5-9 silver.
+  # Character: neutral ground between Ashen Reach and Grimholt.
+  # ==========================================================================
+
+  - id: "CONT_SET_042"
+    type: "guard"
+    title: "Keep the Bone Pack Out"
+    employer: "Reeve Torsten"
+    settlement: "Ashmark"
+    region: "ashmark"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 45
+    bonus: null
+    advance_silver: 0
+    duration_days: 30
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["command", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Ashmark": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Ashmark": -2 }
+    narrative_hook: >-
+      The Bone Pack has been demanding winter shelter in Ashmark's
+      buildings. Torsten refused once and they burned a storehouse.
+      He needs muscle on his palisade to prove he can say no again.
+    notes: null
+
+  - id: "CONT_SET_043"
+    type: "escort"
+    title: "Escort Herb Shipment to Skaldhaven"
+    employer: "Reeve Torsten"
+    settlement: "Ashmark"
+    region: "ashmark"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 30
+    bonus: null
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "low"
+    band_size_min: 4
+    skills_valued: ["command", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Ashmark": 1, "Skaldhaven": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Ashmark": -1 }
+    narrative_hook: >-
+      Ashmark's healer has prepared a season's worth of dried herbs
+      and tinctures for Skaldhaven's temple. Easy walk, good road,
+      but the cargo is fragile and worth more than it looks.
+    notes: null
+
+  - id: "CONT_SET_044"
+    type: "diplomacy"
+    title: "Broker Peace at the Neutral Ground"
+    employer: "Reeve Torsten"
+    settlement: "Ashmark"
+    region: "ashmark"
+    season: "spring"
+    year_range: [313, 315]
+    min_reputation: 3
+    payment_silver: 60
+    bonus: "Standing with both Ashen Reach and Grimholt"
+    advance_silver: 0
+    duration_days: 10
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["persuade", "command", "bargain"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Ashmark": 2, "Ashen Reach": 1, "Grimholt": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Ashmark": -1, "Ashen Reach": -1, "Grimholt": -1 }
+    narrative_hook: >-
+      Torsten sits between two wolves. The Widow and Ordovast are
+      circling each other and Ashmark will burn if it turns to war.
+      He needs a band with enough reputation to bring both sides
+      to the table — and enough swords to keep them civil.
+    notes: "High-stakes diplomacy. Failure poisons three relationships."
+
+  - id: "CONT_SET_045"
+    type: "debt_collection"
+    title: "Collect From the Tar Workers"
+    employer: "Reeve Torsten"
+    settlement: "Ashmark"
+    region: "ashmark"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 20
+    bonus: null
+    advance_silver: 0
+    duration_days: 5
+    deadline_day: null
+    risk: "low"
+    band_size_min: 3
+    skills_valued: ["intimidate", "bargain"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Ashmark": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Ashmark": 0 }
+    narrative_hook: >-
+      A crew of tar workers took an advance for a season's output
+      and delivered half. With the rest, they drank. Torsten wants
+      the silver back or equivalent labor forced out of them.
+    notes: "Moral ambiguity: the workers lost a man to a falling tree and morale broke."
+
+  # ==========================================================================
+  # DEEPHOLM (small town, mountain, Jarl Sigrun) — 6 contracts
+  # Economy: iron, bronze, weapons. Weekly income 40-70 silver.
+  # Politics: wealthy, pragmatic, rival to Ordovast. Highest-paying employer.
+  # ==========================================================================
+
+  - id: "CONT_SET_046"
+    type: "barrow_clear"
+    title: "Excavate the Deep Barrow"
+    employer: "Jarl Sigrun Deepholm"
+    settlement: "Deepholm"
+    region: "deepholm"
+    season: "any"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 150
+    bonus: "Access to Deepholm barrow archive"
+    advance_silver: 30
+    duration_days: 7
+    deadline_day: null
+    risk: "high"
+    band_size_min: 8
+    skills_valued: ["rune_lore", "spears", "command"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 1
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Deepholm": 2 }
+        unlocks: ["CONT_SET_051"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -1 }
+    narrative_hook: >-
+      Sigrun's miners broke into a sealed chamber below the eastern
+      shaft. Behind the wall: carved stone, old bones, and rune-marks
+      that made the galdr-speaker go pale. She wants it cleared by
+      professionals. She pays professional rates.
+    notes: "Chain: success unlocks CONT_SET_051. Deepholm pays the best."
+
+  - id: "CONT_SET_047"
+    type: "war_band"
+    title: "Sigrun's Defense Against the Iron-Grip"
+    employer: "Jarl Sigrun Deepholm"
+    settlement: "Deepholm"
+    region: "deepholm"
+    season: "summer"
+    year_range: [313, 315]
+    min_reputation: 3
+    payment_silver: 200
+    bonus: "Loot share (1/15th of plunder)"
+    advance_silver: 40
+    duration_days: 45
+    deadline_day: null
+    risk: "extreme"
+    band_size_min: 12
+    skills_valued: ["command", "shields", "axes"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 1
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Deepholm": 3, "Grimholt": -3 }
+        unlocks: null
+      failure:
+        reputation_change: -2
+        standing_change: { "Deepholm": -2 }
+    narrative_hook: >-
+      Ordovast is marching. Sigrun is assembling her own host — better
+      paid, better equipped, and fighting for a wealthier patron. This
+      is the big contract. The one that decides who rules the mountain.
+    notes: "Mutually exclusive with CONT_SET_020 (Ordovast's host)."
+
+  - id: "CONT_SET_048"
+    type: "diplomatic_escort"
+    title: "Escort Sigrun's Ambassador to Thornwall"
+    employer: "Jarl Sigrun Deepholm"
+    settlement: "Deepholm"
+    region: "deepholm"
+    season: "spring"
+    year_range: [313, 315]
+    min_reputation: 3
+    payment_silver: 100
+    bonus: "Political favor with Jarl Helga"
+    advance_silver: 20
+    duration_days: 14
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["persuade", "navigate", "command"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 1
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Deepholm": 1, "Thornwall": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -2, "Thornwall": -1 }
+    narrative_hook: >-
+      Sigrun needs allies before Ordovast moves. Her ambassador carries
+      a trade pact for Jarl Helga — bronze tools for Thornwall wool.
+      The mountain road crosses Ordovast's territory. He'll want that
+      pact stopped.
+    notes: null
+
+  - id: "CONT_SET_049"
+    type: "guard"
+    title: "Winter Guard for the Market Quarter"
+    employer: "Jarl Sigrun Deepholm"
+    settlement: "Deepholm"
+    region: "deepholm"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 90
+    bonus: null
+    advance_silver: 15
+    duration_days: 60
+    deadline_day: null
+    risk: "low"
+    band_size_min: 8
+    skills_valued: ["command", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Deepholm": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -1 }
+    narrative_hook: >-
+      Deepholm's market runs through winter. Sigrun needs guards who
+      can keep order among traders, settle disputes before they turn
+      bloody, and look competent enough to discourage thieves.
+    notes: "Comfortable posting. Good food, walls, steady pay."
+
+  - id: "CONT_SET_050"
+    type: "escort"
+    title: "Escort Bronze Shipment to the Coast"
+    employer: "Jarl Sigrun Deepholm"
+    settlement: "Deepholm"
+    region: "deepholm"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 65
+    bonus: null
+    advance_silver: 10
+    duration_days: 12
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["command", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Deepholm": 1, "Kolvik": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -1 }
+    narrative_hook: >-
+      Twenty ingots of bronze bound for a coastal trader in Kolvik.
+      The cargo is worth a fortune and the mountain road has been
+      raided twice this season. Sigrun pays well because she
+      expects the job done right.
+    notes: null
+
+  - id: "CONT_SET_051"
+    type: "investigation"
+    title: "What Came Out of the Barrow"
+    employer: "Jarl Sigrun Deepholm"
+    settlement: "Deepholm"
+    region: "deepholm"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 3
+    payment_silver: 110
+    bonus: null
+    advance_silver: 20
+    duration_days: 14
+    deadline_day: null
+    risk: "high"
+    band_size_min: 4
+    skills_valued: ["rune_lore", "persuade", "track"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 1
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Deepholm": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -1 }
+    narrative_hook: >-
+      The barrow was cleared but two miners who entered the chamber
+      afterward have not been the same. They speak in a language
+      nobody recognizes and draw runes on the walls at night.
+      Sigrun's galdr-speaker is afraid. She needs outside scholars
+      or rune-readers.
+    notes: "Chain: requires CONT_SET_046 completion. Supernatural horror."
+
+  # ==========================================================================
+  # BLEAKWATER LANDING (hamlet, river, Ferryman Olaf) — 3 contracts
+  # Economy: ferry tolls, river fish. Weekly income 1-2 silver.
+  # Character: tiny crossing point, frozen corpse mystery.
+  # ==========================================================================
+
+  - id: "CONT_SET_052"
+    type: "guard"
+    title: "Guard the Ferry Crossing"
+    employer: "Ferryman Olaf"
+    settlement: "Bleakwater Landing"
+    region: "bleakwater"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 0
+    payment_silver: 15
+    bonus: "Free ferry passage for one year"
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "low"
+    band_size_min: 3
+    skills_valued: ["intimidate", "command"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Bleakwater Landing": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Bleakwater Landing": -1 }
+    narrative_hook: >-
+      Olaf's been threatened by a group of men who want to cross
+      without paying. He can't fight them alone. A few armed bodies
+      standing behind him would change the arithmetic.
+    notes: "Low pay but free ferry passage has strategic value."
+
+  - id: "CONT_SET_053"
+    type: "beast_hunt"
+    title: "Kill the River Draugr"
+    employer: "Ferryman Olaf"
+    settlement: "Bleakwater Landing"
+    region: "bleakwater"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 25
+    bonus: null
+    advance_silver: 0
+    duration_days: 5
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["track", "spears"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Bleakwater Landing": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Bleakwater Landing": -1 }
+    narrative_hook: >-
+      A frozen corpse was found downstream. Then another. Then
+      something pulled a sheep under the water in broad daylight.
+      Olaf swears it's a draugr risen from the riverbed. He can't
+      pay much but he also can't run a ferry if people are afraid
+      to cross.
+    notes: "The creature may be mundane or supernatural — investigation required."
+
+  - id: "CONT_SET_054"
+    type: "debt_collection"
+    title: "Collect the Unpaid Tolls"
+    employer: "Ferryman Olaf"
+    settlement: "Bleakwater Landing"
+    region: "bleakwater"
+    season: "spring"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 12
+    bonus: null
+    advance_silver: 0
+    duration_days: 7
+    deadline_day: null
+    risk: "low"
+    band_size_min: 3
+    skills_valued: ["intimidate", "bargain"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Bleakwater Landing": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Bleakwater Landing": 0 }
+    narrative_hook: >-
+      A merchant's caravan crossed last autumn and promised to pay on
+      their return trip. They returned by a different route. Olaf
+      wants his 8 silver and he wants someone large to go ask for it.
+    notes: "Moral ambiguity: Olaf's ferry price may be extortionate."
+
+  # ==========================================================================
+  # SKALDHAVEN (village, fjord, Lore-Keeper Audun) — 4 contracts
+  # Economy: knowledge, saga-telling, rune-craft. Weekly income 6-12 silver.
+  # Character: centre of learning, rune archive, sealed after incident.
+  # ==========================================================================
+
+  - id: "CONT_SET_055"
+    type: "barrow_clear"
+    title: "Recover the Saga of Yngvar"
+    employer: "Lore-Keeper Audun"
+    settlement: "Skaldhaven"
+    region: "skaldhaven"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 90
+    bonus: "Rune reading for the band (free divination)"
+    advance_silver: 20
+    duration_days: 7
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["rune_lore", "spears"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Skaldhaven": 2 }
+        unlocks: ["CONT_SET_057"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Skaldhaven": -1 }
+    narrative_hook: >-
+      A barrow north of the fjord is said to contain a rune-carved
+      bone — the last remaining copy of the Saga of Yngvar. Audun
+      would pay double for it but the barrow has a reputation. The
+      last man who entered came out speaking backward.
+    notes: "Chain: success unlocks CONT_SET_057."
+
+  - id: "CONT_SET_056"
+    type: "escort"
+    title: "Escort the Lore-Keeper to Deepholm"
+    employer: "Lore-Keeper Audun"
+    settlement: "Skaldhaven"
+    region: "skaldhaven"
+    season: "spring"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 50
+    bonus: null
+    advance_silver: 10
+    duration_days: 14
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 5
+    skills_valued: ["command", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Skaldhaven": 1, "Deepholm": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Skaldhaven": -2 }
+    narrative_hook: >-
+      Audun needs to consult Deepholm's barrow archive in person.
+      He's old, slow, carries irreplaceable scrolls, and attracts
+      the wrong kind of attention. He needs guards who won't sell
+      him to the first band they meet.
+    notes: null
+
+  - id: "CONT_SET_057"
+    type: "rescue"
+    title: "Find the Missing Apprentice"
+    employer: "Lore-Keeper Audun"
+    settlement: "Skaldhaven"
+    region: "skaldhaven"
+    season: "autumn"
+    year_range: [312, 314]
+    min_reputation: 1
+    payment_silver: 55
+    bonus: null
+    advance_silver: 0
+    duration_days: 10
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["track", "rune_lore"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Skaldhaven": 2 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Skaldhaven": -1 }
+    narrative_hook: >-
+      Audun's apprentice went into the sealed rune archive alone at
+      night and hasn't been seen since. The door was found open. The
+      archive goes deep into the cliff. Audun sealed it again and
+      now he needs someone to go in after the boy.
+    notes: "Chain: best attempted after CONT_SET_055. The archive is dangerous."
+
+  - id: "CONT_SET_058"
+    type: "diplomacy"
+    title: "Mediate the Northern Feud"
+    employer: "Lore-Keeper Audun"
+    settlement: "Skaldhaven"
+    region: "skaldhaven"
+    season: "any"
+    year_range: [313, 315]
+    min_reputation: 3
+    payment_silver: 70
+    bonus: null
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["persuade", "command", "bargain"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Skaldhaven": 1, "Frostfjord Hollow": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Skaldhaven": -1 }
+    narrative_hook: >-
+      Audun wants the blood-feud between Frostfjord and the Black
+      Axes settled before it spills over into Skaldhaven's waters.
+      He'll host the negotiation. He needs a band respected enough
+      to guarantee the peace — and armed enough to enforce it.
+    notes: null
+
+  # ==========================================================================
+  # THORNWALL (large village, moors, Jarl Helga) — 5 contracts
+  # Economy: wool, mutton, thorn-hedge craft. Weekly income 10-18 silver.
+  # Crisis: Red Tide slavers spotted, sheep routes under threat.
+  # ==========================================================================
+
+  - id: "CONT_SET_059"
+    type: "raid"
+    title: "Strike the Red Tide Slavers"
+    employer: "Jarl Helga Thornwall"
+    settlement: "Thornwall"
+    region: "thornwall"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 90
+    bonus: "Freed captives returned to Thornwall"
+    advance_silver: 15
+    duration_days: 7
+    deadline_day: null
+    risk: "high"
+    band_size_min: 10
+    skills_valued: ["axes", "stealth", "navigate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Thornwall": 2 }
+        unlocks: ["CONT_SET_062"]
+      failure:
+        reputation_change: -1
+        standing_change: { "Thornwall": -1 }
+    narrative_hook: >-
+      Red Tide slavers were spotted on the eastern moors. They've been
+      taking shepherds — men, women, children — and moving them east
+      to sell. Helga wants their camp found and burned. Kill the
+      slavers. Free anyone still alive.
+    notes: "Chain: success unlocks CONT_SET_062. Morally clear — for once."
+
+  - id: "CONT_SET_060"
+    type: "winter_hold"
+    title: "Garrison the Thorn Outpost"
+    employer: "Jarl Helga Thornwall"
+    settlement: "Thornwall"
+    region: "thornwall"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 100
+    bonus: null
+    advance_silver: 20
+    duration_days: 90
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 8
+    skills_valued: ["shelter", "command", "forage"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Thornwall": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Thornwall": -2 }
+    narrative_hook: >-
+      Helga's eastern outpost guards the sheep routes through winter.
+      It's cold, isolated, and boring — until it isn't. Last year
+      the garrison saw movement on the moors at night. Something
+      watching from the fog, every night, for weeks.
+    notes: "Long-duration winter posting. Tests band endurance and discipline."
+
+  - id: "CONT_SET_061"
+    type: "beast_hunt"
+    title: "Hunt the Moor Stalker"
+    employer: "Jarl Helga Thornwall"
+    settlement: "Thornwall"
+    region: "thornwall"
+    season: "spring"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 75
+    bonus: null
+    advance_silver: 0
+    duration_days: 10
+    deadline_day: null
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["track", "spears", "bows"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Thornwall": 2 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Thornwall": -1 }
+    narrative_hook: >-
+      Something is killing sheep on the eastern circuit. Not wolves —
+      wolves leave tracks. This leaves drag marks and blood but no
+      prints, no fur, no scat. Helga's people are frightened. She
+      needs hunters who don't frighten easily.
+    notes: null
+
+  - id: "CONT_SET_062"
+    type: "patrol"
+    title: "Patrol the Cleared Slaver Route"
+    employer: "Jarl Helga Thornwall"
+    settlement: "Thornwall"
+    region: "thornwall"
+    season: "summer"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 50
+    bonus: null
+    advance_silver: 0
+    duration_days: 21
+    deadline_day: null
+    risk: "moderate"
+    band_size_min: 5
+    skills_valued: ["navigate", "track"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Thornwall": 1 }
+        unlocks: null
+      failure:
+        reputation_change: 0
+        standing_change: { "Thornwall": -1 }
+    narrative_hook: >-
+      The Red Tide camp is burned but Helga isn't convinced they won't
+      return. She wants the eastern moor route walked, watched, and
+      reported on for a full cycle. Any sign of slavers means another
+      contract.
+    notes: "Chain: unlocked by CONT_SET_059."
+
+  - id: "CONT_SET_063"
+    type: "guard"
+    title: "Defend the Sheep Market"
+    employer: "Jarl Helga Thornwall"
+    settlement: "Thornwall"
+    region: "thornwall"
+    season: "autumn"
+    year_range: [312, 315]
+    min_reputation: 1
+    payment_silver: 55
+    bonus: null
+    advance_silver: 0
+    duration_days: 14
+    deadline_day: null
+    risk: "low"
+    band_size_min: 6
+    skills_valued: ["command", "intimidate"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 2
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Thornwall": 1 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Thornwall": -1 }
+    narrative_hook: >-
+      Autumn market brings every shearing crew, wool merchant, and
+      opportunist for fifty miles. Helga needs swords at the gate
+      and in the market square to keep the peace. Last year a
+      brawl between rival traders killed two men.
+    notes: null
+
+  # ==========================================================================
+  # ICEBREAK (hamlet, ice, Hermit Ragnhild) — 2 contracts
+  # Economy: none (subsistence). Weekly income 0 silver.
+  # Character: seidr practitioner, Veil-thinning, extreme isolation.
+  # ==========================================================================
+
+  - id: "CONT_SET_064"
+    type: "winter_hold"
+    title: "Survive the Icebreak Vigil"
+    employer: "Hermit Ragnhild"
+    settlement: "Icebreak"
+    region: "icebreak"
+    season: "winter"
+    year_range: [312, 315]
+    min_reputation: 2
+    payment_silver: 30
+    bonus: "Seidr divination (one free reading per band member)"
+    advance_silver: 0
+    duration_days: 60
+    deadline_day: null
+    risk: "extreme"
+    band_size_min: 6
+    skills_valued: ["shelter", "rune_lore", "forage"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Icebreak": 3 }
+        unlocks: null
+      failure:
+        reputation_change: -1
+        standing_change: { "Icebreak": -1 }
+    narrative_hook: >-
+      Ragnhild says the Veil is thinning and she needs armed witnesses
+      for what comes through. She can't pay silver — she has none.
+      What she offers is knowledge: seidr readings for every man who
+      survives the winter at her side. Some would pay a fortune for
+      that. Others would call it worthless.
+    notes: "Extreme isolation, no resupply, supernatural events. Low silver, high lore value."
+
+  - id: "CONT_SET_065"
+    type: "barrow_clear"
+    title: "Seal the Ice Cave Breach"
+    employer: "Hermit Ragnhild"
+    settlement: "Icebreak"
+    region: "icebreak"
+    season: "winter"
+    year_range: [313, 315]
+    min_reputation: 3
+    payment_silver: 20
+    bonus: "Warding rune (galdr artifact)"
+    advance_silver: 0
+    duration_days: 3
+    deadline_day: null
+    risk: "extreme"
+    band_size_min: 8
+    skills_valued: ["rune_lore", "spears", "command"]
+    political_conditions:
+      requires_faction: null
+      requires_feud_max: 3
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Icebreak": 3 }
+        unlocks: null
+      failure:
+        reputation_change: -2
+        standing_change: { "Icebreak": -2 }
+    narrative_hook: >-
+      Something broke through the ice cave wall from the other side.
+      Ragnhild can feel it — old, hungry, and confused. She needs
+      bodies with spears and iron nerve to go in, push it back, and
+      hold position while she seals the breach with warding runes.
+      The pay is nothing. The alternative is worse.
+    notes: "Endgame-tier contract. Near-zero silver but unique galdr reward."

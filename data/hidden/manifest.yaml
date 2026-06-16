@@ -1,0 +1,141 @@
+# Hidden Data Manifest
+# Maps encoded event IDs to their types, trigger conditions, and file locations.
+# This file is an AI-side index for quick lookup.
+# Decode from source files as needed: python scripts/spoiler_codec.py decode-file
+# Contains spoiler content — do not include in novel drafts.
+
+calendar_events:
+  file: calendar_events.txt
+  events:
+    - id: EVT_001
+      type: loyalty_crisis
+      trigger: "Day 95"
+    - id: EVT_002
+      type: contract_deadline
+      trigger: "Day 100"
+    - id: EVT_003
+      type: rival_competition
+      trigger: "Day 110"
+    - id: EVT_004
+      type: loyalty_crisis
+      trigger: "Day 120"
+    - id: EVT_005
+      type: supernatural
+      trigger: "Day 130"
+    - id: EVT_006
+      type: environmental
+      trigger: "Day 150"
+    - id: EVT_007
+      type: supernatural
+      trigger: "Day 105"
+    - id: EVT_008
+      type: supernatural
+      trigger: "Day 140"
+    - id: EVT_009
+      type: supernatural
+      trigger: "Day 170"
+    - id: EVT_010
+      type: supernatural
+      trigger: "Day 200"
+    - id: EVT_011
+      type: supernatural
+      trigger: "Day 160"
+    - id: EVT_012
+      type: supernatural
+      trigger: "Day 250"
+
+campaign_arcs:
+  file: campaign_arcs.txt
+  arcs:
+    - id: ARC_WHISPER
+      type: dungeon_supernatural
+      trigger: "Barrow cleared without proper galdr"
+    - id: ARC_WIDOW
+      type: intrigue_betrayal
+      trigger: "Contracts from Ashen Reach accepted"
+    - id: ARC_HOST
+      type: political_escalation
+      trigger: "Grimholt contracts accepted"
+
+npc_secrets:
+  file: npc_secrets.txt
+  secrets:
+    - id: SECRET_GEST
+      type: npc_hidden_agenda
+      trigger: "Band falls below 6 fighters"
+    - id: SECRET_VARIS
+      type: rival_defector
+      trigger: "Hadric orders another village burning"
+    - id: PLOT_BLEED
+      type: supernatural_hook
+      trigger: "Band camps near Frostfjord barrow"
+    - id: PLOT_SHADOW
+      type: pc_development
+      trigger: "WYR-reading 1+ characters observe Lump"
+    - id: PLOT_DESERTER
+      type: loyalty_crisis
+      trigger: "Morale <= 2 AND food deficit 3+ days"
+    - id: PLOT_RUNE_CALL
+      type: supernatural_hook
+      trigger: "Lump Wyrd reaches 2+"
+    - id: PLOT_PETRA_VISION
+      type: personal_quest
+      trigger: "Veil-Thinning event while Petra present"
+    - id: SECRET_BRYN
+      type: dungeon_hook
+      trigger: "Band earns respect at Moor's End"
+    - id: SECRET_SIGRID
+      type: alliance_offer
+      trigger: "Band visits Raven's Perch"
+    - id: PLOT_PETRA_VISION
+      type: npc_quest
+      trigger: "Any Veil-Thinning event while Petra is in band"
+      summary: "Petra sees sister alive in Red Tide camp; loyalty fork"
+    - id: SECRET_BRYN
+      type: supernatural_hook
+      trigger: "Band meets Grave Wardens AND proves respect for the dead"
+      summary: "Iron Barrow contains sealed galdr-forge; Ordovast also wants it"
+    - id: SECRET_SIGRID
+      type: rival_alliance
+      trigger: "Band visits Raven's Perch"
+      summary: "Iron Tide Remnant offers quiet alliance against Three Wolves"
+
+campaign_chains:
+  file: campaign_arcs.txt
+  chains:
+    - id: CHAIN_A
+      name: "The Waking Barrows"
+      type: supernatural_escalation
+      links:
+        [
+          "ARC_WHISPER",
+          "EVT_007",
+          "EVT_008",
+          "EVT_011",
+          "EVT_012",
+          "SECRET_BRYN",
+        ]
+      settlements: ["Moor's End", "Skaldhaven", "Deepholm"]
+      rival_bands: ["Grave Wardens"]
+      summary: "Barrow curse escalates through rune events to draugr dream-summons"
+    - id: CHAIN_B
+      name: "The Widow's Web"
+      type: political_intrigue
+      links: ["ARC_WIDOW", "EVT_003", "EVT_010"]
+      settlements: ["Ashen Reach", "Feldwick", "Deepholm"]
+      rival_bands: ["Three Wolves"]
+      summary: "Pale Widow manipulates rival bands; blood sun chaos; Thing resolution"
+    - id: CHAIN_C
+      name: "The Iron Host"
+      type: military_escalation
+      links: ["ARC_HOST", "SECRET_SIGRID"]
+      settlements: ["Grimholt", "Raven's Perch", "Thornwall", "Deepholm"]
+      rival_bands: ["Iron Tide Remnant", "Bone Pack", "Hollow Hall"]
+      summary: "Ordovast forges Host to conquer Deepholm; coalition resistance"
+    - id: CHAIN_D
+      name: "The Red Hunt"
+      type: rescue_mission
+      links: ["PLOT_PETRA_VISION"]
+      settlements: ["Kolvik", "Bleakwater Landing", "Icebreak"]
+      rival_bands: ["Red Tide"]
+      summary: "Petra's sister alive as thrall; seidr confirmation; rescue or abandon"

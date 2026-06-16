@@ -1,0 +1,1080 @@
+npcs:
+  - id: "NPC_TRV_001"
+    name: "Torsten Salt-Hide"
+    call_name: "Packmaster Torsten"
+    role: "merchant"
+    travel_region: "coast"
+    description: "Torsten is thick through the shoulders, with cracked lips and a beard stiff with salt. His cloak smells of tar, fish oil, and wet rope, and his ox-cart is wrapped in patched sailcloth against sea rain. He keeps one thumb on his scale chain whenever silver changes hands."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 5
+      WIT: 6
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Bargain"
+        rank: 3
+      - name: "Navigate"
+        rank: 3
+      - name: "Weather-sense"
+        rank: 2
+      - name: "Persuade"
+        rank: 2
+    personality: "Practical and dry-humored, he values predictable profit over glory. He never raises his voice unless someone touches his scales. He respects mercenaries who pay on time and keep roads open."
+    agenda: "Secure a winter convoy contract between Stonebay and inland markets before the passes close."
+    secret: "He carries sealed Iron Grip messages hidden inside tallow barrels and pretends not to know their contents."
+    services: "Buys fish oil, furs, and iron scraps; sells salt blocks, lamp oil, rope, and preserved cod."
+    encounter_conditions:
+      terrain: ["road", "coast", "market"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_027"
+        type: "ally"
+        note: "Audun reforges his broken wagon axles for reduced rates."
+    associated_chains: ["coastal_crisis"]
+    image_prompt: "Broad Norse trader with salt-stiff beard, tar-dark cloak, ox-cart under sailcloth, iron balance in hand. Wind-beaten face, muted blue-grey coastal palette."
+
+  - id: "NPC_TRV_002"
+    name: "Edda Amber-Thread"
+    call_name: "Scale-Edda"
+    role: "merchant"
+    travel_region: "fjords"
+    description: "Edda is lean and sharp-eyed, with amber beads braided into iron-grey hair. Her fingers are permanently stained from dyes and crushed lichen. She travels with two mules loaded in waxed bundles of cloth, resin, and dried herbs."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Navigate"
+        rank: 2
+      - name: "Forage"
+        rank: 2
+    personality: "Courteous in public, ruthless in negotiation. She remembers every debt and every slight. She prefers quiet threat over loud argument."
+    agenda: "Corner the trade in amber resin and rare dyes between Raven's Perch and Frostfjord routes."
+    secret: "Her trade weights are subtly shaved; she cheats strangers but not repeat customers."
+    services: "Sells dyed wool, resin, beeswax, and high-value cloth; buys antler, hides, and medicinal roots."
+    encounter_conditions:
+      terrain: ["road", "fjords", "market"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_006"
+        type: "rival"
+        note: "Orm's relic trade disrupts her legal caravan routes."
+    associated_chains: ["fjord_compact"]
+    image_prompt: "Lean Norse woman trader with amber beads in grey braid, dye-stained hands, waxed bundles on mules. Cold fjord light, muted green-brown palette."
+
+  - id: "NPC_TRV_003"
+    name: "Kolbein Drift-Market"
+    call_name: "Reed-Cart Kolbein"
+    role: "merchant"
+    travel_region: "moors"
+    description: "Kolbein wears layered wool under a rain-black cloak that drips peat water even in dry weather. His cart wheels are wrapped in leather to mute sound on night roads. His smile is friendly, but his eyes keep counting exits."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 4
+      WIT: 5
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Bargain"
+        rank: 3
+      - name: "Deceive"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+      - name: "Navigate"
+        rank: 3
+    personality: "He speaks like an old friend five breaths after meeting you. He avoids direct lies when half-truths will do. His loyalty lasts exactly as long as the margin."
+    agenda: "Expand his moonlit smuggling lane through the moors without attracting a formal crackdown."
+    secret: "He moves people as cargo, including wanted outlaws and escaped thralls, for triple fee."
+    services: "Sells restricted imports, forged waybills, and hidden transport; buys contraband and silence."
+    encounter_conditions:
+      terrain: ["road", "moors", "camp"]
+      season: ["summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_019"
+        type: "debt"
+        note: "Pays Hakon monthly silver to avoid inspections."
+    associated_chains: ["smugglers_route"]
+    image_prompt: "Wiry moor trader in rain-black cloak, leather-wrapped cart wheels, peat-streaked boots, sly smile. Night road, muted charcoal and moss tones."
+
+  - id: "NPC_TRV_004"
+    name: "Samir ibn Faruq"
+    call_name: "Southwind Samir"
+    role: "merchant"
+    travel_region: "all"
+    description: "Samir is olive-skinned and clean-bearded, wearing layered southern linen under a heavy northern fur cloak. Brass rings hang from his pack frames beside spice satchels and glass vials. His accent marks him as foreign at once, and every hall stares when he enters."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 7
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Navigate"
+        rank: 4
+      - name: "Weather-sense"
+        rank: 2
+    personality: "Elegant, patient, and impossible to hurry. He treats insults as a tax on doing business in cold lands. He is polite to everyone and trusts almost no one."
+    agenda: "Open a permanent overland spice and glass route from southern ports into the Rimevegr interior."
+    secret: "He quietly maps defensible passes and harbor depths for distant investors with military interests."
+    services: "Sells spice, lamp glass, bronze needles, and citrus salts; buys amber, furs, and worked iron."
+    encounter_conditions:
+      terrain: ["road", "market", "coast"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_019"
+        type: "ally"
+        note: "Hakon's patrol markers keep his caravans from vanishing in the hills."
+    associated_chains: ["foreign_trade"]
+    image_prompt: "Foreign southern trader in fur over fine linen, brass-ringed packs with spice satchels and glass vials. Dark Norse market backdrop, muted steel and saffron accents."
+
+  - id: "NPC_TRV_005"
+    name: "Yngvild Tallow-Hands"
+    call_name: "Candle-Cart Yngvild"
+    role: "merchant"
+    travel_region: "forest"
+    description: "Yngvild is broad-faced and soot-smudged, with wrists slick from rendered tallow and resin. She travels with low, sturdy carts that smell of beeswax, smoke, and pine pitch. Even in rain she keeps a dry coal nest for relighting lamps."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Bargain"
+        rank: 3
+      - name: "Shelter"
+        rank: 2
+      - name: "Forage"
+        rank: 2
+      - name: "Weather-sense"
+        rank: 3
+    personality: "Motherly until crossed, then hard as kiln brick. She feeds hungry children before counting coin. She hates waste and remembers who stole from her carts."
+    agenda: "Supply every remote shrine and watchtower with winter lamp stock before first hard freeze."
+    secret: "She buys battlefield fat from grave-robbers through intermediaries and never asks whose bodies were cut."
+    services: "Sells candles, lamp wicks, pitch torches, and rendered grease; can relight wet camp gear quickly."
+    encounter_conditions:
+      terrain: ["road", "forest", "camp"]
+      season: ["autumn", "winter", "spring"]
+    relationships:
+      - target: "NPC_TRV_018"
+        type: "ally"
+        note: "Maret receives wax and clean cloth in exchange for field medicines."
+    associated_chains: ["winter_hunger"]
+    image_prompt: "Soot-marked Norse woman with tallow-slick hands beside low candle cart, pine-pitch torches stacked under hide cover. Wet forest road, muted amber and grey tones."
+
+  - id: "NPC_TRV_006"
+    name: "Orm Gravepurse"
+    call_name: "Barrow-Broker"
+    role: "merchant"
+    travel_region: "mountains"
+    description: "Orm is narrow-shouldered and always wrapped to the chin, as if cold lives in his bones. Bone charms and old silver fragments clink beneath his cloak when he walks. He smells faintly of old dust and damp stone."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 3
+      WIT: 6
+      WIL: 4
+      WYR: 4
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Deceive"
+        rank: 4
+      - name: "Rune-lore"
+        rank: 2
+      - name: "Stealth"
+        rank: 3
+    personality: "Soft-spoken and unnervingly calm around graves and ruins. He flatters greed in others while keeping his own hidden. He never camps in the same place two nights in a row."
+    agenda: "Acquire and move high-value barrow relics before Grave Wardens lock down old mounds."
+    secret: "He broke a sealed chamber near Raven's Perch and took a stone that now whispers in sleep."
+    services: "Buys and sells illicit relics, old silver, rune stones, and burial goods; can identify likely fakes."
+    encounter_conditions:
+      terrain: ["road", "mountains", "barrow_hills"]
+      season: ["summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_013"
+        type: "rival"
+        note: "Thora publicly curses his grave-trade whenever she finds proof."
+    associated_chains: ["waking_barrows"]
+    image_prompt: "Gaunt relic dealer in layered dark wool, hidden bone charms, old silver fragments at belt. Standing near snow-wet barrow stones, muted bone-grey palette."
+
+  - id: "NPC_TRV_007"
+    name: "Leif Crow-Voice"
+    call_name: "Road-Skald Leif"
+    role: "skald"
+    travel_region: "all"
+    description: "Leif is long-limbed and weathered, with a raven-feather cloak pin and a travel harp patched with gut string. His voice is rough as gravel at first, then carries clear over wind and fire crackle. Ink-stained fingers mark him as both singer and collector of names."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Sagas"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Navigate"
+        rank: 2
+      - name: "Weather-sense"
+        rank: 2
+    personality: "Curious, patient, and hard to offend. He listens longer than most men can stay silent. He treats rumor as raw ore and songs as forged steel."
+    agenda: "Compose a full war-road cycle covering every major contract band in the Rimevegr."
+    secret: "He keeps two versions of certain verses: one for halls, one for buyers who pay in private."
+    services: "Shares road news, faction gossip, settlement moods, and recent deaths in exchange for coin or protection."
+    encounter_conditions:
+      terrain: ["road", "camp", "market"]
+      season: ["spring", "summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_011"
+        type: "ally"
+        note: "Bragi feeds him harbor rumors and sailor chants."
+    associated_chains: ["rimevegr_legends"]
+    image_prompt: "Lean wandering skald with patched travel harp, raven-feather brooch, wind-burned face and ink-stained fingers. Campfire glow, dark Norse muted palette."
+
+  - id: "NPC_TRV_008"
+    name: "Runa Veil-Touched"
+    call_name: "The Veil Scholar"
+    role: "seidr_practitioner"
+    travel_region: "forest"
+    description: "Runa is gaunt and pale, with one clouded blue eye and one dark brown eye that never blinks at the same time. Her white hair hangs in rough ropes, and black rune soot stains both hands to the knuckles. She moves like someone listening to voices behind walls."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 3
+      WIT: 7
+      WIL: 6
+      WYR: 4
+    skills:
+      - name: "Rune-lore"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 4
+      - name: "Spirit-lore"
+        rank: 4
+      - name: "Heal"
+        rank: 2
+    personality: "Not hostile, but deeply strange, she answers questions in spirals and symbols. She is patient with sincere seekers and cruelly dismissive of braggarts. She is a scholar, not a fighter, and avoids open violence whenever possible."
+    agenda: "Map every Veil-thin point around Raven's Perch before the next solstice disturbance."
+    secret: "She knows several world-level Achilles heels and withholds parts of them until trust is proven."
+    services: "Reads Veil traces, interprets barrow signs, identifies supernatural weaknesses, and treats curse-sick wounds."
+    encounter_conditions:
+      terrain: ["forest", "barrow_hills", "camp"]
+      season: ["autumn", "winter", "spring"]
+    relationships:
+      - target: "NPC_TRV_012"
+        type: "ally"
+        note: "Vesa carves her field runes and receives forbidden notes in return."
+    associated_chains: ["waking_barrows", "veil_collapse"]
+    image_prompt: "Gaunt veil-touched Norse woman with mismatched eyes, white matted hair, black-stained rune hands, layered undyed wool. Raven's Perch barrow stones in mist, muted blue-grey tones."
+
+  - id: "NPC_TRV_009"
+    name: "Haldis Honey-Tongue"
+    call_name: "Hallfire Haldis"
+    role: "skald"
+    travel_region: "coast"
+    description: "Haldis is small and fox-quick, with copper hair braided close and a travel lyre slung under her arm. Her smile is warm enough to disarm guards and drunks alike. Fine boots and better cloaks than a poor skald should own follow her from hall to hall."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 3
+      WIT: 6
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Sagas"
+        rank: 3
+      - name: "Deceive"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+    personality: "Charming, playful, and always watching reactions from the edge of her eye. She flatters first and tests loyalties second. She never gets truly drunk in public."
+    agenda: "Keep her cover as a harmless road-skald while building a complete map of faction loyalties."
+    secret: "She is a paid intelligence runner using skald travel rights as perfect spy cover."
+    services: "Brings curated news, introduces buyers discreetly, and can pass coded messages between distant halls."
+    encounter_conditions:
+      terrain: ["road", "hall", "market"]
+      season: ["spring", "summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_010"
+        type: "rival"
+        note: "Ketil's fearsome songs complicate her quiet information work."
+    associated_chains: ["widows_web", "iron_grip"]
+    image_prompt: "Compact copper-haired skald with close braids and polished travel lyre, sharp fox-like eyes and expensive boots. Mead hall doorway at dusk, muted firelit palette."
+
+  - id: "NPC_TRV_010"
+    name: "Ketil Nith-Singer"
+    call_name: "Tongue-Breaker Ketil"
+    role: "skald"
+    travel_region: "all"
+    description: "Ketil is tall, hollow-cheeked, and scarred across the throat, as if someone once tried to cut his song out. He carries a carved ash staff instead of an instrument. When he performs, even confident jarls stop smiling."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 4
+      WIT: 7
+      WIL: 5
+      WYR: 4
+    skills:
+      - name: "Sagas"
+        rank: 5
+      - name: "Intimidate"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Wyrd-reading"
+        rank: 2
+    personality: "Cold, precise, and merciless toward hypocrisy. He does not shout; he cuts reputations with calm lines and witnesses. He believes shame is a cleaner weapon than steel."
+    agenda: "Break three protected reputations that he claims are poisoning the Rimevegr."
+    secret: "He keeps written proof behind his worst verses, making his reputation-killing songs hard to deny."
+    services: "Can spread fame or ruin across routes, verify rumors publicly, and pressure oath-breakers through song."
+    encounter_conditions:
+      terrain: ["road", "hall", "thing_field"]
+      season: ["spring", "summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_007"
+        type: "rival"
+        note: "Leif calls him necessary; Ketil calls Leif too soft."
+    associated_chains: ["political_collapse"]
+    image_prompt: "Tall gaunt skald with throat scar, ash staff, severe eyes, weather-dark cloak. Silent hall crowd behind him, muted iron and ember palette."
+
+  - id: "NPC_TRV_011"
+    name: "Bragi Oar-Rhyme"
+    call_name: "Wave-Bragi"
+    role: "skald"
+    travel_region: "fjords"
+    description: "Bragi is broad-nosed and sea-burned, with broken capillaries across his cheeks from years of cold wind. He carries a small drum of stretched seal hide and keeps rhythm on wagon rails and shield rims. Salt and old ale follow him."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Sagas"
+        rank: 3
+      - name: "Weather-sense"
+        rank: 3
+      - name: "Persuade"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+    personality: "Loud in company, unexpectedly gentle with frightened travelers. He hates bullies and adores sailors' gossip. He will trade a true weather warning for food when coin is thin."
+    agenda: "Collect coastal storm lore into one profitable winter hall performance."
+    secret: "He once deserted a doomed ship and hides the captain's ring in his drum frame."
+    services: "Provides harbor rumors, route timing advice, weather calls, and morale songs for long marches."
+    encounter_conditions:
+      terrain: ["road", "fjords", "camp"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_023"
+        type: "ally"
+        note: "He shares food and news with Inga's displaced family camp."
+    associated_chains: ["coastal_crisis"]
+    image_prompt: "Sea-worn Norse skald with seal-hide drum, wind-burnt cheeks and salt-stained cloak. Fjord road campfire, muted slate-blue and amber tones."
+
+  - id: "NPC_TRV_012"
+    name: "Vesa Knot-Bones"
+    call_name: "Knot-Carver"
+    role: "seidr_practitioner"
+    travel_region: "moors"
+    description: "Vesa is small and bent at the spine, with rows of carved bone tags hanging from a willow frame pack. Her nails are black with ink and peat. She mutters rune counts under her breath as she walks."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 3
+      WIT: 6
+      WIL: 5
+      WYR: 4
+    skills:
+      - name: "Rune-lore"
+        rank: 4
+      - name: "Spirit-lore"
+        rank: 3
+      - name: "Wyrd-reading"
+        rank: 3
+      - name: "Forage"
+        rank: 2
+    personality: "Suspicious, exacting, and offended by sloppy questions. She values patience and proper offerings. Beneath her prickly manner, she is protective of children and fools."
+    agenda: "Complete a full traveling catalog of broken ward marks across abandoned moor shrines."
+    secret: "One of her charm knots binds a resentful dead child that whispers names at night."
+    services: "Carves ward knots, diagnoses cursed objects, and reads whether a trail is spirit-touched."
+    encounter_conditions:
+      terrain: ["moors", "road", "ruins"]
+      season: ["autumn", "winter", "spring"]
+    relationships:
+      - target: "NPC_TRV_008"
+        type: "ally"
+        note: "Runa shares Veil notes in exchange for rune-carved travel wards."
+    associated_chains: ["waking_barrows"]
+    image_prompt: "Bent rune-carver woman with bone-tag frame pack, black-inked nails, peat-stained wool layers. Misty moor shrine stones, muted grey-green palette."
+
+  - id: "NPC_TRV_013"
+    name: "Thora Mist-Mother"
+    call_name: "Thora of the White Breath"
+    role: "seidr_practitioner"
+    travel_region: "mountains"
+    description: "Thora is tall and raw-boned, with frostbitten ears and long white braids tied in copper wire. She wears wolfskin over undyed wool and carries a rune-scratched antler staff. Cold vapor curls from her mouth even when the air is warm."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 4
+      WIT: 6
+      WIL: 6
+      WYR: 5
+    skills:
+      - name: "Wyrd-reading"
+        rank: 4
+      - name: "Spirit-lore"
+        rank: 4
+      - name: "Rune-lore"
+        rank: 3
+      - name: "Survival"
+        rank: 3
+    personality: "Severe and ritual-minded, she demands clear promises before she helps. She fears little except broken ritual sequence. She respects people who keep watch duty without complaint."
+    agenda: "Find and train a successor before winter takes her knees completely."
+    secret: "She foresaw her own death at a mountain cairn and is steering events to choose who stands beside her there."
+    services: "Interprets omens, blesses crossings, performs spirit appeasement rites, and gives mountain hazard warnings."
+    encounter_conditions:
+      terrain: ["mountains", "road", "cairn_fields"]
+      season: ["autumn", "winter", "spring"]
+    relationships:
+      - target: "NPC_TRV_006"
+        type: "rival"
+        note: "She seeks proof that Orm disturbed protected mountain barrows."
+    associated_chains: ["mountain_omens"]
+    image_prompt: "Tall frost-marked völva with white braids and antler staff carved in runes, wolfskin over pale wool. Snowy cairn ridge, muted blue-white mountain palette."
+
+  - id: "NPC_TRV_014"
+    name: "Arn Ketillson"
+    call_name: "Ash-Rune Arn"
+    role: "seidr_practitioner"
+    travel_region: "forest"
+    description: "Arn is a narrow man with burned eyebrows, ash-grey stubble, and a travel satchel full of bark tablets. One forearm is etched with old rune scars from failed bindings. He smells of charcoal, nettle smoke, and fear-sweat."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 4
+    skills:
+      - name: "Rune-lore"
+        rank: 4
+      - name: "Spirit-lore"
+        rank: 3
+      - name: "Deceive"
+        rank: 2
+      - name: "Stealth"
+        rank: 2
+    personality: "Nervous, sharp, and always expecting repayment from fate. He is helpful when treated fairly and venomous when cornered. He speaks quickly when scared and forgets to breathe."
+    agenda: "Erase old witch-hunter records tying his name to forced rune interrogations."
+    secret: "He was once paid to mark innocent people as seidr-tainted and now destroys his own paper trail."
+    services: "Inspects cursed gear, carves temporary anti-spirit marks, and deciphers damaged runic fragments."
+    encounter_conditions:
+      terrain: ["forest", "road", "camp"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_016"
+        type: "rival"
+        note: "Eirik's prophecies publicly accuse Arn of past crimes."
+    associated_chains: ["witch_hunts"]
+    image_prompt: "Thin rune-worker with ash-stubbled jaw, rune-scarred forearm, bark tablets and charcoal satchel. Pine-dark roadside camp, muted black-green palette."
+
+  - id: "NPC_TRV_015"
+    name: "Bjorn One-Oath"
+    call_name: "Gate-Fallen Bjorn"
+    role: "hermit"
+    travel_region: "mountains"
+    description: "Bjorn is heavy-jawed and iron-grey, with a flattened nose and old shield scars across both forearms. He wears patched mail under a shepherd's cloak and carries a spear haft without a head. His camp is always uphill, with sightlines on the pass."
+    stats:
+      MIG: 5
+      NIM: 3
+      TOU: 5
+      WIT: 4
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Survival"
+        rank: 3
+      - name: "Shelter"
+        rank: 2
+      - name: "Track"
+        rank: 2
+    personality: "Quiet, ashamed, and fiercely disciplined in routine. He avoids halls and refuses praise. He will still stand watch for strangers if wolves are near."
+    agenda: "Repay a broken duty by keeping one pass safe through one full winter."
+    secret: "He abandoned a gate post years ago; the settlement behind it was overrun that same night."
+    services: "Provides pass warnings, safe bivouac advice, and emergency escort through mountain choke points."
+    encounter_conditions:
+      terrain: ["mountains", "road", "pass"]
+      season: ["autumn", "winter", "spring"]
+    relationships:
+      - target: "NPC_TRV_019"
+        type: "debt"
+        note: "Hakon once spared him from warrant hunters in exchange for winter watch reports."
+    associated_chains: ["winter_hunger"]
+    image_prompt: "Scarred former huskarl in patched mail beneath rough shepherd cloak, spear-haft in hand on a snowy pass overlook. Stark stone and snow, muted iron palette."
+
+  - id: "NPC_TRV_016"
+    name: "Eirik Reed-Mouth"
+    call_name: "The Bog Prophet"
+    role: "hermit"
+    travel_region: "moors"
+    description: "Eirik is gaunt and mud-streaked, with long hair clotted by marsh water and reed seeds. His eyes drift off-center as if watching unseen processions. He wraps his feet in woven rushes instead of boots."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 4
+      WIT: 5
+      WIL: 4
+      WYR: 4
+    skills:
+      - name: "Wyrd-reading"
+        rank: 3
+      - name: "Forage"
+        rank: 3
+      - name: "Survival"
+        rank: 3
+      - name: "Spirit-lore"
+        rank: 2
+    personality: "Erratic and intense, he swings between tenderness and doom-speech. He is not easy to trust, but he does not fake what he sees. He is kinder to animals than to armed men."
+    agenda: "Lead someone worthy to the drowned cairn he believes will open at next new moon."
+    secret: "His 'mad' warnings are often accurate because he found an old cairn map no one else can read."
+    services: "Gives marsh-safe routes, predicts flood pockets, and warns of cursed ground where campfires fail."
+    encounter_conditions:
+      terrain: ["moors", "bog", "road"]
+      season: ["spring", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_014"
+        type: "rival"
+        note: "He publicly names Arn in visions of false rune trials."
+    associated_chains: ["waking_barrows"]
+    image_prompt: "Mud-streaked marsh prophet with reed-wrapped feet, haunted eyes, hair tangled with bog seeds. Mist and standing water, muted green-grey darkness."
+
+  - id: "NPC_TRV_017"
+    name: "Svala No-Chain"
+    call_name: "Svala of the Hazel Blind"
+    role: "hermit"
+    travel_region: "forest"
+    description: "Svala is wiry and quick, with a healed collar scar and one ear half torn away. She dresses in bark-brown layers that vanish into hazel scrub. Her snares are set low and nearly invisible."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 4
+      WIT: 5
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Stealth"
+        rank: 4
+      - name: "Track"
+        rank: 3
+      - name: "Forage"
+        rank: 3
+      - name: "Survival"
+        rank: 3
+    personality: "Guarded and suspicious, she tests every kindness twice. Once trust is earned, she is fiercely loyal and unexpectedly funny. She has no patience for pity."
+    agenda: "Build a hidden forest lane for escaped thralls before spring slave drives begin."
+    secret: "She keeps a coded bark ledger of every slaver route, buyer, and night camp in the region."
+    services: "Guides through hidden forest paths, teaches anti-tracker tricks, and offers emergency shelter caches."
+    encounter_conditions:
+      terrain: ["forest", "road", "camp"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_026"
+        type: "debt"
+        note: "Njal once tracked her for slavers; now he quietly warns her of hunts."
+    associated_chains: ["broken_chains"]
+    image_prompt: "Wiry forest woman with collar scar and torn ear, bark-brown layers, snare lines in hazel thicket. Deep woods dusk, muted brown-green tones."
+
+  - id: "NPC_TRV_018"
+    name: "Maret Wormwood"
+    call_name: "The Fallen Leech"
+    role: "hermit"
+    travel_region: "all"
+    description: "Maret is middle-aged, broad-hipped, and stooped from carrying herb bundles for decades. Green stains mark her cuffs and fingertips, and old blood has darkened the hem of her apron cloak. Her medicine chest is neat; her reputation is not."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Heal"
+        rank: 4
+      - name: "Forage"
+        rank: 3
+      - name: "Shelter"
+        rank: 2
+      - name: "Deceive"
+        rank: 2
+    personality: "Sharp-tongued, tired, and still stubbornly compassionate. She charges the rich and treats the poor first. She never drinks where she works."
+    agenda: "Rebuild trust one treated wound at a time after losing her old hall post."
+    secret: "A bad dose she gave during plague panic killed a chieftain's heir; she let a scapegoat hang in her place."
+    services: "Treats wounds, fever, and infected cuts; sells poultices, pain draughts, and clean sutures."
+    encounter_conditions:
+      terrain: ["road", "camp", "forest_edge"]
+      season: ["spring", "summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_005"
+        type: "ally"
+        note: "Yngvild supplies her with wax, cloth, and lamp grease for field surgery."
+    associated_chains: ["plague_ashes"]
+    image_prompt: "Disgraced healer with herb-stained hands, blood-dark cloak hem, heavy medicine chest at roadside camp table. Gloomy Norse dusk, muted green and rust tones."
+
+  - id: "NPC_TRV_019"
+    name: "Hakon Way-Post"
+    call_name: "Road Warden Hakon"
+    role: "road_warden"
+    travel_region: "mountains"
+    description: "Hakon is thick-necked with a split brow and one eye cloudy from an old arrow graze. His mail shirt is patched with different rings, and his spear has tally cuts up the shaft. He marks routes with carved post-stones and checks them each dawn."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Track"
+        rank: 3
+      - name: "Navigate"
+        rank: 3
+      - name: "Command"
+        rank: 2
+    personality: "Blunt, dutiful, and suspicious of polished speech. He judges people by camp discipline and trail manners. He takes grudges personally and keeps them organized."
+    agenda: "Keep the high pass open and taxable despite smuggler pressure and winter raids."
+    secret: "He accepts silver from selected smugglers and redirects patrols away from their loads."
+    services: "Provides safe route markers, escort through pass choke points, and warning of recent ambush signs."
+    encounter_conditions:
+      terrain: ["road", "pass", "mountains"]
+      season: ["summer", "autumn", "winter", "spring"]
+    relationships:
+      - target: "NPC_TRV_003"
+        type: "debt"
+        note: "Kolbein's payments keep one trail watchfire conveniently dark."
+    associated_chains: ["road_tithes"]
+    image_prompt: "Battle-worn road warden with cloudy eye, patched mail and tally-marked spear beside carved way-post stones. Mountain pass wind, muted stone-grey palette."
+
+  - id: "NPC_TRV_020"
+    name: "Ragna Pine-Arrow"
+    call_name: "The Ridge Huntress"
+    role: "road_warden"
+    travel_region: "forest"
+    description: "Ragna is hard-faced and long-limbed, with pine soot under her nails and a bow of black yew. She keeps her hair braided tight beneath a fur cap cut for hearing. Her arrows are fletched with raven wing and marked in red pitch."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 4
+      WIT: 5
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Bows"
+        rank: 4
+      - name: "Track"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+      - name: "Survival"
+        rank: 3
+    personality: "Dry, unsentimental, and fiercely territorial about her patrol woods. She speaks little and observes much. She respects competence and despises cruelty."
+    agenda: "Hunt down a disguised raider moving among refugee caravans."
+    secret: "The target she seeks is Jorund, a former lover she once helped escape punishment."
+    services: "Scouts ahead, tracks missing travelers, and clears predator or raider signs from forest roads."
+    encounter_conditions:
+      terrain: ["forest", "road", "ridge"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_024"
+        type: "rival"
+        note: "She knows his gait even beneath refugee rags."
+    associated_chains: ["road_blood"]
+    image_prompt: "Tall huntress with black yew bow, raven-fletched arrows and fur cap, pine soot on hands. Forest ridge overlook, muted dark green and ash palette."
+
+  - id: "NPC_TRV_021"
+    name: "Oddi Cairn-Walker"
+    call_name: "Stone-Oddi"
+    role: "road_warden"
+    travel_region: "moors"
+    description: "Oddi is broad and slow-speaking, with wind-cracked skin and a beard braided with tiny stone chips. He carries a hooked staff and a heavy round shield scarred by weather, not war. He patrols by cairn line even in storm fog."
+    stats:
+      MIG: 5
+      NIM: 3
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Shields"
+        rank: 3
+      - name: "Navigate"
+        rank: 4
+      - name: "Weather-sense"
+        rank: 3
+      - name: "Shelter"
+        rank: 3
+    personality: "Steady and dependable, he calms panicked travelers with simple orders. He dislikes songs and prefers silence in bad weather. He keeps old oaths exactly as spoken."
+    agenda: "Rebuild collapsed cairn markers before winter whiteout season."
+    secret: "He discovered a mass grave beneath a fallen cairn and has not reported it to avoid faction war."
+    services: "Guides through fog routes, builds emergency windbreak camps, and gives storm timing estimates."
+    encounter_conditions:
+      terrain: ["moors", "road", "cairn_fields"]
+      season: ["autumn", "winter", "spring"]
+    relationships:
+      - target: "NPC_TRV_016"
+        type: "ally"
+        note: "Eirik's omens help him decide which moor lanes to close."
+    associated_chains: ["forgotten_dead"]
+    image_prompt: "Stocky cairn warden with stone-braided beard, hooked staff and weather-scarred shield in foggy moorland. Standing stones and low cloud, muted slate palette."
+
+  - id: "NPC_TRV_022"
+    name: "Torfi Mire-Hound"
+    call_name: "Marsh Warden Torfi"
+    role: "road_warden"
+    travel_region: "moors"
+    description: "Torfi is narrow-hipped and rope-muscled, with scarred calves from bog sinkholes and leech bites. He wears knee-high hide wraps and carries a long probing pole tipped with iron. A half-wild hound shadows him at heel."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 4
+      WIT: 5
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Track"
+        rank: 4
+      - name: "Survival"
+        rank: 3
+      - name: "Navigate"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+    personality: "Gruff and restless, he trusts dogs over men. He jokes only when danger is close. He has a soft spot for displaced children and strays."
+    agenda: "Find and close a hidden outlaw crossing before spring caravan season."
+    secret: "The outlaw guide he hunts is his blood sister, hiding under a refugee name."
+    services: "Leads bog crossings, finds sink-safe routes, and tracks fugitives or missing caravans through marsh."
+    encounter_conditions:
+      terrain: ["moors", "bog", "road"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_025"
+        type: "kin"
+        note: "He knows her true identity and cannot decide whether to expose her."
+    associated_chains: ["smugglers_route"]
+    image_prompt: "Lean marsh tracker with hide leg wraps, iron-tipped probing pole and scarred calves, half-wild hound at heel. Bog dusk, muted peat-brown and green tones."
+
+  - id: "NPC_TRV_023"
+    name: "Inga Ash-Cloak"
+    call_name: "Inga of the Burned Cart"
+    role: "refugee"
+    travel_region: "all"
+    description: "Inga is ash-smudged and hollow-eyed, with two children always close under her cloak hem. One sleeve is pinned where her forearm was lost in a raid fire. Her cart frame is scorched black and lashed back together with rope."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 4
+      WIT: 5
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Forage"
+        rank: 3
+      - name: "Shelter"
+        rank: 3
+      - name: "Persuade"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+    personality: "Wary but resilient, she bargains hard for her family and thanks little. She has learned to read armed men fast. She will trade pride for safety, never for humiliation."
+    agenda: "Reach a stable settlement before winter where her children can be entered into a hall census."
+    secret: "Her missing husband may be alive and tied to an undead cult cell she refuses to name."
+    services: "Shares fresh refugee route intel, raid patterns, and hidden child-safe camps between settlements."
+    encounter_conditions:
+      terrain: ["road", "camp", "market_edge"]
+      season: ["summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_011"
+        type: "ally"
+        note: "Bragi carries her warnings to safer halls ahead of her camp."
+    associated_chains: ["war_displaced"]
+    image_prompt: "One-armed refugee mother with soot-streaked face, scorched cart frame, two children under ragged cloak. Cold road camp, muted ash and brown tones."
+
+  - id: "NPC_TRV_024"
+    name: "Jorund White-Sack"
+    call_name: "Jorund the Harmless"
+    role: "refugee"
+    travel_region: "all"
+    description: "Jorund is broad-shouldered but stoops like a beaten laborer, hiding old fighter balance under ragged cloth. He keeps a white grain sack over one shoulder and avoids eye contact in crowds. A healed sword cut runs from ear to jaw beneath his beard."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 4
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Blades"
+        rank: 3
+      - name: "Deceive"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+      - name: "Track"
+        rank: 2
+    personality: "Quiet, deferential, and quick to seem smaller than he is. He studies patrol rhythm and guard fatigue while pretending to be numb. He rarely sleeps deeply."
+    agenda: "Disappear into a large camp long enough to reconnect with former raider contacts."
+    secret: "He is a wanted outlaw posing as refugee labor, gathering targets for a revenge strike."
+    services: "Offers labor, local terrain hints, and 'safe' shortcuts that may hide ambush intent."
+    encounter_conditions:
+      terrain: ["road", "camp", "market"]
+      season: ["spring", "summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_020"
+        type: "rival"
+        note: "Ragna is hunting him and has already found two of his old caches."
+    associated_chains: ["road_blood"]
+    image_prompt: "Broad man disguised as weary refugee, white grain sack, ragged layers, hidden jaw scar, watchful eyes. Crowded roadside camp, muted grey-brown palette."
+
+  - id: "NPC_TRV_025"
+    name: "Yrsa Twin-Shadows"
+    call_name: "Yrsa of Two Sons"
+    role: "refugee"
+    travel_region: "moors"
+    description: "Yrsa travels with two boys wrapped in identical dark cloaks, their faces often hidden from strangers. She keeps her own hood low and carries a shepherd crook polished by long miles. Her boots are too fine for her claimed poverty."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 4
+    skills:
+      - name: "Deceive"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Navigate"
+        rank: 2
+      - name: "Stealth"
+        rank: 3
+    personality: "Calm, protective, and always two steps ahead in conversation. She can switch from grief to steel in a heartbeat. She notices who watches her children too closely."
+    agenda: "Reach a faction-neutral settlement where her disguised passenger can vanish into records."
+    secret: "Only one child is hers; the other is a hidden noble heir moved under refugee cover."
+    services: "Provides displacement rumors, guarded introductions, and discreet message drops between refugee camps."
+    encounter_conditions:
+      terrain: ["road", "moors", "camp"]
+      season: ["autumn", "winter", "spring"]
+    relationships:
+      - target: "NPC_TRV_022"
+        type: "kin"
+        note: "Torfi is her brother and secretly clears marsh routes for her."
+    associated_chains: ["hidden_heir"]
+    image_prompt: "Hooded refugee woman with two similarly cloaked boys, shepherd crook and travel-worn face, finer boots partly hidden in mud. Moor camp fog, muted charcoal palette."
+
+  - id: "NPC_TRV_026"
+    name: "Njal Quiet-Step"
+    call_name: "Netless Njal"
+    role: "refugee"
+    travel_region: "coast"
+    description: "Njal is narrow and pale, with fisherman's shoulders and rope-burn scars on both palms. He carries a cut-down net frame without mesh as if mourning a trade. He keeps to edges of firelight and tracks movement by sound."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 4
+      WIT: 5
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Track"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+      - name: "Survival"
+        rank: 2
+      - name: "Bargain"
+        rank: 2
+    personality: "Soft-spoken and guilty-eyed, he avoids crowds and loud halls. He helps quietly and refuses praise. Fear and conscience pull him in opposite directions."
+    agenda: "Buy enough favor and anonymity to leave his old employers behind alive."
+    secret: "He was a slaver's tracker and can still read escape patterns better than most wardens."
+    services: "Finds lost people fast, spots counter-tracking signs, and helps secure low-profile camp perimeters."
+    encounter_conditions:
+      terrain: ["road", "coast", "camp"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_017"
+        type: "debt"
+        note: "Svala spared him once; he now leaks slaver patrol timings to her."
+    associated_chains: ["broken_chains"]
+    image_prompt: "Lean coastal refugee with rope-burned palms, cut net frame, hooded in fire-edge shadow. Night camp near wet dunes, muted blue-black palette."
+
+  - id: "NPC_TRV_027"
+    name: "Audun Iron-Song"
+    call_name: "Master Audun"
+    role: "craftsman"
+    travel_region: "all"
+    description: "Audun is broad and soot-dark, with a split lower lip and a right forearm thicker from decades at the hammer. He travels with a collapsible forge frame, bellows, and iron ingot cage on a mule sled. His hearing is poor from years of anvil thunder."
+    stats:
+      MIG: 5
+      NIM: 3
+      TOU: 5
+      WIT: 7
+      WIL: 5
+      WYR: 3
+    skills:
+      - name: "Smithing"
+        rank: 5
+      - name: "Blades"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+      - name: "Weather-sense"
+        rank: 2
+    personality: "Blunt, proud, and deeply focused when metal is hot. He has no patience for swaggering fools with neglected gear. He quietly admires disciplined bands that maintain kit."
+    agenda: "Forge a final masterpiece sword before winter and choose who is worthy to carry it."
+    secret: "He once served as a lord's execution smith and forged blades for political killings."
+    services: "Repairs weapons and armor in field camps, forges custom blades, and assesses steel quality honestly."
+    encounter_conditions:
+      terrain: ["road", "camp", "market"]
+      season: ["spring", "summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_001"
+        type: "ally"
+        note: "Torsten transports his coal and billet stock between settlements."
+    associated_chains: ["iron_price_crisis"]
+    image_prompt: "Massive traveling weaponsmith with soot-dark face, split lip, portable forge frame and mule bellows rig. Sparks in dusk rain, muted iron-orange palette."
+
+  - id: "NPC_TRV_028"
+    name: "Freydis Bark-Stitch"
+    call_name: "Hide-Freydis"
+    role: "craftsman"
+    travel_region: "forest"
+    description: "Freydis has scarred knuckles, thick wrists, and apron leathers stiff with tannin and blood. Her hair is shaved at the sides to keep lice from curing pits. She smells of oak bark, smoke, and sour hides."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 5
+      WIT: 6
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Smithing"
+        rank: 2
+      - name: "Survival"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+      - name: "Shelter"
+        rank: 2
+    personality: "Pragmatic and plain-spoken, she prices work by effort, not status. She laughs at polished nobles and pays apprentices fairly. She has a strict no-flensing-near-water rule after a cholera season."
+    agenda: "Establish a circuit of clean tanning pits serving hamlets too small for dedicated leatherwork."
+    secret: "She buys unmarked battlefield hides from grave gangs and launders them through legal stock."
+    services: "Repairs boots, straps, harness, shield grips, and leather armor; sells treated hide sheets."
+    encounter_conditions:
+      terrain: ["forest", "road", "hamlet"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_018"
+        type: "debt"
+        note: "Maret's salves saved her arm from tannery rot two winters ago."
+    associated_chains: ["supply_lines"]
+    image_prompt: "Sturdy tanner woman with bark-stained leathers, shaved-sides hair, scarred hands and hide bundles. Forest-edge work pit, muted brown and smoke palette."
+
+  - id: "NPC_TRV_029"
+    name: "Kori Pine-Gouge"
+    call_name: "Cart-Kori"
+    role: "craftsman"
+    travel_region: "fjords"
+    description: "Kori is thin and long-fingered, with wood dust always trapped in beard braids. His wagon sides are carved with knotwork and tiny masked faces that seem to watch from different angles. He carries chisels wrapped in oiled lambskin like surgical tools."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Smithing"
+        rank: 3
+      - name: "Rune-lore"
+        rank: 2
+      - name: "Bargain"
+        rank: 3
+      - name: "Shelter"
+        rank: 2
+    personality: "Talkative when carving, silent when negotiating. He is vain about precision and hates rushed commissions. He takes omens from wood grain and keeps them to himself unless paid."
+    agenda: "Finish a commissioned hall door for Raven's Perch that includes hidden warning symbols."
+    secret: "He encodes a real barrow route map in decorative knotwork on selected commissions."
+    services: "Repairs wagon frames, shields, doors, and camp structures; carves protective motifs and route markers."
+    encounter_conditions:
+      terrain: ["road", "fjords", "market"]
+      season: ["spring", "summer", "autumn"]
+    relationships:
+      - target: "NPC_TRV_012"
+        type: "ally"
+        note: "Vesa reads his hidden carvings and corrects dangerous symbol drift."
+    associated_chains: ["waking_barrows"]
+    image_prompt: "Slender woodcarver with dusted beard braids, chisel roll in oiled skin, knotwork-carved wagon panels with eerie faces. Fjord market lane, muted pine and iron tones."
+
+  - id: "NPC_TRV_030"
+    name: "Dagr Coal-Bellows"
+    call_name: "Dagr the Patchsmith"
+    role: "craftsman"
+    travel_region: "all"
+    description: "Dagr is broad-backed and middle-aged, with coal-blackened forearms and a permanent squint from forge glare. He travels light with rivet bags, tongs, and a folding anvil head in a chest. His laugh is loud, but his eyes stay careful."
+    stats:
+      MIG: 5
+      NIM: 3
+      TOU: 5
+      WIT: 6
+      WIL: 4
+      WYR: 3
+    skills:
+      - name: "Smithing"
+        rank: 4
+      - name: "Bargain"
+        rank: 2
+      - name: "Shelter"
+        rank: 2
+      - name: "Persuade"
+        rank: 2
+    personality: "Cheerful on the surface, anxious underneath. He dislikes faction politics and pays extra for quiet camps. He will work through the night if someone is genuinely desperate."
+    agenda: "Stay mobile long enough to clear a dangerous debt before his creditors find him."
+    secret: "He secretly forges restraint irons for slaver crews under threat to his daughter."
+    services: "Field-repairs mail links, buckles, rivets, spearheads, and farm iron; can jury-rig broken wagons quickly."
+    encounter_conditions:
+      terrain: ["road", "camp", "market"]
+      season: ["spring", "summer", "autumn", "winter"]
+    relationships:
+      - target: "NPC_TRV_026"
+        type: "debt"
+        note: "Njal knows who is coercing Dagr and trades warnings for repairs."
+    associated_chains: ["broken_chains"]
+    image_prompt: "Broad traveling patchsmith with coal-black forearms, folding anvil chest and rivet bags, cautious eyes under forge squint. Roadside night repair fire, muted orange-grey tones."

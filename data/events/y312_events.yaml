@@ -1,0 +1,1227 @@
+# Iron Ledger — Y312 Event Database
+# ~80 canonical events across all four seasons of Year 312.
+# Schema: see EVENT_SCHEMA.md. Loaded by event_manager.py.
+# NOTE: Legacy EVT_001–EVT_012 live in legacy_events.yaml; not duplicated here.
+
+events:
+
+  # ============================================================
+  # SPRING (Days 1–60) — Uneasy Peace
+  # ============================================================
+
+  - id: "EVT_312_S01_001"
+    title: "Thaw Floods at Frostfjord"
+    year: 312
+    season: "spring"
+    day: 3
+    category: "weather"
+    location: "Frostfjord Hollow"
+    band_relevant: false
+    summary: "Sudden snowmelt floods the lower quay at Frostfjord, destroying two fishing boats."
+
+  - id: "EVT_312_S02_002"
+    title: "Ordovast Summons Tribute"
+    year: 312
+    season: "spring"
+    day: 5
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 1
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast dispatches riders demanding spring tribute from all Iron Grip settlements."
+    effects:
+      feud_change: {pair: ["Grimholt", "Moor's End"], delta: 1, cause: "Heavy tribute demand"}
+
+  - id: "EVT_312_S03_003"
+    title: "Trade Road Opens"
+    year: 312
+    season: "spring"
+    day: 8
+    category: "economic"
+    chain: "fjord_compact"
+    chain_order: 1
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "Sigrun declares the coast road open for spring trade and posts Compact guards at river crossings."
+
+  - id: "EVT_312_S04_004"
+    title: "Widow Places Agent in Kolvik"
+    year: 312
+    season: "spring"
+    day: 10
+    category: "political"
+    chain: "widows_web"
+    chain_order: 1
+    location: "Kolvik"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: false
+    summary: "A healer loyal to the Pale Widow arrives in Kolvik, offering free remedies and gathering information."
+
+  - id: "EVT_312_S05_005"
+    title: "Black Axes Take Spring Contract"
+    year: 312
+    season: "spring"
+    day: 12
+    category: "military"
+    chain: "voss_command"
+    chain_order: 1
+    location: "Frostfjord Hollow"
+    actors:
+      - "Voss Cold-Eye"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Voss negotiates a patrol contract from Jarl Hrothgar — clear bandits from the Blackpine Wilds for 30 silver."
+    effects:
+      morale_change: {delta: 1, cause: "Steady work after winter idling"}
+
+  - id: "EVT_312_S06_006"
+    title: "Bone Pack Sighted near Ashmark"
+    year: 312
+    season: "spring"
+    day: 15
+    category: "military"
+    location: "Ashmark"
+    factions:
+      - "The Bone Pack"
+    band_relevant: true
+    summary: "Travellers report eleven fighters wearing bone tokens camped a day south of Ashmark."
+
+  - id: "EVT_312_S07_007"
+    title: "Raven's Perch Refuses Full Tribute"
+    year: 312
+    season: "spring"
+    day: 18
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 2
+    location: "Raven's Perch"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Raven's Perch sends only half the demanded silver, citing a poor winter harvest."
+    effects:
+      feud_change: {pair: ["Grimholt", "Raven's Perch"], delta: 2, cause: "Defiance of tribute demand"}
+
+  - id: "EVT_312_S08_008"
+    title: "Petra Receives Letter from Sister"
+    year: 312
+    season: "spring"
+    day: 20
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 1
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "A peddler delivers a stained letter — Petra's sister begs her to come south before midsummer."
+
+  - id: "EVT_312_S09_009"
+    title: "Spring Fair at Skaldhaven"
+    year: 312
+    season: "spring"
+    day: 22
+    category: "social"
+    location: "Skaldhaven"
+    band_relevant: false
+    summary: "Skaldhaven hosts its annual spring fair. Traders, skalds, and fortune-tellers draw crowds from five settlements."
+
+  - id: "EVT_312_S10_010"
+    title: "Mudswell on the Moor"
+    year: 312
+    season: "spring"
+    day: 25
+    category: "weather"
+    location: "Moor's End"
+    band_relevant: false
+    summary: "Three days of rain turn the moor into sucking bog. A supply wagon is lost, delaying grain shipments."
+
+  - id: "EVT_312_S11_011"
+    title: "Thorne Notices Old Tracks"
+    year: 312
+    season: "spring"
+    day: 28
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 1
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "While on patrol Thorne recognises boot-prints belonging to someone from his old warband near Bleakwater Landing."
+
+  - id: "EVT_312_S12_012"
+    title: "Bleakwater Petition for Protection"
+    year: 312
+    season: "spring"
+    day: 31
+    category: "economic"
+    location: "Bleakwater Landing"
+    band_relevant: true
+    summary: "Bleakwater elders offer 15 silver for a week of guard duty against coastal raiders."
+
+  - id: "EVT_312_S13_013"
+    title: "Widow Poisons Rumour about Ordovast"
+    year: 312
+    season: "spring"
+    day: 34
+    category: "political"
+    chain: "widows_web"
+    chain_order: 2
+    location: "Ashen Reach"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: false
+    summary: "Whispers spread that Ordovast is stockpiling iron for war. Origin traced to Ashen Reach merchants."
+
+  - id: "EVT_312_S14_014"
+    title: "Cold Snap Kills Early Crops"
+    year: 312
+    season: "spring"
+    day: 37
+    category: "weather"
+    band_relevant: false
+    summary: "A week of hard frost ruins early barley shoots across the northern settlements."
+    effects:
+      food_change: {delta: -2, cause: "Crop failure from late frost"}
+
+  - id: "EVT_312_S15_015"
+    title: "Kell Gambles Away Silver"
+    year: 312
+    season: "spring"
+    day: 40
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 1
+    actors:
+      - "Kell Hook"
+    band_relevant: true
+    summary: "Kell loses 8 silver at dice in Frostfjord. He owes Gest a private loan he has not disclosed to Voss."
+
+  - id: "EVT_312_S16_016"
+    title: "Silent Oar Escorts Merchant Fleet"
+    year: 312
+    season: "spring"
+    day: 43
+    category: "military"
+    factions:
+      - "The Silent Oar"
+    band_relevant: false
+    summary: "The Silent Oar take a lucrative escort contract for three merchant ships heading upfjord."
+
+  - id: "EVT_312_S17_017"
+    title: "Iron Grip Fortifies Grimholt Gate"
+    year: 312
+    season: "spring"
+    day: 47
+    category: "military"
+    chain: "iron_grip"
+    chain_order: 3
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast orders a second timber gate built at Grimholt, doubling the gate garrison."
+
+  - id: "EVT_312_S18_018"
+    title: "Barrow Light at Vargheim"
+    year: 312
+    season: "spring"
+    day: 50
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 1
+    location: "Vargheim"
+    band_relevant: false
+    summary: "Shepherds near Vargheim see a pale green light drifting above an old barrow mound at dusk."
+
+  - id: "EVT_312_S19_019"
+    title: "Lump Finds a Stray Dog"
+    year: 312
+    season: "spring"
+    day: 53
+    category: "personal"
+    actors:
+      - "Lump"
+    band_relevant: true
+    summary: "Lump adopts a half-starved hound found in the pines. The dog follows the column and eats scraps."
+
+  - id: "EVT_312_S20_020"
+    title: "Compact Coin Shipment"
+    year: 312
+    season: "spring"
+    day: 57
+    category: "economic"
+    chain: "fjord_compact"
+    chain_order: 2
+    location: "Deepholm"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: true
+    branches:
+      - condition: "band_accepts_escort"
+        result: "Black Axes escort shipment for 20 silver."
+      - condition: "band_declines"
+        result: "Silent Oar takes the job. Compact opinion of Black Axes drops."
+    summary: "Sigrun needs an armed escort for a large coin transfer to Stonebay Hamlet."
+
+  # ============================================================
+  # SUMMER (Days 61–120) — Allthing and Escalation
+  # ============================================================
+
+  - id: "EVT_312_U01_021"
+    title: "Allthing Proclaimed"
+    year: 312
+    season: "summer"
+    day: 62
+    category: "political"
+    chain: "allthing"
+    chain_order: 1
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    band_relevant: false
+    summary: "Sigrun formally proclaims the Allthing to convene at Deepholm on Day 75."
+
+  - id: "EVT_312_U02_022"
+    title: "Hot Wind Dries Rivers"
+    year: 312
+    season: "summer"
+    day: 64
+    category: "weather"
+    band_relevant: false
+    summary: "An early heatwave drops river levels. Fording points appear where none have been in living memory."
+
+  - id: "EVT_312_U03_023"
+    title: "Dalla Dreams of a Black River"
+    year: 312
+    season: "summer"
+    day: 67
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 1
+    actors:
+      - "Dalla"
+    band_relevant: false
+    summary: "Dalla, the hedge-seer at Ashen Reach, wakes screaming about a black river flowing from every barrow."
+
+  - id: "EVT_312_U04_024"
+    title: "Three Wolves Demand Feldwick Taxes"
+    year: 312
+    season: "summer"
+    day: 69
+    category: "political"
+    chain: "three_wolves"
+    chain_order: 1
+    location: "Feldwick"
+    factions:
+      - "The Three Wolves"
+    band_relevant: false
+    summary: "The Three Wolves begin collecting weekly silver from Feldwick merchants as a protection fee."
+    effects:
+      feud_change: {pair: ["Feldwick", "The Three Wolves"], delta: 1, cause: "Extortion begins"}
+
+  - id: "EVT_312_U05_025"
+    title: "Contract: Guard the Allthing"
+    year: 312
+    season: "summer"
+    day: 71
+    category: "military"
+    chain: "allthing"
+    chain_order: 2
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+      - "Voss Cold-Eye"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: true
+    summary: "Sigrun offers 40 silver to any band that will keep peace at the Allthing. Voss has first refusal."
+    branches:
+      - condition: "band_accepts_guard_duty"
+        result: "Black Axes secure the Allthing grounds; reputation +1 with Compact."
+      - condition: "band_declines_guard"
+        result: "Iron Tide Remnant takes the contract. Sigrun notes the refusal."
+
+  - id: "EVT_312_U06_026"
+    title: "Ash Past: Old Comrade at Skaldhaven"
+    year: 312
+    season: "summer"
+    day: 73
+    category: "personal"
+    chain: "ash_past"
+    chain_order: 1
+    location: "Skaldhaven"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Voss spots a one-armed man in Skaldhaven he recognises from his early fighting days. The man avoids eye contact."
+
+  - id: "EVT_312_U07_027"
+    title: "Allthing Convenes"
+    year: 312
+    season: "summer"
+    day: 75
+    category: "political"
+    chain: "allthing"
+    chain_order: 3
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+      - "Ordovast"
+      - "Pale Widow"
+    factions:
+      - "The Fjord Compact"
+      - "The Iron Grip"
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "All factions gather. Ordovast demands formal recognition of Iron Grip borders. Sigrun counters with trade rights. The Widow watches."
+
+  - id: "EVT_312_U08_028"
+    title: "Allthing Brawl"
+    year: 312
+    season: "summer"
+    day: 76
+    category: "social"
+    chain: "allthing"
+    chain_order: 4
+    location: "Deepholm"
+    band_relevant: true
+    summary: "Retainers from Grimholt and a Deepholm dock crew exchange blows at the mead hall. Two injured."
+    effects:
+      feud_change: {pair: ["Grimholt", "Deepholm"], delta: 1, cause: "Allthing brawl"}
+
+  - id: "EVT_312_U09_029"
+    title: "Bjorn Wins Wrestling Match"
+    year: 312
+    season: "summer"
+    day: 77
+    category: "personal"
+    actors:
+      - "Bjorn the Lean"
+    band_relevant: true
+    summary: "Bjorn defeats a Grimholt champion in the Allthing wrestling ring. Small fame boost for the band."
+    effects:
+      reputation_change: {delta: 1, cause: "Public fighting prowess at Allthing"}
+
+  - id: "EVT_312_U10_030"
+    title: "Widow Brokers Hidden Deal"
+    year: 312
+    season: "summer"
+    day: 79
+    category: "political"
+    chain: "widows_web"
+    chain_order: 3
+    location: "Deepholm"
+    actors:
+      - "Pale Widow"
+      - "Sigrun"
+    factions:
+      - "The Whispering Circle"
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "The Pale Widow meets Sigrun privately and offers intelligence on Ordovast's war stores in exchange for pine tar rights."
+
+  - id: "EVT_312_U11_031"
+    title: "Barrow Stench on the Coast Road"
+    year: 312
+    season: "summer"
+    day: 82
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 2
+    location: "Stonebay Hamlet"
+    band_relevant: false
+    summary: "Travellers between Stonebay and Deepholm report a rank, sweet smell of decay with no visible source."
+
+  - id: "EVT_312_U12_032"
+    title: "Kell Borrows from Rolf"
+    year: 312
+    season: "summer"
+    day: 84
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 2
+    actors:
+      - "Kell Hook"
+      - "Rolf"
+    band_relevant: true
+    summary: "Kell secretly borrows 5 silver from Rolf to partly cover his debt to Gest. The web of IOUs grows."
+
+  - id: "EVT_312_U13_033"
+    title: "Hollow Hall Begs Sanctuary"
+    year: 312
+    season: "summer"
+    day: 88
+    category: "military"
+    location: "Thornwall"
+    factions:
+      - "The Hollow Hall"
+    band_relevant: false
+    summary: "The nine fighters of the Hollow Hall arrive at Thornwall starving and ask to winter in their barn."
+
+  - id: "EVT_312_U14_034"
+    title: "Summer Storm Wrecks Fishing Fleet"
+    year: 312
+    season: "summer"
+    day: 91
+    category: "weather"
+    location: "Kolvik"
+    band_relevant: false
+    summary: "A violent squall sinks four fishing boats at Kolvik. The settlement faces lean months."
+    effects:
+      food_change: {delta: -3, cause: "Fishing fleet destroyed at Kolvik"}
+
+  - id: "EVT_312_U15_035"
+    title: "Grave Wardens Discover Old Tomb"
+    year: 312
+    season: "summer"
+    day: 94
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 1
+    location: "Icebreak"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: false
+    summary: "The Grave Wardens unseal a tomb near Icebreak and find the corpse sitting upright with open eyes."
+
+  - id: "EVT_312_U16_036"
+    title: "Red Tide Raids Coastal Farm"
+    year: 312
+    season: "summer"
+    day: 98
+    category: "military"
+    chain: "red_tide"
+    chain_order: 1
+    location: "Bleakwater Landing"
+    factions:
+      - "The Red Tide"
+    band_relevant: false
+    summary: "Twenty Red Tide fighters loot a farmstead south of Bleakwater Landing. No casualties but all grain taken."
+    effects:
+      feud_change: {pair: ["Bleakwater Landing", "The Red Tide"], delta: 2, cause: "Farm raided"}
+
+  - id: "EVT_312_U17_037"
+    title: "Thorne Confronted by Stranger"
+    year: 312
+    season: "summer"
+    day: 102
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 2
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "A scarred man approaches Thorne in a tavern and says: 'The blood-price stands. You know where to find us.'"
+
+  - id: "EVT_312_U18_038"
+    title: "Ordovast's Scouts at Deepholm Border"
+    year: 312
+    season: "summer"
+    day: 107
+    category: "military"
+    chain: "iron_grip"
+    chain_order: 4
+    location: "Deepholm"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Iron Grip scouts are spotted mapping trails south of Deepholm. Sigrun sends a formal protest."
+    effects:
+      feud_change: {pair: ["The Iron Grip", "The Fjord Compact"], delta: 1, cause: "Border incursion"}
+
+  - id: "EVT_312_U19_039"
+    title: "Heatwave Dries Wells"
+    year: 312
+    season: "summer"
+    day: 112
+    category: "weather"
+    band_relevant: true
+    summary: "A ten-day heatwave drops well levels across the northern Rimevegr. Water rationing begins on the march."
+
+  - id: "EVT_312_U20_040"
+    title: "Midsummer Feast at Ashen Reach"
+    year: 312
+    season: "summer"
+    day: 118
+    category: "social"
+    location: "Ashen Reach"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "The Pale Widow hosts a midsummer feast and invites several band captains. Intelligence flows with the mead."
+
+  # ============================================================
+  # AUTUMN (Days 121–210) — Harvest and Escalation
+  # ============================================================
+
+  - id: "EVT_312_A01_041"
+    title: "Harvest Begins"
+    year: 312
+    season: "autumn"
+    day: 122
+    category: "economic"
+    band_relevant: false
+    summary: "Across the Rimevegr, the autumn harvest begins. Settlements that lost spring crops face thin yields."
+
+  - id: "EVT_312_A02_042"
+    title: "Ordovast Demands Grain Tithe"
+    year: 312
+    season: "autumn"
+    day: 125
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 5
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast orders a one-tenth grain tithe from all Iron Grip members to fill Grimholt's war stores."
+    effects:
+      feud_change: {pair: ["Moor's End", "Grimholt"], delta: 1, cause: "Grain tithe during lean harvest"}
+
+  - id: "EVT_312_A03_043"
+    title: "Widow's Agent Reports from Kolvik"
+    year: 312
+    season: "autumn"
+    day: 128
+    category: "political"
+    chain: "widows_web"
+    chain_order: 4
+    location: "Kolvik"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: false
+    summary: "The Kolvik healer sends coded word to Ashen Reach: two Iron Grip agents are buying loyalty in the village."
+
+  - id: "EVT_312_A04_044"
+    title: "Dalla Predicts Early Winter"
+    year: 312
+    season: "autumn"
+    day: 131
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 2
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: false
+    summary: "Dalla tells the Pale Widow the winter will come three weeks early and will be the harshest in a decade."
+
+  - id: "EVT_312_A05_045"
+    title: "Voss Offered Garrison Contract"
+    year: 312
+    season: "autumn"
+    day: 134
+    category: "military"
+    chain: "voss_command"
+    chain_order: 2
+    location: "Thornwall"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Thornwall's jarl offers 50 silver plus a winter hall if Voss garrisons thirty days through the first frost."
+    branches:
+      - condition: "band_accepts_garrison"
+        result: "Band secures winter shelter early, locked into Thornwall for 30 days."
+      - condition: "band_declines_garrison"
+        result: "Winter hall question remains open. Morale risk later."
+
+  - id: "EVT_312_A06_046"
+    title: "Bone Pack Challenges Black Axes"
+    year: 312
+    season: "autumn"
+    day: 137
+    category: "military"
+    location: "Ashmark"
+    factions:
+      - "The Bone Pack"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "The Bone Pack captain sends a formal challenge: single combat for rights to the Ashmark patrol route."
+
+  - id: "EVT_312_A07_047"
+    title: "First Frost"
+    year: 312
+    season: "autumn"
+    day: 140
+    category: "weather"
+    band_relevant: false
+    summary: "Hard frost hits three weeks early, exactly as Dalla predicted. Late crops freeze in the ground."
+    effects:
+      food_change: {delta: -3, cause: "Early frost destroys late crops"}
+
+  - id: "EVT_312_A08_048"
+    title: "Barrow Opens near Feldwick"
+    year: 312
+    season: "autumn"
+    day: 143
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 3
+    location: "Feldwick"
+    band_relevant: true
+    summary: "A sinkhole opens in a field east of Feldwick, revealing carved stone steps leading down into darkness."
+
+  - id: "EVT_312_A09_049"
+    title: "Three Wolves Expand Territory"
+    year: 312
+    season: "autumn"
+    day: 147
+    category: "military"
+    chain: "three_wolves"
+    chain_order: 2
+    location: "Feldwick"
+    factions:
+      - "The Three Wolves"
+    band_relevant: true
+    summary: "The Three Wolves push patrols two days south of Feldwick, encroaching on routes Black Axes have used."
+    effects:
+      feud_change: {pair: ["Voss's Black Axes", "The Three Wolves"], delta: 1, cause: "Territory overlap"}
+
+  - id: "EVT_312_A10_050"
+    title: "Petra's Sister Sends Second Letter"
+    year: 312
+    season: "autumn"
+    day: 150
+    category: "personal"
+    chain: "petra_sister"
+    chain_order: 2
+    actors:
+      - "Petra Shepherd"
+    band_relevant: true
+    summary: "A second letter arrives — more desperate. Petra's sister says men came asking about Petra by name."
+
+  - id: "EVT_312_A11_051"
+    title: "Grain Prices Spike at Deepholm"
+    year: 312
+    season: "autumn"
+    day: 153
+    category: "economic"
+    location: "Deepholm"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: true
+    summary: "Grain prices at Deepholm market double. Settlements begin hoarding. Bands struggle to provision."
+    effects:
+      treasury_change: {delta: -5, cause: "Inflated food prices"}
+
+  - id: "EVT_312_A12_052"
+    title: "Widow Exposes Iron Grip Spy"
+    year: 312
+    season: "autumn"
+    day: 156
+    category: "political"
+    chain: "widows_web"
+    chain_order: 5
+    location: "Kolvik"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "The Pale Widow's agent identifies and quietly expels one of Ordovast's informants from Kolvik."
+
+  - id: "EVT_312_A13_053"
+    title: "Red Tide Blockades Coastal Path"
+    year: 312
+    season: "autumn"
+    day: 159
+    category: "military"
+    chain: "red_tide"
+    chain_order: 2
+    location: "Bleakwater Landing"
+    factions:
+      - "The Red Tide"
+    band_relevant: false
+    summary: "The Red Tide sets a toll on the coastal path south of Bleakwater. Traders must pay or go the long way."
+
+  - id: "EVT_312_A14_054"
+    title: "Kell Confronted by Gest"
+    year: 312
+    season: "autumn"
+    day: 162
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 3
+    actors:
+      - "Kell Hook"
+      - "Gest Ledger"
+    band_relevant: true
+    summary: "Gest asks Kell direct about the missing silver. Kell lies, saying he lost it to a pickpocket."
+    effects:
+      morale_change: {delta: -1, cause: "Distrust brewing between Kell and Gest"}
+
+  - id: "EVT_312_A15_055"
+    title: "Fog Blankets the Moor"
+    year: 312
+    season: "autumn"
+    day: 167
+    category: "weather"
+    location: "Moor's End"
+    band_relevant: false
+    summary: "A dense fog covers the northern moor for five straight days. Two travellers vanish."
+
+  - id: "EVT_312_A16_056"
+    title: "Grave Wardens Warn of Unquiet Dead"
+    year: 312
+    season: "autumn"
+    day: 172
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 2
+    location: "Icebreak"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "The Grave Wardens send word to all bands: the dead are stirring in every barrow they have checked this season."
+
+  - id: "EVT_312_A17_057"
+    title: "Ordovast Proposes Alliance to Voss"
+    year: 312
+    season: "autumn"
+    day: 176
+    category: "political"
+    chain: "iron_grip"
+    chain_order: 6
+    actors:
+      - "Ordovast"
+      - "Voss Cold-Eye"
+    factions:
+      - "The Iron Grip"
+    band_relevant: true
+    branches:
+      - condition: "band_accepts_alliance"
+        result: "Black Axes join Iron Grip as contracted enforcer. 60 silver/month, winter shelter, but take orders from Ordovast."
+      - condition: "band_refuses_alliance"
+        result: "Ordovast marks Voss as unreliable. Future contracts from Iron Grip dry up."
+    summary: "A Grimholt emissary arrives with a formal offer: Ordovast wants Voss's band as a standing enforcer."
+
+  - id: "EVT_312_A18_058"
+    title: "Harvest Festival at Stonebay"
+    year: 312
+    season: "autumn"
+    day: 180
+    category: "social"
+    location: "Stonebay Hamlet"
+    band_relevant: false
+    summary: "Stonebay holds its traditional harvest drinking and storytelling night despite the lean times."
+
+  - id: "EVT_312_A19_059"
+    title: "Thorne's Blood-Debt Collector Arrives"
+    year: 312
+    season: "autumn"
+    day: 185
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 3
+    actors:
+      - "Thorne Ash-Born"
+    location: "Thornwall"
+    band_relevant: true
+    summary: "A hardened warrior with three fighters arrives at Thornwall asking for Thorne by name. They carry legal writs."
+
+  - id: "EVT_312_A20_060"
+    title: "Sleet Storm Hits Northern Coast"
+    year: 312
+    season: "autumn"
+    day: 190
+    category: "weather"
+    band_relevant: true
+    summary: "An early sleet storm hammers the northern coast. Exposed bands lose equipment and morale."
+    effects:
+      morale_change: {delta: -1, cause: "Brutal sleet with no shelter"}
+
+  - id: "EVT_312_A21_061"
+    title: "Dalla Collapses in the Market"
+    year: 312
+    season: "autumn"
+    day: 195
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 3
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: false
+    summary: "Dalla collapses mid-sentence in the Ashen Reach market, eyes white, muttering names of the dead."
+
+  - id: "EVT_312_A22_062"
+    title: "Food Hoarding at Grimholt"
+    year: 312
+    season: "autumn"
+    day: 200
+    category: "economic"
+    chain: "iron_grip"
+    chain_order: 7
+    location: "Grimholt"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast seals Grimholt's granary. No grain leaves the settlement until spring. Vassal settlements protest."
+    effects:
+      feud_change: {pair: ["Bleakwater Landing", "Grimholt"], delta: 2, cause: "Grain embargo"}
+
+  - id: "EVT_312_A23_063"
+    title: "Rolf Sharpens His Axe in Silence"
+    year: 312
+    season: "autumn"
+    day: 205
+    category: "personal"
+    actors:
+      - "Rolf"
+    band_relevant: true
+    summary: "Rolf spends an evening sharpening his axe without speaking. When asked, he says: 'I dream of barrows.'"
+
+  # ============================================================
+  # WINTER (Days 211–360) — The Long Dark
+  # ============================================================
+
+  - id: "EVT_312_W01_064"
+    title: "First Snow Falls Heavy"
+    year: 312
+    season: "winter"
+    day: 212
+    category: "weather"
+    band_relevant: true
+    summary: "Heavy snow buries trails overnight. Travel between settlements slows to a crawl."
+
+  - id: "EVT_312_W02_065"
+    title: "Ordovast Mobilises War-Band"
+    year: 312
+    season: "winter"
+    day: 216
+    category: "military"
+    chain: "iron_grip"
+    chain_order: 8
+    location: "Grimholt"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast calls up sixty armed men from Grimholt and Raven's Perch. Purpose unclear. Settlements are alarmed."
+
+  - id: "EVT_312_W03_066"
+    title: "Fjord Compact Arms Traders"
+    year: 312
+    season: "winter"
+    day: 220
+    category: "military"
+    chain: "fjord_compact"
+    chain_order: 3
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: false
+    summary: "In response to Iron Grip mobilisation, Sigrun distributes spears and shields to Deepholm's trade guilds."
+
+  - id: "EVT_312_W04_067"
+    title: "Widow Offers Intelligence to Voss"
+    year: 312
+    season: "winter"
+    day: 224
+    category: "political"
+    chain: "widows_web"
+    chain_order: 6
+    actors:
+      - "Pale Widow"
+      - "Voss Cold-Eye"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: true
+    summary: "A Whispering Circle messenger offers Voss a sealed packet: Iron Grip troop positions and supply routes, free of charge."
+
+  - id: "EVT_312_W05_068"
+    title: "Blizzard Traps Travellers"
+    year: 312
+    season: "winter"
+    day: 228
+    category: "weather"
+    band_relevant: false
+    summary: "A three-day blizzard traps a merchant caravan between Ashmark and Kolvik. Rescue party too late for one."
+
+  - id: "EVT_312_W06_069"
+    title: "Barrow Mound Split Open"
+    year: 312
+    season: "winter"
+    day: 233
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 4
+    location: "Vargheim"
+    band_relevant: true
+    summary: "The barrow mound at Vargheim splits open from within. Tracks in the snow lead away from it — barefoot, in the cold."
+
+  - id: "EVT_312_W07_070"
+    title: "Kell Attempts to Flee"
+    year: 312
+    season: "winter"
+    day: 237
+    category: "personal"
+    chain: "kell_debt"
+    chain_order: 4
+    actors:
+      - "Kell Hook"
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Kell packs his kit at midnight and heads for the tree line. Whether he is caught depends on the watch."
+    branches:
+      - condition: "watch_catches_kell"
+        result: "Kell is dragged back. Voss must decide punishment."
+      - condition: "kell_escapes"
+        result: "Kell vanishes with 12 silver from the treasury. Band strength drops by one."
+
+  - id: "EVT_312_W08_071"
+    title: "Red Tide Winter Camp"
+    year: 312
+    season: "winter"
+    day: 241
+    category: "military"
+    chain: "red_tide"
+    chain_order: 3
+    location: "Bleakwater Landing"
+    factions:
+      - "The Red Tide"
+    band_relevant: false
+    summary: "The Red Tide fortify a coastal ruin south of Bleakwater as their winter base. Twenty fighters hunker down."
+
+  - id: "EVT_312_W09_072"
+    title: "Thorne Challenged to Holmgang"
+    year: 312
+    season: "winter"
+    day: 245
+    category: "personal"
+    chain: "thorne_curse"
+    chain_order: 4
+    actors:
+      - "Thorne Ash-Born"
+    band_relevant: true
+    summary: "The blood-debt collector formally challenges Thorne to holmgang on Day 255. The law is clear — refusal means outlawry."
+
+  - id: "EVT_312_W10_073"
+    title: "Deep Cold Kills Livestock"
+    year: 312
+    season: "winter"
+    day: 250
+    category: "weather"
+    band_relevant: false
+    summary: "Temperatures plunge below anything in local memory. Moor's End loses half its sheep flock overnight."
+    effects:
+      food_change: {delta: -4, cause: "Catastrophic livestock death from deep cold"}
+
+  - id: "EVT_312_W11_074"
+    title: "Grave Wardens Request Aid"
+    year: 312
+    season: "winter"
+    day: 254
+    category: "supernatural"
+    chain: "grave_wardens"
+    chain_order: 3
+    location: "Icebreak"
+    factions:
+      - "The Grave Wardens"
+    band_relevant: true
+    summary: "The Grave Wardens send a desperate plea: they need fighters to seal a barrow at Icebreak before midwinter."
+
+  - id: "EVT_312_W12_075"
+    title: "Iron Grip Marches South"
+    year: 312
+    season: "winter"
+    day: 260
+    category: "military"
+    chain: "iron_grip"
+    chain_order: 9
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Ordovast leads forty men south toward Deepholm territory. Scouts report siege equipment on wagons."
+    effects:
+      feud_change: {pair: ["The Iron Grip", "The Fjord Compact"], delta: 3, cause: "Military march on Compact territory"}
+
+  - id: "EVT_312_W13_076"
+    title: "Sigrun Calls for Allies"
+    year: 312
+    season: "winter"
+    day: 264
+    category: "political"
+    chain: "fjord_compact"
+    chain_order: 4
+    location: "Deepholm"
+    actors:
+      - "Sigrun"
+    factions:
+      - "The Fjord Compact"
+    band_relevant: true
+    summary: "Sigrun sends riders to every unaligned band: fight for the Compact and earn 80 silver plus a winter hall."
+
+  - id: "EVT_312_W14_077"
+    title: "Three Wolves Offer Non-Aggression Pact"
+    year: 312
+    season: "winter"
+    day: 270
+    category: "political"
+    chain: "three_wolves"
+    chain_order: 3
+    factions:
+      - "The Three Wolves"
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "The Three Wolves send a messenger: stay out of our territory and we stay out of yours. Simple."
+
+  - id: "EVT_312_W15_078"
+    title: "Midwinter Night — Veil Thinnest"
+    year: 312
+    season: "winter"
+    day: 280
+    category: "supernatural"
+    chain: "waking_barrows"
+    chain_order: 5
+    band_relevant: true
+    summary: "On the longest night, every barrow in the Rimevegr glows. Sleepers wake screaming across six settlements."
+    effects:
+      morale_change: {delta: -2, cause: "Mass terror on midwinter night"}
+
+  - id: "EVT_312_W16_079"
+    title: "Standoff at Deepholm Gates"
+    year: 312
+    season: "winter"
+    day: 290
+    category: "military"
+    chain: "iron_grip"
+    chain_order: 10
+    location: "Deepholm"
+    actors:
+      - "Ordovast"
+      - "Sigrun"
+    factions:
+      - "The Iron Grip"
+      - "The Fjord Compact"
+    band_relevant: true
+    summary: "Iron Grip forces camp outside Deepholm's walls. Ordovast demands the gates open. Sigrun refuses. A siege begins."
+
+  - id: "EVT_312_W17_080"
+    title: "Widow Makes Her Move"
+    year: 312
+    season: "winter"
+    day: 300
+    category: "political"
+    chain: "widows_web"
+    chain_order: 7
+    location: "Ashen Reach"
+    actors:
+      - "Pale Widow"
+    factions:
+      - "The Whispering Circle"
+    band_relevant: false
+    summary: "While Iron Grip and Compact are locked in standoff, the Pale Widow annexes Kolvik and Stonebay Hamlet through economic leverage."
+    effects:
+      feud_change: {pair: ["The Whispering Circle", "The Fjord Compact"], delta: 1, cause: "Opportunistic territory grab"}
+
+  - id: "EVT_312_W18_081"
+    title: "Ash Past: Old Comrade Found Dead"
+    year: 312
+    season: "winter"
+    day: 310
+    category: "personal"
+    chain: "ash_past"
+    chain_order: 2
+    actors:
+      - "Voss Cold-Eye"
+    band_relevant: true
+    summary: "Word reaches Voss that the one-armed man from Skaldhaven was found dead on the road, throat cut."
+
+  - id: "EVT_312_W19_082"
+    title: "Wolves Attack Foraging Party"
+    year: 312
+    season: "winter"
+    day: 320
+    category: "weather"
+    band_relevant: true
+    summary: "A pack of starving wolves ambushes a foraging party. One band member takes a bite wound to the arm."
+    effects:
+      morale_change: {delta: -1, cause: "Wolf attack and injury"}
+
+  - id: "EVT_312_W20_083"
+    title: "Iron Grip Retreats"
+    year: 312
+    season: "winter"
+    day: 330
+    category: "military"
+    chain: "iron_grip"
+    chain_order: 11
+    location: "Deepholm"
+    actors:
+      - "Ordovast"
+    factions:
+      - "The Iron Grip"
+    band_relevant: false
+    summary: "Supplies dwindling, Ordovast withdraws north. The siege lasted forty days and gained nothing but starvation."
+    effects:
+      feud_change: {pair: ["The Iron Grip", "The Fjord Compact"], delta: -1, cause: "Retreat eases immediate tension"}
+
+  - id: "EVT_312_W21_084"
+    title: "The Long Dark Deepens"
+    year: 312
+    season: "winter"
+    day: 340
+    category: "weather"
+    band_relevant: true
+    summary: "Shortest days. Sunlight lasts four hours. Frostbite and despair erode what remains of winter endurance."
+    effects:
+      morale_change: {delta: -1, cause: "Deepest point of the Long Dark"}
+
+  - id: "EVT_312_W22_085"
+    title: "Dalla's Final Vision"
+    year: 312
+    season: "winter"
+    day: 350
+    category: "supernatural"
+    chain: "dalla_awakening"
+    chain_order: 4
+    location: "Ashen Reach"
+    actors:
+      - "Dalla"
+    band_relevant: true
+    summary: "Dalla speaks clearly for the first time in weeks: 'The barrows will not sleep again. The old war is coming back.'"
+
+  - id: "EVT_312_W23_086"
+    title: "Spring Thaw Signs"
+    year: 312
+    season: "winter"
+    day: 358
+    category: "weather"
+    band_relevant: true
+    summary: "Ice cracks on the northern fjord. Dripping sounds in the forest. The survivors of Year 312 begin to count the days."

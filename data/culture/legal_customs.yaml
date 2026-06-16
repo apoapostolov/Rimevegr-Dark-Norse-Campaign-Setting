@@ -1,0 +1,1910 @@
+# Iron Ledger — Legal Customs and Law of the Rimevegr
+# Canonical legal system database for the Norse dark-fantasy world.
+# Used by campaign simulation, NPC disputes, and novel prose.
+#
+# Currency: 1 silver = 10 copper.
+# Pantheon: Odynn (The One-Hung), Thurr (Crack-Handed), Fraeja
+# (The Grief-Bride), Lopt (The Scar-Mouth), Hael (The Half-Rotted).
+#
+# Key context: Law in the Rimevegr is memory, spoken aloud. There are
+# no written codes — the law-speaker holds the law in his head and
+# recites it at need. Disputes are settled by the thing, by blood, or
+# by the practical mathematics of weregild. Justice is a transaction.
+# The gods do not intervene. They haven't spoken since the Cracking.
+#
+# Settlements referenced: Frostfjord Hollow, Ashen Reach, Feldwick,
+# Grimholt, Deepholm, Skaldhaven, Thornwall, Vargheim, Kolvik,
+# Barrowstead, Driftmere, Hagmark.
+
+legal_customs:
+  # ================================================================
+  # THING LAW — Assemblies and collective governance
+  # ================================================================
+  thing_law:
+    description: >-
+      The thing is the assembly of free folk. It is court, legislature,
+      and market in one muddy field. Armed men stand in a ring and
+      decide who lives, who pays, and who walks into the wilderness.
+      The law is spoken, never written. What the law-speaker forgets
+      ceases to exist.
+
+    entries:
+      - id: "LAW_THG_001"
+        name: "Local Thing"
+        category: "thing_law"
+        description: >-
+          The gathering of free folk in a single settlement or cluster
+          of farmsteads. Meets at the law-stone when disputes arise or
+          at least twice during the long dark. Any free man may speak.
+          Thralls stand at the edge and keep quiet. The local thing
+          settles theft, boundary disputes, and small blood-debts. Its
+          decisions bind only the settlement.
+        who_participates: "All free men and women of the settlement. The jarl presides but does not dictate."
+        mercenary_relevance: >-
+          Mercenary bands may attend if camped nearby and invited. They
+          cannot vote but may speak if given leave. Ignoring a local
+          thing's ruling while in their territory is a fast way to lose
+          supply access.
+        enforcement: "The jarl's huscarls enforce. In smaller settlements, the aggrieved party enforces with kin."
+        notes: "A thing held without a law-speaker is technically invalid, but no one has refused one in living memory."
+
+      - id: "LAW_THG_002"
+        name: "Allting"
+        category: "thing_law"
+        description: >-
+          The great assembly of multiple settlements, held once a year
+          at a traditional gathering site — usually a hilltop or river
+          crossing. Jarls, law-speakers, and representatives from
+          allied territories meet to settle inter-settlement disputes,
+          declare outlawry, and renew alliances. The Allting at
+          Skaldhaven is the largest, drawing delegates from Frostfjord
+          Hollow to Kolvik.
+        who_participates: "Jarls, law-speakers, free landholders, invited warriors. Women attend but rarely speak in formal session."
+        mercenary_relevance: >-
+          The Allting is where large contracts are announced. Bands
+          seeking winter quarters or campaign hire attend the margins.
+          Fighting during the Allting is a killing offense.
+        enforcement: "Combined huscarl forces of attending jarls. Violation of thing-peace at the Allting means death."
+        notes: "The Skaldhaven Allting has not been disrupted in forty years. The last disruption ended with seven heads on poles."
+
+      - id: "LAW_THG_003"
+        name: "Thing-Peace"
+        category: "thing_law"
+        description: >-
+          A sacred truce that blankets the thing-site and the roads
+          leading to it for three days before, during, and three days
+          after the assembly. No weapons may be drawn. No feuds may be
+          prosecuted. Any man who breaks thing-peace is outlawed
+          immediately, without trial — the act itself is the verdict.
+          The roads are marked with hazel poles.
+        who_participates: "All attendees and travellers within the hazel-marked boundaries."
+        mercenary_relevance: >-
+          Bands must peace-bind their weapons with leather cord during
+          thing-peace. Veterans know this and comply. Green fighters
+          who reach for a hilt get their whole band expelled.
+        enforcement: "Every free man present is empowered to kill a peace-breaker on the spot. In practice, the jarl's men do it."
+        notes: "The hazel poles are cut fresh for each thing. Old poles left standing are considered a threat — someone expects trouble."
+
+      - id: "LAW_THG_004"
+        name: "Law-Speaker"
+        category: "thing_law"
+        description: >-
+          The man who carries the law in his memory. He recites
+          precedent, settles procedural disputes, and advises the thing
+          on custom. The law-speaker is chosen by the thing and holds
+          the position until death, incapacity, or public shame. He is
+          not a judge — he tells the assembly what the law says, and
+          the assembly decides. A settlement without a law-speaker
+          borrows one or makes rulings that no neighbour respects.
+        who_participates: "One per settlement or alliance. Typically an older man with a sharp memory and no outstanding feuds."
+        mercenary_relevance: >-
+          A band's contract disputes may be brought before the
+          law-speaker if both parties consent. His rulings on
+          mercenary custom carry weight proportional to the settlement's
+          power. A law-speaker in Grimholt matters. One in a
+          six-hut fishing camp does not.
+        enforcement: "Moral authority only. The law-speaker has no warriors — his power is the assembly's willingness to listen."
+        notes: "Some law-speakers are rumored to forget selectively, burying inconvenient precedents. Proving it is nearly impossible."
+
+      - id: "LAW_THG_005"
+        name: "Witness Testimony"
+        category: "thing_law"
+        description: >-
+          The primary form of evidence at the thing. A free man's oath
+          carries weight proportional to his reputation. Witnesses
+          swear on ring or weapon before speaking. A man known for
+          honesty can settle a case with three words. A man known for
+          nothing needs five oath-helpers standing behind him. Thrall
+          testimony is inadmissible unless confirmed by a free witness.
+        who_participates: "Free men and women. Oath-helpers bolster a witness's credibility by swearing they believe him truthful."
+        mercenary_relevance: >-
+          Mercenary testimony is valued less than a settled farmer's
+          word. A wandering killer's oath needs more oath-helpers. Band
+          members testifying for each other are discounted — everyone
+          knows they share a cookfire and a purse.
+        enforcement: "False witness, if proven, results in permanent loss of oath-standing. The liar's word is void in all future disputes."
+        notes: "Women's testimony is admitted but weighted differently by region. Skaldhaven treats it equally. Vargheim does not."
+
+      - id: "LAW_THG_006"
+        name: "Appeal to Higher Assembly"
+        category: "thing_law"
+        description: >-
+          A man unhappy with a local thing's ruling may appeal to the
+          Allting, but only if he can travel there, find supporters,
+          and wait for the next session. In practice, appeal is a
+          privilege of the mobile and the connected. A farmer with a
+          harvest to bring in does not appeal. He pays or he fights.
+          The Allting may overturn, affirm, or increase the penalty.
+        who_participates: "The aggrieved party, their witnesses, and the opposing side if they bother to attend."
+        mercenary_relevance: >-
+          Bands have the mobility to appeal, which is an advantage
+          over settled folk. A captain who brings a dispute to the
+          Allting shows either confidence or desperation — both get
+          attention.
+        enforcement: "The Allting's ruling is final. Defying it is grounds for outlawry."
+        notes: "The journey to the Allting costs time, silver, and goodwill. Many disputes are settled on the road before arrival."
+
+      - id: "LAW_THG_007"
+        name: "Exile Vote"
+        category: "thing_law"
+        description: >-
+          The thing may vote to exile a member of the community —
+          not full outlawry, but banishment from the settlement and
+          its lands. The exile retains their legal personhood and may
+          seek shelter elsewhere. The vote requires a clear majority
+          of free men present. The exiled person has three days to
+          leave with their moveable property. Land stays.
+        who_participates: "All free men of the settlement. The accused may speak in their defense before the vote."
+        mercenary_relevance: >-
+          Exiled individuals frequently seek mercenary bands. They
+          arrive with skills, grudges, and nothing to lose — useful
+          but dangerous recruits. A captain should ask why they were
+          cast out before handing them a weapon.
+        enforcement: "Huscarls escort the exile to the boundary. Returning without leave is treated as trespass — the penalty is at the jarl's discretion."
+        notes: "Some settlements exile troublemakers instead of paying the political cost of outlawry. It is the coward's compromise."
+
+      - id: "LAW_THG_008"
+        name: "Combat Trial"
+        category: "thing_law"
+        description: >-
+          When testimony is contradictory and neither side will yield,
+          the thing may authorize a combat trial. This is not holmgang
+          — it is supervised by the assembly and fought to first blood
+          or yield, not death. The gods are theoretically watching. In
+          practice, the better fighter wins, and everyone pretends this
+          is the same as justice. Combat trials are rare — most
+          law-speakers steer disputes toward weregild instead.
+        who_participates: "The two disputants, or their chosen champions. The law-speaker oversees."
+        mercenary_relevance: >-
+          A mercenary captain may serve as a champion for hire in
+          combat trials. The pay is good — 5 to 15 silver depending
+          on the stakes. The risk is moderate. Losing a combat trial
+          for a client is embarrassing but not legally binding on the
+          champion personally.
+        enforcement: "Breaking the rules of the combat trial — striking after yield, using forbidden weapons — is thing-peace violation."
+        notes: "Combat trials are theater dressed as theology. The audience knows it. The participants know it. The law-speaker pretends otherwise."
+
+  # ================================================================
+  # WEREGILD — The price of blood
+  # ================================================================
+  weregild:
+    description: >-
+      Every free person has a price. Weregild is the blood-debt owed
+      when someone is killed or maimed. The amount depends on the
+      victim's status, not the killer's intent. Murder, accident, and
+      negligence all produce the same debt. Failure to pay weregild
+      opens the door to blood feud. The system exists because the
+      alternative is endless killing — and the Rimevegr has too few
+      people to waste.
+
+    entries:
+      - id: "LAW_WRG_001"
+        name: "Weregild — Free Man"
+        category: "weregild"
+        description: >-
+          The standard blood-price for a free man killed or
+          permanently maimed. Varies by settlement and the victim's
+          standing — a prosperous farmer costs more than a landless
+          drifter, but both fall within the same range. The amount is
+          negotiated at the thing or between families. Partial payment
+          may be accepted if the alternative is feud.
+        who_affected: "The victim's kin — typically the eldest male relative receives payment on behalf of the family."
+        amount_silver: "40-60"
+        mercenary_relevance: >-
+          When a band kills a free man on contract, the employer
+          typically covers weregild. When they kill off-contract, the
+          band pays or runs. Smart captains keep a weregild fund.
+        enforcement: "The victim's family. If they cannot collect by negotiation, they may take it by feud or petition the thing."
+        notes: "A man's weregild is also his honor-price. Offering less than the customary amount is a deliberate insult."
+
+      - id: "LAW_WRG_002"
+        name: "Weregild — Free Woman"
+        category: "weregild"
+        description: >-
+          The blood-price for a free woman. Generally lower than a
+          man's but not negligible — women bear children, and children
+          are the settlement's future. Killing a woman with living
+          children increases the amount. In some settlements near
+          Skaldhaven, women's weregild equals men's. In Vargheim, it
+          is strictly half. Custom varies, and men have died arguing
+          the difference.
+        who_affected: "Father, husband, or eldest son. If none survive, the settlement jarl collects."
+        amount_silver: "30-50"
+        mercenary_relevance: >-
+          Killing women — even accidentally — draws harsher public
+          judgment than the silver amount suggests. A band known for
+          it will find doors closed and contracts scarce.
+        enforcement: "Same as free man's weregild, with additional social penalty for the killer."
+        notes: "The Cracking killed more men than women. Some regions have quietly raised women's weregild to discourage violence."
+
+      - id: "LAW_WRG_003"
+        name: "Weregild — Thrall"
+        category: "weregild"
+        description: >-
+          Technically not weregild — a thrall is property, and their
+          death is compensated as property damage to the owner. The
+          amount reflects the thrall's economic value: a skilled
+          smith-thrall costs more than a field laborer. The thrall's
+          family, if they have one, receives nothing. This is the law.
+          Whether it is justice is a question the thing does not
+          entertain.
+        who_affected: "The thrall's owner. The thrall's kin have no legal standing."
+        amount_silver: "5-10"
+        mercenary_relevance: >-
+          Bands that kill thralls carelessly anger their owners, not
+          the law. The debt is small but the insult to a jarl whose
+          property was damaged can be disproportionate.
+        enforcement: "The owner demands compensation. The thing treats it as a property claim, not a killing."
+        notes: "In Deepholm, a thrall who has served fifteen years may petition for a weregild equal to half a free man's. It has been granted twice."
+
+      - id: "LAW_WRG_004"
+        name: "Weregild — Jarl"
+        category: "weregild"
+        description: >-
+          The blood-price of a jarl is enormous — meant to be
+          unpayable except by another jarl or a very successful
+          war-band. The amount reflects not just the man but the
+          political chaos his death creates. Killing a jarl without
+          paying weregild is effectively a declaration of war against
+          his settlement. Even accidental jarl-killing demands
+          extraordinary compensation.
+        who_affected: "The jarl's family and, by extension, the entire settlement that depended on his leadership."
+        amount_silver: "200-500"
+        mercenary_relevance: >-
+          Assassination contracts exist but rarely name a price below
+          300 silver — and that is just the hire fee. The weregild
+          question is the employer's problem. Smart captains refuse
+          jarl-killing contracts unless the employer has an army.
+        enforcement: "The dead jarl's huscarls, kin, and allied settlements. Weregild for a jarl is a political negotiation, not a thing matter."
+        notes: "The last jarl-killing in Frostfjord Hollow cost the perpetrator his entire household, land, and the lives of three kin."
+
+      - id: "LAW_WRG_005"
+        name: "Weregild — Child"
+        category: "weregild"
+        description: >-
+          A child's weregild is lower than an adult's but carries
+          a social stigma far beyond the silver. Killing a child —
+          even in the chaos of a raid — marks a man. The amount is
+          roughly half the parent's weregild. Unacknowledged children
+          (bastards not claimed by a father) have reduced weregild.
+          Infants exposed by their parents have none — exposure is
+          the parent's right.
+        who_affected: "The child's father, or mother if the father is dead or unknown."
+        amount_silver: "15-30"
+        mercenary_relevance: >-
+          A band with child-blood on its hands loses standing fast.
+          Even hardened jarls will not openly contract with
+          child-killers. The practical effect outweighs the legal debt.
+        enforcement: "The parents' kin. Settlements may collectively refuse shelter to known child-killers."
+        notes: "The distinction between 'killed' and 'left to die during a raid' is legally clear and morally meaningless."
+
+      - id: "LAW_WRG_006"
+        name: "Weregild — Livestock and Working Animals"
+        category: "weregild"
+        description: >-
+          Killing or maiming another man's livestock requires
+          compensation equal to the animal's value plus the lost
+          labor or production. A good milk cow in the long dark is
+          worth more than some thralls. Horses are valued highest.
+          Hounds used for hunting or herding carry their own price.
+          The thing treats animal disputes with the same gravity as
+          property theft.
+        who_affected: "The animal's owner."
+        amount_silver: "Cow: 3-5, Horse: 8-15, Ox: 5-8, Hound: 2-4, Sheep/Goat: 1-2"
+        mercenary_relevance: >-
+          Bands on the march eat whatever they can find. Paying for
+          livestock taken from local farmers is a cost of doing
+          business. Not paying turns every farmstead into an enemy.
+        enforcement: "The owner petitions the thing. Repeated livestock theft may escalate to outlawry proceedings."
+        notes: "Stealing a man's only horse in the long dark is functionally a death sentence. Some things treat it accordingly."
+
+      - id: "LAW_WRG_007"
+        name: "Weregild — Property Destruction"
+        category: "weregild"
+        description: >-
+          Deliberate destruction of another's property — burning a
+          storehouse, scuttling a boat, poisoning a well — is
+          compensated at full replacement value plus a penalty
+          assessed by the thing. Arson is treated most severely
+          because fire threatens the whole settlement. Well-poisoning
+          is considered among the most contemptible acts in the
+          Rimevegr — equivalent to cowardice in battle.
+        who_affected: "The property owner; in cases of wells and shared resources, the entire settlement."
+        amount_silver: "Full replacement + 10-50 penalty depending on severity and intent"
+        mercenary_relevance: >-
+          Scorched-earth tactics are sometimes part of a contract.
+          The employer pays the destruction costs. Bands that burn
+          without authorization bear the debt themselves and earn
+          reputations that close doors.
+        enforcement: "The thing, backed by the jarl's authority. Arsonists may face outlawry regardless of payment."
+        notes: "Burning a man's house in the long dark is attempted murder. The thing treats it as such even if no one dies."
+
+      - id: "LAW_WRG_008"
+        name: "Weregild — Mercenary Fighter"
+        category: "weregild"
+        description: >-
+          A mercenary killed outside of sanctioned combat has a
+          weregild determined by rank and reputation. Green recruits
+          fall at the low end of free-man rates. Named veterans may
+          command weregild above the standard range. The band captain
+          receives the weregild and distributes a share to the dead
+          fighter's kin if any are known. A mercenary killed in fair
+          battle owes no weregild — that is the trade.
+        who_affected: "The band captain collects on behalf of the dead. Kin receive a share at the captain's discretion."
+        amount_silver: "Green: 30-40, Common: 40-50, Veteran: 50-70, Named: 60-100"
+        mercenary_relevance: >-
+          This is the band's direct concern. Knowing the weregild of
+          each fighter helps the captain calculate the cost of a bad
+          contract. Some captains inflate their fighters' reputations
+          specifically to raise the blood-price.
+        enforcement: "The captain negotiates. If negotiation fails, the band may take payment by force — which starts a new cycle of debt."
+        notes: "A dead mercenary with no known kin and no captain to collect is worth nothing. This is why bands stick together."
+
+  # ================================================================
+  # OATHS AND LAW — Binding words
+  # ================================================================
+  oaths_and_law:
+    description: >-
+      An oath is the foundation of trust in a world without written
+      contracts. Spoken before witnesses, sworn on ring or blade, an
+      oath binds a man's honor to his word. Breaking an oath does not
+      merely damage reputation — it destroys legal standing. A known
+      oath-breaker cannot testify, cannot swear, cannot be trusted
+      in any transaction that matters. He is alive but legally dead.
+
+    entries:
+      - id: "LAW_OTH_001"
+        name: "Blood Oath"
+        category: "oaths_and_law"
+        description: >-
+          The strongest binding in the Rimevegr. Two men cut their
+          palms and clasp hands, letting blood mingle while speaking
+          their vow. A blood oath creates a bond theoretically equal
+          to kinship — the oath-brothers owe each other the same
+          loyalty as blood siblings. Breaking a blood oath is the
+          single most destructive act a man can commit to his own
+          standing. Even enemies respect the bond.
+        who_participates: "Two free men, minimum one witness. Often performed before a law-speaker for maximum weight."
+        mercenary_relevance: >-
+          Some captains blood-oath their inner circle. It creates
+          loyalty but also obligation — a blood-brother's debts become
+          your debts. Most experienced captains avoid it precisely
+          because the cost of honoring it is unlimited.
+        enforcement: "Social destruction. A blood-oath breaker is shunned by free folk, refused service, and universally mistrusted."
+        notes: "The scar on the palm is visible proof. Men who refuse to show their palms during negotiation are assumed to have broken one."
+
+      - id: "LAW_OTH_002"
+        name: "Ring-Oath"
+        category: "oaths_and_law"
+        description: >-
+          A formal oath sworn on the jarl's arm-ring or the
+          settlement's oath-ring kept at the altar-stone. The ring is
+          sacred to Thurr — Crack-Handed, god of oaths and fair
+          dealing. Ring-oaths are used for fealty, alliance, and major
+          commercial agreements. The ring does not care whether Thurr
+          is listening. The witnesses do.
+        who_participates: "The oath-giver, a ring-keeper (usually the jarl or law-speaker), and at least two witnesses."
+        mercenary_relevance: >-
+          Band contracts are frequently sealed with a ring-oath. The
+          captain swears service; the employer swears payment. Both
+          know the oath binds only as far as the witnesses' memory
+          and the threat of reputation damage.
+        enforcement: "The witnesses and the community's memory. Ring-oath breaking is reported at the thing and entered into precedent."
+        notes: "Some jarls keep deliberately impressive rings to make oath-giving feel momentous. Theater serves law."
+
+      - id: "LAW_OTH_003"
+        name: "Weapon-Oath"
+        category: "oaths_and_law"
+        description: >-
+          An oath sworn on one's own weapon — typically a sword or
+          axe. Less formal than a ring-oath but carries personal
+          weight. The implication is clear: if I break this word, my
+          weapon should turn on me. Warriors take weapon-oaths
+          seriously because the alternative is admitting their blade
+          means nothing. Used for battlefield promises, truces, and
+          personal commitments.
+        who_participates: "The oath-giver and at least one witness. No ring-keeper required."
+        mercenary_relevance: >-
+          Field truces between opposing bands are often sealed with
+          weapon-oaths. Fast, practical, and respected by fighting
+          men even when they respect nothing else.
+        enforcement: "Personal honor and witness memory. Less formally binding than a ring-oath but taken seriously among warriors."
+        notes: "A man who swears on a poor weapon is subtly mocked. The oath is only as serious as the blade."
+
+      - id: "LAW_OTH_004"
+        name: "Witness-Oath"
+        category: "oaths_and_law"
+        description: >-
+          The oath sworn before giving testimony at the thing. The
+          witness swears they will speak truth as they saw it, on
+          their honor and the honor of their kin. False witness, if
+          proven, results in permanent loss of legal standing — the
+          liar's testimony is void in all future proceedings. This is
+          a social death that respects no borders.
+        who_participates: "Any free person giving testimony. The law-speaker administers the oath."
+        mercenary_relevance: >-
+          Mercenary testimony is already discounted. A mercenary
+          caught in false witness loses what little legal standing
+          the band possesses. Captains drill this into new recruits:
+          lie to everyone else, but never lie at the thing.
+        enforcement: "The thing community. A proven liar is announced publicly and the shame follows them."
+        notes: "Oath-helpers who swear to a known liar's truthfulness share the disgrace if the lie is exposed."
+
+      - id: "LAW_OTH_005"
+        name: "Oath-Breaking"
+        category: "oaths_and_law"
+        description: >-
+          The severest legal and social penalty short of outlawry. A
+          proven oath-breaker loses the right to swear, testify, or
+          enter into binding agreements. His word is legally void.
+          No one is required to honor a deal made with an oath-breaker.
+          In practice, oath-breakers become social dead — unable to
+          trade, contract, or settle disputes through the thing. They
+          exist in a grey space between free and outlaw.
+        who_affected: "The oath-breaker and, to a lesser degree, anyone who vouched for them."
+        mercenary_relevance: >-
+          An oath-breaking captain cannot get contracts. An
+          oath-breaking fighter cannot find a band. The mercenary
+          life runs on trust between dangerous men — trust destroyed
+          is livelihood destroyed.
+        enforcement: "Community consensus and gossip. No formal execution needed. The social mechanism is self-enforcing."
+        notes: "Some oath-breakers flee to the deep wilderness and live as bandits. The law no longer applies to them in any meaningful way."
+
+      - id: "LAW_OTH_006"
+        name: "Oath Ceremony"
+        category: "oaths_and_law"
+        description: >-
+          The formal ritual surrounding a major oath. The law-speaker
+          or a godi (priest) holds the ring. The oath-giver places
+          their hand on it and speaks the words in full hearing of
+          witnesses. Mead is shared afterward. The ceremony is
+          performed at the altar-stone, the thing-site, or the jarl's
+          hall depending on the oath's significance. Witnesses are
+          named aloud and remember — that is their function.
+        who_participates: "Oath-giver, ring-keeper, named witnesses, and often the community as audience."
+        mercenary_relevance: >-
+          Public oath ceremonies for contracts signal that both sides
+          take the deal seriously. A captain who refuses a ceremony
+          and insists on a handshake is saying the contract is
+          disposable.
+        enforcement: "The ceremony itself is the enforcement mechanism — it creates witnesses and public memory."
+        notes: "The mead shared after an oath is never poisoned. This is one of the very few absolute rules in the Rimevegr."
+
+      - id: "LAW_OTH_007"
+        name: "Binding Oath"
+        category: "oaths_and_law"
+        description: >-
+          An oath with specific, measurable conditions and a declared
+          penalty for failure. 'I will deliver thirty spears to
+          Grimholt before Barrowrise or forfeit twenty silver.' The
+          binding oath is the closest thing the Rimevegr has to a
+          written contract. Both the promise and the penalty are spoken
+          before witnesses. Failure triggers the penalty automatically
+          — no thing ruling needed.
+        who_participates: "The oath-giver, the receiving party, and a minimum of three sworn witnesses."
+        mercenary_relevance: >-
+          Smart captains insist on binding oaths for contract terms —
+          payment amount, delivery date, and penalty for breach. It
+          protects both sides and gives the thing clear grounds for
+          enforcement if something goes wrong.
+        enforcement: "Self-executing penalty, backed by witness testimony if disputed."
+        notes: "A binding oath with an impossible condition is void. The law-speaker decides what is possible."
+
+      - id: "LAW_OTH_008"
+        name: "Conditional Oath"
+        category: "oaths_and_law"
+        description: >-
+          An oath that activates only if specific circumstances arise.
+          'If the harvest fails, I will shelter your family until thaw.'
+          Conditional oaths are common in alliance-building — they
+          commit a man to future action without present cost. The
+          danger is that conditions are interpreted by the one who
+          benefits, not the one who swore. Disputes over whether a
+          condition was met fill half the thing's docket.
+        who_participates: "As with any oath: giver, receiver, and witnesses."
+        mercenary_relevance: >-
+          Bands use conditional oaths for escalation clauses in
+          contracts. 'If the siege lasts past Ironmoon, the daily
+          rate doubles.' Clear conditions prevent disputes. Vague
+          ones guarantee them.
+        enforcement: "The thing rules on whether the condition was met. Witness memory is the primary evidence."
+        notes: "Experienced law-speakers encourage precise language in conditional oaths. Inexperienced ones get creative interpretations."
+
+  # ================================================================
+  # OUTLAWRY — The living death
+  # ================================================================
+  outlawry:
+    description: >-
+      Outlawry strips a person of all legal protection. An outlaw has
+      no weregild — anyone may kill them without consequence. Their
+      property is forfeit. Their family must publicly disown them or
+      share the sentence. Outlawry is the ultimate sanction because it
+      weaponizes the community itself. Every hand is turned against the
+      wolf's-head.
+
+    entries:
+      - id: "LAW_OUT_001"
+        name: "Full Outlawry"
+        category: "outlawry"
+        description: >-
+          Permanent exile from all settlements, all protections, all
+          human community. The outlaw becomes a wolf's-head — a creature
+          to be hunted. Their property is seized and distributed among
+          their creditors and victims. Anyone may kill a full outlaw
+          without legal consequence. No settlement may shelter them.
+          Full outlawry is reserved for the worst offenses: kinslaying,
+          oath-breaking of the gravest kind, thing-peace violation,
+          and repeated murder.
+        who_affected: "The outlaw and any who harbor them. Sheltering a full outlaw is itself grounds for outlawry."
+        mercenary_relevance: >-
+          Full outlaws sometimes seek mercenary bands as their last
+          refuge. They fight well — they have nothing left to lose.
+          But harboring one puts the band's standing at risk in every
+          settlement that knows.
+        enforcement: "Universally recognized. Any person, any settlement, any band. The outlaw has no friends in law."
+        notes: "Some full outlaws survive for years in the deep wilderness. They become legends, which is the last thing the law intended."
+
+      - id: "LAW_OUT_002"
+        name: "Lesser Outlawry"
+        category: "outlawry"
+        description: >-
+          Banishment from a specific territory for a fixed period —
+          typically three to ten years. The lesser outlaw retains
+          legal standing outside the banning territory. They may live,
+          trade, and swear oaths elsewhere. If they survive the
+          sentence and return, their standing is restored. The thing
+          may impose conditions — pay remaining weregild, make a
+          pilgrimage, or perform service.
+        who_affected: "The outlaw, within the specified territory. Their family keeps property but may face social pressure."
+        mercenary_relevance: >-
+          Lesser outlaws make steady recruits — they need work, they
+          need distance from home, and they have a reason to return
+          alive. Captains who operate far from the banning territory
+          actively seek them.
+        enforcement: "The banning settlement's huscarls. Returning early is treated as trespass, punishable up to full outlawry."
+        notes: "The line between lesser outlawry and exile vote is thin. Lesser outlawry carries formal legal weight; exile is a community decision."
+
+      - id: "LAW_OUT_003"
+        name: "Forest Outlawry"
+        category: "outlawry"
+        description: >-
+          A special category for those who flee into the wilderness
+          rather than face the thing's judgment. Forest outlaws are
+          not formally sentenced — they outlaw themselves by running.
+          They are treated as full outlaws within the territory they
+          fled but may negotiate return if they surrender and face
+          judgment. Most do not. The forest is cold but it does not
+          hold grudges.
+        who_affected: "The fugitive and any who assist them in evading justice."
+        mercenary_relevance: >-
+          Forest outlaws raid supply lines and ambush isolated
+          travellers. Bands contracted to clear roads may be hunting
+          them. Alternatively, desperate forest outlaws may approach
+          a band offering service in exchange for food and anonymity.
+        enforcement: "Informal. Anyone may kill a forest outlaw, but few bother unless there is a bounty or a personal grudge."
+        notes: "Forest outlaw bands occasionally form — a dozen desperate men with nothing to lose. They rarely last a full long dark."
+
+      - id: "LAW_OUT_004"
+        name: "Temporary Outlawry"
+        category: "outlawry"
+        description: >-
+          A punitive measure where the thing declares a person outlaw
+          for a specific duration — usually one to three seasons. The
+          outlaw must leave immediately and cannot return until the
+          term expires. Their property is held in trust by a kinsman.
+          If the outlaw survives, they return with full standing.
+          Temporary outlawry is used for offenses too serious for
+          weregild but too minor for permanent banishment.
+        who_affected: "The outlaw. Their family retains property and standing but cannot communicate with the outlaw during the sentence."
+        mercenary_relevance: >-
+          A temporary outlaw is effectively a free agent. They cannot
+          return home and need employment. Mercenary bands near
+          thing-sites after major assemblies can recruit from the
+          freshly outlawed.
+        enforcement: "The sentencing settlement's authority. Returning early converts temporary outlawry to full outlawry."
+        notes: "Surviving a long dark as a temporary outlaw is the sentence. The wilderness does the punishing."
+
+      - id: "LAW_OUT_005"
+        name: "Outlawry Process"
+        category: "outlawry"
+        description: >-
+          The formal procedure for declaring outlawry at the thing.
+          The accuser presents the case. Witnesses testify. The
+          law-speaker states the relevant precedent. The assembly
+          votes. A majority of free men must agree. The outlaw is
+          named aloud three times, and their description is given so
+          all may recognize them. The declaration is repeated at the
+          next Allting for wider recognition.
+        who_participates: "The accuser, witnesses, the law-speaker, and all free men present for the vote."
+        mercenary_relevance: >-
+          Attending an outlawry proceeding gives a band intelligence —
+          who is newly vulnerable, who has lost a protector, and who
+          might be looking for swords.
+        enforcement: "The thing's collective authority. Refusal to recognize the outlawry of a properly sentenced person is itself an offense."
+        notes: "The triple naming is ancient custom. Some believe it has power — that saying a name three times in condemnation reaches the gods. It does not."
+
+      - id: "LAW_OUT_006"
+        name: "Mercenary Outlawry Implications"
+        category: "outlawry"
+        description: >-
+          A mercenary declared outlaw loses the band's protection.
+          Most captains expel an outlawed fighter immediately — the
+          cost of harboring them exceeds the value of their sword. A
+          captain declared outlaw loses the band entirely, as fighters
+          will not follow a wolf's-head into social death. The band
+          typically elects a new captain and distances itself from the
+          old one as fast as possible.
+        who_affected: "The outlawed mercenary and, temporarily, any band that delays in expelling them."
+        mercenary_relevance: >-
+          This is the existential threat. Outlawry of a captain can
+          dissolve a band overnight. Smart captains avoid legal
+          exposure by keeping their personal feuds separate from band
+          operations.
+        enforcement: "Settlements refuse service to bands harboring known outlaws. The economic pressure is immediate."
+        notes: "An outlawed captain who keeps fighters loyal through sheer force of personality exists outside the law entirely. Some become warlords."
+
+  # ================================================================
+  # BLOOD FEUD — The long killing
+  # ================================================================
+  blood_feud:
+    description: >-
+      When weregild fails, blood answers blood. A blood feud is a
+      sustained conflict between families or clans, passed from
+      generation to generation until settlement or extinction. The
+      Rimevegr's declining population makes feuds increasingly
+      expensive, but that has not stopped them. Hatred is the one
+      resource that never runs short.
+
+    entries:
+      - id: "LAW_BLD_001"
+        name: "Feud Initiation"
+        category: "blood_feud"
+        description: >-
+          A blood feud begins when weregild is demanded and refused,
+          or when the offered amount is so insultingly low that
+          refusal is the only honorable response. The aggrieved party
+          publicly declares the feud at the thing or by sending a
+          carved feud-stick to the offender's household. Once declared,
+          killing members of the opposing family is legally
+          permissible — though the dead still have weregild that adds
+          to the mounting debt.
+        who_participates: "The aggrieved family declares. All adult males of both families are considered valid targets."
+        mercenary_relevance: >-
+          Feuding families hire mercenary bands. Both sides. A captain
+          who accepts a feud contract should expect the other side to
+          make a counteroffer. Taking both contracts is the fastest
+          way to die in the Rimevegr.
+        enforcement: "Self-enforcing. The feud is the enforcement mechanism — killing is the sanction."
+        notes: "A feud declared in winter is especially dangerous. Long dark, close quarters, limited escape routes."
+
+      - id: "LAW_BLD_002"
+        name: "Feud Escalation"
+        category: "blood_feud"
+        description: >-
+          Feuds escalate when killing produces more killing instead
+          of negotiation. Each death adds a new weregild debt that
+          compounds the original. Allies are drawn in. Settlements
+          take sides. What began as one man's blood-price becomes a
+          regional conflict. The pattern is familiar and unstoppable
+          once both sides decide that paying is weaker than fighting.
+        who_participates: "Extended kin networks, allied families, and eventually entire settlements."
+        mercenary_relevance: >-
+          Escalated feuds are profitable for bands willing to work
+          both ends of the conflict. They are also the most likely
+          scenario in which a band is destroyed — caught between
+          two sides that hate each other more than they value their
+          own lives.
+        enforcement: "There is no enforcement mechanism for escalation. It is the failure of all other mechanisms."
+        notes: "The feud between the Kolvik Thorssons and the Hagmark Ironbrows has lasted eleven years and cost thirty-seven lives."
+
+      - id: "LAW_BLD_003"
+        name: "Feud Settlement"
+        category: "blood_feud"
+        description: >-
+          Ending a feud requires both sides to accept a comprehensive
+          weregild accounting — every death tallied, every debt
+          calculated, and a net payment agreed. A law-speaker mediates.
+          The settlement is sworn at the thing with ring-oaths. Both
+          sides share a reconciliation feast. The peace is fragile.
+          One drunk cousin with a long memory can restart the killing
+          with a single insult.
+        who_participates: "The heads of both families, their law-speakers, and mediators acceptable to both sides."
+        mercenary_relevance: >-
+          Bands sometimes serve as neutral enforcers during feud
+          settlements — guaranteeing that neither side attacks during
+          negotiations. The pay is good and the risk is moderate if
+          the band is respected by both sides.
+        enforcement: "The ring-oaths sworn at settlement. Breaking the peace reopens the feud with the oath-breaker at disadvantage."
+        notes: "Reconciliation feasts are tense. Everyone is armed. Everyone is polite. Everyone is watching for the first wrong move."
+
+      - id: "LAW_BLD_004"
+        name: "Feud Mediation"
+        category: "blood_feud"
+        description: >-
+          Intervention by a third party — typically a respected jarl,
+          law-speaker, or godi — to negotiate between feuding families.
+          The mediator proposes terms, calculates debts, and pressures
+          both sides toward settlement. Successful mediation requires
+          that the mediator be feared or respected enough that
+          rejecting their terms carries its own cost.
+        who_participates: "A neutral third party with sufficient standing, and representatives of both feuding families."
+        mercenary_relevance: >-
+          A band captain with a reputation for fairness may be asked
+          to mediate — especially between minor families without
+          access to jarls. It pays nothing in silver but buys
+          standing that opens future contracts.
+        enforcement: "The mediator's personal authority. A rejected mediation attempt has no legal consequence."
+        notes: "The best mediators are old men with swords they no longer use but everyone remembers."
+
+      - id: "LAW_BLD_005"
+        name: "Perpetual Feud"
+        category: "blood_feud"
+        description: >-
+          A feud that has survived multiple generations and become
+          part of the local identity. The original offense is
+          half-forgotten. The killing continues because stopping
+          would mean admitting that the dead died for nothing.
+          Perpetual feuds drain settlements of young men, complicate
+          alliances, and create no-travel zones between hostile
+          territories. The thing occasionally attempts to impose
+          settlement. It occasionally succeeds.
+        who_participates: "Entire extended families across multiple settlements and generations."
+        mercenary_relevance: >-
+          Perpetual feud zones are profitable patrol territories.
+          Both sides need escorts, messengers, and deniable violence.
+          A band that works these zones must navigate carefully —
+          choosing sides creates enemies; staying neutral limits
+          contracts.
+        enforcement: "None. Perpetual feuds exist because all enforcement has failed."
+        notes: "Children born into perpetual feuds know their enemies' names before they know the names of the gods."
+
+      - id: "LAW_BLD_006"
+        name: "Mercenary Feud Involvement"
+        category: "blood_feud"
+        description: >-
+          A mercenary band contracted by one side of a feud inherits
+          temporary enmity from the other side for the duration of
+          the contract. Once the contract ends, the band is technically
+          neutral again — but memories are long. Killing a feuding
+          family's members while under contract does not create a new
+          feud between the band and the family, provided the
+          contract was publicly known. Deniable work carries no such
+          protection.
+        who_participates: "The contracted band and both feuding families."
+        mercenary_relevance: >-
+          This is core mercenary business. Understanding the legal
+          distinction between contracted violence and personal feud
+          is survival knowledge. A captain who confuses the two will
+          find his band fighting wars they never agreed to.
+        enforcement: "Custom and the thing's interpretation. Well-documented contracts protect the band. Handshake deals do not."
+        notes: "The best feud contracts include a clause specifying that the band's involvement ends cleanly at contract termination."
+
+  # ================================================================
+  # PROPERTY AND LAND — What is yours, what is mine
+  # ================================================================
+  property_and_land:
+    description: >-
+      Land is life in the Rimevegr. A man with land has food, shelter,
+      and standing at the thing. A man without land is a guest in
+      someone else's hall — fed at their pleasure, useful until he is
+      not. Property law is among the most contested areas in the thing's
+      business because the stakes are the difference between survival
+      and destitution.
+
+    entries:
+      - id: "LAW_PRP_001"
+        name: "Land Claims"
+        category: "property_and_land"
+        description: >-
+          Unclaimed land may be taken by any free person who marks it,
+          works it for three consecutive seasons, and declares the
+          claim at the local thing. The claim must be witnessed and
+          uncontested. If another person also claims the same land,
+          the thing arbitrates based on who marked first, who worked
+          harder, and who has more oath-helpers. In practice, the
+          stronger claimant usually wins.
+        who_participates: "Any free person. Thralls cannot hold land. Mercenaries may claim land but rarely stay to work it."
+        mercenary_relevance: >-
+          Retiring mercenaries sometimes stake land claims. The
+          transition from sword to plow is harder than it sounds.
+          A man who knows how to kill a dozen ways but cannot grow
+          barley is a poor farmer.
+        enforcement: "The thing recognizes the claim. The claimant enforces their own boundaries."
+        notes: "Claiming land near an established settlement is politically complicated. The jarl may tolerate it or may not."
+
+      - id: "LAW_PRP_002"
+        name: "Boundary Disputes"
+        category: "property_and_land"
+        description: >-
+          The most common property case at the thing. Boundaries are
+          marked by stones, ditches, or natural features that shift
+          with floods, frost, and deliberate tampering. Both sides
+          bring witnesses who swear to the original boundary. The
+          law-speaker cites precedent. The thing walks the disputed
+          line and votes. Boundary disputes are rarely violent but
+          always bitter — a man's neighbor is also his enemy in these
+          matters.
+        who_participates: "The adjacent landholders, their witnesses, and the thing assembly."
+        mercenary_relevance: >-
+          Bands are occasionally hired to 'persuade' a neighbor in a
+          boundary dispute. This is technically illegal but common.
+          The pay is low and the risk is a thing summons.
+        enforcement: "The thing's ruling. Defiance of a boundary decision may result in weregild penalties or exile."
+        notes: "Moving a boundary stone at night is cowardice. Doing it openly is a declaration of war. Both happen regularly."
+
+      - id: "LAW_PRP_003"
+        name: "Commons and Shared Land"
+        category: "property_and_land"
+        description: >-
+          Certain areas — forests, fishing waters, grazing meadows —
+          are held in common by the settlement. No individual may
+          claim them. Use rights are allocated by the thing, typically
+          by household size and seniority. Overuse of commons is
+          the source of constant friction. A man who grazes too many
+          sheep on the common meadow is stealing from everyone — but
+          proving 'too many' is the law-speaker's headache.
+        who_participates: "All free members of the settlement with allocated use rights."
+        mercenary_relevance: >-
+          Bands camped near a settlement may be granted limited
+          commons access — firewood, water, hunting in designated
+          areas. Taking more than granted is theft from the
+          community, not just one man.
+        enforcement: "The thing regulates commons use. Penalties range from fines to reduced access to exile for persistent abusers."
+        notes: "The commons is where the settlement's poorest survive. Restricting access is a political act with consequences."
+
+      - id: "LAW_PRP_004"
+        name: "Resource Rights"
+        category: "property_and_land"
+        description: >-
+          Specific resources — iron bogs, salt licks, amber shores,
+          good timber stands — are claimed separately from the land
+          they sit on. A man may own a farm but not the iron beneath
+          it. Resource rights are among the most valuable properties
+          in the Rimevegr and change hands through trade, inheritance,
+          and violence. The Deepholm iron deposits have been fought
+          over for six generations.
+        who_participates: "The resource-rights holder and any claimants. The thing arbitrates."
+        mercenary_relevance: >-
+          Resource-right disputes generate high-paying contracts.
+          Guarding a mine, escorting ore shipments, or intimidating
+          a rival claimant pays better than most patrol work.
+        enforcement: "The holder must defend their rights physically and legally. The thing recognizes claims but does not guard mines."
+        notes: "A man with iron rights and no guards will soon have neither iron rights nor guards."
+
+      - id: "LAW_PRP_005"
+        name: "Theft"
+        category: "property_and_land"
+        description: >-
+          Theft — taking another's property secretly — is one of the
+          most despised crimes in the Rimevegr. A thief is worse than
+          a killer, because a killer at least faces his enemy. Theft
+          of food during the long dark is treated as attempted murder.
+          Penalties range from repayment plus fine for minor theft to
+          outlawry for major or repeated offenses. A man caught
+          stealing a horse may be killed on the spot by the owner.
+        who_affected: "The victim. The thief faces graduated penalties based on the value stolen and the season."
+        mercenary_relevance: >-
+          Stealing from the settlement that feeds you ends the
+          contract and possibly the band. Captains enforce this
+          internally because the alternative is the thing's justice,
+          which is harsher and public.
+        enforcement: "Internal band discipline for mercenary theft. The thing for civilian cases. Owners may use proportional force."
+        notes: "The distinction between theft, foraging, and legitimate requisition during wartime keeps law-speakers employed."
+
+      - id: "LAW_PRP_006"
+        name: "Boundary Markers"
+        category: "property_and_land"
+        description: >-
+          Carved stones, ditched lines, blazed trees, and cairns that
+          mark property boundaries. Tampering with boundary markers is
+          a serious offense — equivalent to stealing land. Markers are
+          witnessed when placed, and their locations are remembered by
+          the law-speaker and multiple community members. In some
+          settlements, boundary markers carry carved runes describing
+          the owner and date of placement.
+        who_participates: "The landholder places markers. Witnesses confirm placement. The law-speaker records the locations."
+        mercenary_relevance: >-
+          Bands camped on someone's land should respect boundary
+          markers. Moving or damaging them creates a property dispute
+          the band will lose.
+        enforcement: "The thing treats marker tampering as land theft. Penalties match the value of the land affected."
+        notes: "Ancient boundary markers from before the Cracking are treated as immovable. Their original owners are long dead, but the stones remain authoritative."
+
+  # ================================================================
+  # MARRIAGE AND FAMILY — Alliances of blood and silver
+  # ================================================================
+  marriage_and_family:
+    description: >-
+      Marriage in the Rimevegr is a contract between families, not
+      a romance between individuals. It transfers property, creates
+      alliances, and produces heirs. Love is a pleasant bonus that no
+      one relies on. The bride-price is negotiated with the same
+      detail as a trade agreement. Divorce is permitted but expensive.
+
+    entries:
+      - id: "LAW_MAR_001"
+        name: "Bride-Price"
+        category: "marriage_and_family"
+        description: >-
+          The payment from the groom's family to the bride's family
+          to formalize the marriage. The amount reflects the bride's
+          family status, the groom's wealth, and the political value
+          of the alliance. Bride-price is not a purchase — it is a
+          guarantee of the groom's means and the alliance's
+          seriousness. Failure to pay the agreed bride-price
+          invalidates the marriage.
+        who_participates: "The groom's family pays. The bride's father or eldest male kin receives. The bride has limited input."
+        mercenary_relevance: >-
+          A mercenary captain wealthy enough to pay bride-price can
+          marry into a local family, gaining land-ties and standing.
+          It is the primary path from wandering killer to settled
+          man. Few manage it.
+        enforcement: "The bride's family enforces. An unpaid bride-price may be pursued at the thing as a debt."
+        notes: "Bride-price in Thornwall typically includes weapons. In Kolvik, livestock. The goods reflect local values."
+
+      - id: "LAW_MAR_002"
+        name: "Marriage Contract"
+        category: "marriage_and_family"
+        description: >-
+          A formal agreement between families specifying bride-price,
+          dowry, property rights, inheritance terms, and conditions
+          for divorce. The contract is spoken before witnesses at the
+          thing or the jarl's hall. Both families provide oath-helpers.
+          A marriage without a contract is a marriage without
+          protection — the woman has no recourse if abandoned, and the
+          man has no legal claim on the dowry.
+        who_participates: "The heads of both families, a law-speaker, and named witnesses."
+        mercenary_relevance: >-
+          Mercenaries rarely bother with formal marriage contracts.
+          Those who do signal that they are transitioning to settled
+          life. The contract is their declaration that they intend
+          to stay.
+        enforcement: "The thing and both families. Breach of a marriage contract is treated as oath-breaking."
+        notes: "The most contested clause is always property division in case of divorce. Smart families negotiate it first."
+
+      - id: "LAW_MAR_003"
+        name: "Divorce"
+        category: "marriage_and_family"
+        description: >-
+          Either party may declare divorce before witnesses. The
+          grounds are flexible — failure to provide, impotence,
+          cowardice, cruelty, or mutual contempt. Property is divided
+          according to the marriage contract. If no contract exists,
+          the thing arbitrates, and both sides lose. A woman who
+          initiates divorce retains her dowry and personal property.
+          A man who is divorced for cause loses a portion of the
+          bride-price.
+        who_participates: "Either spouse, before at least two witnesses. Contested divorces go to the thing."
+        mercenary_relevance: >-
+          A mercenary whose spouse divorces them for prolonged absence
+          loses whatever property they left at home. This is why
+          experienced fighters keep their wealth on their person.
+        enforcement: "The thing settles contested property claims. The divorce itself is effective upon declaration."
+        notes: "In Ashen Reach, a woman who divorces an abusive husband keeps all shared property. Other settlements are less generous."
+
+      - id: "LAW_MAR_004"
+        name: "Family Honor"
+        category: "marriage_and_family"
+        description: >-
+          An insult to one family member is an insult to all. Honor
+          is collective — a daughter's shame reflects on the father,
+          a cousin's cowardice stains the line. The obligation to
+          defend family honor is legally recognized at the thing.
+          Failure to respond to an insult against kin is itself
+          dishonorable and may reduce the family's legal standing in
+          future disputes.
+        who_affected: "The entire family unit, including married-in members."
+        mercenary_relevance: >-
+          A fighter's family honor follows them into the band. An
+          insult to a man's kin, even distant kin, may trigger
+          obligation that conflicts with the captain's orders. Smart
+          captains learn their fighters' family situations before
+          entering hostile territory.
+        enforcement: "Social pressure and the threat of feud. The thing recognizes honor-defense as a mitigating factor in violence."
+        notes: "The practical problem: defending honor often costs more than the insult. The cultural reality: not defending it costs more still."
+
+      - id: "LAW_MAR_005"
+        name: "Children's Status"
+        category: "marriage_and_family"
+        description: >-
+          A child's legal status follows the father's. A free man's
+          children are free. A thrall's children are thralls — even
+          if the mother is free. Children born of a free father and
+          thrall mother are free but carry a social stigma. Children
+          must be acknowledged by the father within nine days of birth
+          to claim full legal standing. Unacknowledged children have
+          reduced weregild and no inheritance rights.
+        who_affected: "The child and their legal standing, inheritance rights, and social position."
+        mercenary_relevance: >-
+          Mercenaries leave unacknowledged children in every territory.
+          These children grow up resourceful, angry, and often end up
+          in mercenary bands themselves. The cycle continues.
+        enforcement: "The father acknowledges by publicly naming the child and sprinkling it with water. Witnesses confirm."
+        notes: "Nine days is the exposure window. A child not acknowledged by then may be legally exposed. This is rare but not unheard of."
+
+      - id: "LAW_MAR_006"
+        name: "Widow's Rights"
+        category: "marriage_and_family"
+        description: >-
+          A widow retains her dowry, her personal property, and
+          management of the household until her eldest son reaches
+          adulthood or she remarries. She has legal standing at the
+          thing as the household's representative. In settlements
+          where land passes through the male line, a widow without
+          sons is vulnerable — her husband's kin may pressure her to
+          remarry within the family to keep the land consolidated.
+        who_affected: "The widow, her children, and the deceased husband's kin — all with competing interests."
+        mercenary_relevance: >-
+          Widows of warriors sometimes approach mercenary captains
+          for protection or employment of their older sons. A band
+          that protects a well-connected widow gains allies in the
+          settlement.
+        enforcement: "The thing defends a widow's property rights if challenged. Her husband's kin must bring a case, not just take."
+        notes: "A strong widow with a sharp tongue and a good legal memory is more dangerous than many armed men."
+
+  # ================================================================
+  # THRALL LAW — The unfree
+  # ================================================================
+  thrall_law:
+    description: >-
+      Thralls are property with voices. They work, breed, and die at
+      their owner's direction. The law protects thralls only insofar
+      as it protects any property — damaging someone else's thrall
+      requires compensation to the owner, not the thrall. A thrall
+      who escapes and is caught is punished at the owner's discretion.
+      A thrall who escapes and reaches a free territory may petition
+      for manumission. Few succeed.
+
+    entries:
+      - id: "LAW_THR_001"
+        name: "Thrall Status"
+        category: "thrall_law"
+        description: >-
+          A thrall has no legal personhood. They cannot own property,
+          testify at the thing, swear oaths, or bear arms. Their
+          children are born into thralldom. They eat last, work first,
+          and sleep nearest the door. Thralls are acquired through
+          capture in war, debt-bondage, birth, or self-sale during
+          famine. Their legal position is clear: they are tools that
+          speak and suffer.
+        who_affected: "The thrall, whose existence is defined by their owner's will."
+        mercenary_relevance: >-
+          Bands may take thralls as loot. Keeping thralls on campaign
+          is impractical — they require feeding, guarding, and slowing
+          the march. Most bands sell captured thralls at the nearest
+          market.
+        enforcement: "The owner. The law does not interfere with a man's management of his property unless it affects others."
+        notes: "A well-treated thrall is an investment. A mistreated thrall is a fire waiting for a spark."
+
+      - id: "LAW_THR_002"
+        name: "Manumission"
+        category: "thrall_law"
+        description: >-
+          A thrall may be freed by their owner's declaration before
+          witnesses, typically at the thing. The freed thrall becomes
+          a freedman — legally free but socially marked. Freedmen owe
+          obligations to their former owner for a period — usually
+          three years of seasonal labor. A thrall who buys their own
+          freedom (if the owner permits them to hold silver) gains
+          freedom without the obligation debt.
+        who_affected: "The thrall, who gains legal personhood. The owner, who loses labor but gains a dependent ally."
+        mercenary_relevance: >-
+          Freed thralls with combat experience are eager recruits.
+          They work harder than born-free fighters because they
+          remember what unfreedom tasted like. Most captains do not
+          ask about a fighter's past status.
+        enforcement: "Witnesses at the manumission ceremony. A freedman challenged on their status produces witnesses or faces re-enslavement."
+        notes: "In Feldwick, a thrall who saves their owner's life in battle is freed on the spot. The custom is real, observed, and rare."
+
+      - id: "LAW_THR_003"
+        name: "Crimes Against Thralls"
+        category: "thrall_law"
+        description: >-
+          Killing or maiming another man's thrall is a property
+          offense. The victim's owner sues for compensation equal to
+          the thrall's economic value. A man who kills his own thrall
+          faces no legal consequence — he has destroyed his own
+          property. The only limit is community disapproval: a man
+          who kills thralls wastefully is considered foolish, not
+          criminal. Raping another man's thrall requires compensation
+          to the owner. The thrall's experience is legally irrelevant.
+        who_affected: "The thrall's owner, who is the legally recognized victim."
+        mercenary_relevance: >-
+          Bands that abuse thralls belonging to their employers create
+          contract disputes measured in silver. The thrall's suffering
+          is not the issue — the owner's property damage is.
+        enforcement: "The thrall's owner petitions the thing for compensation. Self-help enforcement may apply."
+        notes: "The gap between law and morality is a chasm in thrall law. Decent people recognize it. The thing does not."
+
+      - id: "LAW_THR_004"
+        name: "Thrall Protection Customs"
+        category: "thrall_law"
+        description: >-
+          Despite their legal status as property, custom provides
+          thralls with minimal protections in some settlements. In
+          Skaldhaven, thralls may not be killed without stated reason.
+          In Grimholt, thralls are fed before dogs. In Barrowstead,
+          a thrall may petition the thing once per year for improved
+          conditions — though the petition is advisory and the owner
+          may ignore it. These protections exist not from compassion
+          but from practicality: a settlement that destroys its labor
+          force destroys itself.
+        who_affected: "Thralls in settlements with protective customs. Enforcement varies by local jarl."
+        mercenary_relevance: >-
+          Bands operating in settlements with thrall protections must
+          observe them. Violating Skaldhaven's no-kill custom costs
+          standing with the jarl regardless of whether the thrall
+          belonged to the band.
+        enforcement: "Local custom, enforced by the jarl's will. Not thing-law but practically binding within the settlement."
+        notes: "The existence of these protections is evidence that the baseline treatment is worse."
+
+      - id: "LAW_THR_005"
+        name: "Thrall Children"
+        category: "thrall_law"
+        description: >-
+          Children born to thrall parents are thralls. Children born
+          to a thrall mother and free father may be acknowledged by
+          the father — making them free — or left unacknowledged,
+          in which case they follow the mother's status. A free woman
+          who bears a thrall's child produces a free child, but the
+          social stigma is severe. The child of a thrall is born
+          owing. They enter the world in debt.
+        who_affected: "The child, whose entire life trajectory is determined by the circumstances of birth."
+        mercenary_relevance: >-
+          Thrall-born fighters who gain freedom carry a particular
+          kind of ambition. They have something to prove. Captains
+          who recognize this get loyal, fierce fighters.
+        enforcement: "Status follows the mother unless the father acknowledges. The thing confirms if disputed."
+        notes: "Acknowledging a thrall-mother's child costs a free man social standing. Some do it anyway. This surprises people."
+
+      - id: "LAW_THR_006"
+        name: "Debt-Thralldom"
+        category: "thrall_law"
+        description: >-
+          A free person who cannot pay their debts may sell themselves
+          into thralldom. The debt is transferred to the buyer, who
+          owns the debtor's labor until the debt is worked off —
+          typically three to seven years. Debt-thralls retain slightly
+          more dignity than capture-thralls in custom, though not in
+          law. A debt-thrall who works off their obligation is freed
+          and returns to free status with nothing but what they can
+          carry.
+        who_affected: "The debtor who enters thralldom and the creditor who becomes their owner."
+        mercenary_relevance: >-
+          Failed mercenaries with gambling debts or fine-debts
+          sometimes sell themselves into service. A captain who buys
+          a debt-thrall fighter's contract gets cheap labor with
+          combat skills. The ethical dimension is the captain's
+          problem to sleep with.
+        enforcement: "The contract is witnessed at the thing. Debt-thralldom without witnesses is kidnapping."
+        notes: "The difference between a debt-thrall and a hired worker is that the debt-thrall cannot quit. This matters more than law-speakers admit."
+
+  # ================================================================
+  # INHERITANCE — What the dead leave behind
+  # ================================================================
+  inheritance:
+    description: >-
+      When a man dies, what he owned must go somewhere. Inheritance in
+      the Rimevegr follows blood and custom, not written wills.
+      Disputes are common because the dead cannot clarify their
+      wishes, and the living interpret generously in their own favor.
+
+    entries:
+      - id: "LAW_INH_001"
+        name: "Firstborn Right"
+        category: "inheritance"
+        description: >-
+          The eldest legitimate son inherits the land, the hall, and
+          the primary share of moveable wealth. Younger sons receive
+          smaller portions — enough to start but not enough to stay.
+          This is why the Rimevegr's roads are full of younger sons
+          with weapons and ambition. Daughters inherit only if no
+          sons survive. The system produces warriors by design — men
+          with nothing must take or make.
+        who_affected: "The eldest son inherits. Younger sons receive diminished shares. Daughters inherit as a last resort."
+        mercenary_relevance: >-
+          Half of every mercenary band is younger sons. They fight
+          because their father's land went to their brother and
+          there is nothing else. Understanding this explains most
+          band dynamics.
+        enforcement: "Custom enforced by the thing. Contested inheritance is the second most common thing-case after boundary disputes."
+        notes: "A firstborn who squanders the inheritance is not legally culpable but may find his brothers less than forgiving."
+
+      - id: "LAW_INH_002"
+        name: "Contested Inheritance"
+        category: "inheritance"
+        description: >-
+          When the heir is disputed — illegitimate children,
+          competing claims from different wives, or ambiguous
+          deathbed declarations — the thing arbitrates. The law-speaker
+          examines witnesses, weighs the claims, and the assembly
+          votes. Contested inheritance cases can take years, during
+          which the property is held by a designated kinsman. These
+          cases are where alliances, bribes, and old grudges
+          determine outcomes more than law.
+        who_affected: "All potential heirs and their supporters."
+        mercenary_relevance: >-
+          Wealthy families in inheritance disputes hire bands for
+          protection, intimidation, or outright violence. The
+          contracts are well-paying but politically entangling.
+        enforcement: "The thing's ruling is final. Defiance triggers weregild claims or outlawry proceedings."
+        notes: "The man who holds the property during arbitration has an enormous advantage. Possession is not ownership, but it looks similar."
+
+      - id: "LAW_INH_003"
+        name: "Inheritance of Debts"
+        category: "inheritance"
+        description: >-
+          The dead man's debts pass to his heir along with his
+          property. An heir who accepts the land accepts the debt.
+          In theory, an heir may refuse the inheritance to avoid the
+          debt — but refusing means losing everything, and most heirs
+          lack the luxury of that choice. A dead man's gambling debts,
+          weregild obligations, and unpaid bride-prices all transfer.
+        who_affected: "The primary heir, who inherits obligations alongside assets."
+        mercenary_relevance: >-
+          Dead mercenaries leave debts that the band may or may not
+          cover. A captain who pays a dead fighter's debts earns
+          loyalty from the survivors. One who does not sends a
+          message about what the band owes its dead.
+        enforcement: "Creditors petition the thing against the heir. The heir inherits the legal obligation."
+        notes: "Some men die deliberately in debt, knowing their heirs will bear the burden. This is considered despicable but legal."
+
+      - id: "LAW_INH_004"
+        name: "Landless Inheritance"
+        category: "inheritance"
+        description: >-
+          A man who dies owning no land leaves only moveable property
+          — weapons, tools, silver, livestock. This is divided among
+          heirs by custom: the eldest son gets the best weapon, the
+          second son the next, and so on. What remains is split
+          equally. A landless man's inheritance is often worth less
+          than the cost of the funeral feast.
+        who_affected: "The heirs, who receive diminished shares of limited wealth."
+        mercenary_relevance: >-
+          A dead mercenary's gear is distributed according to the
+          captain's discretion or pre-arranged agreements within the
+          band. The practical standard: the best fighter gets the
+          best sword.
+        enforcement: "Custom within the band. The thing adjudicates disputes among civilian heirs."
+        notes: "A man's weapons are his most personal property. Inheriting a dead warrior's axe is an honor and a weight."
+
+      - id: "LAW_INH_005"
+        name: "Weapon Inheritance"
+        category: "inheritance"
+        description: >-
+          Named weapons, family blades, and ancestral arms carry
+          specific inheritance traditions. A father's sword goes to
+          the eldest son. A named weapon returns to the family that
+          forged it if no direct heir survives. Stealing a dead
+          man's hereditary weapon is treated as grave-robbery — worse
+          than ordinary theft because it steals from the dead and
+          their kin simultaneously. Some weapons carry more history
+          than the families that own them.
+        who_affected: "The eldest son or designated heir. The weapon's history determines its path."
+        mercenary_relevance: >-
+          Looting hereditary weapons from battlefield dead creates
+          enemies. A named blade recognized on a mercenary's hip
+          tells the dead man's family exactly who to find.
+        enforcement: "The dead man's kin pursue recovery. The thing supports hereditary weapon claims when proven."
+        notes: "Smart looters strip the unnamed gear and leave the family weapons. Greedy looters take everything and hope no one notices."
+
+  # ================================================================
+  # HOLMGANG — The formal duel
+  # ================================================================
+  holmgang:
+    description: >-
+      Holmgang is the ritualized duel between free men, fought on a
+      marked field with agreed weapons and witnesses. It is the last
+      resort when the thing cannot resolve a dispute and neither side
+      will accept weregild. Holmgang is legal killing — the survivor
+      walks away clean. The gods are supposedly judging. The audience
+      is definitely watching.
+
+    entries:
+      - id: "LAW_HLM_001"
+        name: "Challenge Rules"
+        category: "holmgang"
+        description: >-
+          Any free man may challenge another to holmgang by striking
+          their shield or throwing a glove at their feet. The
+          challenged party has three days to accept, refuse, or
+          negotiate. Refusing a holmgang challenge costs honor but is
+          not illegal. Accepting puts your life on the line. The
+          challenge must be witnessed, and the law-speaker informed.
+          Challenging a man more than twenty years your elder or a
+          cripple is considered shameful.
+        who_participates: "Any two free men. Women may challenge through a male champion."
+        mercenary_relevance: >-
+          Mercenaries who challenge settled farmers for personal
+          reasons are viewed poorly — it is seen as the strong
+          bullying the rooted. Challenges between warriors of equal
+          status are respected.
+        enforcement: "Custom controls the challenge process. The thing supervises if notified. Unsupervised holmgang is murder."
+        notes: "Professional duelists who provoke challenges to claim the loser's property are despised. They exist anyway."
+
+      - id: "LAW_HLM_002"
+        name: "Formal Holmgang"
+        category: "holmgang"
+        description: >-
+          The full ritual. A cloak or hide is pegged on the ground
+          to mark the fighting area. Three shields per combatant are
+          stacked at the edge. Weapons are specified in advance —
+          typically sword and shield. The fight continues until one
+          party is wounded, yields, or steps off the cloak. Blood
+          touching the ground through the cloak ends the duel. A
+          witness counts the shields — when all three are broken, the
+          fight continues with weapons only.
+        who_participates: "The two combatants, their seconds, and a referee — usually a respected warrior."
+        mercenary_relevance: >-
+          Formal holmgang between band members is permitted by most
+          captains as a way to settle internal disputes without
+          fracturing the group. The loser pays weregild for any wounds
+          inflicted. The winner drops the grudge. In theory.
+        enforcement: "The witnesses and referee. Foul play during holmgang — poison, concealed weapons — is outlawry-level offense."
+        notes: "The cloak is three ells square. The space is deliberately small — close quarters where skill matters more than reach."
+
+      - id: "LAW_HLM_003"
+        name: "Informal Holmgang"
+        category: "holmgang"
+        description: >-
+          A simplified duel without the full ritual — still witnessed,
+          still fought on marked ground, but with fewer formalities.
+          Common among mercenaries and in territories far from
+          proper thing-sites. The key elements are maintained: marked
+          space, agreed weapons, witnesses, and the understanding that
+          the survivor faces no legal consequence. Informal holmgang
+          is legally grey — recognized by custom but not always by
+          the thing.
+        who_participates: "Two free men and at least two witnesses. No referee required, though one is advisable."
+        mercenary_relevance: >-
+          The standard way bands settle internal disputes in the
+          field. Quick, practical, and respected by fighters. Captains
+          prefer it to festering grudges, which poison morale.
+        enforcement: "Witnesses confirm the duel was fair. Without witnesses, it is murder."
+        notes: "The line between informal holmgang and a drunken brawl that someone dies in is thinner than anyone admits."
+
+      - id: "LAW_HLM_004"
+        name: "Holmgang Refusal"
+        category: "holmgang"
+        description: >-
+          Refusing a holmgang challenge is legal but carries severe
+          social cost. The refuser is called niðingr — a coward
+          beneath contempt. Their testimony at the thing loses weight.
+          Their word in negotiation is discounted. In practice, many
+          men fight holmgang they expect to lose because the
+          alternative is social death while still breathing.
+        who_affected: "The person who refuses. Their legal standing is technically unchanged but practically devastated."
+        mercenary_relevance: >-
+          A mercenary who refuses holmgang loses the respect of the
+          band. A captain who refuses may face a leadership challenge
+          from someone who smells weakness 'the courage of a
+          thrall-born dog.'
+        enforcement: "Social consequence only. No legal penalty for refusal, but the reputational damage is real and lasting."
+        notes: "Wise men avoid giving offense that might provoke a challenge. The best way to survive holmgang is to never face one."
+
+      - id: "LAW_HLM_005"
+        name: "Holmgang by Champion"
+        category: "holmgang"
+        description: >-
+          A challenged party who cannot fight — due to age, injury,
+          or status — may name a champion to fight in their place.
+          The champion inherits the legal consequences of the duel's
+          outcome. If the champion wins, the principal wins the
+          dispute. If the champion loses, the principal bears the
+          loss. Champions fight for payment — 10 to 30 silver is
+          standard for a death-risk duel.
+        who_participates: "The principal, their champion, and the opposing combatant."
+        mercenary_relevance: >-
+          Champion-fighting is a side income for skilled mercenary
+          fighters. The pay is good, the risk is real, and the
+          reputation value is high. A fighter known as a successful
+          champion attracts future hire.
+        enforcement: "The champion's victory or defeat binds the principal. The thing recognizes champion outcomes as legitimate."
+        notes: "A wealthy man with a hired champion facing a poor man with his own arm is a common injustice. The thing does not see it that way."
+
+  # ================================================================
+  # SANCTUARY AND PROTECTION — Safe ground
+  # ================================================================
+  sanctuary_and_protection:
+    description: >-
+      Even in the Rimevegr, some places and customs offer protection.
+      Temples, guest-halls, and the thing-site itself provide zones
+      where violence is forbidden. These protections exist because
+      even in a society built on blood, there must be places where
+      men can set down their weapons and speak without fear. Otherwise,
+      no trade happens, no disputes settle, and the slow collapse
+      accelerates.
+
+    entries:
+      - id: "LAW_SAN_001"
+        name: "Temple Sanctuary"
+        category: "sanctuary_and_protection"
+        description: >-
+          A person who reaches the altar-stone of a recognized temple
+          and grasps it may claim sanctuary. The protection lasts
+          three days, during which the pursued may not be harmed.
+          After three days, the godi must either negotiate a
+          resolution or release the person to their fate. Temple
+          sanctuary is respected because violating it angers the
+          gods — or would, if the gods were paying attention. The
+          custom persists because the godi enforce it with absolute
+          conviction.
+        who_participates: "The person seeking sanctuary and the godi who administers the temple."
+        mercenary_relevance: >-
+          A mercenary who flees to a temple during a contract breach
+          gains three days to negotiate. It is not cowardly — it is
+          pragmatic survival that costs the pursuer's patience.
+        enforcement: "The godi and the community's fear of divine displeasure. Violating temple sanctuary invites communal retribution."
+        notes: "The last man who violated sanctuary at the Skaldhaven temple was found dead four days later. No one claimed responsibility."
+
+      - id: "LAW_SAN_002"
+        name: "Guest-Right"
+        category: "sanctuary_and_protection"
+        description: >-
+          Once a host offers food and a place by the fire, the guest
+          is protected by sacred custom. Harming a guest under your
+          roof is among the vilest acts in the Rimevegr — equivalent
+          to kinslaying in moral weight. The protection lasts as long
+          as the guest stays, plus one day of travel after leaving.
+          Guest-right creates mutual obligation: the guest must not
+          harm the host, steal, or insult the household.
+        who_participates: "The host who offers and the guest who accepts. Both are bound by the custom."
+        mercenary_relevance: >-
+          Bands that violate guest-right become unhouseable. No
+          settlement will open its doors. This is a slow death
+          sentence in the long dark.
+        enforcement: "Community-wide. A guest-right violator is treated as a moral outlaw regardless of legal standing."
+        notes: "Guest-right does not extend to those who entered deceptively. A man who lies about his identity to gain entry may be killed."
+
+      - id: "LAW_SAN_003"
+        name: "Safe Conduct"
+        category: "sanctuary_and_protection"
+        description: >-
+          A jarl or other authority may grant safe conduct — a
+          promise of protection for a specific person travelling
+          through their territory. The grant is announced publicly
+          and marked with a token: a carved stick, a ring, or a
+          sealed letter for those who can read. Violating safe
+          conduct is an offense against the jarl who granted it,
+          not just the traveller. It is an act of political hostility.
+        who_participates: "The granting jarl, the protected traveller, and all persons within the jarl's territory."
+        mercenary_relevance: >-
+          Bands travelling through hostile territory seek safe
+          conduct when possible. The cost — usually a gift to the
+          jarl — is cheaper than fighting through. A safe conduct
+          token is the most valuable piece of wood in a mercenary's
+          pack.
+        enforcement: "The granting jarl's huscarls. Attacking someone under safe conduct is attacking the jarl's authority."
+        notes: "Safe conduct expires. A token from last season's march means nothing today. Check the date."
+
+      - id: "LAW_SAN_004"
+        name: "Thing-Peace Protection"
+        category: "sanctuary_and_protection"
+        description: >-
+          The extended protection zone around any active thing
+          assembly. All persons within the hazel-marked boundaries
+          are protected from violence regardless of their standing,
+          feuds, or debts. Thing-peace allows enemies to stand in the
+          same field and argue without killing each other — which is
+          the entire point. The protection begins when the hazel
+          poles are raised and ends when they are pulled.
+        who_participates: "Everyone within the marked boundaries, including outlaws who have been summoned to answer charges."
+        mercenary_relevance: >-
+          Thing-peace is the only time a band can negotiate with
+          enemies face-to-face without risk. Smart captains use the
+          thing for intelligence gathering, contract negotiation, and
+          reading the political landscape.
+        enforcement: "Immediate outlawry for violation. Every armed person present is empowered to act. The penalty is universal."
+        notes: "An outlaw summoned to the thing travels under thing-peace. If convicted, the protection ends when the hazel poles come down."
+
+      - id: "LAW_SAN_005"
+        name: "Truce and Parley"
+        category: "sanctuary_and_protection"
+        description: >-
+          A temporary cessation of hostilities, formally declared
+          with weapon-oaths on both sides. Truces are sworn for
+          specific durations — typically one to three days — and
+          allow negotiation, prisoner exchange, or body recovery.
+          Breaking a truce is oath-breaking at minimum and grounds
+          for outlawry at worst. The truce applies to all combatants
+          on both sides, including mercenary bands under contract.
+        who_participates: "The commanders or jarls of both sides, with witnesses and sworn oaths."
+        mercenary_relevance: >-
+          A band whose employer breaks a truce is in an impossible
+          position — bound by contract to serve an oath-breaker.
+          Most contracts include a truce-break clause that voids the
+          agreement. If yours does not, negotiate one.
+        enforcement: "The oath itself and the witnesses. Breaking a truce in front of both armies is reputational suicide."
+        notes: "Truces during the long dark are more common — neither side wants to fight in the cold when they could negotiate in the warm."
+
+  # ================================================================
+  # HOSPITALITY — The duties of host and guest
+  # ================================================================
+  hospitality:
+    description: >-
+      Hospitality is not kindness in the Rimevegr. It is a survival
+      mechanism codified into custom. When winter lasts three hundred
+      days, turning a traveller away is killing them. The obligations
+      run both ways — host provides; guest respects. Violation of
+      either side is treated with the severity usually reserved for
+      theft and oath-breaking.
+
+    entries:
+      - id: "LAW_HSP_001"
+        name: "Host Obligations"
+        category: "hospitality"
+        description: >-
+          A host must provide food, fire, and shelter to any traveller
+          who asks within reason. 'Within reason' is the key phrase —
+          a farmstead with food for five is not required to feed
+          twenty. The host's obligation scales to their capacity.
+          The host must protect the guest from harm while under their
+          roof. A guest killed in a man's hall stains that hall's
+          reputation for a generation.
+        who_participates: "Any free person with a roof and a fire."
+        mercenary_relevance: >-
+          Bands are too large for most farmsteads to host. The captain
+          negotiates for the group — asking for space in a barn, use
+          of a well, and permission to buy food. The obligation works
+          differently at scale.
+        enforcement: "Community reputation. A man known for turning away travellers in the long dark is shunned by his neighbours."
+        notes: "The obligation does not extend to known enemies or outlaws. A man may turn away his father's killer without shame."
+
+      - id: "LAW_HSP_002"
+        name: "Guest Obligations"
+        category: "hospitality"
+        description: >-
+          A guest must not steal, harm, insult, or seduce anyone in
+          the household. They must contribute if staying beyond three
+          nights — work, news, entertainment, or silver. A guest who
+          consumes without contributing is a parasite, and the host
+          may expel them after the three-night grace period. The guest
+          must speak well of the host's household after leaving — or
+          at least keep silence.
+        who_participates: "Anyone accepted as a guest under a host's roof."
+        mercenary_relevance: >-
+          Mercenaries quartered in a settlement are extended guests.
+          Fighters who steal, fight, or chase local women violate
+          guest-customs and endanger the band's welcome. Captains
+          enforce this harshly because the consequence is the road
+          in the long dark.
+        enforcement: "The host may expel a violating guest. Serious violations — theft, violence — are thing-matters."
+        notes: "The expectation of speaking well afterward is rarely met. Gossip is the Rimevegr's second-fastest form of communication."
+
+      - id: "LAW_HSP_003"
+        name: "Three-Night Rule"
+        category: "hospitality"
+        description: >-
+          A guest may stay three nights without obligation beyond
+          good behavior. On the fourth morning, they must work, pay,
+          or leave. The three-night rule prevents hospitality from
+          becoming exploitation. A man who overstays is no longer a
+          guest — he is a burden, and the host's obligation to
+          protect him diminishes accordingly.
+        who_participates: "All guests and hosts in the Rimevegr."
+        mercenary_relevance: >-
+          Three nights is the standard for billeting negotiations.
+          After that, the band pays in silver, labor, or guard
+          service. A captain who expects unlimited free hospitality
+          will find it revoked permanently.
+        enforcement: "Custom, enforced by the host. Overstaying guests may be physically removed without legal consequence."
+        notes: "The three-night rule has exceptions — kinsmen, oath-brothers, and the severely ill may stay longer. The exceptions are well-defined."
+
+      - id: "LAW_HSP_004"
+        name: "Abuse of Hospitality"
+        category: "hospitality"
+        description: >-
+          Using hospitality as cover for violence, theft, or
+          espionage. A man who eats at another's fire and then burns
+          his storehouse has committed one of the Rimevegr's most
+          condemned acts. The offense combines oath-breaking (the
+          implicit guest-oath), theft, and betrayal. The thing treats
+          abuse of hospitality more severely than the underlying
+          crime — the betrayal multiplies the penalty.
+        who_affected: "The betrayed host, their household, and their reputation."
+        mercenary_relevance: >-
+          A band that accepts quartering and then raids the host is
+          finished in that territory. Word spreads. The practice is
+          known and loathed — even among mercenaries, who hold few
+          things sacred.
+        enforcement: "The thing imposes enhanced penalties. Community response is swift and hostile."
+        notes: "The sagas are full of hospitality abuse stories. They always end badly for the abuser. This is intentional."
+
+      - id: "LAW_HSP_005"
+        name: "Refusal of Hospitality"
+        category: "hospitality"
+        description: >-
+          Turning away a traveller without cause during the long dark
+          is socially condemned but not technically illegal. During
+          the brief thaw, refusal carries less stigma — a man can
+          sleep in the open when the cold will not kill him. The key
+          phrase is 'without cause.' A host may refuse entry to known
+          enemies, outlaws, or persons whose presence endangers the
+          household. Cause must be explained or the refusal stands
+          as a moral mark.
+        who_affected: "The refused traveller and the refusing host's reputation."
+        mercenary_relevance: >-
+          Entire bands may be refused entry — too many mouths, too
+          many weapons, too much risk. This is not offensive. A
+          farmstead refusing a single hungry mercenary in the long
+          dark without cause is.
+        enforcement: "Social reputation only. No legal penalty, but the community remembers who turned people away."
+        notes: "A man who refused hospitality and the traveller died of exposure may face the thing if the family presses the case."
+
+  # ================================================================
+  # GIFT ECONOMY — Silver that binds
+  # ================================================================
+  gift_economy:
+    description: >-
+      The gift economy runs parallel to trade. Gifts create
+      obligations. A jarl who gives a ring expects loyalty. A man who
+      receives a sword owes service. This is not corruption — it is
+      the foundation of alliance-building in a society where legal
+      contracts are spoken and trust must be reinforced with visible
+      generosity. A man who gives nothing has no allies. A man who
+      takes without returning is a parasite.
+
+    entries:
+      - id: "LAW_GFT_001"
+        name: "Gift Obligations"
+        category: "gift_economy"
+        description: >-
+          A gift received creates an obligation to reciprocate — not
+          necessarily in equal value but in proportional generosity.
+          The timing of reciprocation is flexible but cannot be
+          indefinitely delayed. A man who receives a sword and returns
+          nothing within a reasonable period is shaming the giver and
+          declaring himself unable or unwilling to participate in the
+          alliance structure. This is social self-destruction.
+        who_participates: "All free persons who engage in gift exchange."
+        mercenary_relevance: >-
+          Jarls gift rings and arm-bands to band captains. The
+          obligation is military service, political support, or
+          simply showing up when called. A captain who takes a
+          jarl's gold and ignores the summons has broken an unwritten
+          contract that is harder to escape than a written one.
+        enforcement: "Social pressure and the withdrawal of future generosity. A poor reciprocator is cut from the gift network."
+        notes: "The obligation is proportional. A poor man's return gift of a well-made tool for a rich man's silver ring is acceptable."
+
+      - id: "LAW_GFT_002"
+        name: "Gift Refusal"
+        category: "gift_economy"
+        description: >-
+          Refusing a gift is a serious diplomatic act. It declares
+          the refuser unwilling to accept the obligation that comes
+          with it. Refusing a jarl's gift is refusing his patronage
+          — an act of political independence that the jarl may
+          interpret as hostility. Gift refusal is rarely done
+          carelessly. When it is done deliberately, both sides
+          understand the message.
+        who_participates: "The giver and the refuser. Witnesses note the refusal and interpret its meaning."
+        mercenary_relevance: >-
+          A captain who refuses a jarl's gift is declaring independence
+          from that jarl's sphere. This is sometimes necessary —
+          accepting gifts from two rival jarls is accepting
+          contradictory obligations. The refusal must be handled with
+          diplomatic care.
+        enforcement: "No legal penalty. The political consequences depend on the giver's power and temperament."
+        notes: "Refusing a gift from a man who can kill you requires either great courage or great stupidity. Often both."
+
+      - id: "LAW_GFT_003"
+        name: "Ring-Giving"
+        category: "gift_economy"
+        description: >-
+          The signature act of lordly generosity. A jarl who breaks
+          a gold or silver arm-ring and distributes the pieces to his
+          warriors is performing the foundational ritual of
+          leadership. The ring-giving buys loyalty, demonstrates
+          wealth, and creates obligation in a single gesture. A jarl
+          who hoards silver and gives no rings will find his hall
+          empty when the fighting starts.
+        who_participates: "The jarl or lord gives. Warriors, captains, and valued allies receive."
+        mercenary_relevance: >-
+          Being included in a ring-giving is a powerful endorsement
+          of the band's value. Being excluded when peers receive is
+          a public insult. Captains track who receives and who does
+          not — the distribution maps the jarl's trust hierarchy.
+        enforcement: "Custom and expectation. A jarl who never gives is abandoned by his followers. The enforcement is departure."
+        notes: "The weight of the ring-piece matters. A thin sliver says 'you are useful.' A heavy chunk says 'you are valued.'"
+
+      - id: "LAW_GFT_004"
+        name: "Feast Obligation"
+        category: "gift_economy"
+        description: >-
+          Hosting a feast is a form of gift-giving at scale. The host
+          provides food, mead, and entertainment. The guests owe
+          attendance, good behavior, and future reciprocity. A man
+          who attends every feast and hosts none is a social
+          free-rider. A man who hosts feasts beyond his means gains
+          standing but risks bankruptcy. The feast economy rewards
+          generosity until it devours the generous.
+        who_participates: "The host and all invited guests. Attending uninvited is permitted if the host does not object."
+        mercenary_relevance: >-
+          Bands invited to a jarl's feast attend in good order.
+          Drunken fighters breaking furniture cost the captain
+          standing. The feast is not a time for relaxation — it is
+          a performance of civility by men who are professionally
+          uncivil.
+        enforcement: "Social expectation. A man who never hosts loses standing. A guest who behaves poorly is not invited again."
+        notes: "The seating order at a feast is a political map. Where you sit tells everyone your worth to the host."
+
+      - id: "LAW_GFT_005"
+        name: "Reciprocity and Debt"
+        category: "gift_economy"
+        description: >-
+          The core principle: every gift creates a debt, and every
+          debt must eventually be resolved. The currency is not
+          always silver — it may be loyalty, service, shelter, or
+          information. A man who keeps careful mental accounts of
+          gifts given and owed is not petty but prudent. The gift
+          economy is an invisible ledger that everyone maintains
+          and no one writes down.
+        who_participates: "All free persons, from jarls to landless freemen."
+        mercenary_relevance: >-
+          A captain's gift-debt ledger determines what allies he can
+          call on and what obligations he must honor. Managing this
+          invisible ledger is half of leadership. A captain who owes
+          too many favors has sold his freedom one ring at a time.
+        enforcement: "Social exclusion for non-reciprocators. The gift network self-regulates through selective inclusion."
+        notes: "The gift economy is the Rimevegr's social credit system. It runs on memory, obligation, and the fear of isolation."
+
+  # ================================================================
+  # MERCENARY LAW — The code of the sword-for-hire
+  # ================================================================
+  mercenary_law:
+    description: >-
+      Mercenary custom is not codified but universally understood. A
+      band operates in the spaces between settlements — bound by
+      contract, not territory. The rules exist because without them,
+      no one would hire a mercenary twice. Trust between a sword-seller
+      and a sword-buyer is the most fragile commodity in the Rimevegr.
+
+    entries:
+      - id: "LAW_MRC_001"
+        name: "Contract Law"
+        category: "mercenary_law"
+        description: >-
+          A mercenary contract is a verbal agreement sworn before
+          witnesses, specifying duration, payment, scope of work,
+          and conditions for termination. The best contracts include
+          binding oaths with stated penalties for breach on either
+          side. A contract without witnesses is a promise without
+          teeth — enforceable only by the parties' willingness to
+          honor it. Written contracts exist in Skaldhaven and
+          Frostfjord Hollow, where literate law-speakers maintain
+          records. Elsewhere, memory and reputation serve.
+        who_participates: "The captain (on behalf of the band) and the employer (jarl, merchant, or settlement council)."
+        mercenary_relevance: >-
+          The contract is the band's lifeline. Every term matters.
+          A vague contract about 'military service' can be stretched
+          to cover anything. A precise contract about 'guarding the
+          north road from Ironmoon to Barrowrise' protects the band
+          from scope creep.
+        enforcement: "The thing, if both parties consent to arbitration. Otherwise, reputation and the threat of future contract loss."
+        notes: "A captain who cannot negotiate a clean contract is a captain who will lose fighters to bad terms."
+
+      - id: "LAW_MRC_002"
+        name: "Desertion"
+        category: "mercenary_law"
+        description: >-
+          Leaving a band during an active contract without the
+          captain's permission. Desertion forfeits all back pay,
+          any share of accumulated loot, and the deserter's standing
+          within the mercenary community. A known deserter cannot
+          join another reputable band — captains talk, and the word
+          travels faster than the runner. In extreme cases, the
+          captain may declare the deserter an enemy of the band —
+          not outlawry, but a practical equivalent within mercenary
+          circles.
+        who_affected: "The deserter and the band they abandoned."
+        mercenary_relevance: >-
+          Desertion during combat is treated more harshly than
+          desertion during a boring patrol contract. Leaving men
+          to die is different from leaving a captain whose contract
+          went sour. The distinction matters in reputation.
+        enforcement: "Internal band justice. The captain decides whether to pursue, ignore, or declare enmity."
+        notes: "Some deserters have excellent reasons. The band that acknowledges this survives longer than the one that does not."
+
+      - id: "LAW_MRC_003"
+        name: "Insubordination"
+        category: "mercenary_law"
+        description: >-
+          Refusing a direct order during active service. The captain's
+          response ranges from fines to flogging to expulsion
+          depending on the severity and the circumstances. Refusing
+          a suicidal order is viewed differently from refusing a
+          reasonable one — experienced captains know the difference,
+          even if they punish both. Repeated insubordination
+          undermines command and is treated as a prelude to desertion.
+        who_affected: "The insubordinate fighter and band discipline as a whole."
+        mercenary_relevance: >-
+          Insubordination is a command problem, not a legal one. The
+          captain handles it internally. If the thing gets involved,
+          the band has already failed to manage its own affairs —
+          which is a more damaging revelation than the original
+          offense.
+        enforcement: "The captain's authority, backed by the band's loyalty. A captain who cannot discipline has already lost command."
+        notes: "The strongest bands tolerate questioning during planning and demand obedience during execution. The weakest tolerate nothing or everything."
+
+      - id: "LAW_MRC_004"
+        name: "Loot Division"
+        category: "mercenary_law"
+        description: >-
+          The captain takes one-fifth. The rest is divided by rank
+          and participation. Veterans receive double shares. Green
+          fighters receive half-shares. Named men negotiate individual
+          terms. A fighter who was wounded in the action that produced
+          the loot receives a wound-bonus — typically one extra share.
+          The dead receive nothing unless pre-arranged. Disputes over
+          loot division have destroyed more bands than enemy swords.
+        who_participates: "All band members who participated in the contract or engagement that produced the loot."
+        mercenary_relevance: >-
+          Clear loot-division rules, agreed before the fighting
+          starts, prevent the worst arguments. Captains who announce
+          the split in advance and honor it build trust. Captains
+          who recalculate after seeing the haul lose fighters.
+        enforcement: "Internal. A fighter cheated on loot shares will leave at the first opportunity — and tell everyone why."
+        notes: "The captain's fifth is not personal enrichment. It covers band expenses, replaces lost equipment, and funds the weregild reserve."
+
+      - id: "LAW_MRC_005"
+        name: "Band Dissolution"
+        category: "mercenary_law"
+        description: >-
+          When a band breaks apart — through the captain's death,
+          catastrophic losses, or internal feuding — remaining assets
+          are divided among surviving members. Outstanding contracts
+          are technically void, though employers may disagree.
+          Equipment owned by the band (not individual fighters) is
+          sold and split. A dissolving band's reputation dies with it
+          — fighters who reform under a new name carry their personal
+          reputations but not the band's.
+        who_participates: "All surviving band members. The most senior fighter typically oversees dissolution."
+        mercenary_relevance: >-
+          Knowing the dissolution procedure in advance prevents chaos
+          when it happens. Captains who plan for their own death give
+          their fighters better odds of emerging with something —
+          which is one last act of competent leadership.
+        enforcement: "Custom and the goodwill of survivors. A fair dissolution breeds future collaboration. An unfair one breeds enemies."
+        notes: "Some bands dissolve and reform twice a season, shedding dead weight and bad contracts. This is dysfunctional but common."
+
+      - id: "LAW_MRC_006"
+        name: "Prisoner Treatment"
+        category: "mercenary_law"
+        description: >-
+          Captives taken in combat may be ransomed, enslaved, or
+          released depending on their value and the contract terms.
+          A captured jarl is worth more alive than dead — ransom
+          prices range from 100 to 500 silver. Common fighters may
+          be given the option of joining the conquering band or
+          walking free without weapons. Killing prisoners who have
+          surrendered is permitted by custom but considered wasteful
+          and cruel in equal measure.
+        who_participates: "The capturing band, the prisoners, and any ransoming parties."
+        mercenary_relevance: >-
+          A band's prisoner policy is part of its reputation. Bands
+          known for fair treatment of captives find enemies surrender
+          more readily — which saves lives on both sides. Bands known
+          for throat-cutting face desperate resistance from opponents
+          with nothing to lose.
+        enforcement: "Custom. A captain who promises quarter and then kills prisoners will find no one surrendering next time."
+        notes: "The practical calculus: a live prisoner who can carry his own weight on the march is worth more than a dead one who cannot."

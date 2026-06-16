@@ -1,0 +1,59 @@
+{
+  "transaction_id": "txn_20260418T071105Z_season_p1",
+  "branch": "mainline",
+  "unit": "season",
+  "amount": 1,
+  "seed_journal": {
+    "master_seed": 8041226370631511023,
+    "transaction_anchor": "mainline:Y312:D94:season:1",
+    "adapter_seeds": {
+      "settlement_stack": 2996248819295743868,
+      "animal_breeding": 10344478402324081457
+    }
+  },
+  "replay_probes": [
+    {
+      "key": "animal_breeding",
+      "signature": "1f1d7ddbf56a98771eeffe2d1a84314439929fa3b7464a02dc74fc7cc498056d",
+      "payload": {
+        "key": "animal_breeding",
+        "summary": "Previewed 1 seasonal breeding step(s) on temporary herd and kennel copies.",
+        "metrics": {
+          "seasons": 1,
+          "seed": 10344478402324081457,
+          "herds_processed": 3,
+          "kennels_processed": 1,
+          "foals_born": 0,
+          "pups_born": 0
+        },
+        "affected_entities": [
+          "band_voss_black_axes",
+          "settlement_thornwall_riding_stock",
+          "settlement_deepholm_stud",
+          "settlement_vargheim_wolf_wardens"
+        ],
+        "warnings": []
+      }
+    }
+  ],
+  "from_cursor": {
+    "year": 312,
+    "day_of_year": 94,
+    "season": "Early Dark",
+    "branch": "mainline",
+    "transaction_index": 1
+  },
+  "to_cursor": {
+    "year": 312,
+    "day_of_year": 184,
+    "season": "Deep Dark",
+    "branch": "mainline",
+    "transaction_index": 2
+  },
+  "inverse": {
+    "unit": "season",
+    "amount": -1
+  },
+  "patches": [],
+  "notes": "Cursor transaction with deterministic seed journal scaffolded for replay-safe adapter execution."
+}

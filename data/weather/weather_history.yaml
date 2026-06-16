@@ -1,0 +1,2245 @@
+# Iron Ledger — Week-by-Week Weather History (Y312–Y315)
+# Canonical weather data for Rimevegr. 4 years × 48 weeks.
+# Used by weather systems and narrative scene-setting.
+# Named events reference IDs from named_events.yaml (WE_001–WE_040).
+
+weather_history:
+  metadata:
+    years_covered: [312, 313, 314, 315]
+    days_per_year: 360
+    weeks_per_year: 48
+    days_per_week: 7.5
+    seasons:
+      thaw: { start_day: 1, end_day: 30, weeks: [1, 2, 3, 4] }
+      long_sun: { start_day: 31, end_day: 60, weeks: [5, 6, 7, 8] }
+      harvest: { start_day: 61, end_day: 90, weeks: [9, 10, 11, 12] }
+      long_dark:
+        {
+          start_day: 91,
+          end_day: 360,
+          weeks:
+            [
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+            ],
+        }
+    weather_types:
+      - clear_grey
+      - rime_fog
+      - light_rain
+      - driving_snow
+      - rime_storm
+      - the_hush
+      - veil_thinning
+      - blood_sun
+    temperature_scale: [bitter_cold, freezing, cold, cool, mild]
+    wind_scale: [calm, light_breeze, steady_wind, strong_gusts, gale]
+    precipitation_types:
+      [
+        none,
+        light_mist,
+        light_rain,
+        heavy_rain,
+        light_snow,
+        heavy_snow,
+        heavy_sleet,
+        hail,
+      ]
+    visibility_scale: [clear, fair, poor, near_zero]
+    regions:
+      [coastal, deepholm, forest, frostfjord, grimholt, ice, moor, mountain]
+
+  # ===========================================================================
+  # YEAR 312 — The Moderate Year
+  # First year since open conflict. Thaw floods at Frostfjord.
+  # Summer brings cautious hope. Winter harsh but survivable.
+  # ===========================================================================
+  years:
+    312:
+      summary: "A moderate year — the first since open conflict. Thaw floods at Frostfjord. Summer brings hope. Autumn is unremarkable. Winter is harsh but survivable."
+      weeks:
+        # --- THAW / SPRING (Weeks 1-4, Days 1-30) ---
+        - week: 1
+          season: thaw
+          days: "1-7"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: strong_gusts
+          precipitation: heavy_sleet
+          visibility: poor
+          named_event: null
+          narrative: "Ice still locked. Last gasps of winter grip the fjords. Snowpack groans on the mountain passes."
+
+        - week: 2
+          season: thaw
+          days: "8-15"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: steady_wind
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: "WE_001"
+          narrative: "Sudden warming breaks the ice at Frostfjord. Meltwater floods the lower quay, takes two boats and a grain store. EVT_312_S01_001."
+
+        - week: 3
+          season: thaw
+          days: "16-22"
+          dominant_weather: light_rain
+          temperature: cold
+          wind: light_breeze
+          precipitation: light_rain
+          visibility: fair
+          named_event: null
+          narrative: "Rain washes the last grey snow from the forest roads. Mud everywhere. The rivers run brown."
+
+        - week: 4
+          season: thaw
+          days: "23-30"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: fair
+          named_event: null
+          narrative: "Pale skies. The ground firms up enough for carts. Trade routes reopen cautiously."
+
+        # --- LONG SUN / SUMMER (Weeks 5-8, Days 31-60) ---
+        - week: 5
+          season: long_sun
+          days: "31-37"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: light_breeze
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Longest daylight of the year begins. Fishermen work double tides. The moors steam dry."
+
+        - week: 6
+          season: long_sun
+          days: "38-45"
+          dominant_weather: clear_grey
+          temperature: mild
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Peak warmth. Children swim in the shallows at Kolvik. Foragers fill baskets with cloudberry and sorrel."
+
+        - week: 7
+          season: long_sun
+          days: "46-52"
+          dominant_weather: light_rain
+          temperature: mild
+          wind: light_breeze
+          precipitation: light_rain
+          visibility: fair
+          named_event: null
+          narrative: "Warm rains. Good growing week. Barley stands tall in the cleared fields around Ashen Reach."
+
+        - week: 8
+          season: long_sun
+          days: "53-60"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: fair
+          named_event: null
+          narrative: "Heat fades. Shadows lengthen earlier each day. First urgency of harvest preparation."
+
+        # --- HARVEST / AUTUMN (Weeks 9-12, Days 61-90) ---
+        - week: 9
+          season: harvest
+          days: "61-67"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: light_breeze
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Morning fogs roll off the moors and do not burn off until midday. Hay brought in damp."
+
+        - week: 10
+          season: harvest
+          days: "68-75"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Dry snap allows good harvest. Root cellars filled. Barrels stacked at Deepholm's market."
+
+        - week: 11
+          season: harvest
+          days: "76-82"
+          dominant_weather: light_rain
+          temperature: cold
+          wind: strong_gusts
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: null
+          narrative: "Autumn storms arrive. The coast road washes out between Kolvik and Skerrivik."
+
+        - week: 12
+          season: harvest
+          days: "83-90"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: steady_wind
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "First snow on the peaks. Rime coats the barrow stones at dawn. Winter announces itself."
+
+        # --- LONG DARK / WINTER (Weeks 13-48, Days 91-360) ---
+        - week: 13
+          season: long_dark
+          days: "91-97"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Winter drops hard. Two days of heavy snowfall block the mountain passes to Grimholt."
+
+        - week: 14
+          season: long_dark
+          days: "98-105"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Cold snap without wind. Stars visible through the grey. Smoke rises straight from every hearth."
+
+        - week: 15
+          season: long_dark
+          days: "106-112"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Thick rime fog settles in the valleys. The trees creak under ice. Sound carries strangely."
+
+        - week: 16
+          season: long_dark
+          days: "113-120"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: "WE_002"
+          narrative: "First major blizzard — locals call it the Grey Hammer. Drifts bury the Thornstead palisade gate."
+
+        - week: 17
+          season: long_dark
+          days: "121-127"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Eerie stillness after the blizzard. No wind. No birds. The silence presses on the eardrums."
+
+        - week: 18
+          season: long_dark
+          days: "128-135"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Slow snowfall through fog. Everything muted. Sentries see shapes that may be trees."
+
+        - week: 19
+          season: long_dark
+          days: "136-142"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Brief clarity. Messengers make the run between Deepholm and Kolvik. Road still passable."
+
+        - week: 20
+          season: long_dark
+          days: "143-150"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Three-day gale closes every road. Roof tiles stripped from Kolvik harbour houses."
+
+        - week: 21
+          season: long_dark
+          days: "151-157"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: "WE_003"
+          narrative: "Rime storm — ice pellets the size of fingernails. Livestock killed in exposed pens at Moor's End."
+
+        - week: 22
+          season: long_dark
+          days: "158-165"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Low grey ceiling. The Veil feels close. Dogs whimper at barrow-facing doors in Vargheim."
+
+        - week: 23
+          season: long_dark
+          days: "166-172"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: fair
+          named_event: null
+          narrative: "Midwinter. Quiet week. Settlements turn inward. Hearth fires are the only light."
+
+        - week: 24
+          season: long_dark
+          days: "173-180"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Heavy snowfall buries the Ironmarsh track. The marshfolk are cut off for days."
+
+        - week: 25
+          season: long_dark
+          days: "181-187"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Dead calm. The cold is dry and absolute. Water skins freeze solid inside shelters."
+
+        - week: 26
+          season: long_dark
+          days: "188-195"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog and light snow. A patrol from Grimholt loses two men who walked off the path and froze."
+
+        - week: 27
+          season: long_dark
+          days: "196-202"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Another hard storm. Cairnwatch reports their root store running low."
+
+        - week: 28
+          season: long_dark
+          days: "203-210"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Brief window. Trade sleds move between Deepholm and Kolvik. Flour prices double."
+
+        - week: 29
+          season: long_dark
+          days: "211-217"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Grey fog. The air tastes of iron. Old women say the Veil is breathing."
+
+        - week: 30
+          season: long_dark
+          days: "218-225"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: "WE_004"
+          narrative: "The Bone Wind — named storm. Gale force for two days. Ulfheim loses a longhouse roof."
+
+        - week: 31
+          season: long_dark
+          days: "226-232"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Uncanny stillness after the gale. Stars visible, impossibly bright. The barrows hum faintly."
+
+        - week: 32
+          season: long_dark
+          days: "233-240"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog returns. Damp cold worse than dry freeze. Everything rots slowly."
+
+        - week: 33
+          season: long_dark
+          days: "241-247"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear and cold. Hunters bring in lean elk from the forest edge. Meat is tough but welcome."
+
+        - week: 34
+          season: long_dark
+          days: "248-255"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_sleet
+          visibility: poor
+          named_event: null
+          narrative: "Sleet-snow mix. The worst for travel — coats freeze solid, footing treacherous."
+
+        - week: 35
+          season: long_dark
+          days: "256-262"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Low fog. Torches gutter and hiss. The world shrinks to arm's length."
+
+        - week: 36
+          season: long_dark
+          days: "263-270"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: fair
+          named_event: null
+          narrative: "Gentle snowfall under pale twilight. Almost peaceful. Stores holding."
+
+        - week: 37
+          season: long_dark
+          days: "271-277"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Late-season blizzard. Catches a merchant caravan on the Deepholm road. Three dead."
+
+        - week: 38
+          season: long_dark
+          days: "278-285"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: null
+          narrative: "Rime storm with hail. Short but vicious. Livestock shelters buckle under the ice."
+
+        - week: 39
+          season: long_dark
+          days: "286-292"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Deep silence. The kind that makes men check over their shoulders. Even the dogs stay quiet."
+
+        - week: 40
+          season: long_dark
+          days: "293-300"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog and light snow. Routine misery. Firewood rationing begins in smaller settlements."
+
+        - week: 41
+          season: long_dark
+          days: "301-307"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Cold clarity. Men begin calculating how many weeks remain. The answer is never good enough."
+
+        - week: 42
+          season: long_dark
+          days: "308-315"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Heavy snow. Drifts reach second-story shutters in Frostfjord Hollow."
+
+        - week: 43
+          season: long_dark
+          days: "316-322"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Fog and stillness. The last lean months begin. Skerrivik rations fish to one meal a day."
+
+        - week: 44
+          season: long_dark
+          days: "323-330"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: light_breeze
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear skies. Fishing through ice holes at Helfjord. Something large moves under the frozen surface."
+
+        - week: 45
+          season: long_dark
+          days: "331-337"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: steady_wind
+          precipitation: light_snow
+          visibility: fair
+          named_event: null
+          narrative: "Light snow and wind. Winter's grip loosening, imperceptibly. A month to go."
+
+        - week: 46
+          season: long_dark
+          days: "338-345"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Rime fog thins and returns. The air smells of coming change. Meltwater trickles under ice."
+
+        - week: 47
+          season: long_dark
+          days: "346-352"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Temperatures climb a fraction. Ice creaks on the harbour. Folk dare to say the word thaw."
+
+        - week: 48
+          season: long_dark
+          days: "353-360"
+          dominant_weather: driving_snow
+          temperature: cold
+          wind: strong_gusts
+          precipitation: heavy_sleet
+          visibility: poor
+          named_event: null
+          narrative: "Winter's last spite — sleet storm on the final week. Reminds everyone not to hope too soon."
+
+    # ===========================================================================
+    # YEAR 313 — The War Year
+    # Harsh winter, supply crisis, siege conditions. Named storms increase.
+    # Military weather impacts drive casualties and logistics failures.
+    # ===========================================================================
+    313:
+      summary: "The war year. Spring thaw reveals siege dead. Summer is short and anxious. Autumn storms wreck supply lines. Winter is the worst in living memory — siege conditions, supply crisis, named storms."
+      weeks:
+        # --- THAW / SPRING (Weeks 1-4, Days 1-30) ---
+        - week: 1
+          season: thaw
+          days: "1-7"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: gale
+          precipitation: heavy_sleet
+          visibility: near_zero
+          named_event: null
+          narrative: "Thaw delayed. Ice holds a week past normal. Men cough blood from the cold air."
+
+        - week: 2
+          season: thaw
+          days: "8-15"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: steady_wind
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: "WE_005"
+          narrative: "Sudden violent thaw. Snowmelt outside Deepholm uncovers frozen corpses from the winter siege. Ravens arrive in columns. EVT_313_S01_001."
+
+        - week: 3
+          season: thaw
+          days: "16-22"
+          dominant_weather: light_rain
+          temperature: cold
+          wind: strong_gusts
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: null
+          narrative: "Driving rain. Rivers flood worse than Y312. Two bridges washed out on the Grimholt road."
+
+        - week: 4
+          season: thaw
+          days: "23-30"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: fair
+          named_event: null
+          narrative: "Mud season. Roads impassable for wagons. Armies cannot move. Both sides regroup."
+
+        # --- LONG SUN / SUMMER (Weeks 5-8, Days 31-60) ---
+        - week: 5
+          season: long_sun
+          days: "31-37"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: light_breeze
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Summer arrives late and grudging. Fields planted behind schedule. Tension on every road."
+
+        - week: 6
+          season: long_sun
+          days: "38-45"
+          dominant_weather: light_rain
+          temperature: cool
+          wind: steady_wind
+          precipitation: light_rain
+          visibility: fair
+          named_event: null
+          narrative: "Cool rain dampens the brief summer. No true warm spell this year. Crops will be thin."
+
+        - week: 7
+          season: long_sun
+          days: "46-52"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: light_breeze
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Best week of the year and it feels like autumn in a good year. Foragers gather what they can."
+
+        - week: 8
+          season: long_sun
+          days: "53-60"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Summer dies early. Fog rolls in a week ahead of schedule. Harvest will be poor."
+
+        # --- HARVEST / AUTUMN (Weeks 9-12, Days 61-90) ---
+        - week: 9
+          season: harvest
+          days: "61-67"
+          dominant_weather: light_rain
+          temperature: cold
+          wind: strong_gusts
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: null
+          narrative: "Autumn storms arrive early. Grain rots in the field. Supply wagons bog down on every road."
+
+        - week: 10
+          season: harvest
+          days: "68-75"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: steady_wind
+          precipitation: light_rain
+          visibility: poor
+          named_event: "WE_006"
+          narrative: "Fog and rain through the critical harvest window. Deepholm's grain stores reach only 60% capacity. War year numbers."
+
+        - week: 11
+          season: harvest
+          days: "76-82"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: gale
+          precipitation: heavy_sleet
+          visibility: near_zero
+          named_event: "WE_007"
+          narrative: "First snow two weeks early — the Reaper's Wind. Catches unharvested fields across the moor settlements."
+
+        - week: 12
+          season: harvest
+          days: "83-90"
+          dominant_weather: rime_storm
+          temperature: freezing
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: null
+          narrative: "Rime storm ends autumn like a door slamming. Hail strips the last leaves. Winter is here."
+
+        # --- LONG DARK / WINTER (Weeks 13-48, Days 91-360) ---
+        - week: 13
+          season: long_dark
+          days: "91-97"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: "WE_008"
+          narrative: "Winter opens with a three-day rime storm. The Anvil Gate pass buries under ten feet of snow. Grimholt is isolated."
+
+        - week: 14
+          season: long_dark
+          days: "98-105"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "No respite. Snow continues. Ordovast's supply convoys cannot move. Siege preparations stall."
+
+        - week: 15
+          season: long_dark
+          days: "106-112"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Terrible silence. The cold is so deep the snow squeaks underfoot. Exposed skin blackens in minutes."
+
+        - week: 16
+          season: long_dark
+          days: "113-120"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: "WE_009"
+          narrative: "The Coffin Lid — named rime storm. Collapses the field hospital tent at the Deepholm siege line. Twelve die of exposure."
+
+        - week: 17
+          season: long_dark
+          days: "121-127"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Continuous snowfall. The world contracts to the space between walls. Desertions from Ordovast's camps."
+
+        - week: 18
+          season: long_dark
+          days: "128-135"
+          dominant_weather: rime_fog
+          temperature: bitter_cold
+          wind: calm
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog and bitter cold. Frostbite cases double. The healers at Ashen Reach run out of salve."
+
+        - week: 19
+          season: long_dark
+          days: "136-142"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: "WE_010"
+          narrative: "Whitewall — named blizzard. Four continuous days. Cairnwatch and Stonebreak completely buried. No contact for a week."
+
+        - week: 20
+          season: long_dark
+          days: "143-150"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: null
+          narrative: "Rime storm follows the blizzard. Ice crusts over the snow, making every step a battle. Travel is suicide."
+
+        - week: 21
+          season: long_dark
+          days: "151-157"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Dead calm after the storms. Men stand in the silence and listen to nothing. Some weep without knowing why."
+
+        - week: 22
+          season: long_dark
+          days: "158-165"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Snow returns. Supply crisis acute — Moor's End reports starvation. Grimholt tightens rationing to siege levels."
+
+        - week: 23
+          season: long_dark
+          days: "166-172"
+          dominant_weather: rime_fog
+          temperature: bitter_cold
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog and numbing cold. The siege lines around Deepholm are skeletons of what they were. Men eat horse."
+
+        - week: 24
+          season: long_dark
+          days: "173-180"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_sleet
+          visibility: near_zero
+          named_event: "WE_011"
+          narrative: "The Iron Night — worst rime storm of the year. Sleet freezes on contact. Three watchtowers collapse under ice weight at Deepholm."
+
+        - week: 25
+          season: long_dark
+          days: "181-187"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Relentless snowfall. Ordovast pulls the siege line back to the treeline. His men are dying faster than the defenders."
+
+        - week: 26
+          season: long_dark
+          days: "188-195"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Eerie calm. Clear skies show constellation patterns that the navigators say are wrong. Nobody sleeps well."
+
+        - week: 27
+          season: long_dark
+          days: "196-202"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: "WE_012"
+          narrative: "The Dead March — named blizzard. Catches Ordovast's retreat column. Forty men freeze on the road to Grimholt."
+
+        - week: 28
+          season: long_dark
+          days: "203-210"
+          dominant_weather: rime_fog
+          temperature: bitter_cold
+          wind: light_breeze
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Fog settles over the battlefield. The frozen dead stand upright in the drifts like monuments."
+
+        - week: 29
+          season: long_dark
+          days: "211-217"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: null
+          narrative: "Another rime storm. Hail damages roofing throughout the eastern settlements. Supply routes remain severed."
+
+        - week: 30
+          season: long_dark
+          days: "218-225"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Heavy snow buries the dead. War pauses. Both sides too weak to fight. The land itself has won."
+
+        - week: 31
+          season: long_dark
+          days: "226-232"
+          dominant_weather: clear_grey
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "First clear week in a month. Surviving messengers run between settlements. The news is all bad."
+
+        - week: 32
+          season: long_dark
+          days: "233-240"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Snow returns. Stonebreak goes silent — no smoke visible from the ridge. Rescue party finds twelve alive of forty."
+
+        - week: 33
+          season: long_dark
+          days: "241-247"
+          dominant_weather: rime_fog
+          temperature: bitter_cold
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog and snow. Supplies at crisis levels everywhere. Kolvik's fishing fleet frozen in the harbour."
+
+        - week: 34
+          season: long_dark
+          days: "248-255"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_sleet
+          visibility: near_zero
+          named_event: "WE_013"
+          narrative: "The Black Maw — named rime storm. Sleet and gale. The worst single night of Y313. Seven dead at Frostfjord from collapsed shelters."
+
+        - week: 35
+          season: long_dark
+          days: "256-262"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Silence after the Black Maw. Too quiet. Sentries report hearing footsteps in empty snow. Morale breaks."
+
+        - week: 36
+          season: long_dark
+          days: "263-270"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "More snow. The world is white and grey and nothing else. Time loses meaning. Men mark days with knife-cuts on doorframes."
+
+        - week: 37
+          season: long_dark
+          days: "271-277"
+          dominant_weather: rime_fog
+          temperature: bitter_cold
+          wind: calm
+          precipitation: light_mist
+          visibility: near_zero
+          named_event: null
+          narrative: "Dense fog. Visibility near zero even at midday. Ironmarsh floods beneath the ice — ankle-deep water under snow."
+
+        - week: 38
+          season: long_dark
+          days: "278-285"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: "WE_014"
+          narrative: "Grimjaw — named blizzard. Six days of continuous wind and snow. The longest storm on record. Moor's End burns its furniture for warmth."
+
+        - week: 39
+          season: long_dark
+          days: "286-292"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: hail
+          visibility: poor
+          named_event: null
+          narrative: "Rime and hail on the tail of Grimjaw. Men too exhausted to repair damage. They sit and wait."
+
+        - week: 40
+          season: long_dark
+          days: "293-300"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Silence again. The Veil feels paper-thin. Green lights pulse over the barrow fields at Vargheim."
+
+        - week: 41
+          season: long_dark
+          days: "301-307"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Late blizzard. Relentless. Some settlements have been snowed in for weeks. The count of dead will wait for thaw."
+
+        - week: 42
+          season: long_dark
+          days: "308-315"
+          dominant_weather: rime_fog
+          temperature: bitter_cold
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog returns. Temperatures refuse to rise. This winter has no bottom. Helfjord reports pack ice a mile out."
+
+        - week: 43
+          season: long_dark
+          days: "316-322"
+          dominant_weather: clear_grey
+          temperature: bitter_cold
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear cold. Stars like broken glass. The kind of beauty that kills you. Exposed water freezes in seconds."
+
+        - week: 44
+          season: long_dark
+          days: "323-330"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_sleet
+          visibility: poor
+          named_event: null
+          narrative: "Sleet storm. The cruelest weather — wets everything, then freezes it. Iron rings with cold."
+
+        - week: 45
+          season: long_dark
+          days: "331-337"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Temperature lifts a hair. The fog changes character — warmer, wetter. The ice in the harbour groans."
+
+        - week: 46
+          season: long_dark
+          days: "338-345"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: steady_wind
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Winter refuses to release. Heavy snow even as the sun strengthens. Drifts are higher than any living memory."
+
+        - week: 47
+          season: long_dark
+          days: "346-352"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: light_breeze
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "First clear spell in weeks. The snowpack is enormous. Thaw will be catastrophic. Everyone knows it."
+
+        - week: 48
+          season: long_dark
+          days: "353-360"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: steady_wind
+          precipitation: light_rain
+          visibility: poor
+          named_event: null
+          narrative: "Rain on snow. The thaw begins early — not gently but in a rush. Ice cracks like gunshot at Frostfjord."
+
+    # ===========================================================================
+    # YEAR 314 — Reconstruction and Second Crisis
+    # Post-war recovery. Thaw reveals mass graves. Summer rebuilding.
+    # Supernatural escalation begins — barrow activity, Veil weakening.
+    # ===========================================================================
+    314:
+      summary: "Reconstruction year. Thaw uncovers Y313's dead. Summer allows rebuilding but the land is scarred. Autumn sees first barrow incidents. Winter brings creeping supernatural dread — the Veil thins visibly."
+      weeks:
+        # --- THAW / SPRING (Weeks 1-4, Days 1-30) ---
+        - week: 1
+          season: thaw
+          days: "1-7"
+          dominant_weather: light_rain
+          temperature: cold
+          wind: strong_gusts
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: "WE_015"
+          narrative: "Violent thaw. The Y313 snowpack releases all at once. Flash floods on every river. Roads become rivers."
+
+        - week: 2
+          season: thaw
+          days: "8-15"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: light_breeze
+          precipitation: light_rain
+          visibility: poor
+          named_event: "WE_016"
+          narrative: "Meltwater recedes. The dead emerge. Mass graves, frozen corpses, siege trenches full of bodies. The stench begins. EVT_314_S04_004."
+
+        - week: 3
+          season: thaw
+          days: "16-22"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: fair
+          named_event: null
+          narrative: "Grey skies. Burial parties work dawn to dusk. The ground is too wet for proper graves. Pyres instead."
+
+        - week: 4
+          season: thaw
+          days: "23-30"
+          dominant_weather: light_rain
+          temperature: cool
+          wind: light_breeze
+          precipitation: light_rain
+          visibility: fair
+          named_event: null
+          narrative: "Warm rain. The land drinks it. Green shoots appear among the ashes of burned settlements."
+
+        # --- LONG SUN / SUMMER (Weeks 5-8, Days 31-60) ---
+        - week: 5
+          season: long_sun
+          days: "31-37"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: light_breeze
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Summer opens with dry, clear skies. Timber cutting begins for reconstruction. Axes ring all day."
+
+        - week: 6
+          season: long_sun
+          days: "38-45"
+          dominant_weather: clear_grey
+          temperature: mild
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Warmest week. Fields replanted. Kolvik harbour repairs under way. Almost normal, if you don't look at the scars."
+
+        - week: 7
+          season: long_sun
+          days: "46-52"
+          dominant_weather: light_rain
+          temperature: mild
+          wind: light_breeze
+          precipitation: light_rain
+          visibility: fair
+          named_event: null
+          narrative: "Good growing rain. Crops respond. A sense of fragile recovery. Nobody relaxes."
+
+        - week: 8
+          season: long_sun
+          days: "53-60"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: fair
+          named_event: null
+          narrative: "Summer fades. Better than Y313 but not quite Y312 levels. Stores will be thin but functional."
+
+        # --- HARVEST / AUTUMN (Weeks 9-12, Days 61-90) ---
+        - week: 9
+          season: harvest
+          days: "61-67"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: light_breeze
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Dry harvest week. Every hand in the fields. The war-thinned population struggles to bring it all in."
+
+        - week: 10
+          season: harvest
+          days: "68-75"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Fog settles. Harvest slows. Late mushroom gathering in the forests around Ulfheim."
+
+        - week: 11
+          season: harvest
+          days: "76-82"
+          dominant_weather: veil_thinning
+          temperature: cold
+          wind: calm
+          precipitation: none
+          visibility: poor
+          named_event: "WE_017"
+          narrative: "First documented Veil event of the reconstruction. Blue-green light pulses along the barrow ridge at Vargheim for three consecutive nights."
+
+        - week: 12
+          season: harvest
+          days: "83-90"
+          dominant_weather: light_rain
+          temperature: freezing
+          wind: strong_gusts
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: null
+          narrative: "Autumn storms. Rain and wind. The last crops hauled in wet. Drying racks work overtime."
+
+        # --- LONG DARK / WINTER (Weeks 13-48, Days 91-360) ---
+        - week: 13
+          season: long_dark
+          days: "91-97"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Winter arrives on schedule. Heavy snow but not Y313 levels. Repairs still hold."
+
+        - week: 14
+          season: long_dark
+          days: "98-105"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Cold and clear. Trade sleds move early. Settlements share what they can."
+
+        - week: 15
+          season: long_dark
+          days: "106-112"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: "WE_018"
+          narrative: "Veil thins overnight. Green lights seen from Cairnwatch to Ironmarsh. Dogs howl until dawn. The barrow humming returns."
+
+        - week: 16
+          season: long_dark
+          days: "113-120"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Blizzard. Fierce but shorter than Y313 storms. Two days, then done. The land remembers worse."
+
+        - week: 17
+          season: long_dark
+          days: "121-127"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "The Hush. Dead silence. Stars wrong again — or are they? Men argue about constellation positions."
+
+        - week: 18
+          season: long_dark
+          days: "128-135"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog and light snow. Normal misery. After Y313, men are almost grateful for ordinary winter."
+
+        - week: 19
+          season: long_dark
+          days: "136-142"
+          dominant_weather: blood_sun
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: "WE_019"
+          narrative: "Blood sun at midday — a deep red disc visible through the twilight for two hours. The old ones kneel. The young ones stare."
+
+        - week: 20
+          season: long_dark
+          days: "143-150"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Heavy snow follows the blood sun, as if the land were disturbed. Thick fall for three days."
+
+        - week: 21
+          season: long_dark
+          days: "151-157"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: "WE_020"
+          narrative: "Veil thins for a full week. Barrow fields at Vargheim glow nightly. A sheepherder near Moor's End claims he spoke with a dead man."
+
+        - week: 22
+          season: long_dark
+          days: "158-165"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: "WE_021"
+          narrative: "Rime storm with unnatural characteristics — hailstones are warm to the touch. Men swear they see shapes in the ice. The Cursed Hail."
+
+        - week: 23
+          season: long_dark
+          days: "166-172"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear and cold. Normal weather feels like a gift. Deepholm's market opens for winter trade."
+
+        - week: 24
+          season: long_dark
+          days: "173-180"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Midwinter storm. Strong but conventional. Men handle it with the grim competence of survivors."
+
+        - week: 25
+          season: long_dark
+          days: "181-187"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Deep Hush. Lasts four days. Longer than any recorded. Barrow humming audible in the silence."
+
+        - week: 26
+          season: long_dark
+          days: "188-195"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_mist
+          visibility: poor
+          named_event: "WE_022"
+          narrative: "Veil event — strongest yet. Green-blue aurora hangs low over the northern barrow chain. Visible from Kolvik harbour."
+
+        - week: 27
+          season: long_dark
+          days: "196-202"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: calm
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Thick fog. Shapes reported moving between barrows at night. Patrols refuse to go near the ridge."
+
+        - week: 28
+          season: long_dark
+          days: "203-210"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Heavy blizzard. Conventional but fierce. Buries the barrow fields for weeks. The lights dim."
+
+        - week: 29
+          season: long_dark
+          days: "211-217"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear spell. Relief parties reach Cairnwatch. Settlement intact but shaken — they heard voices in the storm."
+
+        - week: 30
+          season: long_dark
+          days: "218-225"
+          dominant_weather: blood_sun
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: "WE_023"
+          narrative: "Second blood sun of the year. Lasts a full day. The light paints the snow red. Some call it a sign. The völvas agree — but won't say of what."
+
+        - week: 31
+          season: long_dark
+          days: "226-232"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: "WE_024"
+          narrative: "The Red Burial — named blizzard that follows the blood sun. Snow falls with a faint pink tinge. Nobody can explain why."
+
+        - week: 32
+          season: long_dark
+          days: "233-240"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Fog and damp. The pink snow melts normally. Tested — no taste, no smell. Just the colour is wrong."
+
+        - week: 33
+          season: long_dark
+          days: "241-247"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "The Hush returns. Men have learned to dread the silence more than the storms."
+
+        - week: 34
+          season: long_dark
+          days: "248-255"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Snow and wind. Standard late-winter pattern. Stores holding at most settlements. Y313 taught hard lessons."
+
+        - week: 35
+          season: long_dark
+          days: "256-262"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: poor
+          named_event: "WE_025"
+          narrative: "Veil event. The barrow humming becomes a low tone audible at Thornstead, five miles from the nearest mound."
+
+        - week: 36
+          season: long_dark
+          days: "263-270"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog. Light snow. Normal conditions. But sentries report seeing their own breath hang motionless in still air."
+
+        - week: 37
+          season: long_dark
+          days: "271-277"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear and cold. Hunters report game unusually scarce near the barrow fields. Elk avoid the ridge entirely."
+
+        - week: 38
+          season: long_dark
+          days: "278-285"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_sleet
+          visibility: poor
+          named_event: null
+          narrative: "Sleet storm. Miserable and routine. The war-hardened population barely remarks on it."
+
+        - week: 39
+          season: long_dark
+          days: "286-292"
+          dominant_weather: the_hush
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Hush. Shorter this time — two days. But the silence has a quality now, like something listening."
+
+        - week: 40
+          season: long_dark
+          days: "293-300"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Low fog. Stable conditions. Well into the lean months but stores adequate. Reconstruction discipline holds."
+
+        - week: 41
+          season: long_dark
+          days: "301-307"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: steady_wind
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Late snow. Heavy but manageable. Roofs rebuilt since Y313 hold without complaint."
+
+        - week: 42
+          season: long_dark
+          days: "308-315"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear spell. Stars visible. Constellations correct — for the first time since the blood sun. Small comfort."
+
+        - week: 43
+          season: long_dark
+          days: "316-322"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog. The long wait. Week follows week and the rhythm of survival grinds on."
+
+        - week: 44
+          season: long_dark
+          days: "323-330"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: poor
+          named_event: "WE_026"
+          narrative: "Late-winter Veil event. Faint green glow visible even through fog. The humming pitch drops an octave. Animals are restless."
+
+        - week: 45
+          season: long_dark
+          days: "331-337"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: steady_wind
+          precipitation: light_snow
+          visibility: fair
+          named_event: null
+          narrative: "Light snow and wind. Winter weakening. Icicles drip at midday for the first time in months."
+
+        - week: 46
+          season: long_dark
+          days: "338-345"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: light_breeze
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Temperature climbs. The ice in the harbour cracks. Birds sighted for the first time — four crows heading east."
+
+        - week: 47
+          season: long_dark
+          days: "346-352"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: fair
+          named_event: null
+          narrative: "Thinning fog. The smell of thaw — wet earth, old ice. Something like hope, if you squint."
+
+        - week: 48
+          season: long_dark
+          days: "353-360"
+          dominant_weather: light_rain
+          temperature: cold
+          wind: strong_gusts
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: null
+          narrative: "Rain on snow. Thaw rush begins. Fast melt — the Y313 snowpack was thicker than anyone realized."
+
+    # ===========================================================================
+    # YEAR 315 — The Veil Year
+    # Supernatural escalation peaks. Barrow crisis. Blood suns become frequent.
+    # Winter weather increasingly unnatural. The land itself is wrong.
+    # ===========================================================================
+    315:
+      summary: "The Veil year. Supernatural weather dominates. Blood suns, prolonged Hush events, Veil thinning weekly by midwinter. The barrow crisis reaches a peak. Natural weather patterns warp. Something is waking."
+      weeks:
+        # --- THAW / SPRING (Weeks 1-4, Days 1-30) ---
+        - week: 1
+          season: thaw
+          days: "1-7"
+          dominant_weather: blood_sun
+          temperature: cold
+          wind: calm
+          precipitation: light_rain
+          visibility: fair
+          named_event: "WE_027"
+          narrative: "Year opens with a blood sun on Day 1. Red light on melting ice. The völvas refuse to interpret it. Bad sign when they won't even guess."
+
+        - week: 2
+          season: thaw
+          days: "8-15"
+          dominant_weather: light_rain
+          temperature: cold
+          wind: steady_wind
+          precipitation: heavy_rain
+          visibility: poor
+          named_event: null
+          narrative: "Heavy thaw rain. Mountain streams flood. Roads wash out. The dead from Y314's late barrow incidents surface in the mud."
+
+        - week: 3
+          season: thaw
+          days: "16-22"
+          dominant_weather: veil_thinning
+          temperature: cold
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: "WE_028"
+          narrative: "Veil event during thaw — unprecedented. Green light visible at noon. The barrow hum becomes a chord, harmonic and terrible."
+
+        - week: 4
+          season: thaw
+          days: "23-30"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: light_breeze
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Normal weather returns. The contrast makes it worse. Men flinch at ordinary shadows."
+
+        # --- LONG SUN / SUMMER (Weeks 5-8, Days 31-60) ---
+        - week: 5
+          season: long_sun
+          days: "31-37"
+          dominant_weather: clear_grey
+          temperature: cool
+          wind: light_breeze
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Summer opens clean. The daylight feels thin, though. Colours washed out. The sun has no warmth behind it."
+
+        - week: 6
+          season: long_sun
+          days: "38-45"
+          dominant_weather: clear_grey
+          temperature: mild
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Peak warmth such as it is. Functional. Work proceeds. But the sky has a metallic quality that wasn't there in Y312."
+
+        - week: 7
+          season: long_sun
+          days: "46-52"
+          dominant_weather: blood_sun
+          temperature: cool
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: "WE_029"
+          narrative: "Blood sun in midsummer. Wrong season entirely. Lasts three hours. The barley fields look like they're bleeding. Panic at Ashen Reach."
+
+        - week: 8
+          season: long_sun
+          days: "53-60"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: steady_wind
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Unseasonal fog. Cold returns early. The best weeks of the year are slipping away faster each cycle."
+
+        # --- HARVEST / AUTUMN (Weeks 9-12, Days 61-90) ---
+        - week: 9
+          season: harvest
+          days: "61-67"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Dry harvest. Yields adequate but not generous. Every settlement stores with the memory of Y313."
+
+        - week: 10
+          season: harvest
+          days: "68-75"
+          dominant_weather: veil_thinning
+          temperature: cold
+          wind: calm
+          precipitation: none
+          visibility: poor
+          named_event: "WE_030"
+          narrative: "Veil thins during harvest. Workers refuse to enter the north fields near the barrow line. Crop left standing."
+
+        - week: 11
+          season: harvest
+          days: "76-82"
+          dominant_weather: the_hush
+          temperature: cold
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: "WE_031"
+          narrative: "Harvest Hush — unprecedented in autumn. Three days of total silence. Birds fall from the sky mid-flight. The barrow hum stops entirely, which is somehow worse."
+
+        - week: 12
+          season: harvest
+          days: "83-90"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: gale
+          precipitation: heavy_sleet
+          visibility: near_zero
+          named_event: "WE_032"
+          narrative: "First Cry — named storm. Winter arrives two weeks early with full fury. Hail and sleet. Message: the land will give no more grace."
+
+        # --- LONG DARK / WINTER (Weeks 13-48, Days 91-360) ---
+        - week: 13
+          season: long_dark
+          days: "91-97"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: null
+          narrative: "Rime storm on winter's first week. Hail punches through thinner roofs. Grimholt's rebuilt gatehouse damaged."
+
+        - week: 14
+          season: long_dark
+          days: "98-105"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: poor
+          named_event: "WE_033"
+          narrative: "Veil event. The glow spreads beyond the barrow fields for the first time — visible from settlements a day's walk away."
+
+        - week: 15
+          season: long_dark
+          days: "106-112"
+          dominant_weather: blood_sun
+          temperature: freezing
+          wind: light_breeze
+          precipitation: none
+          visibility: fair
+          named_event: "WE_034"
+          narrative: "Blood sun. Third this year. Lasts from dawn twilight to dusk. The longest yet. Shadows fall wrong — checking twice reveals nothing amiss, but the unease persists."
+
+        - week: 16
+          season: long_dark
+          days: "113-120"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Massive blizzard. Natural. Almost a relief after the supernatural weeks. Men know how to fight snow."
+
+        - week: 17
+          season: long_dark
+          days: "121-127"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: "WE_035"
+          narrative: "Five-day Hush. The longest ever. Sound dampened to nothing. A man shouts and hears himself as a whisper. The barrow fields glow steadily."
+
+        - week: 18
+          season: long_dark
+          days: "128-135"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: near_zero
+          named_event: "WE_036"
+          narrative: "Catastrophic Veil event. Green-blue light saturates the sky. Mist rises from every barrow simultaneously. Sentries at Vargheim report movement — upright, walking, slow."
+
+        - week: 19
+          season: long_dark
+          days: "136-142"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: null
+          narrative: "Rime storm breaks the Veil event. Natural violence scours the unnatural away — for now."
+
+        - week: 20
+          season: long_dark
+          days: "143-150"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Heavy snow. Standard. The population is almost grateful. Snow they understand. Green lights, they do not."
+
+        - week: 21
+          season: long_dark
+          days: "151-157"
+          dominant_weather: blood_sun
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: "WE_037"
+          narrative: "Blood sun with a halo. A red ring around the dim disc. The völvas speak now — they say the dead are calling and the living must answer. Or something will answer for them."
+
+        - week: 22
+          season: long_dark
+          days: "158-165"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Hush follows the blood sun. The pattern is becoming predictable: unnatural light, then silence, then snow, then the Veil. A cycle. A pulse."
+
+        - week: 23
+          season: long_dark
+          days: "166-172"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: near_zero
+          named_event: "WE_038"
+          narrative: "Veil event, right on the pulse. Barrow glow constant now. A scouting party from Thornstead enters the fields. Two return. They will not speak of what they saw."
+
+        - week: 24
+          season: long_dark
+          days: "173-180"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Blizzard. Six-day storm. Buries everything. When it clears, new barrow mounds have appeared. Or old ones have moved. Nobody can say which."
+
+        - week: 25
+          season: long_dark
+          days: "181-187"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: hail
+          visibility: near_zero
+          named_event: null
+          narrative: "Rime storm. Traditional misery. The supernatural cycle pauses during the worst natural weather, as if sharing the stage."
+
+        - week: 26
+          season: long_dark
+          days: "188-195"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear cold. Trade and messages move briefly. Every settlement asks the same question: are you seeing it too? Yes. Everyone sees it."
+
+        - week: 27
+          season: long_dark
+          days: "196-202"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: "WE_039"
+          narrative: "Veil event. Now occurring weekly. The glow has a sound — not humming but a low sustained note, like a horn blown beneath the earth."
+
+        - week: 28
+          season: long_dark
+          days: "203-210"
+          dominant_weather: blood_sun
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: "WE_040"
+          narrative: "Blood sun. Fifth this year. Lasts two full days. The snow glows red at night without a source. The pattern is accelerating. Whatever is coming, it comes soon."
+
+        - week: 29
+          season: long_dark
+          days: "211-217"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Hush. Three days. The silence is absolute now — total absence of sound. Men communicate by gesture. Writing. Touch."
+
+        - week: 30
+          season: long_dark
+          days: "218-225"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Blizzard. Natural. Almost reassuring. The wind howls and for once the howling is just wind."
+
+        - week: 31
+          season: long_dark
+          days: "226-232"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_snow
+          visibility: poor
+          named_event: null
+          narrative: "Fog and snow. The barrow glow visible even through the fog now. Permanent feature of the landscape."
+
+        - week: 32
+          season: long_dark
+          days: "233-240"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: near_zero
+          named_event: null
+          narrative: "Veil thins. Routine now. The sentries mark it in their logs without comment. What else is there to say?"
+
+        - week: 33
+          season: long_dark
+          days: "241-247"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_snow
+          visibility: near_zero
+          named_event: null
+          narrative: "Gale and heavy snow. The late-winter storms continue regardless. The land follows its own rules, living and dead."
+
+        - week: 34
+          season: long_dark
+          days: "248-255"
+          dominant_weather: the_hush
+          temperature: bitter_cold
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Hush. Two days. Short. Almost a mercy. The silence no longer frightens — it is the waiting that follows."
+
+        - week: 35
+          season: long_dark
+          days: "256-262"
+          dominant_weather: rime_storm
+          temperature: bitter_cold
+          wind: gale
+          precipitation: heavy_sleet
+          visibility: near_zero
+          named_event: null
+          narrative: "Rime storm. Sleet and gale. Conventional punishment. Men hunker down and endure."
+
+        - week: 36
+          season: long_dark
+          days: "263-270"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: poor
+          named_event: null
+          narrative: "Veil thins again. The barrow glow pulses now — slow rhythm, like breathing. Every settlement can see it."
+
+        - week: 37
+          season: long_dark
+          days: "271-277"
+          dominant_weather: clear_grey
+          temperature: freezing
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear week. Messages move. The consensus forms: something must be done about the barrows before next thaw. Or there may not be a next thaw."
+
+        - week: 38
+          season: long_dark
+          days: "278-285"
+          dominant_weather: driving_snow
+          temperature: bitter_cold
+          wind: strong_gusts
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Heavy snow. Late-season storm. Storms seem to come between Veil events now, like punctuation."
+
+        - week: 39
+          season: long_dark
+          days: "286-292"
+          dominant_weather: blood_sun
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Blood sun. Again. Nobody counts anymore. The red light is just what the sky does now."
+
+        - week: 40
+          season: long_dark
+          days: "293-300"
+          dominant_weather: the_hush
+          temperature: freezing
+          wind: calm
+          precipitation: none
+          visibility: clear
+          named_event: null
+          narrative: "Hush. Dawn to dawn. In the silence, the barrow tone is the only sound. It fills the chest like a second heartbeat."
+
+        - week: 41
+          season: long_dark
+          days: "301-307"
+          dominant_weather: veil_thinning
+          temperature: freezing
+          wind: calm
+          precipitation: light_mist
+          visibility: near_zero
+          named_event: null
+          narrative: "Veil event. The mist that rises from the barrows smells of turned earth and iron. Movement confirmed — slow figures on the ridge, seen by dozens."
+
+        - week: 42
+          season: long_dark
+          days: "308-315"
+          dominant_weather: driving_snow
+          temperature: freezing
+          wind: steady_wind
+          precipitation: heavy_snow
+          visibility: poor
+          named_event: null
+          narrative: "Snow covers the barrow fields. The figures are not seen for a week. But the glow continues beneath the drifts, green light under white."
+
+        - week: 43
+          season: long_dark
+          days: "316-322"
+          dominant_weather: rime_fog
+          temperature: freezing
+          wind: light_breeze
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Fog. The world reduced. Waiting. The lean weeks. Stores calculated to the last barrel."
+
+        - week: 44
+          season: long_dark
+          days: "323-330"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear cold. Winter loosens its grip one finger at a time. The barrow glow dims slightly. Seasonal? Or a pause before something worse?"
+
+        - week: 45
+          season: long_dark
+          days: "331-337"
+          dominant_weather: driving_snow
+          temperature: cold
+          wind: strong_gusts
+          precipitation: light_snow
+          visibility: fair
+          named_event: null
+          narrative: "Light snow and wind. Winter fading. The blood suns have stopped — for now. The Hush intervals lengthen. Patterns shifting."
+
+        - week: 46
+          season: long_dark
+          days: "338-345"
+          dominant_weather: rime_fog
+          temperature: cold
+          wind: light_breeze
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Rime fog. Thinning. The air warms fractionally. Ice cracks at Helfjord. Spring is coming, and with it, whatever the barrows have been building toward."
+
+        - week: 47
+          season: long_dark
+          days: "346-352"
+          dominant_weather: clear_grey
+          temperature: cold
+          wind: steady_wind
+          precipitation: none
+          visibility: fair
+          named_event: null
+          narrative: "Clear skies. Ice melting. The barrow glow persists through daylight hours now — not bright, but present. Permanent."
+
+        - week: 48
+          season: long_dark
+          days: "353-360"
+          dominant_weather: veil_thinning
+          temperature: cold
+          wind: calm
+          precipitation: light_mist
+          visibility: poor
+          named_event: null
+          narrative: "Year ends as it began — under the Veil's glow. Thaw approaches. The dead wait under thinning ice. Y316 will bring answers, one way or another."

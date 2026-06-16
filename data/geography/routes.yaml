@@ -1,0 +1,2083 @@
+routes:
+- id: RTE_001
+  name: Beinvegr (The Bone Road)
+  from_settlement: Frostfjord Hollow
+  to_settlement: Ashen Reach
+  distance_km: 45
+  travel_days_summer: 2
+  travel_days_winter: 4
+  terrain_segments:
+  - terrain: fjord_ridge
+    distance_km: 15
+    description: Exposed ridge above the fjord. Wind hammers from the west. Whale bone markers line the path — old navigational
+      posts driven into the rock by hands no one remembers.
+  - terrain: pine_slope
+    distance_km: 20
+    description: Descent through sparse pine. The soil is thin and the roots grip bare rock. Slippery in rain, treacherous
+      in frost.
+  - terrain: open_approach
+    distance_km: 10
+    description: Open ground approaching Ashen Reach. Visible from the walls for the last two miles. No cover.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: ambush
+    description: Ashen Reach scouts watch the ridgeline. Patrols run twice daily in summer.
+    chance_percent: 25
+  - type: weather
+    description: The exposed ridge catches every storm off the fjord. Driving rain or snow can halt travel for hours.
+    chance_percent: 30
+  landmarks:
+  - GEO_FROST_012
+  - GEO_FROST_006
+  shelters:
+  - name: Ridge Overhang
+    capacity: 8
+    quality: poor
+    distance_from_start_km: 12
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: Ashen Reach scouts
+  lore_notes: Named for the whale bones lining the first ridge — old navigational markers. Frostfjord and Ashen Reach have
+    feuded over this corridor for three generations. Blood has been spilled here more than once.
+  image_prompt: Wind-blasted ridge path above a dark fjord, whale bone markers driven into grey rock, sparse pines below,
+    overcast sky, a distant walled settlement on open ground.
+- id: RTE_002
+  name: Fjörðskuggaleið (The Fjord-Shadow Path)
+  from_settlement: Frostfjord Hollow
+  to_settlement: Skaldhaven
+  distance_km: 30
+  travel_days_summer: 1.5
+  travel_days_winter: 3
+  terrain_segments:
+  - terrain: fjord_shore
+    distance_km: 12
+    description: Narrow path cut into the cliff face above the fjord. At high tide the lowest sections are wet with spray.
+      One stumble and it is a long fall into black water.
+  - terrain: sea_cliff
+    distance_km: 10
+    description: Climbing traverse along the outer cliff. The path widens here but the wind is relentless. Gulls nest in the
+      rock face.
+  - terrain: cliff_descent
+    distance_km: 8
+    description: Switch-back descent to Skaldhaven's harbour shelf. Rope-holds are driven into the rock at the steepest points.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: terrain
+    description: The cliff path is narrow and crumbles. Rockfalls after heavy rain. Two travellers were lost last autumn.
+    chance_percent: 15
+  - type: weather
+    description: Sea fog rolls in without warning. On the cliff face, visibility drops to arm's length.
+    chance_percent: 25
+  landmarks:
+  - GEO_FROST_004
+  - GEO_FROST_013
+  - GEO_COAST_008
+  shelters:
+  - name: Cliff-Niche Camp
+    capacity: 5
+    quality: poor
+    distance_from_start_km: 14
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: Skaldhaven cliff-watchers
+  lore_notes: The fjord shadow falls across the path for most of the day. Locals say the Drowned God watches anyone who walks
+    this road. Skald tradition holds that a poem composed on this path carries the sea's weight.
+  image_prompt: Narrow cliff path above a dark fjord, spray from black water below, rope-holds in grey rock, sea fog approaching,
+    distant sea-cliff settlement.
+- id: RTE_003
+  name: Ekkjubraut (The Widow's Crossing)
+  from_settlement: Ashen Reach
+  to_settlement: Thornwall
+  distance_km: 55
+  travel_days_summer: 3
+  travel_days_winter: 5
+  terrain_segments:
+  - terrain: forest_edge
+    distance_km: 10
+    description: The first stretch follows the burnt treeline north of Ashen Reach. Charred stumps and new growth. The tar-works
+      smoke is visible behind.
+  - terrain: open_moor
+    distance_km: 30
+    description: Flat moor. No trees, no shelter. The wind comes from every direction. In rain the ground turns to black mud
+      that sucks at boots and wheels. Track-markers are cairns of piled stone, half of them toppled.
+  - terrain: bog_crossing
+    distance_km: 8
+    description: A belt of soft ground before the moor rises toward Thornwall. Plank walkways laid in the worst sections,
+      but they shift and rot.
+  - terrain: moor_rise
+    distance_km: 7
+    description: The final rise to Thornwall's gate. The stronghold is visible from two miles out — squat, dark, and unwelcoming.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: terrain
+    description: Bog crossing. The plank walkways rot faster than they are replaced. Pack animals have been swallowed.
+    chance_percent: 20
+  - type: weather
+    description: Open moor — no shelter from storms. Lightning strikes the cairns.
+    chance_percent: 30
+  - type: ambush
+    description: Outlaws use the featureless moor. A band can approach from any direction and vanish into the fog.
+    chance_percent: 15
+  landmarks:
+  - GEO_MOOR_004
+  - GEO_MOOR_007
+  shelters:
+  - name: Cairn-Ring Shelter
+    capacity: 6
+    quality: poor
+    distance_from_start_km: 22
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: moderate
+  military_patrols: Thornwall warband outriders
+  lore_notes: Named after the Pale Widow of Ashen Reach, who walks this route in person — always with guards. The crossing
+    is flat but the moor swallows the careless. Thornwall patrols ride it in summer to keep the route open for trade.
+  image_prompt: Flat dark moor stretching to the horizon, cairn markers half-toppled, rotting plank walkway over black bog,
+    distant squat stronghold on a rise, grey sky.
+- id: RTE_004
+  name: Askstígr (The Charred Trail)
+  from_settlement: Ashen Reach
+  to_settlement: Ashmark
+  distance_km: 35
+  travel_days_summer: 2
+  travel_days_winter: 3
+  terrain_segments:
+  - terrain: burnt_clearing
+    distance_km: 8
+    description: Through the controlled burn-zones east of Ashen Reach. Blackened ground, new grass pushing through. The tar-workers
+      use this area.
+  - terrain: mixed_forest
+    distance_km: 18
+    description: Old forest. The canopy closes overhead and the light dims. The trail is marked by axe-blazes on birch trunks,
+      but some have grown over.
+  - terrain: forest_border
+    distance_km: 9
+    description: The trees thin and the ground changes — rock shows through the soil. Ashmark's smelter smoke is visible before
+      the settlement is.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: passable
+  hazards:
+  - type: predator
+    description: Wolves in the deep section of the forest. They follow travellers but rarely attack groups larger than three.
+    chance_percent: 20
+  - type: ambush
+    description: Bandits work the mid-forest where visibility is lowest. A favourite spot is the stream crossing at the old
+      axe-blaze.
+    chance_percent: 15
+  landmarks:
+  - GEO_FOREST_006
+  - GEO_FOREST_002
+  shelters:
+  - name: Charcoal-Burner's Hut
+    capacity: 4
+    quality: fair
+    distance_from_start_km: 10
+  - name: Stream-Ford Lean-To
+    capacity: 6
+    quality: poor
+    distance_from_start_km: 24
+  foraging:
+    summer: good
+    winter: fair
+  trade_traffic: moderate
+  military_patrols: Ashen Reach woodcutters (armed)
+  lore_notes: The trail follows the line of old forest fires — both accidental and deliberate. Ashen Reach burns sections
+    of forest for tar production; the charred ground is their signature. Ashmark smelters depend on charcoal ferried along
+    this route.
+  image_prompt: Forest trail through charred and regrown woodland, axe-blazed birch trunks, thin light through canopy, distant
+    smelter smoke, dark atmospheric.
+- id: RTE_005
+  name: Mosavegr (The Moss Way)
+  from_settlement: Thornwall
+  to_settlement: Moor's End
+  distance_km: 40
+  travel_days_summer: 2
+  travel_days_winter: 4
+  terrain_segments:
+  - terrain: heath_moor
+    distance_km: 15
+    description: Open heather moor south of Thornwall. The ground is spongy but firm enough for cart traffic in summer. Curlews
+      call from the hummocks.
+  - terrain: peat_hags
+    distance_km: 15
+    description: Deep peat country. The trail winds between head-high banks of cut peat. Disorienting in fog — every turning
+      looks the same.
+  - terrain: moor_basin
+    distance_km: 10
+    description: The moor drops into a shallow basin where Moor's End sits. Smoke from the settlement's fires pools in the
+      low ground on still days.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: terrain
+    description: Peat hags conceal sinkholes. The ground looks solid until it gives way. A laden mule was lost here in spring.
+    chance_percent: 20
+  - type: weather
+    description: Fog fills the peat cuttings. Travellers have walked in circles for hours before finding the trail again.
+    chance_percent: 25
+  landmarks:
+  - GEO_MOOR_006
+  - GEO_MOOR_009
+  shelters:
+  - name: Peat-Cutter's Bothy
+    capacity: 4
+    quality: fair
+    distance_from_start_km: 18
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: None — too remote
+  lore_notes: Moor's End is barely worth the journey. Thirty-one souls scratching a living from sheep and peat. The Moss Way
+    exists because Thornwall needs peat for fuel, not because anyone wants to visit.
+  image_prompt: Heather moor with head-high peat banks, narrow winding trail, fog pooling in low ground, distant thin smoke
+    from a tiny settlement, desolate sky.
+- id: RTE_006
+  name: Hrímheiðarvegr (The Rime-Moor Road)
+  from_settlement: Thornwall
+  to_settlement: Grimholt
+  distance_km: 60
+  travel_days_summer: 3
+  travel_days_winter: 6
+  terrain_segments:
+  - terrain: moor_plateau
+    distance_km: 20
+    description: High moor north-east of Thornwall. The ground is hard and the grass is short. Rime coats everything in autumn
+      mornings — ice crystals on every blade and stone.
+  - terrain: rime_moor
+    distance_km: 25
+    description: The moor changes character. The soil darkens, the vegetation thins to lichen and moss. Iron-stained water
+      seeps from the ground. Cairns mark the way but the stones are blackened with oxidation.
+  - terrain: grimholt_approach
+    distance_km: 15
+    description: The ground rises toward Grimholt. Slag deposits and old mine tailings litter the final stretch. The air tastes
+      of metal.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: weather
+    description: Rime-fog. The moor generates its own weather — freezing mist that coats everything in ice and reduces visibility
+      to nothing.
+    chance_percent: 35
+  - type: supernatural
+    description: Travellers report lights on the rime-moor at night. Pale flickering that moves against the wind. The locals
+      avoid travel after dark.
+    chance_percent: 10
+  - type: predator
+    description: Rime-wolves range the open moor in winter. Larger and bolder than forest wolves.
+    chance_percent: 15
+  landmarks:
+  - GEO_MOOR_001
+  - GEO_GRIM_002
+  - GEO_GRIM_006
+  shelters:
+  - name: Stone Shepherd's Hut
+    capacity: 6
+    quality: fair
+    distance_from_start_km: 22
+  - name: Cairn-Hollow
+    capacity: 4
+    quality: poor
+    distance_from_start_km: 42
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: moderate
+  military_patrols: Grimholt iron-guard outriders
+  lore_notes: The rime-moor has its own rules. The transition from Thornwall's moor to Grimholt's rime-moor is gradual but
+    unmistakable — the ground changes colour, the air changes taste, and the silence deepens. Old hands say the moor decides
+    who crosses safely.
+  image_prompt: Bleak moor plateau coated in rime ice, iron-stained water, blackened cairn markers, pale fog, lichen and moss,
+    distant slag heaps, dark oppressive sky.
+- id: RTE_007
+  name: Járnvegr (The Iron Road)
+  from_settlement: Grimholt
+  to_settlement: Deepholm
+  distance_km: 50
+  travel_days_summer: 2
+  travel_days_winter: 4
+  terrain_segments:
+  - terrain: slag_road
+    distance_km: 10
+    description: Compacted slag and crushed rock — the best-maintained road surface in the Rimevegr. Wagon ruts are deep and
+      well-worn. Iron-guard checkpoints at both ends.
+  - terrain: mine_valley
+    distance_km: 25
+    description: The road follows the valley between Grimholt's surface mines and Deepholm's underground works. Cart traffic
+      is constant in summer. Ore wagons, charcoal loads, trade goods. The road is wide enough for two carts to pass.
+  - terrain: deepholm_descent
+    distance_km: 15
+    description: The final descent to Deepholm's main gate. The road cuts into the hillside in a series of switchbacks. Lanterns
+      are mounted on iron posts — the only road in the Rimevegr with artificial light.
+  seasonal_access:
+    spring: good
+    summer: good
+    autumn: good
+    winter: passable
+  hazards:
+  - type: ambush
+    description: Bandits target ore wagons on the mid-valley stretch. Iron-guard patrols have reduced attacks but not eliminated
+      them.
+    chance_percent: 10
+  - type: terrain
+    description: Rockslides in the descent section after heavy rain. The switchbacks are carved from unstable ground.
+    chance_percent: 10
+  landmarks:
+  - GEO_GRIM_004
+  - GEO_GRIM_005
+  - GEO_DEEP_001
+  shelters:
+  - name: Iron-Guard Way-Station
+    capacity: 20
+    quality: good
+    distance_from_start_km: 18
+  - name: Valley Rest House
+    capacity: 12
+    quality: fair
+    distance_from_start_km: 35
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: heavy
+  military_patrols: Grimholt iron-guard — regular patrols, armed and mounted
+  lore_notes: The busiest road in the Rimevegr and the only one that resembles civilisation. Iron and silver flow south from
+    Deepholm; food, timber, and goods flow north. The iron-guard maintain it because their livelihood depends on it. Toll
+    stations at both ends extract payment from every wagon.
+  image_prompt: Wide compacted slag road through a mine valley, deep wagon ruts, ore carts, iron-post lanterns along switchback
+    descent, iron-guard checkpoint, industrial dark fantasy.
+- id: RTE_008
+  name: Markaleið (The Border Trail)
+  from_settlement: Grimholt
+  to_settlement: Ashmark
+  distance_km: 30
+  travel_days_summer: 1.5
+  travel_days_winter: 3
+  terrain_segments:
+  - terrain: rime_moor_edge
+    distance_km: 12
+    description: The western fringe of Grimholt's rime-moor. The ground is hard and the vegetation sparse. Iron-stained streams
+      cross the trail in shallow fords.
+  - terrain: border_scrub
+    distance_km: 10
+    description: Transition zone between moor and forest. Stunted birch and hawthorn. The trail is poorly marked — a line
+      of cairns that could be natural rockfall.
+  - terrain: forest_clearing
+    distance_km: 8
+    description: The trees begin and the trail enters Ashmark's territory. Smelter smoke and the sound of hammering carry
+      through the woods.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: passable
+  hazards:
+  - type: ambush
+    description: The border scrub provides cover. Thieves and deserters hide in the stunted trees and rob solo travellers.
+    chance_percent: 20
+  - type: predator
+    description: Wolves follow the border-line where moor meets forest. Easy hunting — domestic animals cross here.
+    chance_percent: 15
+  landmarks:
+  - GEO_GRIM_014
+  - GEO_GRIM_008
+  shelters:
+  - name: Ford-Shelter
+    capacity: 6
+    quality: poor
+    distance_from_start_km: 15
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: Occasional Grimholt outriders
+  lore_notes: Neither settlement claims this trail or maintains it. Grimholt says it ends at the border; Ashmark says it begins
+    there. The result is a path that nobody repairs. Useful primarily for charcoal haulers and smugglers avoiding Iron Road
+    tolls.
+  image_prompt: Scrubby border land between dark moor and forest edge, stunted birch, iron-stained stream ford, poorly marked
+    cairn trail, grey overcast.
+- id: RTE_009
+  name: Námuvegr (The Mine Road)
+  from_settlement: Deepholm
+  to_settlement: Ashmark
+  distance_km: 25
+  travel_days_summer: 1
+  travel_days_winter: 2
+  terrain_segments:
+  - terrain: tunnel_exit
+    distance_km: 5
+    description: The road begins at Deepholm's western gate — a low arch in the rock face. Mule trains queue here at dawn.
+      The air changes from underground mineral damp to open wind in fifty paces.
+  - terrain: ravine_path
+    distance_km: 12
+    description: A narrow road following the bottom of a rocky ravine. Old mine tailings form grey banks on both sides. Water
+      runs through the centre after rain.
+  - terrain: forest_approach
+    distance_km: 8
+    description: The ravine opens out and scattered trees begin. Ashmark's stockade is visible through the last stretch of
+      birch.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: good
+    winter: passable
+  hazards:
+  - type: terrain
+    description: The ravine floods in heavy rain. Water rises fast and the road becomes a stream. A mule train was caught
+      last spring — three animals drowned.
+    chance_percent: 15
+  - type: ambush
+    description: The ravine walls provide elevation for attackers. Arrows from above, nowhere to run.
+    chance_percent: 10
+  landmarks:
+  - GEO_DEEP_012
+  - GEO_DEEP_013
+  shelters: []
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: moderate
+  military_patrols: Deepholm mule-guard escorts
+  lore_notes: Short but vital. Ashmark's smelters process ore that Deepholm mines. The mule trains run daily in summer. Deepholm's
+    mule-guard escorts the loads — not out of courtesy, but because stolen ore means lost profit.
+  image_prompt: Rocky ravine road with grey mine tailings, mule train emerging from a low stone arch, scattered birch, distant
+    stockade, industrial Norse atmosphere.
+- id: RTE_010
+  name: Himinstígr (The Sky Climb)
+  from_settlement: Deepholm
+  to_settlement: Raven's Perch
+  distance_km: 40
+  travel_days_summer: 3
+  travel_days_winter: 6
+  terrain_segments:
+  - terrain: upper_tunnels
+    distance_km: 8
+    description: The route begins inside Deepholm, climbing through the upper mining levels. Lantern-light gives way to grey
+      sky at the northern exit — a crack in the mountain face.
+  - terrain: mountain_switchback
+    distance_km: 22
+    description: Exposed switchback trail carved into the mountain. The grade is punishing. Pack animals balk at the steeper
+      sections. Loose scree under every step.
+  - terrain: ridge_approach
+    distance_km: 10
+    description: Above the treeline. The trail follows a bare rock ridge to Raven's Perch. Wind is constant and brutal. On
+      clear days, half the Rimevegr is visible below.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: dangerous
+    winter: impassable
+  hazards:
+  - type: terrain
+    description: Scree slopes and loose rock. A stumble on the switchbacks means a fall of fifty yards or more.
+    chance_percent: 20
+  - type: weather
+    description: Above the treeline, storms arrive without warning. Freezing wind, hail, whiteout conditions even in summer.
+    chance_percent: 30
+  - type: predator
+    description: Eagles and ravens are harmless. The mountain cats are not. Solitary, silent, and they favour the switchbacks
+      where prey is trapped.
+    chance_percent: 10
+  landmarks:
+  - GEO_MTN_004
+  - GEO_MTN_002
+  - GEO_DEEP_014
+  shelters:
+  - name: Switchback Cave
+    capacity: 8
+    quality: fair
+    distance_from_start_km: 18
+  - name: Ridge Cairn Windbreak
+    capacity: 4
+    quality: poor
+    distance_from_start_km: 33
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: Raven's Perch lookouts descend to the switchback cave in summer
+  lore_notes: Only the determined or the desperate climb to Raven's Perch. The lookout garrison resupplies through Deepholm's
+    tunnels when weather permits. In winter, the Perch is cut off entirely — the garrison survives on stored food and stubbornness.
+  image_prompt: Brutal mountain switchback trail carved into grey rock, exposed scree, distant peak lookout, clouds below,
+    wind-stripped ridge, dark Norse mountain atmosphere.
+- id: RTE_011
+  name: Svartfuruvegr (The Black Pine Way)
+  from_settlement: Vargheim
+  to_settlement: Feldwick
+  distance_km: 55
+  travel_days_summer: 3
+  travel_days_winter: 5
+  terrain_segments:
+  - terrain: deep_pine
+    distance_km: 25
+    description: The heart of the Black Pine. The canopy is so thick that noon looks like dusk. The trail is a foot-beaten
+      line of packed needles. Sound travels strangely — voices carry, but direction is lost.
+  - terrain: pine_thinning
+    distance_km: 18
+    description: The forest thins gradually. Birch mixes with pine. Light increases. The undergrowth thickens where sunlight
+      reaches the floor.
+  - terrain: forest_edge
+    distance_km: 12
+    description: The last trees give way to open ground. Feldwick's damaged palisade is visible across a sheep-cropped field.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: predator
+    description: Wolf packs in the deep pine. Vargheim's hunters know them by name — the Scar Pack, the Grey Bitch's litter.
+      They are bolder in winter.
+    chance_percent: 25
+  - type: ambush
+    description: Visibility in the deep pine is ten paces. Anyone could be behind the next trunk.
+    chance_percent: 15
+  - type: supernatural
+    description: The deep forest has sounds that do not belong to any known animal. Scratching in the canopy. Breathing where
+      nothing should breathe.
+    chance_percent: 5
+  landmarks:
+  - GEO_FOREST_001
+  - GEO_FOREST_005
+  - GEO_FOREST_010
+  shelters:
+  - name: Hunter's Lean-To
+    capacity: 6
+    quality: fair
+    distance_from_start_km: 14
+  - name: Birch-Ring Camp
+    capacity: 8
+    quality: poor
+    distance_from_start_km: 38
+  foraging:
+    summer: good
+    winter: fair
+  trade_traffic: low
+  military_patrols: Vargheim wolf-hunters patrol the first ten miles
+  lore_notes: The Black Pine is Vargheim's domain and outsiders are not welcome without cause. The wolf-hunters know every
+    trail, every den, every ambush point. They let travellers pass — but they watch.
+  image_prompt: Dense black pine forest, near-dark under thick canopy, foot-beaten needle path, shafts of pale light, distant
+    wolf silhouette, oppressive atmosphere.
+- id: RTE_012
+  name: Úlfavegr (The Wolf Road)
+  from_settlement: Vargheim
+  to_settlement: Ashmark
+  distance_km: 45
+  travel_days_summer: 2.5
+  travel_days_winter: 5
+  terrain_segments:
+  - terrain: deep_pine
+    distance_km: 15
+    description: Through Vargheim's outer forest. Axe-blazes mark the way on pine trunks, refreshed each spring by the wolf-hunters.
+  - terrain: mixed_forest
+    distance_km: 20
+    description: The pine gives way to mixed woodland — oak, birch, ash. Undergrowth is thick. Old charcoal-burning clearings
+      dot the route, some still in use.
+  - terrain: forest_border
+    distance_km: 10
+    description: The forest thins to scattered trees and rocky ground. Ashmark's smelter glow is visible at night from the
+      last ridge.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: predator
+    description: Wolves. The road is named for them. In winter, packs follow travellers at a distance. They attack the weak,
+      the slow, and the alone.
+    chance_percent: 25
+  - type: ambush
+    description: Deserters and outlaws camp in the abandoned charcoal clearings. They prey on small groups.
+    chance_percent: 15
+  landmarks:
+  - GEO_FOREST_003
+  - GEO_FOREST_008
+  shelters:
+  - name: Old Charcoal Camp
+    capacity: 10
+    quality: fair
+    distance_from_start_km: 20
+  foraging:
+    summer: good
+    winter: fair
+  trade_traffic: low
+  military_patrols: None regular — Vargheim wolf-hunters range this far occasionally
+  lore_notes: The wolf road is older than either settlement. Vargheim's founders followed wolf trails to find their clearing.
+    The wolves were here first, and their claim on this forest is older and stronger than any human's.
+  image_prompt: Forest road through dark mixed woodland, axe-blazes on pine trunks, old charcoal clearing, wolf tracks in
+    mud, scattered trees giving way to rocky ground.
+- id: RTE_013
+  name: Austrvegr (The Eastern Approach)
+  from_settlement: Feldwick
+  to_settlement: Ashen Reach
+  distance_km: 30
+  travel_days_summer: 1.5
+  travel_days_winter: 3
+  terrain_segments:
+  - terrain: sheep_fields
+    distance_km: 8
+    description: Open grazing land east of Feldwick. Low stone walls divide the fields. The ground is firm and the walking
+      easy. Sheep scatter at the sight of armed travellers.
+  - terrain: scrub_moor
+    distance_km: 12
+    description: Rough ground between the fields and the forest edge. Gorse and bracken. No clear path — just the direction
+      of travel.
+  - terrain: burnt_approach
+    distance_km: 10
+    description: The eastern fringe of Ashen Reach's tar-works territory. Controlled burns have cleared the undergrowth. Smoke
+      hangs in the air.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: good
+    winter: passable
+  hazards:
+  - type: ambush
+    description: The scrub moor offers concealment for raiders. Feldwick has no military force to patrol it.
+    chance_percent: 15
+  - type: weather
+    description: Mist gathers in the low scrub, especially in autumn mornings.
+    chance_percent: 15
+  landmarks:
+  - GEO_FOREST_007
+  shelters: []
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: None — Feldwick has no warband
+  lore_notes: Feldwick's only connection to a settlement large enough to offer real trade. The villagers walk it with bundles
+    of wool and come back with iron tools and salt. It is a quiet road, and that makes it dangerous — no patrols, no witnesses.
+  image_prompt: Open sheep fields with stone walls, rough scrub moor, smoke-hazed approach to a walled settlement, low mist,
+    overcast pastoral Norse landscape.
+- id: RTE_014
+  name: Hamargata (The Cliff Walk)
+  from_settlement: Kolvik
+  to_settlement: Stonebay
+  distance_km: 20
+  travel_days_summer: 1
+  travel_days_winter: 2
+  terrain_segments:
+  - terrain: harbour_road
+    distance_km: 5
+    description: Packed earth road leaving Kolvik's harbour. Cart-width, maintained by harbour-master Eadric's levy. The last
+      maintained section before the wilds.
+  - terrain: cliff_path
+    distance_km: 10
+    description: Narrow path along the cliff tops. One side is heather; the other is a sheer drop to rocks and surf. In places,
+      the path is three feet wide.
+  - terrain: cliff_descent
+    distance_km: 5
+    description: Rope-assisted descent to Stonebay's shelf. The twenty-three souls who live there carved steps into the rock,
+      but they are worn smooth.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: terrain
+    description: The cliff path erodes. After winter storms, sections may have collapsed. Travellers have stepped into empty
+      air.
+    chance_percent: 15
+  - type: weather
+    description: Coastal wind. On the exposed cliff, a strong gust can knock a person sideways — toward the edge.
+    chance_percent: 20
+  landmarks:
+  - GEO_COAST_007
+  - GEO_COAST_006
+  shelters: []
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: none
+  military_patrols: None
+  lore_notes: Twenty-three people live in Stonebay and they like it that way. The cliff walk keeps visitors rare. Fish, seabirds,
+    and solitude — that is what Stonebay offers, and the cliff walk is the price of reaching it.
+  image_prompt: Narrow cliff-top path above crashing surf, heather on one side, sheer drop on the other, worn rock steps descending
+    to a tiny hamlet on a cliff shelf, grey sea.
+- id: RTE_015
+  name: Hafnarvegr (The Harbour Road)
+  from_settlement: Kolvik
+  to_settlement: Skaldhaven
+  distance_km: 35
+  travel_days_summer: 2
+  travel_days_winter: 3
+  terrain_segments:
+  - terrain: coastal_road
+    distance_km: 12
+    description: Following the coastline south from Kolvik. The road is above the high-tide line but salt spray still reaches
+      it. Firm gravel on a bed of clay.
+  - terrain: headland_crossing
+    distance_km: 13
+    description: The road climbs over a rocky headland where the coast turns. Exposed to wind from two directions. Cairn-markers
+      at the summit.
+  - terrain: fjord_descent
+    distance_km: 10
+    description: Descent into the fjord that shelters Skaldhaven. The road switchbacks down through rock and gorse. The settlement
+      appears below — clinging to the cliff like a barnacle.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: passable
+  hazards:
+  - type: weather
+    description: The headland crossing catches storms from the open sea. Sleet and horizontal rain.
+    chance_percent: 25
+  - type: terrain
+    description: Erosion on the headland. The cairn-markers have shifted; the old path may end at a cliff face.
+    chance_percent: 10
+  landmarks:
+  - GEO_COAST_012
+  - GEO_COAST_015
+  - GEO_COAST_013
+  shelters:
+  - name: Headland Cairn Shelter
+    capacity: 6
+    quality: poor
+    distance_from_start_km: 18
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: moderate
+  military_patrols: Kolvik harbour-watch on the northern stretch; Skaldhaven cliff-watchers on the southern
+  lore_notes: The main artery between the two coastal trading settlements. Small boats make the same journey faster by sea,
+    but the harbour road is the only overland option when storms close the water. It carries salt, dried fish, ropes, and
+    the occasional skald travelling between audiences.
+  image_prompt: Gravel coastal road above tide line, rocky headland crossing with cairn markers, salt spray, distant fjord-cliff
+    settlement, stormy grey sea, Norse coastal atmosphere.
+- id: RTE_016
+  name: Fjǫrustígr (The Shore-to-Tree Path)
+  from_settlement: Kolvik
+  to_settlement: Feldwick
+  distance_km: 40
+  travel_days_summer: 2
+  travel_days_winter: 4
+  terrain_segments:
+  - terrain: coastal_rise
+    distance_km: 10
+    description: Climbing away from Kolvik's harbour. The salt air gives way to grass and heather. The sea disappears behind
+      a ridge.
+  - terrain: rolling_heath
+    distance_km: 18
+    description: Open heath between coast and forest. No trees, just hummocks of heather and bracken. The wind smells of salt
+      on one side and pine on the other.
+  - terrain: forest_edge
+    distance_km: 12
+    description: The heath gives way to scattered birch, then thicker growth. Feldwick is a mile inside the forest edge, marked
+      by sheep-bells and smoke.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: weather
+    description: Open heath with no shelter. Rain, wind, or snow crosses unimpeded.
+    chance_percent: 25
+  - type: ambush
+    description: The heath-to-forest transition zone is where bandits wait. Travellers are tired and the trees provide cover
+      for attackers.
+    chance_percent: 15
+  landmarks:
+  - GEO_COAST_014
+  shelters:
+  - name: Heath Stack
+    capacity: 4
+    quality: poor
+    distance_from_start_km: 20
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: None
+  lore_notes: A supply route for Feldwick — salt fish from Kolvik in exchange for wool and timber. Neither settlement has
+    the strength to patrol it, so travellers move in groups or not at all.
+  image_prompt: Rolling heathland between a coastal ridge and distant forest edge, heather and bracken, no shelter, wind-bent
+    grass, scattered birch at the far end, overcast sky.
+- id: RTE_017
+  name: Hreggbraut (The Storm Passage)
+  from_settlement: Skaldhaven
+  to_settlement: Frostfjord Hollow
+  distance_km: 25
+  travel_days_summer: 1
+  travel_days_winter: 2.5
+  terrain_segments:
+  - terrain: fjord_shelf
+    distance_km: 10
+    description: The path follows a natural shelf above the fjord. Narrower than the southern route. The rock is wet year-round
+      from seepage.
+  - terrain: headland_scramble
+    distance_km: 8
+    description: A rough scramble over an exposed headland. No proper path — just route-finding across slippery rock. Hand-holds
+      are worn into the stone.
+  - terrain: fjord_descent
+    distance_km: 7
+    description: The drop into Frostfjord Hollow's harbour. Scree slope with a zigzag trail. Loose rock underfoot.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: weather
+    description: The headland scramble is named for the storms it attracts. Wind funnels through the gap between cliffs and
+      can flatten a person.
+    chance_percent: 35
+  - type: terrain
+    description: The scramble section has no proper path. Wet rock, loose holds, and a long fall if you miss.
+    chance_percent: 20
+  landmarks:
+  - GEO_FROST_005
+  - GEO_FROST_003
+  shelters: []
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: Frostfjord Hollow lookouts at the descent, but they are few
+  lore_notes: The alternate route between Skaldhaven and Frostfjord. Shorter in distance than RTE_002 but harder in practice.
+    Skalds and smugglers prefer it — skalds for the drama, smugglers because nobody watches it.
+  image_prompt: Rough scramble over an exposed headland above a dark fjord, wet rock, hand-holds worn smooth, storm clouds,
+    scree descent to a harbour settlement.
+- id: RTE_018
+  name: Ísvegr (The Ice Road)
+  from_settlement: Bleakwater
+  to_settlement: Icebreak
+  distance_km: 70
+  travel_days_summer: 5
+  travel_days_winter: 12
+  terrain_segments:
+  - terrain: frozen_shore
+    distance_km: 15
+    description: Leaving Bleakwater's last huts. The shoreline is frozen for eight months of the year. In summer, it is a
+      grey shingle beach strewn with drift-ice. Nothing grows.
+  - terrain: ice_shelf
+    distance_km: 30
+    description: The route crosses the edge of the permanent ice shelf. In summer, the surface is a maze of melt-pools and
+      crevasses. In winter, it is a featureless white expanse where direction is guesswork without stars or sun.
+  - terrain: tundra
+    distance_km: 15
+    description: Exposed tundra beyond the ice shelf. Frozen moss, wind-polished rock. The ground is iron-hard. No landmarks
+      but the occasional cairn, buried in snow half the year.
+  - terrain: icebreak_approach
+    distance_km: 10
+    description: The final stretch to Icebreak — twelve people in dugout shelters. The settlement is invisible until you are
+      almost on it. Smoke from seal-blubber fires is the only sign.
+  seasonal_access:
+    spring: dangerous
+    summer: dangerous
+    autumn: dangerous
+    winter: impassable
+  hazards:
+  - type: terrain
+    description: Crevasses in the ice shelf. Hidden by thin snow crusts in every season. Falls are fatal — the crevasses are
+      deep and the ice is smooth.
+    chance_percent: 30
+  - type: weather
+    description: Blizzards. White-out conditions that last for days. Wind chill that kills exposed flesh in minutes.
+    chance_percent: 40
+  - type: predator
+    description: Polar bears range the ice shelf. They are curious, hungry, and faster than a running man.
+    chance_percent: 20
+  - type: supernatural
+    description: The ice sings. Not wind — a deep resonant tone from beneath the shelf. Travellers who listen too long lose
+      direction and wander.
+    chance_percent: 10
+  landmarks:
+  - GEO_ICE_001
+  - GEO_ICE_007
+  - GEO_ICE_009
+  shelters:
+  - name: Ice Cairn Shelter
+    capacity: 4
+    quality: poor
+    distance_from_start_km: 25
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: None — nobody claims this territory
+  lore_notes: The most dangerous road in the Rimevegr. Seventy kilometres of ice, tundra, and death. No one travels it unless
+    they are fleeing something or seeking something that cannot be found elsewhere. Icebreak's twelve inhabitants survive
+    on seal meat and stubbornness, and they do not welcome visitors — but they will not turn a survivor away.
+  image_prompt: Desolate ice shelf road, melt-pools and crevasses, featureless white tundra, wind-polished rock cairn half-buried
+    in snow, distant seal-blubber smoke, extreme Norse arctic desolation.
+- id: RTE_019
+  name: Suðrstrandleið (The South Shore Path)
+  from_settlement: Bleakwater
+  to_settlement: Kolvik
+  distance_km: 50
+  travel_days_summer: 3
+  travel_days_winter: 5
+  terrain_segments:
+  - terrain: icy_shore
+    distance_km: 12
+    description: Bleakwater's coastline. Drift-ice grinds against the rocks. The path follows the high-water mark on frozen
+      gravel.
+  - terrain: coastal_cliffs
+    distance_km: 20
+    description: The coast rises into cliffs. The path climbs and descends repeatedly, following the cliff-top where it can,
+      dropping to beach level where it must. Exhausting terrain.
+  - terrain: sheltered_coast
+    distance_km: 18
+    description: South of the cliffs the coast flattens and the ice thins. Grass appears. The air warms perceptibly. Kolvik's
+      beacon is visible on clear days from the last headland.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: weather
+    description: Northern storms drive ice and freezing spray onto the cliff path. Hypothermia risk even in spring.
+    chance_percent: 25
+  - type: terrain
+    description: The cliff sections collapse periodically. The path is re-routed by each traveller who finds the old route
+      gone.
+    chance_percent: 15
+  - type: predator
+    description: Sea wolves — large grey wolves that hunt the northern coast, feeding on seal carcasses. Aggressive when hungry.
+    chance_percent: 15
+  landmarks:
+  - GEO_ICE_005
+  - GEO_COAST_011
+  shelters:
+  - name: Hot Spring Camp
+    capacity: 6
+    quality: good
+    distance_from_start_km: 18
+  - name: Cliff-Foot Overhang
+    capacity: 4
+    quality: poor
+    distance_from_start_km: 35
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: none
+  military_patrols: None on the northern stretch; Kolvik harbour-watch on the final approach
+  lore_notes: The only overland connection between the ice-border settlements and the south. Bleakwater's eighteen inhabitants
+    walk it twice a year to trade seal-hides and whale-bone for grain and iron. The hot spring at Helbrannr is the only comfort
+    on the road — warm water in a frozen land.
+  image_prompt: Rugged coastal path from icy northern shore to temperate harbour, drift-ice on rocks, cliff-top traverse,
+    distant warm beacon, gradual transition from ice to green, Norse coastal journey.
+- id: RTE_020
+  name: Hrafnaniðrstígr (The Raven's Descent)
+  from_settlement: Raven's Perch
+  to_settlement: Grimholt
+  distance_km: 35
+  travel_days_summer: 2
+  travel_days_winter: 4
+  terrain_segments:
+  - terrain: mountain_ridge
+    distance_km: 10
+    description: Leaving the Perch along a bare rock ridge. The wind is constant. Ravens ride the updrafts, circling the lookout.
+      Below, the rime-moor stretches to the horizon.
+  - terrain: scree_descent
+    distance_km: 15
+    description: The ridge drops steeply. Loose scree and exposed rock. The descent follows a gully carved by meltwater —
+      dry in summer, a torrent in spring.
+  - terrain: rime_moor_approach
+    distance_km: 10
+    description: The ground levels to Grimholt's rime-moor. The air is warmer. Iron-stained soil and the distant clang of
+      smithing marks the approach.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: passable
+    winter: impassable
+  hazards:
+  - type: terrain
+    description: The scree gully is treacherous. Loose rock shifts underfoot. In spring, meltwater turns it into a mudslide.
+    chance_percent: 25
+  - type: weather
+    description: Mountain weather is unpredictable. Clear skies at the Perch can mean blizzard conditions in the gully.
+    chance_percent: 20
+  - type: predator
+    description: Mountain cats hunt the scree slopes, using the gully walls as ambush points.
+    chance_percent: 10
+  landmarks:
+  - GEO_MTN_006
+  - GEO_GRIM_007
+  shelters:
+  - name: Gully Cave
+    capacity: 6
+    quality: fair
+    distance_from_start_km: 16
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: Raven's Perch lookouts monitor the ridge; Grimholt iron-guard patrols meet at the moor edge
+  lore_notes: The descent is faster than the climb — in distance and in danger. Grimholt maintains minimal contact with Raven's
+    Perch, sending supply mules up the Iron Road through Deepholm rather than risk the direct descent. This route is used
+    primarily by scouts, messengers, and fools.
+  image_prompt: Steep mountain descent through a scree gully, bare rock ridge above with circling ravens, rime-moor visible
+    below, meltwater channel, loose rock, dark Norse mountain atmosphere.
+- id: RTE_021
+  name: Leynibraut (The Smuggler's Way)
+  from_settlement: Deepholm
+  to_settlement: Vargheim
+  distance_km: 60
+  travel_days_summer: 3
+  travel_days_winter: 7
+  terrain_segments:
+  - terrain: hidden_tunnel
+    distance_km: 12
+    description: A secondary tunnel branching from Deepholm's lowest mining level. The entrance is concealed behind a collapsed
+      ore face. The air is stale and the ceiling low — dragging a loaded pack means hands and knees in places.
+  - terrain: ravine_exit
+    distance_km: 18
+    description: The tunnel opens into a narrow ravine choked with fern and deadfall. No maintained trail. Bootprints vanish
+      within a day.
+  - terrain: deep_forest
+    distance_km: 30
+    description: Unmarked passage through old-growth Black Pine. Navigation is by blaze-cuts on the north side of certain
+      trees — invisible to anyone who does not know the pattern.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: terrain
+    description: The tunnel section floods in spring snowmelt. Knee-deep water and no light. Two smugglers drowned last year.
+    chance_percent: 20
+  - type: predator
+    description: The forest stretch crosses wolf territory. Packs shadow travellers carrying meat or livestock.
+    chance_percent: 25
+  landmarks:
+  - GEO_DEEP_009
+  - GEO_FOREST_011
+  shelters: []
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Exists to bypass Deepholm's toll gates and Grimholt's iron-guard patrols. Knowledge of the tunnel entrance is
+    closely held — a trade secret worth killing for.
+  image_prompt: Low collapsed tunnel opening behind loose rock, fern-choked ravine beyond, dark pine forest, no visible trail,
+    secretive atmosphere.
+- id: RTE_022
+  name: Djúpheiðarvegr (The Deep Moor Road)
+  from_settlement: Deepholm
+  to_settlement: Thornwall
+  distance_km: 75
+  travel_days_summer: 4
+  travel_days_winter: 8
+  terrain_segments:
+  - terrain: mine_ascent
+    distance_km: 12
+    description: Climbing out of Deepholm's eastern gate through tailings and spoil heaps. The road is wagon-width but poorly
+      graded.
+  - terrain: exposed_moor
+    distance_km: 45
+    description: Open rime-moor. The trail is marked by iron stakes driven into the peat — Deepholm's signature. Wind scours
+      the route from every quarter. No trees, no shelter, no features.
+  - terrain: thornwall_approach
+    distance_km: 18
+    description: The moor firms and rises toward Thornwall's outer ditch. Cart ruts deepen in the last mile.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: weather
+    description: Forty-five kilometres of open moor with nothing to break the wind. Hypothermia kills more travellers than
+      bandits on this route.
+    chance_percent: 35
+  - type: supernatural
+    description: Pale lights drift across the moor at night. They follow travellers and extinguish camp fires. Locals call
+      them Moor-Lanterns.
+    chance_percent: 10
+  landmarks:
+  - GEO_GRIM_010
+  shelters:
+  - name: Iron-Stake Bivouac
+    capacity: 4
+    quality: poor
+    distance_from_start_km: 35
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: low
+  military_patrols: none
+  lore_notes: A long, miserable road used mainly by Deepholm traders who prefer Thornwall's market to Grimholt's tolls. Most
+    travellers make the journey in two hard days and do not linger.
+  image_prompt: Vast empty moor, iron stakes marking a faint trail through peat, no trees, distant dark stronghold on a rise,
+    oppressive grey sky.
+- id: RTE_023
+  name: Lambastígr (The Lamb Path)
+  from_settlement: Moor's End
+  to_settlement: Feldwick
+  distance_km: 50
+  travel_days_summer: 3
+  travel_days_winter: 5
+  terrain_segments:
+  - terrain: sheep_moor
+    distance_km: 20
+    description: Cropped heather and sheep tracks. The trail follows the drover's route — beaten flat by generations of flocks
+      moving between summer and winter pasture.
+  - terrain: stream_valley
+    distance_km: 15
+    description: A shallow valley where a peat-brown stream runs west toward the forest. Willows line the banks. The ground
+      is soft but passable.
+  - terrain: forest_fringe
+    distance_km: 15
+    description: Scrubby birch and hazel giving way to Feldwick's pastures. Sheep dung marks the last stretch.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: good
+    winter: passable
+  hazards:
+  - type: predator
+    description: Wolves follow the sheep flocks. Drovers carry spears and dogs, but a lone traveller is fair game.
+    chance_percent: 20
+  - type: terrain
+    description: The stream fords are deceptive. After rain, ankle-deep water becomes waist-deep in an hour.
+    chance_percent: 15
+  landmarks:
+  - GEO_MOOR_012
+  shelters:
+  - name: Drover's Shieling
+    capacity: 8
+    quality: fair
+    distance_from_start_km: 22
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: none
+  lore_notes: Drovers have walked this path since before anyone at either end can remember. It exists for sheep and the people
+    who follow sheep. No one important uses it, which is exactly why smugglers do.
+  image_prompt: Sheep track across cropped heather moor, peat-brown stream with willows, distant forest edge, flock moving
+    along the trail, pastoral but bleak.
+- id: RTE_024
+  name: Brimstígr (The Surf Path)
+  from_settlement: Stonebay
+  to_settlement: Skaldhaven
+  distance_km: 35
+  travel_days_summer: 2
+  travel_days_winter: 4
+  terrain_segments:
+  - terrain: cliff_top
+    distance_km: 15
+    description: Narrow path along eroding cliff edges. The ground crumbles underfoot in places. Spray from below coats everything
+      in salt. One section is a rope traverse across a gap where the cliff has fallen into the sea.
+  - terrain: sea_stacks
+    distance_km: 10
+    description: The path descends to shore level and threads between sea stacks at low tide. At high tide, this section is
+      impassable — the sea covers the rocks entirely.
+  - terrain: fjord_ascent
+    distance_km: 10
+    description: Steep climb back up the cliff face to Skaldhaven's harbour shelf. Wooden ladders lashed to the rock. They
+      creak.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: dangerous
+    winter: impassable
+  hazards:
+  - type: terrain
+    description: Cliff collapse. The edge gives way without warning. A trader and his horse fell last summer. They found the
+      horse.
+    chance_percent: 25
+  - type: weather
+    description: Rogue waves sweep the sea-stack section. The tide tables are approximate — a king tide can arrive early and
+      cut off retreat.
+    chance_percent: 20
+  landmarks:
+  - GEO_COAST_003
+  - GEO_COAST_014
+  shelters: []
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Only fools and fishermen use this path. Skaldhaven's skalds say the drowned dead walk the sea-stack passage
+    at night, reaching up from the tide pools.
+  image_prompt: Eroding cliff-top path, rope traverse across a gap, sea stacks exposed at low tide below, salt spray, wooden
+    ladders lashed to rock face, dark coastal atmosphere.
+- id: RTE_025
+  name: Viðarvegr (The Timber Road)
+  from_settlement: Grimholt
+  to_settlement: Vargheim
+  distance_km: 55
+  travel_days_summer: 3
+  travel_days_winter: 6
+  terrain_segments:
+  - terrain: rime_moor
+    distance_km: 18
+    description: West from Grimholt across the moor's edge. Iron-stained ground gives way to heather. The trail is wheel-rutted
+      from timber wagons.
+  - terrain: moor_forest_border
+    distance_km: 15
+    description: Stunted trees thicken into real forest. The soil changes from black peat to brown earth. Axe-stumps line
+      the trail — Vargheim's woodcutters have been pushing this boundary for years.
+  - terrain: Black_Pine_edge
+    distance_km: 22
+    description: Dense pine. The lumber road is wider than most forest trails — felled trunks are dragged back along it —
+      but branches close overhead within a season of disuse.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: predator
+    description: Wolf packs follow the moor-forest border. The timber road shortcuts through their hunting ground.
+    chance_percent: 25
+  - type: ambush
+    description: Deserters and bandits camp in the forest near the lumber road. They hit isolated wagons.
+    chance_percent: 15
+  landmarks:
+  - GEO_GRIM_015
+  - GEO_FOREST_008
+  shelters:
+  - name: Lumber Camp
+    capacity: 10
+    quality: fair
+    distance_from_start_km: 30
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: none
+  lore_notes: Grimholt needs timber for mine props and smelter fuel. Vargheim needs iron tools. Neither settlement trusts
+    the other, but the trade continues because both need what the other has.
+  image_prompt: Wheel-rutted timber road through moor-to-forest transition, axe-stumps, stacked lumber, dense pine ahead,
+    overcast sky.
+- id: RTE_026
+  name: Hafnleið (The Harbour Passage)
+  from_settlement: Frostfjord Hollow
+  to_settlement: Kolvik
+  distance_km: 40
+  travel_days_summer: 2
+  travel_days_winter: 5
+  terrain_segments:
+  - terrain: fjord_shore
+    distance_km: 18
+    description: A shore-hugging path along the fjord's southern arm. Passable in calm weather. In storms, waves break across
+      the trail and the footing is treacherous on wet rock.
+  - terrain: headland_crossing
+    distance_km: 10
+    description: The path climbs over a rocky headland where the fjord meets open sea. Exposed to wind from three directions.
+      A rope-rail is bolted to the rock at the worst section.
+  - terrain: harbour_descent
+    distance_km: 12
+    description: Descent along a gully to Kolvik's harbour. Fishing nets dry on the rocks. The smell of salt-cod announces
+      the settlement before it is visible.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: weather
+    description: Storm surge. The fjord shore section floods without warning when weather drives water inland. Retreat is
+      uphill and slow.
+    chance_percent: 20
+  - type: terrain
+    description: The headland crossing is slippery with spray and bird droppings. A fall here means the sea.
+    chance_percent: 15
+  landmarks:
+  - GEO_FROST_009
+  - GEO_COAST_005
+  shelters: []
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: none
+  lore_notes: Faster by boat, but not everyone has a boat. Shore-walkers use this path when the weather is fair and their
+    purse is empty. Kolvik fishermen consider it bad luck to travel it after dark.
+  image_prompt: Rocky fjord shore path, waves breaking across wet rock, rope-rail on exposed headland, distant harbour with
+    drying fishing nets, grey-green sea.
+- id: RTE_027
+  name: Hrafnstígr (The Raven's Descent)
+  from_settlement: Raven's Perch
+  to_settlement: Skaldhaven
+  distance_km: 45
+  travel_days_summer: 3
+  travel_days_winter: 7
+  terrain_segments:
+  - terrain: mountain_scree
+    distance_km: 15
+    description: Steep descent from Raven's Perch through loose scree and wind-stripped rock. No switchbacks — the route goes
+      straight down the mountain's western face. Ankles break here.
+  - terrain: cliff_gully
+    distance_km: 18
+    description: A gully carved by snowmelt. Wet year-round. The walls narrow to shoulder-width in three places. Impassable
+      with a laden pack animal.
+  - terrain: fjord_cliff_path
+    distance_km: 12
+    description: The gully opens onto the fjord cliff above Skaldhaven. A scramble down carved rock steps — ancient, worn
+      smooth, and missing in places.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: dangerous
+    winter: impassable
+  hazards:
+  - type: terrain
+    description: The scree section is unstable. Every step dislodges stones that fall below. Groups must descend single-file
+      and slowly.
+    chance_percent: 30
+  - type: predator
+    description: Mountain cats hunt the gully. The narrow space favours ambush predators.
+    chance_percent: 15
+  landmarks:
+  - GEO_MTN_007
+  shelters: []
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Raven's Perch lookouts use this route in emergencies to reach the fjord settlements. It is faster than going
+    through Deepholm but punishes knees, ankles, and nerves equally.
+  image_prompt: Steep scree slope descending a bare mountain face, narrow wet gully below, carved stone steps on a fjord cliff,
+    ravens circling above, vertiginous drop.
+- id: RTE_028
+  name: Deiluleið (The Contested Path)
+  from_settlement: Ashen Reach
+  to_settlement: Grimholt
+  distance_km: 65
+  travel_days_summer: 4
+  travel_days_winter: 7
+  terrain_segments:
+  - terrain: charred_borderland
+    distance_km: 15
+    description: East from Ashen Reach through burn-zones and disputed ground. Ownership markers have been torn down and re-erected
+      so many times the posts are splintered.
+  - terrain: contested_moor
+    distance_km: 35
+    description: Open moor claimed by both Ashen Reach and Grimholt. Neither settlement patrols it reliably. Burnt-out farmsteads
+      and abandoned boundary ditches mark the disputed frontier.
+  - terrain: grimholt_perimeter
+    distance_km: 15
+    description: Grimholt's outer slag fields. The iron-guard inspect anyone approaching from this direction with particular
+      suspicion.
+  seasonal_access:
+    spring: passable
+    summer: passable
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: ambush
+    description: Marauders and deserters from both settlements use the contested moor as a haven. Armed groups attack traders,
+      foragers, and anyone carrying iron.
+    chance_percent: 30
+  - type: supernatural
+    description: Burnt-out farmsteads on the contested moor are said to harbour draugar. Travellers report seeing smoke from
+      chimneys of ruins that have no roofs.
+    chance_percent: 10
+  landmarks:
+  - GEO_MOOR_014
+  - GEO_GRIM_012
+  shelters: []
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: sporadic — neither side maintains regular patrols
+  lore_notes: This direct route saves two days over the safer path through Ashmark but crosses territory where law means nothing.
+    Mercenary companies use it. Farmers do not.
+  image_prompt: Burnt-out farmstead on open moor, splintered ownership stakes, disputed boundary ditch, slag fields in the
+    distance, tense desolate atmosphere.
+- id: RTE_029
+  name: Haugabraut (The Barrow Road)
+  from_settlement: Thornwall
+  to_settlement: Deepholm
+  distance_km: 55
+  travel_days_summer: 3
+  travel_days_winter: 7
+  terrain_segments:
+  - terrain: moor_descent
+    distance_km: 15
+    description: South from Thornwall through heather and bracken. The trail drops into a shallow valley where mist gathers
+      at dawn and dusk.
+  - terrain: barrow_downs
+    distance_km: 28
+    description: Low grass-covered mounds in rows. The barrows predate every settlement. Collapsed stone-lined passages are
+      visible in some. The air smells of turned earth even in dry weather.
+  - terrain: deepholm_ravine
+    distance_km: 12
+    description: A steep climb down into the ravine leading to Deepholm's southern entrance. Rope anchors are driven into
+      the rock but frayed from age.
+  seasonal_access:
+    spring: passable
+    summer: passable
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: supernatural
+    description: Barrow-wights. Travellers who camp among the mounds report paralysis, nightmares, and missing hours. Some
+      do not wake at all.
+    chance_percent: 20
+  - type: terrain
+    description: Collapsed barrow passages open into sinkholes. The ground gives way underfoot without warning.
+    chance_percent: 15
+  landmarks:
+  - GEO_MOOR_015
+  - GEO_DEEP_007
+  shelters: []
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Shorter than the route through Grimholt, but no one takes it by choice. The barrow downs are older than memory.
+    Thornwall's garrison forbids its soldiers from using this path. Some use it anyway.
+  image_prompt: Grass-covered burial mounds in rows, mist pooling between barrows, collapsed stone passages, eerie twilight,
+    desolate moor behind, dark fantasy horror.
+- id: RTE_030
+  name: Veiðistígr (The Hunter's Climb)
+  from_settlement: Vargheim
+  to_settlement: Raven's Perch
+  distance_km: 50
+  travel_days_summer: 3
+  travel_days_winter: 7
+  terrain_segments:
+  - terrain: deep_forest
+    distance_km: 20
+    description: North through the Black Pine from Vargheim. Hunters' trail — barely a trail at all. Blazes on trunks and
+      broken branches are the only markers.
+  - terrain: alpine_treeline
+    distance_km: 15
+    description: The forest thins to twisted pine and bare rock. The ground steepens. Game trails lead upward through scree
+      and stunted brush.
+  - terrain: exposed_ridge
+    distance_km: 15
+    description: Above treeline. Bare rock and wind. The final approach to Raven's Perch is a scramble along a knife-edge
+      ridge with drops on both sides.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: dangerous
+    winter: impassable
+  hazards:
+  - type: predator
+    description: Mountain cats and wolves. The forest-to-mountain transition zones are prime hunting ground for both predators
+      and the things that hunt them.
+    chance_percent: 25
+  - type: terrain
+    description: The ridge scramble is exposed and unroped. A slip in wet conditions means a long fall into the treeline below.
+    chance_percent: 20
+  landmarks:
+  - GEO_FOREST_014
+  - GEO_MTN_009
+  shelters:
+  - name: Hunter's Overhang
+    capacity: 4
+    quality: poor
+    distance_from_start_km: 22
+  foraging:
+    summer: good
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Vargheim hunters use this route to reach the high game — ibex and mountain goat. The climb is the price. Only
+    those who know the forest can find where the game trail meets the treeline.
+  image_prompt: Hunter's trail through dense pine transitioning to bare mountain, knife-edge ridge above treeline, twisted
+    pines, game trail, vertiginous drops.
+- id: RTE_031
+  name: Heiðimarkaleið (The Moor-Border Way)
+  from_settlement: Moor's End
+  to_settlement: Ashmark
+  distance_km: 55
+  travel_days_summer: 3
+  travel_days_winter: 6
+  terrain_segments:
+  - terrain: peat_moor
+    distance_km: 20
+    description: East from Moor's End across open peat. The trail is a line of hoof-prints in soft ground. After rain, the
+      prints fill with black water and the path disappears.
+  - terrain: stream_crossing
+    distance_km: 15
+    description: Multiple shallow streams running off the moor. None are bridged. Wading is knee-deep in summer, waist-deep
+      in spring.
+  - terrain: scrub_approach
+    distance_km: 20
+    description: Rising ground with hawthorn and birch scrub. Ashmark's smoke is visible long before the settlement.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: terrain
+    description: The stream crossings are treacherous in spring melt. The current is stronger than it looks and the bottom
+      is uneven.
+    chance_percent: 20
+  - type: predator
+    description: Moor-wolves. Smaller than forest wolves but hunt in larger packs. They follow the streams.
+    chance_percent: 15
+  landmarks:
+  - GEO_MOOR_011
+  shelters: []
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Nobody maintains this route because nobody has a reason to. Moor's End has nothing Ashmark wants, and Ashmark's
+    iron is cheaper bought through Feldwick. Useful only for those avoiding main roads.
+  image_prompt: Peat moor trail of hoof-prints in soft ground, shallow un-bridged streams, hawthorn scrub, distant smelter
+    smoke, bleak overcast.
+- id: RTE_032
+  name: Langferð (The Long March)
+  from_settlement: Frostfjord Hollow
+  to_settlement: Grimholt
+  distance_km: 90
+  travel_days_summer: 5
+  travel_days_winter: 10
+  terrain_segments:
+  - terrain: fjord_ridge
+    distance_km: 20
+    description: The Bone Road ridge east of Frostfjord, but turning north-east where the Bone Road descends to Ashen Reach.
+      Unmarked beyond the turnoff.
+  - terrain: high_moor
+    distance_km: 50
+    description: Featureless moor. Three days of walking with nothing to look at but sky and heather. Water is found in bog
+      pools — brown, peaty, but drinkable. Cairns mark the way at half-mile intervals.
+  - terrain: rime_approach
+    distance_km: 20
+    description: The ground darkens and the rime begins. Grimholt's slag heaps appear on the horizon like grey teeth.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: passable
+    winter: impassable
+  hazards:
+  - type: weather
+    description: Three days of open moor. Every storm on the Rimevegr will find you. Hypothermia is the primary cause of death.
+    chance_percent: 35
+  - type: supernatural
+    description: The high moor is empty in a way that unsettles even hardened travellers. Some report hearing voices on the
+      wind — conversations in a language they almost recognise.
+    chance_percent: 10
+  landmarks:
+  - GEO_FROST_015
+  - GEO_MOOR_016
+  shelters:
+  - name: Cairn-Ring Hollow
+    capacity: 6
+    quality: poor
+    distance_from_start_km: 40
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: A five-day march across empty country that bypasses Ashen Reach entirely. Used by those who cannot or will not
+    pass through Ashen Reach territory. Mercenary companies have marched it. Most people have not.
+  image_prompt: Endless moor, cairn markers vanishing into distance, single trail through heather, nothing on the horizon,
+    oppressive sky, a sense of vast emptiness.
+- id: RTE_033
+  name: Kaupleið (The Trader's Circuit)
+  from_settlement: Kolvik
+  to_settlement: Deepholm
+  distance_km: 70
+  travel_days_summer: 4
+  travel_days_winter: 8
+  terrain_segments:
+  - terrain: coastal_path
+    distance_km: 15
+    description: North from Kolvik along the coast. Fishing hamlets and drying racks. The path is well-worn but narrow.
+  - terrain: coastal_hills
+    distance_km: 25
+    description: Inland through rolling hills of coarse grass. The sea remains visible to the west. Sheep and goats graze
+      unfenced.
+  - terrain: mountain_approach
+    distance_km: 30
+    description: The hills steepen into foothills. The trail follows a stream valley upward toward Deepholm's southern ravine
+      entrance. Cart traffic is occasional.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: ambush
+    description: The coastal hills section has poor visibility. Raiders from unnamed settlements have hit trade caravans.
+    chance_percent: 15
+  - type: terrain
+    description: The mountain approach follows a stream that floods in heavy rain. The trail becomes the stream bed.
+    chance_percent: 15
+  landmarks:
+  - GEO_COAST_009
+  - GEO_DEEP_016
+  shelters:
+  - name: Herder's Cottage
+    capacity: 5
+    quality: fair
+    distance_from_start_km: 35
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: none
+  lore_notes: Coastal traders who want Deepholm silver without paying Grimholt's middleman price use this circuit. It costs
+    time but saves coin.
+  image_prompt: Coastal path with fishing hamlets, rolling hills inland, stream valley climbing toward mountain foothills,
+    distant underground town entrance, trade route atmosphere.
+- id: RTE_034
+  name: Norðurstrandarvegr (The Northward Coastal)
+  from_settlement: Stonebay
+  to_settlement: Bleakwater
+  distance_km: 45
+  travel_days_summer: 3
+  travel_days_winter: 6
+  terrain_segments:
+  - terrain: cliff_coast
+    distance_km: 15
+    description: North from Stonebay along crumbling sea cliffs. The path narrows in places to boot-width. Salt wind strips
+      heat from the body.
+  - terrain: shingle_beach
+    distance_km: 15
+    description: The cliffs drop to stone beaches. Walking on shingle is exhausting — two steps forward, one step sliding
+      back. Driftwood and seal carcasses litter the tideline.
+  - terrain: ice_shore
+    distance_km: 15
+    description: The shore hardens. Sea ice appears in sheltered coves even in summer. Bleakwater's huts are visible as dark
+      shapes against the white.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: dangerous
+    winter: impassable
+  hazards:
+  - type: weather
+    description: Northern coastal storms. Wind strong enough to knock a man off the cliff path. Driving sleet that freezes
+      on contact.
+    chance_percent: 30
+  - type: predator
+    description: Polar bears range the ice shore in late autumn and winter. They are curious, hungry, and fast.
+    chance_percent: 15
+  landmarks:
+  - GEO_COAST_012
+  - GEO_ICE_003
+  shelters: []
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Eighteen people live in Bleakwater. This route exists because those eighteen people occasionally need to reach
+    civilisation. No one walks it for pleasure.
+  image_prompt: Crumbling sea cliff path, shingle beach with driftwood, sea ice in sheltered coves, distant dark huts against
+    white, polar wind, desolate northern coast.
+- id: RTE_035
+  name: Úlfaleið (The Wolf Run)
+  from_settlement: Ashen Reach
+  to_settlement: Vargheim
+  distance_km: 60
+  travel_days_summer: 3
+  travel_days_winter: 7
+  terrain_segments:
+  - terrain: burnt_forest
+    distance_km: 10
+    description: Through Ashen Reach's burn-zones into unmanaged forest. The boundary between controlled burn and wild growth
+      is abrupt — charred stumps one side, dense pine the other.
+  - terrain: deep_Black_Pine
+    distance_km: 40
+    description: Deep forest with no maintained trail. Navigation by sun, moss, and instinct. The canopy blocks the sky. Animal
+      trails crisscross in every direction.
+  - terrain: vargheim_outskirts
+    distance_km: 10
+    description: The forest thins near Vargheim. Woodcutter's paths converge. Axe-sounds and dog barking.
+  seasonal_access:
+    spring: passable
+    summer: passable
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: predator
+    description: Wolf territory. The deep forest section crosses through established pack range. Wolves shadow travellers
+      — watching, testing. Large groups are followed. Small groups are tested.
+    chance_percent: 35
+  - type: terrain
+    description: No trail means no certainty. Without forest-craft, travellers lose direction within an hour. Some are found
+      weeks later. Some are not found.
+    chance_percent: 20
+  landmarks: []
+  shelters: []
+  foraging:
+    summer: good
+    winter: fair
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Named for what lives there. Vargheim hunters know the deep forest. Everyone else should use the road through
+    Feldwick.
+  image_prompt: Dark dense pine forest, no trail, animal tracks crossing, wolf eyes reflecting in deep shadow, charred stumps
+    at the forest boundary, primal atmosphere.
+- id: RTE_036
+  name: Ísleið (The Ice Way)
+  from_settlement: Icebreak
+  to_settlement: Raven's Perch
+  distance_km: 70
+  travel_days_summer: 5
+  travel_days_winter: null
+  terrain_segments:
+  - terrain: pack_ice
+    distance_km: 20
+    description: Across the seasonal pack ice south of Icebreak. In summer the ice thins to navigable floes. The route follows
+      pressure ridges where the ice is thickest.
+  - terrain: frozen_coast
+    distance_km: 20
+    description: Coastal traverse along north-facing mountain base. Snowfields and ice shelves. The ground beneath may be
+      rock or may be more ice — hard to tell.
+  - terrain: mountain_ascent
+    distance_km: 30
+    description: Brutal ascent up the mountain's north face. Ice gullies and frozen scree. Ropes and ice-axes are not optional.
+      Summer-only because winter buries the route entirely.
+  seasonal_access:
+    spring: impassable
+    summer: dangerous
+    autumn: impassable
+    winter: impassable
+  hazards:
+  - type: terrain
+    description: Crevasses in the pack ice. A wrong step breaks through thin ice into water cold enough to kill in minutes.
+    chance_percent: 25
+  - type: weather
+    description: Sudden whiteout conditions even in summer. Temperatures drop without warning. Hypothermia is a constant threat.
+    chance_percent: 35
+  landmarks:
+  - GEO_ICE_006
+  - GEO_MTN_012
+  shelters: []
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: A route that exists in theory during a six-week window in high summer. Perhaps five expeditions have completed
+    it. Two are confirmed. The rest are stories.
+  image_prompt: Pack ice floes, pressure ridges, frozen coastline at mountain base, ice gully ascent, ropes and axes, whiteout
+    approaching, extreme northern wilderness.
+- id: RTE_037
+  name: Nautrekaleið (The Livestock Drive)
+  from_settlement: Thornwall
+  to_settlement: Kolvik
+  distance_km: 80
+  travel_days_summer: 5
+  travel_days_winter: 10
+  terrain_segments:
+  - terrain: heath_moor
+    distance_km: 25
+    description: West from Thornwall across open heath. Wide enough for a herd. Drovers keep to established paths that avoid
+      the worst bog.
+  - terrain: river_valley
+    distance_km: 30
+    description: The trail drops into a broad river valley. Seasonal grazing here — the grass is good. Stream crossings are
+      shallow enough for cattle in autumn but risky in spring.
+  - terrain: coastal_lowland
+    distance_km: 25
+    description: Salt marshes and coastal grassland approaching Kolvik. The animals smell the sea before the drovers see it.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: good
+    winter: dangerous
+  hazards:
+  - type: predator
+    description: Wolves follow the herds. Drovers lose animals every drive — the question is how many.
+    chance_percent: 25
+  - type: terrain
+    description: River crossings in the valley. Cattle panic in deep water. A stampede at a ford can kill drovers and animals
+      alike.
+    chance_percent: 15
+  landmarks:
+  - GEO_MOOR_017
+  - GEO_COAST_016
+  shelters:
+  - name: Drover's Fold
+    capacity: 12
+    quality: poor
+    distance_from_start_km: 28
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: none
+  lore_notes: Autumn cattle drive. Thornwall's surplus livestock walks to Kolvik for slaughter and export by sea. The drive
+    takes five days and every drover earns their pay.
+  image_prompt: Cattle herd moving across open heath, drovers with dogs, broad river valley crossing, salt marsh near coast,
+    autumn light, working pastoral atmosphere.
+- id: RTE_038
+  name: Fróðleið (The Scholar's Road)
+  from_settlement: Skaldhaven
+  to_settlement: Deepholm
+  distance_km: 80
+  travel_days_summer: 5
+  travel_days_winter: 9
+  terrain_segments:
+  - terrain: fjord_climb
+    distance_km: 15
+    description: Up from Skaldhaven's harbour shelf through carved rock steps. The original carvings are runic — scholars
+      have studied them for generations and still argue about the translation.
+  - terrain: highland_trail
+    distance_km: 40
+    description: A long traverse across highland moor and rough grassland. The trail is marked by standing stones at irregular
+      intervals. Some are natural. Some are not.
+  - terrain: mountain_descent
+    distance_km: 25
+    description: Descent into Deepholm's northern approaches. The trail joins mining paths near the upper tunnels. Lantern-light
+      visible ahead.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: weather
+    description: Highland exposure. No shelter for forty kilometres. Wind drives rain sideways.
+    chance_percent: 25
+  - type: supernatural
+    description: The standing stones along the highland stretch are warm to the touch at odd hours. Some travellers report
+      hearing chanting from stones that have no mouths.
+    chance_percent: 10
+  landmarks:
+  - GEO_COAST_010
+  - GEO_MTN_014
+  shelters:
+  - name: Standing-Stone Ring
+    capacity: 6
+    quality: poor
+    distance_from_start_km: 35
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: Skaldhaven's skalds and Deepholm's archivists maintain an uneasy scholarly exchange. This road connects the
+    two centres of learning. It is long, hard, and used only by those who value knowledge enough to suffer for it.
+  image_prompt: Carved runic steps climbing from fjord harbour, highland moor with standing stones, mining paths descending
+    toward lantern-lit tunnel entrance, scholarly dark atmosphere.
+- id: RTE_039
+  name: Pílagrímsleið (The Pilgrim's Way)
+  from_settlement: Moor's End
+  to_settlement: Bleakwater
+  distance_km: 95
+  travel_days_summer: 6
+  travel_days_winter: null
+  terrain_segments:
+  - terrain: open_moor
+    distance_km: 30
+    description: North from Moor's End across unmarked moor. Ancient stone shrines appear at intervals — waist-high cairns
+      with carved faces turned north. Some have offerings piled at their base.
+  - terrain: bog_waste
+    distance_km: 35
+    description: Deep bog country. The trail is marked by wooden stakes driven into the mire. Many are rotted and fallen.
+      Pilgrims have laid plank walkways in the worst sections, but these sink over time.
+  - terrain: tundra_approach
+    distance_km: 30
+    description: The bog gives way to frozen ground. Lichen and moss. The air bites. Bleakwater is a smudge of smoke on the
+      white horizon.
+  seasonal_access:
+    spring: dangerous
+    summer: passable
+    autumn: dangerous
+    winter: impassable
+  hazards:
+  - type: terrain
+    description: The bog waste swallows the unwary. Pilgrims travel with probing staves. Those who leave the marked path are
+      sometimes pulled under.
+    chance_percent: 25
+  - type: supernatural
+    description: The shrine-stones watch. Pilgrims report dreams of the Veil — the barrier between the living world and what
+      lies beyond. Those who turn back say the dreams stop. Those who continue say the dreams deepen.
+    chance_percent: 15
+  landmarks:
+  - GEO_MOOR_018
+  - GEO_ICE_008
+  shelters: []
+  foraging:
+    summer: poor
+    winter: poor
+  trade_traffic: none
+  military_patrols: none
+  lore_notes: A religious route for those who believe the Veil between worlds thins at the northern edge. The shrines predate
+    every current settlement. Pilgrims walk it in summer and return changed — or do not return at all.
+  image_prompt: Waist-high stone shrines with carved faces on empty moor, wooden stakes in deep bog, plank walkway sinking
+    into mire, tundra ahead, pilgrim figures in the distance.
+- id: RTE_040
+  name: Ullarbraut (The Wool Road)
+  from_settlement: Feldwick
+  to_settlement: Thornwall
+  distance_km: 60
+  travel_days_summer: 3
+  travel_days_winter: 6
+  terrain_segments:
+  - terrain: forest_edge
+    distance_km: 15
+    description: South from Feldwick along the forest boundary. Cleared pasture on one side, dense trees on the other. Sheep
+      graze the cleared land.
+  - terrain: open_grassland
+    distance_km: 25
+    description: Rolling grassland between forest and moor. The trail is beaten flat by wool wagons. Ruts fill with water
+      in rain but the ground is firm beneath.
+  - terrain: moor_approach
+    distance_km: 20
+    description: The grass thins to heather as the ground rises toward Thornwall. Peat smoke and the sound of the stronghold's
+      work carry on the wind.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: good
+    winter: passable
+  hazards:
+  - type: ambush
+    description: Wool wagons are easy targets. The grassland offers little cover for travellers but the forest edge provides
+      it for bandits.
+    chance_percent: 20
+  - type: predator
+    description: Wolves from the forest edge. They take sheep first, but a loaded pack-horse draws their attention.
+    chance_percent: 15
+  landmarks:
+  - GEO_FOREST_016
+  shelters:
+  - name: Wool-Weighing Station
+    capacity: 8
+    quality: fair
+    distance_from_start_km: 25
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: moderate
+  military_patrols: none
+  lore_notes: Feldwick shears the sheep, Thornwall buys the wool. Simple trade, simple road. In autumn the wool wagons run
+    twice a week. In winter, not at all.
+  image_prompt: Wool wagon on beaten grassland trail between forest edge and moor, sheep in cleared pasture, rolling hills,
+    distant dark stronghold, autumn working atmosphere.
+- id: RTE_041
+  name: Griptvegr (The Relic Road)
+  from_settlement: Ashmark
+  to_settlement: Skaldhaven
+  distance_km: 65
+  travel_days_summer: 4
+  travel_days_winter: 7
+  terrain_segments:
+  - terrain: forest_path
+    distance_km: 20
+    description: West from Ashmark through mixed forest. The trail follows an old track — wider than it needs to be, as if
+      once built for traffic that no longer comes.
+  - terrain: barrow_field
+    distance_km: 20
+    description: An expanse of low burial mounds at the forest's western edge. Relic hunters dig here illegally. Fresh excavation
+      pits scar the landscape.
+  - terrain: fjord_descent
+    distance_km: 25
+    description: Long descent through scrub and rock toward the fjord. Skaldhaven's mead-halls and archives are visible below,
+      built into the cliff.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: supernatural
+    description: The barrow field. Relic hunters who dig too deep report cold hands gripping their ankles from below. Two
+      were found dead in a pit last summer — no marks on them.
+    chance_percent: 15
+  - type: ambush
+    description: Relic hunters are jealous of their finds. Parties have been attacked by other diggers over promising excavation
+      sites.
+    chance_percent: 15
+  landmarks:
+  - GEO_FOREST_018
+  - GEO_COAST_011
+  shelters: []
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: low
+  military_patrols: none
+  lore_notes: Ashmark's smelters occasionally turn up old metalwork — bronze, not iron. Skaldhaven's scholars pay well for
+    barrow-finds and pre-settlement artifacts. This road exists because dead men's treasure is still treasure.
+  image_prompt: Old wide forest track, barrow mounds with fresh excavation pits, scattered bronze artifacts, fjord descent
+    toward cliff-built mead-halls, relic-hunter atmosphere.
+- id: RTE_042
+  name: Útflutningsvegr (The Export Road)
+  from_settlement: Deepholm
+  to_settlement: Kolvik
+  distance_km: 65
+  travel_days_summer: 4
+  travel_days_winter: 7
+  terrain_segments:
+  - terrain: tunnel_south_exit
+    distance_km: 8
+    description: Through Deepholm's lower trade tunnels — wider and better-lit than the mining levels. Mule carts loaded with
+      finished metalwork and silver ingots form queues at the exit.
+  - terrain: foothill_trail
+    distance_km: 30
+    description: Winding trail through rocky foothills. Stream crossings every few kilometres. The path is rutted from trade
+      traffic but maintained by neither settlement.
+  - terrain: coastal_lowland
+    distance_km: 27
+    description: The foothills flatten into salt-grass lowlands. Kolvik's harbour masts are visible. The smell of fish and
+      tar.
+  seasonal_access:
+    spring: passable
+    summer: good
+    autumn: passable
+    winter: dangerous
+  hazards:
+  - type: ambush
+    description: Silver wagons attract attention. The foothill section has blind curves where ambushers wait. Merchants hire
+      guards or travel in convoy.
+    chance_percent: 20
+  - type: terrain
+    description: Foothill stream crossings wash out after storms. A loaded cart stuck in a swollen ford is a day's delay and
+      an invitation to thieves.
+    chance_percent: 15
+  landmarks:
+  - GEO_DEEP_018
+  - GEO_COAST_017
+  shelters:
+  - name: Foothill Rest Camp
+    capacity: 8
+    quality: poor
+    distance_from_start_km: 25
+  foraging:
+    summer: fair
+    winter: poor
+  trade_traffic: moderate
+  military_patrols: Deepholm silver-guard escorts (paid, not regular)
+  lore_notes: Deepholm's silver reaches the outside world through Kolvik's harbour. This road is the reason Kolvik matters.
+    Every ingot that leaves the mountain passes through here — and everyone along the way knows it.
+  image_prompt: Mule carts exiting tunnel into foothills, silver ingots in boxes, winding trail through rocky terrain, distant
+    harbour masts, trade convoy atmosphere.

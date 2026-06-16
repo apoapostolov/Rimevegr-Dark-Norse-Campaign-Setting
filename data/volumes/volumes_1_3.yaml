@@ -1,0 +1,1914 @@
+# Iron Ledger — Volume 1-3 Chapter Outlines (Y312)
+# The Moderate Year: first post-conflict, Thaw through Spring Thaw Signs.
+# Covers 86 events across 4 seasons. 38 chapters total.
+# Cross-references: y312_events.yaml, personal_band_events.yaml,
+#   supernatural_chain_events.yaml, weather_history.yaml, band_state.yaml.
+# Chapter templates are informal type tags for pacing/structure guidance:
+#   CHAP_MARCH — travel, logistics, route-finding, landscape
+#   CHAP_CAMP — downtime, character interaction, maintenance
+#   CHAP_CONTRACT — active job execution (combat, negotiation, delivery)
+#   CHAP_BARROW — supernatural encounter, horror, dread
+#   CHAP_POLITICS — settlement visits, faction maneuvering, trade
+#   CHAP_BATTLE — extended combat, rival confrontation, siege
+#   CHAP_PERSONAL — character-focused, internal arcs, backstory reveal
+#   CHAP_SURVIVAL — weather, starvation, attrition, endurance
+#   CHAP_FEAST — social gathering, mead hall, intelligence, respite
+#   CHAP_CRISIS — band-internal conflict, desertion, punishment, choice
+
+volumes_1_3:
+  # ================================================================
+  # VOLUME 1 — THE WHISPERING BARROW
+  # Spring/Early Summer Y312. First contract, Lump's initiation.
+  # 12 chapters, Days 1-60.
+  # ================================================================
+
+  volume_1:
+    title: "The Whispering Barrow"
+    time_span: "Y312, Thaw through Long Sun (Days 1-60)"
+    central_conflict: "Can the Black Axes clear a haunted barrow and survive
+      spring intact, while internal tensions and a former thrall's presence
+      test the band's cohesion?"
+    contract_arc: "Clear the Whispering Barrow (Jarl Hrothgar, 80 silver)"
+    political_arc: "Iron Grip demands tribute; Widow plants agents; Compact
+      opens trade. The three-way tension is background noise — for now."
+    supernatural_stage: "Stirring. Lights seen above barrows. Dead cattle.
+      The Veil is thin but nothing has broken through yet."
+    band_state_open:
+      morale: 4
+      reputation: 3
+      treasury: 47
+      members: 14
+      food_days: 8
+      location: "Black Pine Wilds, approaching Frostfjord"
+    band_state_close:
+      morale: 5
+      reputation: 4
+      treasury: 95
+      members: 14
+      food_days: 12
+      location: "Frostfjord Hollow"
+
+    chapters:
+      # --- Chapter 1 ---
+      - chapter: 1
+        title: "Cold Meat"
+        template: "CHAP_MARCH"
+        time: "Y312, Days 1-3"
+        weather_week: 1
+        location: "Black Pine Wilds, approaching Frostfjord"
+        pov: "Lump"
+        summary: >-
+          Lump marches with the Black Axes for the first time. He carries
+          more than his share and says nothing. Voss tests him with silence.
+          Gest explains the ledger system — how every man's worth is counted
+          in silver, rations, and carried weight. They arrive at Frostfjord
+          as the thaw floods begin, the lower quay already underwater.
+        events_referenced:
+          - "EVT_312_S01_001" # Thaw Floods at Frostfjord
+        npcs_present:
+          - "Voss"
+          - "Gest"
+          - "Kell"
+          - "Thorne"
+          - "Petra"
+          - "Bjorn"
+          - "Rolf"
+        character_beats:
+          lump: >-
+            Observes everything. Doesn't complain. Carries firewood, digs
+            the latrine, fetches water without being asked. The other commons
+            watch him — he works like a thrall, not a free man. He doesn't
+            know the difference yet.
+          gest: >-
+            Explains how the band works to Lump in cold, precise terms.
+            Every man has a cost. Every cost is written down. Fair but
+            clinical. Tests whether Lump can count.
+          voss: >-
+            Watches Lump from a distance. Says nothing to him directly.
+            Gives orders through Gest. The test is whether Lump asks why.
+        band_state:
+          morale: 4
+          treasury: 47
+          food_days: 8
+        hooks: >-
+          Frostfjord is flooding. Jarl Hrothgar needs help — and has a
+          barrow contract he cannot fill locally.
+        word_target: 5000
+
+      # --- Chapter 2 ---
+      - chapter: 2
+        title: "The Jarl's Offer"
+        template: "CHAP_POLITICS"
+        time: "Y312, Days 4-6"
+        weather_week: 1
+        location: "Frostfjord Hollow"
+        pov: "Lump"
+        summary: >-
+          The band shelters in Frostfjord while Voss negotiates with Jarl
+          Hrothgar. Ordovast's tribute riders pass through town — armed men
+          demanding silver that Hrothgar can barely spare. Hrothgar offers
+          the barrow contract: clear the Whispering Barrow north of town,
+          80 silver plus a thrall. Voss accepts. Lump watches the tribute
+          riders and remembers what it means to be owned.
+        events_referenced:
+          - "EVT_312_S02_002" # Ordovast Summons Tribute
+        npcs_present:
+          - "Voss"
+          - "Gest"
+          - "Kell"
+          - "Lump"
+          - "Jarl Hrothgar"
+        character_beats:
+          lump: >-
+            Sees the tribute riders and goes still. Old reflexes — head
+            down, eyes averted. Then he notices that the Black Axes don't
+            drop their eyes. First crack in his thrall conditioning.
+          voss: >-
+            Negotiates hard. Gets the advance raised to 25 silver. Reads
+            Hrothgar's desperation and does not exploit it — this time.
+          kell: >-
+            Quiet. His wound still aches. Eyes the tribute silver with
+            the wrong kind of interest.
+        band_state:
+          morale: 4
+          treasury: 72 # 47 + 25 advance
+          food_days: 10 # restocked at Frostfjord
+        hooks: >-
+          The barrow is two days north. Shepherds won't go near it.
+          Something about sounds at night.
+        word_target: 4000
+
+      # --- Chapter 3 ---
+      - chapter: 3
+        title: "Trade Wind"
+        template: "CHAP_MARCH"
+        time: "Y312, Days 7-9"
+        weather_week: 2
+        location: "Frostfjord to Blackpine Wilds"
+        pov: "Lump"
+        summary: >-
+          The band marches north along the newly opened trade road toward
+          the barrow. Rain and rime fog make the trail treacherous. Gest
+          teaches Lump to read trail markers. Petra walks alone at the rear.
+          A peddler heading south mentions the Widow's healer in Kolvik —
+          cheap remedies, asking too many questions.
+        events_referenced:
+          - "EVT_312_S03_003" # Trade Road Opens
+          - "EVT_312_S04_004" # Widow Places Agent in Kolvik
+        npcs_present:
+          - "Voss"
+          - "Gest"
+          - "Petra"
+          - "Thorne"
+          - "Bjorn"
+          - "Lump"
+        character_beats:
+          lump: >-
+            Learning march discipline. Makes mistakes — walks too close
+            to the man ahead, doesn't check his boots, nearly loses the
+            trail in fog. Gest corrects him without cruelty.
+          petra: >-
+            Withdrawn. Hasn't spoken about her sister yet. Scans every
+            peddler and traveller they pass.
+          thorne: >-
+            Nervous in the Blackpine Wilds. Keeps checking the tree line.
+            Something about this stretch of forest bothers him.
+        band_state:
+          morale: 4
+          treasury: 72
+          food_days: 9
+        hooks: >-
+          The Widow's intelligence network is spreading. Weather worsening
+          as they climb toward the barrow.
+        word_target: 4000
+
+      # --- Chapter 4 ---
+      - chapter: 4
+        title: "Barrow Mouth"
+        template: "CHAP_CONTRACT"
+        time: "Y312, Days 10-12"
+        weather_week: 2
+        location: "Whispering Barrow, north of Frostfjord"
+        pov: "Lump"
+        summary: >-
+          The Black Axes reach the Whispering Barrow. The entrance is a
+          stone-lined passage half choked with earth. A sweet, wrong smell
+          drifts from the dark. Voss sends a three-man team inside to scout
+          — Thorne, Bjorn, Rolf. They come back pale and quiet. Something
+          moved in the lower chamber. Lump is told to dig out the entrance
+          while the named men plan. He digs, and the barrow whispers.
+        events_referenced:
+          - "EVT_312_S05_005" # Black Axes Take Spring Contract
+        npcs_present:
+          - "Voss"
+          - "Gest"
+          - "Thorne"
+          - "Bjorn"
+          - "Rolf"
+          - "Lump"
+        character_beats:
+          lump: >-
+            Works the entrance with a shovel. Hears sounds from below that
+            the others pretend not to hear. Doesn't ask about them. Thrall
+            habit — don't ask questions about things that scare your masters.
+          thorne: >-
+            His burn scars itch near the barrow. He recognises the feeling
+            from before — the old curse stirring.
+          voss: >-
+            Makes tactical decisions fast. Maps the approach. Assigns roles.
+            The barrow is his third — he knows what to expect, and it still
+            bothers him.
+        band_state:
+          morale: 4
+          treasury: 72
+          food_days: 8
+        hooks: >-
+          The barrow is active. The lower chamber hasn't been opened in
+          generations. What's down there doesn't want visitors.
+        word_target: 5000
+
+      # --- Chapter 5 ---
+      - chapter: 5
+        title: "Below"
+        template: "CHAP_BARROW"
+        time: "Y312, Days 13-14"
+        weather_week: 2
+        location: "Whispering Barrow, interior"
+        pov: "Lump"
+        summary: >-
+          The band enters the barrow in force. Torch-light on carved stone.
+          Offerings rotted to dust. In the lower chamber, they find the
+          restless dead — not the shambling kind, the sitting-upright-and-
+          watching kind. A corpse with braided hair holds a bronze staff.
+          Voss gives the order to seal the inner door with iron nails.
+          Thorne's scars split open during the work. The barrow fights
+          back with cold, sound, and fear. One common man breaks and runs.
+        events_referenced:
+          - "EVT_312_SUP_002" # Dalla's First Unwanted Vision (she describes this barrow)
+        npcs_present:
+          - "Voss"
+          - "Thorne"
+          - "Bjorn"
+          - "Kell"
+          - "Lump"
+        character_beats:
+          lump: >-
+            Carries torches and gear. When the common man bolts, Lump
+            does not. He is too scared to run and too stubborn to show it.
+            Voss notices. This is the moment Lump earns the right to stay.
+          thorne: >-
+            His curse-scars weep dark fluid near the dead. He wraps them
+            and keeps working. Tells no one what it means. The barrow
+            recognises him somehow.
+          kell: >-
+            Fights well despite his wound. Professional. But his hands
+            shake after they leave.
+        band_state:
+          morale: 3 # barrow work is terrifying
+          treasury: 72
+          food_days: 7
+        hooks: >-
+          The inner door is sealed but the dead are not gone. The bronze
+          staff is valuable — and possibly cursed. Thorne's connection to
+          the supernatural deepens.
+        word_target: 5000
+
+      # --- Chapter 6 ---
+      - chapter: 6
+        title: "Paid in Full"
+        template: "CHAP_CONTRACT"
+        time: "Y312, Days 15-18"
+        weather_week: 3
+        location: "Frostfjord Hollow"
+        pov: "Gest"
+        summary: >-
+          The band returns to Frostfjord with proof of the sealed barrow.
+          Jarl Hrothgar pays the remaining 55 silver. Gest records every
+          coin in the ledger and distributes shares. Raven's Perch sends
+          only half tribute to Ordovast — Hrothgar mutters that the north
+          is getting bold. The Bone Pack is sighted near Ashmark. Voss
+          says nothing, but Gest sees him studying the southern map.
+        events_referenced:
+          - "EVT_312_S06_006" # Bone Pack Sighted near Ashmark
+          - "EVT_312_S07_007" # Raven's Perch Refuses Full Tribute
+        npcs_present:
+          - "Voss"
+          - "Gest"
+          - "Kell"
+          - "Jarl Hrothgar"
+        character_beats:
+          gest: >-
+            POV chapter. The ledger is his world. He writes down what
+            the band earned, what it cost, what's left. The numbers are
+            good. He doesn't trust the feeling.
+          voss: >-
+            Accepts payment without celebration. Already planning the
+            next contract. The Bone Pack sighting worries him — eleven
+            fighters on their patch.
+          kell: >-
+            Takes his share and disappears into Frostfjord's drinking
+            hall. Bad sign.
+        band_state:
+          morale: 5 # paid, rested, contract complete
+          treasury: 102 # 72 + 55 - 25 shares distributed
+          food_days: 11
+        hooks: >-
+          Bone Pack rivalry introduced. Kell's drinking hints at the debt
+          spiral to come. Raven's Perch defiance plants seeds for Iron
+          Grip escalation.
+        word_target: 4000
+
+      # --- Chapter 7 ---
+      - chapter: 7
+        title: "Petra's Letter"
+        template: "CHAP_PERSONAL"
+        time: "Y312, Days 19-22"
+        weather_week: 3
+        location: "Frostfjord Hollow"
+        pov: "Lump"
+        summary: >-
+          Rest days in Frostfjord. A peddler arrives with mail — Petra
+          receives a stained letter from her sister, begging her to come
+          south before midsummer. Petra reads it by the fire and says
+          nothing. Lump watches. Spring fair at Skaldhaven draws the town's
+          attention. Lump explores Frostfjord alone for the first time as a
+          free man — buys a comb with his first earned copper. Small moment,
+          enormous meaning.
+        events_referenced:
+          - "EVT_312_S08_008" # Petra Receives Letter from Sister
+          - "EVT_312_S09_009" # Spring Fair at Skaldhaven
+        npcs_present:
+          - "Petra"
+          - "Lump"
+          - "Gest"
+          - "Rolf"
+        character_beats:
+          lump: >-
+            First time spending money he earned. The comb costs two copper.
+            He turns it over in his hands for a long time. Thralls don't
+            own combs. He does now.
+          petra: >-
+            The letter breaks her composure. She folds it carefully and
+            tucks it inside her tunic. When Lump asks if she's all right,
+            she says "mind your kit" — but without edge. First real
+            exchange between them.
+          gest: >-
+            Notes Petra's distraction in the ledger margins. Personal
+            notes he keeps for Voss.
+        band_state:
+          morale: 5
+          treasury: 100
+          food_days: 11
+        hooks: >-
+          Petra's sister arc begins. Something is wrong in the south.
+          Skaldhaven fair draws information — and trouble.
+        word_target: 4000
+
+      # --- Chapter 8 ---
+      - chapter: 8
+        title: "Mudswell"
+        template: "CHAP_MARCH"
+        time: "Y312, Days 23-28"
+        weather_week: 4
+        location: "Frostfjord to Bleakwater Landing"
+        pov: "Lump"
+        summary: >-
+          Voss moves the band south toward Bleakwater Landing, chasing
+          a guard contract. Three days of rain turn the moor into sucking
+          bog — a supply wagon is lost on the road. Thorne spots old boot-
+          prints near Bleakwater that he recognises from his previous
+          warband. He goes silent for a day. Lump learns to wrap his feet
+          properly. The weather breaks on day 28 and the band arrives at
+          Bleakwater exhausted.
+        events_referenced:
+          - "EVT_312_S10_010" # Mudswell on the Moor
+          - "EVT_312_S11_011" # Thorne Notices Old Tracks
+        npcs_present:
+          - "Voss"
+          - "Thorne"
+          - "Lump"
+          - "Bjorn"
+          - "Gest"
+        character_beats:
+          lump: >-
+            Learns basic fieldcraft from necessity. Wraps his feet wrong,
+            gets blisters, wraps them again. Nobody helps him — they watch
+            to see if he figures it out. He does.
+          thorne: >-
+            The boot-prints shake him. Someone from his past is in the
+            area. His burn scars itch. He tells Voss privately — Voss
+            files it away.
+        band_state:
+          morale: 4 # hard march, wet, tired
+          treasury: 100
+          food_days: 7
+        hooks: >-
+          Thorne's past is catching up. Bleakwater needs guards.
+          The Widow's poisoned rumours about Ordovast are spreading
+          through the region.
+        word_target: 4500
+
+      # --- Chapter 9 ---
+      - chapter: 9
+        title: "Guard Duty"
+        template: "CHAP_CONTRACT"
+        time: "Y312, Days 29-35"
+        weather_week: 5
+        location: "Bleakwater Landing"
+        pov: "Gest"
+        summary: >-
+          The band takes Bleakwater's guard contract — 15 silver for a
+          week against coastal raiders. Gest POV: the economics of small
+          contracts, the boredom of guard work, the slow grind of keeping
+          fourteen men fed and paid. The Widow's rumour about Ordovast
+          stockpiling iron reaches Bleakwater via merchant gossip. A cold
+          snap kills early crops across the northern settlements. Kell
+          gambles away 8 silver at dice.
+        events_referenced:
+          - "EVT_312_S12_012" # Bleakwater Petition for Protection
+          - "EVT_312_S13_013" # Widow Poisons Rumour about Ordovast
+          - "EVT_312_S14_014" # Cold Snap Kills Early Crops
+          - "EVT_312_S15_015" # Kell Gambles Away Silver
+        npcs_present:
+          - "Gest"
+          - "Kell"
+          - "Voss"
+          - "Rolf"
+          - "Bjorn"
+        character_beats:
+          gest: >-
+            The ledger tells a story the men don't want to hear. Income
+            is too low for the band's size. Gest writes margin notes about
+            Kell's spending — doesn't report it to Voss yet. Professional
+            restraint, or avoidance.
+          kell: >-
+            Loses 8 silver at dice. Owes Gest a private loan. The shame
+            is worse than the debt. Starts drinking more.
+          voss: >-
+            Hears the Ordovast rumour and considers its source. Suspects
+            Whispering Circle manipulation but can't prove it.
+        band_state:
+          morale: 4
+          treasury: 107 # 100 + 15 - 8 Kell's loss
+          food_days: 10
+        hooks: >-
+          Kell's debt spiral begins. The political situation is heating
+          up through rumour and manipulation. Crop failure means food
+          prices will rise.
+        word_target: 4500
+
+      # --- Chapter 10 ---
+      - chapter: 10
+        title: "Iron Gate"
+        template: "CHAP_POLITICS"
+        time: "Y312, Days 36-45"
+        weather_week: 6
+        location: "Bleakwater Landing to Ashmark road"
+        pov: "Lump"
+        summary: >-
+          The band moves on from Bleakwater. News arrives that Ordovast
+          is fortifying Grimholt's gate — a second timber gate, doubled
+          garrison. The Silent Oar takes a lucrative escort contract the
+          Black Axes could have had. Voss refuses a high-paying but
+          dishonourable slave-coffle escort, and half the band argues.
+          Lump watches the argument and sees the cost of command for the
+          first time. Barrow lights are reported at Vargheim.
+        events_referenced:
+          - "EVT_312_S16_016" # Silent Oar Escorts Merchant Fleet
+          - "EVT_312_S17_017" # Iron Grip Fortifies Grimholt Gate
+          - "EVT_312_S18_018" # Barrow Light at Vargheim
+          - "EVT_312_PER_001" # Voss Refuses the Easy Contract
+        npcs_present:
+          - "Voss"
+          - "Bjorn"
+          - "Gest"
+          - "Lump"
+          - "Kell"
+        character_beats:
+          lump: >-
+            Watches the band argue about the refused contract. Bjorn
+            says they need the money. Voss stares him quiet. Lump
+            understands something new: a captain carries the band's anger
+            so the band doesn't have to carry it itself.
+          voss: >-
+            The refusal costs morale. His hand shakes when he pours ale
+            that evening. Command is wearing him down.
+        band_state:
+          morale: 3 # argument about refused contract
+          treasury: 100 # expenses eating into surplus
+          food_days: 9
+        hooks: >-
+          Supernatural activity intensifying. Voss's authority tested.
+          The Lost Oar rivalry stings — the Axes need a better contract.
+        word_target: 4000
+
+      # --- Chapter 11 ---
+      - chapter: 11
+        title: "The Stray"
+        template: "CHAP_CAMP"
+        time: "Y312, Days 46-53"
+        weather_week: 7
+        location: "Blackpine Wilds camp"
+        pov: "Lump"
+        summary: >-
+          Downtime in the Wilds while Voss waits for the next contract
+          offer. Warm rains. Good foraging. Lump finds a half-starved
+          hound in the pines and adopts it — the dog follows the column
+          and eats scraps. The camp settles into routine: firewatch,
+          foraging, equipment repair. Lump begins to learn knife-work
+          from Rolf, who teaches by example and says almost nothing.
+          Dalla collapses in Thornwall and describes a sealed barrow in
+          exact detail — news travels.
+        events_referenced:
+          - "EVT_312_S19_019" # Lump Finds a Stray Dog
+          - "EVT_312_SUP_002" # Dalla's First Unwanted Vision
+        npcs_present:
+          - "Lump"
+          - "Rolf"
+          - "Gest"
+          - "Petra"
+          - "Kell"
+        character_beats:
+          lump: >-
+            The dog is the first living thing that has chosen to stay
+            with him. He feeds it from his own rations — an extravagance
+            a thrall would never risk. His first act of generosity as a
+            free man.
+          rolf: >-
+            Teaches Lump to hold a knife properly. No words. Adjusts
+            Lump's grip, nods, walks away. The lesson is: you learn by
+            doing, not by asking.
+          petra: >-
+            Watches Lump with the dog. Almost smiles. She had a dog
+            once, when her family was whole.
+        band_state:
+          morale: 4 # rest and warm weather help
+          treasury: 95
+          food_days: 12
+        hooks: >-
+          Dalla's vision — the same barrow the Black Axes just sealed?
+          The supernatural is connecting to the band's actions. Lump's
+          dog becomes a recurring presence.
+        word_target: 4000
+
+      # --- Chapter 12 ---
+      - chapter: 12
+        title: "Coin and Road"
+        template: "CHAP_POLITICS"
+        time: "Y312, Days 54-60"
+        weather_week: 8
+        location: "Blackpine Wilds to Deepholm road"
+        pov: "Gest"
+        summary: >-
+          Sigrun's Compact needs an armed escort for a large coin transfer
+          to Stonebay Hamlet. Voss accepts — 20 silver and a contact inside
+          the Compact's trade network. The march south toward Deepholm
+          begins. Gest notices Voss's sword arm stiffening in the cold —
+          an old wound worsening, though Voss won't admit it. Heat fades
+          and shadows lengthen. The urgency of harvest preparation is
+          everywhere. The Allthing has been rumoured but not yet proclaimed.
+          Volume ends with the band on the move, paid, alive, and heading
+          toward the political centre of the Rimevegr.
+        events_referenced:
+          - "EVT_312_S20_020" # Compact Coin Shipment
+          - "EVT_312_PER_002" # Voss and the Old Scar
+        npcs_present:
+          - "Voss"
+          - "Gest"
+          - "Kell"
+          - "Petra"
+          - "Lump"
+          - "Bjorn"
+        character_beats:
+          gest: >-
+            Watches Voss drill alone at dawn. The overhead cuts are slower
+            than last year. Voss favours his left side. Gest asks if it's
+            the cold. Voss says yes. It is peak summer. Neither mentions
+            this again.
+          lump: >-
+            Two months as a free man. He walks differently — shoulders
+            back, head up, at least when nobody's watching. The thrall
+            flinch is still there but it's losing ground.
+          kell: >-
+            Quiet on the march. Calculating. He owes more than he can
+            pay on his current share.
+        band_state:
+          morale: 5
+          treasury: 95
+          food_days: 12
+        hooks: >-
+          The Allthing is coming. Voss is aging. Kell's debt is growing.
+          Petra's sister needs her. The band is heading south into the
+          heart of the political storm.
+        word_target: 4500
+
+  # ================================================================
+  # VOLUME 2 — THE ALLTHING
+  # Summer/Autumn Y312. Politics, rivalry, escalation.
+  # 13 chapters, Days 61-150.
+  # ================================================================
+
+  volume_2:
+    title: "The Allthing"
+    time_span: "Y312, Harvest through First Frost (Days 61-150)"
+    central_conflict: "The Rimevegr's three factions converge at the
+      Allthing. Everyone wants the Black Axes on their side. Voss must
+      choose — or dodge — while the Bone Pack challenges his route and
+      Kell's debts rot the band from within."
+    contract_arc: "Guard the Allthing (Sigrun, 40 silver) → Garrison
+      Thornwall (50 silver + winter hall)"
+    political_arc: "Allthing convenes and fails to resolve Iron Grip
+      expansion. Ordovast demands recognition. Sigrun leverages trade.
+      The Widow brokers deals in shadows. All three court the Black Axes."
+    supernatural_arc: "Barrow stench on the coast road. Things moving
+      underground. Dalla's second prediction — early winter."
+    band_state_open:
+      morale: 5
+      reputation: 4
+      treasury: 95
+      members: 14
+      food_days: 12
+      location: "Deepholm road"
+    band_state_close:
+      morale: 3
+      reputation: 5
+      treasury: 70
+      members: 14
+      food_days: 6
+      location: "Thornwall"
+
+    chapters:
+      # --- Chapter 13 ---
+      - chapter: 13
+        title: "The Proclamation"
+        template: "CHAP_MARCH"
+        time: "Y312, Days 61-64"
+        weather_week: 9
+        location: "Deepholm road"
+        pov: "Lump"
+        summary: >-
+          The band reaches the Deepholm road as Sigrun formally proclaims
+          the Allthing. Morning fogs roll off the moors. A hot wind drops
+          river levels — fording points appear where none have been in
+          living memory. Lump sees Deepholm's walls for the first time
+          and is awed by the size. Dalla dreams of a black river flowing
+          from every barrow — the news reaches the band through a
+          terrified trader.
+        events_referenced:
+          - "EVT_312_U01_021" # Allthing Proclaimed
+          - "EVT_312_U02_022" # Hot Wind Dries Rivers
+          - "EVT_312_U03_023" # Dalla Dreams of a Black River
+        npcs_present:
+          - "Voss"
+          - "Gest"
+          - "Lump"
+          - "Thorne"
+          - "Bjorn"
+        character_beats:
+          lump: >-
+            First time seeing a real settlement — walls, gates, harbour.
+            Frostfjord was a village. Deepholm is a town. He stares.
+            Someone laughs. He stops staring.
+          thorne: >-
+            The news about Dalla's vision makes his skin crawl. His scars
+            tingle. He says nothing.
+        band_state:
+          morale: 5
+          treasury: 95
+          food_days: 11
+        hooks: >-
+          The Allthing approaches. Supernatural dread spreading. Rivers
+          are low — easy crossing, but omens.
+        word_target: 4000
+
+      # --- Chapter 14 ---
+      - chapter: 14
+        title: "Fieldwick Wolves"
+        template: "CHAP_POLITICS"
+        time: "Y312, Days 65-70"
+        weather_week: 9
+        location: "Deepholm"
+        pov: "Gest"
+        summary: >-
+          The band delivers Sigrun's coin shipment and collects 20 silver.
+          While resupplying in Deepholm, Gest hears that Three Wolves are
+          extorting Feldwick merchants. A herdsman has vanished near
+          Kolvik's barrow — his dog found whining at the capstone, the
+          man gone without trace. Sigrun offers 40 silver to guard the
+          Allthing. Voss considers. Gest writes down both the pay and
+          the political cost of working for any one faction.
+        events_referenced:
+          - "EVT_312_U04_024" # Three Wolves Demand Feldwick Taxes
+          - "EVT_312_U05_025" # Contract: Guard the Allthing
+          - "EVT_312_SUP_004" # Herdsman Vanishes near Kolvik
+        npcs_present:
+          - "Gest"
+          - "Voss"
+          - "Kell"
+          - "Petra"
+        character_beats:
+          gest: >-
+            Runs the numbers. Guarding the Allthing pays well and builds
+            Compact reputation, but paints a target if Iron Grip wins.
+            He presents both sides to Voss without recommendation.
+          voss: >-
+            Studies the offer. Takes a day to decide. Asks Gest what the
+            treasury needs. The answer determines the contract.
+          petra: >-
+            Asks about routes south. Her sister's letter weighs on her.
+            Deepholm is the closest she's been to the southern settlements.
+        band_state:
+          morale: 5
+          treasury: 110 # coin delivery completed
+          food_days: 12
+        hooks: >-
+          Three Wolves expanding — future conflict. The Kolvik vanishing
+          deepens the supernatural thread. Allthing contract decision.
+        word_target: 4000
+
+      # --- Chapter 15 ---
+      - chapter: 15
+        title: "Old Ghosts"
+        template: "CHAP_PERSONAL"
+        time: "Y312, Days 71-74"
+        weather_week: 10
+        location: "Skaldhaven to Deepholm"
+        pov: "Lump"
+        summary: >-
+          Passing through Skaldhaven on the way to the Allthing grounds,
+          Voss spots a one-armed man he recognises from his early fighting
+          days. The man avoids eye contact. Voss goes silent for the
+          rest of the day. Lump sees the captain's mask slip for the first
+          time — whatever Voss's past holds, it still has teeth. The band
+          arrives at the Allthing grounds and begins setting up their
+          camp in the designated area.
+        events_referenced:
+          - "EVT_312_U06_026" # Ash Past: Old Comrade at Skaldhaven
+        npcs_present:
+          - "Voss"
+          - "Lump"
+          - "Gest"
+          - "Thorne"
+        character_beats:
+          lump: >-
+            Watches Voss after the encounter. The captain looks old for
+            the first time. Lump understands: everyone carries something.
+            Free men just hide it better than thralls.
+          voss: >-
+            The one-armed man is a ghost from a campaign Voss would rather
+            forget. The debt from that time is still unpaid.
+        band_state:
+          morale: 5
+          treasury: 105
+          food_days: 11
+        hooks: >-
+          Voss's past introduced. The one-armed man will matter later.
+          Allthing about to begin.
+        word_target: 3500
+
+      # --- Chapter 16 ---
+      - chapter: 16
+        title: "The Gathering"
+        template: "CHAP_FEAST"
+        time: "Y312, Days 75-76"
+        weather_week: 10
+        location: "Deepholm, Allthing grounds"
+        pov: "Lump"
+        summary: >-
+          The Allthing convenes. All factions gather — Ordovast with armed
+          retainers, Sigrun with trade delegates, the Pale Widow a small
+          figure flanked by quiet men. Ordovast demands formal recognition
+          of Iron Grip borders. Sigrun counters with trade rights. The
+          Widow watches. A brawl erupts between Grimholt retainers and
+          Deepholm dock workers — two injured. The Black Axes keep the
+          peace. Lump breaks up a fight for the first time, using size
+          rather than skill.
+        events_referenced:
+          - "EVT_312_U07_027" # Allthing Convenes
+          - "EVT_312_U08_028" # Allthing Brawl
+        npcs_present:
+          - "Voss"
+          - "Gest"
+          - "Lump"
+          - "Bjorn"
+          - "Kell"
+          - "Ordovast"
+          - "Sigrun"
+          - "Pale Widow"
+        character_beats:
+          lump: >-
+            Grabs a Grimholt retainer by the collar and holds him off
+            the ground until the fight drains out of him. Pure strength,
+            no technique. The retainer swears at him. Lump puts him down
+            gently. Voss nods once.
+          voss: >-
+            Reads the political room. Ordovast is overreaching. Sigrun
+            is calculating. The Widow is the most dangerous person here
+            and she's barely said a word.
+        band_state:
+          morale: 5
+          treasury: 105
+          food_days: 10
+        hooks: >-
+          The three-way political contest is now visible. Lump's strength
+          is noticed. The brawl is a preview of the war that's coming.
+        word_target: 5000
+
+      # --- Chapter 17 ---
+      - chapter: 17
+        title: "Ring and Mead"
+        template: "CHAP_FEAST"
+        time: "Y312, Days 77-80"
+        weather_week: 11
+        location: "Deepholm, Allthing grounds"
+        pov: "Gest"
+        summary: >-
+          Bjorn wins the wrestling match at the Allthing ring — defeats
+          a Grimholt champion. The band's reputation rises. The Widow
+          brokers a hidden deal with Sigrun: intelligence for pine tar
+          rights. Gest records the band's accounts and hears gossip
+          that reveals the Widow's network is larger than anyone thought.
+          Kell borrows 5 silver from Rolf to cover part of his debt —
+          the web of IOUs grows.
+        events_referenced:
+          - "EVT_312_U09_029" # Bjorn Wins Wrestling Match
+          - "EVT_312_U10_030" # Widow Brokers Hidden Deal
+          - "EVT_312_U12_032" # Kell Borrows from Rolf
+        npcs_present:
+          - "Gest"
+          - "Bjorn"
+          - "Kell"
+          - "Rolf"
+          - "Voss"
+        character_beats:
+          gest: >-
+            Notes the wrestling victory in the ledger — reputation has
+            value, even if you can't spend it. Also notes Kell's loan
+            from Rolf. The numbers are starting to tell a bad story.
+          kell: >-
+            Borrows from Rolf with false confidence. "I'll have it back
+            by month's end." He won't.
+          bjorn: >-
+            Fights clean and fast. Celebrates briefly. First time the
+            band has genuine reason to cheer.
+        band_state:
+          morale: 5
+          treasury: 140 # Allthing guard pay (40) received
+          food_days: 10
+        hooks: >-
+          Reputation rising but Kell's debts are a bomb. The Widow's
+          intelligence network is deeper than assumed. Autumn storms
+          on the horizon.
+        word_target: 4000
+
+      # --- Chapter 18 ---
+      - chapter: 18
+        title: "Coast Road"
+        template: "CHAP_MARCH"
+        time: "Y312, Days 81-90"
+        weather_week: 12
+        location: "Deepholm to Stonebay to Thornwall"
+        pov: "Lump"
+        summary: >-
+          The Allthing ends without resolution. The band marches toward
+          Thornwall along the coast road. A rank, sweet smell of decay
+          hangs over the route near Stonebay — no source visible. Barrow
+          stench. The Hollow Hall's nine starving fighters arrive at
+          Thornwall begging sanctuary. A summer storm wrecks Kolvik's
+          fishing fleet. The first snow appears on the peaks. Rime coats
+          the barrow stones. Winter is announcing itself.
+        events_referenced:
+          - "EVT_312_U11_031" # Barrow Stench on the Coast Road
+          - "EVT_312_U13_033" # Hollow Hall Begs Sanctuary
+          - "EVT_312_U14_034" # Summer Storm Wrecks Fishing Fleet
+        npcs_present:
+          - "Lump"
+          - "Voss"
+          - "Gest"
+          - "Thorne"
+          - "Petra"
+        character_beats:
+          lump: >-
+            The barrow stench sickens him. His dog whines and won't walk
+            the road until Lump carries it. Something wrong underneath
+            the ground. Even a former thrall with no wyrd sense feels it.
+          thorne: >-
+            His scars ache the entire length of the coast road. He walks
+            with his hand on his axe, watching the barrow mounds.
+          petra: >-
+            Looks south at every crossroads. Her sister is that direction.
+            The band is going northwest. The distance grows.
+        band_state:
+          morale: 4 # long march, bad omens
+          treasury: 125
+          food_days: 8
+        hooks: >-
+          The supernatural is now impossible to ignore. Hollow Hall's
+          collapse shows what happens to bands that fail. Winter is
+          coming early.
+        word_target: 4500
+
+      # --- Chapter 19 ---
+      - chapter: 19
+        title: "The Grave Wardens"
+        template: "CHAP_BARROW"
+        time: "Y312, Days 91-98"
+        weather_week: 13
+        location: "Icebreak"
+        pov: "Lump"
+        summary: >-
+          Word reaches the band: the Grave Wardens have unsealed a tomb
+          near Icebreak and found the corpse sitting upright with open
+          eyes. The Red Tide raids a coastal farm near Bleakwater.
+          Thorne is confronted in a tavern by a scarred stranger who
+          says the blood-price stands. Voss orders a detour to Icebreak
+          to meet the Grave Wardens and assess the barrow situation.
+          What they find chills even Voss: every barrow the Wardens
+          have checked this season shows signs of activity.
+        events_referenced:
+          - "EVT_312_U15_035" # Grave Wardens Discover Old Tomb
+          - "EVT_312_U16_036" # Red Tide Raids Coastal Farm
+          - "EVT_312_U17_037" # Thorne Confronted by Stranger
+        npcs_present:
+          - "Lump"
+          - "Voss"
+          - "Thorne"
+          - "Gest"
+        character_beats:
+          lump: >-
+            Sees the sitting corpse. Its eyes are open but there is no
+            light in them — yet. He has nightmares for three nights. The
+            dog sleeps pressed against him.
+          thorne: >-
+            The stranger's words — "the blood-price stands" — mean
+            Thorne's old crime has not been forgotten. He has limited
+            time before legal violence finds him.
+          voss: >-
+            Concerned. The barrows are waking across the Rimevegr. This
+            is bigger than any single contract.
+        band_state:
+          morale: 3 # fear, hard travel, thorne's trouble
+          treasury: 115
+          food_days: 7
+        hooks: >-
+          The supernatural threat is now confirmed systemic. Thorne's
+          blood-debt collector is approaching. Red Tide active on the
+          coast — competition and danger.
+        word_target: 5000
+
+      # --- Chapter 20 ---
+      - chapter: 20
+        title: "Scouts in the Fog"
+        template: "CHAP_POLITICS"
+        time: "Y312, Days 99-112"
+        weather_week: 14
+        location: "Thornwall"
+        pov: "Gest"
+        summary: >-
+          The band reaches Thornwall. Ordovast's scouts are spotted
+          mapping trails south of Deepholm — Sigrun sends a formal
+          protest. The heatwave dries wells and forces water rationing.
+          Voss is offered the garrison contract: 50 silver plus a winter
+          hall for thirty days through first frost. Gest runs the numbers
+          — they need the shelter. Midsummer feast at Ashen Reach draws
+          intelligence. The Pale Widow invites band captains. Voss sends
+          Gest instead.
+        events_referenced:
+          - "EVT_312_U18_038" # Ordovast's Scouts at Deepholm Border
+          - "EVT_312_U19_039" # Heatwave Dries Wells
+          - "EVT_312_U20_040" # Midsummer Feast at Ashen Reach
+          - "EVT_312_A05_045" # Voss Offered Garrison Contract
+        npcs_present:
+          - "Gest"
+          - "Voss"
+          - "Kell"
+          - "Pale Widow"
+        character_beats:
+          gest: >-
+            Attends the Widow's feast as Voss's representative. Eats
+            little, drinks less, listens to everything. The Widow is
+            charming and terrifying. He reports back: she knows more
+            than she should about everyone.
+          voss: >-
+            Accepts the garrison contract. Winter is coming. The band
+            needs walls.
+          kell: >-
+            Relieved by the garrison decision — a roof means safety.
+            But also proximity to gambling and drink.
+        band_state:
+          morale: 4 # garrison contract brings relief
+          treasury: 120
+          food_days: 9
+        hooks: >-
+          Garrisoned at Thornwall — safety but also a cage. Iron Grip
+          scouts mean war is approaching. The Widow is playing everyone.
+        word_target: 4500
+
+      # --- Chapter 21 ---
+      - chapter: 21
+        title: "Harvest"
+        template: "CHAP_CAMP"
+        time: "Y312, Days 113-125"
+        weather_week: 16
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          The harvest begins across the Rimevegr. Thornwall brings in
+          what it can. Lump helps with the labour — his thrall skills
+          are actually useful here. He digs, hauls, and threshes better
+          than any fighter. For once his background is an asset, not a
+          shame. Ordovast demands a one-tenth grain tithe from Iron Grip
+          settlements. Dalla predicts early winter from Ashen Reach —
+          three weeks early, the harshest in a decade. The first major
+          blizzard — the Grey Hammer — buries the region.
+        events_referenced:
+          - "EVT_312_A01_041" # Harvest Begins
+          - "EVT_312_A02_042" # Ordovast Demands Grain Tithe
+          - "EVT_312_A04_044" # Dalla Predicts Early Winter
+        npcs_present:
+          - "Lump"
+          - "Gest"
+          - "Petra"
+          - "Rolf"
+          - "Voss"
+        character_beats:
+          lump: >-
+            The named men watch him work the harvest with genuine skill.
+            First time his thrall-learned abilities earn respect rather
+            than pity. Bjorn says, "He's worth two of us at this." Lump
+            doesn't smile, but he stands a little straighter.
+          petra: >-
+            Works silently and efficiently. Her mind is south with her
+            sister. Second letter hasn't come yet but she checks every
+            peddler.
+        band_state:
+          morale: 4
+          treasury: 110
+          food_days: 10
+        hooks: >-
+          Dalla's prediction — if true, the band is in trouble. Grain
+          tithe strains the settlements' ability to feed anyone over
+          winter. The Grey Hammer hits early.
+        word_target: 4000
+
+      # --- Chapter 22 ---
+      - chapter: 22
+        title: "Bone Challenge"
+        template: "CHAP_BATTLE"
+        time: "Y312, Days 126-140"
+        weather_week: 18
+        location: "Ashmark"
+        pov: "Lump"
+        summary: >-
+          The Bone Pack captain sends a formal challenge: single combat
+          for rights to the Ashmark patrol route. Voss accepts — he
+          cannot refuse without losing face. The band marches to Ashmark
+          in freezing fog. The fight is brutal and close. Voss wins but
+          takes a cut to his bad arm. Kell is confronted by Gest about
+          the missing silver — he lies, saying a pickpocket took it.
+          The first frost hits exactly as Dalla predicted, killing late
+          crops.
+        events_referenced:
+          - "EVT_312_A06_046" # Bone Pack Challenges Black Axes
+          - "EVT_312_A07_047" # First Frost
+          - "EVT_312_A14_054" # Kell Confronted by Gest
+        npcs_present:
+          - "Lump"
+          - "Voss"
+          - "Gest"
+          - "Kell"
+          - "Bone Pack Captain"
+        character_beats:
+          lump: >-
+            Watches the single combat from the front row. He has never
+            seen two men try to kill each other at close range. The
+            sounds are wrong — wet, hollow, nothing like the sagas.
+            When Voss wins, Lump feels relief he didn't expect.
+          voss: >-
+            Fights with his old instincts but the bad arm costs him
+            speed. Wins on experience and will. The cut is not serious
+            but the message is: he's slowing down.
+          kell: >-
+            Lies to Gest's face. The lie is obvious. Gest lets it hang
+            in the air. The trust between them cracks.
+        band_state:
+          morale: 4 # victory, but frost and internal tension
+          treasury: 100
+          food_days: 7
+        hooks: >-
+          Voss is aging and wounded. Kell's lie to Gest damages the
+          band's internal trust. Early frost means lean winter.
+        word_target: 5000
+
+      # --- Chapter 23 ---
+      - chapter: 23
+        title: "Sinkhole"
+        template: "CHAP_BARROW"
+        time: "Y312, Days 141-150"
+        weather_week: 19
+        location: "Feldwick"
+        pov: "Lump"
+        summary: >-
+          A sinkhole opens in a field east of Feldwick, revealing carved
+          stone steps leading into darkness. The Three Wolves expand their
+          patrols south of Feldwick, encroaching on Black Axes territory.
+          Petra's second letter arrives — more desperate, men came asking
+          about her by name. Grain prices spike at Deepholm. Voss decides
+          not to investigate the Feldwick barrow — they're stretched too
+          thin. The decision haunts him.
+        events_referenced:
+          - "EVT_312_A08_048" # Barrow Opens near Feldwick
+          - "EVT_312_A09_049" # Three Wolves Expand Territory
+          - "EVT_312_A10_050" # Petra's Sister Sends Second Letter
+          - "EVT_312_A11_051" # Grain Prices Spike at Deepholm
+        npcs_present:
+          - "Lump"
+          - "Petra"
+          - "Voss"
+          - "Gest"
+          - "Thorne"
+        character_beats:
+          lump: >-
+            Sees the sinkhole. The carved steps are too regular, too
+            deliberate. Something was meant to stay down there. He
+            thinks of the Whispering Barrow and does not volunteer
+            to go below.
+          petra: >-
+            The second letter breaks her. She goes to Voss directly
+            and asks for leave. Voss says he can't spare her before
+            winter. She doesn't argue. She doesn't need to — the
+            silence says everything.
+        band_state:
+          morale: 3
+          treasury: 70 # grain prices eating treasury
+          food_days: 6
+        hooks: >-
+          Volume 2 ends with multiple crises converging: Petra's
+          desperation, Kell's debt, barrows opening, food running
+          short, Three Wolves encroaching, war on the horizon. The
+          band is garrisoned at Thornwall facing the longest winter
+          any of them can remember.
+        word_target: 5000
+
+      # --- Chapter 24 & 25 (transitional) ---
+      - chapter: 24
+        title: "Ledger Ink"
+        template: "CHAP_PERSONAL"
+        time: "Y312, Day 150"
+        weather_week: 20
+        location: "Thornwall"
+        pov: "Gest"
+        summary: >-
+          End-of-volume coda. Gest alone with the ledger. He tallies
+          the season: contracts completed, silver earned and spent,
+          food consumed, wounds taken, morale shifts. The numbers say
+          the band survived spring and summer, but winter will be the
+          trial. He writes a private note in the margin: "Kell is lying.
+          Petra is leaving. Voss is slowing. The barrows are waking. I
+          am running out of ink." Volume 2 closes on the scratch of his
+          quill.
+        events_referenced:
+          - "EVT_312_A12_052" # Widow Exposes Iron Grip Spy (background)
+        npcs_present:
+          - "Gest"
+        character_beats:
+          gest: >-
+            The ledger is his confession. The numbers are honest even
+            when the men aren't. He sees every fault line in the band
+            and writes them down because writing them down is the only
+            control he has.
+        band_state:
+          morale: 3
+          treasury: 70
+          food_days: 6
+        hooks: >-
+          The ledger's final margin note is the reader's bridge into
+          Volume 3. Every problem named here will explode in winter.
+        word_target: 3000
+
+  # ================================================================
+  # VOLUME 3 — THE LONG DARK
+  # Late Autumn/Winter Y312. Survival, supernatural stirring, war.
+  # 13 chapters, Days 150-360.
+  # ================================================================
+
+  volume_3:
+    title: "The Long Dark"
+    time_span: "Y312, First Frost through Spring Thaw (Days 150-360)"
+    central_conflict: "Winter presses down. The band hibernates at
+      Thornwall while war grinds south. Kell cracks. Thorne faces
+      holmgang. The barrows open. On midwinter night, the Veil tears.
+      Can the Black Axes survive the longest dark?"
+    contract_arc: "Thornwall garrison (ongoing) → Grave Wardens aid
+      request → survival becomes the contract"
+    political_arc: "Iron Grip marches on Deepholm. Sigrun calls for
+      allies. The Widow seizes Kolvik and Stonebay in the chaos. By
+      spring the map has changed."
+    supernatural_arc: "Barrow mounds split open. The dead walk. Midwinter
+      night — every barrow in the Rimevegr glows. Dalla's final vision
+      announces the old war returning."
+    band_state_open:
+      morale: 3
+      reputation: 5
+      treasury: 70
+      members: 14
+      food_days: 6
+      location: "Thornwall"
+    band_state_close:
+      morale: 2
+      reputation: 5
+      treasury: 35
+      members: 13 # Kell fled or was punished
+      food_days: 3
+      location: "Thornwall"
+
+    chapters:
+      # --- Chapter 25 ---
+      - chapter: 25
+        title: "Short Days"
+        template: "CHAP_SURVIVAL"
+        time: "Y312, Days 151-165"
+        weather_week: 21
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          Winter hits hard. The rime storm — ice pellets the size of
+          fingernails — kills livestock in exposed pens at Moor's End.
+          The band hunkers in Thornwall's garrison hall. Rationing
+          begins. Lump's dog shivers beside him. The fog settles in
+          the valleys and does not lift. The Veil feels close — dogs
+          whimper at barrow-facing doors. The Widow exposes an Iron
+          Grip spy in Kolvik. Red Tide blockades the coastal path.
+          The world is closing in.
+        events_referenced:
+          - "EVT_312_A13_053" # Red Tide Blockades Coastal Path
+          - "EVT_312_A15_055" # Fog Blankets the Moor
+        npcs_present:
+          - "Lump"
+          - "Voss"
+          - "Kell"
+          - "Gest"
+          - "Rolf"
+        character_beats:
+          lump: >-
+            Winter garrison is familiar territory — the close quarters,
+            the rationing, the waiting. This is what thralldom trained
+            him for. He's better at surviving scarcity than any fighter
+            here. He rations his food carefully and sneaks scraps to
+            the dog.
+          kell: >-
+            Trapped in Thornwall with his debts and his lies. He drinks.
+            The walls close in.
+        band_state:
+          morale: 3
+          treasury: 65
+          food_days: 5
+        hooks: >-
+          Winter isolation. Kell deteriorating. Coastal paths blocked.
+          The Veil thinning.
+        word_target: 4000
+
+      # --- Chapter 26 ---
+      - chapter: 26
+        title: "Blood-Price"
+        template: "CHAP_PERSONAL"
+        time: "Y312, Days 166-180"
+        weather_week: 23
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          Ordovast proposes an alliance to Voss — a Grimholt emissary
+          arrives with a formal offer: 60 silver per month, winter
+          shelter, but under Ordovast's command. Voss refuses. The Grave
+          Wardens send word: the dead are stirring in every barrow they
+          have checked. Thorne's blood-debt collector arrives at Thornwall
+          with three fighters and legal writs, asking for Thorne by name.
+          Voss must decide whether to shield his man or let the law
+          take him.
+        events_referenced:
+          - "EVT_312_A16_056" # Grave Wardens Warn of Unquiet Dead
+          - "EVT_312_A17_057" # Ordovast Proposes Alliance to Voss
+          - "EVT_312_A19_059" # Thorne's Blood-Debt Collector Arrives
+        npcs_present:
+          - "Lump"
+          - "Voss"
+          - "Thorne"
+          - "Gest"
+          - "Blood-debt collectors"
+        character_beats:
+          lump: >-
+            Watches Voss weigh Thorne's life against the band's safety.
+            This is not thrall-thinking — this is the calculus of command.
+            Lump begins to understand what freedom costs when other
+            people depend on you.
+          thorne: >-
+            Faces his past. The burn scars on his arms are from the fire
+            that started his blood-debt. He tells Voss the truth — or
+            most of it.
+          voss: >-
+            Shields Thorne. Tells the collectors the band will settle
+            the blood-price at the next Allthing — buying time. The
+            collectors accept, barely.
+        band_state:
+          morale: 3
+          treasury: 60
+          food_days: 5
+        hooks: >-
+          Thorne saved for now but the clock is ticking. Ordovast's
+          offer refused — consequences coming. The dead are stirring
+          everywhere.
+        word_target: 5000
+
+      # --- Chapter 27 ---
+      - chapter: 27
+        title: "Ledger Red"
+        template: "CHAP_CRISIS"
+        time: "Y312, Days 181-195"
+        weather_week: 25
+        location: "Thornwall"
+        pov: "Gest"
+        summary: >-
+          The harvest festival at Stonebay is a thin affair. Gest reviews
+          the ledger under candlelight: food stores dwindling, silver
+          reserves dropping, morale fragile. Rolf sharpens his axe in
+          silence and says he dreams of barrows. Sleet storm hammers
+          the northern coast — exposed bands lose equipment. Dalla
+          collapses in the Ashen Reach market, eyes white, muttering
+          names of the dead. Food hoarding begins at Grimholt. Gest
+          writes: "We are in the red."
+        events_referenced:
+          - "EVT_312_A18_058" # Harvest Festival at Stonebay
+          - "EVT_312_A20_060" # Sleet Storm Hits Northern Coast
+          - "EVT_312_A21_061" # Dalla Collapses in the Market
+          - "EVT_312_A22_062" # Food Hoarding at Grimholt
+          - "EVT_312_A23_063" # Rolf Sharpens His Axe in Silence
+        npcs_present:
+          - "Gest"
+          - "Rolf"
+          - "Voss"
+          - "Kell"
+        character_beats:
+          gest: >-
+            The numbers are closing like a vice. He calculates how many
+            days the band can survive at current consumption. The answer
+            is not enough. He tells Voss. Voss says "then we eat less."
+          rolf: >-
+            Something is wrong with Rolf. He's always been quiet but
+            now he's somewhere else. The barrow dreams are changing him.
+        band_state:
+          morale: 2
+          treasury: 50
+          food_days: 4
+        hooks: >-
+          Rolf's barrow dreams — is the supernatural reaching into the
+          band? Food crisis accelerating. Dalla's public collapse means
+          the supernatural can't be denied.
+        word_target: 4500
+
+      # --- Chapter 28 ---
+      - chapter: 28
+        title: "Snow and Iron"
+        template: "CHAP_SURVIVAL"
+        time: "Y312, Days 196-215"
+        weather_week: 27
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          Heavy snowfall buries the Thornstead palisade gate. The band
+          digs out. First snow falls heavy across the region — travel
+          between settlements slows to a crawl. Ordovast mobilises his
+          war-band: sixty armed men from Grimholt and Raven's Perch.
+          Purpose unclear. Sigrun arms Deepholm's trade guilds in
+          response. War is coming. The Widow offers Voss a sealed
+          intelligence packet — Iron Grip troop positions and supply
+          routes, free of charge. Voss takes it and wonders what
+          the price really is.
+        events_referenced:
+          - "EVT_312_W01_064" # First Snow Falls Heavy
+          - "EVT_312_W02_065" # Ordovast Mobilises War-Band
+          - "EVT_312_W03_066" # Fjord Compact Arms Traders
+          - "EVT_312_W04_067" # Widow Offers Intelligence to Voss
+        npcs_present:
+          - "Lump"
+          - "Voss"
+          - "Gest"
+          - "Thorne"
+        character_beats:
+          lump: >-
+            Excels at the manual work of winter survival — digging snow,
+            splitting wood, rationing stores. The fighters respect his
+            endurance now. He's not a fighter, but he keeps the camp
+            alive. Different kind of value.
+          voss: >-
+            Accepts the Widow's intelligence but doesn't act on it.
+            Keeps it sealed. If war comes, he wants to be able to
+            choose sides, not be chosen.
+        band_state:
+          morale: 2
+          treasury: 45
+          food_days: 4
+        hooks: >-
+          War mobilisation. The Widow's gift — intelligence or trap?
+          Snow isolates the band.
+        word_target: 4500
+
+      # --- Chapter 29 ---
+      - chapter: 29
+        title: "Kell Runs"
+        template: "CHAP_CRISIS"
+        time: "Y312, Days 228-240"
+        weather_week: 31
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          A blizzard traps the band. In its aftermath, the barrow mound
+          at Vargheim splits open from within — barefoot tracks lead
+          away in the snow. Kell, pushed past breaking by debt and fear,
+          packs his kit at midnight and heads for the tree line. Lump
+          is on watch. He sees Kell go. A decision: raise the alarm or
+          let a desperate man flee. He raises the alarm. Kell is dragged
+          back. Voss must decide punishment. Kell is found with 12 silver
+          from the treasury.
+        events_referenced:
+          - "EVT_312_W05_068" # Blizzard Traps Travellers
+          - "EVT_312_W06_069" # Barrow Mound Split Open
+          - "EVT_312_W07_070" # Kell Attempts to Flee
+        npcs_present:
+          - "Lump"
+          - "Kell"
+          - "Voss"
+          - "Gest"
+          - "Thorne"
+        character_beats:
+          lump: >-
+            The hardest choice of his free life. Kell was kind to him
+            once — shared a fire, didn't call him thrall. But the band
+            is the only thing keeping Lump alive. He raises the alarm
+            and hates himself for it. This is the cost of belonging.
+          kell: >-
+            Broken. The debts, the wound, the winter, the fear. He
+            didn't plan the theft — he was just running. The 12 silver
+            was in his pack because he'd been hiding it from Gest for
+            weeks. Everything comes out.
+          voss: >-
+            No rage. Cold assessment. The band is watching. Whatever he
+            does defines the rules for every man here. Mercy is weakness.
+            Cruelty is poison. He chooses a middle path.
+        band_state:
+          morale: 2
+          treasury: 35 # recovered stolen silver, but expenses
+          food_days: 3
+        hooks: >-
+          Kell's fate — expelled from the band into the winter, or
+          punished and kept? Either way, the band is shaken. The Vargheim
+          barrow has opened. The dead are physically walking.
+        word_target: 5000
+
+      # --- Chapter 30 ---
+      - chapter: 30
+        title: "Holmgang"
+        template: "CHAP_BATTLE"
+        time: "Y312, Days 241-255"
+        weather_week: 33
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          Deep cold kills livestock across the region — Moor's End loses
+          half its sheep. Thorne's blood-debt collector formally challenges
+          him to holmgang on Day 255. The law is clear: refusal means
+          outlawry. Thorne fights. The duel is held in the snow outside
+          Thornwall's walls. Both men bleed. Thorne wins but barely —
+          the collector dies in the snow. The Grave Wardens send a
+          desperate plea: they need fighters to seal a barrow at Icebreak
+          before midwinter. Voss can't spare the men.
+        events_referenced:
+          - "EVT_312_W09_072" # Thorne Challenged to Holmgang
+          - "EVT_312_W10_073" # Deep Cold Kills Livestock
+          - "EVT_312_W11_074" # Grave Wardens Request Aid
+        npcs_present:
+          - "Lump"
+          - "Thorne"
+          - "Voss"
+          - "Gest"
+          - "Rolf"
+        character_beats:
+          lump: >-
+            Watches the holmgang from start to finish. This is different
+            from the Bone Pack challenge — this is law, not rivalry.
+            Thorne could die here and it would be legal. The brutality
+            of free men's justice shocks him more than the barrow dead.
+          thorne: >-
+            Fights with everything he has. When the collector falls,
+            Thorne stands over him and says nothing. The blood-debt is
+            paid. His burn scars stop aching for the first time in
+            months.
+          voss: >-
+            Watches cold-eyed. If Thorne dies, the band loses a good
+            fighter. If Thorne wins, the past is settled. Either way,
+            Voss cannot intervene. This is the law.
+        band_state:
+          morale: 3 # victory in holmgang lifts spirits briefly
+          treasury: 35
+          food_days: 3
+        hooks: >-
+          Thorne's arc resolved — debt paid in blood. But the Grave
+          Wardens' plea ignored. That will have consequences. Winter
+          deepening. Iron Grip marching.
+        word_target: 5000
+
+      # --- Chapter 31 ---
+      - chapter: 31
+        title: "March South"
+        template: "CHAP_POLITICS"
+        time: "Y312, Days 256-270"
+        weather_week: 35
+        location: "Thornwall"
+        pov: "Gest"
+        summary: >-
+          Iron Grip marches south. Ordovast leads forty men toward
+          Deepholm with siege equipment. Sigrun sends riders to every
+          unaligned band: fight for the Compact, 80 silver plus a winter
+          hall. The Three Wolves offer a non-aggression pact — stay out
+          of their territory and they'll stay out of the Axes'. Voss
+          studies the Widow's intelligence packet. The map of power is
+          shifting under the snow.
+        events_referenced:
+          - "EVT_312_W12_075" # Iron Grip Marches South
+          - "EVT_312_W13_076" # Sigrun Calls for Allies
+          - "EVT_312_W14_077" # Three Wolves Offer Non-Aggression Pact
+        npcs_present:
+          - "Gest"
+          - "Voss"
+          - "Bjorn"
+          - "Rolf"
+        character_beats:
+          gest: >-
+            Maps the political situation for Voss. Three offers on the
+            table: Sigrun's alliance, Ordovast's standing offer
+            (rejected), and the Wolves' pact. Each has a price. Gest
+            presents the numbers. Voss stares at the fire.
+          voss: >-
+            The choice defines Y313. Accept Sigrun's call and the band
+            fights a war they didn't start. Accept the Wolves' pact
+            and they're neutral — safe but small. Refuse everything
+            and weather the storm alone. He doesn't decide yet.
+        band_state:
+          morale: 2
+          treasury: 35
+          food_days: 3
+        hooks: >-
+          War has begun. The band must choose sides or try to stay
+          clear. Each option carries lethal risk.
+        word_target: 4000
+
+      # --- Chapter 32 ---
+      - chapter: 32
+        title: "Midwinter Night"
+        template: "CHAP_BARROW"
+        time: "Y312, Day 280"
+        weather_week: 37
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          The longest night. Every barrow in the Rimevegr glows with pale
+          green light. Sleepers wake screaming across six settlements.
+          In Thornwall, Lump's dog howls at the door facing the barrow
+          hills. Thorne's burn scars split open. Rolf stands at the gate
+          staring northeast and will not answer when spoken to. Lump
+          stays up all night with an axe he barely knows how to use and
+          watches the lights on the hills. Nothing comes. But the
+          silence after is worse. Morning breaks grey and the men do not
+          speak of what they saw.
+        events_referenced:
+          - "EVT_312_W15_078" # Midwinter Night — Veil Thinnest
+        npcs_present:
+          - "Lump"
+          - "Thorne"
+          - "Rolf"
+          - "Voss"
+          - "Gest"
+          - "Bjorn"
+        character_beats:
+          lump: >-
+            His first midwinter as a free man. In the thrall-pens they
+            locked the doors on this night. Here he has an axe and the
+            right to stand watch. He's terrified and he doesn't leave
+            his post. The barrow lights are the worst thing he has
+            ever seen, and he has seen bad things.
+          rolf: >-
+            Something has reached into Rolf through the barrow dreams.
+            He stands facing the lights and his eyes are not right.
+            Bjorn has to shake him three times before he comes back.
+          thorne: >-
+            His scars bleed freely. He wraps them and says the old
+            prayers. For the first time, they don't help.
+        band_state:
+          morale: 1 # mass terror
+          treasury: 35
+          food_days: 3
+        hooks: >-
+          The supernatural has announced itself to the entire Rimevegr.
+          Rolf is compromised. The Veil is thin. The old war — whatever
+          Dalla means by that — is beginning.
+        word_target: 5000
+
+      # --- Chapter 33 ---
+      - chapter: 33
+        title: "Siege Smoke"
+        template: "CHAP_POLITICS"
+        time: "Y312, Days 281-300"
+        weather_week: 39
+        location: "Thornwall"
+        pov: "Gest"
+        summary: >-
+          Iron Grip forces camp outside Deepholm's walls. A siege begins.
+          Smoke visible on the southern horizon. The Widow makes her
+          move — while Iron Grip and Compact are locked together, she
+          annexes Kolvik and Stonebay through economic leverage. Voss's
+          old comrade from Skaldhaven is found dead, throat cut. Word
+          reaches the band that someone is murdering Voss's old contacts.
+          The war is now a fact. The band is in the middle.
+        events_referenced:
+          - "EVT_312_W16_079" # Standoff at Deepholm Gates
+          - "EVT_312_W17_080" # Widow Makes Her Move
+          - "EVT_312_W18_081" # Ash Past: Old Comrade Found Dead
+        npcs_present:
+          - "Gest"
+          - "Voss"
+          - "Bjorn"
+          - "Thorne"
+        character_beats:
+          gest: >-
+            Watches Voss receive the news about his dead comrade. The
+            captain's face goes still — the dangerous kind of still.
+            Gest writes: "V. received word of B.'s death. He said nothing.
+            He cleaned his axe."
+          voss: >-
+            The old comrade's murder means someone is cutting off Voss's
+            informal network. Professional. Targeted. Who benefits? The
+            Widow? Ordovast? Both?
+        band_state:
+          morale: 2
+          treasury: 35
+          food_days: 3
+        hooks: >-
+          The siege at Deepholm is the opening shot of Y313's war. The
+          Widow is the real winner of Y312. Voss's past is being erased
+          by violence.
+        word_target: 4500
+
+      # --- Chapter 34 ---
+      - chapter: 34
+        title: "Wolf Night"
+        template: "CHAP_SURVIVAL"
+        time: "Y312, Days 301-320"
+        weather_week: 42
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          Shortest days. Sunlight lasts four hours. Frostbite and despair.
+          A pack of starving wolves ambushes a foraging party — one band
+          member takes a bite wound to the arm. Lump fights wolves for
+          the first time, swinging a hatchet he took from the garrison
+          stores. He kills one wolf and the others scatter. The meat feeds
+          the band for three days. First time Lump draws blood. It's not
+          glory — it's survival.
+        events_referenced:
+          - "EVT_312_W19_082" # Wolves Attack Foraging Party
+          - "EVT_312_W21_084" # The Long Dark Deepens
+        npcs_present:
+          - "Lump"
+          - "Bjorn"
+          - "Rolf"
+          - "Voss"
+        character_beats:
+          lump: >-
+            The wolf kill is his first. Not a man, not a draugr — an
+            animal. But the hatchet in its skull felt right. Competent.
+            He's becoming something new. The fighters don't cheer, but
+            they nod. The wolf meat makes him provider rather than burden.
+          rolf: >-
+            Fights mechanically. His movements are good but his eyes
+            are distant. The barrow dreams have taken something from him.
+          voss: >-
+            Notes Lump's kill. Says nothing aloud. Tells Gest privately:
+            "He'll do."
+        band_state:
+          morale: 2
+          treasury: 35
+          food_days: 4 # wolf meat helps
+        hooks: >-
+          Lump's first kill. Rolf's deterioration. The deepest point
+          of winter — everything that doesn't kill them makes them thinner.
+        word_target: 4500
+
+      # --- Chapter 35 ---
+      - chapter: 35
+        title: "Retreat"
+        template: "CHAP_POLITICS"
+        time: "Y312, Days 321-340"
+        weather_week: 44
+        location: "Thornwall"
+        pov: "Gest"
+        summary: >-
+          Supplies dwindling, Ordovast withdraws north from Deepholm.
+          The siege lasted forty days and gained nothing but starvation.
+          The immediate threat recedes but the damage is done — every
+          faction is now armed, suspicious, and hungry. Gest calculates
+          the band's provisions: they will make it to spring, barely.
+          He reports to Voss. Voss says "barely is enough." It isn't.
+          But it's what they have.
+        events_referenced:
+          - "EVT_312_W20_083" # Iron Grip Retreats
+        npcs_present:
+          - "Gest"
+          - "Voss"
+          - "Bjorn"
+        character_beats:
+          gest: >-
+            The retreat means the war is postponed, not cancelled. He
+            maps the new reality: Iron Grip humiliated, Compact
+            bloodied, Widow expanded. Y313 will be the war year. The
+            ledger says they need three good contracts in spring or
+            they're finished.
+          voss: >-
+            Watches the fire. Planning. The retreat gives him time to
+            choose. He opens the Widow's intelligence packet.
+        band_state:
+          morale: 2
+          treasury: 35
+          food_days: 3
+        hooks: >-
+          War postponed — Y313 will see it resume. The Widow is stronger.
+          Voss is reading the intelligence. The choice is close.
+        word_target: 3500
+
+      # --- Chapter 36 ---
+      - chapter: 36
+        title: "The Old War"
+        template: "CHAP_BARROW"
+        time: "Y312, Days 341-355"
+        weather_week: 46
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          Dalla speaks clearly for the first time in weeks: "The barrows
+          will not sleep again. The old war is coming back." Word travels
+          fast. The supernatural escalation is now public knowledge across
+          the Rimevegr. Rolf walks out of Thornwall at dawn and stands
+          at the barrow hill for an hour. Lump follows him and brings
+          him back. Rolf says: "They know my name." Lump doesn't
+          understand yet. The band is gaunt, hard, stripped down to
+          bone and will.
+        events_referenced:
+          - "EVT_312_W22_085" # Dalla's Final Vision
+        npcs_present:
+          - "Lump"
+          - "Rolf"
+          - "Thorne"
+          - "Voss"
+          - "Gest"
+        character_beats:
+          lump: >-
+            Brings Rolf back from the barrow hill. This is new — Lump
+            as caretaker, not the cared-for. He has crossed a line. He
+            is part of this band now, not a passenger. When Rolf says
+            "they know my name," Lump grips his arm and says "I know
+            your name too."
+          rolf: >-
+            Being pulled toward the barrows. The dreams are becoming
+            commands. He resists because the band is still real and the
+            dead are not, but the margin is shrinking.
+          voss: >-
+            Hears Dalla's prophecy and says nothing. He's heard
+            prophecies before. The difference is this one matches what
+            he's seeing.
+        band_state:
+          morale: 2
+          treasury: 35
+          food_days: 3
+        hooks: >-
+          Dalla's prophecy sets the supernatural arc for the entire
+          series. Rolf is a ticking timebomb. Lump's role in the band
+          has fundamentally shifted.
+        word_target: 5000
+
+      # --- Chapter 37 ---
+      - chapter: 37
+        title: "Thaw Signs"
+        template: "CHAP_SURVIVAL"
+        time: "Y312, Days 356-360"
+        weather_week: 48
+        location: "Thornwall"
+        pov: "Lump"
+        summary: >-
+          Ice cracks on the northern fjord. Dripping sounds in the forest.
+          The survivors of Year 312 begin to count the days. Lump's dog
+          lifts its head at a sound only it can hear — the ice breaking.
+          Spring is coming. The band has lost Kell, lost weight, lost
+          certainty. But they are alive. Voss gathers the men by the fire
+          and makes no speech. He nods at Gest. Gest reads the treasury
+          balance: 35 silver. Enough to eat for a week or hire passage
+          south. Voss says one word: "South." The Long Dark ends.
+        events_referenced:
+          - "EVT_312_W23_086" # Spring Thaw Signs
+        npcs_present:
+          - "Lump"
+          - "Voss"
+          - "Gest"
+          - "Thorne"
+          - "Petra"
+          - "Bjorn"
+          - "Rolf"
+        character_beats:
+          lump: >-
+            One year as a free man. He stands with the band by the fire.
+            He is thinner, harder, scarred by winter, haunted by
+            midwinter night. But he stands. Nobody calls him thrall
+            anymore. They call him Lump, which is his name.
+          voss: >-
+            "South." One word. The word means: we move toward the war.
+            Because the war is where the contracts are. And contracts
+            are survival. Voss doesn't want war, but he knows how to
+            live through one. That's the only edge he has left.
+          petra: >-
+            South means closer to her sister. Her eyes change when
+            Voss says it. First real hope in months.
+          gest: >-
+            Reads the numbers. Writes the last entry for Y312 in the
+            ledger. Closes the book. Opens a new page for Y313.
+        band_state:
+          morale: 2
+          treasury: 35
+          food_days: 3
+        hooks: >-
+          "South" hooks directly into Volume 4 / Y313. The band is
+          marching toward the war — contracts, danger, and Petra's
+          sister. Rolf's barrow condition unresolved. Thorne is free
+          but changed. Voss has the Widow's intelligence and a decision
+          to make. The barrows will not sleep again.
+        word_target: 5000
+
+      # --- Epilogue Chapter ---
+      - chapter: 38
+        title: "The Ledger Closes"
+        template: "CHAP_PERSONAL"
+        time: "Y312, Day 360"
+        weather_week: 48
+        location: "Thornwall"
+        pov: "Gest"
+        summary: >-
+          Final coda. Gest alone. He writes the year-end summary in the
+          ledger: contracts completed, silver earned and spent, men lost,
+          miles marched, meals missed. The arithmetic of survival. He
+          lists each man's name and his status. He pauses at Kell's name
+          and draws a line through it. He pauses at Lump's name and
+          underlines it. The last line in the ledger for Year 312 reads:
+          "Band strength: thirteen. Treasury: thirty-five silver. Debts
+          outstanding: the living kind. Spring comes. We march."
+        events_referenced: []
+        npcs_present:
+          - "Gest"
+        character_beats:
+          gest: >-
+            The ledger is the story. Every number is a decision, a loss,
+            a hard mile. Gest doesn't write poetry — he writes accounts.
+            But the accounts are the truest record of what happened.
+            When he crosses out Kell's name, his hand is steady. When
+            he underlines Lump's, it shakes. Just once.
+        band_state:
+          morale: 2
+          treasury: 35
+          food_days: 3
+        hooks: >-
+          Y313 — the war year. Thirteen fighters, thirty-five silver,
+          and the dead waking across the Rimevegr. The Iron Ledger
+          continues.
+        word_target: 3000
+
+# --- Volume arc summary ---
+# V1 word total: ~53,500 (12 chapters)
+# V2 word total: ~53,000 (12 chapters + coda)
+# V3 word total: ~62,000 (13 chapters + epilogue)
+# Combined: ~168,500 words across 38 chapters
+#
+# Character arc tracking:
+#   Lump:  thrall → grudging acceptance → valued member → first kill
+#   Kell:  functional → gambling → lying → fleeing → expelled
+#   Petra: stoic → letter → desperation → hope when band turns south
+#   Thorne: hunted → confronted → holmgang → free but scarred
+#   Voss:  steady → aging → tested → decisive (barely)
+#   Gest:  precise → worried → alarmed → recording everything
+#   Rolf:  quiet → dreaming → compromised → pulled toward barrows
+#
+# Political arc:
+#   Spring: tributedemands, agent placement, trade opening
+#   Summer: Allthing fails to resolve tensions, alliances courted
+#   Autumn: Bone Pack challenge, escalation, food crisis
+#   Winter: siege, retreat, Widow expands, map changes
+#
+# Supernatural arc:
+#   Spring: stirring (lights, dead cattle, visions)
+#   Summer: spreading (stench, vanishings, dreams)
+#   Autumn: erupting (sinkholes, warnings, Dalla's collapse)
+#   Winter: manifest (barrows open, midwinter night, Dalla's prophecy)

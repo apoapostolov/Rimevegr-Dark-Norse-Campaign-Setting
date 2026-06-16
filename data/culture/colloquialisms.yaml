@@ -1,0 +1,370 @@
+# Iron Ledger — Colloquialisms, Camp Talk, and Everyday Speech
+# Supplements names_and_language.yaml mercenary_slang, greetings, farewells.
+# Purpose: The verbal furniture of daily conversation. What characters say
+#   between the plot-important lines. Not kennings, not oaths — just talk.
+
+colloquialisms:
+  description: >
+    How the people of the Rimevegr actually talk — the phrases, filler words,
+    agreement/disagreement patterns, and verbal habits that give dialogue
+    authenticity. These are NOT literary kennings. They are the verbal
+    furniture of daily conversation.
+
+  # -------------------------------------------------------------------
+  # 1. AGREEMENT AND AFFIRMATION (6)
+  # -------------------------------------------------------------------
+  agreement_and_affirmation:
+    description: >
+      Ways to say yes. The Rimevegr does not produce enthusiastic people.
+      Agreement comes with conditions, reservations, or tired acceptance.
+    entries:
+      - phrase: "Aye, and well."
+        meaning: "Yes, that's right and I accept it."
+        usage: "Standard agreement. Farmers, fighters, jarls — everyone."
+
+      - phrase: "That has weight."
+        meaning: "Your argument is sound. I'm persuaded."
+        usage: "When someone makes a good point. More respectful than a simple yes."
+
+      - phrase: "True as iron."
+        meaning: "Absolutely correct. Cannot be bent."
+        usage: "Strong agreement. Often said while nodding. Common between soldiers."
+
+      - phrase: "So it is."
+        meaning: "I confirm what you said. Or: I accept reality."
+        usage: "Flat agreement. Can sound resigned. Used when the truth is not welcome."
+
+      - phrase: "I hear you."
+        meaning: "I understand and agree, but I'm not happy about it."
+        usage: "Grudging acceptance. The speaker agrees but wants you to know it costs them."
+
+      - phrase: "As you say, then."
+        meaning: "Fine. We'll do it your way."
+        usage: "Deference without warmth. Common from subordinates to captains."
+
+  # -------------------------------------------------------------------
+  # 2. DISAGREEMENT AND REFUSAL (6)
+  # -------------------------------------------------------------------
+  disagreement_and_refusal:
+    description: >
+      Ways to say no. Directness is valued but not always safe. A flat
+      no to a jarl gets you killed. A flat no to a friend gets you a fight.
+    entries:
+      - phrase: "Not for all the silver in Skaldhaven."
+        meaning: "Absolutely not. No price would change my mind."
+        usage: "Emphatic refusal. The Skaldhaven reference is casual hyperbole."
+
+      - phrase: "That road leads nowhere."
+        meaning: "Your plan is bad. I reject it."
+        usage: "Polite disagreement. Implies the speaker has thought it through."
+
+      - phrase: "You can ask, but the answer walks away."
+        meaning: "No, and I'm leaving this conversation."
+        usage: "Dismissive. Used when someone presses a point already refused."
+
+      - phrase: "I would sooner eat my boot."
+        meaning: "No. Emphatically no. You insult me by asking."
+        usage: "Camp talk. Crude but clear. Gets a laugh from the fire-circle."
+
+      - phrase: "Cold words, friend."
+        meaning: "What you just said offends me or crosses a line."
+        usage: "A warning before open disagreement. The 'friend' is not always friendly."
+
+      - phrase: "Put that back in your mouth."
+        meaning: "Take back what you just said."
+        usage: "Blunt. Between equals. Often precedes a fight if ignored."
+
+  # -------------------------------------------------------------------
+  # 3. HEDGING AND UNCERTAINTY (6)
+  # -------------------------------------------------------------------
+  hedging_and_uncertainty:
+    description: >
+      Ways to say maybe, I don't know, or who can say. The Rimevegr breeds
+      caution. Committing to a statement is committing to a position, and
+      positions get you killed.
+    entries:
+      - phrase: "The Veil knows."
+        meaning: "Who can say? It's unknowable."
+        usage: "Shrug-equivalent. References the mist that hides everything in the Rimevegr."
+
+      - phrase: "Could go either way, like a drunk on a bridge."
+        meaning: "Fifty-fifty odds. Maybe worse."
+        usage: "Camp talk. Casual uncertainty with a joke attached."
+
+      - phrase: "Ask me after the thaw."
+        meaning: "I'm not ready to commit. Give me time."
+        usage: "Delaying tactic. 'After the thaw' can mean weeks or never."
+
+      - phrase: "I have heard it said."
+        meaning: "Someone told me but I will not vouch for it."
+        usage: "Deliberate distancing. The speaker passes information without owning it."
+
+      - phrase: "Maybe. Maybe with an axe in it."
+        meaning: "Possibly, but there are problems you haven't mentioned."
+        usage: "Agrees something is possible while flagging hidden danger."
+
+      - phrase: "That is above my fire."
+        meaning: "I don't know and it's not my business to know."
+        usage: "Deflection. Common from commons when asked about captain's decisions."
+
+  # -------------------------------------------------------------------
+  # 4. CAMP TALK (10)
+  # -------------------------------------------------------------------
+  camp_talk:
+    description: >
+      What men say around the fire, on watch, between fights, in the
+      latrine trench. Crude, practical, weary — the talk of people who
+      have been on the march too long and will be on it again tomorrow.
+    entries:
+      - phrase: "Who's got the pot?"
+        meaning: "Whose turn to cook? Also: who has the money?"
+        context: "Said around the fire. First question at any camp."
+
+      - phrase: "Sleeping with one eye, are we?"
+        meaning: "You're on watch and you were dozing."
+        context: "Mild accusation. Not a serious charge unless it happens twice."
+
+      - phrase: "My arse has been warmer."
+        meaning: "It is cold. Extremely cold."
+        context: "Standard complaint. The Rimevegr is always cold."
+
+      - phrase: "That's a tomorrow problem."
+        meaning: "I refuse to think about it tonight."
+        context: "End of discussion. Usually said while lying down."
+
+      - phrase: "Better than a grave, worse than a bed."
+        meaning: "This camp is adequate. Barely."
+        context: "Rating the night's shelter. Used about anything marginally acceptable."
+
+      - phrase: "I have buried better meals."
+        meaning: "This food is terrible."
+        context: "Complaining about rations. The cook ignores it."
+
+      - phrase: "Latrine's that way. Take the stink with you."
+        meaning: "Go relieve yourself. Or: your opinion is unwelcome."
+        context: "Camp insult. Friendly when grinning, hostile when flat."
+
+      - phrase: "Keep talking and the cold gets in."
+        meaning: "Shut your mouth, you're letting heat out of the shelter."
+        context: "Practical complaint in crowded tents. Also used to end arguments."
+
+      - phrase: "Two more watches and I'm somebody else's problem."
+        meaning: "My shift is almost over and I don't care anymore."
+        context: "Watch-fire resignation. Said by men counting the hours."
+
+      - phrase: "Save it for the barrow."
+        meaning: "Stop talking about it. Nobody cares and you'll be dead soon anyway."
+        context: "Dark humour. Shuts down complaints, philosophy, or nostalgia."
+
+  # -------------------------------------------------------------------
+  # 5. HAGGLING AND TRADE (8)
+  # -------------------------------------------------------------------
+  haggling_and_trade:
+    description: >
+      Market talk, negotiation, and price disputes. The hack-silver economy
+      runs on weighing, cutting, biting, and arguing. Every transaction
+      is a small war fought with words.
+    entries:
+      - phrase: "Show me the weight."
+        meaning: "Put the silver on the scale. Prove your offer."
+        context: "The start of any serious transaction. Talk is nothing without silver."
+
+      - phrase: "That price has legs — it keeps running."
+        meaning: "You keep raising the price."
+        context: "Buyer's complaint. Said with annoyance, sometimes admiration."
+
+      - phrase: "I am not feeding your children with my silver."
+        meaning: "Your price is too high and I know you're padding it."
+        context: "Blunt haggling. Gets a laugh at market. Sellers shrug."
+
+      - phrase: "Bite it."
+        meaning: "Test the silver with your teeth. Prove it's real."
+        context: "Standard request in any hack-silver transaction. Not an insult."
+
+      - phrase: "Fair trade leaves both men limping."
+        meaning: "A good deal hurts everyone a little."
+        context: "Closing phrase after negotiation. Both sides acknowledge compromise."
+
+      - phrase: "You could rob me cheaper."
+        meaning: "Your price is so high it might as well be theft."
+        context: "Buyer's outrage. Theatrical. Part of the haggling game."
+
+      - phrase: "My final word, and it has a blade in it."
+        meaning: "Last offer. Take it or I'm done — and I'm not friendly about it."
+        context: "End of negotiation. The seller knows the buyer is serious."
+
+      - phrase: "That silver is sweeter elsewhere."
+        meaning: "I'll take my business to your competitor."
+        context: "Threat to walk away. Sometimes a bluff. Effective in harbour towns."
+
+  # -------------------------------------------------------------------
+  # 6. WEATHER TALK (6)
+  # -------------------------------------------------------------------
+  weather_talk:
+    description: >
+      The eternal topic. Everyone talks about weather because weather
+      kills. This is not poetry. This is survival communicated as
+      small talk.
+    entries:
+      - phrase: "Colder than Icebreak and twice as mean."
+        meaning: "It is extremely cold. Casual hyperbole."
+        context: "Icebreak is the deep-winter settlement. Shorthand for unbearable cold."
+
+      - phrase: "The Veil's low today."
+        meaning: "The mist is thick. Visibility is poor."
+        context: "Observation that changes plans. Low Veil means slow travel and ambush risk."
+
+      - phrase: "Smells like snow."
+        meaning: "A storm is coming. I can smell it."
+        context: "People who live in the Rimevegr claim they can smell approaching snow. They can."
+
+      - phrase: "Wind's turned. Watch the tree-line."
+        meaning: "Weather is changing. Could mean trouble from any direction."
+        context: "Practical warning. Wind-shift precedes storms and temperature drops."
+
+      - phrase: "Two days of this and we eat the horses."
+        meaning: "If this weather continues, we are in serious trouble."
+        context: "Grim humor about sustained bad conditions. Sometimes literal."
+
+      - phrase: "Clear sky in the Rimevegr means the gods forgot."
+        meaning: "Good weather is so rare it feels like a mistake."
+        context: "Dry observation on the rare clear day. Said with suspicion."
+
+  # -------------------------------------------------------------------
+  # 7. FOOD AND DRINK TALK (6)
+  # -------------------------------------------------------------------
+  food_and_drink_talk:
+    description: >
+      Complaining about rations, praising mead, asking for more.
+      Food is currency, morale, and the measure of a captain's quality.
+    entries:
+      - phrase: "If this is porridge, what did it do wrong?"
+        meaning: "This food is punishment, not nourishment."
+        context: "Complaining about camp cooking. Dalla the cook has heard worse."
+
+      - phrase: "Pour heavy or do not pour."
+        meaning: "Fill my cup properly or keep the jug to yourself."
+        context: "Mead-hall talk. Said to stingy pourers. A small insult."
+
+      - phrase: "Meat on the third day. Someone died or someone lied."
+        meaning: "Fresh meat is suspicious. Where did it come from?"
+        context: "Camp cynicism. Meat means a fresh kill, a bribe, or stolen goods."
+
+      - phrase: "Salt the tongue, salt the food."
+        meaning: "Talk seasoned the meal because the cook didn't."
+        context: "Backhanded compliment. Good company makes bad food tolerable."
+
+      - phrase: "I have drunk better from a boot."
+        meaning: "This ale is terrible."
+        context: "Standard complaint. The brewer takes no offense — it is probably true."
+
+      - phrase: "More?"
+        meaning: "Is there any more? Can I have more?"
+        context: "The single most common word at any Rimevegr table. One syllable. Hopeful."
+
+  # -------------------------------------------------------------------
+  # 8. TRAVEL TALK (6)
+  # -------------------------------------------------------------------
+  travel_talk:
+    description: >
+      What people say about roads, distance, terrain. Nobody travels
+      the Rimevegr for pleasure. Every journey is a negotiation with
+      geography and weather.
+    entries:
+      - phrase: "How far is far?"
+        meaning: "When you say 'far,' give me a number."
+        context: "Demanding precision from a vague guide. Common on the march."
+
+      - phrase: "The trail lies, the map lies worse."
+        meaning: "Don't trust the route. Expect surprises."
+        context: "Said before setting out. Experience speaking."
+
+      - phrase: "Another hill. The Rimevegr is nothing but hills."
+        meaning: "Complaining about terrain. Which is always uphill."
+        context: "March complaint. Gets a grunt of agreement and nothing more."
+
+      - phrase: "If we are not lost, the road is."
+        meaning: "We cannot find the trail but refuse to admit it."
+        context: "Gallows humor about navigation. Often true."
+
+      - phrase: "Stay off the moor after dark. Full stop."
+        meaning: "The moors are dangerous at night. Do not argue."
+        context: "Advice given to newcomers. Those who ignore it sometimes come back."
+
+      - phrase: "We will sleep where we drop."
+        meaning: "No planned campsite tonight. Exhaustion chooses the spot."
+        context: "Captain's admission that the march went longer than expected."
+
+  # -------------------------------------------------------------------
+  # 9. GOSSIP AND NEWS (6)
+  # -------------------------------------------------------------------
+  gossip_and_news:
+    description: >
+      How information travels in a world without printing presses.
+      Rumor is infrastructure. Gossip is intelligence. Every traveller
+      carries news, and every listener judges its weight.
+    entries:
+      - phrase: "I heard a thing at Kolvik."
+        meaning: "I have news. Possibly reliable. From a specific source."
+        context: "Opening phrase for gossip. Naming the source gives it weight."
+
+      - phrase: "Talk from the road says..."
+        meaning: "Travellers are reporting the following."
+        context: "Framing rumor as second-hand. The speaker is not responsible for accuracy."
+
+      - phrase: "Believe half and arm for the rest."
+        meaning: "Some of this is true and some will get you killed."
+        context: "Standard warning after sharing uncertain news."
+
+      - phrase: "Who told you, and were they sober?"
+        meaning: "I want to know your source and whether they're reliable."
+        context: "Challenging the quality of information. Practical, not rude."
+
+      - phrase: "That story grew legs since last I heard it."
+        meaning: "The rumor has been exaggerated as it spread."
+        context: "Noting that a story has changed. Common around the fire."
+
+      - phrase: "Keep that between the fire. Not for the commons."
+        meaning: "This information is sensitive. Don't spread it to rank-and-file."
+        context: "Information control. Said between Named Men or captains."
+
+  # -------------------------------------------------------------------
+  # 10. COMMAND PHRASES (8)
+  # -------------------------------------------------------------------
+  command_phrases:
+    description: >
+      What sergeants, captains, and Named Men bark at their bands.
+      Short, unambiguous, loud enough to carry over wind and steel.
+      These are not requests.
+    entries:
+      - phrase: "Form up!"
+        meaning: "Get into fighting formation. Now."
+        context: "The universal command. Every soldier learns it first."
+
+      - phrase: "Shields tight, mouths shut."
+        meaning: "Lock the shield-wall and stop talking."
+        context: "Discipline before contact. Silence matters more than courage."
+
+      - phrase: "Move or die where you stand."
+        meaning: "You are in a kill-zone. Get out of it."
+        context: "Urgent. Said when an archer volley is incoming or a charge is about to hit."
+
+      - phrase: "Eyes front. Let the dead be dead."
+        meaning: "Stop looking at fallen comrades. Fight."
+        context: "Mid-battle command. Grief comes later."
+
+      - phrase: "Hold until I say. Not before."
+        meaning: "Do not break formation until I give the order."
+        context: "Control command. The difference between a disciplined band and a rout."
+
+      - phrase: "Water, weapons, wounds — in that order."
+        meaning: "After a fight: drink, check your gear, then tend injuries."
+        context: "Post-combat routine. Sergeants drill it until it's reflex."
+
+      - phrase: "Count off. Who's missing?"
+        meaning: "Roll call. Tell me who's alive and who isn't."
+        context: "After an engagement. The bone-count starts here."
+
+      - phrase: "Pack it. We march at grey."
+        meaning: "Break camp. We leave at first light."
+        context: "Pre-dawn order. 'Grey' means the moment the sky stops being black."

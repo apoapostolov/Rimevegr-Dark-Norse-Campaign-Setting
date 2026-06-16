@@ -1,0 +1,1550 @@
+# ==========================================================================
+# BARROW ENCOUNTER TABLES — Iron Ledger: Mercenaries of the Rimevegr
+# 112 encounters keyed to barrow size, age, and depth level.
+# Used by procedural generator to populate barrow rooms with events.
+#
+# Categories:
+#   combat        — 40 entries (ENC_COMBAT_01 to ENC_COMBAT_40)
+#   environmental — 25 entries (ENC_ENV_01 to ENC_ENV_25)
+#   supernatural  — 22 entries (ENC_SUPER_01 to ENC_SUPER_22)
+#   discovery     — 25 entries (ENC_DISC_01 to ENC_DISC_25)
+#
+# Depth levels: 1=entry, 2=mid, 3=deep, 4=heart
+# Barrow age: recent, old, ancient, primordial
+# Barrow size: small, medium, large, vast
+# Difficulty: trivial, easy, moderate, hard, deadly
+# Triggers: proximity, noise, light, time, touch, random, exploration
+# ==========================================================================
+
+encounter_tables:
+  # ========================================================================
+  # COMBAT ENCOUNTERS (40 entries)
+  # ========================================================================
+
+  # --- UNDEAD: DRAUGR LINE (depth 1-2, easier) ---
+
+  - id: "ENC_COMBAT_01"
+    name: "Lone Draugr Ambush"
+    category: "combat"
+    description: "A single draugr lunges from a burial alcove as the party passes. Dry fingers lock around the nearest wrist and squeeze. It stinks of cold loam."
+    enemies:
+      - id: "UND_DRAUGR_01"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "easy"
+    tactical_notes: "Grabs and holds. Does not release. Party must pry it off or hack the arm. Does not pursue beyond 20 paces."
+    resolution: "Fight or flee. Simple melee — one target, one threat."
+    loot_on_success: "ENC_LOOT_corroded_weapon"
+
+  - id: "ENC_COMBAT_02"
+    name: "Burial Cluster"
+    category: "combat"
+    description: "Three alcoves. Three bodies. All of them stir at once when light touches the far wall. They rise together — slow, coordinated, closing a half-circle."
+    enemies:
+      - id: "UND_DRAUGR_01"
+        count: 3
+    trigger: "light"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "moderate"
+    tactical_notes: "They spread to flank. Narrow corridor forces party into a line. Lead fighter gets swarmed if no one covers the sides."
+    resolution: "Melee in tight quarters. Shields useful. Retreat is viable — they won't follow past the chamber threshold."
+    loot_on_success: "ENC_LOOT_burial_grave_goods"
+
+  - id: "ENC_COMBAT_03"
+    name: "Draugr in the Rubble"
+    category: "combat"
+    description: "A collapsed wall. Something moves in the heap of stones. A draugr drags itself free, legs crushed but arms working. It crawls toward the voices."
+    enemies:
+      - id: "UND_DRAUGR_01"
+        count: 1
+    trigger: "noise"
+    barrow_size: ["small", "medium", "large"]
+    barrow_age: ["ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    tactical_notes: "Crawler — cannot stand. Slow. Grabs ankles. Easy to destroy but unsettling to watch. Morale test for green hirelings."
+    resolution: "Stomp or hack. Low threat."
+
+  - id: "ENC_COMBAT_04"
+    name: "Barrow Walker Patrol"
+    category: "combat"
+    description: "The sound of feet on stone. A draugr rounds the corner at a walking pace, head turning left-right like a sentry. It carries a corroded axe and knows how to use it."
+    enemies:
+      - id: "UND_DRAUGR_02"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    tactical_notes: "Patrols a fixed route. Can be ambushed if party hears it first. Fights with weapon skill — blocks, strikes at joints. Tougher than the shambling kind."
+    resolution: "Ambush or straight fight. Retreating draws it into a chase for 40 paces."
+    loot_on_success: "ENC_LOOT_corroded_weapon"
+
+  - id: "ENC_COMBAT_05"
+    name: "Frost Draugr Lair"
+    category: "combat"
+    description: "The passage frosts over. Breath smokes. A large figure sits on a stone shelf, rimed in ice. When the party enters, it stands. Frost cracks off its shoulders like bark."
+    enemies:
+      - id: "UND_DRAUGR_03"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "hard"
+    tactical_notes: "Cold aura — melee fighters take d4 cold damage per round at close range. Strong overhead strikes. Slows the fastest fighter. Keep torches close — fire gives it pause."
+    resolution: "Dangerous solo fight. Fire is helpful. Retreat difficult — the cold slows movement in the corridor behind."
+    loot_on_success: "ENC_LOOT_frost_touched_relic"
+
+  - id: "ENC_COMBAT_06"
+    name: "War Draugr's Challenge"
+    category: "combat"
+    description: "A wide chamber. A draugr in rusted ring-mail stands at the far end with shield raised. It stamps the floor once. Waits. This one remembers battle."
+    enemies:
+      - id: "UND_DRAUGR_04"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    tactical_notes: "Fights like a trained warrior — shield wall stance, counter-strikes, feints. Targets the party leader. Will not break formation. Flanking required to gain advantage."
+    resolution: "Proper duel. Requires tactics, not just swinging. Exploiting its blind side (rusted helm covers one eye) gives +1 to attacks from that flank."
+    loot_on_success: "ENC_LOOT_war_draugr_arms"
+
+  - id: "ENC_COMBAT_07"
+    name: "Draugr Horde"
+    category: "combat"
+    description: "A burial hall. Dozens of stone shelves, most occupied. The dead begin to stir — not one, not three, but eight. A wall of grey bodies shuffling forward."
+    enemies:
+      - id: "UND_DRAUGR_01"
+        count: 5
+      - id: "UND_DRAUGR_02"
+        count: 3
+    trigger: "light"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "deadly"
+    tactical_notes: "Overwhelming numbers. Hold a chokepoint or die. Shields front, spears over the top. Fighting in the open means encirclement within two rounds."
+    resolution: "Retreat is wise. Fighting requires a corridor bottleneck. Torches thrown into the mass buy time."
+    loot_on_success: "ENC_LOOT_mass_burial_goods"
+
+  - id: "ENC_COMBAT_08"
+    name: "Ancient Husk Nest"
+    category: "combat"
+    description: "Corpses so old they're mummified leather over bone. Three of them hang from the ceiling by their own dried tendons. They drop when someone steps beneath."
+    enemies:
+      - id: "UND_DRAUGR_05"
+        count: 3
+    trigger: "proximity"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [3, 4]
+    difficulty: "moderate"
+    tactical_notes: "Ceiling ambush — NIM test or knocked prone on the drop. Husks are brittle but fast. They claw and bite. Fragile to blunt weapons — one solid hit shatters them."
+    resolution: "Quick, ugly fight. Blunt weapons end it fast. Edged weapons take longer — they don't bleed."
+
+  # --- UNDEAD: HAUGBUI LINE (depth 3-4, harder) ---
+
+  - id: "ENC_COMBAT_09"
+    name: "Lesser Haugbui Vigil"
+    category: "combat"
+    description: "A seated figure on a stone throne behind the burial goods. Eyes open — not clouded, but burning low blue. It speaks a word. The word hurts."
+    enemies:
+      - id: "UND_HAUGBUI_01"
+        count: 1
+    trigger: "touch"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    tactical_notes: "Does not rise until someone touches the burial goods. Opens with a fear shout — WIL test or flee. Fights with supernatural strength. Can grapple two men at once."
+    resolution: "Retreating with the goods triggers pursuit. Leaving the goods stops it. Kill it to take anything safely."
+    loot_on_success: "ENC_LOOT_haugbui_hoard_minor"
+
+  - id: "ENC_COMBAT_10"
+    name: "Haugbui Guardian Awakening"
+    category: "combat"
+    description: "The whole chamber shudders. A sarcophagus lid grinds sideways. What rises is not a corpse — it is a weapon made of dead flesh. The burial sword in its hand still holds an edge."
+    enemies:
+      - id: "UND_HAUGBUI_02"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "deadly"
+    tactical_notes: "Elite combatant. Reads formations. Targets spellcasters and torch-bearers first. Regenerates d4 HP per round in its own barrow. Must be dismembered or burned."
+    resolution: "Full party engagement required. Fire is critical. Splitting the party is fatal — it picks off stragglers."
+    loot_on_success: "ENC_LOOT_haugbui_hoard_major"
+
+  - id: "ENC_COMBAT_11"
+    name: "Elder Haugbui and Its Court"
+    category: "combat"
+    description: "The heart-chamber. A figure wrapped in silver-chased mail sits among its dead retainers. Six draugr stand at attention along the walls. The haugbui's eyes flare when light enters."
+    enemies:
+      - id: "UND_HAUGBUI_03"
+        count: 1
+      - id: "UND_DRAUGR_04"
+        count: 4
+      - id: "UND_DRAUGR_02"
+        count: 2
+    trigger: "light"
+    barrow_size: ["vast"]
+    barrow_age: ["primordial"]
+    depth_level: [4]
+    difficulty: "deadly"
+    tactical_notes: "Boss encounter. The Elder commands its retainers — they fight in formation, shield-walling the haugbui. Killing the haugbui may collapse the draugr or drive them berserk. Unpredictable."
+    resolution: "This is the barrow's final defence. No retreat once engaged — the draugr seal the exit. Victory or death."
+    loot_on_success: "ENC_LOOT_elder_haugbui_treasure"
+
+  # --- UNDEAD: SPECIAL ---
+
+  - id: "ENC_COMBAT_12"
+    name: "Bone Swarm Eruption"
+    category: "combat"
+    description: "The floor is a carpet of scattered bones. Then the bones move. They knit together into a skittering mass of limbs and jaws — a swarm of fragments seeking living warmth."
+    enemies:
+      - id: "UND_BONE_SWARM_01"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    tactical_notes: "Swarm — cannot be targeted with single strikes. Area attacks (sweeps, fire, stomping) required. Edged weapons near useless. Crawls up legs and into armour gaps."
+    resolution: "Fire or crushing. Running through the swarm takes d6 damage. Scatter bones with a torch to disperse."
+
+  - id: "ENC_COMBAT_13"
+    name: "Corpse-Light Lure"
+    category: "combat"
+    description: "A pale blue glow drifts ahead, just around the corner. Follow it and find a dead end — and the light is now behind, between the party and the way out. It pulses."
+    enemies:
+      - id: "UND_CORPSE_LIGHT_01"
+        count: 1
+    trigger: "light"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "moderate"
+    tactical_notes: "Lure entity. Cannot be struck with steel. Proximity causes drowsiness — WIL test each round or lose actions. Extinguishing all other light sources forces it to manifest physically."
+    resolution: "Douse torches. Fight it in total darkness with iron weapons. Or flee through it, taking d6 WIL damage."
+
+  - id: "ENC_COMBAT_14"
+    name: "Barrow Guard Sentinel"
+    category: "combat"
+    description: "A niche in the wall holds a standing figure in full armour. Runes carved into the stones around it glow faintly. Step past and the figure steps out behind you."
+    enemies:
+      - id: "UND_BARROW_GUARD_01"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "hard"
+    tactical_notes: "Attacks from behind. Armoured — reduce incoming damage by 2. Returns to niche if party retreats past the rune threshold. Reactivates if threshold crossed again."
+    resolution: "Destroy or disable the runes to deactivate permanently. Otherwise it resets every time."
+
+  - id: "ENC_COMBAT_15"
+    name: "Veil-Touched Revenant"
+    category: "combat"
+    description: "It was buried wrong. The body was Veil-touched before death — now it walks with one foot still on the other side. Its movements stutter, as if lagging behind its own intent."
+    enemies:
+      - id: "UND_VEIL_TOUCHED_01"
+        count: 1
+    trigger: "random"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [3, 4]
+    difficulty: "deadly"
+    tactical_notes: "Phase-shifts. Attacks pass through it 50% of the time. When it hits, the wound frosts black. WIL test or lose a memory — mechanically, lose a skill rank temporarily."
+    resolution: "Rune-inscribed weapons or iron-and-salt bypass the phasing. Otherwise, attrition fight with coin-flip accuracy."
+
+  # --- ANIMALS ---
+
+  - id: "ENC_COMBAT_16"
+    name: "Rat Swarm in the Entry"
+    category: "combat"
+    description: "The floor writhes. Hundreds of rats pour from cracks in the stone, driven by hunger. They climb boots and bite through cloth."
+    enemies:
+      - id: "ANI_RAT_01"
+        count: 1
+    trigger: "noise"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["recent", "old", "ancient"]
+    depth_level: [1]
+    difficulty: "trivial"
+    tactical_notes: "Swarm behaviour. Torches scatter them. Stomping works. Disease risk — TOU test after the encounter or fever in d6 days."
+    resolution: "Fire or noise drives them off. Not a real fight — more of a nuisance with consequences."
+
+  - id: "ENC_COMBAT_17"
+    name: "Wolf Den"
+    category: "combat"
+    description: "The entry passage reeks of piss and old meat. A wolf pack has claimed the barrow mouth as a den. Three adults and pups in the back. The adults bare teeth."
+    enemies:
+      - id: "ANI_WOLF_01"
+        count: 3
+    trigger: "proximity"
+    barrow_size: ["small", "medium", "large"]
+    barrow_age: ["recent", "old"]
+    depth_level: [1]
+    difficulty: "moderate"
+    tactical_notes: "Wolves fight as a pack — one feints, two flank. Protecting pups makes them aggressive. Killing a pup drives the others berserk (+1 to attack, ignore morale)."
+    resolution: "Loud noise and fire can drive them out without a fight. Killing them is straightforward but messy."
+
+  - id: "ENC_COMBAT_18"
+    name: "Serpent Nest"
+    category: "combat"
+    description: "Warmth seeps from a crack in the stone floor. Coiled around the heat source: a knot of vipers. Disturb them and they scatter in all directions."
+    enemies:
+      - id: "ANI_SNAKE_01"
+        count: 4
+    trigger: "touch"
+    barrow_size: ["small", "medium", "large"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "easy"
+    tactical_notes: "Fast, small targets. NIM test to avoid bites when they scatter. Venom — TOU test or d6 damage over the next hour. Boots and greaves provide protection."
+    resolution: "Step carefully or use a long weapon to sweep them aside. Not a proper fight."
+
+  - id: "ENC_COMBAT_19"
+    name: "Bear in the Barrow"
+    category: "combat"
+    description: "A brown bear, gaunt from hibernation, has claimed a side chamber. It rises on hind legs. The ceiling is too low for it. It charges anyway."
+    enemies:
+      - id: "ANI_BEAR_01"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["medium", "large"]
+    barrow_age: ["recent", "old"]
+    depth_level: [1]
+    difficulty: "hard"
+    tactical_notes: "Powerful but constrained by low ceilings. Maul attacks knock fighters back. Spears from range are ideal — it can't dodge in the corridor. Do not let it close."
+    resolution: "Kill or drive it out with fire and noise. A hungry bear does not flee easily."
+
+  - id: "ENC_COMBAT_20"
+    name: "Bat Colony Panic"
+    category: "combat"
+    description: "The torch illuminates a ceiling black with bats. A shout — or just the light — sends them into a shrieking cloud. Wings everywhere. Vision gone."
+    enemies:
+      - id: "ANI_BAT_01"
+        count: 1
+    trigger: "light"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["recent", "old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    tactical_notes: "Not a real combat threat. The danger is blindness and panic. NIM test or stumble into a wall/pit/companion's weapon. Torches extinguished on a 1-in-6."
+    resolution: "Crouch, cover the torch, wait. They pass in d6 rounds."
+
+  # --- RIVAL BANDS (7 encounters) ---
+
+  - id: "ENC_COMBAT_21"
+    name: "Rival Band — Entry Standoff"
+    category: "combat"
+    description: "Voices ahead. Torchlight. Another company has entered the barrow from a different passage. Five armed fighters. Their leader steps forward: 'This tomb is spoken for.'"
+    enemies:
+      - id: "HUM_BANDIT_03"
+        count: 4
+      - id: "HUM_BANDIT_04"
+        count: 1
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "moderate"
+    tactical_notes: "Negotiation possible. The rival leader is pragmatic — split the barrow or fight. If combat starts, they fight cautiously and retreat at first casualty."
+    resolution: "Talk, intimidate, or fight. Splitting the barrow means racing to the heart. Fighting means five-on-five in the dark."
+    rival_company: "The Ashen Pikes — second-rate sellswords with more bluster than skill."
+
+  - id: "ENC_COMBAT_22"
+    name: "Rival Band — Ambush at the Chokepoint"
+    category: "combat"
+    description: "A narrow cut in the stone. Ropes across the passage at ankle height. Three crossbow bolts come from the dark. Someone set this up and waited."
+    enemies:
+      - id: "HUM_BANDIT_02"
+        count: 3
+      - id: "HUM_RAIDER_01"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient"]
+    depth_level: [2, 3]
+    difficulty: "hard"
+    tactical_notes: "Trip wires and prepared positions. Crossbow fire from cover. NIM test or fall prone at the trip line. Flanking requires a side passage and good navigation."
+    resolution: "Push through under fire or find another route. The ambushers have limited bolts — five volleys then they draw swords."
+    rival_company: "The Grave Rats — experienced tomb-breakers who know barrows well."
+
+  - id: "ENC_COMBAT_23"
+    name: "Rival Band — Robbing the Dead Together"
+    category: "combat"
+    description: "A rival group is halfway through prying open a sarcophagus when the party arrives. They freeze. The sarcophagus lid groans. Both sides know what's about to wake up."
+    enemies:
+      - id: "HUM_BANDIT_03"
+        count: 3
+      - id: "UND_DRAUGR_02"
+        count: 2
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    tactical_notes: "Three-way fight possible. The draugr attack the nearest living. Temporary truce with rivals is logical but fragile. Whoever backstabs first gains surprise."
+    resolution: "Ally with rivals against the dead, then renegotiate. Or let them fight the draugr and pick off survivors."
+    rival_company: "Iron Teeth — brutal, untrustworthy, but skilled fighters."
+
+  - id: "ENC_COMBAT_24"
+    name: "Rival Band — The Wounded Remnant"
+    category: "combat"
+    description: "Blood on the walls. A survivor from another company crawls toward the entrance, one leg dragging. Behind him, two more sit against the wall, clutching wounds. Their leader is dead deeper in."
+    enemies:
+      - id: "HUM_BANDIT_01"
+        count: 2
+      - id: "HUM_DESERTER_01"
+        count: 1
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    tactical_notes: "Not a real fight — they're broken. They beg for mercy or lash out from fear. Information is more valuable than killing them. They know what's deeper in."
+    resolution: "Help, rob, or interrogate. They know the layout of the next two chambers and what killed their friends."
+    rival_company: "The Chalk Ravens — once reputable, now shattered."
+
+  - id: "ENC_COMBAT_25"
+    name: "Rival Band — Backstab at the Loot Chamber"
+    category: "combat"
+    description: "A friendly group offered to split the loot three chambers back. Now the party reaches the goods and finds the rivals already looting. They grin. 'Changed our minds.'"
+    enemies:
+      - id: "HUM_BANDIT_04"
+        count: 1
+      - id: "HUM_BANDIT_03"
+        count: 3
+      - id: "HUM_BANDIT_02"
+        count: 2
+    trigger: "exploration"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient"]
+    depth_level: [3]
+    difficulty: "hard"
+    tactical_notes: "Prepared positions. They blocked the best exit. Their sergeant is competent. They expect the party to talk first — attacking immediately catches them off guard."
+    resolution: "Fight for the loot or retreat empty-handed. The rivals won't pursue — they want the goods, not a bloodbath."
+    rival_company: "Halvdan's Bastards — oath-breakers and opportunists."
+
+  - id: "ENC_COMBAT_26"
+    name: "Rival Band — Trapped Together"
+    category: "combat"
+    description: "A ceiling collapse seals both companies in the same chamber. Six strangers. Finite torches. The air is bad. Tension rises with every breath."
+    enemies:
+      - id: "HUM_BANDIT_03"
+        count: 4
+      - id: "HUM_BANDIT_04"
+        count: 1
+    trigger: "random"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    tactical_notes: "Social encounter that can become combat. Cooperation finds a way out. Paranoia leads to violence. Track torch time — panic increases as light fades."
+    resolution: "Work together to clear the rubble (MIG group test) or fight for the remaining torches. Cave-in may reopen a forgotten passage."
+    rival_company: "The Mire Dogs — reasonable under pressure, but desperate."
+
+  - id: "ENC_COMBAT_27"
+    name: "Rival Band — Sacrificing a Prisoner"
+    category: "combat"
+    description: "Chanting. The party rounds a corner and finds a rival band holding a bound figure over a rune-carved altar. Blood already on the stones. They're feeding the barrow."
+    enemies:
+      - id: "HUM_RAIDER_01"
+        count: 1
+      - id: "HUM_BANDIT_03"
+        count: 3
+    trigger: "exploration"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    tactical_notes: "Moral choice. Interrupting the sacrifice angers the rivals and may wake something worse. Letting it happen empowers whatever the runes are bound to. The prisoner screams."
+    resolution: "Intervene and fight. Let it happen and face the consequences. The sacrifice completes in 3 rounds if uninterrupted."
+    rival_company: "The Hollow Men — dead-worshippers who've gone too far into the dark."
+
+  # --- ADDITIONAL UNDEAD / MIXED COMBAT ---
+
+  - id: "ENC_COMBAT_28"
+    name: "Walking Dead Overflow"
+    category: "combat"
+    description: "A side chamber's door hangs off its hinges. Inside, corpses packed shoulder-to-shoulder, vertical, swaying. The room is too full. They spill into the corridor when the door is touched."
+    enemies:
+      - id: "UND_WALKING_01"
+        count: 6
+    trigger: "touch"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "hard"
+    tactical_notes: "Overwhelming numbers in a wave. First round: 2 emerge. Second: 4 more. They're weak individually but the mass pushes the party back. Hold or be overrun."
+    resolution: "Seal the door, fall back to a chokepoint, or burn the chamber. Fighting in the corridor is suicidal."
+
+  - id: "ENC_COMBAT_29"
+    name: "Draugr and Wolves"
+    category: "combat"
+    description: "Wolves denning in a barrow have learned to avoid the dead. But the party's noise wakes both. Now wolves bolt from behind and draugr rise from ahead. Caught between."
+    enemies:
+      - id: "ANI_WOLF_01"
+        count: 2
+      - id: "UND_DRAUGR_01"
+        count: 2
+    trigger: "noise"
+    barrow_size: ["medium", "large"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "moderate"
+    tactical_notes: "Two-front engagement. Wolves are fast, draugr are slow. Killing a wolf first removes the flanking threat. The wolves and draugr don't coordinate — they just both attack the living."
+    resolution: "Fight both fronts or retreat sideways into a side passage if available."
+
+  - id: "ENC_COMBAT_30"
+    name: "Draugr Pit"
+    category: "combat"
+    description: "The floor gives way. A 10-foot drop into a pit of bones and restless dead. They grab at anyone who falls in."
+    enemies:
+      - id: "UND_DRAUGR_01"
+        count: 4
+    trigger: "proximity"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient"]
+    depth_level: [2, 3]
+    difficulty: "hard"
+    tactical_notes: "Trap + combat. NIM test to avoid falling. Those in the pit fight prone against standing draugr — severe disadvantage. Rope to haul companions out."
+    resolution: "Rescue the fallen. Fighting from above with spears or arrows while someone pulls the victim up."
+
+  - id: "ENC_COMBAT_31"
+    name: "The Dead Wake Behind You"
+    category: "combat"
+    description: "The party cleared this corridor on the way in. Now coming back, the corpses they passed — the ones they thought were just corpses — are standing in the dark. Between them and the exit."
+    enemies:
+      - id: "UND_DRAUGR_01"
+        count: 3
+      - id: "UND_DRAUGR_02"
+        count: 1
+    trigger: "time"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    tactical_notes: "Shock factor. Party thought this area was clear. The draugr block the retreat path. No prepared positions, just a sudden rear-guard fight while carrying loot."
+    resolution: "Fight through or find an alternate exit. Drop heavy loot to move faster."
+
+  - id: "ENC_COMBAT_32"
+    name: "Mara in the Sleeping Chamber"
+    category: "combat"
+    description: "The party rests. One member wakes paralysed, something pressing on their chest. A shadow with weight. The Mara feeds on breath."
+    enemies:
+      - id: "SUP_MARA_01"
+        count: 1
+    trigger: "time"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "hard"
+    tactical_notes: "Stealth attack during rest. Victim cannot act — WIL test each round to break free. Others must perceive the Mara (WIT test, difficulty 3). Iron weapon dispels it on a hit."
+    resolution: "Iron and fire. If no one wakes, the victim loses d6 WIL permanently by morning."
+
+  - id: "ENC_COMBAT_33"
+    name: "Frost Wraith at the Threshold"
+    category: "combat"
+    description: "The door to the heart-chamber. The air turns to ice crystals. A shape coalesces — not solid, but cold given form. It guards the final passage."
+    enemies:
+      - id: "SUP_FROST_WRAITH_01"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [3, 4]
+    difficulty: "deadly"
+    tactical_notes: "Incorporeal. Physical weapons pass through unless heated (hold in fire for a round). Cold aura — d4 damage each round within 10 paces. Targets the weakest WIL in the party."
+    resolution: "Fire-heated weapons, rune-marked iron, or a banishing chant (requires Rune Lore). Retreat is possible — it does not leave the threshold."
+
+  - id: "ENC_COMBAT_34"
+    name: "Rune Ghost Manifestation"
+    category: "combat"
+    description: "Someone reads a rune inscription aloud. The air goes still. A figure assembles itself from dust motes — the dead rune-carver, furious at the trespass."
+    enemies:
+      - id: "SUP_RUNE_GHOST_01"
+        count: 1
+    trigger: "touch"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "hard"
+    tactical_notes: "Triggered by reading/touching runes. Attacks with psychic force — d6 WIL damage, no armour helps. Can be banished by defacing the runes (3 rounds of chiselling under fire)."
+    resolution: "Destroy the runes or flee. It cannot leave the chamber where the runes are carved."
+
+  - id: "ENC_COMBAT_35"
+    name: "Veil Shadow Stalker"
+    category: "combat"
+    description: "Something in the peripheral vision. A shape that moves against the torchlight. It has no body — only a shadow, cast by nothing. When the torch dims, it gets closer."
+    enemies:
+      - id: "SUP_VEIL_SHADOW_01"
+        count: 1
+    trigger: "random"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    tactical_notes: "Attacks by touching — victim ages d6 years. Only bright light forces it back. It extinguishes torches with a touch. Two light sources minimum to keep it at bay."
+    resolution: "Maintain light. Flee toward the surface where daylight can destroy it. In total darkness, it kills in d6 rounds."
+
+  - id: "ENC_COMBAT_36"
+    name: "Deserter Hiding in the Dark"
+    category: "combat"
+    description: "A man crouched behind a fallen pillar. Not dead — alive, armed, terrified. A deserter from a warband, hiding in the barrow because the living hunt him worse than the dead."
+    enemies:
+      - id: "HUM_DESERTER_01"
+        count: 1
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large"]
+    barrow_age: ["recent", "old"]
+    depth_level: [1]
+    difficulty: "easy"
+    tactical_notes: "Alone and scared. Will attack if cornered but surrenders quickly. Useful as a guide — he's been here for days and knows the entry level layout."
+    resolution: "Recruit, interrogate, or ignore. He has information but no loyalty."
+
+  - id: "ENC_COMBAT_37"
+    name: "Barrow Spider Colony"
+    category: "combat"
+    description: "Webs thick as rope across a side passage. Something large and pale lurks in the centre. Several smaller shapes move on the ceiling."
+    enemies:
+      - id: "ANI_SPIDER_01"
+        count: 1
+      - id: "ANI_SPIDER_02"
+        count: 4
+    trigger: "proximity"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "moderate"
+    tactical_notes: "Webs restrict movement — MIG test to push through or NIM test to slip between. The large spider has paralytic venom (TOU test or limb goes numb for an hour). Fire burns the webs but fills the chamber with smoke."
+    resolution: "Burn, cut, or avoid. The webs block a side passage — there may be loot behind them."
+    loot_on_success: "ENC_LOOT_web_wrapped_corpse"
+
+  - id: "ENC_COMBAT_38"
+    name: "Draugr Funeral Procession"
+    category: "combat"
+    description: "A line of draugr carrying a corpse on a stone slab, walking single-file through a corridor. A burial rite, still being performed centuries after everyone died."
+    enemies:
+      - id: "UND_DRAUGR_01"
+        count: 4
+      - id: "UND_DRAUGR_02"
+        count: 1
+    trigger: "proximity"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    tactical_notes: "They ignore the party unless interrupted. Blocking the procession triggers rage — all five attack at once. Letting them pass reveals their destination (might be a hidden chamber)."
+    resolution: "Let them pass for free intelligence. Interrupt for a fight with positioning advantage but group aggression."
+
+  - id: "ENC_COMBAT_39"
+    name: "Cornered Bandit with Hostage"
+    category: "combat"
+    description: "A bandit from a rival group holds a knife to a bound prisoner's throat. He's been down here too long. Eyes wild. Demands safe passage out."
+    enemies:
+      - id: "HUM_BANDIT_02"
+        count: 1
+    trigger: "exploration"
+    barrow_size: ["medium", "large"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "easy"
+    tactical_notes: "Hostage situation. A calm voice and an offer of escort might work. Rushing him risks the hostage. The hostage is from a local village — returning them is worth reputation."
+    resolution: "Talk, trick, or rush. The bandit is exhausted and will collapse if stalled for 10 minutes."
+
+  - id: "ENC_COMBAT_40"
+    name: "The Hunger Below"
+    category: "combat"
+    description: "Something in the deepest pit. A sound like wet chewing. The torchlight won't reach it. When the party turns to leave, it follows. Fast. From below."
+    enemies:
+      - id: "UND_HAUGBUI_02"
+        count: 1
+      - id: "UND_DRAUGR_03"
+        count: 2
+    trigger: "noise"
+    barrow_size: ["vast"]
+    barrow_age: ["primordial"]
+    depth_level: [4]
+    difficulty: "deadly"
+    tactical_notes: "Pursuit encounter. The hunger follows — faster than walking, slower than running. Fighting in flight. Dropping food (or a corpse) slows it. The two frost draugr flank from side passages."
+    resolution: "Run. Fight only if trapped. The haugbui can be delayed by sealing a passage behind the party."
+
+  # ========================================================================
+  # ENVIRONMENTAL ENCOUNTERS (25 entries)
+  # ========================================================================
+
+  - id: "ENC_ENV_01"
+    name: "Ceiling Collapse"
+    category: "environmental"
+    description: "A low grinding sound from above. Dust falls. Then a section of ceiling drops in a roar of stone and earth."
+    trigger: "noise"
+    check: "NIM test (difficulty 3) or d8 crushing damage"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    aftermath: "Partial blockage. Return path may be cut off. d6 rounds to clear enough space to squeeze through."
+
+  - id: "ENC_ENV_02"
+    name: "Poisonous Gas Pocket"
+    category: "environmental"
+    description: "The air tastes wrong. Sweet, thick, heavy at the knees. A pocket of decay gas trapped since the barrow was sealed."
+    trigger: "exploration"
+    check: "TOU test (difficulty 2) each round or d4 poison damage and nausea (-1 to all actions for d6 rounds)"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "moderate"
+    aftermath: "Ventilating the area (creating an air channel) takes d6 rounds. Open flame in the gas: 50% chance of explosion — 2d8 fire damage to all in the chamber."
+
+  - id: "ENC_ENV_03"
+    name: "Flooding Chamber"
+    category: "environmental"
+    description: "Water seeps from the walls. Ankles. Knees. The only exit is the low passage ahead, already half-submerged."
+    trigger: "time"
+    check: "MIG test (difficulty 3) to force through the flooded passage. Failure means held under — d6 drowning damage per round."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [2, 3]
+    difficulty: "hard"
+    aftermath: "Gear may be waterlogged. Torches extinguished. Traversal takes d6+2 rounds of swimming in the dark."
+
+  - id: "ENC_ENV_04"
+    name: "Extreme Cold Zone"
+    category: "environmental"
+    description: "The temperature drops so fast breath freezes mid-exhalation. Frost crawls up weapons. Fingers stop working."
+    trigger: "exploration"
+    check: "TOU test (difficulty 3) each exploration turn or d4 cold damage. Fail by 3+: frostbitten extremity — permanent NIM penalty without treatment."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    aftermath: "Zone lasts for d6 chambers. Fire gives temporary relief (reduces difficulty by 1). Metal armour conducts cold — extra d2 damage per round."
+
+  - id: "ENC_ENV_05"
+    name: "Unstable Floor"
+    category: "environmental"
+    description: "The flagstones rock underfoot. Cracks widen. Something hollow beneath."
+    trigger: "proximity"
+    check: "NIM test (difficulty 2) or fall through — 2d6 fall damage into a lower chamber. MIG test (difficulty 3) to catch the edge."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    aftermath: "The lower chamber may contain something. Or someone. Rope required to rejoin the party above."
+
+  - id: "ENC_ENV_06"
+    name: "Rockfall Choke"
+    category: "environmental"
+    description: "Stones shift overhead with every footstep. The passage narrows to a crawl space with loose boulders balanced above."
+    trigger: "noise"
+    check: "Group NIM test (difficulty 3). Each failure: d6 crushing damage. Loud noise triggers a second rockfall."
+    barrow_size: ["small", "medium", "large"]
+    barrow_age: ["old", "ancient", "primordial"]
+    depth_level: [1, 2, 3]
+    difficulty: "moderate"
+    aftermath: "Passage may be permanently blocked after the fall. Clearing it: MIG group test, d6 exploration turns."
+
+  - id: "ENC_ENV_07"
+    name: "Bad Air"
+    category: "environmental"
+    description: "Torches burn low and blue. Lungs tighten. Not poison — just stale air sealed for centuries. Oxygen running out."
+    trigger: "exploration"
+    check: "TOU test (difficulty 2) each turn. Failure: d4 damage and confusion (-2 to WIT tests). Three failures in a row: unconsciousness."
+    barrow_size: ["small", "medium"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "moderate"
+    aftermath: "Must retreat or break through to a ventilated area. Sealed barrows are the worst. A fresh passage or opening restores air."
+
+  - id: "ENC_ENV_08"
+    name: "Root Tangle Wall"
+    category: "environmental"
+    description: "Tree roots have punched through the ceiling and walls, filling the corridor with a dense mesh of wood and dirt. Cutting through showers the passage in soil."
+    trigger: "exploration"
+    check: "MIG test (difficulty 2) with axe or blade to cut through. Takes d6 rounds. Failure: roots recoil and knock the cutter back — d4 damage."
+    barrow_size: ["small", "medium", "large"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "easy"
+    aftermath: "Cutting the roots may destabilise the ceiling above. 1-in-6 chance of minor collapse after clearing."
+
+  - id: "ENC_ENV_09"
+    name: "Ice Formation Barrier"
+    category: "environmental"
+    description: "The passage is sealed by a wall of ice — smooth, clear, and thick. Through it, the next chamber is visible. Something moves on the other side."
+    trigger: "exploration"
+    check: "MIG test (difficulty 4) with picks to break through. d6 exploration turns. Fire reduces difficulty by 2 but fills the corridor with steam (visibility zero for d4 rounds)."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    aftermath: "Whatever was visible through the ice may be gone when the wall breaks. Or it may be waiting."
+
+  - id: "ENC_ENV_10"
+    name: "Narrow Squeeze"
+    category: "environmental"
+    description: "The passage narrows to a body-width crack. Armour scrapes. Shields don't fit."
+    trigger: "exploration"
+    check: "NIM test (difficulty 2) to pass with gear. Failure: stuck for d4 rounds, vulnerability to attack."
+    barrow_size: ["small", "medium"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "easy"
+    aftermath: "Armour must be removed to pass. Party is strung out and vulnerable in the squeeze — no fighting possible."
+
+  - id: "ENC_ENV_11"
+    name: "Pitch Darkness (Torch Failure)"
+    category: "environmental"
+    description: "A gust of air from nowhere. All torches gutter. One goes out. Then another. The dark rushes in."
+    trigger: "random"
+    check: "WIT test (difficulty 2) to relight flame before panic. Failure: d4 rounds of total darkness. WIL test or panic."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "moderate"
+    aftermath: "Darkness in a barrow is dangerous. Things move when they can't be seen. Re-roll on the encounter table for anything attracted by the moment of vulnerability."
+
+  - id: "ENC_ENV_12"
+    name: "Flooded Pit Trap"
+    category: "environmental"
+    description: "The floor looks solid — six inches of standing water conceals a 10-foot pit. The lead walker drops through."
+    trigger: "proximity"
+    check: "NIM test (difficulty 3) to catch the edge. Failure: 2d6 fall damage into cold water 10 feet deep. MIG test (difficulty 3) in armour to surface."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "hard"
+    aftermath: "Drowning starts immediately for armoured characters. Rope or a strong arm to haul them up. The pit may connect to a lower level."
+
+  - id: "ENC_ENV_13"
+    name: "Gravity Slab"
+    category: "environmental"
+    description: "A stone slab balanced on a fulcrum under the floor. Step on one end, the other rises to seal the passage behind. Now only forward."
+    trigger: "proximity"
+    check: "WIT test (difficulty 3) to notice the mechanism before triggering. MIG test (difficulty 4) to force the slab back once triggered."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    aftermath: "One-way progression. The builders wanted visitors to go deeper, not return."
+
+  - id: "ENC_ENV_14"
+    name: "Stair Collapse"
+    category: "environmental"
+    description: "Stone stairs descending. The third step cracks. The whole staircase gives way in a cascade of rubble."
+    trigger: "proximity"
+    check: "NIM test (difficulty 3) or tumble down — 2d6 damage. MIG test to grab an edge reduces damage by half."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [1, 2, 3]
+    difficulty: "moderate"
+    aftermath: "No return by the same route. The party drops to a deeper level. Climbing back requires rope and d6 exploration turns."
+
+  - id: "ENC_ENV_15"
+    name: "Bone Dust Cloud"
+    category: "environmental"
+    description: "A chamber filled with pulverised bone. Each footstep raises a choking white cloud. Visibility drops to arm's length."
+    trigger: "exploration"
+    check: "TOU test (difficulty 2) or d4 rounds of coughing and blindness (-2 to all tests). Cloth over the mouth reduces difficulty to 1."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [3, 4]
+    difficulty: "easy"
+    aftermath: "Slows movement. Tracks are invisible. The dust may carry disease — TOU test in d6 days or bone-fever."
+
+  - id: "ENC_ENV_16"
+    name: "Seeping Acid"
+    category: "environmental"
+    description: "Mineral deposits on the ceiling drip a corrosive solution. It eats metal and leather. The floor is pocked with shallow craters."
+    trigger: "exploration"
+    check: "NIM test (difficulty 2) to navigate. Failure: d4 acid damage and one piece of equipment is corroded (armour loses 1 protection, weapon loses 1 damage)."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    aftermath: "Permanent equipment damage if not avoided. The passage is passable but costly."
+
+  - id: "ENC_ENV_17"
+    name: "Steam Vent"
+    category: "environmental"
+    description: "A crack in the floor exhales steam in irregular bursts. The stonework around it is scalding. The passage goes right over it."
+    trigger: "proximity"
+    check: "NIM test (difficulty 3) to time the crossing between bursts. Failure: d8 fire damage from superheated steam. Metal armour conducts the heat — additional d4."
+    barrow_size: ["medium", "large"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    aftermath: "Timing the bursts: WIT test determines the pattern. Regular bursts every d6+2 rounds."
+
+  - id: "ENC_ENV_18"
+    name: "Mudslide Passage"
+    category: "environmental"
+    description: "A steep descent coated in wet clay. No handholds. The angle is severe enough to slide anyone who loses footing into the dark below."
+    trigger: "exploration"
+    check: "NIM test (difficulty 3) to descend with control. Failure: slide into the chamber below — NIM test (difficulty 2) on arrival or d6 impact damage."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "easy"
+    aftermath: "Climbing back up requires rope. The slide deposits the party at a deeper level — possibly in hostile territory."
+
+  - id: "ENC_ENV_19"
+    name: "Deadfall Trap (Ancient)"
+    category: "environmental"
+    description: "A stone slab rigged above the passage. A thin wire at shin height. The original builders wanted to kill whatever came this way."
+    trigger: "proximity"
+    check: "WIT test (difficulty 3) to spot the wire. NIM test (difficulty 3) to dodge the slab. Failure: 2d8 crushing damage."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "hard"
+    aftermath: "The slab blocks the passage after falling. Can be cleared with MIG group test in d6 turns."
+
+  - id: "ENC_ENV_20"
+    name: "Swinging Blade Trap"
+    category: "environmental"
+    description: "A corroded bronze blade embedded in a wall slot. A pressure plate in the floor. The mechanism still works after all these centuries."
+    trigger: "proximity"
+    check: "WIT test (difficulty 2) to spot the plate. NIM test (difficulty 3) to dodge the blade. Failure: 2d6 slashing damage."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    aftermath: "Single-use trap — the mechanism jams after firing. The blade itself may be salvageable bronze."
+
+  - id: "ENC_ENV_21"
+    name: "Shifting Walls"
+    category: "environmental"
+    description: "The walls move. Slowly. Grinding inward. Not fast enough to crush — fast enough to trap if the party dawdles."
+    trigger: "time"
+    check: "WIT test (difficulty 3) to find the release mechanism. MIG test (difficulty 4) to hold the walls. Failure and delay: walls seal the passage."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    aftermath: "If walls close: the party is sealed in. Must find a hidden exit or starve. d6 exploration turns among the mechanisms to find a release."
+
+  - id: "ENC_ENV_22"
+    name: "Sinkhole Formation"
+    category: "environmental"
+    description: "The ground is soft. Subsidence. A bowl-shaped depression in the chamber floor where the earth is slowly swallowing the stonework."
+    trigger: "proximity"
+    check: "NIM test (difficulty 2) to skirt the edge. Failure: slide into the centre. MIG test (difficulty 3) to climb out before the soft earth closes over."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    aftermath: "The sinkhole may reveal a lower chamber or simply swallow gear. Items dropped in are lost."
+
+  - id: "ENC_ENV_23"
+    name: "Mushroom Garden"
+    category: "environmental"
+    description: "A cavern thick with pale, bloated fungi. Some glow faintly. Spores drift in the still air. The smell is sweet and suffocating."
+    trigger: "exploration"
+    check: "TOU test (difficulty 2) or d4 rounds of hallucination (-2 to WIT and WIL). Cloth mask reduces exposure."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    aftermath: "Some mushrooms are edible (Survival test to identify). Hallucinations may reveal prophetic visions (GM discretion)."
+
+  - id: "ENC_ENV_24"
+    name: "Pendulum Stone"
+    category: "environmental"
+    description: "A massive stone block hangs from chains over a pit. It swings in a slow arc, blocking the only bridge across."
+    trigger: "exploration"
+    check: "NIM test (difficulty 3) to time the crossing. Failure: struck by the block — d10 damage and knocked into the pit (2d6 fall)."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    aftermath: "Jamming the pendulum requires MIG test (difficulty 4) and a strong beam. Or cross one at a time, timing the swings."
+
+  - id: "ENC_ENV_25"
+    name: "Smoke Chamber"
+    category: "environmental"
+    description: "A fire pit still smoulders in the centre of a sealed chamber. Centuries of accumulated smoke fills the upper half of the room. Below knee height, the air is breathable."
+    trigger: "exploration"
+    check: "TOU test (difficulty 2) if standing upright — d4 smoke inhalation per round. Crawling avoids the smoke but slows movement to a crawl."
+    barrow_size: ["medium", "large"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    aftermath: "Crawling through a barrow chamber is slow and vulnerable. The fire pit is supernatural — it does not consume fuel. Rune-fed."
+
+  # ========================================================================
+  # SUPERNATURAL ENCOUNTERS (22 entries)
+  # ========================================================================
+
+  - id: "ENC_SUPER_01"
+    name: "Whisper in the Dark"
+    category: "supernatural"
+    description: "A voice speaks a name — one of the party members' names — from deeper in the barrow. Clear. Intimate. Like someone who knows them."
+    trigger: "random"
+    check: "WIL test (difficulty 3) or compulsion to follow the voice."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "moderate"
+    supernatural_effect: "Veil-proximity increases by 1 step."
+
+  - id: "ENC_SUPER_02"
+    name: "The Runes Glow"
+    category: "supernatural"
+    description: "Carved runes on the wall pulse with a dull red light. The air vibrates. Those who can read runes feel the words pushing into their mind whether they want to read or not."
+    trigger: "proximity"
+    check: "WIL test (difficulty 2) for anyone with Rune Lore. Failure: the rune's message lodges in the mind — d4 WIL damage and a compulsion to speak the words aloud."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    supernatural_effect: "Speaking the runes aloud activates dormant barrow defences. Roll again on the combat table."
+
+  - id: "ENC_SUPER_03"
+    name: "Ghost Manifestation — The Mourner"
+    category: "supernatural"
+    description: "A translucent woman kneels by an empty alcove, weeping without sound. She doesn't acknowledge the living. But when someone moves to pass, she turns. Her face is a wound."
+    trigger: "proximity"
+    check: "WIL test (difficulty 3) or rooted in place with grief that isn't yours. d6 rounds of paralysis."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "moderate"
+    supernatural_effect: "The grief lingers — -1 to WIL tests for the rest of the barrow expedition."
+
+  - id: "ENC_SUPER_04"
+    name: "Dream Intrusion"
+    category: "supernatural"
+    description: "During rest, one party member dreams of the barrow as it was when it was built. They walk through crowds of the living dead — living then, dead now. A voice asks: 'Why have you come to my house?'"
+    trigger: "time"
+    check: "WIL test (difficulty 3). Failure: the dreamer wakes screaming and loses the benefit of rest."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "moderate"
+    supernatural_effect: "Success: the dream reveals the layout of the next level. Failure: the barrow knows their intentions."
+
+  - id: "ENC_SUPER_05"
+    name: "Corpse-Light Lure"
+    category: "supernatural"
+    description: "A soft blue glow beckons from a side passage. It drifts away when approached, always just around the next corner. Those who follow hear promises of treasure."
+    trigger: "random"
+    check: "WIL test (difficulty 2) or compelled to follow for d6 chambers. Each chamber: roll for additional encounters."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3, 4]
+    difficulty: "moderate"
+    supernatural_effect: "The light leads to one of: a treasure cache (20%), a trap (40%), or the deepest point of the barrow (40%)."
+
+  - id: "ENC_SUPER_06"
+    name: "Psychic Dread Wave"
+    category: "supernatural"
+    description: "No cause. No source. A wave of dread sweeps through like a cold wind. Every instinct screams to leave. Now. The walls feel like they're leaning in."
+    trigger: "random"
+    check: "WIL test (difficulty 3). Failure: flee toward the exit for d6 rounds (may trigger other encounters). Success: shaken but in control — -1 to all tests for d6 rounds."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    supernatural_effect: "The barrow is testing resolve. Those who stand earn a reprieve — next Veil-proximity check is at +1."
+
+  - id: "ENC_SUPER_07"
+    name: "Temporal Echo"
+    category: "supernatural"
+    description: "The party walks into a chamber and sees themselves — already dead. Their own bodies, in the same gear, lying where they stand. The vision fades after d6 rounds."
+    trigger: "random"
+    check: "WIL test (difficulty 4). Failure: d6 WIL damage from existential horror."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    supernatural_effect: "Prophetic or not. GM decides if this is a warning, a lie, or an inevitability."
+
+  - id: "ENC_SUPER_08"
+    name: "Spirit Possession Attempt"
+    category: "supernatural"
+    description: "The weakest-willed member of the party stops mid-step. Their eyes go blank. A different voice comes from their mouth. Old Norse. A demand."
+    trigger: "random"
+    check: "WIL contest vs. the spirit (WIL 5). Failure: possessed for d6 rounds — the spirit uses the body to try to complete unfinished business (may attack allies, open sealed doors, or walk toward danger)."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    supernatural_effect: "Possession can be broken by a strong blow (d6+ damage), cold iron touch, or another WIL contest. The spirit may leave voluntarily if its demand is met."
+
+  - id: "ENC_SUPER_09"
+    name: "Blood Memory"
+    category: "supernatural"
+    description: "A party member touches a wall and experiences the barrow's construction — from the inside. Hands laying stones. The weight of earth above. The feeling of being sealed in alive."
+    trigger: "touch"
+    check: "WIL test (difficulty 2). Failure: d4 WIL damage and claustrophobia — must make WIL tests to enter enclosed spaces for the rest of the expedition."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    supernatural_effect: "Success: gain knowledge of the barrow's original layout, including one hidden passage."
+
+  - id: "ENC_SUPER_10"
+    name: "The Veil Thins"
+    category: "supernatural"
+    description: "The shadows move wrong. The walls breathe. For a moment, the barrier between the living world and the dead one is tissue-thin. Things press against the other side."
+    trigger: "random"
+    check: "WIL group test (difficulty 3). Each failure: that person sees the dead who inhabit the barrow on the other side — hundreds of them, watching."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [4]
+    difficulty: "deadly"
+    supernatural_effect: "Veil-proximity jumps to maximum. All undead encounters in this barrow are now at +1 difficulty. The barrow is fully awake."
+
+  - id: "ENC_SUPER_11"
+    name: "The Mirror Pool"
+    category: "supernatural"
+    description: "A basin of still, black water in the centre of a chamber. It reflects nothing — not torchlight, not faces. Then it shows something. Something from the viewer's past they'd rather forget."
+    trigger: "proximity"
+    check: "WIL test (difficulty 3) to look away. Failure: transfixed for d6 rounds, exposed to d4 WIL damage and a vision of a personal shame or fear."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "moderate"
+    supernatural_effect: "The pool reveals truth. A strong-willed viewer may extract useful information (GM determines what the barrow reveals)."
+
+  - id: "ENC_SUPER_12"
+    name: "The Temperature of Grief"
+    category: "supernatural"
+    description: "The air turns warm. Not natural cave warmth — the warmth of a body. Of many bodies. All the dead buried here, still giving off the heat of their final breath."
+    trigger: "random"
+    check: "WIL test (difficulty 2) or d4 WIL damage from the intimacy of the sensation."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    supernatural_effect: "Benign but disturbing. The warmth fades after d6 rounds. Cold-based encounters are suppressed in this area for the duration."
+
+  - id: "ENC_SUPER_13"
+    name: "Name-Thief"
+    category: "supernatural"
+    description: "A party member opens their mouth to speak and cannot remember their own name. It's gone. The barrow took it."
+    trigger: "random"
+    check: "WIL test (difficulty 4). Failure: name lost until the party leaves the barrow. Without a name, Veil-creatures can't target the character directly — but neither can healing magic."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    supernatural_effect: "Double-edged. Nameless characters are invisible to targeted supernatural effects but cannot be addressed by allies for cooperation bonuses."
+
+  - id: "ENC_SUPER_14"
+    name: "Echo of a Battle"
+    category: "supernatural"
+    description: "The clash of iron. War-cries. The party rounds a corner into a phantom battle — translucent warriors hacking at each other. They cannot be touched. But their weapons can cut."
+    trigger: "proximity"
+    check: "NIM test (difficulty 3) to navigate through the phantom melee. Failure: d6 damage from spectral weapons."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    supernatural_effect: "The echo replays every d6 exploration turns. Timing movement between cycles allows safe passage."
+
+  - id: "ENC_SUPER_15"
+    name: "The Song"
+    category: "supernatural"
+    description: "A woman's voice singing. Old words. The melody is beautiful and wrong. Those who listen feel their wounds closing — but something dark fills the space the pain left."
+    trigger: "random"
+    check: "WIL test (difficulty 3) to resist the song. Failure: healed d6 HP but gain Veil-touched condition — aura visible to undead, who now prioritize this character."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    supernatural_effect: "The healing is real but the cost is real too. The song marks the listener for the barrow's attention."
+
+  - id: "ENC_SUPER_16"
+    name: "Stone Weeping"
+    category: "supernatural"
+    description: "The walls weep. Not water — the stone itself produces a clear, warm liquid that smells like blood but tastes like salt. The whole chamber is damp with it."
+    trigger: "exploration"
+    check: "WIL test (difficulty 2). Failure: d4 rounds of uncontrollable sympathy — must sit down and weep. Attacks of opportunity from anything in the area."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    supernatural_effect: "The weeping stone can be collected — it functions as a minor healing agent (d4 HP) if applied to wounds. Limited supply."
+
+  - id: "ENC_SUPER_17"
+    name: "Gravity Reversal"
+    category: "supernatural"
+    description: "For three heartbeats, everything falls upward. Gear, dirt, loose stones. Bodies. Then it stops and everything crashes back down."
+    trigger: "random"
+    check: "NIM test (difficulty 3) to grab something anchored. Failure: d6 falling damage (from the ceiling back to the floor). Loose gear scattered."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [4]
+    difficulty: "moderate"
+    supernatural_effect: "Reality isn't stable here. The barrow's heart bends the world. Expect more distortions ahead."
+
+  - id: "ENC_SUPER_18"
+    name: "The Bargainer"
+    category: "supernatural"
+    description: "A voice. No body. It offers a deal: leave something personal — a finger, a memory, a year of life — and the barrow will reveal its treasure. The terms are binding."
+    trigger: "random"
+    check: "No mechanical test — purely a player decision. The barrow honours the deal. The cost is real."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [4]
+    difficulty: "hard"
+    supernatural_effect: "Accepting: a memory is lost (player's choice which skill or experience to sacrifice) and the barrow reveals the treasure chamber. Refusing: the voice goes silent and never returns."
+
+  - id: "ENC_SUPER_19"
+    name: "Blood Compass"
+    category: "supernatural"
+    description: "A cut on a party member's hand begins to bleed directionally — the blood flows uphill, toward the deepest part of the barrow. Like a compass needle."
+    trigger: "random"
+    check: "No check — observation only. WIL test (difficulty 2) to resist following the compass."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    supernatural_effect: "The blood points true. Following it leads to the heart-chamber by the most direct route — which may not be the safest."
+
+  - id: "ENC_SUPER_20"
+    name: "Doppelganger Encounter"
+    category: "supernatural"
+    description: "A party member rounds a corner and meets themselves coming the other way. Same face. Same gear. Same bewildered expression. The double says: 'Go back. It's not worth it.'"
+    trigger: "random"
+    check: "WIL test (difficulty 4). Failure: d6 WIL damage and conviction that the warning is genuine."
+    barrow_size: ["large", "vast"]
+    barrow_age: ["primordial"]
+    depth_level: [3, 4]
+    difficulty: "hard"
+    supernatural_effect: "The double vanishes if attacked. If spoken to, it answers questions with half-truths. It cannot leave the chamber where it appeared."
+
+  - id: "ENC_SUPER_21"
+    name: "Ancestor's Judgement"
+    category: "supernatural"
+    description: "A voice — deep, resonant, authoritative — demands each member of the party state their lineage and purpose. Those who lie feel a pressure on their chest."
+    trigger: "proximity"
+    check: "WIL test (difficulty 3) to resist compulsion to answer truthfully. Lying: d6 WIL damage. Answering truthfully: the voice may grant passage or information."
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "moderate"
+    supernatural_effect: "Truthful answers gain the ancestor's grudging respect — Veil-proximity decreases by 1 step. Lies increase it by 2."
+
+  - id: "ENC_SUPER_22"
+    name: "The Sleeping Legion"
+    category: "supernatural"
+    description: "A vast hall. Hundreds of warriors laid out in rows, fully armed. They breathe. Slowly. Their eyes are closed. They are not dead — they are waiting. For what, the party does not know."
+    trigger: "exploration"
+    check: "WIL group test (difficulty 2) to maintain silence. Any failure: one warrior's eyes open."
+    barrow_size: ["vast"]
+    barrow_age: ["primordial"]
+    depth_level: [4]
+    difficulty: "deadly"
+    supernatural_effect: "If undisturbed: passage through is possible. If one wakes: all wake. This is a TPK event — the only option is to run. The legion does not pursue beyond the hall."
+
+  # ========================================================================
+  # DISCOVERY ENCOUNTERS (25 entries)
+  # ========================================================================
+
+  - id: "ENC_DISC_01"
+    name: "Prior Expedition Corpse"
+    category: "discovery"
+    description: "A body in rusted mail, face down. Belt pouch holds a charcoal note: 'Third passage left. Do not take the silver ring.' The ring is still on the corpse's finger."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    loot_on_success: "ENC_LOOT_explorer_remains"
+    lore_reveal: "Warns about a specific trap or danger deeper in."
+
+  - id: "ENC_DISC_02"
+    name: "Rune Inscription — Warning"
+    category: "discovery"
+    description: "Carved runes over an archway. Rune Lore translates: 'BEYOND THIS MARK, THE LIVING ARE NOT WELCOMED. BRING IRON AND FIRE OR BRING NOTHING.'"
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient", "primordial"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    lore_reveal: "Confirms that undead are present deeper. Fire and iron are effective."
+
+  - id: "ENC_DISC_03"
+    name: "Wall Carving — Battle Scene"
+    category: "discovery"
+    description: "A carved mural covers an entire wall. Warriors in ring-mail fighting a beast with antlers. The beast is winning. In the last panel, the warriors seal it in the barrow."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "trivial"
+    lore_reveal: "Something besides undead was buried here. The heart-chamber may contain a bound creature, not just a chieftain."
+
+  - id: "ENC_DISC_04"
+    name: "Looter's Camp (Abandoned)"
+    category: "discovery"
+    description: "A cold fire pit. Bedrolls. A half-eaten meal gone to mould. Whoever camped here left in a hurry — one boot still lies by the fire."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large"]
+    barrow_age: ["recent", "old", "ancient"]
+    depth_level: [1]
+    difficulty: "trivial"
+    loot_on_success: "ENC_LOOT_camp_supplies"
+    lore_reveal: "The camp is recent — within a week. The looters may still be deeper in, or they fled."
+
+  - id: "ENC_DISC_05"
+    name: "Sprung Trap — Blade"
+    category: "discovery"
+    description: "A blade trap, already triggered. A corroded bronze blade hangs from its mechanism. On the floor beneath: a severed hand, mummified. The trap's previous victim."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "trivial"
+    lore_reveal: "This passage has been attempted before. The trap is spent — safe to pass."
+
+  - id: "ENC_DISC_06"
+    name: "Hidden Passage — Behind the Slab"
+    category: "discovery"
+    description: "A stone slab that doesn't match the wall around it. Push it — it grinds sideways. A narrow passage behind, unlit, descending."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient", "primordial"]
+    depth_level: [1, 2, 3]
+    difficulty: "easy"
+    check: "WIT test (difficulty 3) to notice the slab. MIG test (difficulty 2) to push it."
+    lore_reveal: "A secondary route deeper. May bypass traps and encounters on the main path — or lead to worse ones."
+
+  - id: "ENC_DISC_07"
+    name: "Scattered Silver"
+    category: "discovery"
+    description: "A pouch torn open. Silver coins scattered across the floor — Dane-mark, old mint. Someone fled and dropped their earnings. Or were dragged."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    loot_on_success: "ENC_LOOT_scattered_silver"
+    lore_reveal: "Drag marks lead deeper. The silver's owner went further in — not by choice."
+
+  - id: "ENC_DISC_08"
+    name: "Dead Torchbearer"
+    category: "discovery"
+    description: "A boy. Face frozen in terror. Still holding a torch stub that burned down to his fingers. He starved or something killed him — no visible wounds. Hired help that was left behind."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    loot_on_success: "ENC_LOOT_minimal_personal"
+    lore_reveal: "Recent death — days old. His employers are likely still ahead. He has scratches on the walls near his body — tally marks counting days."
+
+  - id: "ENC_DISC_09"
+    name: "Rune Inscription — Name of the Dead"
+    category: "discovery"
+    description: "Runes above an alcove. They name the deceased: rank, lineage, deeds. This was someone important. The alcove is empty — the body was moved deeper when the barrow was expanded."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "trivial"
+    lore_reveal: "The named dead is likely the barrow's guardian. Knowing the name may give leverage in a supernatural encounter."
+
+  - id: "ENC_DISC_10"
+    name: "Embalming Chamber"
+    category: "discovery"
+    description: "Stone tables stained dark. Ceramic jars — some cracked, some sealed. The room where the dead were prepared before entombment. Tools of the embalmer's trade still in order."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    loot_on_success: "ENC_LOOT_embalming_supplies"
+    lore_reveal: "The jars contain preserving compounds — some still potent. The preparation method reveals the culture and era of the burial."
+
+  - id: "ENC_DISC_11"
+    name: "Treasure Cache (Minor)"
+    category: "discovery"
+    description: "A loose stone in the floor. Beneath: a small leather sack containing arm-rings, a brooch, and three coins of unknown mint. Someone hid this from looters."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "easy"
+    check: "WIT test (difficulty 3) to notice the loose stone."
+    loot_on_success: "ENC_LOOT_minor_treasure"
+
+  - id: "ENC_DISC_12"
+    name: "Treasure Cache (Major)"
+    category: "discovery"
+    description: "A sealed alcove behind a false wall. Inside: stacked grave goods — weapons, jewellery, a small chest of hacksilver. The real wealth — untouched since interment."
+    trigger: "exploration"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "moderate"
+    check: "WIT test (difficulty 4) to find the false wall. MIG test (difficulty 3) to breach it."
+    loot_on_success: "ENC_LOOT_major_treasure"
+    lore_reveal: "The goods bear maker's marks linking them to a known jarl or historical figure."
+
+  - id: "ENC_DISC_13"
+    name: "Expedition Journal"
+    category: "discovery"
+    description: "A leather-bound journal, water-stained. Written in a merchant's hand. It documents a previous expedition — room-by-room, trap-by-trap. The last entry stops mid-sentence."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    loot_on_success: "ENC_LOOT_expedition_journal"
+    lore_reveal: "The journal maps the first two levels and describes specific dangers. The abrupt ending marks where the expedition failed."
+
+  - id: "ENC_DISC_14"
+    name: "Animal Bones Pile"
+    category: "discovery"
+    description: "A heap of small animal bones — rats, birds, a fox. Something has been feeding down here. The bones are gnawed clean. Fresh."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large"]
+    barrow_age: ["recent", "old", "ancient"]
+    depth_level: [1]
+    difficulty: "trivial"
+    lore_reveal: "A predator lives in the entry level — likely the animal encounters deeper in. Recent kills mean active threats."
+
+  - id: "ENC_DISC_15"
+    name: "Carved Map"
+    category: "discovery"
+    description: "Scratched into the wall with a knife point. A crude map of the barrow's entry level. X marks on three locations. Two are scratched out. One remains."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    lore_reveal: "The remaining X marks an unexplored side passage or cache. A previous explorer's unfinished work."
+
+  - id: "ENC_DISC_16"
+    name: "Offering Niche"
+    category: "discovery"
+    description: "A small alcove at waist height. Inside: a clay bowl, a comb, a bone needle. Offerings for the dead. Undisturbed. Taking them is easy. The consequences are not."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient", "primordial"]
+    depth_level: [1, 2, 3]
+    difficulty: "trivial"
+    loot_on_success: "ENC_LOOT_offering_goods"
+    lore_reveal: "Removing offerings may anger the barrow's dead. Leaving them earns no hostility from the first undead encountered."
+
+  - id: "ENC_DISC_17"
+    name: "Weapon Rack (Corroded)"
+    category: "discovery"
+    description: "A stone shelf with slots for weapons. Most are dust. Two slots still hold corroded iron — an axe head and a spear point. Serviceable if cleaned."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    loot_on_success: "ENC_LOOT_corroded_weapons_rack"
+    lore_reveal: "The weapons were left for the dead to carry in the afterlife. Practical ones — not ceremonial."
+
+  - id: "ENC_DISC_18"
+    name: "Sealed Door with Inscription"
+    category: "discovery"
+    description: "A stone door, sealed with lead poured into the seams. Runes above: 'WHAT SLEEPS WITHIN MUST NOT WALK.' The lead is intact. No one has opened this."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "moderate"
+    check: "MIG test (difficulty 4) to break the lead seal. Takes d6+2 rounds of hammering."
+    lore_reveal: "Whatever is behind this door was sealed deliberately. The builders feared it. Opening is a significant escalation."
+
+  - id: "ENC_DISC_19"
+    name: "Burial Goods Shelf"
+    category: "discovery"
+    description: "A long shelf carved into the wall. Ceramic vessels, bronze pins, a glass bead necklace. Personal effects of the anonymous dead. Worth something to a trader, worth more as information."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [2, 3]
+    difficulty: "trivial"
+    loot_on_success: "ENC_LOOT_burial_shelf"
+    lore_reveal: "The goods indicate trade connections — glass beads from the south, amber from the east. This barrow served a wealthy community."
+
+  - id: "ENC_DISC_20"
+    name: "Water Source"
+    category: "discovery"
+    description: "A natural spring seeps through a crack in the rock. Clean water pooling in a stone basin. Moss grows around the edges. Life, underground."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "trivial"
+    lore_reveal: "Safe rest point. The water is drinkable. Refill waterskins here. The barrow builders may have placed the spring deliberately."
+
+  - id: "ENC_DISC_21"
+    name: "Scratched Message — Mercy"
+    category: "discovery"
+    description: "Scratched into the wall at knee height: 'CAN'T FIND THE WAY OUT. LEG IS BROKEN. IF ANYONE READS THIS BRING MY AXE TO GRIMHOLT. ASK FOR SIGRID.' Below: a name and a date."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1, 2]
+    difficulty: "trivial"
+    lore_reveal: "A side quest — find the axe, deliver it to Grimholt. The body may be nearby."
+
+  - id: "ENC_DISC_22"
+    name: "Collapsed Burial Chamber"
+    category: "discovery"
+    description: "A room half-crushed by a ceiling collapse. Among the rubble: the edge of a sarcophagus, cracked open. Whatever was inside is gone. Or freed."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    lore_reveal: "The sarcophagus held something that broke out from the inside. Claw marks on the inner lid. Trail of disturbed dust leads deeper."
+
+  - id: "ENC_DISC_23"
+    name: "Evidence of Ritual"
+    category: "discovery"
+    description: "A circle scored into the stone floor. Wax residue from candles at five points. Dried blood in the centre. Someone performed a ritual here — recently."
+    trigger: "exploration"
+    barrow_size: ["medium", "large", "vast"]
+    barrow_age: ["old", "ancient", "primordial"]
+    depth_level: [2, 3]
+    difficulty: "easy"
+    lore_reveal: "A Veil-working. The ritual may have opened something or bound something. If the rival band 'The Hollow Men' are in this barrow, this is their work."
+
+  - id: "ENC_DISC_24"
+    name: "Historical Graffiti"
+    category: "discovery"
+    description: "Names and dates carved over the original runes. A history of visitors spanning centuries. Raiders, scholars, lovers hiding, thieves. The barrow has been entered many times."
+    trigger: "exploration"
+    barrow_size: ["small", "medium", "large", "vast"]
+    barrow_age: ["old", "ancient"]
+    depth_level: [1]
+    difficulty: "trivial"
+    lore_reveal: "One name appears twice — once near the entrance and once deeper in, with a later date. Someone came back."
+
+  - id: "ENC_DISC_25"
+    name: "The Chieftain's Personal Effects"
+    category: "discovery"
+    description: "A wooden chest, iron-banded, placed at the foot of the largest alcove. Inside: a cloak pin of twisted gold, a whetstone carved with a boar, and a lock of braided hair wrapped in linen."
+    trigger: "exploration"
+    barrow_size: ["large", "vast"]
+    barrow_age: ["ancient", "primordial"]
+    depth_level: [3, 4]
+    difficulty: "moderate"
+    check: "WIT test (difficulty 3) to identify the chest is trapped. NIM test (difficulty 3) to disarm. Failure: d8 damage from a spring-loaded spike."
+    loot_on_success: "ENC_LOOT_chieftain_effects"
+    lore_reveal: "The gold pin identifies the chieftain by clan. The hair belongs to someone still mourned. Taking these items is the highest insult to the barrow's dead."

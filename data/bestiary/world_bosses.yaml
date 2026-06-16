@@ -1,0 +1,1099 @@
+enemies:
+  # ==========================================================================
+  # WORLD BOSSES — ARMY-ENDING THREATS (WBS_01 through WBS_10)
+  #
+  # Design philosophy: Dark Souls-grade encounters. Each boss is a
+  # campaign-defining catastrophe that cannot be overcome through direct
+  # combat by any mercenary band. Small armies break against them.
+  # Legends survive because every world boss has ONE fatal flaw —
+  # an Achilles heel that can be discovered through research, cunning,
+  # or desperate improvisation. Finding and exploiting that weakness
+  # is the only path to victory.
+  #
+  # These are not encounters to be "fought." They are problems to be
+  # solved — through wit, sacrifice, manipulation, or the one narrow
+  # weakness that turns an impossible fight into a barely survivable one.
+  #
+  # Tier 6 — World-Ending: Stats 8-10, HP 40-100+, Skill Max 5+.
+  # Conventional weapons deal scratch damage at best.
+  # ==========================================================================
+
+  # --------------------------------------------------------------------------
+  # WBS_01: THE BARROW TIDE — The Dead March as One
+  # --------------------------------------------------------------------------
+  - id: "WBS_01"
+    name: "The Barrow Tide"
+    category: "world_boss"
+    subcategory: "undead_catastrophe"
+    tier: 6
+    named: true
+    description: "Not one creature. A wave. Every barrow in the Rimevegr opening simultaneously, the dead pouring out and moving in the same direction with the same purpose. Hundreds of draugr, dozens of haugbui, bone-swarms flowing like rivers through the valleys. At the wave's center walks something that was once the first chieftain buried in the oldest barrow — a figure of compacted bone and corroded iron three times the height of a man, its skull wreathed in blue fire, its arms dragging a sword that cuts grooves in the bedrock. The Barrow Tide has happened twice before in recorded history. Both times, settlements were swallowed. The third time, the legends say, it won't stop."
+    stats:
+      MIG: 10
+      NIM: 2
+      TOU: 10
+      WIT: 3
+      WIL: 10
+      WYR: 8
+    hp: 80
+    skills:
+      - name: "Command"
+        rank: 5
+      - name: "Seidr"
+        rank: 4
+      - name: "Intimidation"
+        rank: 5
+      - name: "Brawl"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Stone-Cutter Blade"
+          type: "greatsword"
+          speed: 1
+          base_damage: 14
+      armor:
+        torso: "Compacted Bone and Iron Shell"
+        head: "Skull Crown (blue fire)"
+    tactics: "The Barrow Tide does not fight — it advances. The core entity walks at a steady pace. Lesser undead form a screen around it, absorbing attacks. It swings the Stone-Cutter in slow arcs that demolish walls and scatter formations. It does not chase. It does not hurry. It walks toward the largest concentration of living people and does not stop. Armies that stand in its path lose cohesion within minutes as the dead climb over their own destroyed to reach the living."
+    morale_break: "The Tide does not stop. It processes forward until the core entity is destroyed or the anchor is severed. Retreat is the only sane response for those who cannot exploit the weakness."
+    group_size: "1 core entity + 100-300 lesser undead in a moving wave"
+    abilities:
+      - "Undead Tide: all undead within 2 miles are compelled to join the march — resistance impossible"
+      - "Stone-Cutter: each swing demolishes a 5-pace section of wall, palisade, or shield wall"
+      - "Bone Absorption: absorbs destroyed undead into its mass, healing d10 HP per 10 undead absorbed"
+      - "March Aura: all living creatures within 20 paces suffer -2 to all stats from the combined weight of death"
+      - "Inexorable: immune to knockback, grapple, stun, slow, root, and all movement-impairing effects"
+      - "Siege Engine: treats fortifications as obstacles to walk through, not barriers"
+    combat_phases:
+      pre_battle:
+        - name: "The Ground Shakes"
+          description: "Felt hours before arrival. A rhythmic tremor as hundreds of dead feet march in unison. Animals flee. Birds go silent. Wells run cold."
+        - name: "Barrow Eruptions"
+          description: "Every barrow within 2 miles vomits its dead. Local undead encounters spike to overwhelming levels before the core entity even arrives."
+      maneuvers:
+        - name: "Arc of Ruin"
+          description: "The Stone-Cutter sweeps a 10-pace arc. Everything in the arc takes 14 damage. Structures collapse. No dodge — only distance or cover behind something the blade has already destroyed."
+          cost: "Replaces attack"
+        - name: "Bone Wave"
+          description: "Commands the undead tide to surge forward in a 30-pace crush wave. All living in the path are buried under bodies — MIG test at -4 or pinned, d6 crushing damage per round."
+          cost: "Once per 10 rounds"
+        - name: "Dead Raise"
+          description: "Any fallen warriors — ally or enemy — rise as Restless Dead within d4 rounds of death. The Tide grows as the battle continues."
+          cost: "Passive, continuous"
+      bloodied:
+        - name: "Accelerating Collapse"
+          trigger: "Below 50% HP (40 HP)"
+          description: "The bone shell cracks, revealing a pulsing blue-white core of concentrated Veil energy. Damage output doubles but defense drops — -3 TOU as the shell fragments. The March Aura expands to 40 paces. Every corpse in the expanded range rises immediately."
+      on_death:
+        - name: "The Tide Breaks"
+          description: "The core entity collapses into a mound of bone and iron. All controlled undead simultaneously lose cohesion — most collapse, some wander mindlessly, d20% go berserk for d6 hours. The blue fire extinguishes. Where the core fell, the ground is permanently dead — nothing grows within 50 paces. The Stone-Cutter blade remains, too heavy for any living person to lift."
+    resistances:
+      [
+        "cold_immune",
+        "fear_immune",
+        "poison_immune",
+        "bleeding_immune",
+        "physical_weapons_quarter_damage",
+        "seidr_half_damage",
+        "fire_half_damage",
+      ]
+    weaknesses:
+      [
+        "The Stone-Cutter blade — if somehow removed, the core entity loses all attack capability and slows to a crawl",
+        "Sustained siege-weapon fire — ballistae and catapults deal full damage",
+      ]
+    achilles_heel:
+      name: "The Barrow Anchor Stone"
+      discovery: "Hidden in the oldest barrow, untouched by the march — an obsidian pillar humming with Veil energy. The Grave Wardens' records describe it. Runa Veil-Touched has seen it. One line in the Frostfjord sagas mentions 'the stone that remembers all the dead.'"
+      location: "Deep chamber of the First Barrow, 3 miles behind the Tide's current position. Guarded by 6 Ancient Draugr that did NOT join the march."
+      exploit: "Destroying the anchor stone (40 HP, immune to all except consecrated weapons or fire) severs the Tide's cohesion instantly. The core entity loses 5 HP per round and all command abilities. The march disintegrates. The remaining undead revert to individual behavior."
+      difficulty: "Requires a small strike team to reach the anchor while the army holds the Tide. The barrow itself is a lethal gauntlet of traps and elite guards."
+    encounter_conditions:
+      terrain: ["any — it comes to you"]
+      season: ["winter_solstice", "equinox"]
+    loot:
+      silver_range: [0, 0]
+      items: ["stone_cutter_blade_fragment", "barrow_anchor_shard"]
+      special: "The anchor stone fragments are the most potent seidr components in the Rimevegr — each shard can power a major ward or binding for a generation."
+    lore: "The First Chieftain was not buried willingly. He was murdered by his thegns during a famine and sealed in the hill with iron and oak. The barrow rites were wrong — done in haste, done with blood guilt. The anchor stone was placed to contain him. It has been doing the opposite — collecting the death-memories of every person buried in the Rimevegr for eight centuries, building a consciousness that stretches across every barrow like roots under a forest. The Barrow Tide is what happens when that consciousness wakes up and decides to walk."
+    associated_locations: ["all settlements"]
+    associated_chains: ["waking_barrows"]
+    image_prompt: |
+      A wave of the dead filling a valley from edge to edge. Hundreds of
+      draugr, skeletal warriors, bone-swarms flowing like a grey river
+      between snow-covered hills. At the center, a towering figure of
+      compacted bone and corroded iron, three times the height of a man,
+      skull wreathed in blue fire, dragging a massive sword that gouges
+      the earth. In the foreground, a burning palisade and scattered
+      defenders. The scale is overwhelming. The dead outnumber the living
+      fifty to one. Muted greys, bone-white, blue fire. The end of
+      everything.
+
+  # --------------------------------------------------------------------------
+  # WBS_02: THE UNMAKER — Veil-Born Annihilation
+  # --------------------------------------------------------------------------
+  - id: "WBS_02"
+    name: "The Unmaker"
+    category: "world_boss"
+    subcategory: "veil_catastrophe"
+    tier: 6
+    named: true
+    description: "The Veil tore open and something came through. Not a creature — a process. A walking absence that unmakes what it touches. Where it steps, the ground becomes grey dust. Where it breathes, the air turns to nothing and sound dies. It has a shape — approximately humanoid, approximately twenty feet tall, approximately made of folded darkness with edges that cut light itself. Its face, if it has one, is a hole. Everything that looks into the hole forgets what it saw and remembers only the terror. It has been in the world for three hours. In three hours, a square mile of forest has become a desert of grey ash."
+    stats:
+      MIG: 10
+      NIM: 5
+      TOU: 10
+      WIT: 10
+      WIL: 10
+      WYR: 10
+    hp: 60
+    skills:
+      - name: "Seidr"
+        rank: 5
+      - name: "Intimidation"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Unmaking Touch"
+          type: "supernatural"
+          speed: 4
+          base_damage: 0
+      armor: {}
+    tactics: "The Unmaker does not fight. It walks. Everything in its path ceases to exist. Weapons that strike it dissolve. Arrows that hit it turn to grey dust mid-flight. Seidr directed at it unravels before contact. It does not pursue, dodge, or react to attacks. It walks in a straight line toward something only it can perceive. Armies part before it like water before a ship's prow — not from cowardice, but from the animal certainty that touching it means annihilation."
+    morale_break: "The Unmaker does not stop, flee, or acknowledge opposition. It processes forward until it reaches its unknown destination or is sealed."
+    group_size: "1"
+    abilities:
+      - "Annihilation Field: everything within 3 paces is unmade — instant death, no save, no resurrection. Equipment, structures, terrain — all become grey dust"
+      - "Entropy Aura: within 20 paces, all gear degrades. Weapons lose 1 damage per round, armor loses 1 point per round, wood rots, metal corrodes"
+      - "Silence Zone: within 10 paces, no sound exists — communication impossible, seidr requiring speech fails automatically"
+      - "Memory Erasure: anyone who sees its face forgets the last d6 hours — WIL test at -4 to retain fragmentary memories"
+      - "Immune to Harm: conventional weapons, seidr, fire, cold, and physical force have zero effect. Not reduced damage — zero"
+      - "Unmaking Path: where it walks, the ground becomes sterile grey dust permanently. Nothing will ever grow there again"
+    combat_phases:
+      pre_battle:
+        - name: "Reality Sickness"
+          description: "Hours before arrival, local reality destabilizes. Colors wash out. Food loses taste. Fire burns cold. Animals die standing up. People forget simple words."
+        - name: "The Grey Line"
+          description: "A visible path of grey dust stretches from the Veil-tear to the horizon. The Unmaker is at the far end, walking."
+      maneuvers:
+        - name: "Reach Through"
+          description: "Extends one arm through reality to touch something up to 10 paces away. Whatever is touched is unmade. No roll, no save against the touch itself — only against being in reach."
+          cost: "Free action, once per round"
+        - name: "Entropy Pulse"
+          description: "Pulses the entropy field outward to 40 paces for one round. Everything in range ages decades in seconds — wood splinters, metal rusts through, leather crumbles. Living creatures take d10 damage from cellular decay. TOU test to halve."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Acceleration"
+          trigger: "Below 50% HP (30 HP) — only possible if Achilles Heel is being exploited"
+          description: "The Unmaker realizes something is threatening it. Walking speed triples. The annihilation field expands to 5 paces. It turns toward the threat for the first time."
+      on_death:
+        - name: "The Scar"
+          description: "The Unmaker collapses into itself — a point of absolute nothing that exists for 3 seconds, then vanishes with a soundless concussion that flattens everything within 100 paces. Where it stood, a permanent hole in reality the size of a fist hovers at chest height. The hole cannot be closed. Things dropped in do not come back. The grey dust path remains forever."
+    resistances: ["everything — the Unmaker is immune to all conventional harm"]
+    weaknesses:
+      [
+        "It walks in a straight line and can be outrun by a person on foot",
+        "It ignores threats that do not use the Seal — this predictability can be exploited for evacuation",
+      ]
+    achilles_heel:
+      name: "The Original Seal"
+      discovery: "The Veil-tear has edges — ragged reality that can be restitched. Somewhere in the Grimholt archives is a runestone fragment describing how the Veil was sealed after the last incursion, a thousand years ago. The Pale Widow's oldest journal references it. Bryn Ashmouth has a piece of the original seal-stone in his collection, though he doesn't know what it is."
+      location: "The seal-stone fragments (3 pieces) are scattered: one in Grimholt's archive vault, one worn as a pendant by a farmer in Bogside who inherited it, one embedded in the Veil-Walker's manifesting point at Raven's Perch."
+      exploit: "Reassembling the three seal-stone fragments and performing the binding rite (described on the runestone) at the Veil-tear while the Unmaker is within 100 paces forces it back through and reseals the tear. The Unmaker takes 20 damage per round while the rite is performed (3 rounds to complete). The rite requires a seidr user with rank 3+ and costs them d6 permanent WIL."
+      difficulty: "Finding the three fragments is a multi-session quest. The rite itself must be performed at the Veil-tear while the Unmaker approaches — a team must hold its attention (survive near it) for 3 rounds while the seidr user works."
+    encounter_conditions:
+      terrain: ["veil_rupture — originates there and walks outward"]
+      season: ["any — triggered by Veil catastrophe chain"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "The grey dust itself is a seidr reagent of terrifying potency — it can unmake enchantments, break curses, and dissolve seidr bindings. Handle with extreme care. The fist-sized hole in reality left behind has unknown utility and unknown danger."
+    lore: "There is an older word than draugr and haugbui. A word the first settlers used for the things that lived in the hills before humans came north. The word translates roughly as 'the undone.' The sagas say they were sealed away behind the Veil by the first rune-carvers, using songs that have been forgotten. The Unmaker is one of the undone, walking in the world again because the songs stopped. It doesn't hate. It doesn't want. It simply undoes what is done."
+    associated_locations:
+      [
+        "Veil-tear origin point",
+        "path toward Grimholt or nearest large settlement",
+      ]
+    associated_chains: ["waking_barrows", "veil_collapse"]
+    image_prompt: |
+      A twenty-foot humanoid shape of folded darkness walking through a
+      forest. Where it has walked, everything is grey dust — trees, soil,
+      stone reduced to uniform ash. The edges of the figure cut light
+      itself. No face — a hole where a face should be. The air around it
+      is absent. In the foreground, warriors scatter — not fighting, just
+      running. An arrow mid-flight dissolving to dust. The scale of
+      destruction behind it stretches to the horizon. Absolute palette:
+      grey dust, black void, the colors of the world just before they
+      are taken away.
+
+  # --------------------------------------------------------------------------
+  # WBS_03: GRANDMOTHER IRON — The Hunger Beneath the Mountains
+  # --------------------------------------------------------------------------
+  - id: "WBS_03"
+    name: "Grandmother Iron"
+    category: "world_boss"
+    subcategory: "ancient_entity"
+    tier: 6
+    named: true
+    description: "She was old when the first barrows were dug. The mountain people have a different name for her in every valley — the Tooth Under the Rock, the Jaw That Waits, She Who Chews Stone. A vast thing coiled in the deepest seam of iron ore beneath the Spine, body like a serpent made of rusted iron plates the size of longship sails, head like a horse skull cast in black iron with eight eyes arranged in two rows. Her mouth opens wider than a mead hall door. Her teeth are stalagmites. She sleeps for decades and wakes when the iron is disturbed — when miners dig too deep, when too much ore is hauled away, when the mountain's blood runs thin. She is not evil. She is territorial. The mountain is her body. The iron is her bones. You are mining her skeleton."
+    stats:
+      MIG: 10
+      NIM: 3
+      TOU: 10
+      WIT: 6
+      WIL: 8
+      WYR: 7
+    hp: 100
+    skills:
+      - name: "Brawl"
+        rank: 5
+      - name: "Stealth"
+        rank: 4
+      - name: "Intimidation"
+        rank: 5
+      - name: "Seidr"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Iron Jaws"
+          type: "bite"
+          speed: 2
+          base_damage: 16
+        - name: "Tail Sweep"
+          type: "tail"
+          speed: 1
+          base_damage: 12
+      armor:
+        torso: "Natural Iron Plate (as castle wall)"
+        head: "Black Iron Skull (as fortress gate)"
+    tactics: "Grandmother Iron does not emerge unless forced. She attacks the mines first — collapsing shafts, swallowing miners, pulling tunnels closed behind her. If driven to the surface, she is a siege weapon. She coils around structures and crushes them. She swallows armed warriors whole. She uses the mountain against attackers — triggering rockslides, opening fissures, collapsing terrain. She fights like geography, not like an animal."
+    morale_break: "Returns underground if the mining stops and the stolen iron is returned to the mountain. This has worked twice in history. If wounded past 50% HP at the surface, she retreats underground and collapses all mine entrances. Returns in d6 months, angrier."
+    group_size: "1"
+    abilities:
+      - "Iron Plates: conventional weapons bounce off — only siege weapons, dragonfire-equivalent heat, or her own shed scales deal full damage"
+      - "Tunnel Mastery: moves through stone and earth as a fish through water — cannot be trapped, cornered, or blocked underground"
+      - "Swallow Whole: on a critical hit with Iron Jaws, target is swallowed — d10 acid damage per round inside, MIG test at -4 to cut out with a sharp weapon"
+      - "Mountain Shaper: can trigger rockslides, open fissures, and collapse structures within 50 paces"
+      - "Iron Sense: detects all iron within 2 miles — knows exact location of every weapon, tool, and ore deposit"
+      - "Size: approximately 80 paces long, body diameter of 4 paces. Moves through spaces a horse could not."
+    combat_phases:
+      pre_battle:
+        - name: "The Mountain Groans"
+          description: "Days before she wakes: mine shafts vibrate. Tools rust overnight. Iron ore veins darken. Miners report hearing grinding sounds deep underground. Animals refuse to enter caves."
+        - name: "Shaft Collapse"
+          description: "The first attack is always the mines. Every active shaft within her territory collapses simultaneously. Miners are trapped or killed. This is not malicious — she is stretching."
+      maneuvers:
+        - name: "Coil and Crush"
+          description: "Wraps her body around a structure or formation of soldiers. Everything within the coil takes d12 crushing damage per round. MIG test at -4 to escape the coil. A coiled building is rubble in 3 rounds."
+          cost: "Replaces attack, lasts until she releases or is forced open"
+        - name: "Fissure Strike"
+          description: "Drives her head underground and erupts from beneath the target. NIM test at -3 or take 16 damage as she surfaces directly under them. Leaves a 5-pace fissure in the terrain."
+          cost: "Once per 5 rounds"
+        - name: "Iron Scream"
+          description: "A shriek that resonates through every piece of iron in 100 paces. All iron weapons and armor vibrate painfully — holders take d4 damage and must pass MIG test or drop iron items. Magnetized iron debris flies toward her."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "The Mountain Fights"
+          trigger: "Below 50% HP (50 HP)"
+          description: "Grandmother Iron merges partially with the mountain. The terrain itself attacks — boulders roll, fissures open under feet, iron ore veins burst from the rock face as jagged shrapnel (d8 damage, 20-pace radius, NIM test to halve). She heals d6 HP per round while merged. Can only be forced out by destroying her anchor point."
+      on_death:
+        - name: "The Mountain Dies"
+          description: "Grandmother Iron's death destroys the mountain's iron deposits. Every mine in the region collapses permanently. The iron ore turns to worthite powder. Her body petrifies into a mountain feature — a ridge of black iron stone that miners will find in a century and not understand. The local economy collapses. Iron prices across the Rimevegr double for a generation."
+    resistances:
+      [
+        "physical_weapons_immune",
+        "cold_immune",
+        "poison_immune",
+        "fear_immune",
+        "seidr_half_damage",
+        "fire_quarter_damage",
+      ]
+    weaknesses:
+      [
+        "Siege weapons deal full damage",
+        "Her own shed scales can pierce her — if you can find one and wield the 200-pound plate",
+        "Fire from below — volcanic or forge-temperature heat softens her plates",
+      ]
+    achilles_heel:
+      name: "The Iron Offering"
+      discovery: "The mountain people know. They always knew. Every generation, the eldest miner's family leaves an iron torc — the finest they can make — at the deepest shaft entrance on the winter solstice. The tradition was abandoned two years ago when the new mine-master called it superstition. Grandmother Iron woke six months later."
+      location: "The offering site is 200 paces into the oldest mine shaft, at a natural chamber where the stone changes color from grey to black iron. A rusted chain on the wall once held the torc."
+      exploit: "Forging a new iron torc of exceptional quality (requires a master smith, a week of work, and iron ore from her own mountain) and placing it at the offering site while speaking the old words (known by the eldest miner's widow in Deepholm) puts Grandmother Iron back to sleep. The torc must be freely given — stolen iron or iron taken by force does not count. While the offering is being placed, she will not attack the offering-bearer, but she will attack everyone else."
+      difficulty: "Finding the widow, learning the words, forging the torc, and reaching the offering site while Grandmother Iron is active and the mines are collapsing. The offering-bearer must go alone and unarmed — the old words require it."
+    encounter_conditions:
+      terrain: ["mountain", "mine", "deep_underground"]
+      season: ["any — triggered by mining overreach or failed offering"]
+    loot:
+      silver_range: [0, 0]
+      items: ["iron_scale_fragment"]
+      special: "A shed iron scale is worth a king's ransom — it can be reforged into a weapon or shield impervious to conventional damage. Only a master smith can work it, and the process takes a month."
+    lore: "The Iron-Masters who first mined the Spine knew about Grandmother Iron. They treated the mountain with respect — taking what the mountain offered, never digging where the stone turned black, leaving offerings that acknowledged the mountain was alive. The knowledge passed through mining families for centuries. Industrialization and new settlers broke the chain. The current crisis is human greed meeting an ancient boundary. Grandmother Iron is not a monster. She is a consequence."
+    associated_locations: ["Deepholm", "The Spine", "all mountain settlements"]
+    associated_chains: ["resource_crisis"]
+    image_prompt: |
+      An impossibly vast serpentine body of rusted iron plates erupting
+      from a mountainside, coiling around the base of a mining settlement.
+      Head like a horse skull cast in black iron, eight eyes in two rows,
+      mouth open wider than a mead hall door. Stalagmite teeth. Buildings
+      crumbling in the coils. Pine trees snapping. Miners running.
+      Scale: her body is the size of the mountain road. The mountain
+      behind her has fissures where she emerged. Dark iron, rust-red,
+      grey stone, pine green. Not a dragon — something older, harder,
+      more patient.
+
+  # --------------------------------------------------------------------------
+  # WBS_04: THE PALE WIDOW ASCENDED — The Curse Made Flesh
+  # --------------------------------------------------------------------------
+  - id: "WBS_04"
+    name: "The Pale Widow Ascended"
+    category: "world_boss"
+    subcategory: "corrupted_human"
+    tier: 6
+    named: true
+    description: "She was always dangerous. Now she is something else. The Pale Widow completed her great working — a seidr ritual that merged her consciousness with the Veil itself. Her body stands at the center of her ruined hall in Ashen Reach, eyes rolled back to white, mouth open in a silent scream that has lasted three days. Her hair floats upward as if underwater. Her skin is translucent — you can see the bones, the organs, the flickering light where blood should be. Around her, reality bends. The floor is ceiling. Stars are visible through the walls in daylight. Her will radiates outward like heat from a forge. Every dead thing within ten miles heard her and is walking toward Ashen Reach."
+    stats:
+      MIG: 3
+      NIM: 2
+      TOU: 5
+      WIT: 10
+      WIL: 10
+      WYR: 10
+    hp: 45
+    skills:
+      - name: "Seidr"
+        rank: 5
+      - name: "Command"
+        rank: 5
+      - name: "Lore"
+        rank: 5
+      - name: "Intimidation"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Veil Projection"
+          type: "supernatural"
+          speed: 5
+          base_damage: 0
+      armor:
+        torso: "Veil-Fold Body (attacks pass into another reality)"
+        head: "None"
+    tactics: "The Widow does not move. She stands at the nexus of her working. Her body is almost irrelevant — a focus point for power that extends across the region. She fights through proxies: undead servants, reality distortion, Veil manifestations, and direct seidr assault at any target she can perceive. Physical assault on her body causes the damage to redirect to the nearest living person — she has separated her body from consequence. Reaching her requires navigating a labyrinth of warped reality that changes every round."
+    morale_break: "Cannot flee — she is the ritual. If the ritual is disrupted, she collapses. If left to complete it (d6 days after ascension begins), the merge becomes permanent and the Veil opens across the entire Rimevegr."
+    group_size: "1 (with all undead in a 10-mile radius converging on Ashen Reach, plus d6 Veil manifestations)"
+    abilities:
+      - "Merged Consciousness: perceives everything within 10 miles — cannot be surprised, flanked, or hidden from"
+      - "Damage Redirect: physical attacks on her body deal their damage to the nearest living person instead (WIL test at -3 to resist the redirect)"
+      - "Reality Labyrinth: the approach to her position reshapes every round — doorways lead to roof, stairs go sideways, rooms repeat"
+      - "Seidr Storm: can cast any offensive seidr at any target she can perceive, anywhere within 10 miles — d8 damage, WIL save to halve, no range limit"
+      - "Undead Beacon: all undead within 10 miles move toward her at maximum speed — they arrive in waves"
+      - "Veil Gate: can open temporary Veil-tears that spawn hostile Veil entities (d4 per tear, up to 3 tears active)"
+    combat_phases:
+      pre_battle:
+        - name: "Reality Fractures"
+          description: "For days before the ascension completes, the region destabilizes. Day becomes night for minutes. People see their own dead walking past windows. Walls become transparent. The boundary between indoors and outdoors becomes unreliable."
+        - name: "The Call"
+          description: "Every living person within 5 miles feels an urge to walk toward Ashen Reach. WIL test at -1 per day or begin walking. The weak-willed arrive first."
+      maneuvers:
+        - name: "Bolt from Beyond"
+          description: "A lance of Veil energy strikes any target she is aware of. d10 damage, ignores armor, ignores cover. WIL test to halve. Range: 10 miles."
+          cost: "Replaces attack"
+        - name: "Maze Shift"
+          description: "Restructures the reality labyrinth around her. All approaching parties must re-navigate from scratch. WIT test at -2 or lose d6 rounds to confusion and backtracking."
+          cost: "Once per 10 rounds"
+        - name: "Raise Champion"
+          description: "Reaches through the Veil and pulls out a dead warrior of legend. Creates one T4 undead champion that fights with full equipment and ancient skill."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Veil Merge Accelerates"
+          trigger: "Below 50% HP (22 HP)"
+          description: "The ritual accelerates. Reality within 1 mile collapses entirely — the sky shows stars regardless of time, the ground becomes translucent, gravity fluctuates. The Widow's merge progresses faster — d4 rounds added to the countdown each time she is bloodied. All approaching parties take d6 Veil damage per round from exposure."
+      on_death:
+        - name: "The Widow Dies, The Ritual Lingers"
+          description: "Her body collapses and is real again — a frail old woman, dead, looking peaceful for the first time. The Veil-tears she opened do not close immediately — they seal over d6 weeks. The reality distortion fades over d6 days. The undead she summoned become uncontrolled. Ashen Reach is permanently changed — walls still sometimes become transparent at equinox, stairs still occasionally lead somewhere wrong."
+    resistances:
+      [
+        "physical_weapons_redirected",
+        "cold_immune",
+        "poison_immune",
+        "fear_immune",
+        "conventional_seidr_reflected",
+      ]
+    weaknesses:
+      [
+        "Her body is physically frail — if the redirect is bypassed, she has only 45 HP with TOU 5",
+        "The ritual has a physical component — destroying it disrupts her concentration",
+      ]
+    achilles_heel:
+      name: "The Ritual Circle"
+      discovery: "The Widow's ascension requires a physical anchor — a circle of nine runestones arranged in her great hall, each carved with a hymn to a different aspect of the Veil. Runa Veil-Touched knows the hymn patterns and can identify which stones are load-bearing. The last Grave Warden's journal (in the Frostfjord archives) describes how a similar ritual was disrupted two centuries ago."
+      location: "The great hall of Ashen Reach. The nine runestones form a circle 10 paces across. The Widow stands at the center."
+      exploit: "Destroying any 3 of the 9 runestones breaks the ritual's symmetry and collapses the merge. Each stone has 15 HP and can be attacked normally — the damage redirect does NOT protect the stones, only the Widow's body. However, the reality labyrinth makes reaching the hall nearly impossible without a guide, and the stones repair themselves at 3 HP per round from Veil energy — so all 3 must be destroyed within the same round or they regenerate."
+      difficulty: "Navigating the reality labyrinth requires WIT 6+ or a guide (Runa, Bryn Ashmouth). Once in the hall, 3 attackers must strike 3 different stones simultaneously — coordination under fire from Veil entities, undead champions, and the Widow's direct seidr attacks."
+    encounter_conditions:
+      terrain: ["Ashen Reach"]
+      season: ["any — triggered by story arc climax"]
+    loot:
+      silver_range: [0, 0]
+      items: ["runestone_fragment", "widow_journal", "veil_crystal"]
+      special: "The Widow's personal journals contain the most detailed study of the Veil ever compiled. Her knowledge of seidr is unparalleled. If recovered, the journals advance seidr understanding by a generation — but some of the knowledge is itself dangerous to read."
+    lore: "The Pale Widow was born Astrid, daughter of a farmer in Bogside. She showed talent for seidr at seven. By twenty she was the finest seidr-wife in the Rimevegr. By forty she was beyond anyone's understanding. She lost her husband and both children to the Frostfjord plague. She went into the barrows and came out knowing things about the Veil that no living person should know. The ascension is not madness — it is grief given the power to reshape reality. She wants to reach the other side of the Veil. She believes her family is there. She will tear the world apart to find them."
+    associated_locations: ["Ashen Reach", "Bogside", "Frostfjord Hollow"]
+    associated_chains: ["widows_web", "veil_collapse"]
+    image_prompt: |
+      A gaunt woman standing in the center of a circle of carved
+      runestones in a ruined mead hall. Eyes rolled back to white. Mouth
+      open. Hair floating upward. Skin translucent — bones and flickering
+      light visible beneath. Reality bends around her — the floor becomes
+      ceiling, stars visible through the walls in daylight. Nine stones
+      glowing. Undead converging from every direction outside. A cosmic
+      horror in a domestic setting. Grief made visible. The most dangerous
+      thing in the Rimevegr.
+
+  # --------------------------------------------------------------------------
+  # WBS_05: THE OATH-BREAKER — The God That Answered
+  # --------------------------------------------------------------------------
+  - id: "WBS_05"
+    name: "The Oath-Breaker"
+    category: "world_boss"
+    subcategory: "divine_punishment"
+    tier: 6
+    named: true
+    description: "Jarl Ordovast the Wise broke three blood oaths in one season — peace with the Fjord Compact, guest-right with the Ironhand emissary, and his marriage vow sworn on the arm-ring of Tyr. The gods are not metaphorical in this world. Something heard. Something responded. It arrived at Ordovast's hall at dawn, wearing the form of a man eight feet tall in corroded bronze armor, face hidden behind a mask of the same metal that weeps perpetual tears of rust. It carries a single-edged bronze sword the length of a longship oar. It spoke once, in a voice like a bell being struck inside a tomb: 'The oaths you broke, I will collect. Your men. Your walls. Your name. Your line.' It has not spoken since. It has been walking through Ordovast's territory for three days, and everything sworn by oath — alliances, marriages, contracts, debts — is coming apart."
+    stats:
+      MIG: 10
+      NIM: 6
+      TOU: 10
+      WIT: 8
+      WIL: 10
+      WYR: 9
+    hp: 70
+    skills:
+      - name: "Swords"
+        rank: 5
+      - name: "Intimidation"
+        rank: 5
+      - name: "Seidr"
+        rank: 4
+      - name: "Command"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Oath-Blade"
+          type: "greatsword"
+          speed: 3
+          base_damage: 12
+      armor:
+        torso: "Corroded Bronze Plate (divine crafting)"
+        head: "Weeping Bronze Mask"
+    tactics: "The Oath-Breaker walks directly toward oath-breakers. It fights anyone who stands between it and its quarry with devastating efficiency — it is a warrior of divine caliber, every swing a killing stroke. It cannot be outfought by any mortal. If no oath-breaker is in range, it walks toward the nearest broken oath (a dissolved alliance, a betrayed guest, a forsaken vow) and unmakes the consequences — burns the hall where guest-right was violated, kills the witnesses, salts the field where the false treaty was signed."
+    morale_break: "Cannot be driven off by any force. It has a task. It will complete it. If Ordovast dies before it reaches him, it shifts to the next oath-breaker in the region. There are many."
+    group_size: "1"
+    abilities:
+      - "Oath Sense: detects every broken oath within 100 miles — knows the breaker, the oath, and the injured party"
+      - "Divine Warrior: fights as the perfect swordsman — parries, ripostes, counters, feints, all at maximum skill; cannot be surprised or outsworded"
+      - "Oath Unraveling: its presence causes all sworn agreements within 1 mile to dissolve — alliances fracture, marriages crack, contracts become void"
+      - "Rust Tears: the weeping from its mask corrodes all metal within 5 paces — weapons and armor lose 1 point per round"
+      - "Implacable: immune to all crowd-control effects, emotional manipulation, and negotiation"
+      - "Just Verdict: it will NOT attack anyone who has kept all their oaths — they are invisible to it"
+    combat_phases:
+      pre_battle:
+        - name: "Oaths Unravel"
+          description: "For miles around, sworn agreements dissolve. Allies turn on each other. Marriages collapse. Contracts become unenforceable. Business partners argue. The social fabric disintegrates."
+        - name: "Bronze Bell"
+          description: "A sound like a struck bell reverberates through the area. Everyone feels compelled to examine their own broken promises. WIL test or spend d6 rounds in guilty paralysis."
+      maneuvers:
+        - name: "Judgment Strike"
+          description: "Swings the Oath-Blade at a sworn oath-breaker. Against an oath-breaker, the strike is auto-hit, double damage, and bypasses all armor. Against an oath-keeper, the strike can be parried normally."
+          cost: "Replaces attack"
+        - name: "Verdict Proclamation"
+          description: "Points the Oath-Blade at a target and speaks their broken oath aloud. Target must WIL test at -4 or confess publicly and drop all resistance for d6 rounds. Even on success, -2 WIL for the encounter from guilt."
+          cost: "Once per target"
+        - name: "Collateral Sweep"
+          description: "Against non-oath-breakers who attack it, the Oath-Breaker fights with brutal efficiency — 12 damage, but it pulls killing blows. Targets are incapacitated at 0 HP, not killed, unless they have broken oaths."
+          cost: "Free action in response to attacks"
+      bloodied:
+        - name: "Accelerated Judgment"
+          trigger: "Below 50% HP (35 HP)"
+          description: "The Oath-Breaker stops pulling blows. All attacks become killing strikes. The rust tears intensify — all metal within 10 paces corrodes to uselessness in d4 rounds. Its eyes become visible behind the mask — empty bronze sockets weeping light."
+      on_death:
+        - name: "The Debt Remains"
+          description: "If destroyed (nearly impossible), the bronze armor and sword corrode to dust in seconds. A silence falls. Every oath-breaker in the region feels a brief, crushing weight on their chest. The broken oaths do not repair — the damage to alliances and trust is permanent. Within a year, another Oath-Breaker may manifest if the behavior continues. The gods are patient but not forgiving."
+    resistances:
+      [
+        "physical_weapons_half_damage",
+        "seidr_quarter_damage",
+        "cold_immune",
+        "fire_immune",
+        "poison_immune",
+        "fear_immune",
+        "mental_immune",
+      ]
+    weaknesses:
+      [
+        "Cannot attack oath-keepers — someone with zero broken oaths can stand before it safely",
+        "Bronze is vulnerable to sustained acid — but who has barrels of acid on a battlefield?",
+      ]
+    achilles_heel:
+      name: "The Oath Restored"
+      discovery: "It collects on broken oaths. If the oaths are repaired, it has no purpose. An elder in Stonebay remembers a tale of the last Oath-Breaker manifestation, three hundred years ago — it was stopped when the oath-breaker submitted to judgment and paid the weregild. Ordovast's own court seer knows the ancient law of oath-restoration."
+      location: "The oath-breaker (Ordovast) must be brought before the Oath-Breaker in person."
+      exploit: "If the original oath-breaker publicly confesses each broken oath and offers genuine restoration (not token gestures — real restoration: renegotiate the peace, compensate the emissary's family, reconcile with his wife), the Oath-Breaker pauses. If the restoration is accepted by the injured parties (or their representatives), the Oath-Breaker's purpose is fulfilled. It salutes with the bronze sword, turns, walks to the nearest crossroads, and becomes a standing bronze statue. Alternatively, the oath-breaker can offer his own life — the Oath-Breaker accepts, kills the breaker, and departs."
+      difficulty: "Convincing Ordovast to submit to divine judgment — a proud, powerful jarl who believes he can solve this with armies. Finding the injured parties and negotiating genuine restoration during a regional crisis. The Oath-Breaker continues destroying oath-connected sites while negotiations happen."
+    encounter_conditions:
+      terrain: ["any — walks Ordovast's territory"]
+      season: ["any — triggered by oath-breaking events"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+      special: "If the Oath-Breaker becomes a statue, the site becomes a sacred crossroads. Oaths sworn there carry divine weight — breaking them invites immediate, personal consequences. The statue's bronze can never be melted or worked."
+    lore: "The skalds have songs about the Oath-Breakers. The oldest song, 'The Bronze That Walks,' describes one appearing at the court of King Hrothvaldr after he murdered his oath-brother at a feast. The song ends with Hrothvaldr's surrender and the Oath-Breaker standing guard as a statue at the feast hall door for three hundred years. Every culture in the Rimevegr has a version of the story. They all agree on one thing: the Oath-Breaker cannot be beaten. It can only be answered."
+    associated_locations: ["Ordovast's territory", "Grimholt", "Stonebay"]
+    associated_chains: ["ordovast_war", "political_collapse"]
+    image_prompt: |
+      An eight-foot figure in corroded bronze armor walking through a
+      burning settlement. Face hidden behind a bronze mask that weeps
+      perpetual tears of rust. Bronze sword the length of a longship oar,
+      held in one hand. Behind it, dissolved alliances — warriors fighting
+      former allies, a broken feast table, torn oath-cloths. The figure
+      walks with purpose. It is not angry. It is not in a hurry. It is a
+      consequence. Bronze-green, rust-red, ash-grey palette. The most
+      human monster in the bestiary — because it exists because humans
+      lied.
+
+  # --------------------------------------------------------------------------
+  # WBS_06: THE DROWNED FLEET — The Sea Remembers
+  # --------------------------------------------------------------------------
+  - id: "WBS_06"
+    name: "The Drowned Fleet"
+    category: "world_boss"
+    subcategory: "undead_catastrophe"
+    tier: 6
+    named: true
+    description: "Thirty longships that went down in the Storm of Sorrows, two hundred years ago, carrying the entire war-host of a dead kingdom. They never reached the bottom. They never rotted. On a night when the sea was too calm, the fishermen of Stonebay saw lights beneath the surface — green-white and moving in formation. By dawn, the first ship breached. Black timbers held together by seaweed and hate, barnacle-encrusted hulls, rigging of kelp. The crews stand at the oars — drowned warriors in salt-crusted mail, green-white light in their eye sockets, water streaming from mouths that open and close rhythmically. At the prow of the lead ship stands the Fleet-King, crown of corroded iron, eyes like lighthouse beams, commanding a dead armada that intends to complete the invasion it began two centuries ago."
+    stats:
+      MIG: 8
+      NIM: 3
+      TOU: 9
+      WIT: 7
+      WIL: 9
+      WYR: 6
+    hp: 55
+    skills:
+      - name: "Swords"
+        rank: 5
+      - name: "Command"
+        rank: 5
+      - name: "Intimidation"
+        rank: 5
+      - name: "Sailing"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Corroded Crown-Blade"
+          type: "sword"
+          speed: 3
+          base_damage: 10
+      armor:
+        torso: "Salt-Crusted Mail"
+        head: "Crown of Corroded Iron"
+    tactics: "The Fleet-King commands from the prow. The drowned fleet beachgrounds in coordinated waves — first wave is expendable drowned warriors to absorb defenses, second wave is armored drowned huskarls, third wave is the Fleet-King with his champions. The ships themselves are weapons — they ram into harbor structures, crush docked vessels, block harbor mouths. The Fleet-King fights like the war-chief he was in life — brilliant, adaptive, fearless. He learns from each engagement and adapts."
+    morale_break: "The Fleet-King cannot be routed. If his flagship is destroyed, he transfers to the next ship. Only total destruction of all ships or the Achilles Heel can stop the invasion."
+    group_size: "1 Fleet-King + 30 longships + approximately 600 drowned warriors (20 per ship)"
+    abilities:
+      - "Fleet Command: all 30 ships move and fight as a coordinated navy under the Fleet-King's will"
+      - "Drowned Tide: after a beach battle, all fallen defenders rise as drowned warriors within d6 hours"
+      - "Ship-Ram: each longship can ram structures or vessels for 20 damage — the ship takes 5 damage but repairs itself from seawater and debris"
+      - "Fog Bank: the fleet travels in a supernatural fog that reduces visibility to 5 paces and muffles sound"
+      - "Sea Command: while near the coast, can create rip tides, rogue waves, and undertows — NIM test at -3 for anyone in the water"
+      - "Adaptive General: the Fleet-King remembers every tactic used against him and develops counters — the same approach never works twice"
+    combat_phases:
+      pre_battle:
+        - name: "The Dead Calm"
+          description: "The sea goes supernaturally still. No wind, no waves, no current. Then the fog rolls in — thick, cold, smelling of brine and rot. Green-white lights become visible beneath the surface."
+        - name: "Warning Drums"
+          description: "A drumbeat from deep underwater — the timing of war-oars. Fishermen who hear it within 3 miles of shore must WIL test or flee inland on instinct."
+      maneuvers:
+        - name: "Coordinated Beach Assault"
+          description: "Three ships beach simultaneously, disgorging 60 drowned warriors in shield wall formation. Defenders facing the landing must fight a T2 army-scale engagement while the Fleet-King evaluates from the fog."
+          cost: "First action on landfall"
+        - name: "Rogue Wave"
+          description: "The Fleet-King commands the sea to strike. A 10-foot wave crashes onto the shore, sweeping everyone within 30 paces of the waterline. MIG test at -2 or swept into the sea. Drowned warriors in the water attack swept targets automatically."
+          cost: "Once per 20 rounds"
+        - name: "Champion Duel"
+          description: "The Fleet-King descends the prow-ramp and challenges the enemy commander to single combat. If accepted, his champions form a circle — no interference. He fights with 200 years of unliving sword practice."
+          cost: "Once per battle"
+      bloodied:
+        - name: "Fleet Sacrifice"
+          trigger: "Below 50% HP (27 HP)"
+          description: "The Fleet-King orders ships to beach and self-destruct — each exploding vessel of black timber deals d10 damage in a 20-pace radius and spawns 10 berserk drowned warriors. He sacrifices ships to overwhelm the defenders with raw numbers."
+      on_death:
+        - name: "The Fleet Sinks"
+          description: "The Fleet-King falls, and the green-white light goes out of every drowned warrior simultaneously. 600 corpses collapse. The remaining ships lose cohesion — some drift out to sea, some beach and rot. The fog lifts. The sea becomes normal. But the ships that drifted can wash ashore anywhere on the coast for months, each still carrying its crew of dormant drowned warriors."
+    resistances:
+      [
+        "cold_immune",
+        "fear_immune",
+        "poison_immune",
+        "bleeding_immune",
+        "fire_resistant_while_wet",
+        "drowning_immune",
+      ]
+    weaknesses:
+      [
+        "Fire on dry-beached ships — once a ship dries out, it burns like tinder",
+        "The Fleet-King fights in the open — he can be directly engaged, unlike most world bosses",
+        "Inland — the fleet has no power away from the coast. Retreat inland and wait",
+      ]
+    achilles_heel:
+      name: "The Unfinished War"
+      discovery: "The Fleet-King is completing his invasion — an invasion ordered by a king who has been dead for two centuries. The original invasion was ordered by King Sveinn of the Lost Kingdom, whose war-horn signaled the fleet to sail. The horn is in the Stonebay museum, labeled incorrectly as a ceremonial drinking vessel. The harbor-master's grandmother remembers the old name: 'Sveinn's Call.'"
+      location: "Stonebay's small antiquities collection, in a glass case beside trade goods and old coins."
+      exploit: "Sounding Sveinn's Call from the shore while the Fleet-King can hear it — the horn that ordered the invasion — and then immediately breaking it signals the fleet to stand down. The Fleet-King was a loyal vassal; the horn's command supersedes death. When the horn breaks, the order is cancelled. The Fleet-King removes his crown, places it on the prow, and the fleet sinks beneath the waves peacefully. All drowned warriors collapse immediately."
+      difficulty: "Identifying the horn, reaching across Stonebay during a coastal siege, sounding it (requires a strong pair of lungs — TOU test or the note wavers and fails), and breaking it (the horn is ancient and hard as iron — requires a deliberate effort to shatter)."
+    encounter_conditions:
+      terrain: ["coast", "harbor", "sea"]
+      season: ["autumn_storms", "winter_solstice"]
+    loot:
+      silver_range: [0, 0]
+      items: ["corroded_crown", "fleet_king_blade"]
+      special: "The corroded iron crown contains the Fleet-King's memories of the Lost Kingdom — a seidr user can read them, gaining knowledge of a country that has been erased from all maps. The lost kingdom's shipbuilding techniques could revolutionize naval warfare."
+    lore: "The Storm of Sorrows was not a natural storm. King Sveinn's court seidr-worker attempted to speed the fleet across the channel with wind-magic. The spell went wrong — the fleet was scattered and sunk in the worst recorded storm in Rimevegr history. Every soul aboard drowned. But the king's command — 'Sail. Take the coast. Hold it.' — was the last thing the Fleet-King heard. Death did not countermand the order. Two hundred years of pressure and salt and hate have fermented in the deep. The fleet is completing its mission."
+    associated_locations: ["Stonebay", "all coastal settlements"]
+    associated_chains: ["coastal_crisis"]
+    image_prompt: |
+      Thirty black longships emerging from supernatural fog at dawn. Hulls
+      encrusted with barnacles, rigging of kelp, drowned warriors standing
+      at the oars with green-white light in their eye sockets. Water
+      streaming from open mouths. The Fleet-King at the prow of the lead
+      ship — crown of corroded iron, lighthouse-beam eyes, corroded sword
+      raised. In the foreground, a terrified harbor with fishing boats
+      scrambling. The scale is overwhelming — thirty ships in formation,
+      the fog behind like a wall. Green-white, black timber, rust-red,
+      grey sea. A dead navy arriving to finish its war.
+
+  # --------------------------------------------------------------------------
+  # WBS_07: THE HOLLOW KING — The Seat That Cannot Be Empty
+  # --------------------------------------------------------------------------
+  - id: "WBS_07"
+    name: "The Hollow King"
+    category: "world_boss"
+    subcategory: "cursed_sovereign"
+    tier: 6
+    named: true
+    description: "There is a throne carved from a single piece of obsidian in a chamber beneath the old Allthing hall at Grimholt. No one sits in it. No one has sat in it for four hundred years. The throne was carved for the High King of the Rimevegr — a title that has been vacant since the last High King died without an heir. The throne was not meant to be empty this long. Something is growing in the vacancy — a shape that fills the chair more each year. Not a ghost, not a draugr. An absence that has gained substance. A void shaped like a king, with a crown of nothing and a scepter of silence. It has sat long enough to develop opinions. This year, it spoke."
+    stats:
+      MIG: 8
+      NIM: 4
+      TOU: 8
+      WIT: 10
+      WIL: 10
+      WYR: 8
+    hp: 50
+    skills:
+      - name: "Command"
+        rank: 5
+      - name: "Intimidation"
+        rank: 5
+      - name: "Seidr"
+        rank: 4
+      - name: "Lore"
+        rank: 5
+      - name: "Swords"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Scepter of Silence"
+          type: "mace"
+          speed: 3
+          base_damage: 10
+      armor:
+        torso: "Royal Void (attacks fall into nothing)"
+        head: "Crown of Nothing"
+    tactics: "The Hollow King does not leave the throne chamber. It compels. Its voice carries divine authority — the authority of the empty seat, the promise of a High King that was never kept. Anyone who hears it feels the pull of legitimacy. It commands lords to kneel, warriors to swear, and the politically ambitious to serve. Those who refuse feel their own authority erode — their followers begin to doubt, their oaths weaken, their alliances fray. The Hollow King builds a court of the willing and the compromised, guarded by those who chose power over freedom."
+    morale_break: "The Hollow King does not fight unless its throne is threatened. If someone approaches the throne, it rises — and its combat form is a void-king with impossible strength, wielding silence as a weapon."
+    group_size: "1 (with a growing court of enthralled jarls, warriors, and opportunists — 50-200 at peak)"
+    abilities:
+      - "Voice of the Throne: anyone who hears it speak must WIL test at -3 or feel compelled to obey — not mind control, but overwhelming authority pressure"
+      - "Authority Drain: any leader within 1 mile suffers -1 to Command and Leadership skills per day as their own authority bleeds toward the Hollow King"
+      - "Crown Court: those who swear to the Hollow King gain +2 to all stats while in its service — an intoxicating power boost that creates dependency"
+      - "Royal Void: physical attacks on the Hollow King fall into the void — 75% miss chance. The void absorbs intent."
+      - "Silence Blow: melee attack with the scepter deals d10 damage and silences the target for d6 rounds — no speech, no seidr requiring words, no calling for help"
+      - "Legitimacy Shield: anyone who has ever sworn a political oath to serve a king cannot attack the Hollow King — their body physically refuses"
+    combat_phases:
+      pre_battle:
+        - name: "The Authority Bleeds"
+          description: "For weeks, jarls and thegns lose control. Followers question openly. Alliances weaken without cause. Everyone feels the pull toward Grimholt, toward the throne chamber."
+        - name: "The Court Gathers"
+          description: "Opportunists, power-seekers, and the authority-addicted begin arriving at Grimholt. The Hollow King's court grows daily. Each new follower strengthens its voice."
+      maneuvers:
+        - name: "Decree"
+          description: "Speaks a command with the voice of divine kingship. Everyone within earshot must WIL test at -3 or obey for d6 rounds. Commands can be complex: 'Kill your commander.' 'Open the gates.' 'Kneel and wait.' Free will returns after the duration, but the shame remains."
+          cost: "Once per 5 rounds"
+        - name: "Void Strike"
+          description: "The scepter swings through reality, leaving a trail of nothing. d10 damage plus all enchantments and seidr effects on the target are dispelled. Armor struck by the void becomes brittle (-3 permanently)."
+          cost: "Replaces attack"
+        - name: "Court Command"
+          description: "Orders enthralled followers to intercept. Up to 10 enthralled warriors attack specified targets. While enthralled, they fight at +2 to all stats and feel no fear."
+          cost: "Free action"
+      bloodied:
+        - name: "The Void Expands"
+          trigger: "Below 50% HP (25 HP)"
+          description: "The Hollow King's form becomes more void than substance. Miss chance increases to 90%. The temperature drops to lethal cold. All sound within 20 paces ceases — absolute silence. Seidr requiring speech fails automatically. The void begins to eat the floor, walls, and air itself."
+      on_death:
+        - name: "The Throne Breaks"
+          description: "If the Hollow King is destroyed, the obsidian throne shatters. Every enthralled follower is freed instantly — most collapse in horror at what they did willingly. The authority drain reverses — every leader in the Rimevegr feels a rush of restored confidence. The throne chamber becomes a memorial. The question of the High Kingship remains unanswered — the void will begin to reform in the rubble within a generation unless someone claims the title legitimately."
+    resistances:
+      [
+        "physical_weapons_75_miss",
+        "seidr_half_damage",
+        "cold_immune",
+        "fire_immune",
+        "poison_immune",
+        "fear_immune",
+        "mental_immune",
+      ]
+    weaknesses:
+      [
+        "The throne is its anchor — it cannot leave the chamber",
+        "Those who have never sworn political oaths (commoners, children, outlaws) are immune to its compulsions",
+      ]
+    achilles_heel:
+      name: "Claim the Throne"
+      discovery: "The Hollow King exists because the throne is empty. The oldest law of the Rimevegr — carved into the Allthing foundation stones — states that any free person may claim the High Kingship by sitting on the throne and being acknowledged by three jarls. The court historian in Grimholt knows this. The commoners' oral tradition preserves it. The jarls have suppressed this knowledge for centuries because none wants to acknowledge a rival."
+      location: "The obsidian throne in the chamber beneath the Allthing hall at Grimholt."
+      exploit: "A living person must sit on the throne while the Hollow King occupies it — a contest of will, not strength. WIL contest between the claimant and the Hollow King (WIL 10). If three jarls (even enthralled ones forced back to clarity) acknowledge the claimant, the Hollow King is displaced — the void collapses because the seat is no longer empty. The claimant does NOT need to be a jarl or warrior — any free person qualifies. The irony: the less politically ambitious the claimant, the purer their legitimacy, and the harder it is for the Hollow King to refuse."
+      difficulty: "Reaching the throne through the Hollow King's court of armed followers. Surviving the Hollow King's direct opposition. Finding three jarls willing or able to acknowledge a claimant during a crisis. The claimant must sit on the throne for 3 rounds while the Hollow King tries to kill them."
+    encounter_conditions:
+      terrain: ["Grimholt", "Allthing_hall"]
+      season: ["any — triggered by political crisis chain"]
+    loot:
+      silver_range: [0, 0]
+      items: ["obsidian_throne_fragment", "scepter_of_silence_remains"]
+      special: "Obsidian fragments from the throne resonate with political authority — a leader carrying one gains +1 to Command permanently but is haunted by whispers of the void."
+    lore: "Four hundred years ago, High King Bjorn the Last died of fever during a hunting trip. His three sons killed each other within a month. No successor was ever named. The jarls preferred the freedom of independence to the constraints of a High King. The throne was sealed in its chamber and forgotten. But a throne is a promise — a contract between the ruler and the ruled. An unkept promise, in the Rimevegr, has weight. Four centuries of unkept promise have become the Hollow King."
+    associated_locations: ["Grimholt"]
+    associated_chains: ["political_collapse", "high_kingship"]
+    image_prompt: |
+      An obsidian throne in an underground chamber. Seated on it, a
+      shape that is more absence than presence — a void shaped like a
+      king, crown of nothing, scepter of silence. The edges of the shape
+      cut light. Around the chamber, kneeling figures — jarls, warriors,
+      merchants — eyes glazed with the forced certainty of obedience.
+      Torches guttering. The stone walls cracking. The air going dark.
+      Not a monster — an unanswered question that grew teeth.
+
+  # --------------------------------------------------------------------------
+  # WBS_08: HUNGER — The Winter That Walks
+  # --------------------------------------------------------------------------
+  - id: "WBS_08"
+    name: "Hunger"
+    category: "world_boss"
+    subcategory: "elemental_catastrophe"
+    tier: 6
+    named: true
+    description: "The winter of Y314 came early and did not leave. By Yule, the snow was three feet deep. By the new year, the passes were closed. By mid-January, the food ran out. And then the cold began to move. Something in the deepest snowfield, where the temperature drops below what any instrument can measure, began to walk. A figure of compressed ice and frozen air, hollow inside, shaped like a starving man ten feet tall with ribs of glacier-blue ice you can count through the translucent torso. It has no face — just a mouth. The mouth is always open. It is always hungry. Where it walks, the temperature drops another ten degrees. It eats warmth — campfires go out, hot food freezes in the bowl, body heat drains through the skin. The settlements are freezing. The people are starving. And the thing walks toward the nearest concentration of warmth."
+    stats:
+      MIG: 9
+      NIM: 4
+      TOU: 10
+      WIT: 4
+      WIL: 8
+      WYR: 7
+    hp: 65
+    skills:
+      - name: "Brawl"
+        rank: 5
+      - name: "Stealth"
+        rank: 4
+      - name: "Intimidation"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Frozen Grasp"
+          type: "unarmed"
+          speed: 3
+          base_damage: 10
+      armor:
+        torso: "Compressed Ice Shell"
+        head: "None — just the mouth"
+    tactics: "Hunger walks toward warmth. It does not attack in the conventional sense — it stands near you and the cold kills. Warriors who swing swords at compressed ice find the ice reforms. Arrows shatter. If it grabs you, every point of body heat is drained in seconds — flash-frozen from the inside. It fights by proximity. The real weapon is time — every minute near it drains warmth, food, morale, will. Armies freeze standing up. Siege weapons ice over and crack. The only effective tactic is fire — and fire attracts it."
+    morale_break: "Hunger does not stop. It moves toward warmth. It can be driven toward a decoy heat source but it always turns back toward the nearest large concentration of living things — they are warmer."
+    group_size: "1 (accompanied by d6 blizzard spirits that manifest in its cold radius)"
+    abilities:
+      - "Heat Drain: all warmth within 30 paces is consumed — campfires die, body temperature drops 1 degree per round, food flash-freezes"
+      - "Ice Reform: physical damage is repaired by freezing moisture from the air — regenerates d8 HP per round in cold/wet conditions"
+      - "Flash Freeze: grapple attack instantly freezes the target — d10 cold damage per round, TOU test or limb becomes useless from frostbite"
+      - "Blizzard Summon: its presence intensifies winter weather — visibility 0, temperature lethal within 1 hour of exposure"
+      - "Warmth Sense: detects all heat sources within 5 miles — knows where every fire, every living thing, every warm building is"
+      - "Hollow: the interior is a void — swallowed targets enter a frozen dimension where they slowly freeze (d6 cold damage per round, WIL test to remain conscious)"
+    combat_phases:
+      pre_battle:
+        - name: "The Temperature Drops"
+          description: "Days before arrival, temperatures plunge beyond natural cold. Water freezes in skins. Breath freezes mid-air and falls as crystals. Metal becomes painful to touch. Livestock die overnight."
+        - name: "The Blizzard Thickens"
+          description: "A wall of white moves across the landscape. Within it, visibility drops to nothing. Sound muffles. Direction becomes impossible to determine. The blizzard is it."
+      maneuvers:
+        - name: "Consuming Embrace"
+          description: "Wraps its arms around a target and opens the hollow interior. Target is drawn inside — d10 cold damage per round, no armor, WIL test each round to keep fighting. MIG contest at -4 to escape."
+          cost: "Replaces attack"
+        - name: "Ice Spike"
+          description: "Extends a spear of compressed ice from its body. 10-pace range, d8 piercing + cold damage, NIM test to dodge."
+          cost: "Free action, once per round"
+        - name: "Cold Pulse"
+          description: "Pulses the heat-drain outward to 60 paces for one round. Every fire in radius goes out. Every living creature takes d6 cold damage and must TOU test or lose d4 NIM from limb-numbness."
+          cost: "Once per 10 rounds"
+      bloodied:
+        - name: "Desperate Hunger"
+          trigger: "Below 50% HP (32 HP)"
+          description: "Hunger becomes frantic. Movement speed doubles. The heat-drain radius expands to 50 paces. It begins pursuing individuals rather than just walking toward warmth. The mouth opens wider. The hollow interior is visible — a frozen void with the shapes of previous victims preserved in ice inside it."
+      on_death:
+        - name: "The Thaw"
+          description: "Hunger collapses into a pool of water that is, impossibly, warm. The temperature rises over 24 hours to natural levels. The blizzard dissipates. Snow begins to melt. But the winter's damage is done — food stores are gone, livestock dead, crops frozen in the ground. Famine follows the monster. Inside the meltwater, the flash-frozen bodies of Hunger's victims are released — some, impossibly, still alive, though changed by their time in the frozen void."
+    resistances:
+      [
+        "cold_immune",
+        "physical_weapons_reform_instantly",
+        "poison_immune",
+        "fear_immune",
+        "seidr_half_damage",
+      ]
+    weaknesses:
+      [
+        "Fire deals double damage — but fire attracts it",
+        "Its regeneration fails in warm conditions (above freezing) — but getting it above freezing is nearly impossible while it's alive",
+        "Indoor heat — it cannot enter buildings with active large fires without taking d6 fire damage per round",
+      ]
+    achilles_heel:
+      name: "The Hearthfire Ritual"
+      discovery: "The oldest midwinter traditions are not symbolic — they are defensive. The communal lighting of hearthfires on the solstice, the yule log that must never go out, the circle of candles in every window — these are remnants of a warding ritual from the first settlers. A völva in Raven's Perch preserved the original rite in a prayer-stick collection. The full ritual requires every settlement in the region to light their hearthfires simultaneously at midnight."
+      location: "Every settlement's central hearth — the original hearthstones are still in place in most mead halls, though their protective rune carvings are worn smooth."
+      exploit: "If envoys reach every settlement in the Rimevegr and coordinate a simultaneous hearthfire lighting at midnight (the prayer-stick describes the chant and the rune-pattern to carve on the Yule log), the combined warmth creates a regional ward that drives Hunger back to the deep snowfield. It takes d6 damage per round while the hearthfires burn in unison and cannot regenerate. It retreats to the mountains and enters dormancy. The ward lasts as long as no settlement lets its hearthfire go out before spring."
+      difficulty: "Reaching every settlement in a region locked in supernatural winter. Convincing isolated, starving communities to participate. Protecting the hearthfires once lit — blizzard spirits attack the fires directly. One failed settlement breaks the ward."
+    encounter_conditions:
+      terrain: ["any — moves overland toward warmth"]
+      season: ["deep_winter"]
+    loot:
+      silver_range: [0, 0]
+      items: ["core_ice_crystal"]
+      special: "The core ice crystal from Hunger's remains never melts. It preserves anything placed against it indefinitely — food, medicine, even living tissue. Worth a fortune to merchants. A seidr user can use it to scry across the Veil in winter."
+    lore: "The first settlers called it Hunger because that is what it is. Not a creature with a name — a condition given form. The Rimevegr's winters have always been deadly, but once in a generation the cold itself becomes aware. The old people knew how to manage it — the hearthfire traditions, the shared vigils, the midwinter feasts where every door was open and every fire burned bright. As communities have become isolated and traditions forgotten, the ward has weakened. Hunger is what happens when a society forgets that winter is an enemy that requires cooperation to survive."
+    associated_locations: ["all settlements"]
+    associated_chains: ["famine_crisis", "cultural_decline"]
+    image_prompt: |
+      A ten-foot figure of compressed ice and frozen air, shaped like a
+      starving man with ribs of glacier-blue visible through a translucent
+      torso. No face — just a mouth, always open. Walking through a
+      blizzard toward a settlement whose fires are going out one by one.
+      The ground beneath its feet is frozen solid — cracked, white, dead.
+      In its wake, snowdrifts higher than houses. In the foreground, a
+      campfire sputtering and dying despite being full of wood. Humans
+      huddled around it, breath freezing, skin blue. Ice-blue, white,
+      grey. The cold given purpose.
+
+  # --------------------------------------------------------------------------
+  # WBS_09: THE RED JARL — The Man Who Cannot Die
+  # --------------------------------------------------------------------------
+  - id: "WBS_09"
+    name: "The Red Jarl"
+    category: "world_boss"
+    subcategory: "cursed_warlord"
+    tier: 6
+    named: true
+    description: "He looks like a man. That is the worst part. Six foot two, broad across the shoulders, red beard going grey at the jaw, deep-set eyes the color of wet slate. He wears good mail, well-maintained. A plain sword at his hip, a round shield on his back. He looks like a jarl past his prime but still dangerous — the kind of man you see at a hundred mead halls. He has been alive for one hundred and forty years. He does not age. He cannot be killed. He has tried. Swords break on his skin. Arrows turn to splinters. He once walked into a burning longhouse and stood in the flames for an hour. He walked out unmarked. He drowns and stands up again. He starves and does not weaken. He is the loneliest man in the Rimevegr and the most dangerous, because he has spent a century and a half learning that nothing matters and nothing ends."
+    stats:
+      MIG: 9
+      NIM: 7
+      TOU: 10
+      WIT: 8
+      WIL: 9
+      WYR: 3
+    hp: 0
+    skills:
+      - name: "Swords"
+        rank: 5
+      - name: "Shields"
+        rank: 5
+      - name: "Brawl"
+        rank: 5
+      - name: "Command"
+        rank: 4
+      - name: "Tactics"
+        rank: 5
+      - name: "Intimidation"
+        rank: 4
+      - name: "Survival"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Common Sword (well-maintained)"
+          type: "sword"
+          speed: 3
+          base_damage: 7
+        - name: "Seax"
+          type: "knife"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Good Mail (standard quality)"
+        head: "Steel Helm"
+        shield: "Round Shield"
+    tactics: "The Red Jarl fights like a man with nothing to lose, because he has nothing to lose. His technique is 140 years refined — the finest swordsman alive by a margin so wide it is unfair. He fights economically, with no wasted motion, no flourish, no anger. He does not dodge, because why would he? He accepts hits that would kill a mortal, then continues fighting. His real weapon is despair — watching your best strike bounce off him breaks warriors faster than any wound. He learned long ago that mercy is a luxury for people who can lose. He offers none."
+    morale_break: "The Red Jarl does not flee. He has walked away from encounters voluntarily — from boredom or disgust. If someone triggers his interest (mentions the curse's origin, displays the breaking token, or speaks the riddle), he will stop fighting and listen."
+    group_size: "1 (occasionally builds a warband of d20 desperate warriors who follow him for the invincibility by association)"
+    abilities:
+      - "Absolute Immortality: cannot take HP damage from any source. All damage is negated before it is applied. This is not armor — it is a metaphysical curse"
+      - "Century-Forged Skill: 140 years of continuous combat training. Every known fighting style, counter-style, and dirty trick. No mortal can match his sword skill"
+      - "Despair Aura: anyone who witnesses his invulnerability must WIL test at -2 or suffer -2 to all combat rolls from the demoralization of fighting an unkillable enemy"
+      - "Cannot Be Restrained: bonds break, chains snap, cells crumble. The curse will not allow containment of any kind"
+      - "Tireless: does not sleep, does not fatigue, does not slow. Can fight for days"
+      - "Living Memory: personally remembers every significant event in the Rimevegr for the past 140 years — a walking archive of hidden knowledge"
+    combat_phases:
+      pre_battle:
+        - name: "The Reputation Arrives First"
+          description: "Everyone has heard of the Red Jarl. Even before he appears, rumors drain morale. Defending soldiers suffer -1 to WIL from the stories alone."
+        - name: "Fair Warning"
+          description: "The Red Jarl announces himself plainly. He gives one chance to surrender or leave. He is tired of killing. He does it anyway. His wariness makes the warning more terrifying, not less."
+      maneuvers:
+        - name: "Century Strike"
+          description: "A sword technique refined over 140 years — feints within feints within feints. Target must pass NIM test at -4 or the next three attacks auto-hit. The technique is unlike anything living warriors use."
+          cost: "Once per encounter"
+        - name: "Walk Through Fire"
+          description: "If any environmental hazard or trap is placed in his path, the Red Jarl walks through it. Fire, pit traps, falling rocks, floods — he takes zero damage and emerges unscathed. The psychological impact costs observers d4 WIL."
+          cost: "Passive — automatic"
+        - name: "Disarm and Demonstrate"
+          description: "Instead of killing, disarms the opponent and waits for them to pick up their weapon. Then disarms them again. And again. Until they understand. -3 to the opponent's WIL after 3 disarms."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Cannot Be Bloodied"
+          trigger: "N/A — the Red Jarl has 0 HP because HP is irrelevant"
+          description: "The Red Jarl cannot be damaged. There is no bloodied state. This is the horror."
+      on_death:
+        - name: "Cannot Die"
+          description: "The Red Jarl cannot be killed by any means available to mortal warriors. This is a fact, not a challenge. The only path to his defeat is the Achilles Heel."
+    resistances: ["everything — absolute invulnerability"]
+    weaknesses:
+      [
+        "He is mortal in every way except durability — he can be tripped, pushed, blinded (temporarily), disoriented",
+        "His weariness is genuine — he does not want to fight. A conversation is more likely to stop him than a sword",
+        "He has a code — he will not kill children, the helpless, or the genuinely innocent. He can be positioned where his code conflicts with his mission",
+      ]
+    achilles_heel:
+      name: "The Riddle Curse"
+      discovery: "The Red Jarl was cursed by a dying seidr-wife he killed during a raid 140 years ago. Her curse was a riddle: 'You will live until you are finally worth killing, and then you will die of what you are.' The riddle's answer is specific: the curse breaks when the Red Jarl performs an act of genuine self-sacrifice — risking his life for someone else, with no certainty that his immortality will protect him. The seidr-wife's descendants (a family in Bogside) have the full text of the curse. Runa Veil-Touched has heard the riddle and believes she knows its meaning."
+      location: "The curse is in the Red Jarl himself. No artifact, no location."
+      exploit: "The Red Jarl must be convinced — not forced, not tricked — to risk his immortality to save another person. If he charges into danger believing he might actually die, with genuine concern for someone other than himself, the curse evaluates him as 'finally worth killing.' His invulnerability drops. He becomes a mortal man again — still the finest swordsman alive, but capable of bleeding, aging, and dying. If he survives the act of sacrifice, he lives out his remaining years as a mortal. If he dies in the act, the curse considers the debt paid."
+      difficulty: "Finding the original curse's text. Understanding the riddle's answer. Then the hardest part: making a 140-year-old nihilist care about another human being enough to risk the one thing he's never been able to get rid of — his life."
+    encounter_conditions:
+      terrain: ["any — he wanders"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 0]
+      items: ["common_sword", "good_mail", "steel_helm"]
+      special: "The Red Jarl's knowledge — 140 years of Rimevegr history, military analysis, and personal experience. If allied, he is the most valuable informant in the setting."
+    lore: "His name was Vidar. He was an ordinary raider who got too successful too young and killed a woman he should have spared. She cursed him with her dying breath, and the curse took. He watched his wife age and die. His children aged and died. Their children. He stopped trying to make connections. He fought in every war for a century because fighting was the only thing that still felt real. He is not evil — he is empty. The curse did not preserve him in amber; it preserved him in despair. He is the cautionary tale of invincibility: power without purpose is just another form of prison."
+    associated_locations: ["wanders — no fixed location"]
+    associated_chains: ["rimevegr_legends"]
+    image_prompt: |
+      A man. Just a man. Six foot two, broad shoulders, red beard going
+      grey. Good mail, plain sword, round shield. Standing in a field
+      of fallen warriors — dozens of them — without a scratch. His
+      expression is tired. Not triumphant, not angry. Tired. Blood on
+      his sword and boots but none of it his. The surrounding warriors
+      fought hard — broken weapons, shield splinters, evidence of fire
+      and traps. None of it worked. He looks like your neighbor's jarl.
+      That's the horror. Muted palette. A man who cannot die and has
+      stopped wanting to live.
+
+  # --------------------------------------------------------------------------
+  # WBS_10: THE FIRST BARROW — The Thing That Was Here Before
+  # --------------------------------------------------------------------------
+  - id: "WBS_10"
+    name: "The First Barrow"
+    category: "world_boss"
+    subcategory: "primordial"
+    tier: 6
+    named: true
+    description: "Not a creature. A place that has become alive. The oldest barrow in the Rimevegr — older than any human settlement, older than the sagas, older than memory. A hill that was ancient when the first longships beached on these shores. Inside it, centuries of death have accumulated like sediment. The barrow has absorbed so much death-energy that the hill itself has developed awareness. The ground breathes. The walls pulse. The corridors contract and expand. Roots that penetrate the soil come out as bone. Water that seeps in comes out as blood. The barrow does not have a heart — it is a heart. And it has started beating."
+    stats:
+      MIG: 10
+      NIM: 0
+      TOU: 10
+      WIT: 5
+      WIL: 10
+      WYR: 10
+    hp: 0
+    skills:
+      - name: "Seidr"
+        rank: 5
+    gear:
+      weapons: []
+      armor: {}
+    tactics: "The First Barrow does not move — it reshapes. The terrain for a mile around its hill reconfigures: paths loop back on themselves, forests become mazes, rivers change course. Anyone who enters the barrow is inside an organism. The corridors are digestive — they dissolve intruders. The rooms are organs with specific functions: memory extraction, life-force draining, bone incorporation. The barrow grows by absorbing the dead and building new chambers from their remains. It is not hostile — it is metabolizing. You are food."
+    morale_break: "The First Barrow cannot be retreated from in the conventional sense — its maze-shifting traps visitors. It can be escaped by those who understand its anatomy and exit through the 'exhale' points (the barrow breathes out stale air — these are the exit routes)."
+    group_size: "1 (the barrow is the entity — it contains hundreds of undead that function as its immune system)"
+    abilities:
+      - "Living Architecture: walls, floors, ceilings move — corridors close, rooms shift, dead ends open. The layout changes every 10 minutes"
+      - "Digestive Corridors: certain passages deal d4 acid damage per round to all occupants — the walls secrete something that dissolves organic matter"
+      - "Bone Incorporation: all dead within the barrow are absorbed into the walls within d6 hours — they become part of the structure and cannot be resurrected"
+      - "Death Reservoir: the barrow has absorbed enough death-energy to power any seidr working — it is an infinite well for undead and Veil phenomena"
+      - "Immune System: hundreds of undead dwell within — they attack intruders not from malice but as a biological defense response"
+      - "Cannot Be Harmed: the barrow has no HP because it is terrain. You cannot kill a hill. Conventional damage is irrelevant"
+      - "Memory Extraction: rooms devoted to memory-stripping — WIL test at -3 or lose d6 months of memory permanently"
+    combat_phases:
+      pre_battle:
+        - name: "The Land Changes"
+          description: "For miles around the First Barrow, the landscape slowly shifts. Paths that led away now curve back toward the hill. Streams flow toward it, not away. Trees lean inward. The hill grows larger each month."
+        - name: "The Pulse"
+          description: "Everyone within a mile feels a rhythmic vibration — the barrow's heartbeat. WIL test or feel compelled to walk toward the entrance. Animals stampede toward the hill."
+      maneuvers:
+        - name: "Corridor Crush"
+          description: "Inside the barrow, walls contract and crush anyone in the corridor. MIG test at -3 or take d10 crushing damage. The corridor remains narrow for d6 rounds."
+          cost: "Passive — triggers when intruders enter digestive corridors"
+        - name: "Undead Swarm Response"
+          description: "The immune system activates. d6+4 draugr erupt from the walls to attack intruders. They reform from wall material if destroyed (d4 rounds to reform)."
+          cost: "Triggers every 20 minutes of intrusion"
+        - name: "Memory Room"
+          description: "A chamber that extracts memories. All who enter must WIL test at -3. Failure: lose d6 months of memories. Critical failure: lose all memory of one person. The barrow uses extracted memories to lure future victims."
+          cost: "Passive — triggers on room entry"
+      bloodied:
+        - name: "Cannot Be Bloodied"
+          trigger: "N/A — the First Barrow has no HP"
+          description: "The barrow is terrain. It cannot be damaged. The concept of bloodied does not apply. This is the fundamental problem."
+      on_death:
+        - name: "The Hill Collapses"
+          description: "If the heart is destroyed (see Achilles Heel), the barrow dies. The hill collapses inward over d6 hours. Everything inside is crushed. All undead within the barrow are destroyed. The land around it becomes fertile — intensely fertile, like a cleared abscess. The death-energy dissipates over a generation. But the bodies absorbed into the walls over centuries are now part of the soil. Strange things will grow from that ground."
+    resistances: ["everything — it is terrain, not a creature"]
+    weaknesses:
+      [
+        "It cannot chase you — staying outside the barrow's influence radius (1 mile) is perfectly safe",
+        "Fire damages the internal organic structures, though the stone and earth do not burn",
+        "Navigating its anatomy allows safe passage — the exhale points, the non-digestive corridors, the dormant rooms",
+      ]
+    achilles_heel:
+      name: "The Heart Chamber"
+      discovery: "The barrow has a heart — a chamber at its deepest point where all the death-energy converges. It pulses. It is warm. It is the only warm place in the barrow. The chamber is described in the Grave Wardens' oldest text, which calls it 'the seed.' Runa Veil-Touched can feel it from outside the barrow. A very old runestone at the barrow's original entrance (now overgrown) shows a map of the barrow's anatomy with the heart marked."
+      location: "The deepest chamber, accessible only through a specific sequence of corridors that do not shift — the 'veins' that carry death-energy to the heart. The route is on the runestone map."
+      exploit: "The heart is a mass of compressed death-energy the size of a horse — pulsing, warm, and alive. Driving a consecrated iron stake through the heart while a seidr user speaks the death-rite (from the Grave Wardens' text) kills the barrow. The heart has 30 HP and regenerates d6 per round. The seidr user must maintain the rite for 5 rounds. The barrow's immune system goes into overdrive — every undead in the complex converges on the heart chamber."
+      difficulty: "Finding the runestone map (half-buried, weathered, in the middle of territory the barrow controls). Navigating to the heart through a living dungeon that rearranges itself. Holding the heart chamber for 5 rounds against every undead in the barrow while a seidr user completes the rite. The consecrated iron stake must be forged specifically — iron from the First Barrow's region, consecrated by a proper rite. The entire operation requires a coordinated team with multiple skills."
+    encounter_conditions:
+      terrain: ["first_barrow", "barrow_surroundings"]
+      season: ["any — the barrow is always active"]
+    loot:
+      silver_range: [0, 0]
+      items: ["heart_shard"]
+      special: "The heart shard — a fragment of compressed death-energy — is the most powerful seidr component in existence. A seidr user who holds it can raise the dead, command spirits, and thin the Veil at will. The temptation to use it is immense. Every previous holder has been corrupted. The safest option is to destroy it — but destroying it requires knowledge no one living possesses."
+    lore: "The First Barrow was not built by humans. The hill was already hollow when the first settlers arrived. They found chambers inside — empty, waiting, warm. They buried their dead there because it felt right. It always felt right. The barrow wanted the dead. It has been collecting them for longer than human memory extends. Whatever hollowed out that hill and made it hungry may still be at the bottom, waiting. The heart is not the barrow's original organ — it is something the barrow grew around something older. The true core has never been reached."
+    associated_locations:
+      ["First Barrow", "all barrows (connected via death-energy network)"]
+    associated_chains:
+      ["waking_barrows", "veil_collapse", "primordial_awakening"]
+    image_prompt: |
+      A massive hill that breathes. The surface pulses. Roots emerge from
+      the soil as bone. Water seeping from the base is red. The entrance
+      is a mouth — stone lips, darkness inside, warm air exhaling. The
+      surrounding forest leans inward, drawn toward the hill. Paths in the
+      landscape all curve toward the entrance. A mile around it, the land
+      is wrong — too green, too alive, feeding on what the barrow excretes.
+      From inside, a rhythmic pulse visible as a faint amber glow. The
+      oldest thing in the Rimevegr. The hill that eats. Earth tones,
+      bone-white, blood-red, amber pulse. Not a dungeon — an organism.

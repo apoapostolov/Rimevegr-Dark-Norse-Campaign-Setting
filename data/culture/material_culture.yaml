@@ -1,0 +1,1652 @@
+# Iron Ledger — Material Culture of the Rimevegr
+# Writer's reference for physical and sensory detail in prose.
+# Each entry grounds a category of daily object in smell, touch,
+# sound, and appearance so scenes feel inhabited, not described.
+#
+# Context: The Rimevegr is a Norse dark-fantasy setting. Technology
+# is late Iron Age Scandinavian. The long dark lasts ~300 days.
+# Everything is repaired, reused, and stained with use. Nothing
+# is new. Nothing is clean for long.
+#
+# Usage: When writing a scene, pull 1-2 entries for ambient texture.
+# The details should appear as background — incidental, assumed,
+# never explained. A man does not describe his own tunic. He
+# scratches where the wool chafes his neck.
+#
+# Categories (100 entries):
+#   clothing (13), food_and_drink (16), tools_and_implements (12),
+#   weapons_descriptions (12), architecture (10), ships_and_boats (6),
+#   camp_gear (10), personal_effects (9), music_and_art (5),
+#   craft_and_trade (7)
+
+material_culture:
+  # ================================================================
+  # CLOTHING — What people wear, how it wears out, what it smells like
+  # ================================================================
+  clothing:
+    description: >-
+      Rimevegr clothing is layered, repaired, and never truly clean.
+      Wool dominates. Linen is a luxury. Silk exists only on jarls
+      and their wives — and even then, it is old silk, traded through
+      six hands. Every garment carries the smell of its owner: smoke,
+      sweat, lanolin, animal fat. You know a man's trade by his
+      clothes before he speaks. A tanner stinks of piss and lime. A
+      smith smells of iron and burnt hair. A thrall smells of whatever
+      his master last made him do.
+
+    entries:
+      - id: "MAT_CLT_001"
+        name: "Wool Tunic"
+        category: "daily_wear"
+        who_uses: "Everyone"
+        materials: "Undyed or woad-dyed wool, sometimes madder-red for the prosperous"
+        description: "Knee-length, belted at the waist. The universal garment of the Rimevegr."
+        sensory: >-
+          Smells of lanolin and woodsmoke — always woodsmoke. The wool
+          is coarse against bare skin, softened only by years of wear.
+          Stiff when new. Stiff again when wet. Makes a faint rasp
+          when the wearer moves.
+        seasonal_notes: "Doubled in winter. The outer tunic is often felted for wind resistance."
+
+      - id: "MAT_CLT_002"
+        name: "Leg Wraps"
+        category: "daily_wear"
+        who_uses: "Everyone, especially travelers and fighters"
+        materials: "Strips of wool or linen, wound from ankle to below the knee"
+        description: "Bound in a spiral pattern over trousers or bare legs. Keeps mud and brush out, supports the ankle on rough ground."
+        sensory: >-
+          The wraps darken with moisture and mud within an hour of
+          walking. Once saturated they feel like cold bandages. The
+          binding pattern loosens over a long march — retying them
+          is a twice-daily ritual, done without thinking.
+        seasonal_notes: "Waxed wraps in winter. Wet wraps in summer are wrung out at camp."
+
+      - id: "MAT_CLT_003"
+        name: "Linen Undershirt"
+        category: "daily_wear"
+        who_uses: "Free folk and above. Thralls rarely own one."
+        materials: "Bleached or unbleached linen"
+        description: "Worn under the wool tunic against the skin. The difference between a man who owns linen and one who does not is visible in how he scratches."
+        sensory: >-
+          Cool against skin when fresh. Darkens with sweat to a grey-
+          yellow within days. Smells sour-sweet when overdue for
+          washing. The weave is visible up close — coarse by modern
+          standards, fine by Rimevegr standards.
+        seasonal_notes: "Changed at river crossings when possible. Lice settle in linen first."
+
+      - id: "MAT_CLT_004"
+        name: "Cloak (Everyday)"
+        category: "outerwear"
+        who_uses: "Everyone"
+        materials: "Heavy fulled wool, often rectangular, pinned at the right shoulder"
+        description: "Doubles as blanket, groundsheet, rain cover, and privacy screen. The most versatile garment a person owns."
+        sensory: >-
+          When dry, it smells of sheep and smoke. When wet, it smells
+          of wet dog. Heavy as a saddle when soaked. The pin-hole at
+          the shoulder wears into a ragged circle over months. The
+          edges fray and are never truly hemmed.
+        seasonal_notes: "Greased with tallow in winter for water resistance. The grease attracts dirt."
+
+      - id: "MAT_CLT_005"
+        name: "Fur-Lined Cloak"
+        category: "outerwear"
+        who_uses: "Warriors, jarls, successful traders"
+        materials: "Wool outer, lined with fox, wolf, or sheepskin"
+        description: "A status garment. The quality of the fur tells you how far north a man has traded — or how recently he has killed."
+        sensory: >-
+          The fur side is warm and slightly greasy against the neck.
+          Sheds guard hairs onto everything. Over time the lining
+          develops bald patches where it rests on the shoulders.
+          A well-maintained fur cloak smells of cedar chips stored
+          with it. A neglected one smells of rancid fat.
+        seasonal_notes: "Essential in the long dark. Men have killed for one."
+
+      - id: "MAT_CLT_006"
+        name: "Leather Shoes (Turnshoe)"
+        category: "footwear"
+        who_uses: "Everyone who can afford them"
+        materials: "Cattle or goat leather, sewn inside-out then turned"
+        description: "Single-piece construction. No left or right — they shape to the foot after a week of wear. Thin-soled. You feel every rock."
+        sensory: >-
+          New leather creaks. Old leather is silent and supple. The
+          stitching rots first — a good pair lasts one season of hard
+          travel, two of town life. Wet leather goes clammy and cold.
+          Drying them by a fire too fast cracks the sole. Every
+          traveler knows the precise distance from fire to boot.
+        seasonal_notes: "Stuffed with dry grass in winter for insulation. The grass must be changed daily."
+
+      - id: "MAT_CLT_007"
+        name: "Wool Trousers"
+        category: "daily_wear"
+        who_uses: "Men universally. Women rarely."
+        materials: "Wool, loose-cut, sometimes with a drawstring waist"
+        description: "Baggy in the seat and thigh, narrow at the calf where the leg wraps bind. Patched at the knees and inner thigh within weeks of hard use."
+        sensory: >-
+          Chafe badly when wet. The crotch wears thin first. Holding
+          them up is a constant low-level concern — belts slip, drawstrings
+          stretch. The patches are always a different shade of wool
+          than the original.
+        seasonal_notes: "Lined with fur scraps in deep winter. The lining bunches and rides up."
+
+      - id: "MAT_CLT_008"
+        name: "Apron Dress (Hangerok)"
+        category: "daily_wear"
+        who_uses: "Free women"
+        materials: "Wool, suspended by paired oval brooches at the chest"
+        description: "The defining garment of a free Norse woman. Worn over an underdress. The brooches are often the most valuable things she owns."
+        sensory: >-
+          The brooches clank softly when she bends or turns quickly.
+          A bead strand sometimes hangs between them — the clicking
+          of the beads is the sound of a woman approaching. The dress
+          itself is heavy, layered, and warm. It sways when she walks.
+        seasonal_notes: "An extra shawl wraps the shoulders in winter, pinned or knotted at the chest."
+
+      - id: "MAT_CLT_009"
+        name: "Seal-Skin Mittens"
+        category: "cold_weather"
+        who_uses: "Anyone working outdoors in the long dark"
+        materials: "Seal or walrus skin, fur-side in"
+        description: "Waterproof where leather is not. Stiff and clumsy — you cannot grip a weapon properly in them. Removed for fighting, which means cold hands."
+        sensory: >-
+          Slick and slightly oily on the outside. The fur lining
+          traps moisture from sweat, which freezes if you take them
+          off. Smell of salt and fish-oil when new. Smell of salt and
+          your own hands after a week.
+        seasonal_notes: "Carried in the belt during mild spells. Lost mittens in the long dark are a death sentence."
+
+      - id: "MAT_CLT_010"
+        name: "Felt Cap"
+        category: "headwear"
+        who_uses: "Common folk, laborers, sailors"
+        materials: "Felted wool, sometimes with ear-flaps"
+        description: "Simple, shapeless, warm. Pulled down over the ears in wind. Status-neutral — even jarls wear them when no one is watching."
+        sensory: >-
+          Compresses hair flat against the skull. Itches at the
+          hairline until broken in. Absorbs rain until saturated,
+          then drips steadily into the eyes. Smells of head-grease
+          and wool. Distinctly personal — no one shares a cap.
+        seasonal_notes: "Worn under a hood in the long dark. Two layers of insulation on the skull."
+
+      - id: "MAT_CLT_011"
+        name: "Belt and Pouch"
+        category: "accessories"
+        who_uses: "Everyone"
+        materials: "Leather belt, often with a bronze or iron buckle; pouch of soft leather"
+        description: "The belt is utility infrastructure. Everything hangs from it: knife, pouch, fire-steel, eating tools. A man without his belt is half-dressed."
+        sensory: >-
+          The leather darkens and polishes where it rides the hip.
+          The buckle wears a groove in the leather over months. The
+          pouch contents jingle and clatter with each step — flint
+          against steel, coins against bone. You can hear a prosperous
+          man coming.
+        seasonal_notes: "Worn over the outer tunic, cinching layers against the wind."
+
+      - id: "MAT_CLT_012"
+        name: "Arm Rings (Warrior)"
+        category: "accessories"
+        who_uses: "Warriors, oath-sworn men"
+        materials: "Silver or bronze, twisted or plain"
+        description: "Worn on the upper arm. Each ring marks a gift from a lord, a debt of loyalty. Cutting a piece off to pay a debt is literal — you hack silver from the ring with a knife."
+        sensory: >-
+          Cold against the bicep in winter. Warm in summer. The
+          metal tarnishes unless polished — most warriors let the
+          tarnish build, then clean them before a feast. The hack-
+          marks where silver was cut away tell a man's financial
+          history on his arm.
+        seasonal_notes: "Worn under sleeves in the long dark. Displayed openly at gatherings."
+
+      - id: "MAT_CLT_013"
+        name: "Hooded Overcoat (Ólpa)"
+        category: "outerwear"
+        who_uses: "Travelers, scouts, herders"
+        materials: "Dense fulled wool or wadmal, hood attached"
+        description: "A garment for foul weather. Knee-length, often slit at the sides for movement. The hood is deep enough to shadow the face."
+        sensory: >-
+          The wadmal is so tightly fulled it sheds rain for the first
+          hour. After that it drinks water and gains weight like a
+          sponge. When the wind catches the hood it flaps against the
+          skull with a dull sound. Smells of wet sheep and whatever
+          was last cooked near it.
+        seasonal_notes: "Near-universal in the long dark. Travelers sleep in them."
+
+  # ================================================================
+  # FOOD AND DRINK — What sustains people, and what it tastes like
+  # ================================================================
+  food_and_drink:
+    description: >-
+      Rimevegr food is seasonal, preserved, and monotonous. The long
+      dark forces reliance on stockfish, dried meat, fermented dairy,
+      and whatever was salted or smoked during the brief summer. Fresh
+      food is rare and precious. Bread is flat - yeast is temperamental
+      in cold. Every meal tastes of smoke, salt, or sour ferment. The
+      wealthy eat the same things as the poor — just more of them, and
+      with butter.
+
+    entries:
+      - id: "MAT_FND_001"
+        name: "Stockfish"
+        category: "preserved_food"
+        who_uses: "Everyone — the staple of the long dark"
+        materials: "Cod or similar whitefish, wind-dried on wooden racks"
+        description: "Air-dried fish, hard as a plank. Must be beaten with a mallet and soaked in water for days before eating. A single fish feeds a man for two days."
+        sensory: >-
+          Dry: smells faintly of the sea and old wood. A sharp, clean
+          smell. Hard enough to knock a man unconscious if swung.
+          Reconstituted: falls apart into pale flakes with a faintly
+          fishy, faintly sweet taste. The soaking water is used in
+          stews — wastes nothing.
+        seasonal_notes: "Prepared in late summer. Eaten through the entire long dark."
+
+      - id: "MAT_FND_002"
+        name: "Flatbread"
+        category: "daily_food"
+        who_uses: "Everyone"
+        materials: "Barley flour, water, sometimes a pinch of salt"
+        description: "Unleavened, baked on a flat stone by the fire. Brittle when fresh, stone-hard within a day. The daily bread of the Rimevegr — literal and essential."
+        sensory: >-
+          Warm from the stone it has a toasted, nutty smell. The
+          surface is spotted with dark patches where it touched the
+          hottest stone. Breaks with a dry snap when fresh. After a
+          day, it must be dipped in broth or cracked with the teeth.
+          Stale flatbread has broken more teeth than any weapon.
+        seasonal_notes: "Baked daily when grain is available. Carried as travel rations."
+
+      - id: "MAT_FND_003"
+        name: "Skyr"
+        category: "dairy"
+        who_uses: "Everyone with access to cattle"
+        materials: "Strained soured milk — thick, white, slightly granular"
+        description: "A cultured dairy food between yogurt and soft cheese. High in protein, sour in taste. Mixed with berries in summer, eaten plain in winter."
+        sensory: >-
+          Sharp sour smell, like buttermilk concentrated. Thick enough
+          to hold a spoon upright. Cool and slightly chalky on the
+          tongue. The sourness makes the mouth water. When it goes bad
+          — and it does, quickly — the smell shifts from sour to
+          rotten in a single night.
+        seasonal_notes: "Produced in summer when cows are milking. Stored in cool cellars. Does not keep as long as people hope."
+
+      - id: "MAT_FND_004"
+        name: "Mead"
+        category: "drink"
+        who_uses: "Everyone, but quality varies sharply by wealth"
+        materials: "Fermented honey and water, sometimes spiced with juniper or bog myrtle"
+        description: "The ceremonial drink. Served at blóts, feasts, oaths, and funerals. Common mead is thin and rough. Jarl's mead is golden and sweet enough to mask the burn."
+        sensory: >-
+          Good mead smells of warm honey and wild herbs. Bad mead
+          smells of vinegar and regret. Both burn the throat. The
+          sweetness hits first, then a slow heat in the chest. Served
+          in horns or wooden cups. The last swallow always has
+          sediment — gritty, yeasty, faintly bitter.
+        seasonal_notes: "Brewed after the summer honey harvest. Rationed carefully through the long dark."
+
+      - id: "MAT_FND_005"
+        name: "Smoked Meat (General)"
+        category: "preserved_food"
+        who_uses: "Everyone"
+        materials: "Any meat — mutton, goat, horse, occasionally beef — slowly smoked over alder or birch"
+        description: "Cut into strips, hung in the smokehouse for weeks. Dark, dense, chewy. The primary protein source for travelers."
+        sensory: >-
+          Deep reddish-brown, almost black at the edges. The smoke
+          flavor dominates everything — alder gives sweetness, birch
+          gives sharpness. Tough enough to require sustained chewing.
+          The jaw aches after a full meal of it. Leaves a greasy
+          residue on the fingers that smells of campfire for hours.
+        seasonal_notes: "Smoking is continuous through late summer. A family's survival depends on the smokehouse."
+
+      - id: "MAT_FND_006"
+        name: "Ale"
+        category: "drink"
+        who_uses: "Common folk — daily drink"
+        materials: "Malted barley, water, bog myrtle or yarrow for bittering"
+        description: "Unhopped, flat, cloudy, low in alcohol. Not a luxury — a necessity. Water is unreliable. Ale is safe. Children drink weak ale."
+        sensory: >-
+          Looks like muddy water with a thin head that vanishes
+          immediately. Tastes of grain and herbs, slightly sour,
+          faintly sweet. Served at room temperature — which in the
+          Rimevegr means cold. The dregs at the bottom of the barrel
+          are thick as porridge and only thralls drink them.
+        seasonal_notes: "Brewed in batches. A household without ale is in crisis."
+
+      - id: "MAT_FND_007"
+        name: "Porridge (Barley or Oat)"
+        category: "daily_food"
+        who_uses: "Everyone — the universal breakfast"
+        materials: "Cracked barley or oats, water or whey, sometimes a lump of butter"
+        description: "Cooked until thick in a communal pot. Eaten with a spoon or drunk from the bowl. Bland, filling, dependable."
+        sensory: >-
+          Steams in the cold air. The surface develops a skin if left
+          to cool. Tastes of almost nothing — the grain and whatever
+          fat was added. With butter, it is almost pleasant. Without,
+          it is fuel. The smell is warm, starchy, institutional.
+          Every Rimevegr nose knows it. Every Rimevegr tongue is
+          bored by it.
+        seasonal_notes: "Year-round. The one meal that never varies."
+
+      - id: "MAT_FND_008"
+        name: "Blood Sausage"
+        category: "preserved_food"
+        who_uses: "Everyone — made at slaughter time"
+        materials: "Animal blood, fat, barley, stuffed in cleaned intestine"
+        description: "Made when an animal is slaughtered — nothing is wasted. Boiled or smoked. Dense, dark, iron-rich."
+        sensory: >-
+          Nearly black when cooked. Slices reveal a dark, crumbly
+          interior flecked with pale fat and grain. Tastes of iron
+          and salt and animal. The casing has a slight chew. Fresh,
+          it steams and the blood-smell fills the room. Smoked, it
+          mellows into something almost nutty.
+        seasonal_notes: "Made in autumn at the main slaughter. A good supply means a survived winter."
+
+      - id: "MAT_FND_009"
+        name: "Buttermilk"
+        category: "dairy"
+        who_uses: "Everyone"
+        materials: "The liquid left after churning butter"
+        description: "Thin, sour, refreshing. Drunk daily when available. Used in cooking when not."
+        sensory: >-
+          Pale, slightly blue-white. Thinner than milk but with a tang
+          that puckers the mouth. Smells clean and sour. Cold from the
+          cellar, it is the closest thing to refreshment after hard
+          labor. Goes bad faster than you expect — the sourness tips
+          into outright rot without warning.
+        seasonal_notes: "Summer only, when butter is being made. Missed terribly in winter."
+
+      - id: "MAT_FND_010"
+        name: "Salted Herring"
+        category: "preserved_food"
+        who_uses: "Coastal settlements, traded inland at premium"
+        materials: "Herring packed in barrels with coarse salt"
+        description: "Small, silver, overwhelmingly salty. Must be soaked before eating or it draws all moisture from the mouth."
+        sensory: >-
+          The barrel, once opened, fills the room with a wave of brine
+          and fish. The herring are packed tight as kindling, silver
+          skins glistening with salt crystals. The flesh is firm, oily,
+          and so salty it stings a cut lip. The oil coats everything
+          it touches.
+        seasonal_notes: "Caught and salted in summer runs. A full barrel is worth a cow in winter."
+
+      - id: "MAT_FND_011"
+        name: "Turnip and Onion Stew"
+        category: "daily_food"
+        who_uses: "Everyone"
+        materials: "Root vegetables, onion, animal bones for stock, barley"
+        description: "The default evening meal. Whatever is available goes in the pot. The pot is never fully emptied — tomorrow's stew starts where today's ended."
+        sensory: >-
+          Thick, murky, the color of old rope. Individual vegetables
+          have dissolved into a uniform mass after hours of simmering.
+          The bones float to the surface. It tastes of everything and
+          nothing specific — savory, faintly sweet from the turnip,
+          with the ghost of whatever meat the bones once held. The pot
+          itself has a permanent smell that never fully washes away.
+        seasonal_notes: "Year-round. The vegetable changes. The stew does not."
+
+      - id: "MAT_FND_012"
+        name: "Honey"
+        category: "luxury_food"
+        who_uses: "The wealthy, or anyone who keeps bees"
+        materials: "Comb honey from wild or kept hives"
+        description: "Precious. Used for mead first, sweetening food second. A jar of honey is serious currency in the Rimevegr."
+        sensory: >-
+          Dark amber, thick, slow-moving in the cold. Smells of flowers
+          that no longer bloom — a memory of summer trapped in a jar.
+          Tastes like warmth itself on the tongue. The comb, chewed,
+          releases wax that sticks to the teeth. Even the empty jar
+          smells of honey for months.
+        seasonal_notes: "Harvested in late summer. Rationed with extreme care."
+
+      - id: "MAT_FND_013"
+        name: "Whey"
+        category: "dairy"
+        who_uses: "Everyone"
+        materials: "Liquid byproduct of cheese-making, sometimes fermented (súrmjólk)"
+        description: "Sour, thin, protein-rich. Fermented whey is the everyday drink of farms — refreshing in a brutal, sour way."
+        sensory: >-
+          Translucent, greenish-yellow. Smells sharply acidic. The
+          fermented version fizzes slightly on the tongue and makes
+          strangers wince. Locals drink it without expression. Used
+          to preserve meat when salt is scarce — the acid keeps rot
+          at bay for weeks.
+        seasonal_notes: "Available whenever cheese is made. Fermented whey stores longer than milk."
+
+      - id: "MAT_FND_014"
+        name: "Dried Berries"
+        category: "preserved_food"
+        who_uses: "Everyone — gathered by women and children in summer"
+        materials: "Bilberries, lingonberries, cloudberries — dried on flat rocks"
+        description: "Sun-dried or smoke-dried. Small, wrinkled, intensely flavored. Mixed into porridge or chewed as trail food."
+        sensory: >-
+          Shriveled to half their size. The skin is leathery and
+          resists the teeth before bursting with concentrated tartness.
+          Lingonberries stay sour. Cloudberries develop a musky
+          sweetness. The fingers stain purple from bilberries and the
+          stain lasts for days. A handful in porridge transforms it
+          from duty to pleasure.
+        seasonal_notes: "Gathered and dried in the sixty days of summer. Children eat as many as they dry."
+
+      - id: "MAT_FND_015"
+        name: "Sour Butter"
+        category: "dairy"
+        who_uses: "Everyone"
+        materials: "Butter churned from soured cream, packed in barrels or birch containers"
+        description: "Butter made from cultured cream — slightly tangy, pale yellow, and the primary cooking fat of the Rimevegr."
+        sensory: >-
+          Pale as tallow when cold, deepening to gold when melted.
+          Smells of fresh cream with a sour edge. Melted into porridge,
+          it forms golden pools on the surface. Rancid butter — and
+          most winter butter goes rancid — smells sharply of cheese
+          and is eaten anyway. Nothing is wasted.
+        seasonal_notes: "Churned in summer, packed in cool stores. Quality degrades steadily through winter."
+
+      - id: "MAT_FND_016"
+        name: "Roast Marrow Bones"
+        category: "feast_food"
+        who_uses: "Everyone at a slaughter feast; warriors in the field"
+        materials: "Long bones of cattle, sheep, or horse, split or cracked"
+        description: "Bones roasted in coals until the marrow melts inside. Cracked open with a rock. The richest food available without agriculture."
+        sensory: >-
+          The bones blacken and crack in the fire. The marrow inside
+          liquefies into a hot, greasy, deeply savory paste. Scooped
+          out with a stick or sucked directly from the bone. Burns the
+          lips. The fat coats the mouth and the smell — roasted and
+          primal — makes dogs whine and men reach for more.
+        seasonal_notes: "Available whenever an animal is slaughtered. Considered a treat year-round."
+
+  # ================================================================
+  # TOOLS AND IMPLEMENTS — The technology of daily survival
+  # ================================================================
+  tools_and_implements:
+    description: >-
+      Rimevegr tools are iron when available, bone and wood when not.
+      Every free man carries a knife. Every household has an axe.
+      Specialized tools belong to specialists — and specialists are
+      valued, guarded, and irreplaceable. A blacksmith's tongs are
+      more important than a jarl's silver. Tools are inherited, traded,
+      repaired past the point of original material, and never discarded
+      while a single use remains in them.
+
+    entries:
+      - id: "MAT_TIM_001"
+        name: "Eating Knife"
+        category: "daily_tool"
+        who_uses: "Everyone — carried at all times"
+        materials: "Iron blade, antler or wood handle, carried in a leather sheath on the belt"
+        description: "A short, single-edged knife. Used for eating, whittling, cutting rope, cleaning nails, and a hundred other tasks. The most personal object a person owns."
+        sensory: >-
+          The handle is darkened and polished by the owner's grip.
+          The blade is honed thin from years of sharpening — an old
+          knife is narrower than a new one. Makes a soft hiss across
+          a whetstone. The sheath creaks when the knife is drawn.
+          Everyone's knife smells faintly of whatever they last ate.
+        seasonal_notes: "Carried year-round. Losing it is like losing a hand."
+
+      - id: "MAT_TIM_002"
+        name: "Hand Axe"
+        category: "daily_tool"
+        who_uses: "Every household. Travelers carry one."
+        materials: "Iron head, ash or birch handle"
+        description: "Splitting wood, butchering meat, cutting rope, clearing brush, hammering stakes. Not primarily a weapon — but it becomes one instantly."
+        sensory: >-
+          The handle is smooth from use, slightly tacky with hand
+          sweat. The head develops a faint rust-bloom overnight if not
+          oiled. The sound of an axe on wood is the heartbeat of a
+          Rimevegr camp — rhythmic, splitting, echoing off trees.
+          A well-maintained edge catches the firelight.
+        seasonal_notes: "Essential for firewood, which is essential for life."
+
+      - id: "MAT_TIM_003"
+        name: "Soapstone Pot (Cooking Vessel)"
+        category: "kitchen"
+        who_uses: "Households, camps"
+        materials: "Carved soapstone — soft stone that withstands fire"
+        description: "Heavy, fragile, irreplaceable. Carved from a single block. Sits directly in coals. A family's pot is generations old and repaired with iron rivets."
+        sensory: >-
+          Grey-green stone, warm to the touch even hours after removal
+          from fire. Darkens with use to almost black. The surface is
+          smooth, slightly greasy from absorbed fat. It cracks if
+          dropped — and the sound of a pot breaking silences a camp.
+          The rivets from old repairs give each pot a unique pattern.
+        seasonal_notes: "Used year-round. Guarded during travel. A broken pot is a crisis."
+
+      - id: "MAT_TIM_004"
+        name: "Spindle and Whorl"
+        category: "textile_tool"
+        who_uses: "Women — constantly"
+        materials: "Wooden spindle shaft, soapstone or clay whorl weight"
+        description: "The technology that makes clothing possible. Spinning is done while walking, talking, sitting, waiting. A woman's hands are never idle."
+        sensory: >-
+          The spindle hums faintly as it turns. The wool fibers
+          whisper through the fingers. The whorl weight makes a soft
+          thunk when it reaches the ground. The smell is of raw wool
+          — lanolin, sheep, and grass. The rhythm is hypnotic.
+          Watching a skilled spinner is like watching water flow.
+        seasonal_notes: "Year-round. Winter spinning by firelight is a social activity."
+
+      - id: "MAT_TIM_005"
+        name: "Whetstone"
+        category: "maintenance"
+        who_uses: "Everyone who owns a blade"
+        materials: "Fine-grained stone, often schist or slate, carried in the belt pouch"
+        description: "Pocket-sized. Used daily. The sound of a man sharpening his knife is the sound of the Rimevegr at rest."
+        sensory: >-
+          Smooth, cool, slightly oily from use. The grinding sound is
+          a high, rasping hiss — rhythmic and meditative. Fine stone
+          dust mixes with oil on the surface. The whetstone develops
+          a concavity over years of use that fits the blade's curve.
+          A well-used stone is worth stealing.
+        seasonal_notes: "Carried always. Blades dull faster in cold, wet conditions."
+
+      - id: "MAT_TIM_006"
+        name: "Fire-Steel and Flint Kit"
+        category: "fire_making"
+        who_uses: "Everyone"
+        materials: "C-shaped iron striker, flint nodule, char-cloth or birch-bark tinder, stored in a leather pouch"
+        description: "The difference between warmth and death. Carried on the belt in a waterproofed pouch. Losing it is existential."
+        sensory: >-
+          The striker is small enough to close in one fist. The strike
+          produces a sharp metallic clink and a shower of orange
+          sparks that smell of hot iron. The char-cloth catches with
+          a faint orange glow — no flame, just an ember that must be
+          nursed. The smell of burning char-cloth is acrid, specific,
+          and universally recognized.
+        seasonal_notes: "Kept dry at all costs. Wet tinder means no fire. No fire means no life."
+
+      - id: "MAT_TIM_007"
+        name: "Bone Needle and Sinew Thread"
+        category: "repair"
+        who_uses: "Everyone — mending is mandatory"
+        materials: "Polished bone needle, animal sinew dried and split into thread"
+        description: "For mending clothes, stitching leather, repairing tents. Every person carries a needle. Sewing is not gendered — it is survival."
+        sensory: >-
+          The needle is translucent at the tip when held to firelight.
+          Bone warms quickly in the hand. The sinew thread is stiff
+          when dry, softens when moistened between the lips. The sound
+          of thread pulling through wool is a faint whisper. Broken
+          needles are a common curse — the bone snaps without warning.
+        seasonal_notes: "Needles wear out and break. A bone-worker who makes good needles eats well."
+
+      - id: "MAT_TIM_008"
+        name: "Iron Cauldron"
+        category: "kitchen"
+        who_uses: "Wealthy households, large camps, feasting halls"
+        materials: "Riveted iron plates or cast iron, with an iron bail handle"
+        description: "Hung over a fire on a chain. Heavy, expensive, nearly indestructible. A status symbol that also feeds people."
+        sensory: >-
+          Black with soot that never fully cleans off. The metal
+          rings when struck — a low, dull note. The chain creaks as
+          it swings over the fire. Steam rises from the surface in a
+          column visible across a hall. The interior is seasoned with
+          the ghosts of a thousand stews — nothing cooked in it
+          tastes entirely new.
+        seasonal_notes: "Never left behind. Carried on a packhorse or in a cart. Worth more than most weapons."
+
+      - id: "MAT_TIM_009"
+        name: "Wooden Bucket"
+        category: "daily_tool"
+        who_uses: "Everyone"
+        materials: "Staves of pine or oak, bound with hazel or iron hoops"
+        description: "For water, milk, ale, and washing. The hoops loosen in dry weather and the bucket leaks until soaked. Every settlement has a dozen and needs twice that."
+        sensory: >-
+          The wood is pale inside, dark with water stains outside.
+          Smells of whatever was last in it — water buckets smell
+          clean and woody, milk buckets sour, ale buckets yeasty.
+          The iron hoops rust and the rust stains hands orange.
+          A bucket set down on a hard surface makes a hollow thud.
+        seasonal_notes: "Freeze-cracks in the long dark if left full. Emptied every night."
+
+      - id: "MAT_TIM_010"
+        name: "Adze"
+        category: "woodworking"
+        who_uses: "Carpenters, boatbuilders, anyone shaping timber"
+        materials: "Iron blade set perpendicular to a curved wooden handle"
+        description: "For shaping planks, hollowing troughs, smoothing beams. The carpenter's primary tool — more important than the saw, which barely exists."
+        sensory: >-
+          The blade bites into wood with a precise, rhythmic thock.
+          Curled shavings peel away — pale, fragrant, and warm.
+          Pine shavings smell sweet and sharp. Oak shavings smell
+          of tannin and rain. A carpenter in his workshop is ankle-
+          deep in shavings by midday. The sound carries a hundred
+          paces and means someone is building rather than destroying.
+        seasonal_notes: "Used when timber is available. Boatbuilding is summer work."
+
+      - id: "MAT_TIM_011"
+        name: "Distaff"
+        category: "textile_tool"
+        who_uses: "Women — used with the spindle"
+        materials: "Wooden staff, often decorated, holding the raw wool or flax"
+        description: "Held in the left hand or tucked under the arm. Feeds fiber to the spindle. Carved distaffs are personal — gifts from a father or husband."
+        sensory: >-
+          The raw wool clinging to the distaff is fluffy and smells
+          of lanolin and sheep. The wood underneath is smooth from
+          years of handling. Some are carved with patterns that darken
+          with age and finger-oil. The distaff is the first tool a
+          girl learns to use and the last tool an old woman sets down.
+        seasonal_notes: "Used year-round wherever spinning happens."
+
+      - id: "MAT_TIM_012"
+        name: "Quern (Hand Mill)"
+        category: "kitchen"
+        who_uses: "Every household"
+        materials: "Two flat circular stones, the upper with a wooden handle"
+        description: "For grinding grain into flour. Backbreaking, tedious, essential. Women's work — and the sound of the quern is the sound of a household that will eat."
+        sensory: >-
+          The stones grind together with a deep, rasping rhythm —
+          stone on stone on grain. Flour dust rises in a pale cloud
+          that settles on hair and lashes. The flour smells of earth
+          and grain. The handle is worn smooth and slightly cupped
+          where the palm presses. An hour of grinding produces enough
+          flour for a day's bread.
+        seasonal_notes: "Year-round. Grain stores diminish. The grinding goes on."
+
+  # ================================================================
+  # WEAPONS DESCRIPTIONS — How weapons look, feel, and age
+  # ================================================================
+  weapons_descriptions:
+    description: >-
+      These are not combat stats. These are what weapons look like in
+      a man's hand, how they sound against a shield, how they age and
+      wear. A writer needs to know the weight in the wrist, the sound
+      of the draw, the smell of the oil. Weapons in the Rimevegr are
+      not polished museum pieces. They are tools — used, maintained,
+      repaired, and carried until they break.
+
+    entries:
+      - id: "MAT_WPN_001"
+        name: "Bearded Axe (War Axe)"
+        category: "primary_weapon"
+        who_uses: "Warriors — the iconic Rimevegr weapon"
+        materials: "Iron head with a steel-welded edge, ash handle"
+        description: "The lower edge of the head extends below the haft — the 'beard'. Hooks shields, hooks limbs, chops through mail if the man is strong enough."
+        sensory: >-
+          Light in the hand compared to its visual menace. The head
+          shifts its balance point forward of the grip — you feel the
+          weight pulling outward on the swing. The edge catches light
+          differently than the iron body. It whistles in a fast swing.
+          Against a shield it produces a deep, splitting crack that
+          vibrates up the arm.
+        seasonal_notes: "The handle shrinks in dry cold. Heads loosen. Check the wedge daily."
+
+      - id: "MAT_WPN_002"
+        name: "Seax (Long Knife)"
+        category: "sidearm"
+        who_uses: "Everyone — from thralls to jarls"
+        materials: "Iron blade, single-edged, bone or antler handle"
+        description: "Too long for a knife, too short for a sword. Worn horizontally across the belly. A tool that doubles as a weapon, or a weapon that doubles as a tool."
+        sensory: >-
+          The blade is wedge-shaped in cross-section — thick-backed
+          and heavy for its length. The weight is in the blade, not
+          the handle, giving each cut a forward-falling momentum.
+          Drawn from its horizontal sheath with a scraping hiss. The
+          handle is carved to fit one specific hand — picking up
+          another man's seax feels wrong.
+        seasonal_notes: "Carried always. Oiled frequently. The blade rusts overnight in damp weather."
+
+      - id: "MAT_WPN_003"
+        name: "Round Shield"
+        category: "defense"
+        who_uses: "Warriors"
+        materials: "Linden or poplar planks, rawhide edge-binding, iron boss, hide face"
+        description: "Three feet across, gripped at a central handle behind the iron boss. Light, fast, and disposable — a shield lasts one battle if you are lucky, three if you are careful."
+        sensory: >-
+          Lighter than expected — eight to ten pounds. The grip is
+          rough linen wrapped over wood. The shield flexes slightly
+          on a hard blow. The sound of blade-on-shield is a flat
+          crack — like a branch breaking. A shield that has taken hits
+          splinters visibly, rawhide strips peeling free, and the
+          smell of fresh-split wood rises from it.
+        seasonal_notes: "Shields crack in extreme cold. Stored indoors. New ones made every spring."
+
+      - id: "MAT_WPN_004"
+        name: "Spear (Throwing)"
+        category: "primary_weapon"
+        who_uses: "Everyone — the most common weapon"
+        materials: "Iron leaf-shaped head, ash shaft, roughly six feet long"
+        description: "Cheaper than a sword, simpler than an axe, effective in every situation. Thrown at the start of battle, replaced by the one embedded in your shield."
+        sensory: >-
+          The shaft is smooth, with a slight flex at mid-length.
+          The head is cold in morning air and warms slowly. The
+          balance point sits behind the hand — it rocks backward
+          in the grip until the throw. In flight, it hisses. On
+          impact, a dull crunch if it hits wood, a wet sound if it
+          hits flesh. The shaft vibrates visibly after a deep throw.
+        seasonal_notes: "Shafts become brittle in extreme cold. Carried head-down to keep ice off the point."
+
+      - id: "MAT_WPN_005"
+        name: "Sword (Pattern-Welded)"
+        category: "prestige_weapon"
+        who_uses: "Wealthy warriors, jarls, champions"
+        materials: "Iron and steel rods forge-welded and twisted, creating a visible pattern in the blade"
+        description: "Expensive. Named. Inherited. The pattern in the metal looks like flowing water or serpent tracks. A man with a sword is a man of means."
+        sensory: >-
+          Heavier than it looks — two to three pounds of iron pulling
+          at the wrist. The pattern is visible only in certain light,
+          a ghostly ripple in the metal. Draws from the scabbard with
+          a clean, metallic whisper. The pommel counterbalances the
+          blade — held upright, it hovers in the hand. On bone, it
+          rings. On flesh, it does nothing audible.
+        seasonal_notes: "Oiled constantly. Rust is the enemy. Stored in an oiled leather scabbard."
+
+      - id: "MAT_WPN_006"
+        name: "Mail Shirt (Brynja)"
+        category: "armor"
+        who_uses: "Wealthy warriors — rare and precious"
+        materials: "Iron rings, each linked to four others, riveted closed"
+        description: "Knee-length, split at the front and back for riding. Weighs as much as a full pack. Stops slashing cuts. Does not stop thrusts or heavy impacts."
+        sensory: >-
+          Sounds like a bag of coins when moved — a continuous,
+          restless chinking. The weight distributes across the
+          shoulders and hips, a constant pressing that becomes
+          invisible after an hour and agonizing after a day. The
+          rings are cold on bare skin. Rust forms where sweat
+          collects — armpits, neck, waist. Cleaning it means rolling
+          it in a barrel of sand with vinegar.
+        seasonal_notes: "Worn over a padded garment always. In winter, the cold metal against skin raises welts."
+
+      - id: "MAT_WPN_007"
+        name: "Bow (Hunting/War)"
+        category: "ranged"
+        who_uses: "Hunters, some warriors"
+        materials: "Yew or elm stave, linen or sinew string, approximately five feet"
+        description: "A self-bow — one piece of wood, no lamination. Powerful enough for deer and unarmored men. Less effective against shields and mail."
+        sensory: >-
+          The draw requires the back and shoulder — not the arm.
+          The stave creaks under tension. The release is a sharp
+          twang and the arrow hisses outward, the fletching spinning.
+          The bowstring snaps against the bracer with a slap that
+          reddens the wrist even through leather. The bow smells of
+          beeswax and linseed oil used to finish the wood.
+        seasonal_notes: "Unstrung when not in use — a strung bow loses power. Stringing in cold is slow work."
+
+      - id: "MAT_WPN_008"
+        name: "Helmet (Spangenhelm)"
+        category: "armor"
+        who_uses: "Warriors who can afford one"
+        materials: "Iron plates riveted to an iron frame, nasal guard, sometimes a mail curtain"
+        description: "Protects the skull and nose. Does not protect the face below the nose. The nasal guard splits the field of vision. You learn to live with it."
+        sensory: >-
+          Cold on the forehead. The padding inside compresses under
+          the weight and sweat soaks it within an hour. The nasal
+          guard funnels breath downward, fogging in cold air. Vision
+          narrows — peripheral awareness drops. Every blow to the
+          helmet rings the skull like a bell, a sound heard inside
+          the head rather than the ears. The inside smells of old
+          sweat and iron.
+        seasonal_notes: "The metal conducts cold directly to the skull in winter. A cloth cap underneath is essential."
+
+      - id: "MAT_WPN_009"
+        name: "Spear (Thrusting)"
+        category: "primary_weapon"
+        who_uses: "Shieldwall fighters"
+        materials: "Heavy iron head, broad-bladed, ash shaft seven to eight feet long"
+        description: "Longer and heavier than the throwing spear. Used overhead or underhand in formation. The weapon of the shieldwall — reach is life."
+        sensory: >-
+          The shaft fills the hand with a solid, reassuring weight.
+          The butt rests against the ground when standing — the
+          vibration of approaching footsteps travels up through the
+          shaft into the palm. Thrusts make no sound until impact.
+          A withdrawn spear brings blood with it in a red thread
+          down the shaft. The hand slips on a wet shaft.
+        seasonal_notes: "Frozen ground makes bracing difficult. The shaft cracks if jammed against frozen earth."
+
+      - id: "MAT_WPN_010"
+        name: "Scramaseax (Heavy Seax)"
+        category: "sidearm"
+        who_uses: "Wealthy warriors — a prestige sidearm"
+        materials: "Pattern-welded blade, bone grip, decorated scabbard"
+        description: "Longer and finer than a common seax. Sometimes inlaid with copper or silver wire. A status piece that still cuts."
+        sensory: >-
+          The blade is longer than a forearm — it needs a proper
+          draw, not a casual pull. The pattern welding catches
+          firelight in waves. The scabbard is leather over a wooden
+          core, often tooled with knotwork. The weight hangs at the
+          hip like a constant reminder. Drawing it is a deliberate
+          act — you reach for it when the axe is lost or the fight
+          is close enough to smell.
+        seasonal_notes: "Oiled and stored carefully. The decoration demands maintenance."
+
+      - id: "MAT_WPN_011"
+        name: "Shield Boss"
+        category: "defense"
+        who_uses: "Warriors — the offensive part of a defensive tool"
+        materials: "Dome of hammered iron, riveted through the shield center"
+        description: "Protects the grip hand. Also punches faces. In close fighting the boss is a fist of iron that breaks noses, jaws, and morale."
+        sensory: >-
+          Cold iron dome that fills the center of the shield. Dented
+          and scratched from use — every mark a blow that would have
+          reached the hand. The inside is dark and smells of rust
+          and leather. In a punch the impact travels through the arm
+          to the shoulder. You feel it in the elbow for days.
+        seasonal_notes: "Checked for loose rivets before any fight. A boss that falls off is a hand that breaks."
+
+      - id: "MAT_WPN_012"
+        name: "Sling"
+        category: "ranged"
+        who_uses: "Herders, youths, the very poor"
+        materials: "Braided leather or wool cord with a leather pouch"
+        description: "The weapon of those who cannot afford better. A river stone launched from a sling breaks bones at fifty paces. Dismissed by warriors, feared by the unarmored."
+        sensory: >-
+          The cord whirs in a tight circle overhead — a rising hum
+          that peaks in a sharp crack at release. The stone vanishes.
+          The impact is a hard, flat sound and the target drops
+          without understanding what happened. Accurate with practice,
+          useless without it. The cord frays and must be replaced. A
+          sling fits in a pouch and costs nothing to make.
+        seasonal_notes: "River stones frozen into the ground in winter. Slingers carry a pouch of stones."
+
+  # ================================================================
+  # ARCHITECTURE — What buildings look, smell, and sound like
+  # ================================================================
+  architecture:
+    description: >-
+      Rimevegr buildings are built for survival, not beauty. The
+      longhouse is the fundamental structure — a community space where
+      people, animals, and smoke coexist. Everything smells of fire
+      and livestock. Nothing is truly private. Sound carries. Heat
+      escapes. The roof leaks. You fix it or you freeze.
+
+    entries:
+      - id: "MAT_ARC_001"
+        name: "Longhouse"
+        category: "residential"
+        who_uses: "Families, extended households"
+        materials: "Timber frame, turf or wattle-and-daub walls, thatched or turf roof"
+        description: "Thirty to a hundred feet long. One room. Central hearth. Raised sleeping platforms along the walls. Livestock at one end, people at the other. Everyone hears everything."
+        sensory: >-
+          Warm and dim inside. The air is layered: smoke above head-
+          height, breathable air below. The constant smell is
+          woodsmoke, animal dung, cooking food, and human bodies. The
+          fire crackles at the center, throwing light that reaches the
+          walls and stops — the corners are always dark. Sounds echo
+          off the turf walls in a muffled way. Rain on the thatch is
+          a steady hush. Drips find their way in.
+        seasonal_notes: "The livestock end is separated by a low wall. In the long dark, the animals' heat is welcome."
+
+      - id: "MAT_ARC_002"
+        name: "Smoke Hole"
+        category: "architectural_feature"
+        who_uses: "Every longhouse has one"
+        materials: "Opening in the roof ridge, sometimes with a movable cover"
+        description: "The only ventilation. Never quite adequate. Smoke fills the upper third of the building permanently. The cover is adjusted for wind direction — wrong adjustment fills the hall."
+        sensory: >-
+          A column of grey-blue smoke rises from the hearth and
+          spreads against the rafters before finding the hole. On
+          still days, it rises cleanly. On windy days, the smoke
+          pushes back down and eyes stream. The cover rattles in
+          gusts. Rain enters freely. Embers and ash drift upward
+          and occasionally catch the thatch — every longhouse has
+          scorch marks around the smoke hole.
+        seasonal_notes: "Closed tight in blizzards. The hall fills with smoke. People cough until it clears."
+
+      - id: "MAT_ARC_003"
+        name: "Sleeping Platform"
+        category: "furniture"
+        who_uses: "Everyone in a longhouse"
+        materials: "Raised wooden platform along the interior walls, covered with straw and hides"
+        description: "Two feet off the floor, three feet deep. Entire families sleep side by side. Privacy is achieved by facing the wall. The straw is changed when it becomes unbearable."
+        sensory: >-
+          The platform creaks under shifting weight. The straw rustles
+          with every movement — you learn to identify people by how
+          they shift in their sleep. The hides are warm but develop a
+          sour, musty smell within weeks. Fleas and lice live in the
+          straw. Everyone itches. No one mentions it. The platform is
+          warm because bodies press together. Sleeping alone means
+          sleeping cold.
+        seasonal_notes: "Extra furs piled on in winter. The straw is frozen when first laid."
+
+      - id: "MAT_ARC_004"
+        name: "Turf Wall"
+        category: "construction"
+        who_uses: "Everyone — the primary building material where timber is scarce"
+        materials: "Blocks of turf cut from meadow, stacked in courses"
+        description: "Excellent insulation — turf holds heat better than wood. But it sags, grows grass on the sides, absorbs rain, and requires constant maintenance."
+        sensory: >-
+          Smells of earth and grass — always. In rain, the walls
+          darken and the earthen smell intensifies. Insects live in
+          the turf. In summer, the exterior walls bloom with wildflowers
+          growing from the stacked blocks — a longhouse wearing a
+          meadow. In winter, the turf freezes solid and becomes as
+          hard as stone. Press a hand to the interior wall and it
+          feels damp and cool, even with a fire.
+        seasonal_notes: "Walls repaired every spring. Sagging sections are cut away and rebuilt."
+
+      - id: "MAT_ARC_005"
+        name: "Hearth"
+        category: "furniture"
+        who_uses: "Center of every longhouse"
+        materials: "Flat stones forming a rectangular firepit, sometimes edged with clay"
+        description: "The heart of the building. Fire kept burning constantly. Cooking, heating, light, community — all radiate from the hearth. Letting the fire die out is a domestic disaster."
+        sensory: >-
+          The stones are cracked and blackened. Heat radiates in waves
+          that you feel on the face ten feet away. The fire spits when
+          fat drips from the spit. Ash covers everything within arm's
+          reach in a fine grey dust. At night the embers glow orange
+          and the shadows of the sleeping household shift on the walls.
+          The sound is a steady, low crackle punctuated by the
+          occasional pop of a resin pocket.
+        seasonal_notes: "Banked at night with ash to keep embers alive. Restarting a dead fire is shameful."
+
+      - id: "MAT_ARC_006"
+        name: "Storehouse (Stabbur)"
+        category: "outbuilding"
+        who_uses: "Every settlement"
+        materials: "Raised wooden structure on posts, with a plank floor and walls"
+        description: "Elevated on posts to keep rats and moisture out. Stores dried food, grain, tools, and trade goods. The lock on the storehouse — if it has one — is the only lock in the settlement."
+        sensory: >-
+          Opens with a creak of old hinges. Inside smells of dry
+          grain, smoked fish, and dust. Cool and dark even in summer.
+          The floorboards are worn smooth by foot traffic. Barrels and
+          sacks line the walls. The sound inside is muffled — the
+          raised structure and packed stores absorb everything. Mice
+          have been here despite the elevation. Their droppings are
+          everywhere.
+        seasonal_notes: "The anxiety of a community is measured by how full the storehouse is in autumn."
+
+      - id: "MAT_ARC_007"
+        name: "Smithy (Forge Building)"
+        category: "workshop"
+        who_uses: "Blacksmiths"
+        materials: "Simple roofed structure, open-sided or with removable walls. Stone forge, bellows, anvil."
+        description: "Set apart from other buildings — fire risk. The bellows sigh like a breathing animal. The anvil is a holy object. The smith works here in all weather."
+        sensory: >-
+          The heat hits you three paces from the entrance. The air
+          shimmers. The forge glows white at the center and fades
+          through yellow to red at the edges. The anvil rings — high
+          and clear for thin work, low and heavy for thick — and the
+          sound carries across the settlement. Iron smells of blood
+          when heated. Quenching produces a violent hiss and a cloud
+          of bitter steam. Scale litters the floor like black snow.
+        seasonal_notes: "The warmest building in the settlement. People find excuses to visit in winter."
+
+      - id: "MAT_ARC_008"
+        name: "Latrine Trench"
+        category: "sanitation"
+        who_uses: "Settlements, camps"
+        materials: "A dug trench, sometimes roofed, always downhill from the water source"
+        description: "Dug deep, used until full, covered and replaced. The most important infrastructure decision a camp makes — dig it wrong and the water sickens everyone."
+        sensory: >-
+          The smell is inescapable within ten paces — acrid, ammonia-
+          sharp, layered with rot. In cold weather the smell diminishes.
+          In a rare warm spell it blooms with nauseating force. Lime
+          or ash is thrown in when available. The ground around it is
+          churned to mud by foot traffic. Everyone visits. No one
+          lingers. Flies find it before the first use is finished.
+        seasonal_notes: "Frozen in the long dark — which reduces smell but makes digging new ones impossible."
+
+      - id: "MAT_ARC_009"
+        name: "Mead Hall"
+        category: "communal"
+        who_uses: "Jarls and their retinues"
+        materials: "Timber-frame, larger and finer than a longhouse, carved posts, possibly painted"
+        description: "A longhouse scaled up and decorated. The jarl's seat faces the door. Shields line the walls. Trophies hang from the rafters. This is where alliances are made, debts settled, and reputations forged."
+        sensory: >-
+          The carved posts are dark with age and firelight. Tallow
+          lamps supplement the hearth — the light is golden and
+          unsteady. The smell is mead, meat, sweat, and smoke in
+          layers. Sound bounces between the wooden walls — laughter
+          and shouting swell into a roar and die away unpredictably.
+          The floor is packed earth strewn with rushes that go stale
+          after a feast. Dogs gnaw bones under the benches.
+        seasonal_notes: "The center of community life in winter. Warmth, food, and company — the three reasons to survive."
+
+      - id: "MAT_ARC_010"
+        name: "Boathouse (Naust)"
+        category: "outbuilding"
+        who_uses: "Coastal settlements"
+        materials: "Long, narrow timber structure open at the sea-facing end, sloped floor"
+        description: "Ships are dragged into the naust for winter storage. The building follows the shape of the hull. Without it, the ship rots."
+        sensory: >-
+          Smells of tar, salt water, and old timber. The interior is
+          dim and cavernous — the hull of the boat fills the space
+          like a belly. The floor is slippery with seaweed and slime
+          where the tide reached. Tarred ropes hang from pegs. The
+          wood groans when the wind presses the walls. Mice nest in
+          the sailcloth. The silence inside is close and damp.
+        seasonal_notes: "Ships stored after the last autumn voyage. Repaired here during the long dark."
+
+  # ================================================================
+  # SHIPS AND BOATS — Vessels as living objects
+  # ================================================================
+  ships_and_boats:
+    description: >-
+      A ship in the Rimevegr is not a conveyance. It is a member of
+      the crew. It has a name, a personality, and a life expectancy.
+      Men talk to their ships. The relationship between a crew and
+      their vessel is one of mutual dependence enforced by the sea's
+      absolute indifference to both.
+
+    entries:
+      - id: "MAT_SHB_001"
+        name: "Knarr (Trading Vessel)"
+        category: "ship"
+        who_uses: "Traders, settlers"
+        materials: "Clinker-built oak planking, pine mast, woolen square sail"
+        description: "Broad-beamed, deep-hulled, designed for cargo. Slower than a longship. Sturdier in open water. Can carry livestock, grain, timber, and families across open ocean."
+        sensory: >-
+          Sits heavy in the water — solid and slow. The hull groans
+          against the waves in a steady, rhythmic complaint. The deck
+          is slippery with spray and cargo lashings. Below decks smells
+          of bilge, tar, wet wool, and whatever cargo is aboard —
+          stockfish is the worst. The sail cracks when it fills and
+          the rigging hums in the wind at different pitches depending
+          on tension.
+        seasonal_notes: "Voyages made in summer. Winters in the naust. Planking recaulked with tar every season."
+
+      - id: "MAT_SHB_002"
+        name: "Longship (Snekkja)"
+        category: "ship"
+        who_uses: "Raiding bands, war fleets"
+        materials: "Clinker-built oak, shallow draft, oar-ports along both sides"
+        description: "Fast, flexible, terrifying. Can be beached on any shore and rowed up rivers. Twenty to thirty oar pairs. The weapon that made the Rimevegr feared."
+        sensory: >-
+          Sits light on the water — it barely breaks the surface.
+          The hull flexes visibly over waves, planks shifting against
+          each other with a constant creaking. The oars thud into
+          the water in rhythm — a deep, repeated pulse that carries
+          across harbors. Spray comes over the low sides constantly.
+          At speed under sail, the rigging sings and the bow wave
+          hisses. The figurehead at the prow watches. Always watches.
+        seasonal_notes: "Figurehead removed in friendly waters. Replaced approaching hostile shores."
+
+      - id: "MAT_SHB_003"
+        name: "Færing (Four-Oared Boat)"
+        category: "boat"
+        who_uses: "Fishermen, coastal households"
+        materials: "Clinker-built, light enough for two men to carry"
+        description: "The everyday boat. Fishing, ferrying, short coastal trips. Every settlement with water access has several."
+        sensory: >-
+          Light enough to feel every wave through the hull. Rocks
+          with each stroke — the rower's body compensates without
+          thinking. The planks are daubed with pine tar that softens
+          in summer sun and cracks in winter cold. Smells of fish,
+          seawater, and tar. The oars creak in the thole-pins — a
+          sound as familiar as speech to coastal folk.
+        seasonal_notes: "Dragged ashore every night. Left on the beach, they fill with rain. Bailed every morning."
+
+      - id: "MAT_SHB_004"
+        name: "Ship's Sail"
+        category: "ship_component"
+        who_uses: "Any vessel large enough to carry a mast"
+        materials: "Heavy woven wool, sometimes reinforced with leather strips, often dyed in stripes"
+        description: "Made by women over months. Hundreds of hours of spinning, weaving, and sewing. Worth more than the timber in the hull. Replaced only when it cannot be patched."
+        sensory: >-
+          The wool sail is heavy, rough, and smells of lanolin and
+          the sea-salt spray that never fully washes out. When wet, it
+          gains enormous weight and the yard groans under it. In wind
+          it snaps and booms like a drum. The colored stripes are
+          visible for miles — the identity of the ship. Patches and
+          repairs are visible up close, each one a storm survived.
+        seasonal_notes: "Dried and stored carefully in winter. Moth damage is checked obsessively in spring."
+
+      - id: "MAT_SHB_005"
+        name: "Pine Tar (Ship Sealant)"
+        category: "ship_material"
+        who_uses: "Anyone who works on boats"
+        materials: "Rendered from pine heartwood in a tar kiln"
+        description: "The substance that keeps water out. Applied to hulls, ropes, and sails. A settlement without tar is a settlement without ships."
+        sensory: >-
+          Thick, black-brown, and viscous — warm tar flows like honey,
+          cold tar is nearly solid. The smell is sharp, resinous, and
+          clinging — it stays on hands, clothes, and tools for days.
+          Heated tar smokes heavily. Applied with a brush or rag, it
+          soaks into wood and darkens it permanently. A tarred hull is
+          black below the waterline and darkening above. The smell of
+          tar is the smell of the coast.
+        seasonal_notes: "Produced in dedicated kilns during summer. A critical strategic resource."
+
+      - id: "MAT_SHB_006"
+        name: "Oar"
+        category: "ship_component"
+        who_uses: "Any oared vessel"
+        materials: "Pine or spruce, roughly ten to fifteen feet long, blade widened at the end"
+        description: "Shaped from a single piece of timber. The blade is thin and wide, the shaft round. Personal oars are sometimes marked by their owner."
+        sensory: >-
+          Smooth from hand-wear along the grip. The wood is pale and
+          light. Each stroke: dip, pull, lift — the water drips from
+          the blade in a silver arc. The shaft bends slightly under
+          full power. At the thole pin, the oar creaks and groans with
+          each stroke — multiply by twenty pairs and the sound is a
+          rhythmic chorus. Blisters form on the first day. Calluses
+          form by the fourth. By the tenth, you do not feel it.
+        seasonal_notes: "Spare oars are always carried. A broken oar in open water is a gap in the crew."
+
+  # ================================================================
+  # CAMP GEAR — What a traveling band carries
+  # ================================================================
+  camp_gear:
+    description: >-
+      Everything carried on a march is carried on a back or a pack
+      animal. Weight is survival. Too much and you exhaust the men.
+      Too little and you lack the tools to survive a night. Every item
+      is a calculated trade-off between weight and need. Experienced
+      bands know exactly what they can do without — and what they
+      cannot.
+
+    entries:
+      - id: "MAT_CAM_001"
+        name: "Leather Tent (A-Frame)"
+        category: "shelter"
+        who_uses: "Organized war-bands, wealthy travelers"
+        materials: "Oiled leather or oiled wool stretched over a ridge-pole and two uprights"
+        description: "Low, cramped, and windproof. Sleeps three to four pressed together. Rolls into a bundle carried by one man."
+        sensory: >-
+          Inside smells of leather, sweat, and the oil used to
+          waterproof the skins. Rain drums on the surface in a
+          steady patter. Condensation forms on the inside and drips
+          onto sleepers. The space is too low to sit upright. Getting
+          in and out requires crawling. In wind, the leather flaps
+          and snaps against the frame. In stillness, the trapped body
+          heat makes it almost warm.
+        seasonal_notes: "Essential in the long dark. Without shelter, a sleeping man freezes."
+
+      - id: "MAT_CAM_002"
+        name: "Sleeping Hide"
+        category: "bedding"
+        who_uses: "Everyone who sleeps outdoors"
+        materials: "Sheepskin, goatskin, or cowhide, sometimes lined with wool"
+        description: "Rolled and carried on the pack. Laid on ground-cover to insulate from the earth. Not a blanket — it goes under you. The ground steals more heat than the air."
+        sensory: >-
+          The hide is stiff and cold when unrolled. Body heat softens
+          it within minutes. The underside is rough and grips the
+          ground. The wool lining traps air and warmth. Smells of
+          animal and whatever the ground underneath smells of — mud,
+          pine needles, snow. In the morning, frost covers the exposed
+          side while the body-side is damp with sweat.
+        seasonal_notes: "A man who loses his sleeping hide on a winter march does not sleep. He endures."
+
+      - id: "MAT_CAM_003"
+        name: "Water Skin"
+        category: "hydration"
+        who_uses: "Everyone"
+        materials: "Goat or sheep skin, turned inside-out and tarred or greased"
+        description: "Slung across the body on a leather strap. Holds a day's water. Leaks if the seams are old. The water always tastes of animal."
+        sensory: >-
+          The skin is soft and sags when full, stiff and wrinkled
+          when empty. Water inside sloshes audibly with each step —
+          a full skin sounds different from a half-empty one. In cold
+          weather the surface freezes and must be kept under the cloak
+          against the body. The water tastes of leather and grease.
+          You stop noticing after a week. Visitors never do.
+        seasonal_notes: "Freezes solid in the long dark if not kept against the body. Ice can split the seams."
+
+      - id: "MAT_CAM_004"
+        name: "Cookpot (Field)"
+        category: "cooking"
+        who_uses: "War-bands, traveler groups"
+        materials: "Small iron pot with a bail handle, or a soapstone bowl"
+        description: "One pot for the group. Everything goes in it — water, meat, grain, whatever. The pot is the social center of a camp."
+        sensory: >-
+          The iron is blackened and pitted. The bail handle squeals
+          faintly on its mounts when the pot swings. The first meal
+          from a new campfire always tastes of ash. Subsequent meals
+          taste of every previous meal — the seasoning of use. Cleaning
+          is optional. Scrubbing is done with sand and a handful of
+          grass. The pot never looks clean. It never needs to be.
+        seasonal_notes: "Frozen stew must be thawed slowly. Heating a cold iron pot too fast can crack it."
+
+      - id: "MAT_CAM_005"
+        name: "Rope (Hemp or Leather)"
+        category: "utility"
+        who_uses: "Everyone"
+        materials: "Twisted hemp fiber or braided rawhide strips"
+        description: "For binding loads, tying shelters, hobbling horses, restraining prisoners. Fifty feet minimum per band. A band without rope is a band that cannot."
+        sensory: >-
+          Hemp rope is rough and leaves fibers in the hands. It
+          smells of grass and tar if treated. Wet rope swells and
+          stiffens, making knots impossible to untie. Rawhide is
+          smoother, stronger by weight, but stretches when wet and
+          shrinks when dry — a rawhide binding tightens in the sun
+          and loosens in the rain. Both creak under tension. Both
+          break without warning when old.
+        seasonal_notes: "Frozen rope is rigid as wire and must be thawed before use."
+
+      - id: "MAT_CAM_006"
+        name: "Pack Frame (Burden Board)"
+        category: "transport"
+        who_uses: "Anyone carrying more than a cloak-bundle"
+        materials: "Wooden frame with leather shoulder straps, sometimes rawhide webbing"
+        description: "Carries a load on the back and distributes weight to the hips. A good frame saves the spine. A bad frame ruins the shoulders."
+        sensory: >-
+          The straps dig into the shoulders within an hour regardless
+          of adjustment. The frame creaks against the back with each
+          step. Items lashed to it shift and rattle — an experienced
+          packer eliminates all rattling before the march. The leather
+          straps darken and polish from shoulder-sweat. The frame
+          develops a curvature that matches its owner's spine.
+        seasonal_notes: "Frozen straps crack. Keep them supple with grease."
+
+      - id: "MAT_CAM_007"
+        name: "Tinder Bundle"
+        category: "fire_making"
+        who_uses: "Everyone"
+        materials: "Birch bark, dried grass, char-cloth, stored in an oiled leather pouch"
+        description: "The complement to the fire-steel. Char-cloth catches the spark. The tinder nest grows it to flame. Losing the tinder is losing fire."
+        sensory: >-
+          The pouch is small and sits at the hip. Inside, the birch
+          bark curls and rustles when disturbed. The char-cloth is
+          black, light as paper, and tears at a touch. Assembling the
+          tinder nest is a ritual performed by feel in the dark — the
+          grass piled loosely, the char-cloth nested at center. The
+          smell of fresh birch bark is clean and faintly sweet. The
+          smell of char-cloth is acrid and burnt.
+        seasonal_notes: "Kept dry at any cost. A wet tinder bundle is carried against the skin to dry."
+
+      - id: "MAT_CAM_008"
+        name: "Torch"
+        category: "lighting"
+        who_uses: "Anyone moving at night or in dark spaces"
+        materials: "Pine-resin soaked rags wrapped around a stick, or a birch-bark bundle"
+        description: "Burns for about thirty minutes. Throws flickering light ten paces. Spits sparks and smokes heavily. Better than nothing."
+        sensory: >-
+          The flame is yellow-orange and unsteady. Shadows jump and
+          stretch. Resin torches spit with a crackling hiss and throw
+          sparks that burn holes in cloaks. The smoke is thick, black,
+          and stings the eyes. The smell is pine pitch — sharp, sweet,
+          and choking in enclosed spaces. A torch held above the head
+          lights the ground; held at the side, it blinds the carrier
+          to everything beyond its reach.
+        seasonal_notes: "Essential in the long dark. Carried in bundles. One man per band is the torch-bearer."
+
+      - id: "MAT_CAM_009"
+        name: "Wax Tablet and Stylus"
+        category: "record_keeping"
+        who_uses: "Literate travelers, merchants, stewards"
+        materials: "Hinged wooden boards with a recessed wax surface, iron or bone stylus"
+        description: "Erasable by smoothing the wax with the flat end of the stylus. For notes, tallies, and messages. Not permanent — permanent records go on rune sticks."
+        sensory: >-
+          The wax is pale yellow and yields under the stylus with a
+          faint scratching sound. In cold weather the wax hardens and
+          the stylus skids rather than cuts. Warming the tablet by the
+          fire softens it. The carved letters are visible as dark
+          grooves in the pale surface. Erasing — smoothing the wax
+          flat — has a soft, waxy whisper. The tablets smell of
+          beeswax and wood.
+        seasonal_notes: "Near-useless in extreme cold. Tablets kept inside the cloak to maintain warmth."
+
+      - id: "MAT_CAM_010"
+        name: "Horn Cup"
+        category: "eating"
+        who_uses: "Everyone"
+        materials: "Cattle horn, cleaned and polished, sometimes with a carved rim"
+        description: "The personal drinking vessel. Cannot be set down — it has no flat base. You drink or you hold. Passed hand to hand at feasts."
+        sensory: >-
+          Translucent at the thin edges when held to firelight. Warm
+          quickly from the hands. Smells faintly of keratin — a dry,
+          dusty, animal smell — when new. Old horns smell of whatever
+          they have held: mead, ale, milk. The rim is polished smooth
+          by lips. A crack in the horn leaks slowly and is mended with
+          a patch of leather and pine pitch. Every horn is unique in
+          curve, color, and capacity.
+        seasonal_notes: "Cold mead in a horn in winter numbs the fingers before the lips."
+
+  # ================================================================
+  # PERSONAL EFFECTS — What people carry close to the body
+  # ================================================================
+  personal_effects:
+    description: >-
+      The objects that define a person. Carried in pockets, in belt
+      pouches, around the neck, in the hair. These are what remains
+      when a man is stripped of everything else — the things he would
+      die rather than lose. Or the things found on his body when he
+      is dead.
+
+    entries:
+      - id: "MAT_PER_001"
+        name: "Thor's Hammer Pendant (Mjölnir)"
+        category: "religious"
+        who_uses: "Most free folk"
+        materials: "Iron, bronze, or silver. Worn on a leather thong at the throat."
+        description: "Protective talisman. Clutched before battle, held during oaths, kissed over meals. Whether the gods answer does not change the clutching."
+        sensory: >-
+          Small enough to close in a fist. The metal warms against
+          the chest and cools the instant it leaves the skin. The
+          leather thong darkens with sweat. Some hammers are crude
+          — stamped from flat metal. Some are fine — cast with knot-
+          work and inlaid eyes. All are worn smooth where the thumb
+          rubs in moments of fear.
+        seasonal_notes: "Never removed. Buried with its owner."
+
+      - id: "MAT_PER_002"
+        name: "Comb (Antler or Bone)"
+        category: "grooming"
+        who_uses: "Everyone who cares about lice"
+        materials: "Split antler or bone, teeth cut with a fine saw"
+        description: "Double-sided — wide teeth on one side for hair, fine teeth on the other for lice. Used daily. Grooming is not vanity; it is hygiene in a world without soap."
+        sensory: >-
+          The teeth click through hair with a rhythmic sound. The
+          fine side drags lice and nits free — they snap between
+          thumbnails. The antler is warm in the hand, smooth from
+          use, and develops a yellowish patina. Some combs are
+          decorated — carved with animals or knotwork along the
+          spine. The comb is often the finest object a common
+          person owns.
+        seasonal_notes: "Lice proliferate in winter when bathing stops. Combing becomes more urgent, not less."
+
+      - id: "MAT_PER_003"
+        name: "Arm Ring (Silver Hack-Silver)"
+        category: "currency"
+        who_uses: "Traders, warriors, anyone with wealth to carry"
+        materials: "Silver arm ring, sometimes gold, designed to be cut into pieces"
+        description: "Currency that you wear. Cut slivers off with a knife to pay for goods. Weighed on a scale at the transaction. Your wealth is visible on your arm."
+        sensory: >-
+          The silver is dull grey unless recently polished. The hack-
+          marks where pieces were cut look like axe-wounds in the
+          metal. The ring is heavy on the forearm — a man who has
+          just been paid walks differently from a man who has just
+          paid. The cut surface catches light differently from the
+          worn surface. Weighing the silver: the small brass scale
+          tilts and steadies with a faint clink.
+        seasonal_notes: "Carried under sleeves in dangerous territory. Under armor in very dangerous territory."
+
+      - id: "MAT_PER_004"
+        name: "Rune Stick"
+        category: "communication"
+        who_uses: "Anyone who can read runes — a significant minority"
+        materials: "Flat piece of wood or bone, runes carved with a knife"
+        description: "Messages, tallies, curses, love notes, prayers. Portable, disposable, and the primary medium of literacy in the Rimevegr."
+        sensory: >-
+          A flat strip of pine or birch, pale wood with dark carved
+          runes. The carving is done with a knife tip — quick, angular
+          strokes. The runes are read by running a finger along the
+          grooves, feeling the shapes. In dim light, they are read by
+          touch alone. The stick is snapped and thrown in the fire
+          when its message is no longer needed. Messages meant to
+          last are carved in bone.
+        seasonal_notes: "Frozen wood splinters more easily. Rune sticks are carved before the wood freezes."
+
+      - id: "MAT_PER_005"
+        name: "Gaming Pieces (Hnefatafl)"
+        category: "entertainment"
+        who_uses: "Warriors, jarls, merchants — anyone with time to kill"
+        materials: "Carved bone, antler, or glass pieces; wooden board or leather cloth marked with a grid"
+        description: "The king's game. Played in halls, on ships, in camps. Skill at hnefatafl reflects strategic thinking — or so every jarl believes."
+        sensory: >-
+          The pieces click against the board like teeth. Bone pieces
+          are warm in the hand and smooth from use. Glass pieces are
+          cold and heavy for their size — imported luxuries. The board
+          is often a leather cloth that rolls up and travels in a bag.
+          The sound of a game in progress — click, pause, click —
+          is the sound of men at peace. Arguments over rules are the
+          sound of men about to fight.
+        seasonal_notes: "The primary entertainment of the long dark. Every warrior claims to be skilled."
+
+      - id: "MAT_PER_006"
+        name: "Flint and Tinder Pouch (Personal)"
+        category: "survival"
+        who_uses: "Everyone"
+        materials: "Small leather pouch containing flint, fire-steel, char-cloth"
+        description: "Distinct from the camp tinder kit — this is the personal backup. Carried on the belt or around the neck. If separated from the group, this is life."
+        sensory: >-
+          The pouch is small enough to fit in a closed fist. The
+          contents rattle faintly — stone against metal. The leather
+          is blackened where sparks have scorched it. Opening it
+          releases a faint smell of char and iron. The contents are
+          arranged by feel — a man finds his flint in the dark by
+          touch, the smooth face against the rough.
+        seasonal_notes: "Kept inside the clothing in winter to prevent the char-cloth from absorbing moisture."
+
+      - id: "MAT_PER_007"
+        name: "Amber Bead Necklace"
+        category: "adornment"
+        who_uses: "Women, occasionally men of status"
+        materials: "Baltic amber, drilled and strung on sinew or linen thread"
+        description: "Amber is warm to the touch and glows in firelight. Believed to have protective properties. Traded across the entire known world."
+        sensory: >-
+          The beads are warm even before they touch the skin — amber
+          holds heat like no stone. They glow from within when held
+          near a flame, from honey-gold to deep orange. Some contain
+          insects frozen in time — these are especially prized and
+          peered at by firelight. The beads click softly when the
+          wearer moves. Rubbed against wool, amber crackles with
+          static and picks up straw — a minor magic that never stops
+          being surprising.
+        seasonal_notes: "Worn under clothing in winter. Displayed openly at feasts."
+
+      - id: "MAT_PER_008"
+        name: "Leather Belt Pouch (Utility)"
+        category: "daily_carry"
+        who_uses: "Everyone"
+        materials: "Soft leather, drawstring closure, hung from the belt"
+        description: "Contains everything too small for the hand and too important to lose: coins, whetstones, needles, a small lump of beeswax, a spare bowstring. The inventory varies. The principle does not."
+        sensory: >-
+          The pouch sags and jingles with each step. The drawstring
+          is stiff and requires two hands to open when cold. The
+          interior is a chaos of small objects identified by touch.
+          The leather darkens and softens over months until it
+          conforms to the shape of its contents. Cutting a man's
+          belt pouch is the most common theft — it happens in
+          crowds, in markets, in any press of bodies.
+        seasonal_notes: "In winter, metal objects inside the pouch frost and stick to fingers."
+
+      - id: "MAT_PER_009"
+        name: "Oath Ring"
+        category: "religious"
+        who_uses: "Jarls, godi (priests), lawspeakers"
+        materials: "Heavy silver or iron arm ring, kept on the altar or in the jarl's hall"
+        description: "Not worn daily — produced for oath-swearing. A man grips the ring when he gives his word. The weight in his hand is the weight of the oath."
+        sensory: >-
+          Thicker and heavier than a personal arm ring. The surface
+          is darkened with age and the oil of many gripping hands.
+          Cold when first taken up. Warms slowly. The metal is often
+          twisted into a serpent or knotwork pattern that presses into
+          the palm. Sworn oaths leave no mark on the ring. The ring
+          remembers nothing. The men who swore remember everything —
+          or claim to.
+        seasonal_notes: "Stored in the hall or temple. Produced at gatherings, law-meets, and before campaigns."
+
+  # ================================================================
+  # MUSIC AND ART — Cultural expression in a hard world
+  # ================================================================
+  music_and_art:
+    description: >-
+      Art in the Rimevegr is functional, portable, and often
+      indistinguishable from craft. Music is vocal or played on simple
+      instruments that survive travel. Decoration exists on objects
+      that serve other purposes — a carved comb, a decorated sword
+      pommel, a painted shield. Pure decoration is rare. Even the
+      skalds earn their keep with memory as much as beauty.
+
+    entries:
+      - id: "MAT_MUS_001"
+        name: "Bone Flute"
+        category: "instrument"
+        who_uses: "Herders, children, occasional musicians"
+        materials: "Hollowed bird bone or sheep bone, with finger holes"
+        description: "Simple, high-pitched, haunting. Played alone on watch or around the fire. Not for performance — for filling silence."
+        sensory: >-
+          The sound is thin and reedy — it carries further than
+          expected, especially in still night air. The bone is smooth
+          and warm from the player's hands. The finger holes are rough-
+          cut and vary by maker — every flute has its own tuning. The
+          sound is not quite a whistle, not quite a song. Dogs tilt
+          their heads. Ravens listen.
+        seasonal_notes: "Played year-round. A comfort in the long dark. A melancholy sound against the wind."
+
+      - id: "MAT_MUS_002"
+        name: "Lyre (Tagelharpa)"
+        category: "instrument"
+        who_uses: "Skalds, skilled musicians"
+        materials: "Wooden body, horsehair or gut strings, bowed or plucked"
+        description: "The skald's instrument. Accompanies storytelling, poem recitation, and laments. Fragile by Rimevegr standards — carried in a leather bag like a child."
+        sensory: >-
+          Bowed, the sound is low, droning, and resonant — it vibrates
+          in the chest cavity of anyone sitting close. The horsehair
+          strings rasp under the bow. Plucked, the sound is thinner,
+          sharper, and dies quickly. The body of the instrument is
+          warm wood, often carved. The tuning drifts in damp weather
+          and the player adjusts constantly, a habitual gesture between
+          verses.
+        seasonal_notes: "Strings break in extreme cold. Spare strings are carried wound in a cloth."
+
+      - id: "MAT_MUS_003"
+        name: "Drum (Frame Drum)"
+        category: "instrument"
+        who_uses: "Seidr practitioners, occasional ritual use"
+        materials: "Birch or willow hoop, stretched deerskin or goatskin head"
+        description: "Beaten with a padded stick or the hand. Associated with seidr trance-work, which makes it suspect in polite company. The sound is primitive and inescapable."
+        sensory: >-
+          A deep, resonant boom that hits the chest before the ears.
+          Rapid beating produces a rolling thunder. Slow beating
+          mimics a heartbeat — the listener's own heart begins to
+          sync. The skin is taut in dry weather, slack in wet. The
+          player warms it by the fire to tighten it. The drum is
+          feared as much as enjoyed — its associations with
+          spirit-work make even listeners uneasy.
+        seasonal_notes: "The skin loosens in damp and freezes in extreme cold. A temperamental instrument."
+
+      - id: "MAT_MUS_004"
+        name: "Carved Wood Decoration (Gripping Beast Style)"
+        category: "visual_art"
+        who_uses: "Woodcarvers, applied to buildings, ships, furniture"
+        materials: "Any available wood, carved with a knife and chisel"
+        description: "Interlocking animal forms that grip their own limbs and each other. The style is everywhere — door frames, ship prows, furniture, weapons. The forms twist and tangle like a knot that resolves into teeth and claws."
+        sensory: >-
+          Run a finger along the carving and the pattern is a maze
+          of ridges and grooves. The deeper the carving, the more
+          accomplished the carver. Shadow transforms flat carvings
+          into living forms — firelight makes the beasts move. The
+          wood darkens with age and smoke until the figures are nearly
+          invisible by day and vivid by firelight. Touching old
+          carvings is touching history — the hands that carved them
+          are long dead. The beasts grip on.
+        seasonal_notes: "Carving is winter work — long dark hours, steady firelight, and nothing else to do."
+
+      - id: "MAT_MUS_005"
+        name: "Skaldic Verse (Oral Poetry)"
+        category: "performance"
+        who_uses: "Skalds — professional poets"
+        materials: "No physical medium. Memory is the material."
+        description: "Complex, alliterative, metaphor-dense verse composed and performed from memory. A skald's value is his recall. A forgotten verse is a lost treasure."
+        sensory: >-
+          The skald's voice fills the hall — a trained instrument that
+          cuts through the noise of feasting. The rhythm is strong,
+          the alliteration a percussive texture. Kennings pile image
+          on image: the sea is the whale-road, blood is the sword's
+          sweat, a warrior is a tree of battle. The audience leans
+          forward. The fire crackles in the pauses. A good verse
+          makes men weep into their mead. A bad verse gets a cup
+          thrown. Both are memorable.
+        seasonal_notes: "Performance is winter entertainment. New compositions are expected for major feasts."
+
+  # ================================================================
+  # CRAFT AND TRADE — The specializations that sustain communities
+  # ================================================================
+  craft_and_trade:
+    description: >-
+      Specialists are rare and necessary. A blacksmith is worth a
+      dozen warriors to a settlement. A boat-builder is irreplaceable.
+      These are the trades, tools, and materials that distinguish a
+      thriving settlement from a dying one. Trade goods move along
+      river routes and coastal sailing paths. The smell of a
+      workshop tells you what it makes before you see inside.
+
+    entries:
+      - id: "MAT_CRT_001"
+        name: "Bog Iron (Raw Material)"
+        category: "raw_material"
+        who_uses: "Iron smelters, smiths"
+        materials: "Iron-rich nodules dredged from bogs and streambeds"
+        description: "The source of all Rimevegr iron. Pulled from the earth, roasted, smelted in a clay furnace. The entire chain from mud to sword takes days of labor and enormous quantities of charcoal."
+        sensory: >-
+          Raw bog iron is dark, crumbly, and smells of wet earth and
+          rust. It stains hands orange-brown. Roasting it fills the
+          air with a sulfurous, metallic stink. The bloom — the lump
+          of crude iron pulled from the furnace — glows dull red and
+          sheds sparks when hammered. It looks nothing like metal.
+          It looks like a burning stone. The transformation from mud
+          to blade is so improbable it was once considered magic.
+        seasonal_notes: "Collected in summer when bogs are accessible. Smelted in autumn before the long dark."
+
+      - id: "MAT_CRT_002"
+        name: "Soapstone (Carving Stone)"
+        category: "raw_material"
+        who_uses: "Pot-makers, mold-carvers, amulet-carvers"
+        materials: "Soft metamorphic stone, grey-green, quarried from known deposits"
+        description: "Soft enough to carve with a knife. Withstands fire. Used for cooking pots, oil lamps, casting molds, and small carvings. A soapstone quarry is a valuable communal resource."
+        sensory: >-
+          Feels like soap — smooth, slightly waxy, and yields under a
+          thumbnail. Produces a fine white dust when carved that coats
+          the carver's hands. Smells of nothing when dry, faintly
+          mineral when wet. The finished surface can be polished to a
+          dull sheen. When heated, it absorbs the fire's warmth and
+          radiates it for hours — a soapstone pot stays warm long
+          after it leaves the fire.
+        seasonal_notes: "Quarrying is summer work. Carving is winter work."
+
+      - id: "MAT_CRT_003"
+        name: "Wadmal (Trade Cloth)"
+        category: "trade_good"
+        who_uses: "Produced by every household with a loom, traded universally"
+        materials: "Coarse, fulled wool fabric in standard widths"
+        description: "The cloth currency of the Rimevegr. Measured in ells. Accepted everywhere. A bolt of wadmal is money you can wear."
+        sensory: >-
+          Thick, dense, and scratchy. The natural color is grey-brown.
+          Holds its shape even when wet — it is felted tight enough
+          to shed light rain. The smell is of wool and the fulling
+          process — human urine was traditionally used to full the
+          cloth, and the faintest ammonia ghost clings to new wadmal.
+          The surface is slightly fuzzy, almost pill-like, and leaves
+          fibers on everything it touches.
+        seasonal_notes: "Woven on the upright loom during winter. Fulled in spring. Traded in summer."
+
+      - id: "MAT_CRT_004"
+        name: "Tallow (Rendered Fat)"
+        category: "raw_material"
+        who_uses: "Everyone — a universal substance"
+        materials: "Animal fat (cattle, sheep, goat) slowly rendered and strained"
+        description: "The industrial grease of the Rimevegr. Waterproofs leather, greases axles, makes candles, preserves rope, conditions wood. A settlement without surplus tallow struggles with everything."
+        sensory: >-
+          Solid at room temperature — pale, waxy, and faintly greasy.
+          Melted, it becomes a clear yellow liquid that smells of
+          roasting meat and something deeper, muskier. Tallow candles
+          burn with a smoky flame and a smell that is not quite food,
+          not quite pleasant. The smoke is greasy and deposits a thin
+          film on walls and ceilings. Rancid tallow — and most winter
+          tallow goes rancid — smells of decay.
+        seasonal_notes: "Rendered at slaughter time in autumn. Stored in barrels or skin bags."
+
+      - id: "MAT_CRT_005"
+        name: "Charcoal"
+        category: "fuel"
+        who_uses: "Smiths primarily, also used in smelting and some cooking"
+        materials: "Wood burned slowly in a covered mound or pit to drive off moisture and volatiles"
+        description: "Burns hotter and cleaner than wood. Essential for smithing — you cannot forge iron over a wood fire. Producing it consumes forests."
+        sensory: >-
+          Black, light, and fragile — it crumbles in the hand and
+          stains everything it touches. Sounds hollow when pieces
+          knock together. Burns without flame in a forge — a dull
+          red-orange glow that radiates intense heat. The charcoal
+          burner's pit produces a thick, sweet smoke visible for miles
+          and smells of caramelized wood. The charcoal itself has
+          almost no smell until it burns.
+        seasonal_notes: "Burned in summer and autumn. Stored dry. Wet charcoal is useless."
+
+      - id: "MAT_CRT_006"
+        name: "Walrus Ivory"
+        category: "trade_good"
+        who_uses: "Carvers, traded to southern markets"
+        materials: "Walrus tusks, traded from the far north"
+        description: "The Rimevegr's most valuable trade export. Carved into gaming pieces, religious figures, and luxury objects. Southern kingdoms pay silver for what northern hunters hack from dead animals."
+        sensory: >-
+          Dense, heavy, and warm in the hand — warmer than stone,
+          cooler than wood. Creamy white when fresh, yellowing with
+          age to a golden-brown. Carves cleanly with a sharp blade
+          and the shavings curl like wood. The surface can be polished
+          to a deep, luminous glow. Burned, it smells acrid and
+          animal — a smell that lingers. A chess piece of walrus ivory
+          sits in the palm with a satisfying weight that stone and
+          bone cannot match.
+        seasonal_notes: "Hunted in the far north year-round. Traded south in summer."
+
+      - id: "MAT_CRT_007"
+        name: "Beeswax"
+        category: "raw_material"
+        who_uses: "Shipbuilders, leatherworkers, healers, scribes"
+        materials: "Honeycomb rendered and strained"
+        description: "Seals joints, waterproofs leather, stiffens thread, coats rune tablets. Burns cleaner and sweeter than tallow — beeswax candles are a luxury. A byproduct of honey, which makes it doubly precious."
+        sensory: >-
+          Warm golden color that pales as it ages. Smells of honey
+          and summer — the closest thing to bottled warmth. Softens
+          between the fingers with body heat and becomes pliable as
+          clay. Hard and brittle in cold. Burns with a steady, bright
+          flame and a sweet smoke that makes a room smell of some
+          distant meadow. A beeswax candle in a soot-blackened hall
+          is a small luxury that punches above its weight.
+        seasonal_notes: "Harvested with the honey in summer. Rendered and stored in small cakes."

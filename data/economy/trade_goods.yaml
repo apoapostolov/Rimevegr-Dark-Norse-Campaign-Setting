@@ -1,0 +1,1456 @@
+# Iron Ledger — Trade Goods Database
+# Canonical pricing and availability for the Rimevegr settlement network.
+# Currency: 1 silver = 10 copper. Common merc retainer: 2 silver/week.
+# Food baseline: 1 silver/week/person (10 copper).
+# Seasons: thaw, long_sun, harvest, long_dark.
+# Availability: common (any settlement), uncommon (village+),
+#   rare (large_village+), exotic (Deepholm market or special contact).
+
+trade_goods:
+  # =================================================================
+  # WEAPONS
+  # =================================================================
+  weapons:
+    - id: "TG_WPN_001"
+      name: "Iron Hand-Axe"
+      base_price_copper: 40
+      weight_kg: 1.2
+      availability: "common"
+      description: "Single-headed axe with a hickory haft. The Rimevegr's universal sidearm — every man owns one."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.95
+        harvest: 1.0
+        long_dark: 1.15
+      wartime_modifier: 1.4
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach"]
+      notes: "Price doubles when iron supply from Grimholt is disrupted."
+
+    - id: "TG_WPN_002"
+      name: "Broad-Axe"
+      base_price_copper: 70
+      weight_kg: 2.0
+      availability: "common"
+      description: "Wide-bladed war axe. Splits shields and men with equal ease."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.95
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.4
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach", "Thornwall"]
+      notes: "Preferred weapon of most Svarthird axe-men."
+
+    - id: "TG_WPN_003"
+      name: "Iron Sword"
+      base_price_copper: 100
+      weight_kg: 1.4
+      availability: "uncommon"
+      description: "Straight-bladed sword with a simple crossguard. Mark of a veteran or a man with ambitions."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.5
+      produced_by: ["Deepholm", "Grimholt"]
+      notes: "Masterwork swords from Deepholm command 200+ copper. Named Men carry them."
+
+    - id: "TG_WPN_004"
+      name: "Seax"
+      base_price_copper: 15
+      weight_kg: 0.5
+      availability: "common"
+      description: "Heavy single-edged knife, long as a man's forearm. Eating tool, skinning blade, and throat-cutter."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.05
+      wartime_modifier: 1.2
+      produced_by:
+        [
+          "Grimholt",
+          "Deepholm",
+          "Ashen Reach",
+          "Thornwall",
+          "Vargheim",
+          "Skaldhaven",
+        ]
+      notes: "Every man carries one. Losing your seax is losing your self-respect."
+
+    - id: "TG_WPN_005"
+      name: "Ash-Haft Spear"
+      base_price_copper: 25
+      weight_kg: 1.8
+      availability: "common"
+      description: "Iron-tipped spear on a two-metre ash shaft. The formation weapon of any shield-wall."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.95
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.3
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach", "Thornwall"]
+      notes: "Cheapest way to arm a recruit. Ash shafts sourced from Vargheim and Ashen Reach forests."
+
+    - id: "TG_WPN_006"
+      name: "Javelins (bundle of 3)"
+      base_price_copper: 20
+      weight_kg: 2.4
+      availability: "common"
+      description: "Light throwing spears with leaf-shaped iron heads. Effective at thirty paces against unshielded targets."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.3
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach"]
+      notes: "Expendable. Bands scavenge them after every skirmish."
+
+    - id: "TG_WPN_007"
+      name: "War Hammer"
+      base_price_copper: 80
+      weight_kg: 2.5
+      availability: "uncommon"
+      description: "Iron-headed hammer on a reinforced haft. Crushes helms and breaks bones through mail."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.4
+      produced_by: ["Grimholt", "Deepholm"]
+      notes: "Favoured against armoured opponents. Grimholt smiths forge the best."
+
+    - id: "TG_WPN_008"
+      name: "Hunting Bow"
+      base_price_copper: 35
+      weight_kg: 0.9
+      availability: "common"
+      description: "Short self-bow of yew or elm. Meant for deer and wolves, serviceable against men in a pinch."
+      seasonal_modifier:
+        thaw: 1.05
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.3
+      produced_by: ["Vargheim", "Ashen Reach", "Raven's Perch"]
+      notes: "Damp ruins bowstrings. Carry spares wrapped in oiled cloth."
+
+    - id: "TG_WPN_009"
+      name: "Arrows (bundle of 20)"
+      base_price_copper: 8
+      weight_kg: 1.0
+      availability: "common"
+      description: "Iron-tipped birch shafts fletched with goose feather. Standard hunting and war arrows."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.15
+      wartime_modifier: 1.5
+      produced_by: ["Vargheim", "Ashen Reach", "Deepholm", "Raven's Perch"]
+      notes: "Consumed fast in skirmishes. Bands that run out of arrows die."
+
+    - id: "TG_WPN_010"
+      name: "Sling"
+      base_price_copper: 3
+      weight_kg: 0.2
+      availability: "common"
+      description: "Braided wool sling. Shepherds carry them; so do men too poor for a bow."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.1
+      produced_by: ["Feldwick", "Thornwall", "Moor's End"]
+      notes: "Ammunition is free — river stones everywhere. Deadly accurate in trained hands."
+
+    - id: "TG_WPN_011"
+      name: "Dane-Axe"
+      base_price_copper: 120
+      weight_kg: 2.8
+      availability: "uncommon"
+      description: "Long-hafted two-handed axe with a broad crescent blade. Terrifying in open combat, useless in tight spaces."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.5
+      produced_by: ["Deepholm", "Grimholt"]
+      notes: "Status weapon. A man carrying a Dane-axe is announcing he intends to kill something large."
+
+    - id: "TG_WPN_012"
+      name: "Iron Mace"
+      base_price_copper: 60
+      weight_kg: 2.2
+      availability: "uncommon"
+      description: "Flanged iron head on an oak shaft. Simple to forge, brutal to receive."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.3
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach"]
+      notes: "Cheaper than a sword, simpler than an axe. Common among garrison fighters."
+
+  # =================================================================
+  # ARMOR
+  # =================================================================
+  armor:
+    - id: "TG_ARM_001"
+      name: "Leather Jerkin"
+      base_price_copper: 30
+      weight_kg: 3.0
+      availability: "common"
+      description: "Hardened cowhide vest laced at the sides. Stops a glancing knife but not much else."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.05
+      wartime_modifier: 1.3
+      produced_by: ["Thornwall", "Vargheim", "Ashen Reach", "Frostfjord Hollow"]
+      notes: "Most common armour in the Rimevegr. Even farmers own one."
+
+    - id: "TG_ARM_002"
+      name: "Padded Gambeson"
+      base_price_copper: 50
+      weight_kg: 5.0
+      availability: "common"
+      description: "Layered linen and wool, stitched tight. Absorbs blows better than leather and keeps the cold out."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.95
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.3
+      produced_by: ["Thornwall", "Deepholm", "Ashen Reach"]
+      notes: "Worn under mail by those who can afford both. Stinks after a week on the march."
+
+    - id: "TG_ARM_003"
+      name: "Chainmail Shirt"
+      base_price_copper: 250
+      weight_kg: 12.0
+      availability: "rare"
+      description: "Riveted iron rings, knee-length. A fortune in iron and a thousand hours of a smith's labour."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.05
+      wartime_modifier: 1.5
+      produced_by: ["Deepholm"]
+      notes: "Only Deepholm can produce new mail. Most shirts in circulation are inherited or looted. Worth killing for."
+
+    - id: "TG_ARM_004"
+      name: "Iron Helm (Nasal)"
+      base_price_copper: 80
+      weight_kg: 2.0
+      availability: "uncommon"
+      description: "Conical iron helm with a nose-guard. Keeps your skull intact when the axes come down."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.05
+      wartime_modifier: 1.4
+      produced_by: ["Deepholm", "Grimholt"]
+      notes: "Line the inside with wool padding or regret it after the first blow."
+
+    - id: "TG_ARM_005"
+      name: "Wooden Shield (Round)"
+      base_price_copper: 20
+      weight_kg: 4.5
+      availability: "common"
+      description: "Lime-wood planks with a central iron boss. Expendable — one hard fight and it needs replacing."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.4
+      produced_by: ["Ashen Reach", "Vargheim", "Deepholm", "Kolvik"]
+      notes: "Bands go through shields fast. Kolvik's shipwrights make them from leftover planking."
+
+    - id: "TG_ARM_006"
+      name: "Iron-Rimmed Shield"
+      base_price_copper: 45
+      weight_kg: 5.5
+      availability: "uncommon"
+      description: "Round shield with an iron rim and reinforced boss. Survives more punishment than bare wood."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.4
+      produced_by: ["Deepholm", "Grimholt"]
+      notes: "Veterans insist on iron-rimmed. Costs more but lasts three fights instead of one."
+
+    - id: "TG_ARM_007"
+      name: "Leather Greaves"
+      base_price_copper: 15
+      weight_kg: 1.5
+      availability: "common"
+      description: "Hardened leather shin-guards strapped over boots. Any fighter who has been leg-swept learns to value them."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.2
+      produced_by: ["Thornwall", "Vargheim", "Deepholm"]
+      notes: null
+
+    - id: "TG_ARM_008"
+      name: "Arm Guards (Leather and Iron)"
+      base_price_copper: 20
+      weight_kg: 1.2
+      availability: "common"
+      description: "Leather vambraces with iron splints riveted along the forearm. Catches blades that slip past the shield."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.3
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach"]
+      notes: null
+
+    - id: "TG_ARM_009"
+      name: "Fur-Lined Hauberk"
+      base_price_copper: 180
+      weight_kg: 10.0
+      availability: "rare"
+      description: "Thick leather hauberk lined with wolf or bear fur, reinforced with iron studs. Warmth and protection both."
+      seasonal_modifier:
+        thaw: 0.9
+        long_sun: 0.8
+        harvest: 0.95
+        long_dark: 1.3
+      wartime_modifier: 1.3
+      produced_by: ["Vargheim", "Deepholm"]
+      notes: "Highly prized in the Long Dark. Vargheim wolf-wardens produce the finest furs."
+
+    - id: "TG_ARM_010"
+      name: "Leather Cap"
+      base_price_copper: 10
+      weight_kg: 0.5
+      availability: "common"
+      description: "Boiled leather skullcap. Won't stop an axe, but keeps rocks and rain off your head."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.1
+      produced_by: ["Thornwall", "Ashen Reach", "Frostfjord Hollow", "Vargheim"]
+      notes: "Common men wear these. Better than nothing."
+
+  # =================================================================
+  # TOOLS
+  # =================================================================
+  tools:
+    - id: "TG_TLS_001"
+      name: "Woodcutting Axe"
+      base_price_copper: 25
+      weight_kg: 2.0
+      availability: "common"
+      description: "Iron-headed felling axe. Heavier than a hand-axe, wrong balance for fighting, right balance for timber."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 1.05
+        long_dark: 1.1
+      wartime_modifier: 1.1
+      produced_by: ["Ashen Reach", "Vargheim", "Grimholt", "Deepholm"]
+      notes: "A desperate man can fight with one, but a proper weapon beats it every time."
+
+    - id: "TG_TLS_002"
+      name: "Iron Pot (Cooking)"
+      base_price_copper: 20
+      weight_kg: 3.5
+      availability: "common"
+      description: "Cast-iron cook pot with a bail handle. Boils stew, melts snow, heats water for wounds. Indispensable."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.1
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach"]
+      notes: "Bands guard their cook pot like a second captain. Lose it and morale drops."
+
+    - id: "TG_TLS_003"
+      name: "Fishing Hooks (set of 10)"
+      base_price_copper: 5
+      weight_kg: 0.1
+      availability: "common"
+      description: "Bent iron hooks in a leather pouch. Thread with gut line and bait with worms or offal."
+      seasonal_modifier:
+        thaw: 1.1
+        long_sun: 1.0
+        harvest: 0.95
+        long_dark: 1.0
+      wartime_modifier: 1.0
+      produced_by:
+        ["Frostfjord Hollow", "Kolvik", "Stonebay Hamlet", "Skaldhaven"]
+      notes: "Coastal settlements always have these. Inland travelers pay a premium."
+
+    - id: "TG_TLS_004"
+      name: "Rope (20m, Hemp)"
+      base_price_copper: 8
+      weight_kg: 2.5
+      availability: "common"
+      description: "Coiled hemp rope. Binds prisoners, lashes shelters, hauls loads, lowers men into barrows."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.05
+      wartime_modifier: 1.2
+      produced_by: ["Kolvik", "Frostfjord Hollow", "Thornwall", "Deepholm"]
+      notes: "Wet rope freezes rigid in the Long Dark. Keep it under your cloak."
+
+    - id: "TG_TLS_005"
+      name: "Shovel (Iron-Head)"
+      base_price_copper: 15
+      weight_kg: 2.2
+      availability: "common"
+      description: "Iron blade on an ash handle. Digs latrines, fire-pits, and graves. The Long Dark keeps it busy."
+      seasonal_modifier:
+        thaw: 1.1
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.1
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach"]
+      notes: null
+
+    - id: "TG_TLS_006"
+      name: "Iron Nails (100)"
+      base_price_copper: 12
+      weight_kg: 1.0
+      availability: "common"
+      description: "Hand-forged iron nails in a cloth sack. Every repair, shelter, and coffin needs them."
+      seasonal_modifier:
+        thaw: 1.05
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.2
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach"]
+      notes: "Scavenged from ruins and wreckage when supply runs low."
+
+    - id: "TG_TLS_007"
+      name: "Crosscut Saw"
+      base_price_copper: 30
+      weight_kg: 2.0
+      availability: "uncommon"
+      description: "Two-man iron saw for cutting timber planks. Rare and valuable — most woodwork is done with axe and adze."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.95
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.0
+      produced_by: ["Deepholm", "Ashen Reach"]
+      notes: "Kolvik's shipwright keeps his saws locked. Worth stealing."
+
+    - id: "TG_TLS_008"
+      name: "Whetstone"
+      base_price_copper: 3
+      weight_kg: 0.3
+      availability: "common"
+      description: "Flat quartzite stone for sharpening blades. Every fighter carries one in his belt-pouch."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.2
+      produced_by: ["Grimholt", "Deepholm", "Raven's Perch"]
+      notes: "Good whetstones from Grimholt's quarries are recognizable by their grey-green colour."
+
+    - id: "TG_TLS_009"
+      name: "Flint and Steel Set"
+      base_price_copper: 5
+      weight_kg: 0.2
+      availability: "common"
+      description: "Fire-steel, flint shard, and a pouch of char-cloth. Strikes a light in dry conditions — the wet is another matter."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.2
+      wartime_modifier: 1.1
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach", "Thornwall"]
+      notes: "Keep the char-cloth dry or freeze to death. Simple as that."
+
+    - id: "TG_TLS_010"
+      name: "Iron Tongs"
+      base_price_copper: 18
+      weight_kg: 1.5
+      availability: "uncommon"
+      description: "Blacksmith's tongs. Required for forge work, field repairs, and pulling arrowheads from screaming men."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.2
+      produced_by: ["Deepholm", "Grimholt"]
+      notes: "A band with a smith carries tongs. A band without borrows — or begs."
+
+  # =================================================================
+  # FOOD AND DRINK
+  # =================================================================
+  food_and_drink:
+    - id: "TG_FOD_001"
+      name: "Rations (1 Week, Dried)"
+      base_price_copper: 10
+      weight_kg: 3.5
+      availability: "common"
+      description: "Hardtack, dried fish, and a twist of salt in an oiled cloth. Keeps body and soul together — barely."
+      seasonal_modifier:
+        thaw: 1.1
+        long_sun: 0.9
+        harvest: 0.8
+        long_dark: 1.5
+      wartime_modifier: 1.8
+      produced_by:
+        ["Frostfjord Hollow", "Kolvik", "Deepholm", "Thornwall", "Ashen Reach"]
+      notes: "The baseline. 10 copper feeds one mouth for seven days. Everything else is luxury."
+
+    - id: "TG_FOD_002"
+      name: "Dried Cod (1 kg)"
+      base_price_copper: 3
+      weight_kg: 1.0
+      availability: "common"
+      description: "Salt-cured stockfish, stiff as a plank. Soak in water overnight or break your teeth."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.8
+        harvest: 0.9
+        long_dark: 1.3
+      wartime_modifier: 1.5
+      produced_by:
+        ["Frostfjord Hollow", "Kolvik", "Stonebay Hamlet", "Skaldhaven"]
+      notes: "Staple of every coastal settlement. Keeps for months. Tastes like penance."
+
+    - id: "TG_FOD_003"
+      name: "Smoked Mutton (1 kg)"
+      base_price_copper: 4
+      weight_kg: 1.0
+      availability: "common"
+      description: "Dark-smoked sheep meat from the moor flocks. Tough, salty, and better than starving."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.8
+        long_dark: 1.4
+      wartime_modifier: 1.6
+      produced_by: ["Thornwall", "Feldwick", "Moor's End"]
+      notes: "Thornwall's moor sheep are the main source. Feldwick's occupation has disrupted supply."
+
+    - id: "TG_FOD_004"
+      name: "Barley Bread (Loaf)"
+      base_price_copper: 1
+      weight_kg: 0.5
+      availability: "common"
+      description: "Dense, dark flatbread. Baked on a hearthstone, eaten the same day or it turns to gravel."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.7
+        long_dark: 1.5
+      wartime_modifier: 1.5
+      produced_by: ["Deepholm", "Thornwall", "Ashen Reach", "Frostfjord Hollow"]
+      notes: "Barley grows poorly this far north. Most grain is imported or traded from Thornwall's moor farms."
+
+    - id: "TG_FOD_005"
+      name: "Honey (Clay Pot, ~0.5 kg)"
+      base_price_copper: 12
+      weight_kg: 0.7
+      availability: "uncommon"
+      description: "Dark forest honey, thick and bitter-sweet. Medicinal, preservative, and the soul of mead."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.8
+        harvest: 0.7
+        long_dark: 1.4
+      wartime_modifier: 1.3
+      produced_by: ["Ashmark", "Ashen Reach", "Vargheim"]
+      notes: "Forest settlements keep bee-hives. Healers pay well for honey — it fights wound-rot."
+
+    - id: "TG_FOD_006"
+      name: "Salt (1 kg)"
+      base_price_copper: 8
+      weight_kg: 1.0
+      availability: "uncommon"
+      description: "Coarse grey sea-salt. Preserves everything — meat, fish, hides, and trust."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.85
+        long_dark: 1.3
+      wartime_modifier: 1.5
+      produced_by: ["Kolvik", "Frostfjord Hollow", "Skaldhaven"]
+      notes: "Coastal settlements boil seawater for salt. Inland, it trades at a steep mark-up."
+
+    - id: "TG_FOD_007"
+      name: "Ale (Barrel, ~40 L)"
+      base_price_copper: 25
+      weight_kg: 45.0
+      availability: "common"
+      description: "Thick barley ale, amber and cloudy. The only reliable comfort on the Rimevegr."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.8
+        long_dark: 1.2
+      wartime_modifier: 1.3
+      produced_by:
+        [
+          "Deepholm",
+          "Frostfjord Hollow",
+          "Ashen Reach",
+          "Thornwall",
+          "Vargheim",
+        ]
+      notes: "Every settlement brews. Quality varies from passable to punishment. Transport is the problem — barrels are heavy."
+
+    - id: "TG_FOD_008"
+      name: "Mead (Jug, ~2 L)"
+      base_price_copper: 15
+      weight_kg: 2.5
+      availability: "uncommon"
+      description: "Honey-wine, golden and sweet. Drunk at oath-making, feasts, and funerals."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.8
+        long_dark: 1.3
+      wartime_modifier: 1.2
+      produced_by: ["Ashmark", "Deepholm", "Ashen Reach"]
+      notes: "Good mead is a gift. Great mead is a bribe. A jug buys goodwill faster than a speech."
+
+    - id: "TG_FOD_009"
+      name: "Turnips (Sack, ~5 kg)"
+      base_price_copper: 3
+      weight_kg: 5.0
+      availability: "common"
+      description: "Hard, bitter root vegetables. Ugly but reliable — they grow where nothing else will."
+      seasonal_modifier:
+        thaw: 1.1
+        long_sun: 0.9
+        harvest: 0.6
+        long_dark: 1.5
+      wartime_modifier: 1.5
+      produced_by: ["Feldwick", "Thornwall", "Moor's End", "Ashen Reach"]
+      notes: "Harvest price is rock-bottom. By mid Long Dark, men trade copper for a single sack."
+
+    - id: "TG_FOD_010"
+      name: "Cheese Wheel"
+      base_price_copper: 6
+      weight_kg: 2.0
+      availability: "common"
+      description: "Hard sheep's-milk cheese sealed in wax. Keeps for weeks and travels well."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.8
+        long_dark: 1.3
+      wartime_modifier: 1.4
+      produced_by: ["Thornwall", "Feldwick", "Moor's End"]
+      notes: "Thornwall's cheese is the best in the Rimevegr. Sliced thin with a seax, it makes hardtack bearable."
+
+    - id: "TG_FOD_011"
+      name: "Butter Crock"
+      base_price_copper: 5
+      weight_kg: 1.0
+      availability: "common"
+      description: "Churned butter packed in a clay crock and sealed with cloth. Enriches anything it touches."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.85
+        harvest: 0.8
+        long_dark: 1.3
+      wartime_modifier: 1.3
+      produced_by: ["Thornwall", "Feldwick", "Moor's End"]
+      notes: "Goes rancid in warm weather. In the Long Dark, it freezes solid — hack off chunks with a seax."
+
+    - id: "TG_FOD_012"
+      name: "Dried Berries (Pouch, ~0.5 kg)"
+      base_price_copper: 4
+      weight_kg: 0.5
+      availability: "common"
+      description: "Sun-dried lingonberries and cloudberries. Tart, chewy, and the closest thing to sweetness on the march."
+      seasonal_modifier:
+        thaw: 1.1
+        long_sun: 0.8
+        harvest: 0.6
+        long_dark: 1.5
+      wartime_modifier: 1.2
+      produced_by: ["Ashmark", "Vargheim", "Ashen Reach"]
+      notes: "Forest settlements dry them by the bushel in harvest. Gone by mid-winter."
+
+    - id: "TG_FOD_013"
+      name: "Pickled Herring (Barrel)"
+      base_price_copper: 20
+      weight_kg: 30.0
+      availability: "common"
+      description: "Salt-brined herring packed tight in oak barrels. Lasts months, feeds a band for days."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.85
+        harvest: 0.8
+        long_dark: 1.3
+      wartime_modifier: 1.6
+      produced_by: ["Kolvik", "Frostfjord Hollow", "Skaldhaven"]
+      notes: "Heavy to transport but calorie-dense. Coastal settlements trade these inland at profit."
+
+    - id: "TG_FOD_014"
+      name: "Hardtack (Sack, 1 Week)"
+      base_price_copper: 7
+      weight_kg: 2.5
+      availability: "common"
+      description: "Twice-baked barley biscuit. Lasts forever, tastes like regret, and keeps you alive."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.75
+        long_dark: 1.4
+      wartime_modifier: 1.6
+      produced_by: ["Deepholm", "Thornwall", "Frostfjord Hollow"]
+      notes: "Standard march ration. Soak in stew or ale unless you enjoy visiting the healer for cracked teeth."
+
+  # =================================================================
+  # TEXTILES
+  # =================================================================
+  textiles:
+    - id: "TG_TXT_001"
+      name: "Wool Cloak"
+      base_price_copper: 15
+      weight_kg: 2.0
+      availability: "common"
+      description: "Heavy fulled-wool cloak fastened with a bone pin. Sheds rain, holds warmth, doubles as a blanket."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.8
+        harvest: 1.0
+        long_dark: 1.3
+      wartime_modifier: 1.1
+      produced_by: ["Thornwall", "Feldwick", "Moor's End", "Deepholm"]
+      notes: "Moor settlements produce the best wool. A good cloak is a fighting man's second skin."
+
+    - id: "TG_TXT_002"
+      name: "Fur Cloak (Wolf)"
+      base_price_copper: 40
+      weight_kg: 3.0
+      availability: "uncommon"
+      description: "Cured wolf-pelt cloak, thick and rank. Warmest garment in the Rimevegr — and a statement."
+      seasonal_modifier:
+        thaw: 0.9
+        long_sun: 0.7
+        harvest: 0.9
+        long_dark: 1.5
+      wartime_modifier: 1.0
+      produced_by: ["Vargheim", "Raven's Perch"]
+      notes: "Vargheim's wolf-wardens control the supply. Bear-fur cloaks exist but are not traded — they are earned."
+
+    - id: "TG_TXT_003"
+      name: "Linen Tunic"
+      base_price_copper: 8
+      weight_kg: 0.4
+      availability: "common"
+      description: "Undyed linen shirt, loose-fitting. Worn under everything else. The smell tells you how long the march has been."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.1
+      produced_by: ["Thornwall", "Deepholm", "Ashen Reach"]
+      notes: "Flax is grown in the moors and processed in Thornwall. Deepholm imports some from coastal traders."
+
+    - id: "TG_TXT_004"
+      name: "Wool Blanket"
+      base_price_copper: 10
+      weight_kg: 1.5
+      availability: "common"
+      description: "Thick woven blanket, rough as a cat's tongue. Between this and the fire, you survive the night."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.8
+        harvest: 1.0
+        long_dark: 1.4
+      wartime_modifier: 1.2
+      produced_by: ["Thornwall", "Feldwick", "Moor's End"]
+      notes: "Two blankets and a cloak will see you through anything short of a blizzard."
+
+    - id: "TG_TXT_005"
+      name: "Leather Belt"
+      base_price_copper: 5
+      weight_kg: 0.3
+      availability: "common"
+      description: "Ox-hide belt with an iron buckle. Holds your seax, your purse, and your trousers."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 1.0
+      produced_by: ["Thornwall", "Vargheim", "Deepholm", "Ashen Reach"]
+      notes: null
+
+    - id: "TG_TXT_006"
+      name: "Hide Boots"
+      base_price_copper: 12
+      weight_kg: 1.2
+      availability: "common"
+      description: "Calf-high cowhide boots with wrapped bindings. Keep your feet dry for the first three days."
+      seasonal_modifier:
+        thaw: 1.1
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.2
+      wartime_modifier: 1.2
+      produced_by: ["Thornwall", "Vargheim", "Deepholm", "Frostfjord Hollow"]
+      notes: "Grease them with tallow nightly or they crack and split. Wet feet kill more men than swords."
+
+    - id: "TG_TXT_007"
+      name: "Mittens (Fur-Lined)"
+      base_price_copper: 8
+      weight_kg: 0.3
+      availability: "common"
+      description: "Leather mittens stuffed with rabbit fur. You lose your fingers without them come Long Dark."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.6
+        harvest: 0.9
+        long_dark: 1.5
+      wartime_modifier: 1.1
+      produced_by: ["Vargheim", "Thornwall", "Raven's Perch"]
+      notes: "Can't grip a weapon properly in mittens. Men pull them off to fight and risk frostbite."
+
+  # =================================================================
+  # RAW MATERIALS
+  # =================================================================
+  raw_materials:
+    - id: "TG_RAW_001"
+      name: "Iron Ingot"
+      base_price_copper: 30
+      weight_kg: 5.0
+      availability: "common"
+      description: "Smelted bog-iron or mined ore, hammered into a rough bar. The Rimevegr runs on iron."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.95
+        harvest: 1.0
+        long_dark: 1.15
+      wartime_modifier: 1.5
+      produced_by: ["Grimholt", "Deepholm", "Ashen Reach"]
+      notes: "Grimholt's mines produce the most. If the mine road closes, prices spike across the region."
+
+    - id: "TG_RAW_002"
+      name: "Pine Tar (Barrel)"
+      base_price_copper: 20
+      weight_kg: 25.0
+      availability: "common"
+      description: "Dark, pungent resin rendered from pine stumps. Waterproofs hulls, seals roofs, treats rope."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.85
+        harvest: 1.0
+        long_dark: 1.15
+      wartime_modifier: 1.2
+      produced_by: ["Ashen Reach", "Ashmark", "Vargheim"]
+      notes: "Ashen Reach's tar-works are the largest in the Rimevegr. Burns fiercely — useful in sieges."
+
+    - id: "TG_RAW_003"
+      name: "Raw Wool (Bale)"
+      base_price_copper: 12
+      weight_kg: 15.0
+      availability: "common"
+      description: "Unwashed fleece bundled with cord. Greasy, rank, and valuable. Needs carding and spinning before use."
+      seasonal_modifier:
+        thaw: 0.9
+        long_sun: 0.8
+        harvest: 1.0
+        long_dark: 1.2
+      wartime_modifier: 1.0
+      produced_by: ["Thornwall", "Feldwick", "Moor's End"]
+      notes: "Shearing happens in Long Sun. Feldwick's occupation has cut supply — Thornwall benefits."
+
+    - id: "TG_RAW_004"
+      name: "Timber (10 Planks, Pine)"
+      base_price_copper: 15
+      weight_kg: 40.0
+      availability: "common"
+      description: "Rough-hewn pine planks, green or air-dried. Builds walls, repairs ships, makes coffins."
+      seasonal_modifier:
+        thaw: 0.9
+        long_sun: 0.85
+        harvest: 1.0
+        long_dark: 1.2
+      wartime_modifier: 1.2
+      produced_by: ["Ashen Reach", "Vargheim", "Ashmark", "Kolvik"]
+      notes: "Forest settlements control supply. Kolvik buys in bulk for the shipwright."
+
+    - id: "TG_RAW_005"
+      name: "Charcoal (Sack)"
+      base_price_copper: 6
+      weight_kg: 8.0
+      availability: "common"
+      description: "Hardwood charcoal for forge work and cooking. Burns hotter and cleaner than raw wood."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.85
+        harvest: 1.0
+        long_dark: 1.2
+      wartime_modifier: 1.3
+      produced_by: ["Vargheim", "Ashen Reach", "Ashmark"]
+      notes: "Vargheim's charcoal kilns run year-round. Smithies consume enormous quantities."
+
+    - id: "TG_RAW_006"
+      name: "Salt (Trade Quantity, 10 kg)"
+      base_price_copper: 70
+      weight_kg: 10.0
+      availability: "uncommon"
+      description: "Bulk sea-salt for preserving meat, curing hides, and inland trade. Worth its weight in goodwill."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.85
+        harvest: 0.9
+        long_dark: 1.3
+      wartime_modifier: 1.5
+      produced_by: ["Kolvik", "Frostfjord Hollow"]
+      notes: "Coastal monopoly. Inland settlements pay dearly. A salt shipment is worth raiding for."
+
+    - id: "TG_RAW_007"
+      name: "Tallow (Block)"
+      base_price_copper: 4
+      weight_kg: 2.0
+      availability: "common"
+      description: "Rendered animal fat. Makes candles, greases leather, waterproofs boots, and cooks food in a pinch."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.85
+        long_dark: 1.2
+      wartime_modifier: 1.2
+      produced_by: ["Thornwall", "Feldwick", "Vargheim", "Frostfjord Hollow"]
+      notes: "Byproduct of slaughter. Available wherever animals are kept."
+
+    - id: "TG_RAW_008"
+      name: "Bone (Bundle, Mixed)"
+      base_price_copper: 2
+      weight_kg: 3.0
+      availability: "common"
+      description: "Cleaned animal bones — cattle, sheep, horse. Used for tool handles, needles, dice, and rune-carving."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 0.9
+        long_dark: 1.0
+      wartime_modifier: 1.0
+      produced_by: ["Thornwall", "Vargheim", "Frostfjord Hollow", "Moor's End"]
+      notes: "Human bone fetches higher prices among seidr practitioners. Don't ask where it came from."
+
+    - id: "TG_RAW_009"
+      name: "Flax Bundle"
+      base_price_copper: 8
+      weight_kg: 5.0
+      availability: "common"
+      description: "Retted flax stalks ready for hackling. Spun into linen thread for cloth and bowstrings."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.85
+        harvest: 0.8
+        long_dark: 1.2
+      wartime_modifier: 1.1
+      produced_by: ["Thornwall", "Feldwick", "Moor's End"]
+      notes: "Moor climate suits flax. Thornwall processes most of the region's supply."
+
+    - id: "TG_RAW_010"
+      name: "Beeswax (Block)"
+      base_price_copper: 10
+      weight_kg: 1.0
+      availability: "uncommon"
+      description: "Pure wax from forest hives. Seals letters, waterproofs thread, preserves cheese, and feeds better candles than tallow."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.8
+        harvest: 0.75
+        long_dark: 1.3
+      wartime_modifier: 1.1
+      produced_by: ["Ashmark", "Ashen Reach", "Vargheim"]
+      notes: "Wax-sealed documents are the closest thing to official paperwork in the Rimevegr."
+
+  # =================================================================
+  # LUXURY GOODS
+  # =================================================================
+  luxury_goods:
+    - id: "TG_LUX_001"
+      name: "Silver Arm-Ring"
+      base_price_copper: 50
+      weight_kg: 0.2
+      availability: "uncommon"
+      description: "Twisted silver arm-ring, sized to a man's wrist. Wealth you wear, hack-silver when you need coin."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 0.9
+      produced_by: ["Deepholm", "Skaldhaven"]
+      notes: "A Named Man's week pay frozen in metal. Captains give them as oaths of service. Breaking the ring breaks the oath."
+
+    - id: "TG_LUX_002"
+      name: "Amber Beads (Strand)"
+      base_price_copper: 35
+      weight_kg: 0.1
+      availability: "uncommon"
+      description: "Polished Baltic amber strung on leather cord. Old as the sea and warm to the touch."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 0.8
+      produced_by: ["Kolvik", "Skaldhaven"]
+      notes: "Coastal traders bring them. Women and seidr practitioners value them. Burns with a sweet resin smell — used in rituals."
+
+    - id: "TG_LUX_003"
+      name: "Walrus Ivory (Piece)"
+      base_price_copper: 80
+      weight_kg: 0.5
+      availability: "rare"
+      description: "Northern ivory, dense and cream-white. Carvers pay well. Jarls display it as proof of far-reaching trade."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.95
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 0.7
+      produced_by: ["Deepholm"]
+      notes: "Arrives via northern traders through Icebreak. Supply is unpredictable."
+
+    - id: "TG_LUX_004"
+      name: "Silk (Imported, 1 m)"
+      base_price_copper: 120
+      weight_kg: 0.1
+      availability: "exotic"
+      description: "Eastern silk, thin as spider's work. Traded through a hundred hands before reaching the Rimevegr."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 0.6
+      produced_by: ["Deepholm"]
+      notes: "Only the Deepholm market stocks it, and rarely. Jarl Sigrun's personal traders bring it from southern ports."
+
+    - id: "TG_LUX_005"
+      name: "Glass Beads (Strand)"
+      base_price_copper: 25
+      weight_kg: 0.1
+      availability: "uncommon"
+      description: "Coloured glass beads from mainland workshops. Blue and green are common; red is rare and prized."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 0.8
+      produced_by: ["Deepholm", "Kolvik"]
+      notes: "Trade goods from the south. Used in barter with remote settlements where coin means nothing."
+
+    - id: "TG_LUX_006"
+      name: "Rune-Carved Bone Pendant"
+      base_price_copper: 15
+      weight_kg: 0.05
+      availability: "uncommon"
+      description: "Animal bone pendant carved with a protective rune. Whether it works depends on who carved it."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.2
+      produced_by: ["Skaldhaven", "Deepholm"]
+      notes: "Skaldhaven's rune-carvers are the most respected. Cheap imitations sold at every market."
+
+    - id: "TG_LUX_007"
+      name: "Imported Wine (Amphora)"
+      base_price_copper: 100
+      weight_kg: 30.0
+      availability: "exotic"
+      description: "Southern grape wine in a clay vessel. Sweet, strange, and obscenely expensive this far north."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 0.5
+      produced_by: ["Deepholm"]
+      notes: "A jarl's gift or a diplomat's tool. Opening a wine amphora at a feast is a power move."
+
+    - id: "TG_LUX_008"
+      name: "Silver Brooch (Penannular)"
+      base_price_copper: 70
+      weight_kg: 0.15
+      availability: "rare"
+      description: "Ring-shaped cloak brooch with a long pin. Functional jewellery — holds your cloak and shows your rank."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 0.85
+      produced_by: ["Deepholm", "Skaldhaven"]
+      notes: "Gifted by jarls to sworn men. Wearing a stolen brooch invites a blood-feud."
+
+  # =================================================================
+  # SEIDR COMPONENTS
+  # =================================================================
+  seidr_components:
+    - id: "TG_SDR_001"
+      name: "Rune-Carved Birch Staves (Set of 9)"
+      base_price_copper: 20
+      weight_kg: 0.3
+      availability: "uncommon"
+      description: "Nine birch rods carved with the Elder Futhark. Cast for divination or burned as offering."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.2
+      wartime_modifier: 1.3
+      produced_by: ["Skaldhaven", "Icebreak"]
+      notes: "Audun's apprentices at Skaldhaven carve the most reliable sets. Cheap ones from markets are often mis-carved."
+
+    - id: "TG_SDR_002"
+      name: "Mistletoe (Fresh Bundle)"
+      base_price_copper: 10
+      weight_kg: 0.2
+      availability: "uncommon"
+      description: "Cut from oak with a bone knife at dawn. Potent only when fresh — within three days of cutting."
+      seasonal_modifier:
+        thaw: 1.2
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.5
+      wartime_modifier: 1.3
+      produced_by: ["Ashmark", "Ashen Reach", "Vargheim"]
+      notes: "Must be harvested without iron touching it. Iron-cut mistletoe is worthless for galdr."
+
+    - id: "TG_SDR_003"
+      name: "Wolf Blood (Vial)"
+      base_price_copper: 15
+      weight_kg: 0.2
+      availability: "uncommon"
+      description: "Fresh wolf's blood sealed in a clay vial with beeswax. Used in berserker rites and ward-breaking."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.2
+      wartime_modifier: 1.5
+      produced_by: ["Vargheim", "Raven's Perch"]
+      notes: "Vargheim wolf-wardens collect it during culls. Spoils in a week without cold storage."
+
+    - id: "TG_SDR_004"
+      name: "Barrow Dust (Pouch)"
+      base_price_copper: 30
+      weight_kg: 0.3
+      availability: "rare"
+      description: "Earth taken from inside a restless barrow. Hums faintly against the skin. Handled gently."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.3
+      wartime_modifier: 1.4
+      produced_by: ["Skaldhaven"]
+      notes: "Someone had to enter a barrow to collect this. Price reflects the risk. Deepholm's archive buys it too."
+
+    - id: "TG_SDR_005"
+      name: "Silver Wire (Spool)"
+      base_price_copper: 25
+      weight_kg: 0.3
+      availability: "uncommon"
+      description: "Thin-drawn silver wire wound on a birch spool. Used in binding runes, warding circles, and galdr-craft."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.3
+      produced_by: ["Deepholm"]
+      notes: "Only Deepholm's silversmiths draw wire fine enough for galdr work."
+
+    - id: "TG_SDR_006"
+      name: "Raven Feathers (Bundle of 7)"
+      base_price_copper: 12
+      weight_kg: 0.05
+      availability: "uncommon"
+      description: "Seven black feathers bound with red thread. Used in sight-seeking and spirit-calling rituals."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.3
+      wartime_modifier: 1.2
+      produced_by: ["Raven's Perch", "Skaldhaven"]
+      notes: "Raven's Perch has them in abundance — the rookery provides. Must be freely shed, not plucked."
+
+    - id: "TG_SDR_007"
+      name: "Standing Stone Chips (Pouch)"
+      base_price_copper: 40
+      weight_kg: 0.5
+      availability: "rare"
+      description: "Stone fragments chipped from an active standing stone. Tingling to the touch, cold even by a fire."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.4
+      wartime_modifier: 1.5
+      produced_by: ["Moor's End", "Skaldhaven"]
+      notes: "Moor's End locals hate outsiders chipping their stones. Forbidden by Elder Brosa — collected in secret."
+
+    - id: "TG_SDR_008"
+      name: "Veil-Touched Water (Flask)"
+      base_price_copper: 50
+      weight_kg: 0.5
+      availability: "rare"
+      description: "Water drawn from a spring where the Veil thins. Faintly luminous in darkness. Unsettling to drink."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.5
+      wartime_modifier: 1.4
+      produced_by: ["Icebreak"]
+      notes: "Hermit Ragnhild is the sole reliable source. She demands blood price — literally. One vial per visit."
+
+  # =================================================================
+  # LIVESTOCK
+  # =================================================================
+  livestock:
+    - id: "TG_LSK_001"
+      name: "Sheep"
+      base_price_copper: 25
+      weight_kg: null
+      availability: "common"
+      description: "Moor-bred ewe or wether. Provides wool, milk, meat, and a reason for two settlements to feud."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.85
+        harvest: 0.9
+        long_dark: 1.3
+      wartime_modifier: 1.5
+      produced_by: ["Thornwall", "Feldwick", "Moor's End"]
+      notes: "Sheep theft is the number one cause of blood-feuds in the moors."
+
+    - id: "TG_LSK_002"
+      name: "Goat"
+      base_price_copper: 20
+      weight_kg: null
+      availability: "common"
+      description: "Mountain goat, wiry and stubborn. Survives on scrub, provides milk and hide. Eats everything including your rope."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.9
+        long_dark: 1.2
+      wartime_modifier: 1.3
+      produced_by: ["Raven's Perch", "Grimholt", "Thornwall"]
+      notes: "Mountain settlements prefer goats over sheep — hardier on steep ground."
+
+    - id: "TG_LSK_003"
+      name: "Horse (Riding)"
+      base_price_copper: 200
+      weight_kg: null
+      availability: "uncommon"
+      description: "Sturdy northern horse, shaggy-coated and sure-footed. Not fast, but tireless on rough ground."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.95
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.5
+      produced_by: ["Thornwall", "Deepholm"]
+      notes: "Most bands travel on foot. A captain with a horse has range, speed, and status. Feeding one costs 5 copper/week."
+
+    - id: "TG_LSK_004"
+      name: "Horse (War-Trained)"
+      base_price_copper: 500
+      weight_kg: null
+      availability: "rare"
+      description: "Battle-broken stallion that does not shy from blades or fire. Years of training behind those dead-calm eyes."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.0
+      wartime_modifier: 2.0
+      produced_by: ["Deepholm"]
+      notes: >-
+        Warchief Ordovast's riders and Jarl Sigrun's personal guard use these.
+        A war-horse costs a common fighter half a year's pay. Worth every copper
+        to the right owner.
+
+    - id: "TG_LSK_005"
+      name: "Hunting Dog"
+      base_price_copper: 60
+      weight_kg: null
+      availability: "uncommon"
+      description: "Trained hound, lean and keen-nosed. Tracks game, warns of approach, and bites when told."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.2
+      produced_by: ["Vargheim", "Thornwall", "Raven's Perch"]
+      notes: "Vargheim breeds the best. Wolf-warden dogs are not for sale — ask anyway and you insult them."
+
+    - id: "TG_LSK_006"
+      name: "Cow"
+      base_price_copper: 80
+      weight_kg: null
+      availability: "uncommon"
+      description: "Milking cow, bony and patient. Milk, butter, cheese, and eventually meat. A family's wealth on four legs."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.9
+        harvest: 0.9
+        long_dark: 1.2
+      wartime_modifier: 1.6
+      produced_by: ["Thornwall", "Feldwick", "Ashen Reach"]
+      notes: "Raiding a settlement's cattle is an act of war. Even Svarthird bands think twice."
+
+  # =================================================================
+  # SERVICES AND LABOR
+  # =================================================================
+  services_and_labor:
+    - id: "TG_SRV_001"
+      name: "Thrall (Unskilled Labourer, 1 Week)"
+      base_price_copper: 15
+      weight_kg: null
+      availability: "common"
+      description: "One week of a thrall's labour — digging, carrying, camp work. No questions asked about their past."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.2
+        long_dark: 0.9
+      wartime_modifier: 0.7
+      produced_by: ["Deepholm", "Grimholt", "Thornwall"]
+      notes: "Buying a thrall outright costs 80-150 copper depending on health and skills. Renting is cheaper."
+
+    - id: "TG_SRV_002"
+      name: "Passage on Fishing Boat"
+      base_price_copper: 8
+      weight_kg: null
+      availability: "common"
+      description: "One-way coastal passage, shared deck with the catch. Faster than walking. Wetter, too."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 0.8
+        harvest: 1.0
+        long_dark: 1.5
+      wartime_modifier: 1.5
+      produced_by:
+        ["Kolvik", "Frostfjord Hollow", "Skaldhaven", "Stonebay Hamlet"]
+      notes: "Winter passages are rare and dangerous. Captains charge double or refuse outright."
+
+    - id: "TG_SRV_003"
+      name: "Ferry Crossing (Per Man)"
+      base_price_copper: 2
+      weight_kg: null
+      availability: "common"
+      description: "One man and his gear across the river. Horses cost double. Wagons, triple — if the ferry holds."
+      seasonal_modifier:
+        thaw: 1.2
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.5
+      wartime_modifier: 1.3
+      produced_by: ["Bleakwater Landing"]
+      notes: "Ferryman Olaf is the sole operator. He is neutral to all factions and intends to stay that way."
+
+    - id: "TG_SRV_004"
+      name: "Smithy Repair (Weapon)"
+      base_price_copper: 10
+      weight_kg: null
+      availability: "common"
+      description: "Straighten a bent blade, reset a loose axe-head, repair chain links. One weapon, standard job."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.1
+      wartime_modifier: 1.4
+      produced_by:
+        [
+          "Deepholm",
+          "Grimholt",
+          "Ashen Reach",
+          "Thornwall",
+          "Vargheim",
+          "Skaldhaven",
+          "Raven's Perch",
+        ]
+      notes: "Complex repairs (reforging, mail patching) cost 20-50 copper and require a skilled smith."
+
+    - id: "TG_SRV_005"
+      name: "Healer Visit (Wound Treatment)"
+      base_price_copper: 12
+      weight_kg: null
+      availability: "common"
+      description: "Cleaning, stitching, and poultice for a wound. No guarantees against fever — that is between you and the gods."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.2
+      wartime_modifier: 1.8
+      produced_by:
+        [
+          "Deepholm",
+          "Ashen Reach",
+          "Thornwall",
+          "Vargheim",
+          "Skaldhaven",
+          "Ashmark",
+          "Frostfjord Hollow",
+        ]
+      notes: "Skilled healers (Ashmark's lodge, Deepholm's staff) charge 20+ for serious wounds. Bone-setting extra."
+
+    - id: "TG_SRV_006"
+      name: "Rune Consultation"
+      base_price_copper: 30
+      weight_kg: null
+      availability: "uncommon"
+      description: "A rune-caster reads the staves for you. Answers come in riddles. Useful if you know how to listen."
+      seasonal_modifier:
+        thaw: 1.0
+        long_sun: 1.0
+        harvest: 1.0
+        long_dark: 1.3
+      wartime_modifier: 1.5
+      produced_by: ["Skaldhaven", "Icebreak", "Deepholm"]
+      notes: >-
+        Audun at Skaldhaven is the most trusted reader. Ragnhild at Icebreak
+        sees deeper but her price is blood, not copper. Deepholm's galdr-speaker
+        takes only official commissions.

@@ -1,0 +1,43 @@
+{
+  "source_root": "C:\\Users\\theap\\AppData\\Local\\Temp\\pytest-of-theap\\pytest-23\\test_copy_core_chapters_remove0\\source",
+  "raw_dir": "C:\\Users\\theap\\AppData\\Local\\Temp\\pytest-of-theap\\pytest-23\\test_copy_core_chapters_remove0\\raw",
+  "dry_run": false,
+  "copied_count": 4,
+  "core_count": 4,
+  "core": [
+    {
+      "key": "01",
+      "filename": "01_SETTING.md",
+      "path": "C:\\Users\\theap\\AppData\\Local\\Temp\\pytest-of-theap\\pytest-23\\test_copy_core_chapters_remove0\\source\\01_SETTING.md",
+      "root_key": "01"
+    },
+    {
+      "key": "08",
+      "filename": "08_MAGIC.md",
+      "path": "C:\\Users\\theap\\AppData\\Local\\Temp\\pytest-of-theap\\pytest-23\\test_copy_core_chapters_remove0\\source\\08_MAGIC.md",
+      "root_key": "08"
+    },
+    {
+      "key": "11",
+      "filename": "11_SETTLEMENTS.md",
+      "path": "C:\\Users\\theap\\AppData\\Local\\Temp\\pytest-of-theap\\pytest-23\\test_copy_core_chapters_remove0\\source\\11_SETTLEMENTS.md",
+      "root_key": "11"
+    },
+    {
+      "key": "23",
+      "filename": "23_ARCS.md",
+      "path": "C:\\Users\\theap\\AppData\\Local\\Temp\\pytest-of-theap\\pytest-23\\test_copy_core_chapters_remove0\\source\\23_ARCS.md",
+      "root_key": "23"
+    }
+  ],
+  "supplements": [],
+  "ignored_by_rule": [
+    {
+      "key": "08B",
+      "filename": "08B_MAGIC_TRADITIONS.md",
+      "path": "C:\\Users\\theap\\AppData\\Local\\Temp\\pytest-of-theap\\pytest-23\\test_copy_core_chapters_remove0\\source\\08B_MAGIC_TRADITIONS.md",
+      "root_key": "08",
+      "reason": "ignored_by_rule"
+    }
+  ]
+}

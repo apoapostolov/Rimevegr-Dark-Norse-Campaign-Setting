@@ -1,0 +1,1186 @@
+# Iron Ledger — 10-Volume Novel Structure
+# Master structural document for "Iron Ledger: Mercenaries of the Rimevegr"
+# 4-year timeline: Y312–Y315. 360-day years.
+# Sub-seasons: thaw (1-30), long_sun (31-60), harvest (61-90), long_dark (91-360).
+# Supernatural stages: whispers → stirring → eruption → crisis → resolution.
+# Cross-references: y312_events.yaml, y313_events.yaml, y314_y315_events.yaml,
+#   supernatural_chain_events.yaml, personal_band_events.yaml, named_events.yaml,
+#   contracts_available.yaml, band_state.yaml, political_state.yaml.
+
+volume_arcs:
+  metadata:
+    total_volumes: 10
+    total_chapters_estimate: "120-150"
+    timeline: "Y312 thaw through Y315 long_dark"
+    protagonist: "Lump"
+    band: "Voss's Black Axes"
+    band_starting_size: 14
+    political_factions:
+      - name: "The Iron Grip"
+        leader: "Ordovast"
+        type: military
+      - name: "The Fjord Compact"
+        leader: "Sigrun"
+        type: economic
+      - name: "The Whispering Circle"
+        leader: "Pale Widow"
+        type: covert
+    supernatural_arc: "Barrow awakening → Veil thinning → Galdr-Forge → sealing"
+    character_arc_threads:
+      - "Lump: thrall → common → named man → decides the band's fate"
+      - "Voss: aging captain holding the band together as stakes escalate"
+      - "Kell: debt spiral → attempted flight → redemption at the gate"
+      - "Petra: searching for kidnapped sister → sister arrives → Widow's price"
+      - "Thorne: outlaw past catching up → blood-debt → confrontation"
+      - "Gest: quiet bookkeeper → conscience of the band → keeps the record"
+
+  volumes:
+    # ==================================================================
+    # VOLUME 1 — Y312 THAW + LONG SUN (Days 1–60)
+    # Act I of the moderate year. Introduction of the world and band.
+    # ==================================================================
+    - volume: 1
+      title: "The Whispering Barrow"
+      subtitle: "In which a thrall joins a band of killers"
+      time_span:
+        year: 312
+        season_start: thaw
+        season_end: long_sun
+        days: "1-60"
+      chapters_estimate: 12
+      central_conflict: >
+        Lump must survive his first contract while the band decides
+        if he is worth keeping. The Whispering Barrow tests everyone.
+      pov_characters: ["Lump"]
+      secondary_pov: ["Gest"]
+      contract_arcs:
+        - contract_id: "contract_001"
+          name: "Clear the Whispering Barrow"
+          role: primary
+          resolution: success_costly
+        - contract_id: "contract_003"
+          name: "Escort the Widow's Emissary to Grimholt"
+          role: background
+          resolution: declined
+      political_arc: >
+        The three unions circle each other. Ordovast demands tribute from
+        Iron Grip settlements. Sigrun opens trade roads. The Widow places
+        agents in Kolvik. Nobody is fighting yet. Everyone is positioning.
+      supernatural_stage: "whispers"
+      band_state_open:
+        morale: 4
+        reputation: 3
+        treasury_silver: 47
+        roster_count: 14
+        status: "Hungry, underpaid, taking whatever work comes"
+      band_state_close:
+        morale: 5
+        reputation: 4
+        treasury_silver: 85
+        roster_count: 13
+        status: "Bloodied but proven. One common dead in the barrow."
+      character_arcs:
+        lump: >
+          Survives first real fight. Earns grudging respect by carrying
+          a wounded man out of the barrow on his back. Still flinches
+          at sudden sounds. Learns to sharpen a blade properly.
+        voss: >
+          Tests the new thrall. Sees potential but will not admit it.
+          Old sword arm stiffens in cold weather — noticed only by Gest.
+        kell: >
+          Wounded in the barrow. Creditor arrives at camp asking for him
+          by his real name. Debt weighs heavier. Loses at dice.
+        petra: >
+          Receives a letter hinting at her sister's location — somewhere
+          south, in Whispering Circle territory. Keeps it to herself.
+        thorne: >
+          Quiet and competent. Burn scars visible but unexplained.
+          During a thunderstorm, the old scars weep dark fluid.
+        gest: >
+          Keeps the ledger. Notes Voss's arm stiffness. Watches Kell's
+          spending. Begins recording Lump's progress without being asked.
+      key_events:
+        - "EVT_312_S01_001" # Thaw Floods at Frostfjord
+        - "EVT_312_S02_002" # Ordovast Summons Tribute
+        - "EVT_312_S03_003" # Trade Road Opens
+        - "EVT_312_S04_004" # Widow Places Agent in Kolvik
+        - "EVT_312_S05_005" # Black Axes Take Spring Contract
+        - "EVT_312_S06_006" # Barrow rumours surface
+        - "EVT_312_S07_007" # Allthing announced
+        - "EVT_312_S10_010" # Compact trade disputes
+        - "EVT_312_S13_013" # Spring tensions rise
+        - "EVT_312_S16_016" # Midsummer preparations
+        - "EVT_312_PER_001" # Voss Refuses Easy Contract
+        - "EVT_312_PER_003" # Kell's Creditor Arrives
+        - "EVT_312_SUP_001" # Dead Cattle at Kolvik Barrow
+        - "EVT_312_SUP_002" # Dalla's First Unwanted Vision
+        - "EVT_312_SUP_003" # Thorne's Scars Weep
+      named_weather_events:
+        - "WE_001" # The Frostfjord Flood
+        - "WE_002" # The Moor Breath
+      themes:
+        - "Survival"
+        - "First blood"
+        - "Trust is earned, not given"
+        - "The dead do not rest easy"
+      tone: >
+        Grim novice. Everything is cold, unfamiliar, and dangerous.
+        Lump sees the world through ignorance that is slowly scraped
+        away. The prose is tight, physical, close to the ground.
+      hooks_for_next: >
+        Kell's debt deepening. Petra's letter. The Allthing approaches
+        and every faction will be there. Dalla's vision — what barrow
+        did she describe? Voss's arm.
+
+    # ==================================================================
+    # VOLUME 2 — Y312 HARVEST (Days 61–90)
+    # Act II of the moderate year. Politics and the gathering.
+    # ==================================================================
+    - volume: 2
+      title: "The Allthing"
+      subtitle: "In which the powerful negotiate and the powerless watch"
+      time_span:
+        year: 312
+        season_start: harvest
+        season_end: harvest
+        days: "61-90"
+      chapters_estimate: 13
+      central_conflict: >
+        The annual Allthing forces all three unions into proximity.
+        Ordovast pushes for dominance. Sigrun negotiates. The Widow
+        watches. The Black Axes pick up two contracts and a rival.
+      pov_characters: ["Lump", "Gest"]
+      secondary_pov: ["Petra"]
+      contract_arcs:
+        - contract_id: "contract_006"
+          name: "Reinforce Grimholt Garrison"
+          role: primary
+          resolution: success_clean
+        - contract_id: "contract_009"
+          name: "Allthing security detail"
+          role: secondary
+          resolution: success_messy
+      political_arc: >
+        Ordovast demands all settlements pay increased tribute. Sigrun
+        brokers a trade agreement that undercuts Ordovast's supply lines
+        without confrontation. The Widow's agents are everywhere at the
+        Allthing — watching, whispering, recording debts. The Bone Pack
+        mercenary band angles for the same contracts.
+      supernatural_stage: "whispers"
+      band_state_open:
+        morale: 5
+        reputation: 4
+        treasury_silver: 85
+        roster_count: 13
+        status: "Bloodied but proven. Looking for summer work."
+      band_state_close:
+        morale: 5
+        reputation: 5
+        treasury_silver: 120
+        roster_count: 13
+        status: "Well-paid and visible. The Bone Pack remembers."
+      character_arcs:
+        lump: >
+          Sees politics for the first time. Does not understand half of
+          what he witnesses. Gest explains some of it. Lump watches
+          Ordovast speak and recognises the voice of a man used to
+          obedience. Begins forming his own judgements.
+        voss: >
+          Navigates the Allthing like a veteran. Turns down Ordovast's
+          offer to fold the Axes into the Iron Grip garrison. Knows
+          this will have consequences. Drinks less than usual.
+        kell: >
+          Loses big at dice again during Allthing celebrations. Borrows
+          from Lump, who does not understand lending. The creditor's
+          agent is seen at the gathering. Kell starts carrying his
+          pack ready to run.
+        petra: >
+          Follows a lead on her sister. Finds the woman who wrote the
+          letter — a Whispering Circle informant. The sister is alive
+          but held as surety for a debt. Petra does not tell the band.
+        thorne: >
+          Recognised at the Allthing by a man from his past. The man
+          says nothing but stares. Thorne leaves the feast early and
+          sharpens his axe until dawn. The blood-debt is not forgotten.
+        gest: >
+          Records every transaction at the Allthing. Notices the Widow's
+          agents mapping trade routes. Reports to Voss that the Compact
+          is solvent and the Grip is not. The numbers tell the story
+          before the swords do.
+      key_events:
+        - "EVT_312_U01_021" # Summer begins
+        - "EVT_312_U03_023" # Bone Pack rivalry surfaces
+        - "EVT_312_U05_025" # Market disputes
+        - "EVT_312_U08_028" # Iron Grip pressure
+        - "EVT_312_U10_030" # Allthing opens
+        - "EVT_312_U13_033" # Compact negotiations
+        - "EVT_312_U16_036" # Ordovast's speech
+        - "EVT_312_U19_039" # Widow's agents spotted
+        - "EVT_312_PER_002" # Voss and the Old Scar
+        - "EVT_312_PER_004" # Kell's Dice Game Goes Wrong
+      named_weather_events:
+        - "WE_003" # Summer weather event
+        - "WE_004" # Harvest heat
+      themes:
+        - "Power spoken and unspoken"
+        - "The ledger sees what the eye misses"
+        - "Rivals are made at feasts, not battlefields"
+      tone: >
+        Political heat under harvest sun. Conversations with knives
+        beneath the words. Lump is an outsider watching insiders, and
+        the reader learns the world through his confusion.
+      hooks_for_next: >
+        The Bone Pack wants what the Axes have. Ordovast will not
+        forget Voss's refusal. Petra knows where her sister is but
+        cannot reach her. Winter is coming and the treasury must last.
+        The barrow near Feldwick. Thorne's unfinished business.
+
+    # ==================================================================
+    # VOLUME 3 — Y312 LONG DARK (Days 91–360)
+    # Act III of the moderate year. Winter survival and escalation.
+    # ==================================================================
+    - volume: 3
+      title: "The Long Dark"
+      subtitle: "In which winter tests what summer built"
+      time_span:
+        year: 312
+        season_start: long_dark
+        season_end: long_dark
+        days: "91-360"
+      chapters_estimate: 15
+      central_conflict: >
+        The longest season. The band must survive winter, fend off
+        the Bone Pack, and decide whether to investigate the barrow
+        that opened near Feldwick. The Widow makes her first overt
+        move. Something stirs underground.
+      pov_characters: ["Lump", "Gest"]
+      secondary_pov: ["Kell", "Petra"]
+      contract_arcs:
+        - contract_id: "contract_005"
+          name: "Garrison Ashen Reach Outpost"
+          role: primary
+          resolution: success_costly
+        - contract_id: "contract_010"
+          name: "Feldwick barrow investigation"
+          role: secondary
+          resolution: abandoned
+      political_arc: >
+        Ordovast consolidates. Demands rise. Sigrun fortifies Deepholm
+        against a siege that has not happened yet — she sees it coming.
+        The Widow cements control over Kolvik and positions agents near
+        Grimholt. By midwinter, war is not certain but it is probable.
+        The Axes are courted by all three factions.
+      supernatural_stage: "stirring"
+      band_state_open:
+        morale: 5
+        reputation: 5
+        treasury_silver: 120
+        roster_count: 13
+        status: "Well-paid and visible. Winter garrison secured."
+      band_state_close:
+        morale: 3
+        reputation: 5
+        treasury_silver: 35
+        roster_count: 12
+        status: "Winter-worn. One killed by Bone Pack. Treasury drained by the Long Dark."
+      character_arcs:
+        lump: >
+          Promoted from thrall to common by Voss after the Feldwick
+          barrow incident — not for bravery but for keeping his head
+          when others did not. Learns to read a few runes from Gest.
+          Begins to understand what the band is and what it costs.
+        voss: >
+          Kills a Bone Pack man in a supply dispute. Clean fight, no
+          witnesses except his own. The arm is worse. He adjusts his
+          grip and says nothing. Makes the hard call to abandon the
+          Feldwick barrow contract when two men are injured.
+        kell: >
+          Attempts to flee the band during a blizzard. Petra tracks
+          him and brings him back. Voss does not punish him — says
+          the cold already did. Kell's debt is now owed to the band
+          itself. He stays, but trust is broken.
+        petra: >
+          Tracks Kell through the storm. Proves herself as the band's
+          best tracker. Receives word that her sister has been moved
+          deeper into Whispering Circle territory. The Widow offers
+          to help — for a price Petra cannot yet pay.
+        thorne: >
+          The man from the Allthing sends a message: pay the blood-debt
+          or face a holmgang in spring. Thorne does not tell the band.
+          His scars weep again during the midwinter dark. Something
+          in the barrows knows his name.
+        gest: >
+          Keeps the band alive with rationing. When the treasury hits
+          bottom, he trades his own silver ring for grain. Nobody asks
+          how the food appeared. The ledger records it as a loan to
+          the band from an unnamed creditor.
+      key_events:
+        - "EVT_312_A01_041" # Autumn begins
+        - "EVT_312_A05_045" # Bone Pack ambush
+        - "EVT_312_A10_050" # Barrow opens near Feldwick
+        - "EVT_312_A14_054" # Widow's emissary
+        - "EVT_312_A18_058" # Supply crisis
+        - "EVT_312_A22_062" # Late autumn storms
+        - "EVT_312_W01_064" # Deep winter begins
+        - "EVT_312_W05_068" # Blizzard — Kell flees
+        - "EVT_312_W10_073" # Midwinter gathering
+        - "EVT_312_W14_077" # Widow makes her move
+        - "EVT_312_W17_080" # Widow cements Kolvik
+        - "EVT_312_W20_083" # Ordovast's winter gambit
+        - "EVT_312_W23_086" # End of year tensions
+        - "EVT_312_PER_003" # Kell creditor follow-up
+        - "EVT_312_SUP_003" # Thorne's scars (recurrence)
+      named_weather_events:
+        - "WE_005" # Autumn gale
+        - "WE_006" # First deep frost
+        - "WE_007" # Midwinter blizzard
+        - "WE_008" # The Bone Wind (late winter)
+      themes:
+        - "Winter strips everything to the bone"
+        - "Loyalty tested by cold and hunger"
+        - "What wakes beneath the frost"
+        - "Debts — silver and blood"
+      tone: >
+        Grinding attrition. The prose slows with the season. Days blur
+        into darkness. Survival is the plot. When violence comes it is
+        sudden, ugly, and over fast. The barrow scenes are the first
+        real horror — cold, wrong, and close.
+      hooks_for_next: >
+        Ordovast will march in spring. The Bone Pack wants blood. The
+        Feldwick barrow is not sealed. Thorne's holmgang deadline.
+        Petra's sister and the Widow's price. Kell owes the band.
+        The dead are stirring and nobody wants to say it aloud.
+
+    # ==================================================================
+    # VOLUME 4 — Y313 THAW + LONG SUN (Days 1–60)
+    # Act I of the war year. Mobilization and first blood.
+    # ==================================================================
+    - volume: 4
+      title: "The March"
+      subtitle: "In which armies gather and the living count the dead"
+      time_span:
+        year: 313
+        season_start: thaw
+        season_end: long_sun
+        days: "1-60"
+      chapters_estimate: 14
+      central_conflict: >
+        Thaw reveals the siege dead from Ordovast's winter probing.
+        Ordovast regroups and marches south toward Deepholm. The Black
+        Axes must choose a side or be ground between them. Lump faces
+        his first holmgang — standing in for Thorne.
+      pov_characters: ["Lump", "Gest"]
+      secondary_pov: ["Thorne", "Petra"]
+      contract_arcs:
+        - contract_id: "contract_012"
+          name: "Scout Ordovast's column for the Compact"
+          role: primary
+          resolution: success_messy
+        - contract_id: "contract_013"
+          name: "Escort refugees south of Deepholm"
+          role: secondary
+          resolution: success_clean
+      political_arc: >
+        Ordovast executes two officers and marches with everything he has.
+        Sigrun fortifies the southern pass. The Widow plays both sides —
+        selling intelligence to whoever pays more. The Allthing's peace
+        is formally broken. Smaller settlements choose sides or burn.
+      supernatural_stage: "stirring"
+      band_state_open:
+        morale: 3
+        reputation: 5
+        treasury_silver: 35
+        roster_count: 12
+        status: "Winter-worn but intact. War coming."
+      band_state_close:
+        morale: 4
+        reputation: 6
+        treasury_silver: 70
+        roster_count: 12
+        status: "Committed to the Compact. War pay is good. War is not."
+      character_arcs:
+        lump: >
+          Stands in holmgang for Thorne against the blood-debt claimant.
+          Wins ugly — breaks the man's arm, takes a cut across the ribs.
+          The band sees him differently after. Voss calls him by name
+          for the first time, not "thrall" or "boy." Named man.
+        voss: >
+          Commits the band to Sigrun's Compact after Ordovast's
+          messenger threatens them. It is the right call but Voss
+          knows it means battle by harvest. Drills the band harder
+          than they have ever been drilled.
+        kell: >
+          Works double shifts without complaint. Pays back some of
+          what he owes. The flight in winter shames him. He tells Gest
+          he will not run again. Gest writes it down but does not
+          comment.
+        petra: >
+          Scouts Ordovast's column. Nearly captured. Brings back
+          intelligence that saves a Compact outpost. The Widow sends
+          word: "Your sister is well. My price has not changed."
+        thorne: >
+          The holmgang debt is settled — Lump fought for him. Thorne
+          does not know how to carry that weight. Opens up to Lump,
+          once, by the fire. The burn scars came from a house he was
+          in when it was torched. He was not the target. His family
+          was. He has not finished paying for living.
+        gest: >
+          Maps the Compact's supply lines. Predicts Ordovast's march
+          route from grain purchases. Voss promotes him from bookkeeper
+          to something closer to advisor, though neither uses the word.
+      key_events:
+        - "EVT_313_S01_001" # Thaw Reveals Siege Dead
+        - "EVT_313_S02_002" # Ordovast Regroups at Grimholt
+        - "EVT_313_S03_003" # Compact Fortifies Southern Pass
+        - "EVT_313_S04_004" # Widow Cements Hold on Kolvik
+        - "EVT_313_S05_005" # Voss Counts Heads
+        - "EVT_313_S08_008" # Ordovast's riders spotted
+        - "EVT_313_S12_012" # Column marches
+        - "EVT_313_S16_016" # Refugees flee south
+        - "EVT_313_S20_020" # Compact scouts clash
+        - "EVT_313_S24_024" # Advance forces meet
+        - "EVT_313_PER_001" # Thorne's holmgang
+      named_weather_events:
+        - "WE_009" # Spring thaw storm
+        - "WE_010" # Fog on the march road
+      themes:
+        - "War is logistics before it is blood"
+        - "Choosing a side is choosing who dies"
+        - "Debts of honour paid in flesh"
+        - "The thrall becomes a man"
+      tone: >
+        Tension building. The first half is preparation — counting
+        swords, reading maps, watching smoke on the horizon. The
+        second half accelerates. The holmgang is the emotional
+        climax. By the end, everyone knows what is coming.
+      hooks_for_next: >
+        Ordovast's army at Deepholm's gates. The Compact outnumbered.
+        The barrows are more active — patrols report lights in sealed
+        mounds. Petra's sister is leverage the Widow will use.
+
+    # ==================================================================
+    # VOLUME 5 — Y313 HARVEST (Days 61–90)
+    # Act II of the war year. The siege and the battle.
+    # ==================================================================
+    - volume: 5
+      title: "Deepholm Gate"
+      subtitle: "In which the wall holds and the cost is counted"
+      time_span:
+        year: 313
+        season_start: harvest
+        season_end: harvest
+        days: "61-90"
+      chapters_estimate: 15
+      central_conflict: >
+        Ordovast besieges Deepholm. The Black Axes hold a section of
+        wall. The Battle of Deepholm Gate is the largest military
+        engagement in a generation. Kell saves Gest's life during
+        the fighting. The barrow army is sighted for the first time
+        — by both sides — and nobody knows whose dead they are.
+      pov_characters: ["Lump", "Gest", "Kell"]
+      secondary_pov: ["Voss"]
+      contract_arcs:
+        - contract_id: "contract_015"
+          name: "Hold Deepholm's western wall"
+          role: primary
+          resolution: success_costly
+      political_arc: >
+        The siege splits the region. Smaller settlements fall or
+        surrender. Ordovast offers terms Sigrun will not accept.
+        The Widow plays negotiator while her agents sack a supply
+        depot behind Ordovast's lines. The battle is a draw — both
+        sides bleed, neither breaks. The barrow sighting stops
+        fighting for one night. Both armies stare at the dark.
+      supernatural_stage: "eruption"
+      band_state_open:
+        morale: 4
+        reputation: 6
+        treasury_silver: 70
+        roster_count: 12
+        status: "At Deepholm. Committed. No way out except through."
+      band_state_close:
+        morale: 3
+        reputation: 7
+        treasury_silver: 30
+        roster_count: 10
+        status: "Two dead on the wall. Famous now. Famous is not safe."
+      character_arcs:
+        lump: >
+          Fights on the wall for three days. Kills his first man
+          face-to-face. Does not feel what he expected. Carries Gest
+          after a shield-wall collapse. The band starts calling him
+          "Lump" as a name, not an insult. He does not correct them.
+        voss: >
+          Commands the western wall section. His arm fails him during
+          a sally — drops his sword, picks it up with his off hand,
+          finishes the fight. Only Lump sees. They do not discuss it.
+          After the battle, Voss sits alone for hours.
+        kell: >
+          Saves Gest's life when a section of wall gives way. Drags
+          him clear with a hook through a dead man's belt. It is the
+          bravest thing Kell has ever done and he does not think about
+          it until later. His debt to the band is paid in full. Gest
+          tears the page from the ledger.
+        petra: >
+          Runs messages through enemy lines. Twice. The second time
+          she takes an arrow through the calf. Keeps running. Gets
+          word to the Compact's southern garrison in time.
+        thorne: >
+          Fights with cold efficiency. When the barrow-dead are
+          sighted, his scars split open and bleed. He sees something
+          on the field that the others cannot — shapes in the dark
+          between the fires. He reports it to Voss, who believes him.
+        gest: >
+          Nearly killed in the wall collapse. Kell saves him. After
+          the battle, Gest records the engagement in the ledger with
+          shaking hands. The casualty count takes longer than the
+          battle itself. He tears out Kell's debt page. Writes one
+          word: "Settled."
+      key_events:
+        - "EVT_313_U01_026" # Ordovast's army arrives at Deepholm
+        - "EVT_313_U03_028" # Siege begins
+        - "EVT_313_U05_030" # First assault on the walls
+        - "EVT_313_U07_032" # Western wall breach attempt
+        - "EVT_313_U09_034" # Kell saves Gest
+        - "EVT_313_U12_037" # Barrow army sighted
+        - "EVT_313_U15_040" # Night of silence
+        - "EVT_313_U18_043" # Second assault
+        - "EVT_313_U22_047" # Ordovast's retreat
+        - "EVT_313_U25_050" # Aftermath and counting dead
+        - "EVT_313_PER_009" # Kell saves Gest (personal chain)
+      named_weather_events:
+        - "WE_011" # Harvest storms over Deepholm
+        - "WE_012" # Battle fog
+      themes:
+        - "The wall holds when men choose to stand"
+        - "Debt paid in blood is settled"
+        - "War makes you famous and war takes everything"
+        - "Something older than the war is waking"
+      tone: >
+        Siege intensity. Close, loud, relentless. The prose contracts
+        to what Lump can see from his section of wall. Sleep is measured
+        in minutes. Food runs out. The silence after the barrow sighting
+        is the most terrifying thing in the book so far.
+      hooks_for_next: >
+        Two dead. Winter coming with an army still in the field. The
+        barrow army was real — every soldier on both sides saw it.
+        What are they? Whose dead? The Widow's agents vanished during
+        the battle. Thorne's visions are getting worse.
+
+    # ==================================================================
+    # VOLUME 6 — Y313 LONG DARK, First Half (Days 91–225)
+    # Act III of the war year. War winter and the dead rise.
+    # ==================================================================
+    - volume: 6
+      title: "The Bone Field"
+      subtitle: "In which the living and the dead share the dark"
+      time_span:
+        year: 313
+        season_start: long_dark
+        season_end: long_dark
+        days: "91-225"
+      chapters_estimate: 14
+      central_conflict: >
+        Winter traps both armies in position. Ordovast cannot advance,
+        Sigrun cannot pursue. The Black Axes are assigned to patrol
+        the borderland between the armies — where the barrow-dead
+        have been seen. The patrol work is the worst duty anyone
+        has ever had. Something is organizing the dead.
+      pov_characters: ["Lump", "Gest"]
+      secondary_pov: ["Thorne", "Kell"]
+      contract_arcs:
+        - contract_id: "contract_017"
+          name: "Winter patrol — Deepholm borderlands"
+          role: primary
+          resolution: ongoing
+        - contract_id: "contract_018"
+          name: "Investigate barrow activity near Ashmark"
+          role: secondary
+          resolution: failure_strategic_retreat
+      political_arc: >
+        The war pauses but does not stop. Ordovast fortifies Grimholt
+        and executes deserters. Sigrun rations Deepholm. The Widow
+        offers both sides intelligence on the barrow-dead — at cost.
+        She knows more than she should. The forced alliance against
+        the dead begins as whispered conversations, not treaties.
+      supernatural_stage: "eruption"
+      band_state_open:
+        morale: 3
+        reputation: 7
+        treasury_silver: 30
+        roster_count: 10
+        status: "Famous and depleted. Deepholm borderland patrol."
+      band_state_close:
+        morale: 2
+        reputation: 7
+        treasury_silver: 15
+        roster_count: 10
+        status: "Exhausted. Haunted. Every man has seen the dead walk."
+      character_arcs:
+        lump: >
+          Leads a patrol for the first time when Voss is laid up with
+          his arm. Makes a good call — retreats instead of engaging
+          a barrow-pack. The others follow without argument. Lump
+          is no longer the new man. He dreams of the barrow.
+        voss: >
+          The arm fails completely for a week. He commands from camp,
+          raging. When it returns he fights left-handed through a
+          skirmish and nobody mentions the switch. He tells Lump,
+          quietly: "When this arm goes, the band goes to whoever
+          holds it together. Start learning."
+        kell: >
+          Reformed by the battle, Kell becomes the band's most
+          reliable sentry. He does not sleep well — the debt is gone
+          but the guilt of nearly running stays. When a dead patrol
+          member walks back into camp, Kell is the one who puts
+          him down.
+        petra: >
+          The Widow contacts her directly. Her sister will be released
+          if Petra does one job — map the inner defences of Deepholm.
+          Petra refuses. The Widow says the offer does not expire.
+          Petra's leg wound festers and she nearly loses it. Healed
+          by the Widow's herbalist — another debt.
+        thorne: >
+          The visions worsen. Thorne can see the dead before they
+          appear — minutes, sometimes hours before. He does not know
+          why and it terrifies him. The burn scars are permanent
+          now, open and weeping dark fluid in any weather. Something
+          in the barrows is calling him.
+        gest: >
+          Tries to keep accounts in a war zone. Silver means nothing.
+          He begins tracking morale, injuries, and trust instead of
+          coin. The ledger becomes a different kind of record.
+      key_events:
+        - "EVT_313_A01_051" # Autumn sets in
+        - "EVT_313_A05_055" # First dead patrol sighting
+        - "EVT_313_A09_059" # Barrow activity near Ashmark
+        - "EVT_313_A13_063" # Dead man walks into camp
+        - "EVT_313_A17_067" # Widow offers intelligence
+        - "EVT_313_A21_071" # Winter deepens
+        - "EVT_313_A25_075" # Forced truce discussions
+        - "EVT_313_W01_076" # Deep winter begins
+        - "EVT_313_W05_080" # Voss's arm fails
+        - "EVT_313_W09_084" # Second barrow breach
+      named_weather_events:
+        - "WE_013" # Early winter whiteout
+        - "WE_014" # Corpse frost
+        - "WE_015" # Midwinter clear (eerie)
+      themes:
+        - "The enemy you cannot negotiate with"
+        - "Command is learned in the worst conditions"
+        - "The ledger records what words will not"
+        - "The dead outnumber the living"
+      tone: >
+        Horror creeping into war. The daylight scenes are military
+        grind — patrols, cold rations, arguments about wood. The
+        night scenes are wrong. Things move. The prose carries dread
+        in small details: a footprint facing the wrong way, breath
+        that does not fog, a sentry who does not blink.
+      hooks_for_next: >
+        Midwinter approaches. The dead are said to sing on the longest
+        night. Thorne's connection to the barrows is deepening. The
+        Widow knows something about the dead that she will not share
+        freely. Voss is failing. Lump is rising.
+
+    # ==================================================================
+    # VOLUME 7 — Y313 LONG DARK, Second Half (Days 226–360)
+    # Act IV of the war year. Midwinter and the Dead Sing.
+    # ==================================================================
+    - volume: 7
+      title: "The Dead Sing"
+      subtitle: "In which the longest night breaks what the siege did not"
+      time_span:
+        year: 313
+        season_start: long_dark
+        season_end: long_dark
+        days: "226-360"
+      chapters_estimate: 15
+      central_conflict: >
+        The Dead Sing at midwinter. Every barrow in the Rimevegr opens
+        at once. The sound carries for miles — a sorrow so deep it
+        drives men mad. Both armies lose soldiers to desertion and
+        suicide. The Widow reveals she has practitioners who can
+        contain the dead — for a seat at the postwar table. A forced
+        truce between Ordovast and Sigrun is brokered on the Widow's
+        terms.
+      pov_characters: ["Lump", "Gest", "Petra"]
+      secondary_pov: ["Voss", "Thorne"]
+      contract_arcs:
+        - contract_id: "contract_019"
+          name: "Defend Compact settlements during the Singing"
+          role: primary
+          resolution: success_pyrrhic
+      political_arc: >
+        The Dead Sing forces the hand of all three factions. Ordovast
+        and Sigrun sign a truce — the Widow's price is recognition
+        as a legitimate power. The Whispering Circle comes out of the
+        shadows. The war is paused, not ended. Every faction now faces
+        the same enemy from below.
+      supernatural_stage: "crisis"
+      band_state_open:
+        morale: 2
+        reputation: 7
+        treasury_silver: 15
+        roster_count: 10
+        status: "Exhausted. Haunted. Braced for midwinter."
+      band_state_close:
+        morale: 2
+        reputation: 8
+        treasury_silver: 20
+        roster_count: 9
+        status: "One lost to the Singing — walked into the dark and did not return. The band is legend. Legends die."
+      character_arcs:
+        lump: >
+          Hears the Dead Sing. Does not break. Ties himself to a post
+          and waits for dawn. Others are not so steady. When a common
+          man walks toward a barrow, Lump tackles him and holds him
+          down until the sound stops. Earns the respect that moves
+          beyond competence into trust. Voss tells him the band's
+          past — all of it — for the first time.
+        voss: >
+          The Singing affects him worst. He hears voices he recognises —
+          men he led to death years ago. Does not break, but does not
+          sleep for three days. When the truce is signed, Voss says
+          aloud what he has thought for a year: "This band needs a
+          younger captain." He does not mean it yet. But he means it.
+        kell: >
+          Steady through the Singing. The man who nearly ran now holds
+          others together. When the band loses a member to the Singing,
+          Kell is the one who goes out into the dark to find the body.
+          He does not find it. He does not stop looking until Voss
+          orders him back.
+        petra: >
+          The Widow's practitioners arrive during the Singing. One of
+          them is Petra's sister — Dalla — claimed as a practitioner,
+          not a hostage. Dalla is changed. She speaks to things that
+          are not there. She knows the barrows from the inside. Petra
+          does not know if her sister is saved or lost.
+        thorne: >
+          The Singing answers Thorne. He sings back. The band watches
+          in horror as Thorne stands at the edge of camp, eyes white,
+          mouth open, matching the dead note for note. When he stops,
+          he says: "They want the Forge." Nobody knows what that means.
+          Thorne does not remember saying it.
+        gest: >
+          Records the night of the Singing in the ledger. It is the
+          longest entry he has ever written. He writes what he heard,
+          what he saw, what he felt. The entry ends: "I do not know
+          how to account for this."
+      key_events:
+        - "EVT_313_W10_085" # Midwinter begins
+        - "EVT_313_W12_087" # Dead Sing at midwinter
+        - "EVT_313_W13_088" # Mass desertion on both sides
+        - "EVT_313_W14_089" # Widow's practitioners arrive
+        - "EVT_313_W15_090" # Dalla revealed
+        - "EVT_313_W16_091" # Forced truce negotiations
+        - "EVT_313_W17_092" # Truce signed
+        - "EVT_313_W20_095" # Compact-Grip reconnaissance
+        - "EVT_313_W23_098" # Late winter assessment
+        - "EVT_313_W25_100" # Year's end — surviving
+      named_weather_events:
+        - "WE_016" # Midwinter hush
+        - "WE_017" # The Singing Night sky (veil-thinning)
+        - "WE_018" # Late winter storms
+      themes:
+        - "What the sword cannot fight, the soul must endure"
+        - "Leadership is knowing when to let go"
+        - "The sister you find is not the sister you lost"
+        - "The dead have their own war"
+      tone: >
+        Horror at full volume. The Singing is the centrepiece — a
+        set-piece of supernatural dread that dwarfs the battle of
+        Deepholm. After the Singing, the tone shifts to exhausted
+        negotiation. Men who tried to kill each other sit around
+        fires and talk about what came out of the ground. The prose
+        is raw and unguarded. People say true things.
+      hooks_for_next: >
+        Dalla knows about the Galdr-Forge. Thorne is connected to
+        the barrows. The truce is fragile. Ordovast is humiliated
+        and Sigrun is frightened. The Widow has what she wanted —
+        power — but the dead do not answer to her either.
+        Spring will bring reconstruction and the question nobody
+        wants to ask: what is the Forge?
+
+    # ==================================================================
+    # VOLUME 8 — Y314 THAW through HARVEST (Days 1–90)
+    # Act I of reconstruction. Rebuilding and the first breach.
+    # ==================================================================
+    - volume: 8
+      title: "The Fractured Grip"
+      subtitle: "In which victory proves hollow and the ground opens"
+      time_span:
+        year: 314
+        season_start: thaw
+        season_end: harvest
+        days: "1-90"
+      chapters_estimate: 14
+      central_conflict: >
+        Ordovast claims victory. Nobody believes him. The Iron Grip
+        fractures as vassal settlements refuse tribute. Reconstruction
+        begins under the forced truce. Dalla leads an expedition into
+        the barrows — the first breach. What she finds changes everything.
+        The Galdr-Forge is real, and someone built it to command the dead.
+      pov_characters: ["Lump", "Gest", "Dalla"]
+      secondary_pov: ["Petra", "Voss"]
+      contract_arcs:
+        - contract_id: "contract_021"
+          name: "Reconstruction guard — Frostfjord"
+          role: primary
+          resolution: success_clean
+        - contract_id: "contract_022"
+          name: "Escort Dalla's barrow expedition"
+          role: secondary
+          resolution: success_costly
+      political_arc: >
+        The Iron Grip shatters. Several settlements defect to the
+        Compact or go independent. Ordovast throws a feast nobody
+        can afford. Sigrun rebuilds — inviting former enemies into
+        the Compact on reduced terms. The Widow consolidates power
+        quietly, installing her people in every settlement that
+        will take a healer or a teacher.
+      supernatural_stage: "crisis"
+      band_state_open:
+        morale: 2
+        reputation: 8
+        treasury_silver: 20
+        roster_count: 9
+        status: "Legendary and tired. The band is too small for its reputation."
+      band_state_close:
+        morale: 4
+        reputation: 8
+        treasury_silver: 65
+        roster_count: 10
+        status: "One recruit joins — a young woman from Ashmark. Kell settles his last debt. The barrow expedition costs in sanity, not bodies."
+      character_arcs:
+        lump: >
+          Commands a reconstruction detail. Learns to build, not just
+          destroy. People in Frostfjord start coming to him, not Voss,
+          with complaints. He does not realise what this means. Goes
+          into the barrow with Dalla's expedition and comes out
+          changed — he has seen the Forge. He understands now.
+        voss: >
+          Lets Lump lead. Watches from a step back. The arm is managed
+          but not healed. Voss begins preparing the band for what comes
+          after him. He recruits one — a young axe-woman from Ashmark
+          who reminds him of someone he will not name.
+        kell: >
+          Settles the last coin of his original debt. Gest counts it
+          twice and nods. Kell is square for the first time in two
+          years. He celebrates by buying the band a round and then
+          sleeping twelve hours straight. The man who emerges is
+          someone the band has not met before — steady, clear-eyed,
+          and dangerously competent.
+        petra: >
+          Lives with the knowledge that her sister is now a
+          practitioner of the Widow's circle. Dalla functions, but
+          she is different — she speaks to the air, pauses mid-sentence
+          to listen to nothing. Petra stays close. The debt to the
+          Widow hangs over everything.
+        thorne: >
+          The barrow expedition reveals that his scars are marks of
+          a galdr — a binding placed on him during the house fire.
+          He was not just scarred; he was claimed. The barrow
+          recognises him. Doors open that should not. Thorne now
+          knows what he is: a key.
+        gest: >
+          Tears out Kell's debt page. Records the barrow expedition
+          in clinical detail. Admits in the margin that he is
+          frightened. The ledger now contains military records, trade
+          accounts, barrow maps, and something that reads like prayer.
+      key_events:
+        - "EVT_314_S01_001" # Dead Count at Frostfjord
+        - "EVT_314_S02_002" # Ordovast Claims War Victory
+        - "EVT_314_S03_003" # Kell Settles the Last Coin
+        - "EVT_314_S05_005" # Sigrun Rebuilds the Compact
+        - "EVT_314_S08_008" # Iron Grip vassal defections
+        - "EVT_314_S12_012" # First barrow breach — Dalla
+        - "EVT_314_S15_015" # Galdr-Forge discovery
+        - "EVT_314_U01_017" # Summer reconstruction
+        - "EVT_314_U05_021" # Thorne's galdr revealed
+        - "EVT_314_U09_025" # Widow's agents consolidate
+        - "EVT_314_U13_029" # New recruit arrives
+        - "EVT_314_A01_032" # Harvest begins
+      named_weather_events:
+        - "WE_019" # Thaw reveals mass graves
+        - "WE_020" # Spring clarity
+        - "WE_021" # Summer calm (false peace)
+      themes:
+        - "Building is harder than burning"
+        - "Victory without purpose is just exhaustion"
+        - "What the Forge is, the Forge was made to do"
+        - "The key does not choose the lock"
+      tone: >
+        Bruised reconstruction. The first half breathes — the war
+        is paused, people rebuild, small kindnesses return. Kell's
+        debt scene is warm. Then the barrow expedition lands like
+        a stone in still water. The second half is discovery horror:
+        ancient, purposeful, and wrong.
+      hooks_for_next: >
+        The Forge can be awakened — or sealed. Dalla walks toward it
+        in her sleep. Thorne is a key, but a key for what? The Widow
+        knows. Ordovast is losing control and desperate men are
+        dangerous. The second eruption is coming.
+
+    # ==================================================================
+    # VOLUME 9 — Y314 LONG DARK through Y315 LONG SUN
+    # Act II of endgame. The second eruption and the gathering.
+    # ==================================================================
+    - volume: 9
+      title: "The Second Eruption"
+      subtitle: "In which the dead march and the living must choose"
+      time_span:
+        year_start: 314
+        year_end: 315
+        season_start: long_dark
+        season_end: long_sun
+        days: "Y314 day 91 – Y315 day 60"
+      chapters_estimate: 15
+      central_conflict: >
+        Dalla walks to a barrow in her sleep — and opens it. The second
+        eruption is worse than the first. The dead march in columns,
+        organized, purposeful. The Widow reveals her true agenda: she
+        has been studying the Forge for years and believes she can
+        control it. A forced truce becomes a desperate alliance.
+        Ordovast abdicates. Sigrun takes military command. The march
+        to the Iron Barrow begins.
+      pov_characters: ["Lump", "Gest", "Petra"]
+      secondary_pov: ["Dalla", "Voss"]
+      contract_arcs:
+        - contract_id: "contract_025"
+          name: "Hold the line — second eruption defence"
+          role: primary
+          resolution: success_pyrrhic
+        - contract_id: "contract_026"
+          name: "March escort to the Iron Barrow"
+          role: secondary
+          resolution: ongoing
+      political_arc: >
+        Ordovast abdicates. His generals fracture — some join the
+        Compact, some flee, some march toward the Forge on their own.
+        Sigrun assumes wartime command of the alliance. The Widow
+        reveals she controls the Circle's dark practitioners and has
+        always known about the Forge. She believed she could claim it.
+        She was wrong. Now she wants to seal it — on her terms.
+      supernatural_stage: "crisis"
+      band_state_open:
+        morale: 4
+        reputation: 8
+        treasury_silver: 65
+        roster_count: 10
+        status: "Rested but braced. The barrow expedition changed everyone."
+      band_state_close:
+        morale: 3
+        reputation: 9
+        treasury_silver: 10
+        roster_count: 9
+        status: "One dead in the second eruption. Marching toward the Iron Barrow. Treasury irrelevant."
+      character_arcs:
+        lump: >
+          Takes field command when Voss collapses during the second
+          eruption. The band follows without hesitation. Lump does not
+          ask for command — he takes it because there is no one else.
+          When Voss recovers, Lump gives command back. Voss says:
+          "Keep it." Lump does not fully understand what has happened.
+        voss: >
+          Collapses. The arm, the winters, the years — all at once.
+          Recovers but knows he cannot lead in the final fight. Hands
+          the band to Lump in front of everyone. It is the hardest
+          thing he has ever done. He stays. He fights. But he follows.
+        kell: >
+          Steadiest man in the band. When the second eruption hits,
+          Kell organizes the defence of a village single-handedly
+          while the band fights elsewhere. He is the man he never
+          believed he could be. He volunteers for the Iron Barrow
+          march without being asked.
+        petra: >
+          Dalla opens the barrow in her sleep. Petra finds her
+          standing inside, speaking to the dead in a language that
+          has no living speakers. Petra carries her out. The Widow
+          says Dalla is the only one who can navigate the Forge.
+          Petra must choose: let her sister go into the dark, or
+          lose everyone.
+        thorne: >
+          The scars blaze during the eruption. Thorne walks through
+          a field of risen dead and they part for him. He is the key.
+          The barrows know him. He reports to Lump: "I can open the
+          path to the Forge. I can't promise I come back."
+        gest: >
+          Records Voss's abdication. Records Lump's ascent. Writes
+          the march roster with the knowledge that not everyone will
+          return. The ledger now serves as the band's will and
+          testament. Gest gives it to a trusted villager with
+          instructions: "If none of us come back, read this aloud
+          at the Allthing."
+      key_events:
+        - "EVT_314_A05_036" # Dalla walks to barrow
+        - "EVT_314_A08_039" # Second eruption begins
+        - "EVT_314_A11_042" # Dead march in columns
+        - "EVT_314_A14_045" # Widow reveals agenda
+        - "EVT_314_W01_047" # Winter alliance talks
+        - "EVT_314_W04_050" # Ordovast abdicates
+        - "EVT_314_W08_054" # Forced alliance formed
+        - "EVT_314_W12_058" # March preparations
+        - "EVT_315_S01_061" # Spring — march begins
+        - "EVT_315_S05_065" # Iron Barrow in sight
+        - "EVT_315_S09_069" # Advance party enters
+        - "EVT_315_S13_073" # Forge chamber located
+      named_weather_events:
+        - "WE_025" # Eruption storm
+        - "WE_026" # Winter veil-thinning
+        - "WE_027" # Blood sun over the march
+        - "WE_029" # Spring thaw at the Iron Barrow
+      themes:
+        - "Power you cannot hold must be destroyed"
+        - "Command is not given, it is taken by necessity"
+        - "The sister you save may save everyone"
+        - "Walking toward what you cannot survive"
+      tone: >
+        Accelerating catastrophe followed by grim resolve. The second
+        eruption is chaos — fast, scattered, terrifying. The alliance
+        chapters are tense negotiation among people who do not trust
+        each other. The march chapters are quiet and final. Everyone
+        knows the odds. The prose strips down to essentials.
+      hooks_for_next: >
+        The Forge awaits. Thorne can open it. Dalla can navigate it.
+        Lump must decide what to do when they reach it. Kell has
+        volunteered for something he cannot survive. The Widow wants
+        the Forge sealed — but on her terms. What are her terms?
+
+    # ==================================================================
+    # VOLUME 10 — Y315 HARVEST through LONG DARK
+    # Endgame. The Forge. The gate. The cost.
+    # ==================================================================
+    - volume: 10
+      title: "The Iron Barrow"
+      subtitle: "In which the ledger closes and the dark retreats"
+      time_span:
+        year: 315
+        season_start: harvest
+        season_end: long_dark
+        days: "61-360"
+      chapters_estimate: 15
+      central_conflict: >
+        The march reaches the Iron Barrow. Thorne opens the path.
+        Dalla guides them to the Galdr-Forge. The Forge is older than
+        the Rimevegr — built by hands no one remembers. It can
+        command the dead or seal them forever. The Widow wants to
+        command them. Lump decides to seal them. Kell holds the gate
+        while the Forge is sealed. The collapse buries the Forge.
+        The survivors retreat through a world that is quieter than
+        it has been in four years. The Bone Pack, ruined by the dead,
+        formally disbands. Voss Cold-Eye retires to Frostfjord. Lump
+        leads what remains of the Black Axes into an uncertain spring.
+      pov_characters: ["Lump", "Gest", "Kell"]
+      secondary_pov: ["Petra", "Voss", "Thorne"]
+      contract_arcs:
+        - contract_id: "contract_027"
+          name: "Seal the Galdr-Forge"
+          role: primary
+          resolution: success_pyrrhic
+      political_arc: >
+        The alliance holds long enough to reach the Forge. Inside, it
+        fractures. The Widow's people try to seize the Forge for her.
+        Lump's band blocks them. Sigrun's soldiers hold the perimeter.
+        What remains of Ordovast's men fight the dead outside. After
+        the sealing, the political landscape is remade: the Widow's
+        bid for dark power fails; the Compact absorbs the Grip's
+        survivors; the Whispering Circle retreats to the shadows —
+        diminished but not destroyed. The Rimevegr enters a fragile
+        peace built on exhaustion, not trust.
+      supernatural_stage: "resolution"
+      band_state_open:
+        morale: 3
+        reputation: 9
+        treasury_silver: 10
+        roster_count: 9
+        status: "Marching into the Iron Barrow. No expectation of return."
+      band_state_close:
+        morale: 5
+        reputation: 10
+        treasury_silver: 0
+        roster_count: 7
+        status: "Seven walk out. Kell and Thorne did not. The treasury is empty. The dead are quiet. It is enough."
+      character_arcs:
+        lump: >
+          Decides to seal the Forge against the Widow's wishes. It is
+          the first decision he makes that determines the fate of more
+          than his band — it determines the fate of the Rimevegr. He
+          is not a thrall. He is not a common. He is the man who chose
+          to close the door. After the collapse, he leads the survivors
+          out. Voss walks behind him. The final scene is Lump opening
+          the ledger and writing the first entry in his own hand.
+        voss: >
+          Fights in the Forge despite everything. Protects the retreat
+          when the ceiling comes down. Takes a blow meant for Dalla.
+          Survives. Retires to Frostfjord, where he will sit by a fire
+          and remember the names of every man and woman he lost.
+          His arm never works properly again. He does not need it to.
+        kell: >
+          Holds the gate. The rearguard position. When the dead push
+          through, Kell hooks himself to the door mechanism and fights
+          until the seal engages. He does not come out. Gest's ledger
+          records: "Kell Hook. Debt: none. Died holding a gate he could
+          have walked away from. He did not walk away." It is the
+          bravest death in the story because Kell spent three volumes
+          being the man who runs.
+        petra: >
+          Gets her sister out alive. Dalla is broken — she will never
+          be who she was — but she is alive and free of the Widow.
+          Petra carries her, as Lump once carried a wounded man from
+          the first barrow. The circle closes. After the retreat,
+          Petra takes Dalla south, away from the barrows, away from
+          the cold. They are not in the final scene.
+        thorne: >
+          Opens the path. The barrow recognises him and the dead step
+          aside. Inside the Forge, his scars ignite — the galdr burns
+          through him, and he becomes the bridge between the Forge and
+          the seal. He holds the connection while Dalla speaks the
+          sealing words. When it is done, Thorne is still standing. But
+          the man behind the scars is gone. He walks out silent, sits
+          by the barrow entrance, and does not move. The band carries
+          him. He is breathing but is not there. Whether he returns is
+          left unanswered.
+        gest: >
+          Records everything. The Forge, the fight, the sealing, the
+          collapse. Records Kell's death in the plainest words he can
+          manage. Closes the ledger. Hands it to Lump. The final line
+          of the final volume: Lump opens the book, takes up the pen,
+          and writes the date.
+      key_events:
+        - "EVT_315_U01_076" # March reaches the Iron Barrow
+        - "EVT_315_U03_078" # Thorne opens the path
+        - "EVT_315_U05_080" # Forge chamber entered
+        - "EVT_315_U07_082" # Widow's people attempt seizure
+        - "EVT_315_U09_084" # Lump decides: seal the Forge
+        - "EVT_315_U11_086" # Kell takes the gate
+        - "EVT_315_U13_088" # Dalla speaks the sealing words
+        - "EVT_315_U15_090" # Collapse begins
+        - "EVT_315_A01_091" # Survivors retreat
+        - "EVT_315_A05_095" # Bone Pack disbanded
+        - "EVT_315_A09_099" # Voss retires
+        - "EVT_315_A13_103" # Petra and Dalla go south
+        - "EVT_315_W01_106" # First quiet winter
+        - "EVT_315_W07_112" # Lump opens the ledger
+        - "EVT_315_W15_120" # Final scene — the date is written
+      named_weather_events:
+        - "WE_030" # Summer storm over the Barrow
+        - "WE_033" # Forge-quake weather
+        - "WE_035" # Autumn clearing — first clean sky in years
+        - "WE_037" # First quiet snowfall
+        - "WE_038" # Year's end — still
+      themes:
+        - "The door must be closed by someone willing to stay"
+        - "What the ledger records outlasts what the sword defends"
+        - "The man who runs becomes the man who holds"
+        - "Freedom is choosing what you carry"
+        - "The dark retreats. The cold remains."
+      tone: >
+        Terminal velocity into a quiet landing. The Forge sequences
+        are the most intense writing in the series — claustrophobic,
+        mythic, physically gruelling. Kell's death is not heroic in
+        a glorious sense — it is a man with a hook in a doorway who
+        refuses to move. After the retreat, the prose exhales. The
+        final chapters are slow, warm, grieving, and gently resolute.
+        The last paragraph is Lump writing a date in a book. That
+        is all. That is everything.
+      hooks_for_next: null # This is the end.

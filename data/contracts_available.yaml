@@ -1,0 +1,148 @@
+# Iron Ledger — Starting Contract Pool
+# Available contracts at known settlements, given current reputation (3),
+# season (Long Dark, Ironmoon), and political conditions.
+# Generated per 14_GAME_CONTENT_BIBLE.md §6 contract rules.
+
+# Current state: Day 87, Year 312 (Ironmoon). Season: Long Dark.
+# Band reputation: 3 (Feared/Admired).
+
+active_contract:
+  id: "contract_001"
+  type: barrow_clear
+  title: "Clear the Whispering Barrow"
+  employer: "Jarl Hrothgar of Frostfjord"
+  settlement: "Frostfjord Hollow"
+  payment_silver: 80
+  bonus: "1 thrall"
+  advance_silver: 25
+  duration_days: 13 # Day 87 to deadline Day 100
+  deadline_day: 100
+  risk: high
+  band_size_min: 6
+  skills_valued: [rune_lore, spears]
+  status: in_progress
+  notes: "Restless dead reported north of Frostfjord."
+
+available_contracts:
+  # --- Frostfjord Hollow (Village, feud 1 -> pool 2-1=1 contract) ---
+  - id: "contract_002"
+    type: guard
+    title: "Guard Frostfjord Through Wolfmoot"
+    employer: "Jarl Hrothgar of Frostfjord"
+    settlement: "Frostfjord Hollow"
+    min_reputation: 1
+    payment_silver: 60
+    duration_days: 30
+    risk: moderate
+    band_size_min: 8
+    skills_valued: [command, intimidate]
+    season_weight: 3 # Guard is weighted 3 in Long Dark
+    notes: "Hrothgar wants protection through the darkest months."
+
+  # --- Ashen Reach (Large Village, feud 0 -> pool 3) ---
+  - id: "contract_003"
+    type: escort
+    title: "Escort the Widow's Emissary to Grimholt"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    min_reputation: 0
+    payment_silver: 35
+    duration_days: 10
+    risk: low
+    band_size_min: 5
+    skills_valued: [command, navigate]
+    season_weight: 1
+    notes: "Diplomatic mission through mountain territory."
+
+  - id: "contract_004"
+    type: bounty
+    title: "Bounty on Wolf-Pack Leader"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    min_reputation: 1
+    payment_silver: 55
+    duration_days: 14
+    risk: moderate
+    band_size_min: 4
+    skills_valued: [track, bows]
+    season_weight: 1
+    notes: "A beast pack terrorizes pine-tar workers."
+
+  - id: "contract_005"
+    type: winter_hold
+    title: "Garrison Ashen Reach Outpost"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    min_reputation: 2
+    payment_silver: 120
+    duration_days: 90
+    risk: moderate
+    band_size_min: 10
+    skills_valued: [shelter, command, forage]
+    season_weight: 3 # Winter Hold is weighted 3 in Long Dark
+    notes: "Defend a remote pine-tar outpost through Longnight."
+
+  # --- Grimholt (Large Village, feud 0 -> pool 3) ---
+  - id: "contract_006"
+    type: guard
+    title: "Reinforce Grimholt Garrison"
+    employer: "Warchief Ordovast"
+    settlement: "Grimholt"
+    min_reputation: 1
+    payment_silver: 70
+    duration_days: 45
+    risk: moderate
+    band_size_min: 8
+    skills_valued: [command, intimidate]
+    season_weight: 3
+    notes: "Ordovast wants extra swords. Testing band loyalty."
+
+  - id: "contract_007"
+    type: debt_collection
+    title: "Collect Tribute from Moorland Hamlets"
+    employer: "Warchief Ordovast"
+    settlement: "Grimholt"
+    min_reputation: 1
+    payment_silver: 30
+    duration_days: 7
+    risk: low
+    band_size_min: 3
+    skills_valued: [intimidate, bargain]
+    season_weight: 1
+    notes: "Some hamlets are behind on iron tribute."
+
+  - id: "contract_008"
+    type: barrow_clear
+    title: "Seal the Iron Barrow"
+    employer: "Warchief Ordovast"
+    settlement: "Grimholt"
+    min_reputation: 2
+    payment_silver: 110
+    duration_days: 3
+    risk: high
+    band_size_min: 6
+    skills_valued: [rune_lore, spears]
+    season_weight: 1
+    notes: "A barrow near the iron mine has opened. Miners refuse to work."
+
+  # --- Stonebay Hamlet (Hamlet, feud 0 -> pool 1) ---
+  - id: "contract_009"
+    type: escort
+    title: "Escort Fish Shipment to Frostfjord"
+    employer: "Stonebay Elder"
+    settlement: "Stonebay Hamlet"
+    min_reputation: 0
+    payment_silver: 15
+    duration_days: 5
+    risk: low
+    band_size_min: 5
+    skills_valued: [command, navigate]
+    season_weight: 1
+    notes: "Modest pay but builds goodwill with both settlements."
+
+# --- Contract Pool Summary ---
+# Total available: 8 contracts across 4 settlements
+# By risk:  Low (3), Moderate (3), High (2)
+# By type:  Guard (2), Escort (2), Bounty (1), Winter Hold (1),
+#           Debt Collection (1), Barrow Clear (1)
+# Note: Feldwick has no contracts (occupied by Three Wolves).

@@ -1,0 +1,305 @@
+# Iron Ledger — Practitioner Registry
+# Canonical data for all known magical practitioners in the Rimevegr.
+# Cross-references: 22_MEMBER_STATBLOCKS.md, 08_MAGIC_OF_RIMEVEGR.md §8.
+# Lifecycle stages: latent, apprentice, active, declining, retired, dead.
+# Tradition: galdr, seidr, wyrd_reading.
+
+practitioners:
+- id: PRAC_001
+  name: Ash
+  call_name: Ash
+  tradition: galdr
+  rank: 3
+  wyrd: 3
+  primary_skill: Rune-lore
+  primary_skill_rank: 3
+  secondary_skills:
+  - name: Sagas
+    rank: 2
+  lifecycle_stage: active
+  age: early 30s
+  affiliation: Black Axes (Voss's band)
+  location_current: mobile (band)
+  training_location: unknown
+  training_master: unknown
+  manifestation_age: null
+  years_active: 11
+  physical_toll:
+    hands: White scar lines on palms from rune-carving. No blade made these.
+    aging: Hair thinning prematurely. Dark circles.
+    other: Frostbitten fingertips crack in deep winter.
+  decline_indicators:
+  - Rank 3 strain visible — fatigue after major ward-work.
+  - Recovery time increasing after each galdr expenditure.
+  - Will not be rank 3 at 45 without intervention.
+  projected_peak_age: 35
+  projected_decline_onset: 40
+  death_risk_factors:
+  - Accumulated HP/Willpower cost (MAGIC_TRUTH_003)
+  - Backlash risk at rank 3+
+  - Not aware runes feed on lifespan
+  encoded_truth_ref: MAGIC_TRUTH_003
+  statblock_ref: 22_MEMBER_STATBLOCKS.md
+  notes: 'Primary galdr asset of the Black Axes. Band''s contract value depends significantly
+    on his ward capability. Burns faster than he knows. See 08_MAGIC_OF_RIMEVEGR.md
+    §7 (wasting asset analysis) and §8 (galdr decline trajectory).
+
+    '
+  stage: pre_onset
+  effective_rank_mod: 0
+- id: PRAC_002
+  name: Dalla
+  call_name: Dalla
+  tradition: seidr
+  rank: null
+  wyrd: 3
+  primary_skill: Wyrd-reading
+  primary_skill_rank: 2
+  secondary_skills:
+  - name: Heal
+    rank: 3
+  - name: Forage
+    rank: 2
+  - name: Sagas
+    rank: 1
+  lifecycle_stage: active
+  age: mid-30s
+  affiliation: Black Axes (Voss's band)
+  location_current: mobile (band)
+  training_location: unknown
+  training_master: unknown
+  manifestation_age: null
+  years_active: 16
+  physical_toll:
+    hands: Small burn scars from cook-fire work. Clean knife scars on fingertips.
+    aging: No visible premature aging yet.
+    other: Washes hands more than necessary. Sleeps lightly.
+  decline_indicators:
+  - Secondary trauma accumulation from tending wounded.
+  - Each reaching leaves her hollowed longer than the last.
+  projected_peak_age: 38
+  projected_decline_onset: 45
+  death_risk_factors:
+  - Spirit-boundary erosion over decades of trance-work
+  - Accumulated seidr stress (Wits reduction risk per §11)
+  encoded_truth_ref: null
+  statblock_ref: 22_MEMBER_STATBLOCKS.md
+  notes: 'Band''s healer and unpaid strategic seidr asset. Worth ~200 copper/week
+    in consultation value, paid standard share (20 copper). See 08_MAGIC_OF_RIMEVEGR.md
+    §7 and §8.
+
+    '
+  stage: pre_onset
+  effective_rank_mod: 0
+- id: PRAC_003
+  name: Petra
+  call_name: Shepherd
+  tradition: wyrd_reading
+  rank: null
+  wyrd: 2
+  primary_skill: Wyrd-reading
+  primary_skill_rank: 1
+  secondary_skills:
+  - name: Heal
+    rank: 2
+  - name: Command
+    rank: 2
+  - name: Persuade
+    rank: 2
+  lifecycle_stage: active
+  age: late 20s
+  affiliation: Black Axes (Voss's band)
+  location_current: mobile (band)
+  training_location: self-taught / shepherd mentor
+  training_master: unnamed shepherd
+  manifestation_age: ~12
+  years_active: 6
+  physical_toll:
+    hands: Rope burn scars, calloused palms.
+    aging: None visible.
+    other: Certain voices trigger sister-search reflex.
+  decline_indicators: []
+  projected_peak_age: 40
+  projected_decline_onset: 55
+  death_risk_factors:
+  - Combat risk (frontline skirmisher)
+  - Wyrd-reading fatalism onset (decades away)
+  encoded_truth_ref: null
+  statblock_ref: 22_MEMBER_STATBLOCKS.md
+  notes: 'Lowest-rank practitioner in the band. Bone-lot casting. Blank reading at
+    the ford was a death-echo zone (MAGIC_TRUTH_004), not skill failure. See 08_MAGIC_OF_RIMEVEGR.md
+    §6 Mystery 4.
+
+    '
+  stage: pre_onset
+  effective_rank_mod: 0
+- id: PRAC_004
+  name: Thorne
+  call_name: Ash-Born
+  tradition: galdr
+  rank: null
+  wyrd: 1
+  primary_skill: null
+  primary_skill_rank: null
+  secondary_skills: []
+  life_skill_magic: Rune craft (carve functional runes, read old carvings, ward-laying)
+  lifecycle_stage: active
+  age: late 30s
+  affiliation: Black Axes (Voss's band)
+  location_current: mobile (band)
+  training_location: unknown
+  training_master: mother (minor galdr-worker)
+  manifestation_age: null
+  years_active: 1
+  physical_toll:
+    hands: Minor frostbite damage to fingertips. Cracks in deep winter.
+    aging: None beyond burn damage.
+    other: Body temperature runs cold. Does not sleep (draugr condition).
+  decline_indicators:
+  - Rune-amulet binding weakens each year (MAGIC_TRUTH_005)
+  projected_peak_age: null
+  projected_decline_onset: null
+  death_risk_factors:
+  - Amulet failure — dies for real or wakes to full draugr awareness
+  - Iron Barrow calls to the dead — barrow proximity dangerous
+  encoded_truth_ref: MAGIC_TRUTH_005
+  statblock_ref: 22_MEMBER_STATBLOCKS.md
+  notes: 'Not a ranked practitioner. Rune craft is a life skill, not a magical tradition
+    rank. The real secret: Thorne is a draugr bound by his mother''s rune-amulet.
+    See 08_MAGIC_OF_RIMEVEGR.md §6 Mystery 5.
+
+    '
+  stage: pre_onset
+  effective_rank_mod: 0
+- id: PRAC_010
+  name: Audun
+  call_name: Audun
+  tradition: galdr
+  rank: 4
+  wyrd: 4
+  primary_skill: Rune-lore
+  primary_skill_rank: 4
+  secondary_skills:
+  - name: Sagas
+    rank: 3
+  lifecycle_stage: declining
+  age: late 50s
+  affiliation: Skaldhaven
+  location_current: Skaldhaven
+  training_location: Skaldhaven
+  training_master: predecessor (unnamed)
+  manifestation_age: ~9
+  years_active: 42
+  physical_toll:
+    hands: Deeply scarred, tremor in left hand.
+    aging: White-haired, gaunt. Looks 70.
+    other: Delegates fine carving to apprentices. Oversees.
+  decline_indicators:
+  - Lost fine motor control in left hand 3 years ago.
+  - Rank 4 work now requires 2-3 attempts.
+  - Effective rank dropping toward 3.
+  projected_peak_age: 45
+  projected_decline_onset: 52
+  death_risk_factors:
+  - Rune-hunger if forced to stop practicing
+  - Accumulated lifespan cost
+  encoded_truth_ref: null
+  statblock_ref: null
+  notes: 'Most respected rune-reader in the Rimevegr. Runs Skaldhaven rune archive.
+    Apprentices handle routine work. His decline represents the coming loss of the
+    region''s highest-ranked galdr capability.
+
+    '
+  stage: early
+  effective_rank_mod: -1
+- id: PRAC_011
+  name: Ragnhild
+  call_name: Ragnhild
+  tradition: seidr
+  rank: 4
+  wyrd: 5
+  primary_skill: Spirit-lore
+  primary_skill_rank: 4
+  secondary_skills:
+  - name: Wyrd-reading
+    rank: 3
+  - name: Heal
+    rank: 2
+  lifecycle_stage: declining
+  age: 60s
+  affiliation: Icebreak (hermit)
+  location_current: Icebreak
+  training_location: unknown
+  training_master: unknown
+  manifestation_age: ~6
+  years_active: 46
+  physical_toll:
+    hands: Gnarled, arthritic.
+    aging: Ancient appearance. Hair gone white. Stooped.
+    other: Talks to the air. Answers questions nobody asked.
+  decline_indicators:
+  - Spirit-boundary erosion advanced.
+  - Difficulty distinguishing living visitors from dead ones.
+  - Sleeps at odd hours — dead quieter at midday.
+  projected_peak_age: 40
+  projected_decline_onset: 50
+  death_risk_factors:
+  - Spirit-crossing failure during trance
+  - Complete boundary dissolution
+  encoded_truth_ref: null
+  statblock_ref: null
+  notes: 'Most powerful seidr-wife in the Rimevegr. Sole reliable source of veil-touched
+    water (TG_SDR_008). Demands blood price for service. Her death will be an irreplaceable
+    loss. No known student.
+
+    '
+  stage: onset
+  effective_rank_mod: 0
+- id: PRAC_012
+  name: Sigrun's Galdr-Speaker
+  call_name: null
+  tradition: galdr
+  rank: 3
+  wyrd: 3
+  primary_skill: Rune-lore
+  primary_skill_rank: 3
+  secondary_skills: []
+  lifecycle_stage: active
+  age: 40s
+  affiliation: Deepholm
+  location_current: Deepholm
+  training_location: Deepholm galdr workshop
+  training_master: predecessor
+  manifestation_age: null
+  years_active: 21
+  physical_toll:
+    hands: Heavy scarring.
+    aging: Premature gray.
+    other: null
+  decline_indicators:
+  - Peak years. Decline not yet visible.
+  projected_peak_age: 45
+  projected_decline_onset: 50
+  death_risk_factors:
+  - Political assassination (strategic asset)
+  - Standard galdr lifespan cost
+  encoded_truth_ref: null
+  statblock_ref: null
+  notes: 'Deepholm''s official galdr-speaker. Takes only official commissions from
+    Sigrun. Galdr workshop is the Rimevegr''s most formal training center. Strategic
+    military asset for the Fjord Compact.
+
+    '
+  stage: pre_onset
+  effective_rank_mod: 0
+- name: Test
+  tradition: galdr
+  base_rank: 2
+  rank: 2
+  years_active: 5
+  total_willpower_spent: 0
+  tou: 3
+  wil: 4
+  stage: pre_onset
+  effective_rank_mod: 0
+  notes: Newly registered.

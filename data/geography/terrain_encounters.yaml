@@ -1,0 +1,2055 @@
+terrain_encounters:
+  coast:
+    description: Salt-scoured shoreline — shingle beaches, basalt sea cliffs, tidal flats that stink of bladderwrack. Fog
+      rolls in without warning and the tide waits for no one.
+    encounters:
+    - id: ENC_COAST_001
+      name: Bull Seal Challenge
+      category: creature
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 8
+      description: A scarred bull seal guards a haul-out on the shingle the band needs to cross. It weighs as much as two
+        men and lunges with surprising speed, barking and slamming its bulk at anyone who comes within ten paces.
+      check: WIT moderate
+      failure_consequence: One fighter bitten on the calf — 2 HP damage, limping for one day. Band must backtrack along the
+        cliff edge, adding 3 hours.
+      success_benefit: Band circles wide using rocks as cover. No delay. Seal ignores them.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_COAST_002
+      name: Sea Serpent in the Shallows
+      category: creature
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 4
+      description: Something long and dark rolls in the kelp beds just off shore. A scaled coil breaks the surface — fifteen
+        paces of grey-green muscle. It has followed a school of cod into the shallows and is agitated.
+      check: WIT hard
+      failure_consequence: Serpent strikes at a fighter filling a waterskin at the tideline — 6 HP damage, armor pierced.
+        The band loses a waterskin and a belt pouch dragged into the surf.
+      success_benefit: Band gives it wide berth and waits. Serpent follows the cod back to deep water within the hour. No
+        losses.
+      duration_hours: 2
+      severity: serious
+    - id: ENC_COAST_003
+      name: Salt Haar
+      category: weather
+      seasons:
+      - thaw
+      - harvest
+      - long_dark
+      chance_percent: 14
+      description: Thick sea fog rolls in off the water. Visibility drops to five paces. The shingle sounds different underfoot
+        — impossible to tell cliff edge from safe ground. The fog tastes of salt and smells of rotting kelp.
+      check: WIT moderate
+      failure_consequence: Band drifts off-path. One mule stumbles on wet rocks — loses a pack. Half-day delay to recover
+        and reorient. 15 silver worth of supplies ruined by salt water.
+      success_benefit: Scout keeps the band on safe ground by listening for the surf. No delay.
+      duration_hours: 6
+      severity: moderate
+    - id: ENC_COAST_004
+      name: Storm Surge
+      category: weather
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 10
+      description: Wind shifts hard from the northwest. The sea rises two arms' lengths in half an hour. Spray hammers the
+        cliff path and waves crash across the shingle, dragging everything loose seaward.
+      check: NIM hard
+      failure_consequence: One fighter swept off feet and battered against rocks — 4 HP damage. Band loses 1d6 gear items
+        to the sea. Full day lost waiting for the surge to recede.
+      success_benefit: Band reaches high ground before the worst. Gear secured. Two-hour delay only.
+      duration_hours: 8
+      severity: serious
+    - id: ENC_COAST_005
+      name: Cliff Collapse
+      category: terrain
+      seasons:
+      - thaw
+      - harvest
+      - long_dark
+      chance_percent: 7
+      description: The cliff path crumbles underfoot. Salt erosion and frost have loosened a ten-pace section of the trail.
+        Stones tumble down the cliff face and the ground tilts seaward.
+      check: NIM moderate
+      failure_consequence: One fighter slides with the scree — catches a ledge but takes 3 HP damage from impact. Rope and
+        two hours needed to haul them back up. One pack lost over the edge.
+      success_benefit: Band spots the fracture lines and reroutes inland. One-hour detour, no losses.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_COAST_006
+      name: Tidal Trap
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 12
+      description: The band takes a shortcut across a tidal flat. The sand looks firm. Halfway across, boots begin to sink.
+        The tide is turning and the water is already ankle-deep and rising.
+      check: MIG moderate
+      failure_consequence: One fighter stuck to the knee. Band must abandon a heavy pack to pull them free. Lose 20 silver
+        worth of rations and gear. Two-hour delay, soaked and cold.
+      success_benefit: Band moves fast, stays on the firm sand ridges. Crosses before the tide covers the flat.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_COAST_007
+      name: Beached Raiders
+      category: social
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 6
+      description: A knarr lies broken on the rocks, keel split. Seven men huddle around a driftwood fire on the shingle.
+        They are armed, hungry, and desperate — a raiding crew whose ship found a reef instead of a harbour.
+      check: WIT moderate
+      failure_consequence: Negotiation breaks down. Raiders attack in desperation — skirmish costs the band one fighter wounded
+        (4 HP) and half a day. Raiders scatter after losing two of their own.
+      success_benefit: Band trades rations for the raiders' silver and salvageable cargo. Gain 30 silver and a barrel of salt
+        cod. Raiders head inland on foot.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_COAST_008
+      name: Fishermen's Warning
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 10
+      description: Three fishing boats hauled up on the shingle. The fishermen are mending nets and watching the band approach
+        with hard eyes. Their headman steps forward — he has news about the road ahead.
+      check: WIT easy
+      failure_consequence: Fishermen clam up. Band gets no useful information and the headman charges 5 silver for fresh water.
+      success_benefit: Headman warns of a washed-out bridge two hours ahead. Band can detour and avoid a full day's delay.
+        Free water and smoked fish worth 3 silver.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_COAST_009
+      name: The Drowned Dead
+      category: supernatural
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 5
+      description: At dusk, figures stand in the surf — eight or ten, waist-deep, facing the shore. They do not move with
+        the waves. Their faces are bloated and white. One of them raises an arm and points at the band's fire.
+      check: WIL hard
+      failure_consequence: Two fighters break and run inland, screaming. Band must spend the night without fire — the drowned
+        dead drift closer when the flames are lit. Morale drops hard. No sleep. All fighters at -1 to checks next day.
+      success_benefit: Band holds nerve, douses the fire, and moves camp a quarter-mile inland. The drowned dead remain in
+        the surf. Uneasy night but no losses.
+      duration_hours: 10
+      severity: serious
+    - id: ENC_COAST_010
+      name: Tide-Stone Glow
+      category: supernatural
+      seasons:
+      - thaw
+      - long_dark
+      chance_percent: 5
+      description: The standing stones on the tidal flat emit a pale green light as the tide recedes. The spirals carved in
+        their faces move — slowly, like something breathing. The air hums at a frequency felt in the teeth rather than heard.
+      check: WYR moderate
+      failure_consequence: One fighter touched a stone. Their hand is numb for three days — cannot grip a weapon properly.
+        -1 to all MIG checks until healed.
+      success_benefit: A fighter with wyrd-sensitivity reads the spiral pattern. Gains a cryptic but genuine clue about a
+        nearby barrow entrance. The glow fades at dawn.
+      duration_hours: 4
+      severity: moderate
+    - id: ENC_COAST_011
+      name: Storm Wrack
+      category: discovery
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 9
+      description: A wrecked ship's stern section lies wedged between rocks at the base of a cliff. The cargo hold is half-submerged
+        but accessible at low tide. Gulls wheel overhead and the planking groans with each wave.
+      check: NIM moderate
+      failure_consequence: A fighter slips on the wreck and gets pinned by a shifting timber. Takes 2 HP damage. Band pulls
+        them free but the tide rises before they can salvage cargo.
+      success_benefit: Band recovers a sealed cask of mead (worth 25 silver), a coil of good rope, and a waterlogged but legible
+        chart marking a coastal anchorage.
+      duration_hours: 3
+      severity: minor
+    - id: ENC_COAST_012
+      name: Sea-Glass Rune
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 3
+      description: A fighter finds a piece of sea glass the size of a palm, smoothed by decades of surf. A rune is etched
+        into its surface — not scratched by nature. It pulses faintly warm in the hand, warmer than the surrounding stones.
+      check: WYR hard
+      failure_consequence: The rune means nothing to anyone in the band. It is pocketed as a curiosity. That night, the holder
+        dreams of drowning — no rest, all checks at -1 next day.
+      success_benefit: A wyrd-touched fighter reads the rune. It is a warding sign. Carrying it grants the band +1 to WIL
+        checks against supernatural coastal encounters for one week.
+      duration_hours: 1
+      severity: minor
+  fjord:
+    description: Deep, cold inlets cutting between pine-clad ridges. The water is black and still. Paths switchback along
+      cliff faces where one wrong step means a long fall into very cold water.
+    encounters:
+    - id: ENC_FJORD_001
+      name: Eagle Strike
+      category: creature
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 7
+      description: A white-tailed eagle mistakes a fighter's fur-wrapped pack for prey and dives. Talons rake across the shoulders.
+        The bird is enormous — wingspan wider than a man is tall — and it circles for a second pass.
+      check: NIM easy
+      failure_consequence: Fighter takes 2 HP damage from talons, pack strapping torn. One ration bundle lost over the cliff
+        edge.
+      success_benefit: Fighter ducks. Eagle wheels away. Band spots its nest on the ridge above — good landmark for navigation.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_FJORD_002
+      name: Fjord Seal Herd
+      category: creature
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 8
+      description: Dozens of seals haul out on the rocks below the path. The barking echoes off the fjord walls and makes
+        conversation impossible. The stink reaches the trail. Among them, a bull with scars on its muzzle watches the band
+        with unsettling intelligence.
+      check: WIT easy
+      failure_consequence: A spooked pack mule bolts at the noise, scattering gear across the switchback. Two hours to recover
+        everything. One pouch of silver (8 coins) lost in the rocks.
+      success_benefit: Band passes quietly. A hunter notes the herd — seals can be harvested on the return trip for oil and
+        meat worth 15 silver.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_FJORD_003
+      name: Fjord Fog
+      category: weather
+      seasons:
+      - thaw
+      - harvest
+      - long_dark
+      chance_percent: 13
+      description: Cold air from the ridges meets warm water rising from the fjord. Fog fills the inlet like milk poured into
+        a bowl. The switchback path vanishes — each step is a guess between solid trail and a hundred-pace drop.
+      check: WIT moderate
+      failure_consequence: Band halts for six hours until the fog lifts. A mule steps too close to the edge — the handler
+        grabs its halter but dislocates a shoulder. 3 HP damage, reduced carrying capacity for two days.
+      success_benefit: Scout uses rope line and sound echoes to guide the band through. No delay beyond one cautious hour.
+      duration_hours: 6
+      severity: moderate
+    - id: ENC_FJORD_004
+      name: Katabatic Wind
+      category: weather
+      seasons:
+      - long_dark
+      chance_percent: 10
+      description: Cold air drains off the glacier above and funnels down the fjord at terrifying speed. The wind hits the
+        band sideways on the exposed ridge path — a sustained gale cold enough to freeze wet cloth solid in minutes.
+      check: TOU hard
+      failure_consequence: One fighter suffers frostbitten fingers — loses grip on weapons. -2 MIG checks for three days unless
+        treated. Band shelters in a rock cleft for 8 hours, burning fuel they cannot spare.
+      success_benefit: Band ropes together and pushes through. Two-hour delay, bitterly cold but no injuries.
+      duration_hours: 8
+      severity: serious
+    - id: ENC_FJORD_005
+      name: Ridge Path Collapse
+      category: terrain
+      seasons:
+      - thaw
+      - harvest
+      chance_percent: 9
+      description: The narrow path along the fjord wall gives way. Rain-loosened scree slides into the water below, taking
+        a three-pace section of trail with it. The gap is jumpable but the landing is loose gravel on a slope.
+      check: NIM moderate
+      failure_consequence: One fighter slips on the landing and slides toward the edge. Caught by rope — but takes 3 HP damage
+        from the rocks. Two hours to rig a safe crossing for the mules.
+      success_benefit: Band jumps the gap and hammers pitons for a rope crossing. Mules guided across. One-hour delay.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_FJORD_006
+      name: Ice on the Switchbacks
+      category: terrain
+      seasons:
+      - long_dark
+      chance_percent: 11
+      description: Black ice coats the switchback trail. Every step is a controlled slide. The fjord is two hundred paces
+        below and there is nothing between the path edge and the water but air and pine branches.
+      check: NIM hard
+      failure_consequence: A mule goes down, legs splaying. It slides ten paces before jamming against a boulder. One leg
+        broken — mule must be put down. Band loses the animal and its cargo (40 silver value). Half day to redistribute loads.
+      success_benefit: Band chips steps in the ice with axe heads and lays pine boughs for traction. Three-hour delay but
+        no losses.
+      duration_hours: 5
+      severity: serious
+    - id: ENC_FJORD_007
+      name: Traders in a Boat
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 8
+      description: A small cargo boat is moored at a natural dock below the trail — two traders and a boy, loading barrels.
+        They hail the band cautiously. They are heading to Frostfjord Hollow and have goods to sell.
+      check: WIT easy
+      failure_consequence: Traders charge double for their goods — suspicious of the band's intentions. Band overpays 10 silver
+        for basic supplies.
+      success_benefit: Fair trade. Band buys rations at standard price and the traders share news of road conditions ahead.
+        Learn of a bridge out two days north — saves a full day's detour.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_FJORD_008
+      name: Rival Settlement Patrol
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 7
+      description: Six armed men block the path ahead — Ashen Reach militia. Their headman demands to know the band's business.
+        Spears are lowered but not pointed. Yet.
+      check: WIT moderate
+      failure_consequence: Patrol demands a toll of 20 silver to pass. Refusal means a fight — the patrol withdraws but alerts
+        Ashen Reach. The band is unwelcome there for a month.
+      success_benefit: Headman recognizes the band or accepts their stated contract. Free passage. One militiaman quietly
+        mentions a shortcut around the next headland.
+      duration_hours: 1
+      severity: moderate
+    - id: ENC_FJORD_009
+      name: Barrow-Glow Below
+      category: supernatural
+      seasons:
+      - long_dark
+      chance_percent: 5
+      description: From the ridge path, a dull amber glow is visible deep in the fjord wall — far below the waterline. It
+        pulses slowly, like a heartbeat. The water above it is still while the rest of the fjord ripples with wind.
+      check: WYR moderate
+      failure_consequence: One fighter stares too long. Cannot look away until physically dragged. That night they sleepwalk
+        toward the cliff edge — a sentry catches them. No sleep. -1 to all checks next day.
+      success_benefit: A wyrd-reader identifies the glow as a submerged barrow entrance. Marks its position — valuable intelligence
+        worth 15 silver to the right buyer in Frostfjord Hollow.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_FJORD_010
+      name: Rune-Stone Hum
+      category: supernatural
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 5
+      description: A lone rune-stone stands where the path widens into a natural ledge. It has always been here — the trail
+        was built around it. Tonight it hums. The sound is felt in the bones, not heard with the ears. Lichen on its face
+        arranges into patterns that were not there this morning.
+      check: WYR hard
+      failure_consequence: Two fighters develop splitting headaches that last two days. -1 to WIT checks. One of them begins
+        muttering fragments of a language no one recognizes.
+      success_benefit: A wyrd-sensitive fighter reads the shifting lichen. It spells a warning — ambush site two hours ahead
+        on the trail. Band avoids a bandit kill-zone.
+      duration_hours: 1
+      severity: moderate
+    - id: ENC_FJORD_011
+      name: Hidden Cache
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 6
+      description: A loose stone in the cliff wall beside the trail. Behind it, a dry hollow packed with oilskin-wrapped bundles
+        — someone's emergency supply stash, placed here deliberately and recently.
+      check: WIT moderate
+      failure_consequence: Band takes the cache (rations and a hand-axe worth 12 silver). The owner — a local trapper — tracks
+        them down the next day and demands compensation or blood.
+      success_benefit: 'Band notes the cache and leaves it. Further up the trail they find the trapper — he trades fresh information
+        about fjord conditions and shares his fire for the night. Rest bonus: all fighters heal 1 HP.'
+      duration_hours: 1
+      severity: minor
+    - id: ENC_FJORD_012
+      name: Old Signal Fire
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: A stone platform on the ridge summit, stacked with tarred wood — an old signal fire, part of a coastal
+        warning chain. The wood is dry and ready. A carved post beside it bears distance marks to three settlements.
+      check: WIT easy
+      failure_consequence: A careless fighter lights the beacon thinking it is a campfire spot. Smoke visible for miles. Every
+        patrol and bandit in the fjord knows someone is on the ridge. Unwanted attention for two days.
+      success_benefit: Band uses the distance marks to recalculate their position. Saves two hours of trail-finding. The signal
+        fire platform makes an excellent defensible camp for the night.
+      duration_hours: 1
+      severity: minor
+  forest:
+    description: Black Pine forest, dense enough to block the sky. The canopy swallows sound and light. The ground is knee-deep
+      in fallen needles that hide roots, rocks, and worse. Everything smells of resin and rot.
+    encounters:
+    - id: ENC_FOREST_001
+      name: Wolf Pack — Flanking Drive
+      category: creature
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 10
+      description: Wolves — at least eight, maybe more. They do not attack. They pace the band at fifty paces, grey shapes
+        slipping between the trunks. They are driving the band toward something. A ravine? A kill zone? Or just testing whether
+        this group is weak enough to take.
+      check: WIT moderate
+      failure_consequence: Band panics and bolts. Wolves harry the rear — one fighter bitten (3 HP damage), one mule hamstrung
+        and lost. Half-day delay regrouping.
+      success_benefit: Band holds formation, torches lit, shields out. Wolves assess and peel away. No losses. But the pack-leader's
+        eyes in the torchlight are remembered.
+      duration_hours: 4
+      severity: serious
+    - id: ENC_FOREST_002
+      name: Boar in the Thicket
+      category: creature
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 9
+      description: A crash in the bracken. A tusked boar — old, scarred, and territorial — charges out of the undergrowth
+        at the point fighter. It weighs as much as a man in mail and its tusks are the length of a hand.
+      check: NIM moderate
+      failure_consequence: Boar gores a fighter in the thigh — 4 HP damage, deep wound. Needs binding and limits marching
+        speed for two days. Boar retreats into the undergrowth, bleeding.
+      success_benefit: Fighter sidesteps. The band's hunter puts a spear through the boar's shoulder on the second pass. Fresh
+        pork for three days — saves 10 silver in rations.
+      duration_hours: 1
+      severity: moderate
+    - id: ENC_FOREST_003
+      name: Canopy Collapse
+      category: weather
+      seasons:
+      - long_dark
+      chance_percent: 8
+      description: Overnight ice-load. The pines groan all night. At dawn, a massive branch — thick as a man's waist — snaps
+        and falls across the camp. Then another. The canopy is shedding its ice in lethal chunks.
+      check: NIM moderate
+      failure_consequence: One fighter struck by a falling branch — 5 HP damage, cracked rib. Camp gear crushed. Lose a tent
+        and a cook pot (15 silver). Half-day delay to clear the path.
+      success_benefit: Sentry hears the cracking and rouses the camp. Band evacuates before the worst. Gear saved. One-hour
+        delay relocating camp.
+      duration_hours: 4
+      severity: serious
+    - id: ENC_FOREST_004
+      name: Fog Under the Canopy
+      category: weather
+      seasons:
+      - thaw
+      - harvest
+      chance_percent: 12
+      description: Ground fog rises through the needle litter until the forest floor disappears. The band walks through a
+        grey void — trees emerge from nothing at arm's length. Every root is a trap. Every shadow could be a trunk or something
+        else.
+      check: WIT moderate
+      failure_consequence: Band loses the trail. Three hours of wandering before a scout climbs a tree and spots a landmark.
+        One fighter twists an ankle on a hidden root — half-speed for a day.
+      success_benefit: Band marks trees with axe-blazes and navigates by sound. No delay. The fog provides concealment from
+        a bandit lookout they pass without knowing.
+      duration_hours: 5
+      severity: moderate
+    - id: ENC_FOREST_005
+      name: Hidden Ravine
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 9
+      description: The needle carpet conceals a steep-sided ravine three paces wide. The point fighter's foot finds nothing
+        but air. The drop is fifteen paces to a rocky stream bed.
+      check: NIM hard
+      failure_consequence: Fighter falls. Rope and two hours to haul them out. 5 HP damage from the drop. One weapon lost
+        in the stream. Path requires a detour — half day lost.
+      success_benefit: Fighter catches a root and scrambles back. Band finds a crossing point downstream. One-hour detour.
+      duration_hours: 4
+      severity: serious
+    - id: ENC_FOREST_006
+      name: Needle-Bog Trap
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 10
+      description: The ground looks solid — deep pine needles over what ought to be forest floor. It is not. Beneath the needles
+        is a waterlogged peat layer. Boots punch through and the suction grabs at ankles.
+      check: MIG moderate
+      failure_consequence: One fighter sinks to the waist. Mule refuses to cross. Two hours digging the fighter out with spear
+        shafts. Boots ruined (5 silver to replace). Soaked and cold — TOU easy check or catch a chill (-1 to all checks for
+        two days).
+      success_benefit: Scout spots the different colour of the needles and routes the band around the bog. One-hour detour.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_FOREST_007
+      name: Charcoal Burners
+      category: social
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 8
+      description: Smoke rising through the canopy. A charcoal-burning camp — three men, blackened with soot, tending a smouldering
+        mound. They are nervous but not hostile. They know these woods better than anyone alive.
+      check: WIT easy
+      failure_consequence: Burners are suspicious. They share nothing and break camp that night, leaving cold ashes. Band
+        gains no information.
+      success_benefit: Burners share trail knowledge — warn of a wolf den ahead and mark the safe fording point on the stream.
+        Save the band a full day's travel. Will trade charcoal for iron at fair rates.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_FOREST_008
+      name: Bandit Ambush
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 6
+      description: A fallen tree blocks the path — too neatly placed to be natural. Movement in the undergrowth on both sides.
+        Twelve men with bows drawn, faces wrapped in rags. Their leader steps out and demands the band's silver and weapons.
+      check: WIT hard
+      failure_consequence: Fight in thick forest. Band wins but takes casualties — two fighters wounded (3 HP each), one mule
+        killed. Bandits scatter. Half-day delay tending wounds. Gain 12 silver from bandit bodies.
+      success_benefit: Band's scout spotted the ambush fifty paces out. Band flanks the position and the bandits flee without
+        loosing an arrow. Recover the bandits' supply cache — 20 silver in goods and a usable shortbow.
+      duration_hours: 3
+      severity: serious
+    - id: ENC_FOREST_009
+      name: The Shifting Grove
+      category: supernatural
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 4
+      description: The band passes a distinctive grove — three birches among the pines, white bark unmistakable. An hour later
+        they pass the same grove. The axe-blazes on the trees are their own. Compass and sun say they have been walking straight.
+      check: WYR hard
+      failure_consequence: Band walks in circles for an entire day. Burns extra rations. Morale drops — fighters argue and
+        blame the navigator. -1 to all WIT checks for two days from exhaustion and unease.
+      success_benefit: A wyrd-sensitive fighter feels the pull and leads the band perpendicular to the loop. They break free
+        in two hours. The navigator marks the grove on the map as a hazard.
+      duration_hours: 10
+      severity: moderate
+    - id: ENC_FOREST_010
+      name: Whispering Pines
+      category: supernatural
+      seasons:
+      - long_dark
+      chance_percent: 5
+      description: No wind. The pines rustle anyway. The sound resolves into voices — fragments of speech in a language that
+        is almost recognizable. The words are clearest near the oldest trees. One fighter claims they heard their dead brother's
+        voice calling from deeper in the forest.
+      check: WIL moderate
+      failure_consequence: One fighter walks off the trail following the voice. Band spends three hours searching. The fighter
+        is found sitting against a tree, weeping, unable to explain why they left. -1 to WIL for that fighter for three days.
+      success_benefit: Band holds together. The whispers fade at dawn. Those who listened carefully recall fragments that
+        hint at a buried cache beneath one of the old trees — 25 silver in pre-war coin if they dig.
+      duration_hours: 6
+      severity: moderate
+    - id: ENC_FOREST_011
+      name: Abandoned Charcoal Camp
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 10
+      description: A clearing with three cold charcoal mounds, a lean-to shelter, and scattered tools. Abandoned in a hurry
+        — bowls of food left half-eaten, now covered in mould. Boot prints lead away northeast at a run.
+      check: WIT easy
+      failure_consequence: Band camps here anyway. Whatever scared the burners is still in the area — no encounter, but no
+        one sleeps well. -1 to all checks next morning.
+      success_benefit: Band salvages useful tools (hand-axe, rope, iron pot — 12 silver value) and follows the boot prints
+        to learn what threat lies north. Forewarned about a wolf pack denning nearby.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_FOREST_012
+      name: Old Shrine
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 3
+      description: 'A moss-covered stone figure stands in a hollow between roots — waist-high, roughly carved, its face worn
+        smooth by centuries of rain. Offerings lie at its base: a bronze ring, a handful of acorns, a lock of hair tied with
+        twine. Someone has been here recently.'
+      check: WYR moderate
+      failure_consequence: A fighter pockets the bronze ring. That night they dream of roots growing through their chest.
+        Cannot remove the ring for three days. -1 to all checks until the ring is returned to the shrine.
+      success_benefit: A fighter leaves an offering of their own. That night the band sleeps better than they have in a week.
+        All fighters heal 2 HP. A faint trail becomes visible near the shrine — a shortcut that saves half a day's march.
+      duration_hours: 1
+      severity: minor
+  moors:
+    description: Flat, treeless peat bog and heather heath stretching to the horizon. Standing stones break the line like
+      teeth. The wind never stops and the ground is never truly dry. Paths vanish between visits.
+    encounters:
+    - id: ENC_MOOR_001
+      name: Bog-Adder Nest
+      category: creature
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 9
+      description: A fighter steps on a tussock and the ground writhes. Bog-adders — dozens of them, coiled together in a
+        warming nest beneath the heather. They are sluggish in the cold but their venom burns like fire and swells the limb
+        to twice its size.
+      check: NIM moderate
+      failure_consequence: One fighter bitten on the ankle. 3 HP damage. Leg swells — half-speed for two days. Without treatment
+        (TOU hard check), the venom spreads and costs an additional 2 HP.
+      success_benefit: Fighter springs clear. Band skirts the nest. A herbalist in the band harvests venom sacs — worth 10
+        silver to an apothecary.
+      duration_hours: 1
+      severity: moderate
+    - id: ENC_MOOR_002
+      name: Moor-Hound
+      category: creature
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 5
+      description: A black dog the size of a calf stands on a peat ridge, watching. Its eyes catch the firelight wrong — too
+        bright, too steady. It does not bark. It does not blink. It follows the band at a distance of exactly fifty paces.
+      check: WIL moderate
+      failure_consequence: Morale crumbles. The hound follows for two days. Fighters stop sleeping — convinced it will attack
+        at night. -1 to all checks from exhaustion. It vanishes only when the band reaches Thornwall.
+      success_benefit: The band ignores it. A fighter with old moor-knowledge says to leave an offering of meat at the trail
+        edge. The hound takes it and vanishes. Band morale steadies.
+      duration_hours: 48
+      severity: moderate
+    - id: ENC_MOOR_003
+      name: Moor Fog — Total Whiteout
+      category: weather
+      seasons:
+      - thaw
+      - harvest
+      - long_dark
+      chance_percent: 15
+      description: Fog so thick that fighters lose sight of the person two paces ahead. Sound is muffled. Direction is meaningless.
+        The moor becomes featureless — no landmarks, no horizon, no sky.
+      check: WIT hard
+      failure_consequence: Band splits in the fog. Takes four hours to reassemble using horn-calls. One fighter walked into
+        a peat pool and is soaked to the chest — hypothermia risk. TOU moderate check or -2 to all checks for a day. Half-day
+        lost.
+      success_benefit: Band ropes together and moves by compass bearing. Slow but steady. Three-hour delay. No losses.
+      duration_hours: 8
+      severity: serious
+    - id: ENC_MOOR_004
+      name: Hailstorm
+      category: weather
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: The sky darkens in minutes. Hail the size of acorns hammers the moor. There is no shelter — nowhere to
+        hide on the flat heath. Ice stones rattle off helmets and split skin on unprotected hands.
+      check: TOU moderate
+      failure_consequence: Two fighters take 2 HP damage each from hailstone impacts. One mule bolts — recovered an hour later,
+        pack scattered. Supplies worth 8 silver lost in the heather.
+      success_benefit: Band hunkers behind shields and packs. Bruised but intact. One-hour delay waiting for the storm to
+        pass.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_MOOR_005
+      name: Peat Bog Trap
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 12
+      description: The ground looks like every other patch of heather. It is not. Beneath the surface is a peat bog with no
+        bottom that anyone has found. A fighter steps on it and sinks to the waist before anyone can react.
+      check: MIG hard
+      failure_consequence: Fighter sinks to the chest. Rescue takes an hour with ropes and spear-shafts. Fighter loses boots
+        and belt gear — 8 silver to replace. Soaked, cold, and humiliated.
+      success_benefit: Band pulls the fighter out immediately using a spear shaft. Thirty-minute delay. The scout marks the
+        bog edges with stacked stones for the return trip.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_MOOR_006
+      name: Quaking Ground
+      category: terrain
+      seasons:
+      - thaw
+      chance_percent: 7
+      description: The ground bounces underfoot like a skin drum. The entire section of moor is a floating mat of vegetation
+        over deep water. Every step sends ripples across the surface. The mules refuse to move.
+      check: WIT moderate
+      failure_consequence: Band forces the mules forward. One breaks through — sinks to its belly in black water. Takes two
+        hours and all hands to drag it out. Mule loses a load of gear (25 silver value). Full day lost.
+      success_benefit: Band detours around the quaking ground. Two-hour delay. Scout identifies the firm ground by the type
+        of heather growing on it.
+      duration_hours: 4
+      severity: moderate
+    - id: ENC_MOOR_007
+      name: Peat-Cutter's Hut
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 9
+      description: A sod-roofed hut in a hollow, smoke leaking from the walls. An old peat-cutter lives here alone. He has
+        not seen another person in three weeks and talks without stopping. He knows every safe path and every death-trap on
+        this stretch of moor.
+      check: WIT easy
+      failure_consequence: Old man is startled and hides in his hut. Will not open the door. Band gains nothing and the old
+        man's dog barks for an hour.
+      success_benefit: Old man shares his fire, his knowledge, and a bowl of grouse stew. Marks the safe paths for two days'
+        march. Warns of standing stones that should be avoided after dark. Band saves a full day of cautious pathfinding.
+      duration_hours: 2
+      severity: minor
+    - id: ENC_MOOR_008
+      name: Thornwall Patrol
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 7
+      description: Four riders on moor ponies, wearing Thornwall's thorn-badge. They are looking for a band of cattle thieves
+        and are suspicious of armed strangers on the moor. Their sergeant is tired, cold, and not in a mood for polite conversation.
+      check: WIT moderate
+      failure_consequence: Patrol demands the band surrender their weapons for inspection. Refusal means an escort to Thornwall
+        for questioning — two days lost. Compliance means a humiliating wait while the sergeant goes through every pack.
+      success_benefit: Band proves their identity and purpose. Sergeant shares intelligence about the cattle thieves — their
+        camp is near the band's route. Potential bounty of 40 silver if the band deals with them.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_MOOR_009
+      name: Will-o'-Wisp
+      category: supernatural
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: A pale blue light drifts across the moor at hip height, moving slowly away from the band's path. It looks
+        like a lantern. It bobs like a lantern. It is not a lantern. It leads toward a deep bog that has swallowed men before.
+      check: WIL moderate
+      failure_consequence: One fighter follows the light. Falls into a concealed peat pool — sinks to the neck before the
+        band pulls them out with ropes. 2 HP damage from cold shock. Soaked gear, no dry clothing until camp. TOU easy check
+        or fever for two days.
+      success_benefit: Band recognizes the wisp and stays on the path. Those watching notice that the wisp's route marks the
+        edge of a bog — useful for mapping safe ground.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_MOOR_010
+      name: The Bog-Bride Reaches
+      category: supernatural
+      seasons:
+      - thaw
+      - long_dark
+      chance_percent: 3
+      description: A preserved body floats to the surface of a peat pool as the band passes — a woman, skin tanned dark by
+        the bog acid, a braided rope around her neck. Her eyes are open. Her hand reaches toward the nearest fighter. The
+        fingers close.
+      check: WIL hard
+      failure_consequence: The fighter who was grabbed cannot sleep for three days. They see the bog-bride's face in every
+        pool of water. -2 to WIL, -1 to all other checks until a priest or wyrd-worker performs a cleansing. Morale hits the
+        entire band.
+      success_benefit: Band retreats and the body sinks. A wyrd-worker in the band speaks a warding word. The bog-bride's
+        grip releases. Around her neck, visible before she sinks, is a silver torc — easily worth 50 silver. Retrievable with
+        MIG moderate check.
+      duration_hours: 2
+      severity: deadly
+    - id: ENC_MOOR_011
+      name: Bog Iron Deposit
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 10
+      description: The water in a peat stream runs rust-red. A fighter recognizes the sign — bog iron. The deposit is shallow,
+        easily scooped from the stream bed. Raw ore, not refined, but valuable to any settlement with a forge.
+      check: WIT easy
+      failure_consequence: Band collects the ore but packs it poorly. It rusts through a sack and stains a load of cloth rations
+        are wrapped in. 5 silver in damaged goods.
+      success_benefit: Band collects 15 pounds of raw bog iron ore — worth 20 silver at Thornwall's forge, or 30 silver at
+        a settlement without local ore. Good leverage for trade negotiations.
+      duration_hours: 2
+      severity: minor
+    - id: ENC_MOOR_012
+      name: Preserved Body — Ancient Warrior
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 4
+      description: Peat-cutting exposes a body — a man in leather armour, bronze pins holding a wool cloak. The preservation
+        is remarkable. His sword is corroded beyond use but the scabbard fittings are bronze and intact. He has been here
+        for centuries.
+      check: WIT moderate
+      failure_consequence: Band strips the body carelessly. A fighter pockets a bronze pin. That night, the pin-holder dreams
+        of a battle they were not in and wakes screaming. -1 to WIL for three days. The pin cannot be discarded — it always
+        reappears in their pack.
+      success_benefit: Band documents the find and takes the scabbard fittings, bronze pins, and a belt buckle with care.
+        Worth 35 silver to a collector in Moor's End. The body's position reveals an old road beneath the peat — a shortcut
+        worth half a day.
+      duration_hours: 2
+      severity: minor
+  underground:
+    description: Worked stone and raw rock. Mine tunnels shore up with cracked timber. Carved halls from an older age. Underground
+      rivers that roar in the darkness. The air is bad, the light is what you bring, and the ceiling is always lower than
+      you remember.
+    encounters:
+    - id: ENC_UNDER_001
+      name: Rat Swarm
+      category: creature
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 12
+      description: They pour from a crack in the wall — hundreds of them, a flowing carpet of brown bodies and naked tails.
+        They are not attacking. They are fleeing something deeper in the tunnel. But the band is in their path and rats bite
+        when they are cornered.
+      check: NIM easy
+      failure_consequence: Two fighters bitten on hands and ankles — 1 HP damage each. One ration pack gnawed through. Main
+        risk is infection — TOU easy check per bitten fighter or wound festers (-1 to checks for three days).
+      success_benefit: Band climbs onto rock shelves and lets the swarm pass. No losses. The direction the rats came from
+        suggests something large has disturbed the deeper tunnels.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_UNDER_002
+      name: Cave Spider — Ceiling Ambush
+      category: creature
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 7
+      description: A cave spider the size of a buckler drops from the ceiling onto a fighter's shoulders. Its legs wrap around
+        the helmet and it bites at the neck gap in the armour. More webs glint in the torchlight above — this one is not alone.
+      check: NIM moderate
+      failure_consequence: Fighter bitten — 3 HP damage. Venom causes numbness in the arm for one day (-1 MIG). A second spider
+        drops onto the mule. Mule bolts into the darkness — takes an hour to recover, one pack torn by webs.
+      success_benefit: Fighter grabs the spider and crushes it. Torchlight drives the others into crevices. Band passes through
+        quickly. Spider silk harvested — worth 5 silver for bowstring winding.
+      duration_hours: 1
+      severity: moderate
+    - id: ENC_UNDER_003
+      name: Gas Pocket
+      category: weather
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: The torch gutters and dims. The flame turns blue, then shrinks to nothing. The air tastes sweet and wrong.
+        Fighters at the front begin to sway. The canary — if the band has one — is already dead.
+      check: WIT moderate
+      failure_consequence: Two fighters collapse before the band retreats. Must be dragged back to fresh air — takes thirty
+        minutes. Both suffer 3 HP damage and splitting headaches for a day. Torches and lanterns cannot be lit in the affected
+        tunnel.
+      success_benefit: Band recognizes the signs and retreats immediately. Finds an alternate route or waits for the gas to
+        disperse (four hours with cross-ventilation from a side tunnel).
+      duration_hours: 4
+      severity: serious
+    - id: ENC_UNDER_004
+      name: Condensation Flood
+      category: weather
+      seasons:
+      - thaw
+      chance_percent: 6
+      description: Warm spring air meets cold tunnel stone. Water runs down every surface — walls weep, ceiling drips, the
+        floor becomes a shallow stream in minutes. Footing is treacherous and anything not wrapped in oilskin is soaked.
+      check: TOU moderate
+      failure_consequence: Rations soaked — half a day's food supply ruined (8 silver). Two fighters slip on wet stone — one
+        twists a knee (2 HP, half-speed for a day). Torches hiss and gutter, reducing visibility.
+      success_benefit: Band wraps everything in oilskin and moves to higher ground within the tunnel system. Fills waterskins
+        from the clean runoff. One-hour delay.
+      duration_hours: 6
+      severity: moderate
+    - id: ENC_UNDER_005
+      name: Cave-In
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 7
+      description: A timber prop cracks. Then another. Dust falls from the ceiling like grey snow. The rumble comes from above
+        and behind — the tunnel roof is collapsing.
+      check: NIM hard
+      failure_consequence: One fighter caught under rubble — 6 HP damage, pinned. Takes two hours to dig them free. Tunnel
+        behind is blocked — band must find another way out. One torch lost, one weapon buried.
+      success_benefit: Band sprints forward and clears the collapse zone. Dust and debris but no injuries. The collapse blocks
+        the tunnel behind them — no retreat, but nothing can follow either.
+      duration_hours: 3
+      severity: deadly
+    - id: ENC_UNDER_006
+      name: Crumbling Bridge
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 9
+      description: A stone bridge spans an underground chasm. It was carved centuries ago. Half the span is cracked and the
+        far end sags. The chasm below is dark and the sound of water comes from a long way down.
+      check: NIM moderate
+      failure_consequence: The bridge collapses under the mule's weight. Mule falls — lost, along with its entire load (50
+        silver in gear and supplies). Fighters on the far side. Others on the near side. Takes four hours to rig a rope crossing.
+      success_benefit: Band crosses one at a time, slowly, testing each step. Mules unloaded and gear carried by hand. Three-hour
+        delay but no losses.
+      duration_hours: 4
+      severity: serious
+    - id: ENC_UNDER_007
+      name: Lost Miner
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: A voice in the darkness — thin, hoarse, begging. A Deepholm miner, separated from his crew three days ago.
+        His torch burned out yesterday. He has been sitting in total darkness, drinking seep-water and waiting to die.
+      check: WIT easy
+      failure_consequence: Miner panics at the light and runs deeper into the tunnel. Band loses an hour chasing him. When
+        caught, he is incoherent and slows the band's pace for a day.
+      success_benefit: Miner is grateful. Once fed and calmed, he knows these tunnels — guides the band through a shortcut
+        that saves half a day. Warns of a flooded section ahead. Deepholm will pay 10 silver for his return.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_UNDER_008
+      name: Smuggler Waystation
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 6
+      description: A widened chamber with a fire-pit, stacked crates, and bedrolls. Five smugglers sit around a low fire.
+        They reach for weapons when the torchlight hits them. Their cargo is tax-free salt and a cask of southern wine.
+      check: WIT moderate
+      failure_consequence: Standoff. Neither side wants a fight in a tunnel. Smugglers demand the band leave and keep quiet.
+        If the band refuses, a tense skirmish — one fighter takes 3 HP damage. Smugglers flee deeper, taking their cargo.
+      success_benefit: Band negotiates. Smugglers sell salt at half-price (saves 15 silver) and share wine. They know a route
+        to an exit the band's map does not show.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_UNDER_009
+      name: Echo-Voices
+      category: supernatural
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: The band's voices echo wrong. Words come back changed — someone else's voice, speaking sentences no one
+        said. The echoes lag by seconds at first, then by minutes. Then the echoes start answering questions the band has
+        not asked yet.
+      check: WIL moderate
+      failure_consequence: Three fighters refuse to speak for the rest of the day — communication by gesture only. One fighter
+        hears their own death described in the echo and cannot sleep that night. -1 to all checks for the affected fighters
+        next day.
+      success_benefit: Band falls silent and moves by hand-signal. The echoes fade. A wyrd-sensitive fighter catches a useful
+        fragment — the echo described a safe passage through the flooded tunnel ahead.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_UNDER_010
+      name: The Carved Face
+      category: supernatural
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 4
+      description: A face carved into the tunnel wall — not Norse work, older, stranger. Its eyes are closed. As the band
+        passes, the eyes open. Stone grinds on stone. The carved mouth moves. It speaks a single word in a language no living
+        person knows.
+      check: WYR hard
+      failure_consequence: The word lodges in one fighter's mind. They cannot stop repeating it. It interferes with sleep
+        and concentration — -2 to WIT, -1 to all other checks for three days. A priest or wyrd-worker can suppress it with
+        a WYR moderate check.
+      success_benefit: A wyrd-reader understands the word — it is a name. The name of whatever is buried deeper in these tunnels.
+        Knowing the name grants +1 to all WIL checks against supernatural encounters in this tunnel system.
+      duration_hours: 1
+      severity: serious
+    - id: ENC_UNDER_011
+      name: Ore Vein
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 10
+      description: Torchlight catches a glint in the wall. A vein of silver ore — thin but pure, running through the grey
+        stone like a frozen lightning bolt. The miners missed it, or never came this deep.
+      check: WIT moderate
+      failure_consequence: Band tries to mine it with weapons. Damages a sword (10 silver to repair) and extracts only a handful
+        of ore worth 5 silver. The noise attracts attention — encounter check with +10% for the next four hours.
+      success_benefit: Band marks the location precisely. Intelligence worth 50 silver to the Deepholm mining guild, or the
+        band can return with proper tools and extract ore worth 80 silver over two days.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_UNDER_012
+      name: Underground Pool
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 6
+      description: The tunnel opens into a cavern. A pool of still, clear water fills half the floor — deep enough that the
+        torchlight does not reach the bottom. On the far side, half-submerged on a stone shelf, are objects that gleam dully.
+        Metal. Old metal.
+      check: NIM moderate
+      failure_consequence: A fighter wades in. The pool is deeper than it looks — over their head within three paces. They
+        swallow water and are pulled out gasping. 2 HP damage. The objects on the shelf remain out of reach without rope or
+        a boat.
+      success_benefit: Band rigs a rope line and a strong swimmer retrieves the objects — a bronze armband (20 silver), a
+        corroded iron helm (5 silver as scrap, 30 silver if restored), and a sealed clay flask containing lamp oil that still
+        burns.
+      duration_hours: 2
+      severity: minor
+  mountain:
+    description: Raw granite and wind-scoured ridgelines. The passes are narrow, the footing treacherous, and the air thins
+      until every breath costs effort.
+    encounters:
+    - id: ENC_MTN_001
+      name: Snow Cat on the Ledge
+      category: creature
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 8
+      description: A pale-furred mountain cat crouches on a ledge above the trail, ears flat, watching the rearguard. It is
+        gaunt from a lean season and bold enough to stalk armed men for the mule.
+      check: WIT moderate
+      failure_consequence: Cat lunges at the pack mule from above — 3 HP damage to the mule handler, one pack of rations torn
+        open and dragged into the rocks. Half-day delay recovering scattered gear.
+      success_benefit: Scout spots the cat's tracks and scat. Band makes noise and keeps torches lit. Cat slinks away. No
+        delay.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_MTN_002
+      name: Nesting Eagle
+      category: creature
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 10
+      description: A golden eagle the size of a hound has nested on a crag directly above the only passable trail. It shrieks
+        and stoops at anything that comes within twenty paces, talons first.
+      check: NIM moderate
+      failure_consequence: Eagle rakes one fighter across the scalp — 2 HP damage, bleeding freely. Band must shield-wall
+        past the nest, losing two hours.
+      success_benefit: Band times the crossing while the eagle hunts. Pass the nest without incident. One fighter finds an
+        eagle feather — worth 2 silver to a skald.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_MTN_003
+      name: High Pass Blizzard
+      category: weather
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 12
+      description: Snow comes sideways across the pass, driven by wind that screams through the gap. Visibility drops to arm's
+        length. The trail vanishes under fresh drifts in minutes.
+      check: TOU hard
+      failure_consequence: Band forced to bivouac in the open. One fighter takes frostbite — 3 HP damage, -1 NIM for two days.
+        Lose a full day waiting for the pass to clear. 10 silver of firewood consumed.
+      success_benefit: Band finds a rock overhang and shelters. Half-day delay but no injuries. Fire kept alive with deadfall.
+      duration_hours: 14
+      severity: serious
+    - id: ENC_MTN_004
+      name: Lightning on the Ridge
+      category: weather
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 7
+      description: Thunderheads boil up from the valley below. The smell of iron fills the air and the hair on every arm stands
+        upright. Lightning strikes the ridge fifty paces ahead, splitting a boulder in half.
+      check: WIT hard
+      failure_consequence: Lightning strikes near the band — one fighter knocked flat by the blast, 5 HP damage, temporarily
+        deaf. All metal gear too hot to touch for an hour. Half-day delay.
+      success_benefit: Band drops below the ridgeline before the worst. Gear stowed, metal bundled. Two-hour delay sheltering
+        in a gully. No injuries.
+      duration_hours: 4
+      severity: serious
+    - id: ENC_MTN_005
+      name: Rockfall
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 11
+      description: Frost-loosened stones break free above the trail. The first warning is a crack like a snapped mast, then
+        a grinding roar as half a cliff face slides. Dust and gravel rain down.
+      check: NIM moderate
+      failure_consequence: One fighter caught by rolling stones — 4 HP damage, shield arm bruised. Trail blocked, requiring
+        a two-hour scramble over the debris. One pack mule refuses to cross.
+      success_benefit: Band sprints to an overhang. Rockfall passes. One-hour detour around the rubble. No injuries.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_MTN_006
+      name: Avalanche Chute
+      category: terrain
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 5
+      description: The slope above the trail is loaded with wind-packed snow. A crack runs across the snowfield — the whole
+        mass is ready to move. The band is halfway across the chute when someone hears the wet thump of settling snow.
+      check: NIM hard
+      failure_consequence: Avalanche buries two fighters to the waist. One takes 6 HP damage from impact and cold. Band spends
+        four hours digging out. One pack lost under the snow. Morale shaken.
+      success_benefit: Band crosses fast and low, single file. Snow settles but holds. Tense hour, no losses.
+      duration_hours: 5
+      severity: deadly
+    - id: ENC_MTN_007
+      name: Mountain Scouts
+      category: social
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 9
+      description: Three figures watch from a higher ridge — furs, short bows, no banners. Mountain clan scouts. They have
+        been following the band for half a day, appearing and disappearing behind outcrops.
+      check: WIT moderate
+      failure_consequence: Scouts vanish. That night, someone steals the mule's feed bag and a belt knife. Band sleeps poorly
+        — all checks at -1 next morning.
+      success_benefit: Band signals peace and leaves a gift of salt on a rock. Scouts come down. They share knowledge of a
+        safe pass and a spring. Save half a day's travel.
+      duration_hours: 2
+      severity: minor
+    - id: ENC_MTN_008
+      name: Stranded Travelers
+      category: social
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: A merchant and his daughter shelter in a collapsed stone hut below the pass. Their porter fell two days
+        ago — broken ankle — and they cannot carry their goods alone. They are nearly out of food.
+      check: WIT easy
+      failure_consequence: Band ignores them. Word spreads at the next settlement — -10 reputation. No material loss, but
+        the next social encounter in any terrain starts at a disadvantage.
+      success_benefit: Band carries the porter on a litter to the next village. Merchant pays 25 silver and spreads the band's
+        name. +5 reputation.
+      duration_hours: 6
+      severity: minor
+    - id: ENC_MTN_009
+      name: Voices on the Summit
+      category: supernatural
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 5
+      description: Near the summit cairn, the wind carries voices — not echoes, but clear words in an old tongue. They speak
+        of debts and oaths. One voice says a name that belongs to someone in the band.
+      check: WIL hard
+      failure_consequence: The named fighter freezes, staring at the cairn. Must be dragged away. They mutter about unfinished
+        business for two days — -1 WIL until they sleep a full night beside a fire. Uneasy mood in the band.
+      success_benefit: The named fighter listens, then turns away. Something loosens in their chest. +1 WIL for the next three
+        days — a clarity born from facing the mountain's judgment.
+      duration_hours: 1
+      severity: moderate
+    - id: ENC_MTN_010
+      name: The Corpse That Moved
+      category: supernatural
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 3
+      description: A frozen body on the trail — old leather, cracked skin, ice in the beard. The band steps around it. An
+        hour later, the rearguard sees it sitting upright, facing their direction. Its mouth is open.
+      check: WIL hard
+      failure_consequence: One fighter breaks nerve and runs, twisting an ankle on the scree — 2 HP damage, -1 NIM for a day.
+        Band loses two hours regrouping. The corpse is prone again when they look back.
+      success_benefit: Band holds formation and moves on. The corpse does not follow. A fighter with wyrd-sense notes the
+        direction it faced — it was pointing toward a hidden trail that saves four hours.
+      duration_hours: 2
+      severity: serious
+    - id: ENC_MTN_011
+      name: Crystal Cave
+      category: discovery
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 6
+      description: Behind a screen of loose scree, a fissure leads into a cave lined with pale quartz crystals the size of
+        a man's forearm. The air inside is still and cold. Light from a torch sets the walls blazing.
+      check: MIG moderate
+      failure_consequence: A fighter tries to pry crystals loose and triggers a small collapse. 2 HP damage from falling rock.
+        Band retreats with nothing. Cave entrance sealed.
+      success_benefit: Careful extraction yields three large crystals worth 15 silver each to a glassmaker or runecutter.
+        Band also finds dry shelter for the night.
+      duration_hours: 3
+      severity: minor
+    - id: ENC_MTN_012
+      name: High Herb Patch
+      category: discovery
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 10
+      description: A south-facing ledge catches enough sun to grow a thick patch of mountain arnica and yarrow — both prized
+        by healers. The flowers are at peak bloom and the air smells of camphor.
+      check: WIT easy
+      failure_consequence: Band picks the wrong plants — useless weeds. Wasted hour, nothing gained.
+      success_benefit: Healer gathers enough arnica and yarrow for three poultice doses. Each heals 2 HP. Worth 8 silver per
+        dose if sold.
+      duration_hours: 1
+      severity: minor
+  river_ford:
+    description: Brown water running fast over stones, rope ferries that sag in the current, and log bridges slick with spray.
+      Every crossing is a gamble with the river's mood.
+    encounters:
+    - id: ENC_FORD_001
+      name: Salmon Run
+      category: creature
+      seasons:
+      - harvest
+      chance_percent: 12
+      description: The river churns silver with spawning salmon. Fish leap clear of the water, thick as a man's thigh. Bears
+        will be near, but for now the run is unguarded and the band is hungry.
+      check: NIM easy
+      failure_consequence: Fighters wade in and catch nothing — soaked boots, cold feet. One slips on river stones, bruised
+        knee. Two-hour delay drying gear.
+      success_benefit: Band spears and nets enough salmon to feed the company for three days. Saves 12 silver in rations.
+        Morale lifts.
+      duration_hours: 2
+      severity: minor
+    - id: ENC_FORD_002
+      name: Water Serpent at the Ford
+      category: creature
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 4
+      description: Something massive holds the deep pool below the ford. A dark shape — ten paces long, scaled — coils around
+        a submerged boulder. It has claimed the crossing and the water around it is still as death.
+      check: WIT hard
+      failure_consequence: Serpent strikes during crossing — one fighter dragged under, hauled back by the belt. 8 HP damage,
+        armor ruined. Mule killed and dragged into the pool. Band loses all mule-carried supplies.
+      success_benefit: Band finds a second crossing upstream — shallower, rougher, but clean. Three-hour detour. The serpent
+        stays in its pool.
+      duration_hours: 4
+      severity: deadly
+    - id: ENC_FORD_003
+      name: Flash Flood
+      category: weather
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 8
+      description: Rain in the mountains sends a wall of brown water down the valley. The river rises knee-high in minutes.
+        The ford that was ankle-deep at dawn is now chest-deep and churning with debris.
+      check: MIG hard
+      failure_consequence: One fighter swept off feet — dragged twenty paces downstream before catching a root. 3 HP damage,
+        lost a belt knife. Band waits half a day for water to drop.
+      success_benefit: Band ropes together and fords before the crest. Gear wet but intact. Two-hour delay wringing out and
+        drying by fire.
+      duration_hours: 10
+      severity: moderate
+    - id: ENC_FORD_004
+      name: Ice-Jam
+      category: weather
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 7
+      description: Thawing ice from upstream jams against the bridge pilings. Water backs up behind the dam, flooding both
+        banks. The bridge groans under the pressure and the timbers shift with every new impact.
+      check: WIT moderate
+      failure_consequence: Band tries to cross and the bridge gives way mid-span. Two fighters fall into icy water — 3 HP
+        each, hypothermia risk. Band loses a pack and spends four hours warming by fire.
+      success_benefit: Band reads the stress on the pilings and waits. Ice-jam breaks on its own within three hours. Bridge
+        holds. No losses.
+      duration_hours: 4
+      severity: moderate
+    - id: ENC_FORD_005
+      name: Collapsed Bridge
+      category: terrain
+      seasons:
+      - thaw
+      - harvest
+      - long_dark
+      chance_percent: 10
+      description: The bridge is out. Half the span lies in the river, timbers splintered. The far bank is twenty paces away
+        and the current is ugly — grey, fast, and full of branches.
+      check: MIG moderate
+      failure_consequence: Improvised rope crossing fails — one fighter dunked to the shoulders, 2 HP from cold shock. Band
+        must detour four hours upstream to a shallow ford. Gear damp.
+      success_benefit: Band rigs a rope line using an arrow shot to the far bank. Slow crossing, single file, but everyone
+        gets across dry. Two-hour delay.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_FORD_006
+      name: Deep Ford
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 11
+      description: The ford marked on the route chart is deeper than expected — chest-high on a tall fighter and the current
+        pushes hard. The riverbed is loose gravel that shifts underfoot.
+      check: MIG moderate
+      failure_consequence: One fighter loses footing — tumbles downstream, dragged out coughing. 2 HP damage. One pack of
+        supplies waterlogged and ruined — 15 silver in losses.
+      success_benefit: Band links arms and crosses in a wedge. Slow but steady. Everyone across in an hour. Boots wet, nothing
+        lost.
+      duration_hours: 2
+      severity: minor
+    - id: ENC_FORD_007
+      name: Ferryman's Toll
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 13
+      description: A rope ferry works the crossing — one old man and a flat-bottomed barge that holds six. He wants 3 silver
+        per head and 5 for the mule. His price is firm. The next ford is half a day upstream.
+      check: WIT easy
+      failure_consequence: Band argues and the ferryman refuses service entirely. Half-day detour to the upstream ford. Time
+        and temper wasted.
+      success_benefit: 'Band pays the toll — 20 silver total. Clean, dry crossing in two trips. Ferryman shares news from
+        downriver: a bridge washed out, saving the band from a dead-end route.'
+      duration_hours: 1
+      severity: minor
+    - id: ENC_FORD_008
+      name: Rival Company at the Bridge
+      category: social
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 6
+      description: Another mercenary band holds the far end of a narrow stone bridge — eight fighters, road-dirty, shields
+        up. Their captain says the bridge is theirs for the day. Toll or turn around.
+      check: WIT moderate
+      failure_consequence: Words turn to shoving. Brief skirmish on the bridge — two fighters wounded, 3 HP each. Band forces
+        passage but earns an enemy. Rival company will remember.
+      success_benefit: Band's captain talks terms — shared passage, no toll, exchange of road information. Rival captain respects
+        the nerve. Both bands cross and part without blood.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_FORD_009
+      name: River Spirit's Bargain
+      category: supernatural
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 5
+      description: The water at the ford goes still — perfectly flat, mirror-smooth, while upstream and downstream the current
+        runs as before. A face forms in the surface. It asks for something precious in exchange for safe crossing.
+      check: WYR hard
+      failure_consequence: Band crosses without offering. The current drags hard at every step. One fighter loses a weapon
+        to the river — the water closes over it and it is gone. The face smiles.
+      success_benefit: A fighter tosses a silver ring into the still water. The face nods. The crossing is unnaturally easy
+        — waist-deep water feels ankle-deep. No wet gear, no delay. The ring is gone.
+      duration_hours: 1
+      severity: moderate
+    - id: ENC_FORD_010
+      name: Drowned Walker
+      category: supernatural
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 3
+      description: Something walks upstream along the riverbed. Visible through the water — a figure in rotting mail, moving
+        against the current with slow, deliberate steps. Its eyes are open and white. It does not surface.
+      check: WIL hard
+      failure_consequence: One fighter stares too long and wades in, calling a dead comrade's name. Band hauls them back —
+        2 HP from cold, shaking for hours. -1 WIL for two days. The walker keeps moving upstream.
+      success_benefit: Band averts eyes and crosses quickly at a different point. No contact. A wyrd-touched fighter notes
+        the walker headed toward an old battlefield — useful intelligence for avoiding the dead.
+      duration_hours: 2
+      severity: serious
+    - id: ENC_FORD_011
+      name: Drowned Body with Silver
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 8
+      description: Snagged on a root in the shallows — a body, face-down, bloated. The leather belt pouch is intact and heavy.
+        The corpse wears a merchant's ring and the clothes were fine before the river had them.
+      check: WIT easy
+      failure_consequence: Band takes the silver but draws attention — a patrol downriver asks questions about the dead merchant.
+        Uncomfortable interrogation, two-hour delay. Nothing comes of it, but nerves are frayed.
+      success_benefit: Band recovers 35 silver and a sealed letter. The letter is a trade contract — worth a favor if delivered
+        to the named party in the next town.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_FORD_012
+      name: Washed-Up Cargo
+      category: discovery
+      seasons:
+      - thaw
+      - harvest
+      chance_percent: 9
+      description: A smashed crate and two sealed barrels lie wedged between rocks downstream from the ford. The wood is fresh
+        — this cargo went into the river recently. One barrel still has a merchant's seal.
+      check: MIG easy
+      failure_consequence: Barrel is waterlogged — contents ruined. Wasted hour prying it open. Wet grain and swollen leather,
+        worthless.
+      success_benefit: One barrel holds salted pork, the other holds nails and iron fittings. Food worth 10 silver, hardware
+        worth 20 silver to any smith. Good salvage.
+      duration_hours: 1
+      severity: minor
+  ice:
+    description: Flat white nothing under a grey sky. The ground is frozen a fathom deep and the wind has nothing to break
+      against. The Veil is thin here — the dead are close and the living are far from help.
+    encounters:
+    - id: ENC_ICE_001
+      name: Polar Bear
+      category: creature
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 6
+      description: A white shape rises from behind an ice ridge — massive, silent, close. The bear stands on hind legs to
+        scent the air. It is not afraid. It weighs more than the entire band's gear combined.
+      check: WIT hard
+      failure_consequence: Bear charges. Skirmish costs the band dearly — one fighter mauled, 7 HP damage, shoulder torn.
+        Bear takes a mule carcass and withdraws. Band loses the mule and all it carried.
+      success_benefit: Band builds a wall of noise — banging shields, shouting, waving torches. Bear decides easier prey exists
+        elsewhere. Tense standoff, no blood.
+      duration_hours: 2
+      severity: deadly
+    - id: ENC_ICE_002
+      name: Seal Colony
+      category: creature
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 12
+      description: A breathing hole in the ice has drawn a colony of ring seals — thirty or more, basking on the ice around
+        the open water. Meat, fat, and hide, all in one place.
+      check: NIM moderate
+      failure_consequence: Seals spook and vanish into the hole before the band gets close. Wasted two hours crawling across
+        ice. Cold and frustrated.
+      success_benefit: Band takes three seals — enough meat for four days, fat for waterproofing and lamp fuel. Hides worth
+        5 silver each. Excellent haul.
+      duration_hours: 3
+      severity: minor
+    - id: ENC_ICE_003
+      name: Whiteout
+      category: weather
+      seasons:
+      - long_dark
+      - thaw
+      - harvest
+      chance_percent: 14
+      description: Ground and sky merge into a single white void. There is no horizon, no shadow, no sense of up or down.
+        Snow drives horizontally and the cold is absolute. Direction is a guess.
+      check: WIT hard
+      failure_consequence: Band walks in a circle for six hours. One fighter's face frostbitten — 3 HP damage, -1 to all social
+        checks until healed (scarring). Fuel wasted. Full day lost.
+      success_benefit: Navigator fixes direction by wind angle and ice drift. Band hunkers down in a snow trench until visibility
+        returns. Half-day delay, no injuries.
+      duration_hours: 12
+      severity: serious
+    - id: ENC_ICE_004
+      name: Killing Cold
+      category: weather
+      seasons:
+      - long_dark
+      chance_percent: 8
+      description: The temperature drops past anything the band has felt before. Metal burns bare skin. Breath freezes in
+        the beard. Exposed water skins crack. The cold is not weather — it is a presence.
+      check: TOU extreme
+      failure_consequence: Two fighters take frostbite — 4 HP each, -1 NIM for three days. One water skin bursts. Band must
+        stop and build a snow shelter or die. Full day lost. 15 silver of fuel consumed.
+      success_benefit: Band layers up, shares body heat, rotates watch every hour. Snow shelter built fast. Miserable night
+        but no frostbite. Half-day delay.
+      duration_hours: 16
+      severity: deadly
+    - id: ENC_ICE_005
+      name: Crevasse
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 10
+      description: The snow bridge gives way. One fighter drops — a crack in the ice, three paces wide and blue-black deep.
+        The rope snaps taut. Nothing but darkness below and the sound of running water far down.
+      check: MIG hard
+      failure_consequence: Fighter drops ten paces before the rope catches. 5 HP from impact, dislocated shoulder. Band spends
+        three hours hauling them out. One pack cut free and lost to the crevasse.
+      success_benefit: Rope holds, fighter caught after a two-pace drop. Band probes ahead with poles and finds a safe route
+        around. Two-hour delay, no injuries.
+      duration_hours: 4
+      severity: serious
+    - id: ENC_ICE_006
+      name: Ice Shelf Collapse
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 5
+      description: A grinding crack splits the air. The ice shelf the band is crossing separates from the shore. A gap of
+        black water opens — arm's width, then a pace, then two. The shelf tilts.
+      check: NIM hard
+      failure_consequence: One fighter goes into the water. Hypothermia begins immediately — 6 HP damage, -2 to all checks
+        for a full day unless dried and warmed within the hour. Band loses one pack.
+      success_benefit: Band sprints for solid ground. Everyone makes it. Two packs dropped but retrieved from the shelf edge
+        before it drifts. One-hour delay. Shaken but whole.
+      duration_hours: 2
+      severity: serious
+    - id: ENC_ICE_007
+      name: Ice Hermit
+      category: social
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 7
+      description: A figure crouches beside a blubber lamp in a snow cave — old, weathered beyond age, wrapped in seal fur.
+        They have lived out here alone for years. Their eyes are clear and they speak slowly, as if remembering how.
+      check: WIT moderate
+      failure_consequence: Hermit is spooked by the band's size and retreats deeper into the cave. Band learns nothing. Hour
+        wasted.
+      success_benefit: Hermit shares knowledge of safe ice, thin spots, and a cached supply dump two days north. Marks the
+        band's map. Worth days of scouting. Takes a knife as payment — 4 silver.
+      duration_hours: 2
+      severity: minor
+    - id: ENC_ICE_008
+      name: Lost Traveler
+      category: social
+      seasons:
+      - long_dark
+      - harvest
+      chance_percent: 8
+      description: A single figure stumbles toward the band across the ice — snow-blind, lips cracked, one boot missing. They
+        are babbling about lights in the sky and a door that opened in the ground.
+      check: WIT easy
+      failure_consequence: Traveler dies in the night despite aid. Band buries the body. Morale drops. Half-day lost.
+      success_benefit: Traveler survives with food and warmth. Once lucid, they describe a sheltered route through the ice
+        field that avoids the worst crevasse zones. Valuable intelligence.
+      duration_hours: 4
+      severity: moderate
+    - id: ENC_ICE_009
+      name: Veil-Dead on the Ice
+      category: supernatural
+      seasons:
+      - long_dark
+      - thaw
+      - harvest
+      chance_percent: 5
+      description: They come at dusk — six figures walking in formation across the ice, a hundred paces out. Their armor is
+        old. Their faces are not faces. They walk past the band without turning, heading north, and their boots leave no prints.
+      check: WIL hard
+      failure_consequence: One fighter follows the Veil-dead for an hour before the band drags them back. The fighter cannot
+        explain why. -2 WIL for three days, nightmares, refuses to take rear watch.
+      success_benefit: Band watches in silence and lets them pass. A wyrd-touched fighter reads their direction and gear —
+        they are walking away from something. Whatever is behind the band is worse than what is ahead.
+      duration_hours: 1
+      severity: moderate
+    - id: ENC_ICE_010
+      name: The Aurora Speaks
+      category: supernatural
+      seasons:
+      - long_dark
+      chance_percent: 3
+      description: 'The northern lights blaze green and violet — then pulse in a rhythm that matches the heartbeat. Colors
+        form shapes. Shapes form runes. The runes are readable. They say: the dead remember what the living forget.'
+      check: WYR extreme
+      failure_consequence: One fighter stares too long. Their eyes go white for an hour — snow-blind from wyrd exposure. 2
+        HP damage. -1 WIT for two days. They cannot remember what the runes said.
+      success_benefit: A wyrd-sensitive fighter reads the full message. Gains a vision of a buried cache three days ahead
+        — weapons, silver, and something older. The location burns into memory like a brand.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_ICE_011
+      name: Frozen Artifact
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 5
+      description: The spring melt reveals something in the ice — a chest, iron-banded, old enough that the lock has rusted
+        to nothing. The wood is dark with age but intact. Whatever is inside has been frozen since before living memory.
+      check: MIG moderate
+      failure_consequence: Band pries the chest open and the contents crumble — ancient fabric, corroded metal, dust. Whatever
+        it was, the thaw destroyed it. Wasted two hours.
+      success_benefit: 'Inside: a seax with a bone handle carved in spirals, still sharp. Worth 40 silver to a collector,
+        or a fine weapon for a fighter. Also a small gold arm-ring — 25 silver in weight alone.'
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_ICE_012
+      name: Preserved Body
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 6
+      description: A body in the ice — not a skeleton, a body. Skin dark as leather, hair intact, wearing clothes from an
+        age no one can name. The face is calm. A tattoo on the chest shows a rune no one in the band recognizes.
+      check: WYR moderate
+      failure_consequence: A fighter touches the body and feels a jolt — hand numb for a day, -1 MIG. The body's mouth opens
+        slightly. Band leaves fast. Nothing gained, nerves shattered.
+      success_benefit: A wyrd-touched fighter studies the rune without touching the body. It is a ward against something —
+        the fighter can reproduce it. Grants the band +1 WIL against supernatural encounters for one week.
+      duration_hours: 3
+      severity: moderate
+  iron_moor:
+    description: Flat heath crusted with black rime and streaked rust-orange where iron bleeds up through the peat. The air
+      tastes of metal. Ordovast's soldiers walk the tracks between the open-cast mines.
+    encounters:
+    - id: ENC_IRON_001
+      name: Iron-Poisoned Wolves
+      category: creature
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 8
+      description: A pack of five gaunt wolves trails the band along a slag ridge. Their gums are black and their eyes are
+        dull — iron runoff has poisoned the moor's water and the wolves are starving, desperate, and fearless.
+      check: WIT moderate
+      failure_consequence: Wolves rush the camp at dusk. One fighter bitten on the forearm — 3 HP damage, wound turns septic
+        from iron-taint within a day unless cleaned with spirits. One ration pack torn apart.
+      success_benefit: Band spots drag marks and scat. Fires built high and weapons kept close. Wolves circle once, then slink
+        back toward the slag heaps. No losses.
+      duration_hours: 3
+      severity: moderate
+    - id: ENC_IRON_002
+      name: Moor Hawks
+      category: creature
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 12
+      description: A mated pair of red-tailed moor hawks stoops repeatedly at the band, shrieking. Their nest sits on a cairn
+        beside the only trail through the bog. The male is aggressive and the female is bigger.
+      check: NIM easy
+      failure_consequence: Hawk rakes a fighter across the temple — 2 HP damage, blood in the eye. Band stumbles off-trail
+        avoiding the dive, one fighter sinks knee-deep in bog. Hour lost pulling them free.
+      success_benefit: Band crouches low and moves through fast. Hawks veer off. A keen-eyed fighter spots a hare warren the
+        hawks were guarding — fresh meat for the night, saving 3 silver in rations.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_IRON_003
+      name: Rime-Fog
+      category: weather
+      seasons:
+      - long_dark
+      - thaw
+      - harvest
+      chance_percent: 13
+      description: A thick fog rolls off the moor at dusk, cold enough to coat every surface in white rime within an hour.
+        Visibility drops to five paces. The ground underfoot becomes treacherous with frozen condensation.
+      check: WIT moderate
+      failure_consequence: Band loses direction in the fog. Two fighters walk into a drainage ditch filled with iron-fouled
+        water — soaked to the hip, 2 HP each from the cold. Four hours spent drying gear at a hasty fire.
+      success_benefit: Navigator reads the wind and keeps the band on high ground. Slow march, torches lit. Half-day delay
+        but everyone stays dry and whole.
+      duration_hours: 8
+      severity: moderate
+    - id: ENC_IRON_004
+      name: Iron-Stained Sleet
+      category: weather
+      seasons:
+      - long_dark
+      - harvest
+      chance_percent: 7
+      description: Sleet falls in orange-brown streaks, thick with iron particulate drawn up from the moor's exposed ore beds.
+        It stings exposed skin and coats metal gear in a gritty rust film that fouls hinges and edges.
+      check: TOU moderate
+      failure_consequence: Band caught in the open. One fighter's mail coat seized with rust at the joints — armor useless
+        until cleaned, 4 hours of work. Weapons dulled, -1 to weapon damage for next combat unless sharpened.
+      success_benefit: Band takes shelter under an overhanging slag bank. Two-hour wait. A fighter wraps all metal gear in
+        oiled cloth before the worst. No rust, no damage.
+      duration_hours: 3
+      severity: minor
+    - id: ENC_IRON_005
+      name: Hidden Mine Shaft
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 9
+      description: The heather gives way underfoot with a crack of rotten timbers. An old mine shaft — uncapped, unmarked,
+        hidden by two seasons of growth. The hole drops into blackness and loose dirt crumbles at the edges.
+      check: NIM hard
+      failure_consequence: One fighter drops through up to the chest. Collarbone cracked against a timber — 5 HP damage, -1
+        MIG for three days. Band spends two hours extracting them with ropes. Pack lost down the shaft.
+      success_benefit: Lead scout catches the timber flex and rolls clear. Band marks the shaft and detours. No injuries.
+        A fighter with mining knowledge notes the shaft direction — points toward an unmapped ore body.
+      duration_hours: 3
+      severity: serious
+    - id: ENC_IRON_006
+      name: Slag Collapse
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 10
+      description: A hillside of mine tailings slumps after recent rain, spilling a grey-orange avalanche of slag, crushed
+        stone, and rusted iron across the trail. Dust rises in a choking cloud that smells of wet rust.
+      check: NIM moderate
+      failure_consequence: One fighter caught in the edge of the slide — 3 HP damage, ankle twisted under slag. Band spends
+        three hours digging the trail clear enough for the mule. Everyone's lungs burn from the dust.
+      success_benefit: Band hears the hillside groan and pulls back. Slide passes. One-hour detour around the debris. In the
+        freshly exposed slag, a fighter finds a chunk of smelted copper worth 8 silver.
+      duration_hours: 4
+      severity: moderate
+    - id: ENC_IRON_007
+      name: Ordovast's Patrol Demanding Papers
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 15
+      description: Six soldiers in Grimholt iron-grey surcoats block the trail. Their sergeant holds up a hand — travel writs,
+        purpose of journey, and toll payment. Ordovast's moor patrols have standing orders to question all armed bands.
+      check: WIT moderate
+      failure_consequence: Papers insufficient or missing. Sergeant confiscates the band's best weapon as 'tax' — worth 30
+        silver. Refusal means a fight with six armoured soldiers, two more behind the ridge with bows.
+      success_benefit: 'Papers in order. Sergeant waves the band through and shares road intelligence: a bridge washed out
+        two days east, a bandit camp cleared last week. Saves the band a dead-end route.'
+      duration_hours: 1
+      severity: serious
+    - id: ENC_IRON_008
+      name: Press-Gang for the Mines
+      category: social
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 5
+      description: A Grimholt overseer and ten mine guards intercept the band at a crossroads. The overseer claims authority
+        to conscript able bodies for Ordovast's iron mines. He points at the two strongest fighters and says they are coming
+        with him.
+      check: WIT hard
+      failure_consequence: 'Negotiation fails. Band fights or surrenders two fighters for three days of forced labor. If surrendered:
+        fighters lose 4 HP each, -1 TOU for a week. Band delayed three days. If fought: full combat encounter with ten guards.'
+      success_benefit: Band captain produces a writ of contracted service — real or convincingly forged. Overseer backs down,
+        unwilling to provoke a dispute with whoever hired the band. Tense standoff, no losses.
+      duration_hours: 2
+      severity: deadly
+    - id: ENC_IRON_009
+      name: Ghost Miners
+      category: supernatural
+      seasons:
+      - long_dark
+      - harvest
+      chance_percent: 6
+      description: At dusk, the sound of picks on stone rises from an empty hillside. Faint lights move underground. The moor's
+        old mine collapsed two winters ago and buried forty men alive. They are still working.
+      check: WIL moderate
+      failure_consequence: One fighter follows the sound to the collapsed mine entrance, drawn by a voice calling their name.
+        Band hauls them back — fighter is ice-cold to the touch, -2 WIL for two days. Nightmares for a week.
+      success_benefit: Band leaves an offering of bread and iron nails at the mine mouth. The sounds fade. That night the
+        camp is undisturbed — unusually peaceful sleep. All fighters recover 1 extra HP overnight.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_IRON_010
+      name: Rust-Bleeding Standing Stone
+      category: supernatural
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 4
+      description: A lone standing stone on the moor — taller than a man, covered in spirals too old to be Grimholt work.
+        It is sweating rust-red liquid from every carved groove, pooling at its base in a dark mirror. The liquid is warm.
+      check: WYR hard
+      failure_consequence: A fighter touches the liquid and their hand goes numb to the wrist for three days — -1 MIG, -1
+        NIM in that hand. The stone's bleeding accelerates. The band's compass points toward the stone for a day, not north.
+      success_benefit: A wyrd-touched fighter reads the spirals and pours mead on the stone's base. The bleeding slows. The
+        stone grants a vision — a safe route through the moor that avoids both patrols and sinkholes. Saves a full day.
+      duration_hours: 1
+      severity: serious
+    - id: ENC_IRON_011
+      name: Exposed Iron Vein
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 10
+      description: Rain has cut a gully through the peat, exposing a seam of raw iron ore — thick, dark, and rich. It is clearly
+        high-quality, better than most of what comes out of Ordovast's mines.
+      check: WIT easy
+      failure_consequence: Band marks the location but is spotted by a distant patrol. The information is now shared — Ordovast's
+        men will claim the vein. No direct loss, but the discovery benefits the warchief, not the band.
+      success_benefit: Band charts the location discreetly. A smith or merchant in a rival settlement will pay 40 silver for
+        the coordinates. Alternatively, the band can sell the information to Ordovast's rivals for a future favor.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_IRON_012
+      name: Execution Post with Warning
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: 'A tarred post driven into the moor, three skulls nailed to it. A wooden plaque reads: DESERTERS. The bodies
+        are gone — wolves or the moor took them — but the iron spikes are fresh. Ordovast''s justice.'
+      check: WIT easy
+      failure_consequence: Band lingers too long. A patrol arrives and asks pointed questions about the band's business near
+        the post. Uncomfortable hour. Lose 5 silver in 'administrative fees' to avoid further trouble.
+      success_benefit: 'Band reads the post and moves on quickly. One fighter recognizes a tattoo on one of the skulls — a
+        former contract soldier. Useful intelligence: Ordovast is losing men to desertion. His grip is weaker than it looks.'
+      duration_hours: 1
+      severity: minor
+  barrow_downs:
+    description: Treeless hills humped with turf-covered burial mounds, some split open by age or grave-robbers. The grass
+      grows too green here and the air is still even when the wind blows everywhere else. The dead are close.
+    encounters:
+    - id: ENC_BARROW_001
+      name: Corpse Beetles
+      category: creature
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 10
+      description: A carpet of black beetles pours from a cracked barrow entrance — thousands of them, each the size of a
+        thumbnail, mandibles clicking. They are drawn to warmth and will swarm anything that bleeds.
+      check: NIM moderate
+      failure_consequence: Beetles swarm one fighter's legs and get under the armor. Dozens of bites — 2 HP damage, skin swollen
+        and itching for two days. Gear must be stripped and shaken clean. Two-hour delay.
+      success_benefit: Band gives the barrow a wide berth. A healer collects a handful of dead beetles — their shells are
+        prized by apothecaries for wound powder. Worth 6 silver.
+      duration_hours: 1
+      severity: minor
+    - id: ENC_BARROW_002
+      name: Bone-Rats
+      category: creature
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 11
+      description: Rats the size of small cats nest in a collapsed barrow, grown fat on grave goods and the leathery remains
+        inside. They are territorial, unafraid of fire, and their bite carries infection from the dead they feed on.
+      check: TOU moderate
+      failure_consequence: Rats swarm the camp at night, gnawing through a pack strap to reach food stores. One fighter bitten
+        on the hand — 2 HP damage, wound festers. If untreated within a day, -1 MIG for a week. 8 silver in rations destroyed.
+      success_benefit: Band sets the camp upwind and hangs food from spear shafts. Rats investigate but find nothing. Quiet
+        night. In the morning, the rats' tunnel reveals a glimpse of bronze inside the barrow — potential salvage.
+      duration_hours: 2
+      severity: moderate
+    - id: ENC_BARROW_003
+      name: Barrow Fog
+      category: weather
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 9
+      description: Fog rises from the barrow mounds themselves — not the ground between them, the mounds. It is colder than
+        the air and smells faintly of turned earth and something sweet underneath. It does not move with the wind.
+      check: WIL moderate
+      failure_consequence: Band walks into the fog and loses all sense of direction. One fighter wanders alone for an hour,
+        found sitting beside a barrow entrance, mumbling. -1 WIL for two days. Three hours lost regrouping.
+      success_benefit: Band halts at the fog's edge and waits for dawn. The fog retreats at first light. A watchful fighter
+        notes which mounds produced the thickest fog — those are the ones to avoid. Saves trouble later.
+      duration_hours: 5
+      severity: moderate
+    - id: ENC_BARROW_004
+      name: Cold Snap
+      category: weather
+      seasons:
+      - long_dark
+      - thaw
+      chance_percent: 8
+      description: The temperature plunges without warning — frost forms on eyebrows and the ground cracks underfoot. This
+        is not seasonal cold. It radiates from a cluster of barrows to the north, as if the dead are drawing heat from the
+        living.
+      check: TOU hard
+      failure_consequence: One fighter's waterskin freezes solid, another's fingers go white — early frostbite, 3 HP damage,
+        -1 NIM for two days. Band forced to shelter in a ditch and burn extra fuel. Half-day delay. 8 silver in firewood.
+      success_benefit: Band recognizes unnatural cold and moves south fast, putting distance between themselves and the barrows.
+        Two-hour forced march, no injuries. The cold does not follow past the last mound.
+      duration_hours: 6
+      severity: moderate
+    - id: ENC_BARROW_005
+      name: Sinkhole into Barrow
+      category: terrain
+      seasons:
+      - thaw
+      - long_sun
+      chance_percent: 7
+      description: The turf gives way beneath the lead fighter's boots. The barrow roof was earth over rotten timbers and
+        time has done the rest. The fighter drops into darkness — cracking wood, loose dirt, the smell of old death.
+      check: NIM hard
+      failure_consequence: Fighter falls eight feet into a burial chamber. Broken rib from the landing — 5 HP damage, -1 MIG
+        for three days. Surrounded by bones and corroded bronze. Band spends two hours rigging a rope extraction.
+      success_benefit: Fighter catches the edge and rolls clear as the roof collapses inward. Band marks the hole. A quick
+        look inside reveals a bronze arm-ring on a skeleton's wrist — worth 20 silver. Retrieved with a pole and hook.
+      duration_hours: 3
+      severity: serious
+    - id: ENC_BARROW_006
+      name: Unstable Ground
+      category: terrain
+      seasons:
+      - thaw
+      - harvest
+      - long_dark
+      chance_percent: 12
+      description: The path between two large mounds has subsided — the earth is spongy, cracked, and the grass grows in patches
+        over hollows. Every step might find solid ground or might not. The mule refuses to cross.
+      check: WIT moderate
+      failure_consequence: One fighter sinks to the thigh in loose fill. Ankle wrenched — 2 HP damage, half-speed for a day.
+        Mule must be led on a two-hour detour. Gear muddied.
+      success_benefit: Band probes with spear shafts and finds the solid line. Slow single-file crossing, twenty minutes.
+        Mule coaxed across with a feed bag. No losses.
+      duration_hours: 2
+      severity: minor
+    - id: ENC_BARROW_007
+      name: Barrow-Robbers
+      category: social
+      seasons:
+      - long_sun
+      - harvest
+      chance_percent: 10
+      description: Three rough men with shovels, a pry bar, and a lantern crouch at a barrow entrance. They have dug through
+        the side and are passing out grave goods — arm-rings, a corroded sword, a clay pot. They freeze when they see the
+        band.
+      check: WIT moderate
+      failure_consequence: Robbers panic and attack — short, ugly fight. One fighter takes 3 HP damage from a shovel blow.
+        Robbers driven off but they smashed the clay pot — it held silver coins now scattered in the dirt. Band recovers only
+        12 silver.
+      success_benefit: 'Band captain offers a deal: no trouble if the robbers share. They hand over a bronze torque worth
+        25 silver and information — they know which barrows are empty and which ones ''answer back at night.'' Valuable intelligence.'
+      duration_hours: 1
+      severity: minor
+    - id: ENC_BARROW_008
+      name: Skaldhaven Scholar
+      category: social
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      chance_percent: 6
+      description: A thin woman in ink-stained robes sits beside a barrow entrance, sketching runes from the lintel onto parchment.
+        A Skaldhaven scholar, researching the old burials. She is alone, unarmed, and has been here for two weeks.
+      check: WIT easy
+      failure_consequence: Band ignores her. She shouts a warning too late — the band walks past a mound she had marked as
+        active. Restless dead stir inside. Next supernatural encounter in the barrow_downs has +5% chance.
+      success_benefit: Scholar shares her map of dangerous mounds — which ones have been opened, which ones glow at night,
+        which ones she heard sounds from. Band avoids three hazards. She pays 10 silver for an escort to the nearest settlement.
+      duration_hours: 2
+      severity: minor
+    - id: ENC_BARROW_009
+      name: Draugr Patrol
+      category: supernatural
+      seasons:
+      - harvest
+      - long_dark
+      chance_percent: 3
+      description: Three figures crest the hill ahead — armed, armored, moving in formation. Then the moonlight catches them
+        and the band sees the truth. The flesh is grey-black and drawn tight over the bones. The eyes burn cold blue. Draugr
+        — dead warriors walking their old patrol route, weapons in hand, and they remember how to use them.
+      check: WIL extreme
+      failure_consequence: Band breaks. One fighter paralyzed with terror — must be dragged. The draugr close with terrible
+        speed. Running retreat costs 4 HP to the rearguard from a thrown axe that bites through mail. One shield shattered.
+        Band flees until dawn, exhausted. -1 WIL to all fighters for three days.
+      success_benefit: Band holds formation, shields up, silent. The draugr march past on their patrol route — they follow
+        the old path and the band is not on it. Motionless minutes that feel like hours. When the dead crest the next hill,
+        the band moves fast and quiet. No contact. A wyrd-touched fighter reads the patrol pattern — the draugr walk the same
+        route every night. The band now knows the safe path.
+      duration_hours: 3
+      severity: deadly
+    - id: ENC_BARROW_010
+      name: Barrow-Glow at Dusk
+      category: supernatural
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 5
+      description: As the sun drops below the hills, a greenish-white light pulses from inside the largest barrow. It brightens
+        with each pulse, like a heartbeat. Shadows move inside the light. The air turns heavy with the smell of cold iron
+        and old blood. Then a voice — deep, resonant, speaking words in the old tongue — calls out a challenge. It is addressing
+        the living by name.
+      check: WYR extreme
+      failure_consequence: The named fighter walks toward the barrow as if pulled by rope. Band tackles them, but the fighter's
+        skin is ice-cold and their eyes are rolled back. They convulse for an hour. When they come to, they remember nothing
+        — but they have lost 2 WIL permanently and they know the name of the barrow's occupant. It will call again.
+      success_benefit: A wyrd-strong fighter answers the challenge in the old tongue — speaking the ritual refusal. The light
+        dims. The voice falls silent. Something inside the barrow shifts and settles. The glow does not return that night.
+        In the dirt outside the entrance, runes appear — a map to a hidden weapons cache from the old wars. Bronze and iron,
+        still sharp. Worth 80 silver.
+      duration_hours: 2
+      severity: serious
+    - id: ENC_BARROW_011
+      name: Exposed Barrow Entrance
+      category: discovery
+      seasons:
+      - thaw
+      - harvest
+      chance_percent: 10
+      description: A landslip has exposed a barrow entrance sealed for centuries — stone lintel, rune-carved, the mortar crumbled
+        to dust. The doorway is dark and the air coming from inside is colder than the air outside.
+      check: WIT moderate
+      failure_consequence: Band enters without precaution. The passage collapses behind them — two hours of choking, panicked
+        digging to get back out. 3 HP damage to two fighters from falling stone. Whatever was inside, they did not reach it.
+      success_benefit: 'Scout checks structure, prods timbers, lights a torch. The outer chamber is stable. Inside: a chieftain''s
+        burial — bronze sword in good condition worth 35 silver, silver neck-ring worth 20 silver, and a runestone tablet
+        that a scholar would pay 25 silver to study.'
+      duration_hours: 4
+      severity: moderate
+    - id: ENC_BARROW_012
+      name: Rune-Carved Bone
+      category: discovery
+      seasons:
+      - thaw
+      - long_sun
+      - harvest
+      - long_dark
+      chance_percent: 8
+      description: A human thighbone lies in the grass between two mounds, washed out by rain. It is covered in deeply carved
+        runes — not chisel work, but etched by something sharper. The bone is old but the runes are fresh.
+      check: WYR moderate
+      failure_consequence: A fighter pockets the bone without reading it. That night, their dreams are filled with dead faces
+        demanding the bone's return. -1 WIL for three days. If the bone is not returned to the mound within a week, a draugr
+        comes looking for it.
+      success_benefit: 'A wyrd-touched fighter reads the runes — they are a ward-map, showing which barrows are sealed and
+        which have broken open. The bone is a warning left by someone who understood the dead. Intelligence worth more than
+        silver: the band knows where not to camp.'
+      duration_hours: 1
+      severity: serious

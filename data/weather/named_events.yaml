@@ -1,0 +1,1610 @@
+# Iron Ledger — Named Weather Events Database
+# 37 dramatic, memorable weather episodes across Years 312–315.
+# These are events people name and remember — storms, cold snaps,
+# droughts, floods, fog banks, supernatural weather.
+#
+# Season system (360-day year):
+#   thaw       (Days 1–30)
+#   long_sun   (Days 31–60)
+#   harvest    (Days 61–90)
+#   long_dark  (Days 91–360)
+#
+# Weather types:
+#   clear_grey, rime_fog, light_rain, driving_snow,
+#   rime_storm, the_hush, veil_thinning, blood_sun
+#
+# Severity: mild, moderate, severe, catastrophic
+
+named_events:
+  # ============================================================
+  # YEAR 312 — First Post-Conflict Year (8 events)
+  # Moderate weather. The land is tired, not hostile.
+  # ============================================================
+
+  - id: "WE_001"
+    name: "The Frostfjord Flood"
+    year: 312
+    season: thaw
+    start_day: 3
+    duration_days: 5
+    severity: moderate
+    weather_type: light_rain
+    affected_regions:
+      - frostfjord
+      - coastal
+    affected_settlements:
+      - "Frostfjord Hollow"
+    description: >
+      Sudden snowmelt after three days of warm rain. The lower quay at
+      Frostfjord floods, destroying two fishing boats and drowning an old
+      man who refused to leave his nets. Water reaches chest height in the
+      lower market before dawn. By the time it drains, the grain store is
+      ruined and the fish-drying racks have washed out to sea.
+    narrative_consequences:
+      - "Food stores depleted by water damage — Frostfjord starts spring short"
+      - "Jarl Hrothgar blames the gods and demands extra tribute from outlying farms"
+      - "Two fishing families lose their livelihood and turn to banditry by summer"
+    mechanical_effects:
+      travel_mod: 0.5
+      forage_mod: 0.6
+      combat_mod: 0
+      special: "River crossings impassable for 3 days"
+    folk_name_origin: "Named for the chest-high water in the lower market"
+    cross_references:
+      events: ["EVT_312_S01_001"]
+      weather_history_weeks: [1]
+
+  - id: "WE_002"
+    name: "The Moor Breath"
+    year: 312
+    season: thaw
+    start_day: 18
+    duration_days: 4
+    severity: mild
+    weather_type: rime_fog
+    affected_regions:
+      - moor
+    affected_settlements:
+      - "Moor's End"
+    description: >
+      A low fog rolls off the moor and sits on Moor's End for four days.
+      Thick enough to lose a man at twenty paces. The fog smells of peat
+      and carries a chill that sinks into wool and stays there. Livestock
+      wander off. A boy breaks his leg in a ditch he has walked past a
+      thousand times. People stay indoors and burn tallow they cannot
+      afford.
+    narrative_consequences:
+      - "Two goats lost to the moor — never recovered"
+      - "A peddler from Kolvik walks in circles for a full day before finding the gate"
+    mechanical_effects:
+      travel_mod: 0.3
+      forage_mod: 0.7
+      combat_mod: -0.3
+      special: "Navigation checks required even on known paths"
+    folk_name_origin: "The old folk say the moor breathes when it is waking up after winter"
+    cross_references:
+      events: []
+      weather_history_weeks: [3]
+
+  - id: "WE_003"
+    name: "The Forge Wind"
+    year: 312
+    season: long_sun
+    start_day: 38
+    duration_days: 7
+    severity: mild
+    weather_type: clear_grey
+    affected_regions:
+      - forest
+      - deepholm
+    affected_settlements:
+      - "Ashen Reach"
+      - "Deepholm"
+    description: >
+      A hot dry wind blows out of the south for a week — unusual and
+      unwelcome. The pine forests creak and the sap runs thin. Streams drop
+      to a trickle. The smiths at Ashen Reach say the air itself feels like
+      standing too close to the forge. No fires break out, but the
+      woodcutters watch the treeline with uneasy eyes.
+    narrative_consequences:
+      - "Pine tar production slows — the trees are too dry to bleed properly"
+      - "Water rationing begins at Ashen Reach on day four"
+    mechanical_effects:
+      travel_mod: 1.0
+      forage_mod: 0.7
+      combat_mod: 0
+      special: "Fire risk elevated — campfires require extra caution"
+    folk_name_origin: "Smith's comparison — 'like standing at the forge mouth with no iron to work'"
+    cross_references:
+      events: []
+      weather_history_weeks: [6]
+
+  - id: "WE_004"
+    name: "The Rime Curtain"
+    year: 312
+    season: harvest
+    start_day: 72
+    duration_days: 3
+    severity: moderate
+    weather_type: rime_fog
+    affected_regions:
+      - coastal
+      - frostfjord
+    affected_settlements:
+      - "Kolvik"
+      - "Skerrivik"
+      - "Frostfjord Hollow"
+    description: >
+      A wall of freezing fog rolls in from the sea and hangs along the
+      coast for three days. Ice forms on rigging, on eaves, on every
+      surface that faces the water. The fog is so dense that the harbour
+      at Kolvik shuts — no ship can see the breakwater. Fishermen who
+      go out do not come back until it lifts. Two do not come back at all.
+    narrative_consequences:
+      - "Coastal fishing halted during peak harvest season — winter stores reduced"
+      - "Two fishermen from Skerrivik lost at sea, presumed drowned"
+      - "Eadric at Kolvik harbour suspends mooring fees for the duration"
+    mechanical_effects:
+      travel_mod: 0.4
+      forage_mod: 0.5
+      combat_mod: -0.2
+      special: "Sea travel impossible. Coastal paths treacherous with black ice."
+    folk_name_origin: "Sailors say the fog hung like a curtain drawn across the world"
+    cross_references:
+      events: []
+      weather_history_weeks: [11]
+
+  - id: "WE_005"
+    name: "The First Black Frost"
+    year: 312
+    season: long_dark
+    start_day: 105
+    duration_days: 10
+    severity: severe
+    weather_type: clear_grey
+    affected_regions:
+      - mountain
+      - deepholm
+      - forest
+    affected_settlements:
+      - "Stonebreak"
+      - "Deepholm"
+      - "Cairnwatch"
+    description: >
+      The first hard freeze of winter arrives two weeks early and without
+      warning. Clear skies, no wind, and a cold that splits stone. Water
+      buckets freeze solid by midnight. A sentry at Cairnwatch loses three
+      fingers to frostbite because he fell asleep at his post. The ground
+      freezes too hard to dig — anyone who dies during the Black Frost
+      stays above ground until spring.
+    narrative_consequences:
+      - "Root cellars at Stonebreak crack open — partial food loss"
+      - "Cairnwatch doubles watch rotations to prevent frostbite casualties"
+      - "Grave-digging impossible — the dead are stacked under cairns"
+    mechanical_effects:
+      travel_mod: 0.7
+      forage_mod: 0.3
+      combat_mod: -0.1
+      special: "Exposure checks every 4 hours without shelter. Metal weapons painful to grip bare-handed."
+    folk_name_origin: "The frost turns everything black — lips, fingers, the bark on trees"
+    cross_references:
+      events: ["EVT_312_W01_064"]
+      weather_history_weeks: [15, 16]
+
+  - id: "WE_006"
+    name: "Ordovast's Gale"
+    year: 312
+    season: long_dark
+    start_day: 138
+    duration_days: 3
+    severity: moderate
+    weather_type: rime_storm
+    affected_regions:
+      - grimholt
+      - moor
+      - mountain
+    affected_settlements:
+      - "Grimholt"
+      - "Moor's End"
+    description: >
+      A screaming north wind tears across the highlands for three days.
+      Snow drives horizontal. The palisade at Grimholt groans and two
+      sections buckle. On the moor, a patrol of Ordovast's men shelter
+      behind a stone wall and lose a horse to the cold. People call it
+      Ordovast's Gale because it arrives the same week he demands double
+      winter tribute — as if the sky itself objects.
+    narrative_consequences:
+      - "Grimholt palisade damaged — repair crews needed in midwinter"
+      - "One of Ordovast's patrol horses dies; the men eat it"
+      - "Popular sentiment: even the wind fights Ordovast's greed"
+    mechanical_effects:
+      travel_mod: 0.2
+      forage_mod: 0.2
+      combat_mod: -0.4
+      special: "Ranged attacks impossible in the wind. Tents and lean-tos destroyed."
+    folk_name_origin: "Arrived with Ordovast's tribute demand — coincidence turned to folklore"
+    cross_references:
+      events: ["EVT_312_W07_070"]
+      weather_history_weeks: [20]
+
+  - id: "WE_007"
+    name: "The Ice Lock"
+    year: 312
+    season: long_dark
+    start_day: 210
+    duration_days: 18
+    severity: severe
+    weather_type: clear_grey
+    affected_regions:
+      - coastal
+      - frostfjord
+      - deepholm
+      - ice
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Helfjord"
+      - "Skerrivik"
+    description: >
+      The sea freezes. Not the sheltered inlets — that happens most years —
+      but the open water between the headlands. For eighteen days the
+      harbour at Frostfjord is a field of grey ice thick enough to walk on.
+      Kolvik's breakwater disappears under frozen spray. No trade, no
+      fishing, no escape by sea. The oldest woman in Frostfjord says she
+      has not seen the sea lock since she was a girl, and she is
+      seventy-three.
+    narrative_consequences:
+      - "All coastal trade halted for nearly three weeks"
+      - "Frostfjord and Kolvik burn through emergency food stores"
+      - "Bold men walk the ice to check crab pots — one falls through and drowns"
+    mechanical_effects:
+      travel_mod: 0.6
+      forage_mod: 0.2
+      combat_mod: 0
+      special: "Sea travel impossible. Ice walking possible but lethal if ice cracks."
+    folk_name_origin: "The sea locks shut like a chest, and does not open until it chooses"
+    cross_references:
+      events: ["EVT_312_W14_077"]
+      weather_history_weeks: [30, 31, 32]
+
+  - id: "WE_008"
+    name: "The Whispering Snow"
+    year: 312
+    season: long_dark
+    start_day: 280
+    duration_days: 2
+    severity: mild
+    weather_type: the_hush
+    affected_regions:
+      - forest
+      - moor
+    affected_settlements:
+      - "Ashen Reach"
+      - "Thornstead"
+    description: >
+      A snowfall so light and so silent that the world seems to hold its
+      breath. No wind. No birdsong. No sound at all except the faint hiss
+      of flakes landing on older snow. People in Ashen Reach speak in
+      whispers without knowing why. Dogs refuse to bark. A woodcutter
+      swears he heard voices in the snow — names, spoken once each, too
+      quiet to make out.
+    narrative_consequences:
+      - "Unease spreads through Ashen Reach — the Widow orders extra prayers"
+      - "First whisper of the barrows waking, dismissed as winter nerves"
+    mechanical_effects:
+      travel_mod: 0.9
+      forage_mod: 0.5
+      combat_mod: 0
+      special: "Sound dampened — stealth checks easier, but awareness checks harder"
+    folk_name_origin: "The snow whispers names. Everyone hears it. Nobody admits it."
+    cross_references:
+      events: ["EVT_312_SUP_001"]
+      weather_history_weeks: [40]
+
+  # ============================================================
+  # YEAR 313 — War Year (12 events)
+  # Harsher weather mirrors escalating conflict. The land suffers.
+  # ============================================================
+
+  - id: "WE_009"
+    name: "The Blood Thaw"
+    year: 313
+    season: thaw
+    start_day: 2
+    duration_days: 8
+    severity: moderate
+    weather_type: light_rain
+    affected_regions:
+      - deepholm
+      - mountain
+    affected_settlements:
+      - "Deepholm"
+    description: >
+      Warm rain melts the snow around Deepholm's walls and reveals what
+      winter buried — frozen corpses from Ordovast's failed siege, stacked
+      like cordwood in the drifts. The meltwater runs rust-red through
+      the camp ditches. Ravens arrive in hundreds. The stench reaches the
+      town on the second day. Sigrun orders burial parties, but the
+      ground is still half-frozen and the work is slow and ugly.
+    narrative_consequences:
+      - "Disease risk spikes around Deepholm — the healer works day and night"
+      - "Morale in Deepholm shaken despite surviving the siege"
+      - "Ordovast's reputation damaged — his dead left to rot like dogs"
+    mechanical_effects:
+      travel_mod: 0.6
+      forage_mod: 0.5
+      combat_mod: 0
+      special: "Disease risk near Deepholm. Ravens mark the location for miles."
+    folk_name_origin: "The meltwater ran red. People said the ground was bleeding."
+    cross_references:
+      events: ["EVT_313_S01_001"]
+      weather_history_weeks: [1]
+
+  - id: "WE_010"
+    name: "The Siege Fog"
+    year: 313
+    season: thaw
+    start_day: 20
+    duration_days: 6
+    severity: moderate
+    weather_type: rime_fog
+    affected_regions:
+      - deepholm
+      - mountain
+    affected_settlements:
+      - "Deepholm"
+      - "Stonebreak"
+    description: >
+      A thick fog settles in the mountain passes around Deepholm and does
+      not lift for six days. Scouts cannot see past a spear-throw.
+      Sigrun's sentries fire arrows at shadows that turn out to be stumps.
+      The fog covers Ordovast's regrouping — when it clears, his forces
+      have moved to new positions. Stonebreak reports seeing torchlight
+      in the fog but cannot determine numbers or direction.
+    narrative_consequences:
+      - "Ordovast repositions forces undetected — strategic advantage gained"
+      - "Deepholm wastes arrows and sleep on phantom threats"
+      - "Stonebreak debates whether to close its gates and wait"
+    mechanical_effects:
+      travel_mod: 0.3
+      forage_mod: 0.6
+      combat_mod: -0.4
+      special: "Ambush chance doubled. Scouting impossible beyond 30 paces."
+    folk_name_origin: "The fog that let Ordovast move his army like ghosts"
+    cross_references:
+      events: ["EVT_313_S03_003"]
+      weather_history_weeks: [3]
+
+  - id: "WE_011"
+    name: "The Hammer Storm"
+    year: 313
+    season: long_sun
+    start_day: 42
+    duration_days: 2
+    severity: severe
+    weather_type: rime_storm
+    affected_regions:
+      - coastal
+      - frostfjord
+      - moor
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Moor's End"
+      - "Skerrivik"
+    description: >
+      A freak summer storm strikes the coast with the force of a winter
+      gale. Hailstones the size of walnuts shred the first barley shoots.
+      At Kolvik the breakwater takes a battering and loses three of its
+      upper stones. A fishing boat returning to Skerrivik capsizes in the
+      harbour mouth — all four crew drown in sight of shore, too close
+      for anyone to reach in time. Lightning splits an oak at Moor's End
+      that has stood for two hundred years.
+    narrative_consequences:
+      - "Barley crop at Frostfjord devastated — famine risk for winter rises sharply"
+      - "Kolvik breakwater damaged — harbour capacity reduced"
+      - "Four dead at Skerrivik. The widows demand the jarl do something about nothing."
+      - "Old folk call it an omen of war. They are right."
+    mechanical_effects:
+      travel_mod: 0.2
+      forage_mod: 0.3
+      combat_mod: -0.5
+      special: "Hail damage to crops and structures. Lightning risk in open ground."
+    folk_name_origin: "Hit like a hammer — fast, hard, and gone, leaving wreckage behind"
+    cross_references:
+      events: ["EVT_313_SU02_015"]
+      weather_history_weeks: [6, 7]
+
+  - id: "WE_012"
+    name: "The Dry Weeks"
+    year: 313
+    season: long_sun
+    start_day: 48
+    duration_days: 12
+    severity: moderate
+    weather_type: clear_grey
+    affected_regions:
+      - forest
+      - moor
+      - grimholt
+    affected_settlements:
+      - "Ashen Reach"
+      - "Ulfheim"
+      - "Moor's End"
+      - "Grimholt"
+    description: >
+      No rain for twelve days in high summer. Wells drop. Streams thin to
+      mud. The moor cracks like old leather. Ulfheim's spring — the
+      settlement's only water source — slows to a seep. Arguments break
+      out over water rights that have never been contested. Ordovast
+      forbids his garrisons from sharing water with civilians at Grimholt,
+      which does nothing for his popularity.
+    narrative_consequences:
+      - "Water disputes aggravate existing tensions between settlements"
+      - "Ordovast's water hoarding turns even Grimholt's loyalists against him"
+      - "Forest fire risk spikes — Ashen Reach posts watchers day and night"
+    mechanical_effects:
+      travel_mod: 1.0
+      forage_mod: 0.4
+      combat_mod: 0
+      special: "Water rationing. Forced march risk increases due to dehydration."
+    folk_name_origin: "Twelve days without rain in a land that never stops dripping"
+    cross_references:
+      events: []
+      weather_history_weeks: [7, 8]
+
+  - id: "WE_013"
+    name: "The Harvest Gale"
+    year: 313
+    season: harvest
+    start_day: 67
+    duration_days: 4
+    severity: severe
+    weather_type: rime_storm
+    affected_regions:
+      - coastal
+      - frostfjord
+      - forest
+      - moor
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Ashen Reach"
+      - "Thornstead"
+      - "Moor's End"
+    description: >
+      A screaming gale tears across the Rimevegr at the worst possible
+      time — harvest week. Standing grain flattens. Haystacks scatter.
+      Roofs peel off farmsteads like bark off a dead tree. A section of
+      Ashen Reach's wooden wall collapses onto a woodpile and kills a
+      sleeping dog. At Frostfjord, the repaired quay takes damage again.
+      Jarl Hrothgar throws a cup at the wall when told. The region enters
+      winter short on grain and shorter on hope.
+    narrative_consequences:
+      - "Harvest losses across the Rimevegr — winter famine now almost certain"
+      - "Ashen Reach wall breach creates a defensive vulnerability"
+      - "Hrothgar's rage isolates him from his own household"
+      - "Mercenary bands begin calculating who will pay for granary guards"
+    mechanical_effects:
+      travel_mod: 0.3
+      forage_mod: 0.3
+      combat_mod: -0.3
+      special: "Structural damage to buildings. Loose debris hazard in settlements."
+    folk_name_origin: "Came at harvest and took the harvest with it"
+    cross_references:
+      events: ["EVT_313_A01_040"]
+      weather_history_weeks: [10]
+
+  - id: "WE_014"
+    name: "The Red Fog of Deepholm"
+    year: 313
+    season: harvest
+    start_day: 82
+    duration_days: 3
+    severity: severe
+    weather_type: rime_fog
+    affected_regions:
+      - deepholm
+      - mountain
+    affected_settlements:
+      - "Deepholm"
+    description: >
+      A fog rolls into Deepholm that is not the right colour. It has a
+      reddish tint, like diluted blood, and it smells of iron and
+      something older. Torches gutter and burn low inside it. Voices
+      carry wrong — a conversation at arm's length sounds distant, while
+      whispers from across town arrive as though spoken into the ear.
+      Three people claim to see figures standing in the fog who vanish
+      when approached. The fog lifts on the third morning and leaves a
+      thin red film on every surface.
+    narrative_consequences:
+      - "Superstitious dread grips Deepholm — several families prepare to leave"
+      - "Sigrun orders the red residue scraped off and burned, tells no one what she thinks it is"
+      - "The Whispering Circle takes note — the Widow sends a quiet messenger"
+    mechanical_effects:
+      travel_mod: 0.3
+      forage_mod: 0.5
+      combat_mod: -0.3
+      special: "Torches dim. Sound distortion. Morale check for anyone caught outside."
+    folk_name_origin: "The fog was red. Nobody argued about the name."
+    cross_references:
+      events: ["EVT_313_SUP_005"]
+      weather_history_weeks: [12]
+
+  - id: "WE_015"
+    name: "The Three-Day Hush"
+    year: 313
+    season: long_dark
+    start_day: 98
+    duration_days: 3
+    severity: severe
+    weather_type: the_hush
+    affected_regions:
+      - forest
+      - moor
+      - grimholt
+      - frostfjord
+    affected_settlements:
+      - "Ashen Reach"
+      - "Thornstead"
+      - "Ulfheim"
+      - "Grimholt"
+      - "Frostfjord Hollow"
+    description: >
+      For three days, no wind blows anywhere in the Rimevegr. The air
+      is perfectly still. Snow falls straight down without a whisper.
+      Sound travels as if through water — muffled, delayed, wrong. Birds
+      do not fly. Dogs press against their owners and whine. At Ulfheim
+      a woman walks outside at midnight and stands motionless in the snow
+      for an hour, then comes in and says she heard her dead son calling
+      from the barrow hill. She is not the only one. In six settlements,
+      people report hearing the dead.
+    narrative_consequences:
+      - "Widespread fear of barrow-wights — offerings left at cairns and standing stones"
+      - "Ulfheim woman's account spreads along trade routes within a week"
+      - "Ordovast dismisses the reports as 'women's nerves' — his men disagree privately"
+      - "The Hush becomes proof that the old powers are stirring"
+    mechanical_effects:
+      travel_mod: 0.8
+      forage_mod: 0.5
+      combat_mod: -0.2
+      special: "Morale check for every night spent outdoors. Supernatural encounters more likely."
+    folk_name_origin: "Three days of silence so deep you could hear the dead think"
+    cross_references:
+      events: ["EVT_313_SUP_008"]
+      weather_history_weeks: [14]
+
+  - id: "WE_016"
+    name: "The War Winter"
+    year: 313
+    season: long_dark
+    start_day: 125
+    duration_days: 30
+    severity: catastrophic
+    weather_type: driving_snow
+    affected_regions:
+      - coastal
+      - deepholm
+      - forest
+      - frostfjord
+      - grimholt
+      - ice
+      - moor
+      - mountain
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Ashen Reach"
+      - "Kolvik"
+      - "Deepholm"
+      - "Moor's End"
+      - "Grimholt"
+      - "Ulfheim"
+      - "Cairnwatch"
+      - "Helfjord"
+      - "Thornstead"
+      - "Skerrivik"
+      - "Ashwall"
+      - "Ironmarsh"
+      - "Vargheim"
+      - "Stonebreak"
+    description: >
+      The defining event of Year 313. A month of continuous heavy snow,
+      gale-force winds, and killing cold that buries the entire Rimevegr.
+      Drifts reach the eaves of single-story buildings. Roads vanish.
+      Supply lines collapse. At Deepholm, the siege reduces to two armies
+      freezing in parallel. At Grimholt, Ordovast's granary runs dry on
+      day nineteen and he begins seizing food from households. Frostfjord
+      loses eleven people to cold and six to starvation. Kolvik loses
+      more. By the time the War Winter breaks, the Rimevegr has fewer
+      mouths to feed and less food to feed them with.
+    narrative_consequences:
+      - "Famine conditions across all settlements — the weak and old die first"
+      - "Ordovast's food seizures at Grimholt spark a riot he barely suppresses"
+      - "Siege of Deepholm effectively pauses — both sides conserve strength"
+      - "Mercenary bands forced to choose: serve for scraps or raid for survival"
+      - "Spring birth rate plummets — too many pregnant women starve or freeze"
+    mechanical_effects:
+      travel_mod: 0.1
+      forage_mod: 0.1
+      combat_mod: -0.5
+      special: >
+        Travel between settlements nearly impossible. Daily exposure
+        checks. Starvation mechanics activate. All modifiers stack
+        with existing winter penalties.
+    folk_name_origin: "The winter that fought alongside the war and won"
+    cross_references:
+      events: ["EVT_313_W05_055", "EVT_313_W08_068"]
+      weather_history_weeks: [18, 19, 20, 21]
+
+  - id: "WE_017"
+    name: "The Starvation Cold"
+    year: 313
+    season: long_dark
+    start_day: 170
+    duration_days: 14
+    severity: severe
+    weather_type: clear_grey
+    affected_regions:
+      - grimholt
+      - moor
+      - mountain
+    affected_settlements:
+      - "Grimholt"
+      - "Moor's End"
+      - "Stonebreak"
+      - "Vargheim"
+    description: >
+      Clear skies and no wind — which means the cold has nothing to hide
+      behind. The temperature drops so far that spit freezes before it
+      hits the ground. At Grimholt, the last of Ordovast's seized grain
+      is gone and people boil leather and bark. A family at Moor's End
+      is found frozen in their beds — the fire went out in the night and
+      they did not wake. Vargheim's headman slaughters the breeding sow
+      to feed the settlement. There will be no piglets come spring.
+    narrative_consequences:
+      - "Grimholt population drops — some flee to the Compact despite the war"
+      - "Moor's End family death becomes a cautionary tale told for years"
+      - "Vargheim sacrifices long-term food security for short-term survival"
+      - "Ordovast considers abandoning Grimholt — decides against it from pride"
+    mechanical_effects:
+      travel_mod: 0.5
+      forage_mod: 0.05
+      combat_mod: -0.2
+      special: "Starvation checks daily. Nighttime exposure lethal without fire and shelter."
+    folk_name_origin: "Cold so deep it ate what the war left behind"
+    cross_references:
+      events: ["EVT_313_W10_075"]
+      weather_history_weeks: [24, 25]
+
+  - id: "WE_018"
+    name: "Blood Snow"
+    year: 313
+    season: long_dark
+    start_day: 215
+    duration_days: 1
+    severity: moderate
+    weather_type: driving_snow
+    affected_regions:
+      - frostfjord
+      - coastal
+      - moor
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Moor's End"
+    description: >
+      Snow falls for a single day with a faint pink-red tint. It is not
+      blood — anyone who tastes it says it is only water — but it looks
+      like blood and that is enough. The moor turns the colour of a
+      wound. At Kolvik, a völva claims the snow carries the anger of the
+      unburied dead from the war. At Frostfjord, Hrothgar forbids anyone
+      from speaking of it, which ensures everyone speaks of nothing else.
+    narrative_consequences:
+      - "Superstitious panic along the coast — several families make offerings to the barrows"
+      - "Hrothgar's censorship backfires and amplifies the fear"
+      - "The Whispering Circle uses the event to recruit — 'the dead are not done with us'"
+    mechanical_effects:
+      travel_mod: 0.8
+      forage_mod: 0.5
+      combat_mod: 0
+      special: "Morale penalty for superstitious characters. No physical danger."
+    folk_name_origin: "It looked like blood. That was all anyone needed."
+    cross_references:
+      events: ["EVT_313_SUP_012"]
+      weather_history_weeks: [31]
+
+  - id: "WE_019"
+    name: "The Widow's Wind"
+    year: 313
+    season: long_dark
+    start_day: 275
+    duration_days: 5
+    severity: moderate
+    weather_type: rime_storm
+    affected_regions:
+      - forest
+      - deepholm
+    affected_settlements:
+      - "Ashen Reach"
+      - "Deepholm"
+    description: >
+      A sustained wind howls through the forests between Ashen Reach and
+      Deepholm for five days. Trees crack and fall. The road between the
+      two settlements is blocked by deadfall in nine places. A supply
+      convoy from the Pale Widow to Deepholm turns back on day two —
+      the carts cannot pass. Sigrun's defenders at Deepholm watch the
+      supplies not arrive and tighten their belts another notch.
+    narrative_consequences:
+      - "Supply route between Compact settlements severed for a week"
+      - "Deepholm's food situation worsens despite the Widow's efforts"
+      - "Road clearing becomes spring priority — labour scarce after the war"
+    mechanical_effects:
+      travel_mod: 0.3
+      forage_mod: 0.4
+      combat_mod: -0.3
+      special: "Forest travel blocked by deadfall. Falling tree hazard."
+    folk_name_origin: "The Widow sent supplies; the wind sent them back"
+    cross_references:
+      events: ["EVT_313_W14_083"]
+      weather_history_weeks: [39, 40]
+
+  - id: "WE_020"
+    name: "The False Thaw"
+    year: 313
+    season: long_dark
+    start_day: 338
+    duration_days: 4
+    severity: moderate
+    weather_type: light_rain
+    affected_regions:
+      - coastal
+      - frostfjord
+      - moor
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Moor's End"
+      - "Skerrivik"
+    description: >
+      Warm rain falls in late winter — cruelly, impossibly warm. The snow
+      begins to melt. People emerge blinking into grey daylight that
+      feels like salvation. For four days the Rimevegr breathes. Then the
+      temperature plummets, the meltwater freezes into a sheet of black
+      ice that covers every surface, and winter returns harder than
+      before. Three people break bones on the ice at Frostfjord in the
+      first hour. A child at Moor's End slides into the river and is
+      pulled out alive but never fully warm again.
+    narrative_consequences:
+      - "Hope raised and crushed — morale at the lowest point of the year"
+      - "Black ice injuries across multiple settlements"
+      - "Frostfjord elders say this means spring will come late"
+    mechanical_effects:
+      travel_mod: 0.3
+      forage_mod: 0.3
+      combat_mod: -0.3
+      special: "Black ice on all surfaces. Fall injuries. Movement at half speed."
+    folk_name_origin: "Spring came for four days, then winter called it a liar"
+    cross_references:
+      events: []
+      weather_history_weeks: [48, 49]
+
+  # ============================================================
+  # YEAR 314 — Post-War Reconstruction (9 events)
+  # The land heals slowly. Supernatural escalation begins.
+  # ============================================================
+
+  - id: "WE_021"
+    name: "The Bone Thaw"
+    year: 314
+    season: thaw
+    start_day: 4
+    duration_days: 10
+    severity: moderate
+    weather_type: light_rain
+    affected_regions:
+      - mountain
+      - deepholm
+      - grimholt
+      - moor
+    affected_settlements:
+      - "Deepholm"
+      - "Grimholt"
+      - "Moor's End"
+      - "Stonebreak"
+    description: >
+      Spring comes to the Rimevegr and brings the dead with it. The War
+      Winter's snow melts and reveals what it buried — battlefield dead,
+      frozen livestock, collapsed shelters with people still inside. At
+      Deepholm the ground around the walls is a charnel field. At
+      Grimholt the mass graves Ordovast ordered are too shallow and the
+      bodies surface. The ravens come back. The smell does not leave for
+      a month.
+    narrative_consequences:
+      - "Mass burial details consume labour needed for spring planting"
+      - "Disease outbreaks near improperly buried dead"
+      - "Grimholt's reputation as a cursed place solidifies"
+      - "The earth itself seems to reject the war's dead"
+    mechanical_effects:
+      travel_mod: 0.6
+      forage_mod: 0.4
+      combat_mod: 0
+      special: "Disease risk near battlefields and settlements. Morale penalty."
+    folk_name_origin: "The thaw that gave back the bones winter borrowed"
+    cross_references:
+      events: ["EVT_314_S04_004"]
+      weather_history_weeks: [1, 2]
+
+  - id: "WE_022"
+    name: "The Cairnwatch Fog"
+    year: 314
+    season: thaw
+    start_day: 22
+    duration_days: 5
+    severity: moderate
+    weather_type: rime_fog
+    affected_regions:
+      - mountain
+    affected_settlements:
+      - "Cairnwatch"
+    description: >
+      A cold fog wraps Cairnwatch for five days — unremarkable except
+      for what people see in it. Sentries report figures standing at the
+      edge of visibility, motionless and silent. The figures do not
+      approach and do not retreat. A patrol sent to investigate finds
+      nothing — no footprints, no tracks, no sign that anything living
+      stood there. When the fog lifts, the sentries who reported the
+      figures find grey handprints on the outside of their shutters.
+    narrative_consequences:
+      - "Cairnwatch garrison deeply unsettled — two men request transfer"
+      - "Grey handprints become evidence that 'something walks in the fog'"
+      - "The barrow-wardens increase their patrols"
+    mechanical_effects:
+      travel_mod: 0.4
+      forage_mod: 0.6
+      combat_mod: -0.2
+      special: "Supernatural encounters likely. Watch shifts report phantom figures."
+    folk_name_origin: "The fog came to Cairnwatch and it brought visitors"
+    cross_references:
+      events: ["EVT_314_SUP_003"]
+      weather_history_weeks: [4]
+
+  - id: "WE_023"
+    name: "The Summer Stillness"
+    year: 314
+    season: long_sun
+    start_day: 45
+    duration_days: 6
+    severity: moderate
+    weather_type: the_hush
+    affected_regions:
+      - forest
+      - deepholm
+      - moor
+    affected_settlements:
+      - "Ashen Reach"
+      - "Deepholm"
+      - "Thornstead"
+      - "Ulfheim"
+    description: >
+      Six days of absolute calm in midsummer. No wind, no insects, no
+      birdsong. The forest goes silent in a way that forests should not —
+      not even the trees creak. At Thornstead, milk curdles overnight
+      without explanation. At Ulfheim, a well that has given clean water
+      for thirty years turns brackish and tastes of iron. The silence
+      ends at dawn on the seventh day with a clap of thunder from a
+      clear sky, and then everything is normal again. Nobody forgets it.
+    narrative_consequences:
+      - "Ulfheim well contamination forces reliance on stream water"
+      - "Thornstead's curdled milk seen as an omen — the settlement sacrifices a goat"
+      - "Dalla has another vision during the Stillness but refuses to share details"
+    mechanical_effects:
+      travel_mod: 1.0
+      forage_mod: 0.6
+      combat_mod: 0
+      special: "Supernatural sensitivity increased. Divination attempts more potent."
+    folk_name_origin: "Summer held its breath for a week and nobody knew why"
+    cross_references:
+      events: ["EVT_314_SUP_006"]
+      weather_history_weeks: [7]
+
+  - id: "WE_024"
+    name: "The Blood Sun at Thornstead"
+    year: 314
+    season: long_sun
+    start_day: 55
+    duration_days: 1
+    severity: moderate
+    weather_type: blood_sun
+    affected_regions:
+      - forest
+      - moor
+    affected_settlements:
+      - "Thornstead"
+      - "Moor's End"
+    description: >
+      The sun rises a deep, angry red and stays that colour all day. No
+      clouds, no smoke, no explanation. Shadows fall with a reddish cast.
+      Animals behave strangely — horses stamp and refuse to be saddled,
+      chickens roost at midday, a cat at Thornstead gives birth to a
+      litter of dead kittens. At Moor's End the sunset paints the moor
+      the colour of old blood and a shepherd boy runs home screaming that
+      the land is bleeding. The next day the sun is normal. The dead
+      kittens are buried.
+    narrative_consequences:
+      - "Omen-reading intensifies — the blood sun interpreted as a warning"
+      - "Thornstead's healer says the veil between worlds is thinning"
+      - "Several families leave Thornstead for larger settlements"
+    mechanical_effects:
+      travel_mod: 1.0
+      forage_mod: 0.8
+      combat_mod: 0
+      special: "No physical danger. Morale check for superstitious characters."
+    folk_name_origin: "The sun bled for a day and nobody had an answer"
+    cross_references:
+      events: ["EVT_314_SUP_008"]
+      weather_history_weeks: [8]
+
+  - id: "WE_025"
+    name: "The Veil Storm"
+    year: 314
+    season: harvest
+    start_day: 75
+    duration_days: 2
+    severity: severe
+    weather_type: veil_thinning
+    affected_regions:
+      - forest
+      - moor
+      - frostfjord
+    affected_settlements:
+      - "Thornstead"
+      - "Ulfheim"
+      - "Frostfjord Hollow"
+    description: >
+      No wind, no rain, no snow — but the sky tears open. Curtains of
+      pale light ripple across the sky like the northern lights but
+      lower, brighter, and wrong. The light casts no shadows and
+      illuminates the underside of things — the roots of trees, the
+      insides of eaves, the backs of stones. At the barrow hill near
+      Thornstead, the earth shakes for ten minutes and a crack opens
+      that was not there before. The light fades after two days. The
+      crack does not close.
+    narrative_consequences:
+      - "New barrow opening at Thornstead — the grave-wardens are called"
+      - "Widespread acceptance that the veil is weakening across the Rimevegr"
+      - "The Pale Widow accelerates her supernatural preparations"
+      - "Dalla collapses again — this time she names specific barrows that are 'opening'"
+    mechanical_effects:
+      travel_mod: 0.8
+      forage_mod: 0.7
+      combat_mod: 0
+      special: "Barrow activity spikes. Veil-sensitive characters overwhelmed."
+    folk_name_origin: "The sky opened like a wound and the barrows answered"
+    cross_references:
+      events: ["EVT_314_SUP_010"]
+      weather_history_weeks: [11]
+
+  - id: "WE_026"
+    name: "The Barrow Frost"
+    year: 314
+    season: long_dark
+    start_day: 115
+    duration_days: 8
+    severity: severe
+    weather_type: driving_snow
+    affected_regions:
+      - mountain
+      - deepholm
+      - forest
+    affected_settlements:
+      - "Cairnwatch"
+      - "Stonebreak"
+      - "Deepholm"
+    description: >
+      A blizzard strikes the mountain settlements — but only the mountain
+      settlements. The coast is clear. The moor is calm. The snow falls
+      exclusively on the high ground where the oldest barrows sit, as
+      though something is trying to bury them deeper. At Cairnwatch the
+      drifts reach the top of the palisade. Stonebreak is entirely cut
+      off for three days. When the snow stops, the barrows on the high
+      ridge are invisible under fifteen feet of white.
+    narrative_consequences:
+      - "Mountain settlements isolated — supply routes severed again"
+      - "The selective geography of the storm convinces even sceptics that something is wrong"
+      - "Cairnwatch reports that the barrow entrances they sealed last year are clear of snow — as if something melted it from inside"
+    mechanical_effects:
+      travel_mod: 0.2
+      forage_mod: 0.3
+      combat_mod: -0.3
+      special: "Mountain travel impossible for 3 days. Barrow entrances anomalously clear."
+    folk_name_origin: "The storm buried the mountains to hide what the barrows were doing"
+    cross_references:
+      events: ["EVT_314_SUP_012", "EVT_314_W03_065"]
+      weather_history_weeks: [17]
+
+  - id: "WE_027"
+    name: "The Dead Wind"
+    year: 314
+    season: long_dark
+    start_day: 200
+    duration_days: 3
+    severity: moderate
+    weather_type: veil_thinning
+    affected_regions:
+      - moor
+      - grimholt
+    affected_settlements:
+      - "Moor's End"
+      - "Vargheim"
+      - "Grimholt"
+    description: >
+      A wind blows across the moor that carries voices. Not the vague
+      suggestion of voices that wind sometimes carries — actual words,
+      in actual voices, calling actual names. At Moor's End, a woman
+      hears her mother who died two winters ago and follows the voice
+      onto the moor. She is found the next morning, alive but confused,
+      standing beside a barrow she says she has never seen. At Vargheim,
+      the headman bars the gates and stuffs rags under the doors to keep
+      the voices out. Grimholt's remaining garrison burns sage and
+      pretends to be unafraid.
+    narrative_consequences:
+      - "Moor's End woman's account becomes the most-repeated story of the winter"
+      - "Barrow proximity now openly feared — settlements discuss relocating"
+      - "Ordovast at Grimholt demands his seer explain the voices; the seer has fled"
+    mechanical_effects:
+      travel_mod: 0.6
+      forage_mod: 0.5
+      combat_mod: -0.1
+      special: "Will check to avoid following the voices. Supernatural drawn to travellers."
+    folk_name_origin: "The wind carried the dead back to their doors"
+    cross_references:
+      events: ["EVT_314_SUP_015"]
+      weather_history_weeks: [29]
+
+  - id: "WE_028"
+    name: "The Long Freeze"
+    year: 314
+    season: long_dark
+    start_day: 290
+    duration_days: 20
+    severity: severe
+    weather_type: clear_grey
+    affected_regions:
+      - coastal
+      - frostfjord
+      - deepholm
+      - ice
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Helfjord"
+      - "Deepholm"
+    description: >
+      Twenty days of clear sky and ferocious cold. The sea freezes again —
+      further out than the Ice Lock of 312. At Helfjord the ice extends
+      to the horizon. At Frostfjord, buildings crack. Iron nails contract
+      and pop out of timber. A forge at Kolvik splits its anvil stone.
+      Water cannot be kept liquid without constant fire. The cold is
+      patient and absolute, and when it finally relents, the survivors
+      look ten years older.
+    narrative_consequences:
+      - "Structural damage to buildings across the coast"
+      - "The sea freezing again — twice in three years — shakes coastal confidence"
+      - "Spring trade will start late; ships cannot launch into ice fields"
+    mechanical_effects:
+      travel_mod: 0.4
+      forage_mod: 0.1
+      combat_mod: -0.3
+      special: "Metal brittleness — weapon breakage chance increases. Frostbite every 2 hours exposed."
+    folk_name_origin: "Twenty days of cold that froze the sea and the will to live"
+    cross_references:
+      events: ["EVT_314_W16_080"]
+      weather_history_weeks: [41, 42, 43]
+
+  - id: "WE_029"
+    name: "The Ironmarsh Flood"
+    year: 314
+    season: long_dark
+    start_day: 340
+    duration_days: 6
+    severity: moderate
+    weather_type: light_rain
+    affected_regions:
+      - moor
+      - coastal
+    affected_settlements:
+      - "Ironmarsh"
+      - "Ashwall"
+    description: >
+      Late-winter rain saturates the frozen ground around Ironmarsh,
+      which cannot absorb the water. The bog rises. Paths that were
+      passable become sucking mud. The lower buildings at Ironmarsh flood
+      to ankle depth — not dramatic, but relentless. Everything is damp.
+      Nothing dries. Leather rots. Bread goes to mould. The people of
+      Ironmarsh endure with the grim patience of folk who chose to build
+      on a marsh and have no one to blame but their ancestors.
+    narrative_consequences:
+      - "Ironmarsh supply stores damaged by persistent damp"
+      - "Trade route through Ironmarsh impassable for a week"
+      - "Ashwall takes in Ironmarsh refugees — strains hospitality"
+    mechanical_effects:
+      travel_mod: 0.4
+      forage_mod: 0.5
+      combat_mod: -0.1
+      special: "Mud terrain. Equipment degradation from persistent damp."
+    folk_name_origin: "Not the worst flood, but the wettest — everything rotted"
+    cross_references:
+      events: []
+      weather_history_weeks: [49]
+
+  # ============================================================
+  # YEAR 315 — Endgame (8 events)
+  # Barrow crisis peaks. The veil weakens dramatically.
+  # Weather itself becomes supernatural.
+  # ============================================================
+
+  - id: "WE_030"
+    name: "The Grey Thaw"
+    year: 315
+    season: thaw
+    start_day: 5
+    duration_days: 12
+    severity: mild
+    weather_type: clear_grey
+    affected_regions:
+      - coastal
+      - frostfjord
+      - forest
+      - moor
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Ashen Reach"
+      - "Moor's End"
+    description: >
+      Spring arrives quietly — no floods, no storms, just a slow grey
+      thaw under overcast skies. It should be a relief. It is not. The
+      light is wrong. The sun is there but muted, as if seen through
+      dirty glass. Snow melts without urgency. Birds return but do not
+      sing. The Rimevegr shakes off winter like a sick animal rising
+      from its bed — upright, but not well.
+    narrative_consequences:
+      - "Subdued spring — no celebration, no relief, just grim continuation"
+      - "The quality of light unsettles people more than any storm would"
+      - "Astute observers note: the days are not getting longer as fast as they should"
+    mechanical_effects:
+      travel_mod: 0.8
+      forage_mod: 0.6
+      combat_mod: 0
+      special: "Reduced daylight hours. Mild disorientation from flat grey light."
+    folk_name_origin: "Spring came but forgot to bring the colour with it"
+    cross_references:
+      events: ["EVT_315_S01_001"]
+      weather_history_weeks: [1, 2]
+
+  - id: "WE_031"
+    name: "The Hush of Open Graves"
+    year: 315
+    season: thaw
+    start_day: 24
+    duration_days: 4
+    severity: severe
+    weather_type: the_hush
+    affected_regions:
+      - mountain
+      - forest
+      - moor
+      - deepholm
+    affected_settlements:
+      - "Cairnwatch"
+      - "Stonebreak"
+      - "Thornstead"
+      - "Ulfheim"
+      - "Deepholm"
+    description: >
+      Silence falls on the highland settlements like a held breath. No
+      wind, no sound, no life in the air — worse than the Three-Day
+      Hush of 313 because this time, the barrow mouths are open. Every
+      sealed barrow entrance in the mountain region is found standing open
+      on the first morning. No footprints. No tool marks. The stone
+      doors simply moved. During the four days of silence, light is
+      visible inside three of the barrow mouths — a cold blue-white glow
+      that has no source. On the fifth day, sound returns. The barrow
+      doors remain open.
+    narrative_consequences:
+      - "The barrow crisis is now undeniable — every settlement acknowledges it"
+      - "Cairnwatch sends urgent word to all factions: the dead are awake"
+      - "The Pale Widow mobilizes her Circle — this is what she has prepared for"
+      - "Dalla has sustained visions throughout — she is changed when it ends"
+    mechanical_effects:
+      travel_mod: 0.7
+      forage_mod: 0.5
+      combat_mod: -0.2
+      special: "All barrow entrances open. Blue light from barrow mouths. Supernatural encounters guaranteed near barrows."
+    folk_name_origin: "The graves opened their mouths and the world went quiet to listen"
+    cross_references:
+      events: ["EVT_315_SUP_002"]
+      weather_history_weeks: [4]
+
+  - id: "WE_032"
+    name: "The Burning Sky"
+    year: 315
+    season: long_sun
+    start_day: 38
+    duration_days: 3
+    severity: catastrophic
+    weather_type: blood_sun
+    affected_regions:
+      - coastal
+      - deepholm
+      - forest
+      - frostfjord
+      - grimholt
+      - ice
+      - moor
+      - mountain
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Ashen Reach"
+      - "Kolvik"
+      - "Deepholm"
+      - "Moor's End"
+      - "Grimholt"
+      - "Ulfheim"
+      - "Cairnwatch"
+      - "Helfjord"
+      - "Thornstead"
+      - "Skerrivik"
+      - "Ashwall"
+      - "Ironmarsh"
+      - "Vargheim"
+      - "Stonebreak"
+    description: >
+      For three days the sky burns. Not fire — a deep arterial red that
+      covers the entire vault from horizon to horizon. The sun is a white
+      disc in a red ocean. Shadows are black and sharp as knife cuts. The
+      sea reflects the sky and looks like a wound. At night the red does
+      not fade — it deepens, and the stars are visible through it like
+      sparks in a forge. Every barrow in the Rimevegr glows. The blue
+      light from the open mouths intensifies until it is visible from
+      miles away. Animals panic. Horses break fences. Dogs howl until
+      they are hoarse. Children cry without stopping. On the fourth
+      morning the sky is grey and ordinary, and the Rimevegr knows it
+      is running out of time.
+    narrative_consequences:
+      - "Rimevegr-wide panic — this is the event that breaks the last doubters"
+      - "All factions suspend hostilities to address the barrow crisis"
+      - "Mass pilgrimages to standing stones and old temples"
+      - "Several settlements report figures walking out of barrows during the red nights"
+      - "This is the event that triggers the endgame alliance"
+    mechanical_effects:
+      travel_mod: 0.7
+      forage_mod: 0.6
+      combat_mod: -0.3
+      special: >
+        Universal morale penalty. Barrow activity at maximum. Supernatural
+        encounters on every road. Animals unreliable. Panic in settlements.
+    folk_name_origin: "The sky burned and the dead walked underneath it"
+    cross_references:
+      events: ["EVT_315_SUP_005", "EVT_315_SU01_010"]
+      weather_history_weeks: [6]
+
+  - id: "WE_033"
+    name: "The Midsummer Storm"
+    year: 315
+    season: long_sun
+    start_day: 52
+    duration_days: 2
+    severity: severe
+    weather_type: rime_storm
+    affected_regions:
+      - coastal
+      - frostfjord
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Skerrivik"
+      - "Helfjord"
+    description: >
+      A rime storm in midsummer — an impossibility that happens anyway.
+      Ice forms on rigging and rooftops in bright daylight. The wind
+      carries sleet that stings bare skin and coats the ground in a thin
+      glaze. At Frostfjord, the quay freezes over for the third time in
+      four years — an event that has not happened three times in a
+      generation before. Helfjord's remaining fishing fleet takes such
+      damage that two ships are written off. The storm passes and leaves
+      the coast glazed in ice that melts within hours, as if it was never
+      there.
+    narrative_consequences:
+      - "Frostfjord quay damaged again — Hrothgar is beyond anger, into despair"
+      - "Summer ice interpreted as proof that natural law is breaking down"
+      - "Helfjord loses fishing capacity it cannot replace before winter"
+    mechanical_effects:
+      travel_mod: 0.4
+      forage_mod: 0.5
+      combat_mod: -0.3
+      special: "Ice in midsummer. Ship damage. Rigging and equipment compromised."
+    folk_name_origin: "Winter came back in summer to remind everyone who rules the Rimevegr"
+    cross_references:
+      events: ["EVT_315_SU03_015"]
+      weather_history_weeks: [8]
+
+  - id: "WE_034"
+    name: "The Veil Tear"
+    year: 315
+    season: harvest
+    start_day: 70
+    duration_days: 5
+    severity: catastrophic
+    weather_type: veil_thinning
+    affected_regions:
+      - forest
+      - mountain
+      - moor
+      - deepholm
+    affected_settlements:
+      - "Thornstead"
+      - "Cairnwatch"
+      - "Stonebreak"
+      - "Ulfheim"
+      - "Deepholm"
+      - "Moor's End"
+    description: >
+      The veil does not thin — it tears. For five days, the boundary
+      between the living and the dead is not a wall but a curtain, and
+      the curtain has holes. The air shimmers around every barrow. Sounds
+      from underground are audible on the surface — stone grinding on
+      stone, the drag of metal, and once, clearly, a voice giving orders
+      in a language no one alive speaks. At Thornstead the barrow crack
+      from Year 314 widens to an arm's breadth and cold air pours out of
+      it like breath from a mouth. At Cairnwatch the guards see a
+      procession of lights moving below the earth, visible through the
+      rock itself. When it ends, the world is quieter but not safer. The
+      holes in the veil do not close all the way.
+    narrative_consequences:
+      - "The barrow crisis reaches its peak — all parties forced to act"
+      - "Cairnwatch garrison refuses to man the highland posts without reinforcement"
+      - "The Pale Widow reveals what she has been researching — a plan to close the veil"
+      - "Dalla speaks openly about what the dead want"
+      - "The endgame begins"
+    mechanical_effects:
+      travel_mod: 0.6
+      forage_mod: 0.5
+      combat_mod: -0.2
+      special: >
+        Veil permanently weakened in affected areas. Barrow encounters
+        shift from chance to certainty. Underground sounds audible on
+        surface near barrows.
+    folk_name_origin: "The veil between the living and the dead tore open like rotten cloth"
+    cross_references:
+      events: ["EVT_315_SUP_010", "EVT_315_A01_020"]
+      weather_history_weeks: [10]
+
+  - id: "WE_035"
+    name: "The Fog of the Dead"
+    year: 315
+    season: harvest
+    start_day: 83
+    duration_days: 4
+    severity: severe
+    weather_type: rime_fog
+    affected_regions:
+      - coastal
+      - moor
+      - forest
+      - frostfjord
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Kolvik"
+      - "Moor's End"
+      - "Ashen Reach"
+      - "Thornstead"
+    description: >
+      A fog rolls in that is cold, sweet, and wrong. It smells faintly
+      of grave-earth and old iron. Inside the fog, people see the dead —
+      not shadows or suggestions, but their actual dead. A woman at
+      Kolvik sees her drowned husband standing at the breakwater where
+      he fell in. A boy at Frostfjord sees his grandmother in the market
+      square. The dead do not speak. They watch. They do not approach.
+      They stand where they died or where they were last happy, and they
+      watch the living with an expression that might be longing or might
+      be hunger. When the fog lifts, the dead are gone. But people who
+      saw them are changed — quieter, sadder, certain that the boundary
+      is breaking.
+    narrative_consequences:
+      - "Mass witness accounts across five settlements — the dead walked among the living"
+      - "Religious observances intensify — every standing stone receives offerings"
+      - "Some people report comfort from seeing their dead; most report dread"
+      - "Kolvik woman refuses to leave the breakwater for days, waiting for the fog to return"
+    mechanical_effects:
+      travel_mod: 0.3
+      forage_mod: 0.5
+      combat_mod: -0.1
+      special: "Apparitions of the dead. Morale check or psychological impact. No physical danger from the dead — yet."
+    folk_name_origin: "The fog brought back the dead and let us see them one more time"
+    cross_references:
+      events: ["EVT_315_SUP_012"]
+      weather_history_weeks: [12]
+
+  - id: "WE_036"
+    name: "The Last Storm"
+    year: 315
+    season: long_dark
+    start_day: 105
+    duration_days: 4
+    severity: severe
+    weather_type: rime_storm
+    affected_regions:
+      - coastal
+      - deepholm
+      - forest
+      - frostfjord
+      - grimholt
+      - moor
+      - mountain
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Ashen Reach"
+      - "Kolvik"
+      - "Deepholm"
+      - "Moor's End"
+      - "Grimholt"
+      - "Ulfheim"
+      - "Cairnwatch"
+      - "Thornstead"
+      - "Stonebreak"
+    description: >
+      A roaring gale strikes the Rimevegr with a fury that feels personal.
+      Not the longest storm, not the coldest, but the angriest. The wind
+      screams — literally screams, in a pitch that sounds like voices.
+      At Grimholt the last section of standing palisade collapses. At
+      Frostfjord the quay finally gives up and the lower market is
+      permanently reclaimed by the sea. Trees fall across every road.
+      When it passes, the Rimevegr is stripped clean — branches bare,
+      roofs peeled, illusions shattered. People call it the Last Storm
+      because it feels like the land is done pretending things are normal.
+    narrative_consequences:
+      - "Frostfjord lower quay destroyed permanently — the settlement contracts"
+      - "Grimholt defences effectively gone — the stronghold is a settlement now"
+      - "All overland routes require clearing before travel resumes"
+      - "The finality of the damage catalyses desperate action"
+    mechanical_effects:
+      travel_mod: 0.2
+      forage_mod: 0.3
+      combat_mod: -0.4
+      special: "Structural destruction across all settlements. Road network damaged."
+    folk_name_origin: "The last storm that struck before the world changed"
+    cross_references:
+      events: ["EVT_315_W02_025"]
+      weather_history_weeks: [15, 16]
+
+  - id: "WE_037"
+    name: "The Black Frost of 315"
+    year: 315
+    season: long_dark
+    start_day: 195
+    duration_days: 14
+    severity: catastrophic
+    weather_type: clear_grey
+    affected_regions:
+      - coastal
+      - deepholm
+      - forest
+      - frostfjord
+      - grimholt
+      - ice
+      - moor
+      - mountain
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Ashen Reach"
+      - "Kolvik"
+      - "Deepholm"
+      - "Moor's End"
+      - "Grimholt"
+      - "Ulfheim"
+      - "Cairnwatch"
+      - "Helfjord"
+      - "Thornstead"
+      - "Skerrivik"
+      - "Ashwall"
+      - "Ironmarsh"
+      - "Vargheim"
+      - "Stonebreak"
+    description: >
+      The worst cold in living memory. Clear sky, no wind, and a cold
+      that kills. Not the cold of winter — the cold of something else,
+      something that radiates from the ground rather than falling from
+      the sky. The earth itself is freezing. Wells ice over from the
+      bottom up. Cellars that have never frozen turn to vaults of ice.
+      At Cairnwatch, a guard touches the palisade post and leaves skin
+      behind. At Vargheim, the hearthstone in the longhouse cracks from
+      cold rising through the floor. Seventeen people die across the
+      Rimevegr in fourteen days — not from exposure, but from the cold
+      that comes from below. The old women say the dead are pulling the
+      warmth down. Nobody argues with them.
+    narrative_consequences:
+      - "Seventeen dead — disproportionately near barrows"
+      - "The cold-from-below convinces the last sceptics: the barrow crisis is real"
+      - "Multiple settlements report frost patterns on floors resembling runes"
+      - "The endgame alliance accelerates its plan — no more time for debate"
+      - "Dalla says the dead are not pulling warmth down. They are rising up."
+    mechanical_effects:
+      travel_mod: 0.3
+      forage_mod: 0.1
+      combat_mod: -0.3
+      special: >
+        Cold radiates from below — shelter provides reduced protection.
+        Ground-level frost lethal. Barrow proximity increases cold
+        intensity. This is supernatural cold, not natural.
+    folk_name_origin: "The black frost that came from below, not above — the dead breathing winter through the earth"
+    cross_references:
+      events: ["EVT_315_SUP_018", "EVT_315_W10_035"]
+      weather_history_weeks: [28, 29]
+
+  - id: "WE_038"
+    name: "The Endless Hush"
+    year: 315
+    season: long_dark
+    start_day: 300
+    duration_days: 14
+    severity: severe
+    weather_type: the_hush
+    affected_regions:
+      - coastal
+      - deepholm
+      - forest
+      - frostfjord
+      - grimholt
+      - ice
+      - moor
+      - mountain
+    affected_settlements:
+      - "Frostfjord Hollow"
+      - "Ashen Reach"
+      - "Kolvik"
+      - "Deepholm"
+      - "Moor's End"
+      - "Grimholt"
+      - "Ulfheim"
+      - "Cairnwatch"
+      - "Helfjord"
+      - "Thornstead"
+      - "Skerrivik"
+      - "Ashwall"
+      - "Ironmarsh"
+      - "Vargheim"
+      - "Stonebreak"
+    description: >
+      Fourteen days of silence. Not the partial silence of earlier hush
+      events — absolute silence. The wind stops. Snow falls without
+      sound. Footsteps make no noise. Voices emerge from mouths and die
+      at arm's length. People resort to hand signals and written notes.
+      The silence is not peaceful — it is the silence of a room where
+      someone is listening. Every barrow in the Rimevegr glows with
+      steady blue light. At night the glow is visible from every
+      settlement. The land holds its breath, and everyone understands:
+      whatever the barrows have been building toward, it is almost here.
+      On the fifteenth day, sound returns with a deep bass note that
+      everyone in the Rimevegr hears simultaneously — a single tone,
+      like a horn blown underground, that lasts for ten heartbeats and
+      then ends. Nothing is the same after.
+    narrative_consequences:
+      - "The defining supernatural event of Year 315 — the prelude to the final crisis"
+      - "All barrows visibly active simultaneously for the first time"
+      - "The underground horn-note is heard by every living person — unified experience"
+      - "Communication breaks down during the silence — settlements isolated despite proximity"
+      - "When it ends, people speak differently. Softer. As if the silence taught them something."
+    mechanical_effects:
+      travel_mod: 0.5
+      forage_mod: 0.4
+      combat_mod: -0.3
+      special: >
+        Sound suppressed — communication by voice impossible. Barrow
+        glow illuminates nights. Horn-note at conclusion marks
+        supernatural phase transition. All previous rules about 'normal
+        weather' no longer apply.
+    folk_name_origin: "Fourteen days when the world stopped speaking and the barrows started"
+    cross_references:
+      events: ["EVT_315_SUP_025"]
+      weather_history_weeks: [43, 44]

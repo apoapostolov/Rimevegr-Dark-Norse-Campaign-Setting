@@ -1,0 +1,26 @@
+{
+  "transaction_id": "txn_20260418T064926Z_week_p1",
+  "branch": "mainline",
+  "unit": "week",
+  "amount": 1,
+  "from_cursor": {
+    "year": 312,
+    "day_of_year": 87,
+    "season": "Early Dark",
+    "branch": "mainline",
+    "transaction_index": 0
+  },
+  "to_cursor": {
+    "year": 312,
+    "day_of_year": 94,
+    "season": "Early Dark",
+    "branch": "mainline",
+    "transaction_index": 1
+  },
+  "inverse": {
+    "unit": "week",
+    "amount": -1
+  },
+  "patches": [],
+  "notes": "Prompt 5 scaffold: cursor-only reversible transaction until domain adapters attach file mutations."
+}

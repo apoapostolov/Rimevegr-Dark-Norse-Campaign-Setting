@@ -1,0 +1,314 @@
+# Iron Ledger — Extended Proverbs, Sayings, and Folk Wisdom
+# Supplements names_and_language.yaml proverbs section.
+# 68 entries across 8 thematic categories.
+
+proverbs_extended:
+  description: >
+    Proverbs, weather sayings, folk wisdom, and metaphors used in the
+    Rimevegr. Organized by theme. These are what common people say —
+    not skaldic kennings but everyday wisdom. Rough, practical, shaped
+    by cold, hunger, iron, and the certainty that nothing lasts.
+
+  # -----------------------------------------------------------------
+  # 1. WEATHER SAYINGS (8)
+  # -----------------------------------------------------------------
+  weather_sayings:
+    - saying: "Red sky at even, the fisher believes. Red sky at morning, the fisher grieves."
+      meaning: "Evening red means fair weather tomorrow. Morning red means a storm is building."
+      usage: "Spoken by coastal folk before deciding whether to launch boats. Kolvik fishermen swear by it."
+
+    - saying: "When the ravens fly low, the snow flies high."
+      meaning: "Ravens hugging the treeline means a blizzard within the day."
+      usage: "Black Pine scouts watch the birds before committing to a march."
+
+    - saying: "Three warm days buy one bad night."
+      meaning: "Mild weather in the Rimevegr always ends with a snap freeze. Never trust a thaw."
+      usage: "Said by anyone who has lost livestock to a false spring."
+
+    - saying: "The wind that smells of iron brings the rime."
+      meaning: "A metallic taste in the air signals an incoming rime storm."
+      usage: "Moor's End farmers use it to decide when to pen the goats. Reliable enough to bet on."
+
+    - saying: "If the pines stop creaking, get inside."
+      meaning: "Black Pine trees groan constantly in wind. Silence means the air pressure has dropped — a killing storm is close."
+      usage: "Outvegr survival lore. When the forest goes quiet, you run."
+
+    - saying: "Frost before Haustblot, mud after."
+      meaning: "Hard freeze comes before the autumn sacrifice, followed by weeks of slush and mire."
+      usage: "Seasonal marker for road travel. Move your goods before Haustblot or pay triple for portage."
+
+    - saying: "Count the fog-mornings in autumn. That is how many storms you get in winter."
+      meaning: "Old weather-counting tradition. Not accurate, but people track it anyway."
+      usage: "Thornwall elders keep a tally stick on the gate post every autumn."
+
+    - saying: "A south wind in winter is a liar."
+      meaning: "Warm wind from the south in deep winter melts just enough ice to make everything treacherous, then the cold returns."
+      usage: "Every settlement knows this. The thaw kills more people than the freeze."
+
+  # -----------------------------------------------------------------
+  # 2. SURVIVAL WISDOM (8)
+  # -----------------------------------------------------------------
+  survival_wisdom:
+    - saying: "Eat when there is food. Sleep when there is shelter. Both may be gone by morning."
+      meaning: "Do not delay necessities. Conditions change faster than plans."
+      usage: "Svarthird marching wisdom. Veterans say it to greenhorns who want to wait for something better."
+
+    - saying: "Wet boots have killed more men than wet blades."
+      meaning: "Exposure kills more people than combat. Tend your feet first."
+      usage: "Every experienced traveller in the Rimevegr knows this. Gest says it at least twice a week."
+
+    - saying: "The man who will not eat bark in winter will not eat anything in spring."
+      meaning: "Refusing hard choices during crisis means you do not survive to see easier times."
+      usage: "Famine proverb. Refers to the practice of stripping inner bark for flour when grain runs out."
+
+    - saying: "Build your woodpile twice as high as you think. You are wrong about how long winter lasts."
+      meaning: "Always over-prepare for the cold season. The Rimevegr punishes optimism."
+      usage: "Said to new settlers and young couples starting their first household."
+
+    - saying: "Share your fire or die next to it."
+      meaning: "Lone survivors freeze. Groups survive. Hoarding warmth is self-destruction."
+      usage: "Traveller's law in the Outvegr. Refusing to share a fire is grounds for violence."
+
+    - saying: "A half-ration kept is better than a full ration stolen."
+      meaning: "Protect what little you have. Do not trust abundance you cannot defend."
+      usage: "Quartermaster's proverb. Applies to food stores, silver, and information."
+
+    - saying: "Carry your own water. The stream may be frozen by the time you reach it."
+      meaning: "Do not depend on resources you have not confirmed. Plan for the worst."
+      usage: "March discipline. Captains who have lost men to dehydration in winter say this."
+
+    - saying: "The first night out is the hardest. After that, you stop expecting comfort."
+      meaning: "Adjustment to hardship is fast. The suffering is mostly in the transition."
+      usage: "Said to new recruits on their first bivouac. Small comfort, but true."
+
+  # -----------------------------------------------------------------
+  # 3. WAR AND FIGHTING (10)
+  # -----------------------------------------------------------------
+  war_and_fighting:
+    - saying: "A shield-wall is only as strong as the man who wants to leave it."
+      meaning: "One coward breaks the line. Courage is collective or it is nothing."
+      usage: "Shield-wall training. Captains drill this into every recruit."
+
+    - saying: "The second rank does the killing. The first rank does the dying."
+      meaning: "Front-line fighters absorb the charge. The men behind them have the reach and angle to strike."
+      usage: "Formation combat wisdom. New fighters want the front. Veterans know better."
+
+    - saying: "Never fight the man. Fight the ground he stands on."
+      meaning: "Terrain wins battles. Force your enemy onto bad footing."
+      usage: "Ambush planning. Black Pine veterans think in slopes, roots, and mud."
+
+    - saying: "A good retreat saves more men than a good charge."
+      meaning: "Knowing when to withdraw is higher craft than knowing when to attack."
+      usage: "Captain's proverb. The ones who scorn retreat are usually dead."
+
+    - saying: "Blood dries. Iron rusts. Only the scar remembers."
+      meaning: "Battles fade from memory. The body keeps the real record."
+      usage: "Veteran's reflection. Said when old wounds ache in the cold."
+
+    - saying: "Do not draw your blade for a man who will not draw his own."
+      meaning: "Do not fight for someone unwilling to fight for themselves."
+      usage: "Mercenary principle. Applies to contracts where the employer hides behind silver."
+
+    - saying: "The man who talks about his kills never counted them."
+      meaning: "Real fighters do not boast. The ones who boast are inflating."
+      usage: "Camp judgment. Veterans go quiet when the bragging starts."
+
+    - saying: "Hit first. Hit hard. Apologize to the corpse."
+      meaning: "Hesitation in a fight is death. Commit fully and sort the morality later."
+      usage: "Svarthird combat doctrine. Not subtle, but effective."
+
+    - saying: "A wounded man fights twice — once against you, once against his own fear."
+      meaning: "Injured fighters are unpredictable. Desperate men are dangerous men."
+      usage: "Warning against assuming a wounded enemy is finished."
+
+    - saying: "Three days without a fight and a band starts fighting itself."
+      meaning: "Idle mercenaries turn violent inward. Keep them busy or lose them."
+      usage: "Captain's headache. Every band leader has learned this the hard way."
+
+  # -----------------------------------------------------------------
+  # 4. TRUST AND BETRAYAL (8)
+  # -----------------------------------------------------------------
+  trust_and_betrayal:
+    - saying: "An oath sworn hungry is broken the day the belly fills."
+      meaning: "Desperate promises do not survive prosperity. People forget what they owed when the crisis passes."
+      usage: "Cynical but observed. Contract enforcers quote it."
+
+    - saying: "The man who swears on his mother's grave does not know where she is buried."
+      meaning: "Dramatic oaths are usually hollow. Trust quiet promises over loud ones."
+      usage: "Market wisdom. Haggling insight."
+
+    - saying: "Count your friends after the feast, not during it."
+      meaning: "Everyone is friendly when the food and drink flow. Real loyalty shows when resources are scarce."
+      usage: "Political wisdom. Jarls know this."
+
+    - saying: "A dog that bites one master will bite the next."
+      meaning: "Traitors repeat. Do not employ someone who betrayed their previous lord."
+      usage: "Mercenary hiring practice. Captains ask why a man left his last band."
+
+    - saying: "Trust is a door. It opens once. After that, it is a wall."
+      meaning: "Broken trust cannot be restored. There are no second chances for betrayal."
+      usage: "Rimevegr social code. Applies from blood-brothers to trade partners."
+
+    - saying: "The open hand hides the knife best."
+      meaning: "Generosity can be a mask for treachery. Watch the man who gives too freely."
+      usage: "Political caution. Said about lords who buy loyalty and then collect on it."
+
+    - saying: "Lopt whispered once and the world has not stopped lying since."
+      meaning: "The trickster god introduced dishonesty to the world. Lying is in the nature of things."
+      usage: "Resigned observation. Not an excuse — an explanation."
+
+    - saying: "Better a known enemy than an unknown friend."
+      meaning: "At least you know where you stand with someone who hates you openly."
+      usage: "Practical risk assessment. Common in the border settlements between rival jarls."
+
+  # -----------------------------------------------------------------
+  # 5. DEATH AND FATE (8)
+  # -----------------------------------------------------------------
+  death_and_fate:
+    - saying: "The wyrd was woven before you woke."
+      meaning: "Your fate was decided before you were born. Worry changes nothing."
+      usage: "Fatalism. Said to comfort or silence a man afraid of what comes next."
+
+    - saying: "Every man gets the death he earned and the one he did not."
+      meaning: "You can live well and still die badly. Fairness has nothing to do with it."
+      usage: "Said at funerals where the death was ugly or pointless."
+
+    - saying: "A man walks toward his grave from the day he is named."
+      meaning: "Death is not an event. It is a direction."
+      usage: "Philosophical observation. Old men say it by the fire."
+
+    - saying: "The barrow does not care if you were brave."
+      meaning: "Courage does not earn you a better afterlife. The dead are just dead."
+      usage: "Skeptic's proverb. Offends the pious but resonates with veterans."
+
+    - saying: "Mourn fast. The living need you more than the dead do."
+      meaning: "Grief is real, but survival demands you keep moving."
+      usage: "Said after a battle or a collapse. Practical and brutal."
+
+    - saying: "When your thread runs out, the shears do not ask permission."
+      meaning: "The Norns cut your life-thread when it is done. No negotiation."
+      usage: "Fate metaphor. Used when someone dies young and people want to know why."
+
+    - saying: "The draugr was a man once. Remember that when you swing."
+      meaning: "The undead were people. The horror is that they still are, in some rotting way."
+      usage: "Said before barrow-clearing. A reminder and a prayer."
+
+    - saying: "We all owe the earth a body. The only question is when."
+      meaning: "Death is a debt everyone pays. Courage is choosing the terms, not the outcome."
+      usage: "Pre-battle saying. Grim, but it steadies the hands."
+
+  # -----------------------------------------------------------------
+  # 6. MONEY AND TRADE (8)
+  # -----------------------------------------------------------------
+  money_and_trade:
+    - saying: "Silver weighs more in your enemy's hand."
+      meaning: "The same amount of silver feels like more when someone else has it. Jealousy distorts value."
+      usage: "Pay disputes. Said when someone complains about another man's share."
+
+    - saying: "Cheap iron breaks on the first swing."
+      meaning: "You get what you pay for. Applied to weapons, tools, and hired men."
+      usage: "Market wisdom. Grimholt smiths stamp their steel for a reason."
+
+    - saying: "Pay the ferryman before you board. He has no reason to care once you are in the water."
+      meaning: "Settle debts before you are in a vulnerable position."
+      usage: "Contract wisdom. Applies to hiring, passage, and ransoms."
+
+    - saying: "The man who haggles over a copper loses a mark."
+      meaning: "Stinginess on small amounts costs you larger opportunities. People remember cheapness."
+      usage: "Merchant proverb. Kolvik traders say it when a negotiation collapses over petty sums."
+
+    - saying: "A dead employer pays nothing. Check the contract for that clause."
+      meaning: "Mercenary realism. If your employer dies, who honours the deal?"
+      usage: "Gest-style quartermaster wisdom. Always know who the backup paymaster is."
+
+    - saying: "Gold is for jarls. Silver is for fighters. Copper is for the rest of us."
+      meaning: "The economy has layers and most people live in the bottom one."
+      usage: "Class observation. Said without bitterness — it is just how things are."
+
+    - saying: "Bread today is worth beef tomorrow."
+      meaning: "A guaranteed small thing now beats a promised large thing later."
+      usage: "Survival economics. Take the certain payment."
+
+    - saying: "Count your silver in private. Count theirs in public."
+      meaning: "Keep your own wealth hidden but audit your employer's openly."
+      usage: "Svarthird financial hygiene. Gest's operating principle."
+
+  # -----------------------------------------------------------------
+  # 7. NATURE AND SEASONS (8)
+  # -----------------------------------------------------------------
+  nature_and_seasons:
+    - saying: "The wolf does not hate the deer. He is just hungry."
+      meaning: "Most violence is not personal. Survival drives it."
+      usage: "Applied to bandit raids, mercenary work, and predator encounters in the Outvegr."
+
+    - saying: "Spring in the Rimevegr is mud pretending to be hope."
+      meaning: "The thaw season is ugly, exhausting, and messy. Not the renewal that southerners imagine."
+      usage: "Said every year by everyone. Spring is the hardest season, not winter."
+
+    - saying: "Plant after the third rain, not the first."
+      meaning: "Patience in timing. The first thaw-rains are unreliable — wait for the pattern to hold."
+      usage: "Agricultural wisdom. Moor's End and Ashmark farmers live by this."
+
+    - saying: "Even the Black Pine sleeps in winter. You should too."
+      meaning: "Rest when the land rests. Fighting the season is a fight you lose."
+      usage: "Deep winter advice. Settlements go dormant for weeks and that is correct."
+
+    - saying: "Follow the cod and you find the coast. Follow the raven and you find the dead."
+      meaning: "Animals lead you to what they need. Cod schools follow warm currents to shore. Ravens follow corpses."
+      usage: "Navigation and omen-reading. Practical, not superstitious."
+
+    - saying: "The river remembers where it went last spring."
+      meaning: "Flooding follows old channels. Build your house where the ground is dry in spring, not in summer."
+      usage: "Settlement planning. Ignored by people who then lose their houses."
+
+    - saying: "A tree that bends in the storm stands. A tree that does not, feeds someone's fire."
+      meaning: "Flexibility survives. Rigidity breaks. Applies to people as much as timber."
+      usage: "General wisdom. Said about stubborn jarls and stubborn men alike."
+
+    - saying: "The long dark teaches you what you actually need."
+      meaning: "Deep winter strips away everything unnecessary. What remains is what matters."
+      usage: "Philosophical and practical. The long dark is the Rimevegr's annual reckoning."
+
+  # -----------------------------------------------------------------
+  # 8. COMMON METAPHORS (10)
+  # -----------------------------------------------------------------
+  common_metaphors:
+    - metaphor: "Hard as Grimholt iron"
+      meaning: "Unyielding, stubborn, or genuinely high quality."
+      typical_context: "Compliment for a fighter. Insult for a negotiator."
+
+    - metaphor: "Deep as Deepholm silver"
+      meaning: "Hidden wealth. Resources that exist but are not easily reached."
+      typical_context: "Said about a settlement or a person who has more than they show."
+
+    - metaphor: "Cold as a Frostfjord cellar"
+      meaning: "Bone-deep cold. Also implies something wrong underneath — a reference to the barrow below Hrothgar's hall."
+      typical_context: "Describes a person's temperament or a room that shouldn't be that cold."
+
+    - metaphor: "Crooked as Kolvik dock-planks"
+      meaning: "Dishonest. Unreliable. Warped by conditions no one bothered to fix."
+      typical_context: "Applied to merchants, promises, and tax collectors."
+
+    - metaphor: "Quiet as the Black Pine before a kill"
+      meaning: "A dangerous, watchful silence. Calm that precedes violence."
+      typical_context: "Describes a room going silent before a fight, or a man who stops talking before he acts."
+
+    - metaphor: "Thornwall stubborn"
+      meaning: "Refusing to move, bend, or negotiate. Dug in like the thorn hedges around the settlement."
+      typical_context: "Said about anyone maintaining a position past reason. Not always an insult."
+
+    - metaphor: "Skaldhaven pretty"
+      meaning: "Attractive but useless. Good-looking but not built for the Rimevegr."
+      typical_context: "Said about weapons, clothes, horses, or people that prioritise appearance over function."
+
+    - metaphor: "Bleakwater luck"
+      meaning: "The kind of luck where you survive but wish you hadn't. Things go wrong in the least lethal, most miserable way."
+      typical_context: "You find shelter — but it is a flooded ruin full of rats. Bleakwater luck."
+
+    - metaphor: "Vargheim welcome"
+      meaning: "A greeting that feels more like a threat. Hospitality laced with menace."
+      typical_context: "Vargheim is deep Black Pine wolf-country. They let you in. They watch you the entire time."
+
+    - metaphor: "Ashen Reach weather"
+      meaning: "Conditions that change without warning. Unreliable, volatile, not to be trusted."
+      typical_context: "Describes a person's mood, a political situation, or actual weather on the coast."

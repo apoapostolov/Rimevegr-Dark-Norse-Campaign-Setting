@@ -1,0 +1,386 @@
+# Iron Ledger — Extended Insults, Threats, Curses, and Taunts
+# Project: Iron Ledger -- Mercenaries of the Rimevegr
+# Purpose: Deep verbal-combat reference covering 10 categories of abuse.
+#   Supplements names_and_language.yaml insults (12) and curses (12)
+#   with 67 additional entries across cowardice, appearance, competence,
+#   lineage, combat taunts, social threats, divine curses, nid verses,
+#   mercenary insults, and mild dismissals.
+# Cross-reference: 06_DICTIONARY_OF_NORSE_TERMS.md for prose definitions.
+#   names_and_language.yaml for base insults, curses, oaths, kennings.
+
+insults_extended:
+  description: >
+    Verbal weapons of the Rimevegr — used in mead halls, before combat,
+    during negotiations, and behind backs. Norse culture values eloquent
+    abuse. A well-crafted insult can end a career; a poor one marks the
+    speaker as witless. In the Rimevegr, where reputation is currency,
+    words cut deeper than iron. A man can survive a wound. He cannot
+    survive a nickname.
+
+  # -------------------------------------------------------------------
+  # 1. COWARDICE INSULTS (8)
+  #    Attacking courage — the gravest accusation.
+  #    A man called coward in the Rimevegr must fight or leave.
+  # -------------------------------------------------------------------
+  cowardice_insults:
+    - text: "Your shield is heavier than your courage."
+      severity: "moderate"
+      context: "Public accusation of cowardice. Can provoke holmgang challenge."
+      response_expected: "Fight or shame."
+
+    - text: "I watched you find the back of the line before the horns blew."
+      severity: "serious"
+      context: "Specific accusation — the speaker saw it happen. Harder to deny than vague mockery."
+      response_expected: "Denial or challenge."
+
+    - text: "You run well for a man with such short legs."
+      severity: "moderate"
+      context: "Mead-hall taunt. Gets laughs. The target either laughs with them or reaches for a weapon."
+
+    - text: "Even the camp dogs hold ground longer than you."
+      severity: "moderate"
+      context: "Comparing a warrior to the mongrels that follow svarthirds. Livestock comparison stings."
+
+    - text: "Your blood stays in your veins because you never get close enough to spill it."
+      severity: "serious"
+      context: "Accusation of hanging back in combat. Devastating to a man who claims kills."
+      response_expected: "Public rebuttal with witnesses, or fight."
+
+    - text: "The shield-wall has a name for the gap you leave: daylight."
+      severity: "serious"
+      context: "Shield-wall cowardice. The man who steps back kills the men beside him. This is not banter — it is an accusation of murder by absence."
+      response_expected: "Formal denial at the fire or immediate violence."
+
+    - text: "He volunteered to guard the baggage. Again."
+      severity: "mild"
+      context: "Said behind the target's back. Not a formal insult — worse. A reputation quietly forming."
+
+    - text: "You have the look of a man who has seen many battles — from a safe hill."
+      severity: "moderate"
+      context: "Questioning a veteran's credentials. Implies survival through cowardice rather than skill."
+
+  # -------------------------------------------------------------------
+  # 2. APPEARANCE INSULTS (6)
+  #    Physical mockery. In this culture scars earned in combat are
+  #    honourable. What is mocked: softness, size mismatch, signs of
+  #    comfortable living, cowardly wounds (back-wounds, heel-cuts).
+  # -------------------------------------------------------------------
+  appearance_insults:
+    - text: "You have a jarl's belly and a thrall's arms."
+      severity: "moderate"
+      context: "Fat and weak. The worst combination in a svarthird."
+
+    - text: "Your back has more scars than your chest. Did you fight or flee?"
+      severity: "serious"
+      context: "Back-wounds mean running. A direct challenge to a man's honour. Can start a blood-feud."
+      response_expected: "Explanation or steel."
+
+    - text: "The only callus on your hands is from holding a cup."
+      severity: "mild"
+      context: "Soft hands. Never worked, never fought properly. Common against town-bred recruits."
+
+    - text: "You sweat like a pig in a forge, and you are half as useful."
+      severity: "moderate"
+      context: "Physical unfitness. A march or training-ground insult."
+
+    - text: "Your beard grows patchy as a burned field. Even the lice avoid you."
+      severity: "mild"
+      context: "Mocking a thin beard — a sign of youth or poor blood. Not fight-starting, but the name sticks."
+
+    - text: "I have seen draugr with better colour. Are you ill or just afraid?"
+      severity: "moderate"
+      context: "Pale face read as fear. Using the undead comparison adds a curse-adjacent sting."
+
+  # -------------------------------------------------------------------
+  # 3. COMPETENCE INSULTS (8)
+  #    Mocking skill, leadership, intelligence, seamanship, or craft.
+  # -------------------------------------------------------------------
+  competence_insults:
+    - text: "You swing an axe like a woman splitting kindling — and she does it better."
+      severity: "moderate"
+      context: "Weapon incompetence. The second half makes it impossible to deflect with humour."
+
+    - text: "A blind man with a stick would read a trail faster than you."
+      severity: "mild"
+      context: "Mocking a scout or pathfinder. Professional insult — attacks livelihood."
+
+    - text: "Your plans have more holes than a fisherman's net, and catch less."
+      severity: "moderate"
+      context: "Leadership incompetence. Said to a captain or steward behind their back, or to their face if you want a fight."
+
+    - text: "You navigate by the stars? Which ones — the ones you see after you walk into a tree?"
+      severity: "mild"
+      context: "Mocking intelligence. Gets laughs around a fire. Stings worse when the man really did get lost."
+
+    - text: "He could not track a bleeding elk through fresh snow."
+      severity: "moderate"
+      context: "Third-person insult — gossip-form. Destroys a man's reputation as a hunter or pathfinder without offering a face to hit."
+
+    - text: "Your shield-work would shame a boy of twelve summers."
+      severity: "serious"
+      context: "Comparing a man's training to a child's. In front of a svarthird, this demands an answer."
+      response_expected: "Demonstration or challenge."
+
+    - text: "You count silver the way you count enemies — always short."
+      severity: "moderate"
+      context: "Attacks both arithmetic and battlefield awareness. Used against quartermasters and scouts."
+
+    - text: "The only thing you command well is the privy trench."
+      severity: "moderate"
+      context: "Leadership insult. Latrine duty is the lowest assignment. Implies the man belongs there."
+
+  # -------------------------------------------------------------------
+  # 4. LINEAGE INSULTS (6)
+  #    Attacking parentage, ancestry, thrall blood. In the Rimevegr,
+  #    where kinlessness is common, these cut close to identity.
+  # -------------------------------------------------------------------
+  lineage_insults:
+    - text: "Your mother laid with a thrall and called the result free-born."
+      severity: "deadly"
+      context: "Accusing a man of slave blood. In thing-law, this is grounds for holmgang. If proven false, the speaker pays blood-price."
+      response_expected: "Holmgang challenge or legal action at the thing."
+
+    - text: "Your father was so forgettable that even his byname was 'the Other One.'"
+      severity: "moderate"
+      context: "Attacks the father's reputation — which reflects on the son. Effective because it mocks without naming a specific crime."
+
+    - text: "No one knows your grandfather's name. That tells me everything."
+      severity: "serious"
+      context: "Kinlessness as evidence of low birth. In a culture that reckons worth by ancestors, anonymity is condemnation."
+
+    - text: "Your bloodline runs thin as meltwater. Three generations of nothing."
+      severity: "serious"
+      context: "Attacks the entire family line. Not one weak man — a pattern of weakness."
+
+    - text: "You fight for silver because no land would have you and no hall would keep you."
+      severity: "moderate"
+      context: "Mercenary-specific. True for most svarthird men, which makes it sting — truth hurts more than lies."
+
+    - text: "I hear your people fed the Red Tide. Which side of the chain were they on?"
+      severity: "deadly"
+      context: "Accusing a man's ancestors of being slavers or enslaved. The Red Tide is the slave trade. Either answer shames."
+      response_expected: "Violence. There is no good answer."
+
+  # -------------------------------------------------------------------
+  # 5. COMBAT TAUNTS (8)
+  #    Shouted across a battle line or before holmgang. Short, brutal,
+  #    designed to carry over noise and break concentration.
+  # -------------------------------------------------------------------
+  combat_taunts:
+    - text: "Come closer. My blade is thirsty and you look slow."
+      severity: "moderate"
+      context: "Shouted across a battle line. Invites the charge."
+
+    - text: "I will wear your teeth on a cord. Hold still."
+      severity: "serious"
+      context: "Pre-holmgang taunt. Physical threat delivered as certainty."
+
+    - text: "Your shield is already cracked. I can hear it from here."
+      severity: "moderate"
+      context: "Shield-wall taunt. Undermines confidence — the man will check his shield and lose a heartbeat."
+
+    - text: "The ravens are circling you, not me."
+      severity: "moderate"
+      context: "Battlefield fatalism. Claims the gods have already chosen who dies today."
+
+    - text: "Faster! I want to finish before the sun moves."
+      severity: "mild"
+      context: "Mid-combat taunt. Implies the fight is boring and the opponent is too slow to matter."
+
+    - text: "You fight like the Hollow Hall — all echo, no substance."
+      severity: "serious"
+      context: "Rimevegr-specific. The Hollow Hall is a ruin. Comparing a man's fighting to an empty building."
+
+    - text: "I have killed better men before breakfast."
+      severity: "moderate"
+      context: "Pre-battle boast. Standard taunt that establishes confidence and dismisses the opponent's worth."
+
+    - text: "Your sword-hand shakes. Does your knee?"
+      severity: "serious"
+      context: "Holmgang taunt. Observing visible fear and asking if the man will kneel (submit). Either answer costs him."
+      response_expected: "Attack immediately or lose face."
+
+  # -------------------------------------------------------------------
+  # 6. SOCIAL THREATS (6)
+  #    What jarls say to captains, what captains say to jarls. Spoken
+  #    when negotiation has failed and the next step is steel or exile.
+  # -------------------------------------------------------------------
+  social_threats:
+    - text: "Your contract ends when I say it ends. And I have not said it."
+      severity: "serious"
+      context: "A jarl reminding a svarthird captain who holds the silver. Implies violence if the band leaves."
+
+    - text: "I will give your name to every thing from here to the coast. You will find no work and no hearth."
+      severity: "deadly"
+      context: "Reputation destruction. A jarl blacklisting a mercenary captain across the Rimevegr. Worse than a death sentence — it is a slow one."
+      response_expected: "Negotiation, submission, or war."
+
+    - text: "The next word you speak in my hall had better be an apology or a prayer."
+      severity: "serious"
+      context: "A host warning a guest. Violating guest-right protection cuts both ways — but the host has more men."
+
+    - text: "Your band eats my grain and guards my road. If the road is not safe, I will find men who eat less."
+      severity: "moderate"
+      context: "A jarl threatening to replace a svarthird. Attacks professional pride and implies the band is overpaid."
+
+    - text: "Remember that I know where your people winter. Every one of them."
+      severity: "deadly"
+      context: "Threat against a captain's dependents. Crosses a line from politics to war. Spoken quietly."
+      response_expected: "Compliance or immediate, bloody retaliation."
+
+    - text: "You may leave this hall with your weapons or your dignity. Choose now."
+      severity: "serious"
+      context: "Forced disarmament or forced humiliation. A jarl cornering a rival. Neither option is good."
+
+  # -------------------------------------------------------------------
+  # 7. DIVINE CURSES (6)
+  #    Invoking gods, the Veil, barrow-dead against an enemy.
+  #    In the Rimevegr where the Veil is thin, these carry real weight.
+  # -------------------------------------------------------------------
+  divine_curses:
+    - text: "May the Rimefog take your eyes before it takes your breath."
+      severity: "deadly"
+      context: "Invoking the Veil's consuming mist. Wishes blindness followed by dissolution. Spoken as a final word — not a conversation piece."
+
+    - text: "Odynn watched you break your oath. The rope remembers."
+      severity: "serious"
+      context: "Marking an oath-breaker with divine witness. Odynn hung on the World-Ash. The rope is his instrument. This is half-curse, half-legal notice."
+
+    - text: "May the barrow-dead mistake you for kin and drag you down to sleep with them."
+      severity: "deadly"
+      context: "Wishes the target taken by draugr into a barrow. In the Rimevegr, barrows are real and the dead do not always stay in them."
+
+    - text: "Hael keep a cold chair for you. May you sit in it soon."
+      severity: "serious"
+      context: "Invoking Hael's death-hall. Less a curse than a prophecy delivered with venom."
+
+    - text: "Let Lopt's children find you on the road. Let them play with you before they feed."
+      severity: "deadly"
+      context: "Lopt's monstrous offspring. Wishes a man devoured by things that enjoy the killing. Said to men who truly deserve hatred."
+
+    - text: "Thurr break your hands so you can never hold a blade or a woman again."
+      severity: "serious"
+      context: "Thurr destroys. This curse is specific — targets a man's ability to fight and to have a future. Spoken by someone who wants lasting ruin, not death."
+
+  # -------------------------------------------------------------------
+  # 8. NID VERSES (5)
+  #    Short mockery poems — the most dangerous verbal weapons.
+  #    Nid is legally actionable in thing-law. Composing nid against
+  #    a man is grounds for outlawry if proven at the thing. Which is
+  #    why nid is always anonymous — or composed by someone powerful
+  #    enough that no one dares bring charges.
+  # -------------------------------------------------------------------
+  nid_verses:
+    - text: |
+        Halfdan held the hill —
+        held it well, from behind.
+        His shield faced backward
+        and his legs faced south.
+      severity: "deadly"
+      context: "Accuses a named man of fleeing battle. Composing nid with a man's real name is the nuclear option. If this spreads, Halfdan must kill the poet or leave the Rimevegr."
+      note: "Nid is legally actionable in thing-law. The speaker risks outlawry."
+
+    - text: |
+        He swore on Odynn's rope,
+        then cut it with his purse.
+        Silver buys his silence;
+        shame should buy his grave.
+      severity: "deadly"
+      context: "Oath-breaker nid. Accuses a man of breaking a sacred oath for money. Anonymous circulation in a mead hall — carved on a rune-stick and left where it will be found."
+      note: "Rune-carved nid sticks are a traditional delivery method."
+
+    - text: |
+        Three battles, three retreats,
+        three widows made for nothing.
+        He counted well — his silver, not his dead.
+      severity: "deadly"
+      context: "Attacks a captain's leadership. The dead are his fault and he profited. If this reaches the surviving band members, the captain may not survive the night."
+      note: "Nid against leadership can trigger mutiny."
+
+    - text: |
+        His word bends with the wind,
+        his spine bends with his word.
+        Even the goats stand straighter
+        when the gale blows through.
+      severity: "serious"
+      context: "General character assassination. Compares the target to livestock — a recurring humiliation in Norse insult tradition. Less dangerous than naming a specific crime but devastating to reputation."
+      note: "Animal comparisons in nid imply the target is less than human."
+
+    - text: |
+        She wove him a cloak of promises;
+        he wore it to another woman's bed.
+        Now the cold-road waits —
+        and the cloak has holes.
+      severity: "serious"
+      context: "Infidelity nid. Attacks both sexual honour and trustworthiness. Particularly cutting because it frames betrayal as self-destructive stupidity rather than cruelty."
+      note: "Nid about sexual misconduct carries social consequences beyond legal ones."
+
+  # -------------------------------------------------------------------
+  # 9. MERCENARY INSULTS (8)
+  #    Band-to-band, rank-to-rank, profession-specific.
+  #    The Rimevegr's svarthirds have their own hierarchy of contempt.
+  # -------------------------------------------------------------------
+  mercenary_insults:
+    - text: "Your band fights for whoever pours the cheapest ale. At least whores negotiate."
+      severity: "serious"
+      context: "Attacks a rival band's standards. Implies they take any contract regardless of honour."
+
+    - text: "I have seen camp followers with better discipline."
+      severity: "moderate"
+      context: "Comparing a svarthird to the non-combatants who trail behind them. Professional humiliation."
+
+    - text: "You call that a war-band? I call it a queue for the soup pot."
+      severity: "moderate"
+      context: "Mocking a rival band's fitness. Implies they are hungry, not dangerous."
+
+    - text: "Your captain takes orders from his horse. At least the horse knows the way home."
+      severity: "moderate"
+      context: "Attacks leadership through the band. The men laugh; the captain cannot."
+
+    - text: "Red Tide fodder, the lot of you. One bad season from the chain."
+      severity: "deadly"
+      context: "Calling a band slaveable. The Red Tide takes the weak. Implies the entire svarthird is one defeat from slavery."
+      response_expected: "Immediate violence. This insult has started inter-band wars."
+
+    - text: "You guard grain stores. We guard borders. There is a word for the difference."
+      severity: "moderate"
+      context: "Status insult between bands. Garrison duty is safe, dull, and paid less. The word left unspoken is 'coward.'"
+
+    - text: "Your oath-price is so low they pay you in stale bread and pity."
+      severity: "moderate"
+      context: "Attacking a band's contract value. In the Rimevegr, what you are paid defines what you are worth."
+
+    - text: "The Bone Pack would not take you. And they take everyone."
+      severity: "serious"
+      context: "The Bone Pack is the lowest-reputed svarthird that still functions. Being rejected by them means you are below the floor."
+
+  # -------------------------------------------------------------------
+  # 10. MILD DISMISSALS (6)
+  #     When you want to wound pride without drawing steel.
+  #     Social slights, polite contempt, the dismissal that stings
+  #     precisely because it does not bother to be angry.
+  # -------------------------------------------------------------------
+  mild_dismissals:
+    - text: "I am sure you tried your best. That is the sad part."
+      severity: "mild"
+      context: "Delivered with a straight face. The pity is the weapon."
+
+    - text: "You may sit. Further from the fire."
+      severity: "mild"
+      context: "Seating rank in a mead hall. Closer to the fire means closer to the jarl. Further out means you do not matter."
+
+    - text: "I would explain, but the hour is late and your grasp is slow."
+      severity: "mild"
+      context: "Intellectual dismissal. The speaker has better things to do than educate the target."
+
+    - text: "Speak, if you must. The wind makes noise too and we endure it."
+      severity: "mild"
+      context: "Granting permission to talk while equating the words with weather — natural, meaningless, and tedious."
+
+    - text: "Your name was mentioned at the fire last night. Briefly."
+      severity: "mild"
+      context: "The target is not important enough to discuss at length. The pause before 'briefly' does the work."
+
+    - text: "I will consider your counsel. After everyone else's."
+      severity: "mild"
+      context: "Placed last in the order of importance. Polite enough to avoid a challenge, cutting enough to be remembered."

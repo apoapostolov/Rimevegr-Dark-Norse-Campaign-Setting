@@ -1,0 +1,523 @@
+# Iron Ledger — Political State
+# Canonical political state for the Rimevegr. Consumed by village_politics.py.
+# Updated by simulation ticks. Do not hand-edit generated fields.
+
+current_date:
+  year: 312
+  day_of_year: 1
+  season: "Long Summer"
+  month: "Frostwake"
+
+# --- Unions ---
+unions:
+  - name: "The Iron Grip"
+    overjarl: "Ordovast"
+    overjarl_stats:
+      wit: 6
+      wil: 8
+      command: 3
+      intimidate: 3
+      bargain: 1
+    seat: "Grimholt"
+    type: military
+    cohesion: 4
+    war_readiness: 2
+    dark_arts_level: 0
+    members:
+      - settlement: "Grimholt"
+        role: core
+        loyalty: 5
+        tribute_silver_weekly: 0
+      - settlement: "Raven's Perch"
+        role: subordinate
+        loyalty: 3
+        tribute_silver_monthly_campaign_season: 6
+        tribute_silver_seasonal: 18
+        tribute_goods_note: "winter stores and lookout service demanded when Ordovast readies a march"
+      - settlement: "Bleakwater Landing"
+        role: vassal
+        loyalty: 2
+        tribute_silver_monthly: 2
+        tribute_service_note: "ferry priority and forced crossings for Iron Grip traffic"
+      - settlement: "Moor's End"
+        role: tributary
+        loyalty: 1
+        tribute_silver_seasonal: 4
+        tribute_livestock_monthly: 1 # sheep
+        tribute_goods_note: "peat carts and labor service when called"
+
+  - name: "The Fjord Compact"
+    overjarl: "Sigrun"
+    overjarl_stats:
+      wit: 7
+      wil: 7
+      command: 2
+      intimidate: 1
+      bargain: 3
+    seat: "Deepholm"
+    type: economic
+    cohesion: 3
+    war_readiness: 1
+    dark_arts_level: 0
+    members:
+      - settlement: "Deepholm"
+        role: core
+        loyalty: 5
+        tribute_silver_weekly: 0
+      - settlement: "Thornwall"
+        role: ally
+        loyalty: 4
+        tribute_silver_weekly: 0
+        levy_fighters: 15
+      - settlement: "Kolvik"
+        role: partner
+        loyalty: 3
+        tribute_silver_weekly: 0
+        trade_bonus: 1.1
+      - settlement: "Skaldhaven"
+        role: cultural
+        loyalty: 3
+        tribute_silver_weekly: 0
+      - settlement: "Ashmark"
+        role: buffer
+        loyalty: 2
+        tribute_silver_weekly: 0
+
+  - name: "The Whispering Circle"
+    overjarl: "Pale Widow"
+    overjarl_stats:
+      wit: 8
+      wil: 6
+      command: 1
+      intimidate: 1
+      bargain: 2
+      deceive: 3
+    seat: "Ashen Reach"
+    type: covert
+    cohesion: 2
+    war_readiness: 1
+    dark_arts_level: 2
+    dark_arts_practitioners:
+      - name: "The Cave-Woman"
+        role: seidr_worker
+        wyr: 5
+        wil: 7
+        health: "deteriorating"
+        capabilities:
+          - dream_sending
+          - death_reading
+          - veil_sensing
+        notes: "Has not eaten solid food in two months."
+      - name: "Grim"
+        role: curse_carver
+        wyr: 4
+        wil: 6
+        health: "deteriorating"
+        capabilities:
+          - nithing_pole
+          - veil_thinning
+          - ill_rune_carving
+        notes: "Hands shake. Eyes pale. Aging fast."
+    whisper_agents:
+      - location: "Grimholt"
+        cover: "Iron-ore trader"
+        quality: 2 # 1-3
+      - location: "Deepholm"
+        cover: "Wandering healer"
+        quality: 3
+      - location: "Thornwall"
+        cover: "Shepherd"
+        quality: 1
+      - location: "Allthing grounds"
+        cover: "Serving woman"
+        quality: 2
+    members:
+      - settlement: "Ashen Reach"
+        role: core
+        loyalty: 5
+        tribute_silver_weekly: 0
+      - settlement: "Frostfjord Hollow"
+        role: nominal
+        loyalty: 2
+        tribute_silver_weekly: 0
+        notes: "SPOILER:么乲乯乴乨乧乡乲丠乨乥乤乧乩乮乧丮丠乗乩乬乬丠乢乥乴乲乡乹丠乩书丠乴乨乲乥乡乴乥乮乥乤丮"
+      - settlement: "Vargheim"
+        role: reluctant
+        loyalty: 2
+        tribute_silver_weekly: 0
+        notes: "SPOILER:乕乬书丠乳乵乳买乥乣乴乳丠乳乥乩乤乲丮丠乄乩乳乴乲乵乳乴乳丮"
+
+# --- Feuds ---
+feuds:
+  - pair: ["Grimholt", "Deepholm"]
+    level: 2
+    cause: "Ordovast expanding toward Sigrun's territory"
+    duration_seasons: 3
+  - pair: ["Frostfjord Hollow", "Ashen Reach"]
+    level: 1
+    cause: "Historical rivalry, Pale Widow scheming"
+    duration_seasons: 2
+  - pair: ["Grimholt", "Thornwall"]
+    level: 1
+    cause: "Ordovast wants Thornwall's pastureland"
+    duration_seasons: 1
+  - pair: ["Feldwick", "Three Wolves"]
+    level: 3
+    cause: "Second occupation this year"
+    duration_seasons: 4
+
+# --- Independent Settlements ---
+independent:
+  - "Feldwick"
+  - "Stonebay Hamlet"
+  - "Icebreak"
+
+# --- Settlement Demographics ---
+# Detailed population breakdown per settlement.
+demographics:
+  "Frostfjord Hollow":
+    children: 16
+    elderly: 9
+    women_working: 24
+    men_working: 26
+    fighters: 11
+    total: 87
+  "Ashen Reach":
+    children: 25
+    elderly: 14
+    women_working: 40
+    men_working: 42
+    fighters: 18
+    total: 142
+  "Feldwick":
+    children: 10
+    elderly: 7
+    women_working: 18
+    men_working: 19
+    fighters: 5
+    total: 61
+  "Stonebay Hamlet":
+    children: 4
+    elderly: 3
+    women_working: 7
+    men_working: 7
+    fighters: 2
+    total: 23
+  "Grimholt":
+    children: 18
+    elderly: 10
+    women_working: 33
+    men_working: 35
+    fighters: 40
+    total: 118
+  "Raven's Perch":
+    children: 12
+    elderly: 8
+    women_working: 21
+    men_working: 22
+    fighters: 8
+    total: 74
+  "Vargheim":
+    children: 28
+    elderly: 16
+    women_working: 48
+    men_working: 50
+    fighters: 20
+    total: 165
+  "Kolvik":
+    children: 16
+    elderly: 10
+    women_working: 27
+    men_working: 28
+    fighters: 9
+    total: 95
+  "Moor's End":
+    children: 5
+    elderly: 4
+    women_working: 9
+    men_working: 10
+    fighters: 3
+    total: 31
+  "Ashmark":
+    children: 14
+    elderly: 8
+    women_working: 23
+    men_working: 24
+    fighters: 8
+    total: 82
+  "Deepholm":
+    children: 85
+    elderly: 50
+    women_working: 150
+    men_working: 155
+    fighters: 40
+    total: 520
+  "Bleakwater Landing":
+    children: 3
+    elderly: 2
+    women_working: 5
+    men_working: 6
+    fighters: 2
+    total: 18
+  "Skaldhaven":
+    children: 18
+    elderly: 12
+    women_working: 31
+    men_working: 32
+    fighters: 12
+    total: 110
+  "Thornwall":
+    children: 30
+    elderly: 18
+    women_working: 52
+    men_working: 55
+    fighters: 22
+    total: 180
+  "Icebreak":
+    children: 1
+    elderly: 2
+    women_working: 4
+    men_working: 4
+    fighters: 1
+    total: 12
+
+# --- Settlement Economies ---
+economies:
+  "Frostfjord Hollow":
+    crop_fields: 6
+    livestock: { sheep: 30, goats: 15, cattle: 3, pigs: 5 }
+    food_stores_days: 120
+    food_stores_max: 160
+    silver_treasury: 45
+    weekly_trade_income: 10
+    weekly_expenses: 6
+    labor_allocation:
+      {
+        farming: 0.50,
+        building: 0.10,
+        defense: 0.20,
+        crafting: 0.10,
+        idle: 0.10,
+      }
+  "Ashen Reach":
+    crop_fields: 10
+    livestock: { sheep: 20, goats: 10, cattle: 8, pigs: 12 }
+    food_stores_days: 160
+    food_stores_max: 200
+    silver_treasury: 110
+    weekly_trade_income: 20
+    weekly_expenses: 12
+    labor_allocation:
+      {
+        farming: 0.40,
+        building: 0.15,
+        defense: 0.15,
+        crafting: 0.20,
+        idle: 0.10,
+      }
+  "Feldwick":
+    crop_fields: 4
+    livestock: { sheep: 40, goats: 10, cattle: 2, pigs: 3 }
+    food_stores_days: 40
+    food_stores_max: 80
+    silver_treasury: 8
+    weekly_trade_income: 4
+    weekly_expenses: 2
+    labor_allocation:
+      {
+        farming: 0.60,
+        building: 0.05,
+        defense: 0.10,
+        crafting: 0.05,
+        idle: 0.20,
+      }
+  "Stonebay Hamlet":
+    crop_fields: 1
+    livestock: { sheep: 5, goats: 3, cattle: 0, pigs: 1 }
+    food_stores_days: 30
+    food_stores_max: 40
+    silver_treasury: 6
+    weekly_trade_income: 2
+    weekly_expenses: 1
+    labor_allocation:
+      {
+        farming: 0.70,
+        building: 0.05,
+        defense: 0.05,
+        crafting: 0.05,
+        idle: 0.15,
+      }
+  "Grimholt":
+    crop_fields: 8
+    livestock: { sheep: 25, goats: 15, cattle: 10, pigs: 8 }
+    food_stores_days: 200
+    food_stores_max: 250
+    silver_treasury: 180
+    weekly_trade_income: 30
+    weekly_expenses: 22
+    labor_allocation:
+      {
+        farming: 0.30,
+        building: 0.15,
+        defense: 0.35,
+        crafting: 0.10,
+        idle: 0.10,
+      }
+  "Raven's Perch":
+    crop_fields: 3
+    livestock: { sheep: 15, goats: 25, cattle: 2, pigs: 2 }
+    food_stores_days: 80
+    food_stores_max: 100
+    silver_treasury: 30
+    weekly_trade_income: 7
+    weekly_expenses: 4
+    labor_allocation:
+      {
+        farming: 0.50,
+        building: 0.10,
+        defense: 0.20,
+        crafting: 0.10,
+        idle: 0.10,
+      }
+  "Vargheim":
+    crop_fields: 8
+    livestock: { sheep: 10, goats: 8, cattle: 6, pigs: 10 }
+    food_stores_days: 140
+    food_stores_max: 170
+    silver_treasury: 75
+    weekly_trade_income: 15
+    weekly_expenses: 9
+    labor_allocation:
+      {
+        farming: 0.45,
+        building: 0.10,
+        defense: 0.20,
+        crafting: 0.15,
+        idle: 0.10,
+      }
+  "Kolvik":
+    crop_fields: 5
+    livestock: { sheep: 8, goats: 5, cattle: 2, pigs: 4 }
+    food_stores_days: 100
+    food_stores_max: 130
+    silver_treasury: 60
+    weekly_trade_income: 12
+    weekly_expenses: 7
+    labor_allocation:
+      {
+        farming: 0.40,
+        building: 0.15,
+        defense: 0.15,
+        crafting: 0.20,
+        idle: 0.10,
+      }
+  "Moor's End":
+    crop_fields: 2
+    livestock: { sheep: 30, goats: 12, cattle: 1, pigs: 0 }
+    food_stores_days: 50
+    food_stores_max: 60
+    silver_treasury: 8
+    weekly_trade_income: 2
+    weekly_expenses: 1
+    labor_allocation:
+      {
+        farming: 0.60,
+        building: 0.05,
+        defense: 0.10,
+        crafting: 0.05,
+        idle: 0.20,
+      }
+  "Ashmark":
+    crop_fields: 5
+    livestock: { sheep: 12, goats: 8, cattle: 3, pigs: 5 }
+    food_stores_days: 90
+    food_stores_max: 110
+    silver_treasury: 35
+    weekly_trade_income: 7
+    weekly_expenses: 4
+    labor_allocation:
+      {
+        farming: 0.50,
+        building: 0.10,
+        defense: 0.15,
+        crafting: 0.15,
+        idle: 0.10,
+      }
+  "Deepholm":
+    crop_fields: 15
+    livestock: { sheep: 40, goats: 20, cattle: 15, pigs: 20 }
+    food_stores_days: 350
+    food_stores_max: 400
+    silver_treasury: 400
+    weekly_trade_income: 55
+    weekly_expenses: 35
+    labor_allocation:
+      {
+        farming: 0.30,
+        building: 0.15,
+        defense: 0.20,
+        crafting: 0.25,
+        idle: 0.10,
+      }
+  "Bleakwater Landing":
+    crop_fields: 1
+    livestock: { sheep: 2, goats: 2, cattle: 0, pigs: 1 }
+    food_stores_days: 20
+    food_stores_max: 25
+    silver_treasury: 10
+    weekly_trade_income: 2
+    weekly_expenses: 1
+    labor_allocation:
+      {
+        farming: 0.50,
+        building: 0.10,
+        defense: 0.10,
+        crafting: 0.05,
+        idle: 0.25,
+      }
+  "Skaldhaven":
+    crop_fields: 6
+    livestock: { sheep: 15, goats: 10, cattle: 4, pigs: 6 }
+    food_stores_days: 110
+    food_stores_max: 140
+    silver_treasury: 50
+    weekly_trade_income: 10
+    weekly_expenses: 6
+    labor_allocation:
+      {
+        farming: 0.40,
+        building: 0.10,
+        defense: 0.15,
+        crafting: 0.20,
+        idle: 0.15,
+      }
+  "Thornwall":
+    crop_fields: 12
+    livestock: { sheep: 80, goats: 30, cattle: 10, pigs: 8 }
+    food_stores_days: 180
+    food_stores_max: 220
+    silver_treasury: 90
+    weekly_trade_income: 15
+    weekly_expenses: 10
+    labor_allocation:
+      {
+        farming: 0.45,
+        building: 0.10,
+        defense: 0.20,
+        crafting: 0.10,
+        idle: 0.15,
+      }
+  "Icebreak":
+    crop_fields: 0
+    livestock: { sheep: 0, goats: 2, cattle: 0, pigs: 0 }
+    food_stores_days: 10
+    food_stores_max: 15
+    silver_treasury: 0
+    weekly_trade_income: 0
+    weekly_expenses: 0
+    labor_allocation:
+      { farming: 0.30, building: 0.0, defense: 0.10, crafting: 0.0, idle: 0.60 }
+
+# --- Event Log ---
+# Append-only log of political events.
+event_log: []

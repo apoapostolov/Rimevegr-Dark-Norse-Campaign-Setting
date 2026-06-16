@@ -1,0 +1,29 @@
+{
+  "transaction_ids": [
+    "txn_20260418T064926Z_week_p1",
+    "txn_20260418T071809Z_season_p1"
+  ],
+  "operator_summaries": [
+    {
+      "transaction_id": "txn_20260418T064926Z_week_p1",
+      "operator_summary": [
+        "Advanced 1 week(s) from Y312 D87 to Y312 D94.",
+        "Deterministic master seed None anchored replay for 0 deterministic adapter probe(s)."
+      ],
+      "writer_summary": [
+        "World time moved forward by 1 week(s), shifting pressures and seasonal processes across the Rimevegr."
+      ]
+    },
+    {
+      "transaction_id": "txn_20260418T071809Z_season_p1",
+      "operator_summary": [
+        "Advanced 1 season(s) from Y312 D94 to Y312 D184.",
+        "Deterministic master seed 9488424226070697458 anchored replay for 1 deterministic adapter probe(s)."
+      ],
+      "writer_summary": [
+        "World time moved forward by 1 season(s), shifting pressures and seasonal processes across the Rimevegr.",
+        "Replay journal for 1 seasonal animal-breeding step(s)."
+      ]
+    }
+  ]
+}

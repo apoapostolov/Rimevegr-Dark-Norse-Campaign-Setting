@@ -1,0 +1,758 @@
+# Iron Ledger — Barrow Atlas
+# Canonical barrow locations across the Rimevegr.
+# Cross-references: bestiary/undead.yaml, bestiary/named_enemies.yaml,
+# bestiary/world_bosses.yaml, contracts_available.yaml, settlements.yaml,
+# events/supernatural_chain_events.yaml.
+# Region tags match settlement terrain types + "ice" and "mountain".
+
+barrows:
+  # ==========================================================================
+  # FROSTFJORD REGION (4 barrows)
+  # ==========================================================================
+
+  - id: "BAR_001"
+    name: "Whispering Barrow"
+    region: "frostfjord"
+    nearest_settlement: "Frostfjord Hollow"
+    distance_hours: 4
+    terrain: "fjord_ridge"
+    size: "medium"
+    age: "ancient"
+    current_state: "active"
+    occupants:
+      primary: "UND_DRAUGR_02"
+      secondary: ["UND_DRAUGR_01", "UND_CORPSE_LIGHT_01"]
+      boss: null
+      estimated_count: 8
+    lore_hooks:
+      - "The rune-stone at the entrance hums after dark"
+      - "Local legend says a chieftain's silver hoard lies within"
+      - "Connected to Frostfjord's internal issue — the whispering rune-stone"
+    known_dangers:
+      - "Restless dead active since Y312 spring"
+      - "Rune-stone may trigger Veil-thinning events"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: ["contract_001"]
+    notes: "Current active contract target for Voss's Black Axes."
+
+  - id: "BAR_002"
+    name: "Draugr-Jarl's Crypt"
+    region: "frostfjord"
+    nearest_settlement: "Frostfjord Hollow"
+    distance_hours: 1
+    terrain: "beneath_settlement"
+    size: "vast"
+    age: "primordial"
+    current_state: "sealed"
+    occupants:
+      primary: "UND_HAUGBUI_01"
+      secondary: ["UND_DRAUGR_02", "UND_DRAUGR_03", "UND_BARROW_GUARD_01"]
+      boss: "BOS_SUPER_02"
+      estimated_count: 30
+    lore_hooks:
+      - "Frostfjord was built over this barrow without knowing"
+      - "Iron stakes pinning the Draugr-Jarl are corroding — centuries of binding failing"
+      - "The cellar of the mead hall grows colder each winter"
+    known_dangers:
+      - "BOS_SUPER_02 partially bound but slowly breaking free"
+      - "Killing Cold aura — 1 damage per round within 5 metres of the Jarl"
+      - "Mass undead response if the seal breaks"
+    loot_grade: 4
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: >-
+      Directly beneath Frostfjord Hollow. The elders who maintained
+      the binding rite died without passing the knowledge. Sealed inner
+      vault with unknown contents.
+
+  - id: "BAR_003"
+    name: "Skaldhaven Cairn"
+    region: "frostfjord"
+    nearest_settlement: "Skaldhaven"
+    distance_hours: 3
+    terrain: "fjord_cliff"
+    size: "small"
+    age: "old"
+    current_state: "breached"
+    occupants:
+      primary: "UND_DRAUGR_01"
+      secondary: []
+      boss: null
+      estimated_count: 3
+    lore_hooks:
+      - "Fishermen's burial cairn — common folk, not warriors"
+      - "Something broke it open from the inside two winters ago"
+      - "Skaldhaven pays well for relics and rune-stone rubbings"
+    known_dangers:
+      - "Unstable cliff face — risk of rockfall"
+      - "Corpse lights drift near the entrance on foggy nights"
+    loot_grade: 1
+    event_chains: []
+    associated_contracts: []
+    notes: "Minor barrow. Good target for an inexperienced band."
+
+  - id: "BAR_004"
+    name: "Bone Road Mound"
+    region: "frostfjord"
+    nearest_settlement: "Frostfjord Hollow"
+    distance_hours: 12
+    terrain: "deep_forest"
+    size: "medium"
+    age: "ancient"
+    current_state: "sealed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "Sits at the midpoint of the Bone Road bypass route"
+      - "Travellers report hearing voices from inside after dark"
+      - "No visible entrance — the mound is unbroken turf over stone"
+    known_dangers:
+      - "Unknown — sealed with no record of contents"
+      - "Bypass route through wolf territory, no trail"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: >-
+      Referenced in the Bone Road hazard list. Nobody has opened it.
+      The voices may be wind through buried stone, or something worse.
+
+  # ==========================================================================
+  # GRIMHOLT REGION (4 barrows)
+  # ==========================================================================
+
+  - id: "BAR_005"
+    name: "Iron Barrow"
+    region: "grimholt"
+    nearest_settlement: "Grimholt"
+    distance_hours: 5
+    terrain: "mountain_slope"
+    size: "large"
+    age: "ancient"
+    current_state: "active"
+    occupants:
+      primary: "UND_DRAUGR_03"
+      secondary: ["UND_DRAUGR_02", "UND_BONE_SWARM_01", "UND_BARROW_GUARD_01"]
+      boss: null
+      estimated_count: 14
+    lore_hooks:
+      - "Near the iron mine — miners refuse to work since it opened"
+      - "The Hollow Hall mercenary band camps here, unbothered"
+      - "Rusted weapons in the entrance suggest an iron-age warlord's retinue"
+    known_dangers:
+      - "Large draugr population with organized patrol behaviour"
+      - "Bone swarms in the lower passages"
+      - "Close to Grimholt's iron mine — economic pressure to clear it"
+    loot_grade: 3
+    event_chains: ["waking_barrows"]
+    associated_contracts: ["contract_008"]
+    notes: >-
+      The Hollow Hall band camps near this barrow. Contract to seal it
+      posted by Warchief Ordovast. South of Grimholt.
+
+  - id: "BAR_006"
+    name: "Ordovast's Shame"
+    region: "grimholt"
+    nearest_settlement: "Grimholt"
+    distance_hours: 2
+    terrain: "mountain_pass"
+    size: "small"
+    age: "old"
+    current_state: "collapsed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "Ordovast had this barrow collapsed deliberately after something got out"
+      - "Nobody in Grimholt discusses what was inside"
+      - "Rubble still shifts at night — settling, or something digging?"
+    known_dangers:
+      - "Structurally unstable — entering risks cave-in"
+      - "Whatever was inside may not have been destroyed"
+    loot_grade: 1
+    event_chains: []
+    associated_contracts: []
+    notes: "Collapsed by Ordovast's order. Locals avoid the site."
+
+  - id: "BAR_007"
+    name: "Bleakwater Hollow"
+    region: "grimholt"
+    nearest_settlement: "Bleakwater Landing"
+    distance_hours: 3
+    terrain: "river_bank"
+    size: "medium"
+    age: "ancient"
+    current_state: "breached"
+    occupants:
+      primary: "UND_DRAUGR_01"
+      secondary: ["UND_WALKING_01"]
+      boss: null
+      estimated_count: 5
+    lore_hooks:
+      - "Spring floods exposed the entrance two years ago"
+      - "The dead inside are waterlogged — bloated, slow, relentless"
+      - "River traders report seeing figures standing in the shallows at night"
+    known_dangers:
+      - "Flooded lower chambers — drowning risk"
+      - "Waterlogged draugr harder to burn"
+    loot_grade: 1
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "Minor barrow. The river did the breaching."
+
+  - id: "BAR_008"
+    name: "The War-Grave"
+    region: "grimholt"
+    nearest_settlement: "Grimholt"
+    distance_hours: 8
+    terrain: "mountain_ridge"
+    size: "large"
+    age: "ancient"
+    current_state: "sealed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "Mass burial from a battle no saga records"
+      - "Hundreds of warriors reportedly interred — friend and enemy alike"
+      - "Ordovast's scouts found weapons protruding from the turf"
+    known_dangers:
+      - "Unknown — sealed, but the scale suggests extreme danger if opened"
+      - "Weapons breaching the surface indicate internal pressure"
+    loot_grade: 3
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: >-
+      If this barrow opens during the waking_barrows chain, the sheer
+      number of dead could overwhelm Grimholt's defences.
+
+  # ==========================================================================
+  # DEEPHOLM REGION (3 barrows)
+  # ==========================================================================
+
+  - id: "BAR_009"
+    name: "Archive Barrow"
+    region: "deepholm"
+    nearest_settlement: "Deepholm"
+    distance_hours: 2
+    terrain: "mountain_cavern"
+    size: "large"
+    age: "ancient"
+    current_state: "breached"
+    occupants:
+      primary: "UND_HAUGBUI_02"
+      secondary: ["UND_DRAUGR_02", "UND_BARROW_GUARD_01"]
+      boss: null
+      estimated_count: 10
+    lore_hooks:
+      - "Deepholm's barrow archive — scholars and jarls buried with their records"
+      - "Rune-carved tablets line the walls like a library of the dead"
+      - "The Grave Wardens' oldest texts reference this barrow's records"
+    known_dangers:
+      - "Haugbui guards the inner archive — will not leave its post"
+      - "Some rune tablets carry active seidr bindings"
+      - "Deepholm scholars enter periodically but never go deeper than the first hall"
+    loot_grade: 3
+    event_chains: ["waking_barrows", "grave_wardens"]
+    associated_contracts: []
+    notes: >-
+      Critical knowledge repository. Contains Grave Warden texts that
+      describe binding rites for the Draugr-Jarl. Partially accessible.
+
+  - id: "BAR_010"
+    name: "The Hollow Vein"
+    region: "deepholm"
+    nearest_settlement: "Deepholm"
+    distance_hours: 6
+    terrain: "abandoned_mine"
+    size: "medium"
+    age: "old"
+    current_state: "active"
+    occupants:
+      primary: "UND_DRAUGR_04"
+      secondary: ["UND_DRAUGR_01", "UND_BONE_SWARM_01"]
+      boss: null
+      estimated_count: 7
+    lore_hooks:
+      - "Miners broke into a burial chamber while following an iron vein"
+      - "The dead miners now walk alongside the original occupants"
+      - "Iron ore near the entrance is tinged with blood-red rust"
+    known_dangers:
+      - "Mine shaft collapse risk in the connecting tunnel"
+      - "Narrow passages — no room to form a shield wall"
+      - "Toxic air in the deepest levels"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "Where mining meets the dead. Deepholm wants it cleared but won't pay enough."
+
+  - id: "BAR_011"
+    name: "Thornwall Passage"
+    region: "deepholm"
+    nearest_settlement: "Thornwall"
+    distance_hours: 5
+    terrain: "mountain_foot"
+    size: "large"
+    age: "ancient"
+    current_state: "sealed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "A sealed tunnel mouth in the hillside west of Thornwall"
+      - "Rune-marks on the capstone are a dialect nobody recognises"
+      - "Dalla's visions mention this barrow by description but not name"
+    known_dangers:
+      - "Unknown — sealed with warding runes still intact"
+      - "The rune dialect suggests pre-settlement age"
+    loot_grade: 3
+    event_chains: ["waking_barrows", "dalla_awakening"]
+    associated_contracts: []
+    notes: "Connected to Dalla's prophetic visions. High-value unknown."
+
+  # ==========================================================================
+  # COASTAL REGION (3 barrows)
+  # ==========================================================================
+
+  - id: "BAR_012"
+    name: "Kolvik Barrow"
+    region: "coastal"
+    nearest_settlement: "Kolvik"
+    distance_hours: 1
+    terrain: "coastal_hill"
+    size: "small"
+    age: "old"
+    current_state: "active"
+    occupants:
+      primary: "UND_DRAUGR_01"
+      secondary: ["UND_CORPSE_LIGHT_01"]
+      boss: null
+      estimated_count: 3
+    lore_hooks:
+      - "Dead cattle found around the capstone — blood from ears, no wounds"
+      - "The ground near the capstone is warm despite cold mornings"
+      - "Farmers burn any animal found dead near the mound"
+    known_dangers:
+      - "Low-level undead activity, increasing since Y312"
+      - "Veil-thinning around the capstone — corpse lights at dusk"
+    loot_grade: 1
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "EVT_312_SUP_001 location. Minor barrow, early warning sign."
+
+  - id: "BAR_013"
+    name: "Stonebay Wreck-Grave"
+    region: "coastal"
+    nearest_settlement: "Stonebay Hamlet"
+    distance_hours: 2
+    terrain: "coastal_rock"
+    size: "small"
+    age: "old"
+    current_state: "breached"
+    occupants:
+      primary: "UND_WALKING_01"
+      secondary: []
+      boss: null
+      estimated_count: 2
+    lore_hooks:
+      - "Ship-burial built into the cliffs — prow stones jut from the rock face"
+      - "Storm surge breached the seaward wall last winter"
+      - "A drowned captain's grave — salt-preserved, leather-hard"
+    known_dangers:
+      - "Tide-dependent access — the entrance floods at high water"
+      - "Slick rock, narrow ledges, one wrong step into the sea"
+    loot_grade: 1
+    event_chains: []
+    associated_contracts: []
+    notes: "Minor ship-burial. Accessible only at low tide."
+
+  - id: "BAR_014"
+    name: "Salt Cairn"
+    region: "coastal"
+    nearest_settlement: "Skaldhaven"
+    distance_hours: 6
+    terrain: "sea_cave"
+    size: "medium"
+    age: "ancient"
+    current_state: "sealed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "Sea cave sealed with fitted stone — no mason alive could match the work"
+      - "Salt crystals grow across the seal, reforming if broken"
+      - "Fishermen avoid the cove — nets come up shredded there"
+    known_dangers:
+      - "The seal resists tampering — salt crystals regrow within hours"
+      - "Unknown contents, possibly pre-settlement"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "Sealed sea-cave barrow between Skaldhaven and Kolvik."
+
+  # ==========================================================================
+  # MOOR REGION (4 barrows)
+  # ==========================================================================
+
+  - id: "BAR_015"
+    name: "Standing Stone Barrow"
+    region: "moor"
+    nearest_settlement: "Moor's End"
+    distance_hours: 1
+    terrain: "open_moor"
+    size: "medium"
+    age: "ancient"
+    current_state: "active"
+    occupants:
+      primary: "UND_HAUGBUI_01"
+      secondary: ["UND_DRAUGR_01", "UND_VEIL_TOUCHED_01"]
+      boss: null
+      estimated_count: 6
+    lore_hooks:
+      - "The standing stones at Moor's End mark the burial — they hum at night"
+      - "Ghost Moor Crossing passes within sight of this barrow"
+      - "Elder Brosa forbids anyone from approaching after dark"
+    known_dangers:
+      - "Veil activity around the standing stones — unpredictable seidr effects"
+      - "Haugbui presence — barrow-bound, territorial, intelligent"
+      - "Exposed position on open moor — no cover, no retreat options"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "Connected to Moor's End standing stone activity and Ghost Moor Crossing route."
+
+  - id: "BAR_016"
+    name: "Feldwick Peat Grave"
+    region: "moor"
+    nearest_settlement: "Feldwick"
+    distance_hours: 3
+    terrain: "peat_bog"
+    size: "small"
+    age: "old"
+    current_state: "breached"
+    occupants:
+      primary: "UND_DRAUGR_01"
+      secondary: []
+      boss: null
+      estimated_count: 2
+    lore_hooks:
+      - "Peat-cutters exposed a burial pit — bodies preserved in the acid water"
+      - "The bog-dead are black-skinned and leather-jointed but still move"
+      - "Peat around the grave has a chemical stink — wrong somehow"
+    known_dangers:
+      - "Treacherous ground — bog will swallow anyone in armour"
+      - "The peat-preserved dead are harder to damage than standard draugr"
+    loot_grade: 1
+    event_chains: []
+    associated_contracts: []
+    notes: "Minor peat-bog burial. Enough to frighten Feldwick's workers."
+
+  - id: "BAR_017"
+    name: "Ghost Moor Cairns"
+    region: "moor"
+    nearest_settlement: "Moor's End"
+    distance_hours: 10
+    terrain: "open_moor"
+    size: "large"
+    age: "ancient"
+    current_state: "sealed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "A cluster of seven cairns on the open moor, each sealed with a flat stone"
+      - "The Ghost Moor Crossing passes through them — travellers report shadow-figures"
+      - "No saga mentions who built them or why seven were placed together"
+    known_dangers:
+      - "Seven days from shelter in any direction"
+      - "Veil-field between the cairns — compasses spin, stars look wrong"
+      - "Unknown contents — seven sealed chambers, any could be empty or lethal"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "Cluster barrow on the Ghost Moor Crossing. No one has opened any of the seven."
+
+  - id: "BAR_018"
+    name: "Helga's Watch"
+    region: "moor"
+    nearest_settlement: "Thornwall"
+    distance_hours: 4
+    terrain: "moorland_hilltop"
+    size: "medium"
+    age: "old"
+    current_state: "active"
+    occupants:
+      primary: "UND_DRAUGR_02"
+      secondary: ["UND_DRAUGR_01", "UND_CORPSE_LIGHT_01"]
+      boss: null
+      estimated_count: 5
+    lore_hooks:
+      - "Named after a Thornwall shield-maiden buried three generations ago"
+      - "Helga's descendants say her grave was disturbed by something inside the hill"
+      - "Corpse lights circle the hilltop on clear nights"
+    known_dangers:
+      - "Moderate draugr presence — manageable for an experienced band"
+      - "Hilltop position gives the dead line of sight on approaching parties"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "Named barrow. Thornwall's Helga Járnhand wants it cleansed."
+
+  # ==========================================================================
+  # FOREST REGION (3 barrows)
+  # ==========================================================================
+
+  - id: "BAR_019"
+    name: "Ashmark Root-Grave"
+    region: "forest"
+    nearest_settlement: "Ashmark"
+    distance_hours: 2
+    terrain: "deep_forest"
+    size: "medium"
+    age: "ancient"
+    current_state: "active"
+    occupants:
+      primary: "UND_DRAUGR_02"
+      secondary: ["UND_DRAUGR_01", "UND_BONE_SWARM_01"]
+      boss: null
+      estimated_count: 7
+    lore_hooks:
+      - "Tree roots have grown through the barrow — some root systems are bone"
+      - "The forest floor above the grave is dead — no moss, no growth, bare earth"
+      - "Ashmark woodcutters refuse to fell trees within a hundred paces"
+    known_dangers:
+      - "Root systems make navigation inside unpredictable"
+      - "Bone swarm nests in the root tangles"
+      - "Canopy blocks light — total darkness beyond the entrance"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "Forest barrow where the dead and the trees have grown together."
+
+  - id: "BAR_020"
+    name: "Vargheim Pit"
+    region: "forest"
+    nearest_settlement: "Vargheim"
+    distance_hours: 4
+    terrain: "forest_hollow"
+    size: "small"
+    age: "old"
+    current_state: "collapsed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "A sinkhole exposed a burial chamber beneath the forest floor"
+      - "Vargheim hunters found worked stone at the bottom"
+      - "The pit fills with groundwater every spring — anything down there is submerged"
+    known_dangers:
+      - "Sinkhole edges are unstable — falling in is a 3-metre drop"
+      - "Flooded most of the year — contents unknown"
+    loot_grade: 1
+    event_chains: []
+    associated_contracts: []
+    notes: "Collapsed and flooded. May become accessible in a dry summer."
+
+  - id: "BAR_021"
+    name: "The Widow's Barrow"
+    region: "forest"
+    nearest_settlement: "Ashen Reach"
+    distance_hours: 5
+    terrain: "pine_forest"
+    size: "large"
+    age: "ancient"
+    current_state: "sealed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "Local legend says the Pale Widow knows what is inside but will not speak of it"
+      - "The barrow entrance is carved with a woman's face — mouth open, screaming"
+      - "Pine tar from Ashen Reach's works seeps toward the barrow, not away"
+    known_dangers:
+      - "Unknown — sealed, warded, and the Widow forbids interference"
+      - "The carved face is recent — someone has been maintaining it"
+    loot_grade: 3
+    event_chains: ["waking_barrows", "widows_web"]
+    associated_contracts: []
+    notes: "Connected to the Pale Widow's secrets. High-value sealed barrow."
+
+  # ==========================================================================
+  # MOUNTAIN REGION (3 barrows)
+  # ==========================================================================
+
+  - id: "BAR_022"
+    name: "Raven's Perch Barrow"
+    region: "mountain"
+    nearest_settlement: "Raven's Perch"
+    distance_hours: 1
+    terrain: "mountain_shelf"
+    size: "vast"
+    age: "ancient"
+    current_state: "active"
+    occupants:
+      primary: "UND_HAUGBUI_03"
+      secondary: ["UND_DRAUGR_03", "UND_DRAUGR_02", "UND_BARROW_GUARD_01"]
+      boss: "BOS_SUPER_01"
+      estimated_count: 18
+    lore_hooks:
+      - "Home of the Barrow-King — Jarl Halvdan, dead three centuries, still on his throne"
+      - "Sealed and reopened three times — each time, more dead in the halls"
+      - "The Barrow-King's map stone reveals connected barrows across the region"
+    known_dangers:
+      - "BOS_SUPER_01 — tier 5 supernatural boss, sitting on throne with sword"
+      - "King's Command forces WIL test at -2 or kneel"
+      - "Grave-Cold Aura: -1 TOU for all living inside"
+      - "12-18 draugr and barrow guards in the outer halls"
+    loot_grade: 4
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: >-
+      Campaign-defining location. Clearing this barrow requires destroying
+      the throne, the torc, and the keystone. The map stone inside reveals
+      other barrow locations.
+
+  - id: "BAR_023"
+    name: "Spine Ridge Ossuary"
+    region: "mountain"
+    nearest_settlement: "Grimholt"
+    distance_hours: 14
+    terrain: "mountain_peak"
+    size: "medium"
+    age: "ancient"
+    current_state: "breached"
+    occupants:
+      primary: "UND_DRAUGR_04"
+      secondary: ["UND_DRAUGR_01", "UND_HAUGBUI_01"]
+      boss: null
+      estimated_count: 9
+    lore_hooks:
+      - "Built into the rock face of the Spine — bones stacked in alcoves floor to ceiling"
+      - "The mountain people say this is where warriors go who die without honour"
+      - "Wind through the ossuary sounds like screaming — or is screaming"
+    known_dangers:
+      - "Altitude sickness on the approach — half a day above the treeline"
+      - "Sheer cliff faces on three sides — one path in, one path out"
+      - "Haugbui guards the honour-dead, attacks anyone who disturbs the bones"
+    loot_grade: 2
+    event_chains: ["waking_barrows"]
+    associated_contracts: []
+    notes: "Remote mountain ossuary. Dangerous approach, moderate occupants."
+
+  - id: "BAR_024"
+    name: "High Pass Tomb"
+    region: "mountain"
+    nearest_settlement: "Raven's Perch"
+    distance_hours: 8
+    terrain: "mountain_pass"
+    size: "small"
+    age: "old"
+    current_state: "sealed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: null
+      estimated_count: 0
+    lore_hooks:
+      - "A stone slab blocks a cave mouth on the High Ridge route"
+      - "Travellers using the Ridge bypass have reported the slab vibrating"
+      - "Scratch marks on the inside of the slab — something tried to get out"
+    known_dangers:
+      - "Unknown contents — the scratch marks suggest something alive inside"
+      - "Remote location on the High Ridge bypass — no help nearby"
+    loot_grade: 1
+    event_chains: []
+    associated_contracts: []
+    notes: "Small sealed tomb on the High Ridge bypass between Bleakwater and Deepholm."
+
+  # ==========================================================================
+  # ICE REGION (2 barrows)
+  # ==========================================================================
+
+  - id: "BAR_025"
+    name: "Icebreak Complex"
+    region: "ice"
+    nearest_settlement: "Icebreak"
+    distance_hours: 1
+    terrain: "ice_field"
+    size: "vast"
+    age: "primordial"
+    current_state: "active"
+    occupants:
+      primary: "UND_HAUGBUI_03"
+      secondary:
+        [
+          "UND_DRAUGR_05",
+          "UND_DRAUGR_03",
+          "UND_VEIL_TOUCHED_01",
+          "UND_BARROW_GUARD_01",
+        ]
+      boss: null
+      estimated_count: 20
+    lore_hooks:
+      - "A network of interconnected barrows beneath the ice — rune-stones glow blue"
+      - "Hermit Ragnhild says the Veil is thinning permanently here"
+      - "The oldest rune-stones use a script no living scholar can fully read"
+    known_dangers:
+      - "Extreme cold — exposure kills faster than the dead do"
+      - "Veil permanently thin — seidr effects unpredictable and amplified"
+      - "Multiple barrow chambers connected by ice tunnels — easy to get lost"
+      - "The blue-glowing rune-stones pulse in response to living presence"
+    loot_grade: 3
+    event_chains: ["waking_barrows", "veil_collapse"]
+    associated_contracts: []
+    notes: >-
+      Ragnhild's domain. Multi-chamber complex under the ice, older than
+      any human settlement. The rune-stones may contain information about
+      the First Barrow.
+
+  - id: "BAR_026"
+    name: "The First Barrow"
+    region: "ice"
+    nearest_settlement: "Icebreak"
+    distance_hours: 6
+    terrain: "primordial_hill"
+    size: "vast"
+    age: "primordial"
+    current_state: "sealed"
+    occupants:
+      primary: null
+      secondary: []
+      boss: "WBS_10"
+      estimated_count: 0
+    lore_hooks:
+      - "The hill was already hollow when the first settlers arrived"
+      - "Paths within a mile curve toward it — streams flow toward it, trees lean inward"
+      - "The barrow is not a structure — it is an organism that has been feeding on the dead for centuries"
+      - "A runestone at the original entrance shows the barrow's internal anatomy"
+    known_dangers:
+      - "WBS_10 — the barrow itself is the entity, tier 6 world boss"
+      - "Living architecture — corridors shift, rooms move, dead ends open"
+      - "Digestive passages deal acid damage to all occupants"
+      - "Cannot be harmed by conventional means — it is terrain"
+      - "Memory extraction chambers strip d6 months of memory on failed WIL test"
+      - "Hundreds of undead function as immune system"
+    loot_grade: 4
+    event_chains: ["waking_barrows", "veil_collapse", "primordial_awakening"]
+    associated_contracts: []
+    notes: >-
+      The oldest barrow in the Rimevegr. Not built by humans. The heart
+      chamber at the deepest point is the only way to destroy it. Connected
+      to every barrow via a death-energy network. Source of the Barrow Tide.

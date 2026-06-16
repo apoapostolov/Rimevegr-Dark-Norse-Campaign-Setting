@@ -1,0 +1,34 @@
+batch_name: master_scene_seed
+model: nanobanana-pro
+defaults:
+  aspect_ratio: 16:9
+  operation: create
+  reference_images: []
+  negative_prompt: >-
+    cartoon, glossy, ornate high fantasy, anime, plastic skin, neon magic,
+    heroic poster art
+scene_routing:
+  scene_family: outdoor settlement life
+  sub_scene: market yard
+  subject_lens: small band of 3 to 5
+  material_pressure:
+    - dwindling stores
+    - wet wool
+  social_pressure:
+    - bargaining pressure
+  environmental_pressure:
+    - weak light at dusk
+    - sea-haar
+  violence_pressure: []
+  veil_level: none
+  hush_type: none
+  cracking: none
+  emotion: hungry opportunism
+  color_family: fjord steel
+items:
+  - id: seed_01
+    operation: create
+    prompt: >-
+      Create a grounded live-action market-yard scene in the Rimevegr with a
+      small armed band trading under scarcity pressure.
+    notes: Seed example generated from the master scene index.

@@ -1,0 +1,1565 @@
+# Iron Ledger — Starting Settlement Network
+# Canonical settlements from 01_RIMEVEGR_SETTING_BIBLE.md and
+# 11_VILLAGES_AND_SETTLEMENTS.md. Used by settlement.py.
+
+settlements:
+  - name: "Frostfjord Hollow"
+    size: village
+    terrain: fjord
+    population: 87
+    leader: "Jarl Hrothgar"
+    defense: "Weak palisade"
+    defensibility: 2
+    services:
+      - inn
+      - general_trade
+      - smithy
+      - healer
+    smithy_level: basic
+    healer: true
+    notable_buildings:
+      - "Hrothgar's hall"
+      - "Whispering rune-stone (southern barrow)"
+    economy:
+      main_trade: "Dried cod, basic goods"
+      weekly_income_silver: "8-15"
+      food_stores_days: 14
+    feud_level: 1 # Tense with Voss's Black Axes
+    standing_with_band: -1 # Recent tribute demand
+    internal_issues:
+      - severity: medium
+        description: "Whispering rune-stone near southern barrow"
+    faction: "Jarl Hrothgar"
+    defenses:
+      perimeter: split_log_palisade
+      ditch: shallow_landward
+      gatehouses: 1
+      towers: 0
+      natural_barriers:
+        - fjord_frontage
+      special:
+        - jetty_watch_post
+    structures:
+      domestic:
+        longhouses: 11
+        cottar_huts: 4
+        byres: 5
+      storage:
+        granaries: 1
+        root_cellars: 7
+        smokehouses: 2
+      productive:
+        smithies: 1
+        healer_huts: 1
+        boathouses: 2
+        jetties: 1
+        fish_sheds: 3
+        net_drying_racks: 8
+      civic_religious:
+        halls: 1
+        inns: 1
+        law_stones: 1
+        thing_sites: 1
+        temples: 0
+        shrine_sites: 1
+    construction_capacity:
+      laborers: 18
+      carpenters: 2
+      masons: 0
+      smiths: 1
+      build_points_per_season: 20
+    maintenance_burden:
+      upkeep_points_per_year: 11
+      risk_factors:
+        - salt_rot
+        - freeze_thaw_spray
+    damage_state:
+      overall: worn_but_functional
+      damaged_elements:
+        - south_palisade_posts
+        - one_boathouse_roof
+    notes: "Current employer of Voss's Black Axes. Calculating and greedy."
+
+  - name: "Ashen Reach"
+    size: large_village
+    terrain: forest
+    population: 142
+    leader: "The Pale Widow (Jarl-Elect)"
+    defense: "Wooden wall with gate"
+    defensibility: 3
+    services:
+      - inn
+      - general_trade
+      - smithy
+      - healer
+      - temple
+    smithy_level: skilled
+    healer: true
+    notable_buildings:
+      - "Widow's Hall"
+      - "Pine tar works"
+      - "Iron smelter"
+    economy:
+      main_trade: "Pine tar and iron"
+      weekly_income_silver: "15-25"
+      food_stores_days: 20
+    feud_level: 0
+    standing_with_band: 0 # Unknown
+    internal_issues: []
+    faction: "The Pale Widow"
+    defenses:
+      perimeter: timber_wall
+      ditch: none
+      gatehouses: 1
+      towers: 1
+      natural_barriers: []
+      special:
+        - inner_fighting_platform
+        - road_watch_post
+    structures:
+      domestic:
+        longhouses: 16
+        cottar_huts: 6
+        byres: 8
+      storage:
+        granaries: 2
+        storehouses: 1
+        root_cellars: 9
+        smokehouses: 2
+      productive:
+        smithies: 1
+        smelters: 1
+        tar_works: 1
+        pit_workshops: 2
+      civic_religious:
+        halls: 1
+        inns: 1
+        market_yards: 1
+        weighing_sheds: 1
+        thing_sites: 1
+        temples: 1
+        healer_lodges: 1
+    construction_capacity:
+      laborers: 32
+      carpenters: 3
+      masons: 1
+      smiths: 2
+      build_points_per_season: 34
+    maintenance_burden:
+      upkeep_points_per_year: 18
+      risk_factors:
+        - tar_fire
+        - traffic_wear
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: >-
+      Hostile to Frostfjord. The Pale Widow is cold, intelligent, and
+      recently widowed. Her agenda: remove troublesome Svarthird bands
+      without paying them. Uses subtle intrigue and hidden bounties.
+
+  - name: "Feldwick"
+    size: village
+    terrain: moors
+    population: 61
+    leader: "None (occupied)"
+    defense: "Wooden palisade (damaged)"
+    defensibility: 1
+    services:
+      - general_trade
+    smithy_level: none
+    healer: false
+    notable_buildings:
+      - "Sheep pens"
+    economy:
+      main_trade: "Sheep wool, root vegetables"
+      weekly_income_silver: "3-6"
+      food_stores_days: 7
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: critical
+        description: "Occupied by the Three Wolves (second time this year)"
+    faction: "Three Wolves (occupying)"
+    defenses:
+      perimeter: damaged_palisade
+      ditch: none
+      gatehouses: 1
+      towers: 0
+      natural_barriers: []
+      special:
+        - cart_barricades
+        - thorn_patch_plugs
+    structures:
+      domestic:
+        longhouses: 9
+        cottar_huts: 3
+        byres: 6
+      storage:
+        granaries: 1
+        root_cellars: 5
+        smokehouses: 0
+      productive:
+        smithies: 0
+        repair_sheds: 1
+        sheep_pens: 4
+      civic_religious:
+        halls: 1
+        thing_sites: 0
+        temples: 0
+        bakehouses: 1
+    construction_capacity:
+      laborers: 10
+      carpenters: 1
+      masons: 0
+      smiths: 0
+      build_points_per_season: 9
+    maintenance_burden:
+      upkeep_points_per_year: 9
+      risk_factors:
+        - occupation_neglect
+        - timber_scarcity
+    damage_state:
+      overall: damaged
+      damaged_elements:
+        - east_gate
+        - granary_roof
+        - outer_palisade_segments
+    notes: "Settlement morale: desperate. Population wants liberation."
+
+  - name: "Stonebay Hamlet"
+    size: hamlet
+    terrain: coast
+    population: 23
+    leader: "Elder (unnamed)"
+    defense: "None"
+    defensibility: 0
+    services:
+      - general_trade
+    smithy_level: none
+    healer: false
+    notable_buildings:
+      - "Fisher's wharf"
+    economy:
+      main_trade: "Remote fishing, subsistence"
+      weekly_income_silver: "1-3"
+      food_stores_days: 5
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues: []
+    faction: null
+    defenses:
+      perimeter: none
+      ditch: none
+      gatehouses: 0
+      towers: 0
+      natural_barriers:
+        - narrow_beach_access
+      special:
+        - storm_cairns
+    structures:
+      domestic:
+        longhouses: 4
+        cottar_huts: 2
+        byres: 1
+      storage:
+        granaries: 0
+        root_cellars: 3
+        smokehouses: 1
+      productive:
+        smithies: 0
+        boathouses: 2
+        wharves: 1
+        fish_racks: 4
+      civic_religious:
+        halls: 0
+        thing_sites: 0
+        temples: 0
+        elder_houses: 1
+    construction_capacity:
+      laborers: 5
+      carpenters: 0
+      masons: 0
+      smiths: 0
+      build_points_per_season: 4
+    maintenance_burden:
+      upkeep_points_per_year: 4
+      risk_factors:
+        - storm_damage
+        - driftwood_shortage
+    damage_state:
+      overall: fragile
+      damaged_elements: []
+    notes: "Neutral to all bands. Too small and remote to attract trouble."
+
+  - name: "Grimholt"
+    size: large_village
+    terrain: mountain
+    population: 118
+    leader: "Warchief Ordovast the Iron-Grip"
+    defense: "Strong stone fortification"
+    defensibility: 4
+    services:
+      - inn
+      - general_trade
+      - smithy
+      - healer
+      - temple
+      - jarl_hall
+    smithy_level: skilled
+    healer: true
+    notable_buildings:
+      - "Ordovast's war-hall"
+      - "Iron mine entrance"
+      - "Watchtower"
+    economy:
+      main_trade: "Iron mining"
+      weekly_income_silver: "20-35"
+      food_stores_days: 25
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues: []
+    faction: "Warchief Ordovast"
+    defenses:
+      perimeter: stone_faced_earthwork
+      ditch: deep
+      gatehouses: 1
+      towers: 2
+      natural_barriers:
+        - high_moor_approach
+      special:
+        - beacon_tower
+        - timber_fighting_walk
+    structures:
+      domestic:
+        longhouses: 13
+        cottar_huts: 5
+        byres: 7
+      storage:
+        granaries: 2
+        root_cellars: 10
+        smokehouses: 1
+        ore_stores: 1
+      productive:
+        smithies: 2
+        smelters: 1
+        mine_sheds: 3
+        armories: 1
+        healer_lodges: 1
+      civic_religious:
+        halls: 2
+        inns: 1
+        market_yards: 1
+        thing_sites: 1
+        temples: 1
+        barracks: 1
+    construction_capacity:
+      laborers: 30
+      carpenters: 2
+      masons: 2
+      smiths: 3
+      build_points_per_season: 36
+    maintenance_burden:
+      upkeep_points_per_year: 22
+      risk_factors:
+        - garrison_wear
+        - mine_subsidence
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: >-
+      High Rime-Moors stronghold. Ordovast is brutal and expansionist.
+      Recruits or crushes smaller bands into a Host. Offers Sworn
+      allegiance but demands total loyalty. Danger level: high.
+
+  # --- Expansion Settlements (Prompt 6) ---
+
+  - name: "Raven's Perch"
+    size: village
+    terrain: mountain
+    population: 74
+    leader: "Thane Egil Raven-Eye"
+    defense: "Stone walls, narrow approach"
+    defensibility: 4
+    services:
+      - inn
+      - general_trade
+      - smithy
+    smithy_level: basic
+    healer: false
+    notable_buildings:
+      - "Egil's lookout tower"
+      - "Raven rookery"
+    economy:
+      main_trade: "Mountain goat hides, iron ore"
+      weekly_income_silver: "5-10"
+      food_stores_days: 10
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: low
+        description: "Ravens gather in unnatural numbers"
+    faction: "Thane Egil"
+    defenses:
+      perimeter: mixed_stone_and_timber
+      ditch: none
+      gatehouses: 1
+      towers: 1
+      natural_barriers:
+        - cliff_edges
+        - narrow_approach
+      special:
+        - rolling_stone_positions
+        - beacon_platform
+    structures:
+      domestic:
+        longhouses: 8
+        cottar_huts: 3
+        byres: 4
+      storage:
+        granaries: 1
+        root_cellars: 6
+        smokehouses: 1
+        ore_stores: 1
+      productive:
+        smithies: 1
+        stables: 1
+        store_terraces: 2
+        rookeries: 1
+      civic_religious:
+        halls: 1
+        guesthalls: 1
+        law_stones: 1
+        thing_sites: 0
+        temples: 0
+        shrine_sites: 1
+    construction_capacity:
+      laborers: 14
+      carpenters: 1
+      masons: 1
+      smiths: 1
+      build_points_per_season: 15
+    maintenance_burden:
+      upkeep_points_per_year: 10
+      risk_factors:
+        - slope_failure
+        - hauling_bottlenecks
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: "Overlooks eastern valley. Iron Tide Remnant winters here."
+
+  - name: "Vargheim"
+    size: large_village
+    terrain: forest
+    population: 165
+    leader: "Jarl Ulf Vargson"
+    defense: "Wooden wall with stake-ditch"
+    defensibility: 3
+    services:
+      - inn
+      - general_trade
+      - smithy
+      - healer
+      - temple
+    smithy_level: skilled
+    healer: true
+    notable_buildings:
+      - "Ulf's long-hall"
+      - "Wolf-pen kennels"
+      - "Charcoal kilns"
+    economy:
+      main_trade: "Charcoal, furs, wolf-pelts"
+      weekly_income_silver: "12-20"
+      food_stores_days: 18
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: medium
+        description: "Wolf pack raiding livestock"
+    faction: "Jarl Ulf"
+    defenses:
+      perimeter: timber_wall
+      ditch: stake_ditch
+      gatehouses: 1
+      towers: 0
+      natural_barriers:
+        - dense_forest
+      special:
+        - tree_platform_watches
+        - wolf_runs
+    structures:
+      domestic:
+        longhouses: 18
+        cottar_huts: 5
+        byres: 8
+      storage:
+        granaries: 2
+        root_cellars: 8
+        smokehouses: 2
+      productive:
+        smithies: 1
+        charcoal_clamp_sites: 4
+        tar_pits: 2
+        kennels: 1
+        hide_sheds: 2
+        healer_lodges: 1
+      civic_religious:
+        halls: 1
+        inns: 1
+        thing_sites: 1
+        temples: 1
+        shrine_sites: 1
+    construction_capacity:
+      laborers: 34
+      carpenters: 3
+      masons: 0
+      smiths: 2
+      build_points_per_season: 31
+    maintenance_burden:
+      upkeep_points_per_year: 17
+      risk_factors:
+        - forest_fire
+        - timber_clearance
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: "Deep Black Pine. Wolf-wardens keep trained hunting wolves."
+
+  - name: "Kolvik"
+    size: village
+    terrain: coast
+    population: 95
+    leader: "Harbour-Master Inga"
+    defense: "Low stone wall, harbour chain"
+    defensibility: 2
+    services:
+      - inn
+      - general_trade
+      - shipwright
+    smithy_level: none
+    healer: false
+    notable_buildings:
+      - "Dry-dock"
+      - "Fish-smoking sheds"
+    economy:
+      main_trade: "Ship repair, dried fish"
+      weekly_income_silver: "8-14"
+      food_stores_days: 12
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues: []
+    faction: null
+    defenses:
+      perimeter: low_stone_wall
+      ditch: none
+      gatehouses: 1
+      towers: 0
+      natural_barriers:
+        - harbor_frontage
+      special:
+        - harbor_chain
+        - pier_watch
+    structures:
+      domestic:
+        longhouses: 12
+        cottar_huts: 4
+        byres: 4
+      storage:
+        granaries: 1
+        root_cellars: 7
+        smokehouses: 2
+        fish_sheds: 3
+      productive:
+        smithies: 0
+        shipyards: 1
+        ropewalks: 1
+        dry_docks: 1
+        boathouses: 2
+        jetties: 2
+      civic_religious:
+        halls: 1
+        inns: 1
+        weighing_sheds: 1
+        thing_sites: 1
+        temples: 0
+        market_yards: 1
+    construction_capacity:
+      laborers: 20
+      carpenters: 3
+      masons: 1
+      smiths: 0
+      build_points_per_season: 22
+    maintenance_burden:
+      upkeep_points_per_year: 14
+      risk_factors:
+        - storm_damage
+        - harbor_wear
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: "Only shipwright between Frostfjord and Grimholt."
+
+  - name: "Moor's End"
+    size: hamlet
+    terrain: moors
+    population: 31
+    leader: "Elder Brosa"
+    defense: "Thorn-hedge"
+    defensibility: 1
+    services:
+      - general_trade
+    smithy_level: none
+    healer: false
+    notable_buildings:
+      - "Standing stones (ancient)"
+    economy:
+      main_trade: "Sheep, peat"
+      weekly_income_silver: "1-3"
+      food_stores_days: 4
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: high
+        description: "Standing stones hum at night since last Veil-Thinning"
+    faction: null
+    defenses:
+      perimeter: thorn_hedge_fragments
+      ditch: shallow
+      gatehouses: 0
+      towers: 0
+      natural_barriers:
+        - open_moor
+      special:
+        - watch_fires
+    structures:
+      domestic:
+        longhouses: 5
+        cottar_huts: 2
+        byres: 3
+      storage:
+        granaries: 1
+        root_cellars: 4
+        smokehouses: 0
+      productive:
+        smithies: 0
+        peat_stacks: 6
+        sheep_folds: 2
+      civic_religious:
+        halls: 0
+        thing_sites: 1
+        temples: 0
+        shrine_sites: 1
+        elder_houses: 1
+    construction_capacity:
+      laborers: 7
+      carpenters: 0
+      masons: 0
+      smiths: 0
+      build_points_per_season: 5
+    maintenance_burden:
+      upkeep_points_per_year: 5
+      risk_factors:
+        - wind_exposure
+        - peat_shortage
+    damage_state:
+      overall: worn
+      damaged_elements:
+        - hedge_gaps
+    notes: "Isolated moor hamlet. Locals avoid the standing stones."
+
+  - name: "Ashmark"
+    size: village
+    terrain: forest
+    population: 82
+    leader: "Reeve Torsten"
+    defense: "Wooden palisade"
+    defensibility: 2
+    services:
+      - inn
+      - general_trade
+      - healer
+    smithy_level: none
+    healer: true
+    notable_buildings:
+      - "Tar pit"
+      - "Healer's lodge"
+    economy:
+      main_trade: "Pine tar, herbs"
+      weekly_income_silver: "5-9"
+      food_stores_days: 10
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: medium
+        description: "Bone Pack demanding winter shelter"
+    faction: null
+    defenses:
+      perimeter: wooden_palisade
+      ditch: none
+      gatehouses: 1
+      towers: 0
+      natural_barriers: []
+      special:
+        - roadside_watch_stage
+        - healer_threshold_wards
+    structures:
+      domestic:
+        longhouses: 10
+        cottar_huts: 4
+        byres: 4
+      storage:
+        granaries: 1
+        root_cellars: 6
+        smokehouses: 0
+      productive:
+        smithies: 0
+        healer_lodges: 1
+        brew_sheds: 1
+        wagon_sheds: 1
+        tar_pits: 1
+      civic_religious:
+        halls: 1
+        inns: 1
+        thing_sites: 0
+        temples: 0
+        market_yards: 1
+        shrine_sites: 1
+    construction_capacity:
+      laborers: 16
+      carpenters: 1
+      masons: 0
+      smiths: 0
+      build_points_per_season: 13
+    maintenance_burden:
+      upkeep_points_per_year: 9
+      risk_factors:
+        - refugee_pressure
+        - road_mud
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: "Neutral ground between Ashen Reach and Grimholt territories."
+
+  - name: "Deepholm"
+    size: small_town
+    terrain: mountain
+    population: 520
+    leader: "Jarl Sigrun Deepholm"
+    defense: "Stone fortress, iron gate, garrison of 40"
+    defensibility: 5
+    services:
+      - inn
+      - general_trade
+      - smithy
+      - healer
+      - shipwright
+      - temple
+      - jarl_hall
+      - market
+    smithy_level: masterwork
+    healer: true
+    notable_buildings:
+      - "Sigrun's keep"
+      - "Underground mining halls"
+      - "Market square"
+      - "Barrow archive"
+      - "Galdr workshop"
+    economy:
+      main_trade: "Iron, bronze, weapons trade"
+      weekly_income_silver: "40-70"
+      food_stores_days: 45
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues: []
+    faction: "Jarl Sigrun"
+    defenses:
+      perimeter: stone_enceinte
+      ditch: deep_on_landward_side
+      gatehouses: 1
+      towers: 2
+      natural_barriers:
+        - cliff_and_mine_cut
+      special:
+        - iron_gate
+        - permanent_gate_watch
+    structures:
+      domestic:
+        longhouses: 24
+        townhouses: 14
+        byres: 10
+      storage:
+        granaries: 3
+        storehouses: 3
+        root_cellars: 20
+        smokehouses: 3
+      productive:
+        smithies: 2
+        foundries: 1
+        galdr_workshops: 1
+        shipyards: 1
+        mine_halls: 3
+        market_sheds: 6
+      civic_religious:
+        halls: 2
+        inns: 2
+        healer_lodges: 1
+        weighing_houses: 1
+        thing_sites: 1
+        temples: 1
+        archives: 1
+        barracks: 1
+    construction_capacity:
+      laborers: 95
+      carpenters: 6
+      masons: 4
+      smiths: 6
+      build_points_per_season: 86
+    maintenance_burden:
+      upkeep_points_per_year: 40
+      risk_factors:
+        - heavy_industrial_wear
+        - mine_subsidence
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: >-
+      Largest settlement in the region. Sigrun is pragmatic and wealthy.
+      Offers the best contracts but expects professional standards.
+      Rival to Ordovast's expansion. Has a galdr-speaker on retainer.
+
+  - name: "Bleakwater Landing"
+    size: hamlet
+    terrain: river
+    population: 18
+    leader: "Ferryman Olaf"
+    defense: "None"
+    defensibility: 0
+    services:
+      - general_trade
+    smithy_level: none
+    healer: false
+    notable_buildings:
+      - "River ferry"
+    economy:
+      main_trade: "Ferry tolls, river fish"
+      weekly_income_silver: "1-2"
+      food_stores_days: 3
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: low
+        description: "Frozen corpse found downstream"
+    faction: null
+    defenses:
+      perimeter: none
+      ditch: none
+      gatehouses: 0
+      towers: 0
+      natural_barriers:
+        - mud_banks
+        - river_channel
+      special:
+        - ferry_watch_post
+    structures:
+      domestic:
+        longhouses: 1
+        huts: 3
+        byres: 1
+      storage:
+        granaries: 0
+        root_cellars: 3
+        smokehouses: 1
+      productive:
+        smithies: 0
+        ferries: 1
+        gear_huts: 1
+      civic_religious:
+        halls: 0
+        thing_sites: 0
+        temples: 0
+        elder_houses: 0
+    construction_capacity:
+      laborers: 4
+      carpenters: 0
+      masons: 0
+      smiths: 0
+      build_points_per_season: 3
+    maintenance_burden:
+      upkeep_points_per_year: 3
+      risk_factors:
+        - rot
+        - flood
+    damage_state:
+      overall: fragile
+      damaged_elements: []
+    notes: "River crossing point. Olaf charges 2 copper per man."
+
+  - name: "Skaldhaven"
+    size: village
+    terrain: fjord
+    population: 110
+    leader: "Lore-Keeper Audun"
+    defense: "Wooden palisade, sea-cliff approach"
+    defensibility: 3
+    services:
+      - inn
+      - general_trade
+      - healer
+      - temple
+    smithy_level: basic
+    healer: true
+    notable_buildings:
+      - "Hall of Sagas"
+      - "Rune archive"
+    economy:
+      main_trade: "Knowledge, saga-telling, rune-craft"
+      weekly_income_silver: "6-12"
+      food_stores_days: 12
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: low
+        description: "Rune archive sealed after apprentice disappeared"
+    faction: "Lore-Keeper Audun"
+    defenses:
+      perimeter: wooden_palisade
+      ditch: none
+      gatehouses: 1
+      towers: 2
+      natural_barriers:
+        - sea_cliff
+      special:
+        - alarm_horns
+    structures:
+      domestic:
+        longhouses: 13
+        scholars_huts: 4
+        byres: 5
+      storage:
+        granaries: 1
+        root_cellars: 8
+        smokehouses: 0
+        relic_stores: 1
+      productive:
+        smithies: 1
+        scriptoria: 2
+        copy_sheds: 1
+        drying_racks: 3
+        healer_lodges: 1
+      civic_religious:
+        halls: 2
+        inns: 1
+        thing_sites: 1
+        temples: 1
+        archives: 1
+        shrine_sites: 1
+    construction_capacity:
+      laborers: 22
+      carpenters: 2
+      masons: 1
+      smiths: 1
+      build_points_per_season: 21
+    maintenance_burden:
+      upkeep_points_per_year: 13
+      risk_factors:
+        - salt_wind
+        - archive_fire_risk
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: >-
+      Centre of learning. Audun knows galdr and keeps a rune archive.
+      Pays well for barrow relics and rune-stone rubbings.
+
+  - name: "Thornwall"
+    size: large_village
+    terrain: moors
+    population: 180
+    leader: "Jarl Helga Thornwall"
+    defense: "Thorn-hedge wall, stone gatehouse"
+    defensibility: 3
+    services:
+      - inn
+      - general_trade
+      - smithy
+      - healer
+      - temple
+    smithy_level: skilled
+    healer: true
+    notable_buildings:
+      - "Helga's hall"
+      - "Sheep market"
+      - "Thorn nursery"
+    economy:
+      main_trade: "Wool, mutton, thorn-hedge craft"
+      weekly_income_silver: "10-18"
+      food_stores_days: 16
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: medium
+        description: "Red Tide slavers spotted on eastern horizon"
+    faction: "Jarl Helga"
+    defenses:
+      perimeter: layered_thorn_hedge
+      ditch: shallow
+      gatehouses: 1
+      towers: 2
+      natural_barriers:
+        - boggy_approach
+      special:
+        - stone_gatehouse
+        - sheep_alarm_towers
+    structures:
+      domestic:
+        longhouses: 17
+        shepherd_huts: 6
+        byres: 10
+      storage:
+        granaries: 2
+        root_cellars: 9
+        smokehouses: 1
+      productive:
+        smithies: 1
+        felting_sheds: 1
+        tannery_yards: 1
+        thorn_nurseries: 2
+        sheep_pens: 6
+      civic_religious:
+        halls: 1
+        inns: 1
+        thing_sites: 1
+        temples: 1
+        healer_lodges: 1
+        market_yards: 1
+    construction_capacity:
+      laborers: 38
+      carpenters: 2
+      masons: 1
+      smiths: 2
+      build_points_per_season: 33
+    maintenance_burden:
+      upkeep_points_per_year: 18
+      risk_factors:
+        - hedge_decay
+        - flock_pressure
+    damage_state:
+      overall: sound
+      damaged_elements: []
+    notes: "Moor stronghold. Helga hires bands to protect sheep routes."
+
+  - name: "Icebreak"
+    size: hamlet
+    terrain: ice
+    population: 12
+    leader: "Hermit Ragnhild"
+    defense: "Ice walls, natural isolation"
+    defensibility: 2
+    services: []
+    smithy_level: none
+    healer: false
+    notable_buildings:
+      - "Ice cave shrine"
+    economy:
+      main_trade: "None (subsistence)"
+      weekly_income_silver: "0"
+      food_stores_days: 2
+    feud_level: 0
+    standing_with_band: 0
+    internal_issues:
+      - severity: high
+        description: "Ragnhild claims the Veil is thinning permanently here"
+    faction: null
+    defenses:
+      perimeter: ice_walls
+      ditch: none
+      gatehouses: 0
+      towers: 0
+      natural_barriers:
+        - ice_fields
+        - exposure
+      special:
+        - snow_berms
+    structures:
+      domestic:
+        dwellings: 3
+        huts: 1
+        byres: 0
+      storage:
+        granaries: 0
+        root_cellars: 0
+        snow_caches: 4
+        smokehouses: 0
+      productive:
+        smithies: 0
+        seal_fat_sheds: 1
+      civic_religious:
+        halls: 0
+        thing_sites: 0
+        temples: 0
+        seidr_huts: 1
+        shrine_sites: 1
+    construction_capacity:
+      laborers: 2
+      carpenters: 0
+      masons: 0
+      smiths: 0
+      build_points_per_season: 1
+    maintenance_burden:
+      upkeep_points_per_year: 2
+      risk_factors:
+        - permanent_cold
+        - supply_delay
+    damage_state:
+      overall: precarious
+      damaged_elements: []
+    notes: >-
+      Northern Ice-Reach outpost. Ragnhild is a seidr practitioner
+      (WYR 5). Offers divination for a blood price. Dangerous location.
+
+# --- Travel Network ---
+# Node-based route system for mercenary travel planning.
+# Positions are grid coordinates (1 unit = ~10 km).
+# All routes are bidirectional. Travel days assume healthy band,
+# no wagons, in Long Dark conditions. Summer travel: multiply by 0.7.
+# Rime Storm / Driving Snow: multiply by 1.5-2.0.
+# Bypasses allow avoiding settlements (outlawry, danger) at cost of
+# longer travel through wilderness with no resupply.
+
+settlement_positions:
+  "Frostfjord Hollow": { x: 2, y: 8 }
+  "Skaldhaven": { x: 1, y: 6 }
+  "Kolvik": { x: 3, y: 5 }
+  "Stonebay Hamlet": { x: 1, y: 3 }
+  "Feldwick": { x: 4, y: 6 }
+  "Ashen Reach": { x: 5, y: 9 }
+  "Vargheim": { x: 6, y: 7 }
+  "Ashmark": { x: 7, y: 6 }
+  "Bleakwater Landing": { x: 8, y: 8 }
+  "Grimholt": { x: 10, y: 8 }
+  "Raven's Perch": { x: 11, y: 9 }
+  "Moor's End": { x: 9, y: 5 }
+  "Deepholm": { x: 11, y: 6 }
+  "Thornwall": { x: 10, y: 4 }
+  "Icebreak": { x: 12, y: 12 }
+
+travel_routes:
+  # --- Inner Fjords Coast (west) ---
+  - from: "Frostfjord Hollow"
+    to: "Skaldhaven"
+    distance_km: 25
+    travel_days: 2
+    terrain: coast_path
+    road_quality: fair # worn trail along cliffs
+    hazards:
+      - "Exposed to sea-wind; rime storm = impassable"
+      - "Tidal sections — check tide before crossing"
+
+  - from: "Skaldhaven"
+    to: "Kolvik"
+    distance_km: 20
+    travel_days: 1
+    terrain: coast_path
+    road_quality: good # regular trade traffic
+    hazards:
+      - "Fisher boats sometimes blocked by ice"
+
+  - from: "Kolvik"
+    to: "Stonebay Hamlet"
+    distance_km: 25
+    travel_days: 2
+    terrain: coast_path
+    road_quality: poor # barely a trail south of Kolvik
+    hazards:
+      - "Remote — no shelter between settlements"
+      - "Sea-fog hides cliff edges"
+
+  # --- Main Trade Road (Frostfjord — Ashen Reach) ---
+  - from: "Frostfjord Hollow"
+    to: "Ashen Reach"
+    distance_km: 35
+    travel_days: 3
+    terrain: forest_road
+    road_quality: good # main trade artery, cart-width
+    hazards:
+      - "Rune-stones along route (see EVT_007)"
+      - "Three Wolves patrol this road"
+      - "Wolf territory in deep stretches"
+
+  # --- Fjord to Moors ---
+  - from: "Frostfjord Hollow"
+    to: "Feldwick"
+    distance_km: 30
+    travel_days: 2
+    terrain: moor_track
+    road_quality: fair # sheep drovers' path
+    hazards:
+      - "Open ground — no cover from weather or ambush"
+      - "Boggy sections after rain"
+
+  - from: "Feldwick"
+    to: "Skaldhaven"
+    distance_km: 35
+    travel_days: 2
+    terrain: moor_coast
+    road_quality: poor # goat paths
+    hazards:
+      - "Cliff-edge sections in fog"
+
+  # --- Forest Belt ---
+  - from: "Ashen Reach"
+    to: "Vargheim"
+    distance_km: 25
+    travel_days: 2
+    terrain: forest_path
+    road_quality: fair # charcoal-burners' trail
+    hazards:
+      - "Wolf pack territory (Vargheim wolves)"
+      - "Dense canopy — navigation by landmarks only"
+
+  - from: "Vargheim"
+    to: "Ashmark"
+    distance_km: 15
+    travel_days: 1
+    terrain: forest_path
+    road_quality: fair # tar-workers' road
+    hazards:
+      - "Bone Pack camps in this stretch"
+
+  - from: "Kolvik"
+    to: "Ashmark"
+    distance_km: 40
+    travel_days: 3
+    terrain: mixed_coast_forest
+    road_quality: poor # infrequent use
+    hazards:
+      - "River crossing (no bridge — ford or swim)"
+      - "Bandit risk in forest approaches"
+
+  # --- River Crossroads ---
+  - from: "Ashen Reach"
+    to: "Bleakwater Landing"
+    distance_km: 30
+    travel_days: 2
+    terrain: forest_river
+    road_quality: fair # follows river downstream
+    hazards:
+      - "River flooding in thaw"
+      - "Frozen corpses downstream (check for plague)"
+
+  - from: "Vargheim"
+    to: "Bleakwater Landing"
+    distance_km: 25
+    travel_days: 2
+    terrain: forest_river
+    road_quality: poor # game trails
+    hazards:
+      - "Easy to lose trail at river bends"
+
+  # --- Mountain Approaches ---
+  - from: "Bleakwater Landing"
+    to: "Grimholt"
+    distance_km: 20
+    travel_days: 2
+    terrain: mountain_road
+    road_quality: good # Ordovast maintains his supply route
+    hazards:
+      - "Ordovast's patrols check all traffic"
+      - "Steep final approach — wagons struggle"
+
+  - from: "Grimholt"
+    to: "Raven's Perch"
+    distance_km: 15
+    travel_days: 1
+    terrain: mountain_path
+    road_quality: fair # narrow but maintained
+    hazards:
+      - "Single-file approach — ambush chokepoint"
+      - "Avalanche risk in Long Dark"
+
+  - from: "Grimholt"
+    to: "Deepholm"
+    distance_km: 25
+    travel_days: 2
+    terrain: mountain_road
+    road_quality: good # main mountain highway, Sigrun's engineers
+    hazards:
+      - "Mountain pass — blocked 20+ days per winter"
+      - "Garrison toll: 1 silver per fighter"
+
+  - from: "Deepholm"
+    to: "Thornwall"
+    distance_km: 25
+    travel_days: 2
+    terrain: mountain_moor
+    road_quality: fair # descending switchbacks then open moor
+    hazards:
+      - "Exposed transition zone — no shelter for 15 km"
+      - "Red Tide spotted on eastern approaches"
+
+  # --- Moors ---
+  - from: "Ashmark"
+    to: "Moor's End"
+    distance_km: 20
+    travel_days: 2
+    terrain: forest_moor
+    road_quality: poor # sheep tracks
+    hazards:
+      - "Standing stones — avoid at night"
+      - "Bog pools hidden by heather"
+
+  - from: "Moor's End"
+    to: "Thornwall"
+    distance_km: 15
+    travel_days: 1
+    terrain: moor_track
+    road_quality: fair # sheep drovers' highway
+    hazards:
+      - "Open ground — weather is the main enemy"
+
+  - from: "Feldwick"
+    to: "Moor's End"
+    distance_km: 50
+    travel_days: 4
+    terrain: moor_track
+    road_quality: poor # faint path, easy to lose
+    hazards:
+      - "No shelter for entire route"
+      - "Peat bogs dangerous in fog"
+      - "Three Wolves may patrol from Feldwick"
+
+  # --- Northern Ice-Reach ---
+  - from: "Raven's Perch"
+    to: "Icebreak"
+    distance_km: 50
+    travel_days: 5
+    terrain: mountain_ice
+    road_quality: none # no path — navigation by stars and cairns
+    hazards:
+      - "Lethal in rime storm — guaranteed death"
+      - "No foraging — carry all supplies"
+      - "Red Tide raiding territory"
+      - "Veil-Thinning permanent at destination"
+
+  # --- Cross-Links ---
+  - from: "Deepholm"
+    to: "Raven's Perch"
+    distance_km: 35
+    travel_days: 3
+    terrain: mountain_path
+    road_quality: poor # ridge trail
+    hazards:
+      - "Exposed ridge — wind tears at gear"
+      - "Iron Tide uses this path in winter"
+
+  - from: "Ashmark"
+    to: "Bleakwater Landing"
+    distance_km: 20
+    travel_days: 1
+    terrain: forest_river
+    road_quality: fair # follows riverbank
+    hazards:
+      - "Muddy in all seasons"
+
+# --- Bypass Routes (Wilderness — Skip Settlement Nodes) ---
+# Use when outlawed, avoiding feuds, or evading pursuit.
+# No resupply. Must carry full food. Higher encounter risk.
+bypass_routes:
+  - name: "The Bone Road"
+    skips: ["Ashen Reach"]
+    from: "Frostfjord Hollow"
+    to: "Bleakwater Landing"
+    distance_km: 55
+    travel_days: 5
+    terrain: deep_forest
+    road_quality: none
+    hazards:
+      - "No trail — bushwhacking through Black Pine"
+      - "Wolf territory entire route"
+      - "Barrow mound at midpoint (avoid after dark)"
+
+  - name: "Ghost Moor Crossing"
+    skips: ["Feldwick", "Moor's End"]
+    from: "Skaldhaven"
+    to: "Thornwall"
+    distance_km: 95
+    travel_days: 7
+    terrain: open_moor
+    road_quality: none
+    hazards:
+      - "No shelter for 7 days"
+      - "Standing stone fields — Veil activity"
+      - "Lost without Survival 2+ or guide"
+
+  - name: "The High Ridge"
+    skips: ["Grimholt"]
+    from: "Bleakwater Landing"
+    to: "Deepholm"
+    distance_km: 40
+    travel_days: 4
+    terrain: mountain_wilderness
+    road_quality: none
+    hazards:
+      - "Cliff faces require rope and climbing"
+      - "Avalanche risk in winter"
+      - "No foraging above treeline"
+
+  - name: "Ice Coast"
+    skips: ["Raven's Perch"]
+    from: "Grimholt"
+    to: "Icebreak"
+    distance_km: 65
+    travel_days: 6
+    terrain: mountain_ice
+    road_quality: none
+    hazards:
+      - "Northern exposure — hypothermia risk"
+      - "Sea ice may break without warning"
+      - "Red Tide camps scattered along coast"
+
+# --- Faction Relations ---
+faction_relations:
+  "Voss's Black Axes":
+    "Three Wolves": hostile
+    "Bone Pack": neutral
+    "Silent Oar": rivalry
+    "Hollow Hall": indifferent
+    "Iron Tide Remnant": neutral
+    "Grave Wardens": neutral
+    "Red Tide": hostile
+    "Jarl Hrothgar": allegiance_2
+    "Warchief Ordovast": wary
+    "Pale Widow": unknown
+
+# --- Rival Bands (Reference) ---
+rival_bands:
+  - name: "The Three Wolves"
+    archetype: tyrant
+    size: 22
+    leader: "Hadric the Younger (Red Jaw)"
+    reputation: "Feared — burns villages that refuse tribute"
+    location: "Feldwick (occupying)"
+    strengths: "Heavy melee, excellent intimidation"
+    weaknesses: "Internal loyalty fragile; Named Men plotting exits"
+    named_men:
+      - name: "Varis"
+        title: "First Blade"
+        attrs: { mig: 7, nim: 5, tou: 6, wit: 6, wil: 5, wyr: 1 }
+        notes: "Calculating, secretly building exit plan"
+      - name: "Crane"
+        title: "Sergeant"
+        attrs: { mig: 8, nim: 4, tou: 7, wit: 3, wil: 6, wyr: 1 }
+        notes: "Eldest Hadric brother, berserker-prone"
+      - name: "The Lamp (Merric)"
+        title: "Executioner"
+        attrs: { mig: 5, nim: 7, tou: 5, wit: 7, wil: 5, wyr: 1 }
+        notes: "Former executioner, cold and precise"
+
+  - name: "The Bone Pack"
+    archetype: kin_clan
+    size: 11
+    leader: "Pack-Elder Sura"
+    reputation: "Never abandon shield-siblings. Deadly at night."
+    location: "Negotiating winter shelter near ancestral land"
+    strengths: "Extremely loyal, deadly in forests and at night"
+    weaknesses: "Blood obligations pull members away"
+    named_men:
+      - name: "Fang"
+        title: "Skirmisher"
+        attrs: { mig: 6, nim: 8, tou: 5, wit: 5, wil: 4, wyr: 2 }
+        notes: "Lightning-fast scout with bounty on head"
+      - name: "The Questioner (Hast)"
+        title: "Scholar"
+        attrs: { mig: 5, nim: 5, tou: 5, wit: 7, wil: 6, wyr: 3 }
+        notes: "Asks dangerous questions, surprisingly high Wyrd"
+
+  - name: "The Silent Oar"
+    archetype: standard
+    size: 18
+    leader: "Duve Coldhand Orn"
+    reputation: "Professional, moves like ghosts"
+    location: "Preparing siege on bandit-held ruin"
+    strengths: "Formation discipline, scouting"
+    weaknesses: "Mourning recent losses; morale dips in static defense"
+    named_men:
+      - name: "Boot (Pask)"
+        title: "Sergeant"
+        attrs: { mig: 8, nim: 4, tou: 7, wit: 4, wil: 5, wyr: 1 }
+        notes: "Heavy brute who leads charges"
+      - name: "Ked the Nail (Sovere)"
+        title: "Quartermaster"
+        attrs: { mig: 5, nim: 5, tou: 5, wit: 8, wil: 5, wyr: 1 }
+        notes: "Obsessed with accountability"
+
+  - name: "The Hollow Hall"
+    archetype: fraternal
+    size: 9
+    leader: "Brek Saltmarch"
+    reputation: "Small, desperate, will take any job"
+    location: "Struggling through pest-clearance contract"
+    strengths: "Survive on very little; good foragers"
+    weaknesses: "Low morale, poor equipment, arguments"
+    named_men:
+      - name: "Torve"
+        title: "Shieldman"
+        attrs: { mig: 6, nim: 5, tou: 6, wit: 4, wil: 5, wyr: 1 }
+        notes: "Brek's cousin, refuses to leave"
+      - name: "Mirke One-Ear"
+        title: "Scout"
+        attrs: { mig: 5, nim: 7, tou: 4, wit: 5, wil: 4, wyr: 2 }
+        notes: "Lost ear to frostbite, good tracker"
+
+  - name: "The Iron Tide Remnant"
+    archetype: standard
+    size: 14
+    leader: "Sigrid Blackwine"
+    reputation: "Disciplined survivors of a once-great band"
+    location: "Wintering in Raven's Perch"
+    strengths: "Hard veterans, excellent morale in adversity"
+    weaknesses: "No Named Men with rune-lore; avoid barrows"
+    named_men:
+      - name: "Halvard Keg"
+        title: "Sergeant"
+        attrs: { mig: 7, nim: 5, tou: 7, wit: 5, wil: 6, wyr: 1 }
+        notes: "Former blacksmith, huge hands"
+      - name: "Ylva the Mute"
+        title: "Scout"
+        attrs: { mig: 5, nim: 8, tou: 5, wit: 6, wil: 5, wyr: 2 }
+        notes: "Does not speak; communicates by gesture and expression"
+
+  - name: "The Grave Wardens"
+    archetype: kin_clan
+    size: 7
+    leader: "Elder Bryn Ashmouth"
+    reputation: "Clear barrows or die trying"
+    location: "Camped near Iron Barrow, south of Grimholt"
+    strengths: "Unmatched barrow-clearing; two rune-lore practitioners"
+    weaknesses: "Too small for open field; religious zealots"
+    named_men:
+      - name: "Sev the Pale"
+        title: "Galdr-Speaker"
+        attrs: { mig: 4, nim: 5, tou: 4, wit: 6, wil: 7, wyr: 4 }
+        notes: "Covered in rune tattoos; galdr rank 3"
+      - name: "Norn"
+        title: "Grave-Guard"
+        attrs: { mig: 8, nim: 4, tou: 8, wit: 3, wil: 6, wyr: 1 }
+        notes: "Largest man most have seen; carries a two-handed axe"
+
+  - name: "The Red Tide"
+    archetype: tyrant
+    size: 20
+    leader: "Wulfgar the Branded"
+    reputation: "Slavers and reavers; no settlement trusts them"
+    location: "Roaming the Northern Ice-Reach"
+    strengths: "Fast raiders, ruthless; thrall-taking economy"
+    weaknesses: "Universally hated; no safe winter harbor"
+    named_men:
+      - name: "Askel Rope"
+        title: "Slaver"
+        attrs: { mig: 6, nim: 6, tou: 5, wit: 7, wil: 4, wyr: 1 }
+        notes: "Plans raids with merchant's precision"
+      - name: "Bera Iron-Teeth"
+        title: "Champion"
+        attrs: { mig: 8, nim: 5, tou: 7, wit: 4, wil: 7, wyr: 1 }
+        notes: "Files her teeth to points; terrifying presence"

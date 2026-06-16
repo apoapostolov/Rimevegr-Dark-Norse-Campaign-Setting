@@ -1,0 +1,739 @@
+band:
+  name: Voss's Black Axes
+  captain: Voss Cold-Eye
+  archetype: standard
+  reputation: 3
+  morale: 1
+  treasury_silver: 21
+  treasury_goods_value: 32
+  debts_owed: 0
+  credits_pending: 55
+  year: 312
+  day_of_year: 101
+  location: Black Pine Wilds, near Frostfjord
+  notes:
+    - "Last pay date: Day 83, Ironmoon"
+    - "Last foraging result: Deficit of 3 FOOD units"
+    - "Food stores: 11 units"
+    - "Forage surplus days: 2"
+  history:
+    - event: band_created
+      details: Band 'Voss's Black Axes' formed under Captain Voss Cold-Eye.
+  current_contract:
+    title: Clear the Whispering Barrow
+    employer: Jarl Hrothgar of Frostfjord
+    type: barrow_clear
+    payment_silver: 80
+    bonus: 1 thrall
+    advance_received: 25
+    deadline_day: 100
+    status: in_progress
+    risk: high
+    notes: Restless dead reported. North of Frostfjord.
+  feud_tracker:
+    frostfjord_hollow: 1
+  allegiances:
+    - faction: Jarl Hrothgar of Frostfjord
+      level: 2
+      notes: Supplied winter hall last season
+      expiry: End of current Long Dark
+  grievances:
+    - type: late_wages
+      severity: medium
+      details: Pay 4 days late
+    - type: named_killed
+      severity: low
+      details: Named Man Kell wounded
+  weekly_retainer_cost_copper: 380
+  daily_mission_cost_copper: 90
+members:
+  - name: Voss Cold-Eye
+    rank: captain
+    background: huscarl
+    gender: male
+    age: Late 30s
+    description:
+      Lean and hard like forged iron. Left eye clouded white from an old
+      axe wound. Short-cropped dark hair, deep scars across left cheek and neck. Moves
+      with quiet economy.
+    mig: 7
+    nim: 6
+    tou: 6
+    wit: 6
+    wil: 7
+    wyr: 2
+    skills:
+      axes: 3
+      shields: 2
+      command: 3
+      intimidate: 2
+      navigate: 2
+      track: 2
+      sagas: 1
+      wyrd_reading: 1
+    weapon: iron_axe
+    weapon_base: 6
+    weapon_speed: 3
+    weapon_skill: 3
+    shield_skill: 2
+    shield_def: 3
+    armor:
+      head: 4
+      torso: 5
+      right_arm: 3
+      left_arm: 3
+      legs: 0
+      hands: 0
+      feet: 0
+    gear_kg: 12.0
+    inventory:
+      - Rune-amulet
+      - Seax (base 4)
+      - Spare knife
+      - Wool cloak
+      - 12 silver (personal)
+    hp: 35
+    max_hp: 35
+    wounds: []
+    scars:
+      - location: head
+        sublocation: eye_socket
+        type: hewn
+        description: Left eye clouded white from old axe wound.
+        visibility: disfiguring
+        permanent_effect: Vision lost left eye (-5 perception from left)
+        weather_sensitive: false
+      - location: head
+        sublocation: cheek
+        type: hewn
+        description: Deep ridged scar left cheek to neck.
+        visibility: obvious
+        permanent_effect: null
+        weather_sensitive: true
+      - location: torso
+        sublocation: flank
+        type: stab
+        description: Ragged stab scar right flank, old spear thrust.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: true
+      - location: hands
+        sublocation: knuckles
+        type: frostbite
+        description: Minor frostbite scarring both hands.
+        visibility: visible
+        permanent_effect: Stiff in deep cold mornings
+        weather_sensitive: true
+      - location: left_arm
+        sublocation: forearm_outer
+        type: burn
+        description: Thickened scar tissue left forearm.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+    special_conditions:
+      - weather_sensitive
+    status: active
+    condition: Healthy
+    horse:
+      has_horse: true
+      name: Ice-Mane
+      breed: rimefjord_pony
+      sex: gelding
+      age: 9
+      age_class: prime
+      role: captain_mount
+      condition: steady
+      mood: calm
+      rider_stability: 78
+      fatigue: 4
+      bond_rider: Voss Cold-Eye
+      speed: 2
+      wind: 4
+      foot: 4
+      nerve: 4
+      load: 3
+      sense: 4
+      traits:
+        - cold_hardy
+        - calm_mouth
+        - good_feet
+      tricks:
+        - kneel_mount
+        - come_to_whistle
+      bloodline_tags:
+        - cold_hardy
+        - good_feet
+      active_conditions: []
+      tack:
+        saddle: light_war_saddle
+        bridle: rawhide_hackamore
+        shoes: winter_shod
+      ownership: personal
+      notes:
+        - Keeps his head near barrows unless rune-noise starts
+        - More reliable than fast; Voss values him for judgment, not speed
+    trigger: Orders that endanger the band for no clear gain
+    agenda: Repay blood-debt to dead shield-brother's family
+    loyalty: null
+  - name: Gest Ledger
+    rank: named_man
+    background: wanderer
+    gender: male
+    age: Mid-40s
+    description:
+      Thick-necked, broad-shouldered. Always carries the charcoal ledger.
+      Face like weathered granite.
+    mig: 6
+    nim: 4
+    tou: 6
+    wit: 7
+    wil: 5
+    wyr: 2
+    skills:
+      axes: 2
+      brawl: 2
+      bargain: 3
+      command: 2
+      forage: 2
+      rune_lore: 1
+      weather_sense: 2
+    weapon: hand_axe
+    weapon_base: 6
+    weapon_speed: 3
+    weapon_skill: 2
+    shield_skill: 0
+    shield_def: 0
+    armor:
+      head: 0
+      torso: 3
+      right_arm: 2
+      left_arm: 2
+      legs: 0
+      hands: 0
+      feet: 0
+    gear_kg: 7.0
+    inventory:
+      - Charcoal ledger
+      - Ritual knife (base 4)
+      - Purse
+      - Whetstone
+      - Wool cloak
+    hp: 34
+    max_hp: 34
+    wounds: []
+    scars:
+      - location: right_arm
+        sublocation: forearm_outer
+        type: hewn
+        description: Knotted scar right forearm, poorly stitched.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: head
+        sublocation: ear
+        type: hewn
+        description: Chunk missing left ear, camp brawl.
+        visibility: obvious
+        permanent_effect: null
+        weather_sensitive: false
+      - location: head
+        sublocation: nose
+        type: frostbite
+        description: White waxy patch on nose tip.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+    special_conditions:
+      - weather_sensitive
+      - chronic_back
+      - chronic_knee
+    status: active
+    condition: Healthy (chronic back/knee)
+    trigger: Incompetence that wastes silver
+    agenda: One last good winter with full stores
+    loyalty: 4
+  - name: Kell Hook
+    rank: named_man
+    background: farmer
+    gender: male
+    age: Early 30s
+    description: Broad shoulders, missing two fingers on left hand. Quiet intensity.
+    mig: 7
+    nim: 5
+    tou: 6
+    wit: 4
+    wil: 4
+    wyr: 1
+    skills:
+      axes: 3
+      shields: 2
+      brawl: 2
+      forage: 1
+    weapon: hand_axe
+    weapon_base: 6
+    weapon_speed: 3
+    weapon_skill: 3
+    shield_skill: 2
+    shield_def: 3
+    armor:
+      head: 0
+      torso: 2
+      right_arm: 1
+      left_arm: 1
+      legs: 1
+      hands: 0
+      feet: 0
+    gear_kg: 6.0
+    inventory:
+      - Wooden shield (+3 def)
+      - Spare knife
+      - Wool cloak
+    hp: 33
+    max_hp: 35
+    wounds:
+      - id: w_001
+        location: right_arm
+        sublocation: forearm_outer
+        type: hewn
+        severity: light
+        damage: 5
+        bleeding: 0
+        description: Light axe cut across outer forearm, 14 stitches.
+        inflicted_day: 80
+        treated: true
+        treatment_type: field_surgery
+        treated_by: Dalla
+        stitched: true
+        stitch_count: 14
+        poulticed: true
+        bandaged: true
+        healing_stage: clotting
+        healing_day_count: 7
+        healing_target_days: 18
+        infected: false
+        effect: -5 to rolls using right arm
+    scars:
+      - location: left_arm
+        sublocation: fingers
+        type: hewn
+        description: Two fingers missing left hand (ring and little).
+        visibility: obvious
+        permanent_effect: Left hand three-finger grip (-5 fine work, -5 shield grip)
+        weather_sensitive: true
+      - location: hands
+        sublocation: back_of_hand
+        type: hewn
+        description: Scar across back of left hand, keloid at knuckle line.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: right_arm
+        sublocation: upper_arm_outer
+        type: hewn
+        description: Thin white scar right shoulder, old sword cut.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: hands
+        sublocation: knuckles
+        type: crush
+        description: Knuckle scars both hands, accumulated fist-fighting.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: head
+        sublocation: jaw
+        type: crush
+        description: Small triangular scar on chin, shield rim.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+    special_conditions:
+      - weather_sensitive
+    status: wounded
+    condition: Wounded (light hewn, right forearm, clotting)
+    trigger: Being treated as disposable
+    agenda: Own a piece of land, die free
+    loyalty: 3
+  - name: Thorne Ash-Born
+    rank: named_man
+    background: outlaw
+    gender: male
+    age: Late 30s
+    description: Burn scars across half his face. Dark hair, intense eyes.
+    mig: 6
+    nim: 6
+    tou: 5
+    wit: 5
+    wil: 5
+    wyr: 1
+    skills:
+      blades: 2
+      brawl: 1
+      track: 3
+      forage: 2
+      shelter: 2
+      intimidate: 1
+    weapon: sword
+    weapon_base: 7
+    weapon_speed: 4
+    weapon_skill: 2
+    shield_skill: 0
+    shield_def: 0
+    armor:
+      head: 0
+      torso: 2
+      right_arm: 1
+      left_arm: 1
+      legs: 1
+      hands: 0
+      feet: 0
+    gear_kg: 5.0
+    inventory:
+      - Two knives (base 4 each)
+      - Cloak
+      - Fire-steel
+      - Dried meat (2 days)
+    hp: 31
+    max_hp: 31
+    wounds: []
+    scars:
+      - location: head
+        sublocation: cheek
+        type: burn
+        description: Burn scarring across left side of face, disfiguring.
+        visibility: disfiguring
+        permanent_effect: Intimidate +1
+        weather_sensitive: true
+      - location: head
+        sublocation: ear
+        type: burn
+        description: Left ear partly melted, hearing reduced.
+        visibility: obvious
+        permanent_effect: Reduced hearing left (-5 perception from left)
+        weather_sensitive: false
+      - location: torso
+        sublocation: shoulder
+        type: burn
+        description: Burn contracture left shoulder/neck.
+        visibility: obvious
+        permanent_effect: -5 left arm overhead actions
+        weather_sensitive: true
+      - location: hands
+        sublocation: palm
+        type: hewn
+        description: Thin scar across right palm.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: hands
+        sublocation: fingers
+        type: frostbite
+        description: Minor frostbite on fingertips.
+        visibility: visible
+        permanent_effect: Crack and bleed in deep winter
+        weather_sensitive: true
+    special_conditions:
+      - weather_sensitive
+      - burn_contracture
+    status: active
+    condition: Healthy (burn contracture)
+    trigger: Harm to kin or shield-siblings
+    agenda: Settle blood-debt with the clan that burned his hall
+    loyalty: 3
+  - name: Petra Shepherd
+    rank: named_man
+    background: hunter
+    gender: female
+    age: Late 20s
+    description:
+      Tall, pale-haired. Moves like she is herding dangerous livestock. Firm
+      patience.
+    mig: 5
+    nim: 6
+    tou: 5
+    wit: 6
+    wil: 6
+    wyr: 2
+    skills:
+      spears: 2
+      shields: 2
+      command: 2
+      persuade: 2
+      heal: 2
+      wyrd_reading: 1
+    weapon: spear
+    weapon_base: 6
+    weapon_speed: 5
+    weapon_skill: 2
+    shield_skill: 2
+    shield_def: 3
+    armor:
+      head: 0
+      torso: 3
+      right_arm: 2
+      left_arm: 2
+      legs: 0
+      hands: 0
+      feet: 0
+    gear_kg: 7.0
+    inventory:
+      - Seax (base 4)
+      - Wooden shield (+3 def)
+      - Herb pouch
+      - Bone lots (wyrd-reading)
+      - Wool cloak
+    hp: 30
+    max_hp: 30
+    wounds: []
+    scars:
+      - location: left_arm
+        sublocation: forearm_inner
+        type: crush
+        description: Bow-string welts inside left forearm, pale stripes.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: head
+        sublocation: cheek
+        type: hewn
+        description: Small crescent scar right cheekbone.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: hands
+        sublocation: palm
+        type: crush
+        description: Rope burn scars both palms.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: legs
+        sublocation: calf
+        type: stab
+        description: Healed puncture scar left calf.
+        visibility: hidden
+        permanent_effect: null
+        weather_sensitive: false
+    scars_note: Light scarring — professional hunter who avoids unnecessary injury
+    status: active
+    condition: Healthy
+    horse:
+      has_horse: true
+      name: Reed-Step
+      breed: moor_runner
+      sex: mare
+      age: 7
+      age_class: prime
+      role: scout_mount
+      condition: steady
+      mood: watchful
+      rider_stability: 74
+      fatigue: 6
+      bond_rider: Petra Ash-Strand
+      speed: 5
+      wind: 4
+      foot: 3
+      nerve: 2
+      load: 2
+      sense: 3
+      traits:
+        - fast_break
+        - long_stride
+        - hard_to_catch
+      tricks:
+        - stand_fire
+        - sidepass
+      bloodline_tags:
+        - deep_wind
+        - hot_blooded
+      active_conditions: []
+      tack:
+        saddle: scout_saddle
+        bridle: bitted_bridle
+        shoes: light_shod
+      ownership: band
+      notes:
+        - Runs hot if handled by anyone except Petra
+        - Excellent on open moor, poor in packed shield-wall noise
+    trigger: Responsibility without authority
+    agenda: Find her sister, taken by raiders two winters ago
+    loyalty: 4
+  - name: Lump
+    rank: common
+    background: thrall
+    gender: male
+    age: Mid-40s
+    description:
+      Burly, heavy gut, thick neck, coarse gray-streaked beard, small eyes
+      in a weathered face. Moves clumsily, sweats easily.
+    mig: 6
+    nim: 3
+    tou: 5
+    wit: 3
+    wil: 3
+    wyr: 1
+    skills:
+      brawl: 1
+      forage: 1
+      shelter: 1
+    weapon: small_knife
+    weapon_base: 3
+    weapon_speed: 6
+    weapon_skill: 0
+    shield_skill: 0
+    shield_def: 0
+    armor:
+      head: 0
+      torso: 0
+      right_arm: 0
+      left_arm: 0
+      legs: 0
+      hands: 0
+      feet: 0
+    gear_kg: 2.0
+    inventory:
+      - Rusted tin cup
+      - Filthy rag
+      - Half-rotten hardtack
+      - Threadbare blanket
+      - Dented waterskin
+    hp: 26
+    max_hp: 26
+    wounds: []
+    scars:
+      - location: torso
+        sublocation: back_upper
+        type: crush
+        description: Whip scars on back from thralldom, old, flat, pale.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: hands
+        sublocation: palm
+        type: hewn
+        description: Badly healed cut across left palm.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: true
+      - location: right_arm
+        sublocation: forearm_outer
+        type: burn
+        description: Burn scar right forearm from labor.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+    scars_note: Labor scars, not battle scars — marks him as different
+    status: active
+    condition: Healthy but exhausted
+    trigger: Threat of expulsion from the band
+    agenda: Survive. Earn a place.
+    loyalty: 1
+    protagonist: true
+  - name: Bjorn the Lean
+    rank: common
+    background: outlaw
+    gender: female
+    mig: 5
+    nim: 7
+    tou: 5
+    wit: 5
+    wil: 4
+    wyr: 1
+    skills:
+      blades: 1
+      deceive: 1
+    weapon: dagger
+    weapon_base: 4
+    weapon_speed: 6
+    weapon_skill: 1
+    shield_skill: 0
+    shield_def: 0
+    armor:
+      head: 0
+      torso: 2
+      right_arm: 1
+      left_arm: 1
+      legs: 1
+      hands: 0
+      feet: 0
+    gear_kg: 4.0
+    hp: 30
+    max_hp: 30
+    wounds: []
+    scars:
+      - location: hands
+        sublocation: fingers
+        type: burn
+        description: Small burn scars both hands from cook-fire work.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: hands
+        sublocation: fingers
+        type: hewn
+        description: Clean thin scars on fingertips, knife work.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: hands
+        sublocation: thumb
+        type: hewn
+        description: Healed cut left thumb.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+    status: active
+    loyalty: null
+    scars_note: No violence scars — absence is deliberate and noted
+    special_conditions:
+      - weather_sensitive
+  - name: Rolf
+    rank: common
+    background: farmer
+    gender: male
+    mig: 6
+    nim: 5
+    tou: 6
+    wit: 5
+    wil: 4
+    wyr: 1
+    skills:
+      axes: 1
+      forage: 1
+    weapon: hand_axe
+    weapon_base: 6
+    weapon_speed: 3
+    weapon_skill: 1
+    shield_skill: 0
+    shield_def: 0
+    armor:
+      head: 0
+      torso: 2
+      right_arm: 1
+      left_arm: 1
+      legs: 1
+      hands: 0
+      feet: 0
+    gear_kg: 5.0
+    hp: 34
+    max_hp: 34
+    wounds: []
+    scars:
+      - location: hands
+        sublocation: back_of_hand
+        type: hewn
+        description: Scar across back of right hand, blocked a blade.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+      - location: legs
+        sublocation: shin
+        type: crush
+        description: Faded bruise-scar left shin, shield struck off-angle.
+        visibility: visible
+        permanent_effect: null
+        weather_sensitive: false
+    status: active
+    loyalty: null

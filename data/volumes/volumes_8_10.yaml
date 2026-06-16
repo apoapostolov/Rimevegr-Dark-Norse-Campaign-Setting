@@ -1,0 +1,1195 @@
+# Iron Ledger — Volume Outlines 8–10
+# Covers Y314 (reconstruction + supernatural crisis) and Y315 (endgame).
+# 41 chapters total: V8 (13), V9 (14), V10 (14).
+# Canonical events: data/events/y314_y315_events.yaml
+# Weather events: data/weather/named_events.yaml
+
+volumes_8_10:
+  # ================================================================
+  # VOLUME 8 — THE BREAKING GROUND
+  # Y314, Spring through Autumn
+  # Tone: Grim reconstruction → political fracture → supernatural dread
+  # ================================================================
+
+  volume_8:
+    title: "The Breaking Ground"
+    time_span: "Y314, Spring through Autumn (Days 1–210)"
+    chapter_count: 13
+    tone: "Grim reconstruction → political fracture → supernatural dread"
+    thematic_arc: >
+      The war is over but the world it left is broken. The band rebuilds
+      while the political map redraws itself and something older than
+      politics stirs beneath the earth. By volume's end, the barrows
+      have breached and Dalla has seen what waits inside.
+
+    band_state_opening:
+      morale: 3
+      reputation: 7
+      treasury_silver: 30
+      treasury_note: "War-depleted. Enough for two months of retainer."
+      roster: 10
+      roster_names:
+        - "Voss Cold-Eye (captain)"
+        - "Gest Ledger (quartermaster)"
+        - "Kell Hook (named man)"
+        - "Thorne Ash-Born (named man)"
+        - "Petra Shepherd (named woman)"
+        - "Bjorn the Lean (fighter)"
+        - "Rolf (fighter)"
+        - "Signy (fighter, Y313 recruit)"
+        - "Halvar (fighter, Y313 recruit)"
+        - "Lump (war-dog)"
+      location: "Frostfjord region, winter camp"
+
+    band_state_closing:
+      morale: 3
+      reputation: 8
+      treasury_silver: 55
+      treasury_note: "Spring contract paid. Barrow contract advance received."
+      roster: 10
+      location: "Moor's End approach, preparing for barrow contract"
+
+    chapters:
+      # ---- SPRING Y314 ----
+
+      - chapter: 1
+        title: "The Dead Count"
+        template: "aftermath"
+        pov: "Lump"
+        time_span: "Y314, Days 2–7"
+        weather_week: 1
+        weather_events: ["WE_021"]
+        events:
+          - "EVT_314_S01_001"
+          - "EVT_314_S02_002"
+          - "EVT_314_S04_004"
+        summary: >
+          Frostfjord reads forty-three names at the quay. The Bone Thaw
+          strips winter from the Rimevegr and reveals what it buried —
+          mass graves around Ashmark, frozen dead in the ditches.
+          Ordovast claims victory from Grimholt but nobody is listening.
+          Lump watches from beneath the fish-drying racks. The band is
+          intact but the world around it is smaller and quieter.
+        character_beats:
+          lump: "Observes the post-war silence. Stays close to Voss. Senses the band's exhaustion without understanding it."
+          voss: "Attends the count. Says nothing. Stands until every name is read."
+        band_state_delta:
+          morale: 0
+          notes: "Opening state. Band intact but depleted."
+
+      - chapter: 2
+        title: "Last Coin"
+        template: "personal"
+        pov: "Gest"
+        time_span: "Y314, Days 7–12"
+        weather_week: 1
+        events:
+          - "EVT_314_S03_003"
+          - "EVT_314_S05_005"
+        summary: >
+          Kell drops a leather pouch on Gest's table. The last of the
+          debt — earned coin by coin through winter guard work. Gest
+          counts twice. Nods. Kell is square for the first time in two
+          years. Meanwhile, Sigrun rebuilds the Compact on generous terms.
+          The political landscape shifts while the band's private debts
+          clear.
+        character_beats:
+          kell: "Debt resolved. Lighter in a way that frightens him — he does not know who he is without the weight."
+          gest: "Recognizes the moment. Makes no ceremony of it. Marks the ledger clean and moves on."
+        band_state_delta:
+          morale: "+1 internal (Kell)"
+          notes: "Kell debt resolved. One less source of internal friction."
+
+      - chapter: 3
+        title: "The Shepherd's Sister"
+        template: "personal"
+        pov: "Petra"
+        time_span: "Y314, Days 14–18"
+        weather_week: 2
+        weather_events: ["WE_021"]
+        events:
+          - "EVT_314_S06_006"
+          - "EVT_314_S08_008"
+        summary: >
+          A cart from the south brings a thin woman with burn scars.
+          Petra stands in the mud and holds her. Neither speaks. Two days
+          later, a Whispering Circle agent arrives and asks Petra to
+          deliver a sealed letter to Sigrun. The Widow's price for the
+          sister's rescue is espionage. The reunion curdles into
+          obligation.
+        character_beats:
+          petra: "Sister alive but broken. Joy lasts two days before the Widow's collector arrives. The rescue was never free."
+          voss: "Learns of the Widow's demand secondhand. Files it. Says nothing yet."
+        band_state_delta:
+          morale: 0
+          notes: "Petra's arc enters crisis. Band loyalty tested by external leverage."
+
+      - chapter: 4
+        title: "Coast Road"
+        template: "travel"
+        pov: "Voss"
+        time_span: "Y314, Days 21–33"
+        weather_week: 3
+        events:
+          - "EVT_314_S09_009"
+          - "EVT_314_S10_010"
+          - "EVT_314_S13_013"
+        summary: >
+          Voss signs a patrol contract for Stonebay — thirty silver for
+          two months clearing bandits. Honest work. Not enough. The Bone
+          Pack absorbs the Hollow Hall, becoming a serious force. Then
+          Hadric pledges the Three Wolves to the Compact. The power map
+          shifts under their feet while they chase thieves on the coast
+          road.
+        character_beats:
+          voss: "Takes what he can get. Knows the band needs purpose more than silver. Watches the political shifts with strategic patience."
+          kell: "Works coast patrol with quiet competence. The man without debt is more dangerous than the man with one."
+        band_state_delta:
+          treasury: "+30 silver (contract advance)"
+
+      - chapter: 5
+        title: "Barrow Quiet"
+        template: "supernatural"
+        pov: "Thorne"
+        time_span: "Y314, Days 16–36"
+        weather_week: 3-5
+        weather_events: ["WE_022"]
+        events:
+          - "EVT_314_S07_007"
+          - "EVT_314_S11_011"
+          - "EVT_314_S14_014"
+        summary: >
+          The barrow fields go silent. No lights. No hum. Nobody believes
+          this is good news. Dalla begins speaking in a language no one
+          recognizes. And in Skaldhaven, Thorne finds a carved bone
+          tablet in a dead man's belongings — the runes match the marks
+          on his skin. The Cairnwatch Fog brings grey handprints on
+          shutters. Something is waking.
+        character_beats:
+          thorne: "The bone tablet connects his rune-marks to something ancient and deliberate. His hands shake. He does not tell the band."
+          lump: "Hackles rise near the Cairnwatch road. Refuses to sleep near the barrow side of camp."
+
+      # ---- SUMMER Y314 ----
+
+      - chapter: 6
+        title: "The Allthing"
+        template: "council"
+        pov: "Voss"
+        time_span: "Y314, Days 75–84"
+        weather_week: 7-8
+        weather_events: ["WE_023"]
+        events:
+          - "EVT_314_U04_020"
+          - "EVT_314_U05_021"
+          - "EVT_314_U06_022"
+          - "EVT_314_U07_023"
+          - "EVT_314_U09_025"
+        summary: >
+          The first post-war Allthing at Skaldhaven. Armed guards
+          outnumber delegates. The Widow drops her weapon: a ledger of
+          every debt, bribe, and broken oath from the war. Names read
+          aloud. The hall goes silent. Bryn demands a barrow tithe.
+          Dalla walks in uninvited and prophesies the central barrow's
+          waking. The Summer Stillness hangs over the assembly — six
+          days without wind, birdsong, or insect. Then thunder from a
+          clear sky.
+        character_beats:
+          voss: "Navigates the political crossfire. Commits to nothing. Watches who flinches when the Widow reads names."
+          kell: "Beats a Bone Pack fighter bare-knuckle at the Allthing grounds. Not for stakes — for a friend's honour. Changed man."
+        band_state_delta:
+          reputation: "+1 (band visible at Allthing)"
+
+      - chapter: 7
+        title: "Cracks in Iron"
+        template: "political"
+        pov: "Lump"
+        time_span: "Y314, Days 84–118"
+        weather_week: 8-11
+        weather_events: ["WE_024"]
+        events:
+          - "EVT_314_U13_029"
+          - "EVT_314_U03_019"
+          - "EVT_314_U08_024"
+          - "EVT_314_U14_030"
+          - "EVT_314_U15_031"
+        summary: >
+          The Iron Grip fractures — Raven's Perch breaks away. Ordovast
+          holds Grimholt, Vargheim, and his pride. The Red Tide
+          blockades Bleakwater. The Blood Sun at Thornstead turns the
+          world red for a day. Within the band, Rolf challenges Voss's
+          refusal to take the Widow's deal. The stare lasts a long
+          count. Rolf looks away first. The Silent Oar sails south
+          without a word. Power is moving everywhere.
+        character_beats:
+          voss: "Faces Rolf's challenge without raising his voice. Authority held by presence, not threat."
+          lump: "Growls at Rolf during the confrontation. Settles at Voss's feet after. Pack order enforced."
+        band_state_delta:
+          morale: 0
+          notes: "Internal tension (Rolf) balanced by external vindication."
+
+      # ---- AUTUMN Y314 ----
+
+      - chapter: 8
+        title: "The First Door"
+        template: "supernatural"
+        pov: "Kell"
+        time_span: "Y314, Days 122–134"
+        weather_week: 11-12
+        weather_events: ["WE_025"]
+        events:
+          - "EVT_314_A01_032"
+          - "EVT_314_A03_034"
+          - "EVT_314_A04_035"
+        summary: >
+          The Vargheim barrow splits open during the Veil Storm — sky
+          torn by pale light, shadows falling wrong. A Grave Warden team
+          enters. Two of five come back. They will not say what they saw.
+          Then Dalla walks three days without food or water to the barrow
+          mouth, lies on the cracked stone, and sleeps for two days.
+          When she wakes: "It knows my name." The harvest tallies at
+          sixty percent of survival. The world is breaking on two axes
+          at once.
+        character_beats:
+          kell: "Watches the Wardens stagger back. Something in him recognizes the look on their faces. He has worn it."
+          dalla: "The barrow knows her name. She walks toward it the way water runs downhill — without choice."
+        band_state_delta:
+          morale: "-1 (barrow dread)"
+
+      - chapter: 9
+        title: "Hunters"
+        template: "action"
+        pov: "Thorne"
+        time_span: "Y314, Days 98–164"
+        weather_week: 10-15
+        events:
+          - "EVT_314_U11_027"
+          - "EVT_314_A08_039"
+          - "EVT_314_A10_041"
+        summary: >
+          Two men from Thorne's old warband arrive asking questions.
+          Patient. Professional. Voss posts watches. Thorne and Kell
+          intercept them outside Thornwall. Words, then weapons. One
+          hunter dies. The other escapes south. The blood-price doubles.
+          But in the quiet weeks between, Thorne has decoded the bone
+          tablet by firelight. It describes a galdr-forge beneath
+          something called the Iron Barrow — a place where runes were
+          first carved into living flesh. His marks ache.
+        character_beats:
+          thorne: "Kills a man from his past and reads the secret of his own making in the same month. His old life dies; his purpose clarifies."
+          kell: "Stands with Thorne without being asked. No debt involved. Pure loyalty."
+        band_state_delta:
+          notes: "Thorne's blood-price doubles. Band now sheltering a wanted man."
+
+      - chapter: 10
+        title: "The Second Crack"
+        template: "crisis"
+        pov: "Bjorn"
+        time_span: "Y314, Days 138–158"
+        weather_week: 14-16
+        events:
+          - "EVT_314_A05_036"
+          - "EVT_314_A06_037"
+          - "EVT_314_A11_042"
+          - "EVT_314_A09_040"
+        summary: >
+          Petra's sister finally speaks — slavers, a burned house, things
+          she did to survive. Petra listens without moving. Then the
+          Deepholm barrow erupts: not light this time but sound. A
+          subsonic pulse that cracks plaster and stops two old hearts.
+          Bryn sends riders everywhere: three barrows breached, the
+          Wardens cannot cover all three. Red Tide fighters camp near a
+          barrow and three die in their sleep, faces frozen in terror.
+          Wulfgar burns the camp and moves upriver.
+        character_beats:
+          bjorn: "Steady amid the chaos. Repairs weapons, checks provisions, does what needs doing. His competence is the band's anchor."
+          petra: "Carries the weight of her sister's testimony alongside the Widow's leverage. Harder than stone."
+        band_state_delta:
+          morale: "-1 (supernatural escalation)"
+
+      - chapter: 11
+        title: "Truce"
+        template: "negotiation"
+        pov: "Voss"
+        time_span: "Y314, Days 148–182"
+        weather_week: 17-19
+        events:
+          - "EVT_314_A07_038"
+          - "EVT_314_A12_043"
+          - "EVT_314_A13_044"
+        summary: >
+          The Widow opens hidden grain stores at below-market prices —
+          every settlement that takes the grain owes debts carefully
+          recorded. Sigrun and Ordovast meet at Thornwall under truce.
+          They hate each other. The barrows are worse than both of them.
+          Ceasefire signed. Then Bryn offers Voss the contract: clear
+          and seal the Moor's End barrow. Sixty silver. The most
+          dangerous job the Black Axes have ever taken. Voss signs.
+        character_beats:
+          voss: "Signs the barrow contract knowing what it means. The band needs the silver but more than that — the band needs to matter."
+          gest: "Calculates the risk-to-risk ratio in the ledger margin. Does not share the number."
+        band_state_delta:
+          treasury: "+25 silver (contract advance)"
+          reputation: "+1 (barrow contract shows nerve)"
+
+      - chapter: 12
+        title: "Seven Doors"
+        template: "supernatural"
+        pov: "Dalla"
+        time_span: "Y314, Days 190–200"
+        weather_week: 20-21
+        events:
+          - "EVT_314_A14_045"
+          - "EVT_314_A15_046"
+        summary: >
+          Dalla enters the Vargheim barrow alone. Three days pass. The
+          band waits outside. Lump howls without stopping. When Dalla
+          emerges she is barefoot, calm, and glowing faintly. "I closed
+          the first door. There are seven." The Vargheim barrow goes
+          dark. Then autumn storms batter the coast, destroy the
+          Frostfjord docks, and sink two trading ships. Winter will be
+          early and hungry. But underground, one door is shut.
+        character_beats:
+          dalla: "Transformed. Whatever she saw, whatever she did, she came back with authority no one gave her."
+          lump: "Howled for three days. Recognised Dalla when she emerged. Licked her hand once, then returned to Voss."
+        band_state_delta:
+          morale: "+1 (Dalla's success tempers dread)"
+
+      - chapter: 13
+        title: "Counting Scars"
+        template: "interlude"
+        pov: "Gest"
+        time_span: "Y314, Day 205–210"
+        weather_week: 22
+        events: []
+        summary: >
+          A bridge chapter. Gest tallies the first half of Y314 — silver
+          earned, silver spent, contracts won, contracts surviving. He
+          writes the names of those who died in the broader world: the
+          Warden team, the Red Tide dead, the two old hearts at Deepholm.
+          Not his responsibility. He writes them anyway. The ledger is
+          becoming something other than an accounts book. Voss sits by
+          the fire and stares at the barrow contract. They march to
+          Moor's End in the morning. The real work starts now.
+        character_beats:
+          gest: "The ledger as memorial. He does not call it that. He calls it completeness."
+          voss: "Quiet contemplation before committing the band to underground work."
+        band_state_delta:
+          notes: "Volume 8 closing. Band at full strength, barrow contract ahead."
+
+  # ================================================================
+  # VOLUME 9 — THE VEIL THINS
+  # Y314 Winter through Y315 Summer
+  # Tone: Supernatural crisis → political collapse → desperate alliance
+  # ================================================================
+
+  volume_9:
+    title: "The Veil Thins"
+    time_span: "Y314 Winter through Y315 Summer (Y314 Days 211–360, Y315 Days 1–60)"
+    chapter_count: 14
+    tone: "Supernatural crisis → political collapse → desperate alliance"
+    thematic_arc: >
+      The barrow crisis escalates from threat to existential reality.
+      Political structures collapse or adapt. The band goes underground
+      and comes back changed. By volume's end the alliance is forged,
+      the blood-price is paid, and sixty fighters stand ready to march
+      on something none of them understand.
+
+    band_state_opening:
+      morale: 3
+      reputation: 8
+      treasury_silver: 55
+      roster: 10
+      location: "Moor's End approach"
+
+    band_state_closing:
+      morale: 5
+      reputation: 9
+      treasury_silver: 95
+      treasury_note: "Barrow contract paid in full. Alliance stipend received."
+      roster: 10
+      roster_note: "All members alive. One Warden auxiliary lost during Moor's End clearing."
+      location: "Skaldhaven, expedition staging area"
+
+    chapters:
+      # ---- WINTER Y314 ----
+
+      - chapter: 1
+        title: "Thin Places"
+        template: "supernatural"
+        pov: "Lump"
+        time_span: "Y314, Days 212–220"
+        weather_week: 23-24
+        weather_events: ["WE_026"]
+        events:
+          - "EVT_314_W01_047"
+        summary: >
+          Every seiðr-practitioner in the Rimevegr reports the same
+          thing: the barrier between the living and the barrow-dead is
+          thinner than it has been since the Cracking. The Barrow Frost
+          buries the mountains selectively — only the high ground where
+          the oldest barrows sit. At Cairnwatch, sealed barrow entrances
+          are found clear of snow, as if something melted it from inside.
+          Lump will not face north. His hackles rise and stay risen.
+        character_beats:
+          lump: "Animal awareness of the supernatural. Cannot name it. Knows it. Stays between Voss and the north."
+          voss: "Registers the Warden reports with professional calm. Files the information alongside the barrow contract."
+        band_state_delta:
+          morale: "-1 (veil thinning confirmed)"
+
+      - chapter: 2
+        title: "The Iron Falls"
+        template: "political"
+        pov: "Gest"
+        time_span: "Y314, Days 218–242"
+        weather_week: 24-27
+        events:
+          - "EVT_314_W02_048"
+          - "EVT_314_W05_051"
+        summary: >
+          Vargheim withdraws from the Iron Grip. Ordovast holds only
+          Grimholt now. He executes an officer for suggesting surrender.
+          The rest fall silent. Meanwhile, the Bone Pack storms Raven's
+          Perch in a night assault, loots the stores, and sends forty
+          residents into the snow. The old power structure is falling
+          apart while a new and worse one muscles in. Gest tracks it
+          all in the margin of his ledger.
+        character_beats:
+          gest: "Political cartographer. Records the shifts without commentary. The numbers tell the story."
+        band_state_delta:
+          notes: "Iron Grip collapses. Bone Pack ascendant. Band positioned between dying factions."
+
+      - chapter: 3
+        title: "Into the Moor"
+        template: "descent"
+        pov: "Kell"
+        time_span: "Y314, Days 224–226"
+        weather_week: 27
+        weather_events: ["WE_027"]
+        events:
+          - "EVT_314_W03_049"
+          - "EVT_314_W10_056"
+        summary: >
+          The Black Axes enter the Moor's End barrow with Grave Warden
+          support. Two days underground. The Dead Wind blows across the
+          moor above, carrying voices that call actual names. Below,
+          things that should not move do. They emerge minus one Warden.
+          Kell won't talk about what he saw. Bjorn, topside, saves a
+          boy from the river ice — his body moved before his mind caught
+          up. Small kindness in a week of horror.
+        character_beats:
+          kell: "Whatever he saw underground marked him. He is quieter after. Steadier. Something settled."
+          bjorn: "Instinct over thought. Goes into the ice for a stranger's child without hesitation."
+        band_state_delta:
+          treasury: "+35 silver (barrow contract completion)"
+          notes: "One Warden auxiliary lost. Band members intact."
+
+      - chapter: 4
+        title: "Forge-Born"
+        template: "personal"
+        pov: "Thorne"
+        time_span: "Y314, Days 230–234"
+        weather_week: 28
+        events:
+          - "EVT_314_W04_050"
+        summary: >
+          Thorne tells the band his real history. The galdr lineage. The
+          rune-marks. The forge-born gift carved into his infant skin.
+          He was made, not born. Silence around the fire. Then Bjorn
+          passes him a drink. That is all. The band absorbs the truth
+          the way it absorbs everything — by deciding whether the man
+          in front of them has earned his place. Thorne has.
+        character_beats:
+          thorne: "The unburdening. Every secret laid out. He expects rejection. Gets a drink instead."
+          bjorn: "The drink is the most important gesture of the chapter. Acceptance without ceremony."
+          voss: "Listens to Thorne's history and sees the tactical reality: Thorne is the key to the barrows."
+
+      - chapter: 5
+        title: "Green Fire"
+        template: "crisis"
+        pov: "Bjorn"
+        time_span: "Y314, Days 242–256"
+        weather_week: 29-30
+        events:
+          - "EVT_314_W06_052"
+          - "EVT_314_W08_054"
+          - "EVT_314_W11_057"
+        summary: >
+          The Thornwall barrow cracks at midnight. Green fire shoots
+          thirty feet into the sky. Figures move in the treeline.
+          Thornwall evacuates north. Wulfgar lifts the Bleakwater
+          blockade after losing seven fighters to barrow encounters —
+          the Red Tide will stop raiding if given a seat at the defence
+          table. Then the Vargheim barrow reopens despite Dalla's sealing.
+          Three draugar walk outside its walls. The door she closed is
+          open again.
+        character_beats:
+          bjorn: "Stands watch while others panick. His steadiness is not bravery — it is stubbornness too thick for fear to penetrate."
+          voss: "Three barrows breached. The maths are simple and terrible."
+        band_state_delta:
+          morale: "-2 (Thornwall evacuated, Vargheim re-opened)"
+
+      - chapter: 6
+        title: "The Widow's Table"
+        template: "negotiation"
+        pov: "Voss"
+        time_span: "Y314, Days 250–265"
+        weather_week: 30-32
+        weather_events: ["WE_028"]
+        events:
+          - "EVT_314_W07_053"
+          - "EVT_314_W09_055"
+        summary: >
+          The Widow proposes a unified barrow defence force — Compact
+          fighters, Warden expertise, Circle logistics. Under her
+          coordination. Sigrun hesitates. The alternative is worse. The
+          Long Freeze grips the coast: twenty days of cold that freezes
+          the sea and splits anvil stone. The Long Dark descends — two
+          hours of grey light per day. The darkness itself feels heavier,
+          as if the barrows are drinking the light.
+        character_beats:
+          voss: "Attends the Widow's proposal meeting. Says little. Sees everything. Understands: someone will coordinate this. Better the Widow than no one."
+          petra: "Watches the Widow's Circle agent with the expression of someone who knows the price of favours."
+        band_state_delta:
+          morale: "-1 (Long Dark + supernatural crisis)"
+
+      - chapter: 7
+        title: "The Chorus"
+        template: "horror"
+        pov: "Lump"
+        time_span: "Y314, Day 325"
+        weather_week: 40
+        events:
+          - "EVT_314_W13_059"
+        summary: >
+          Midwinter night. The barrow hum returns — louder than Y313.
+          Windows crack. Dogs flee. Lump stays. Every settlement reports
+          the same: a voice beneath the hum, speaking words that are
+          almost comprehensible. Almost a name. Almost a command. Almost
+          enough to understand. The not-quite-understanding is worse
+          than anything clear would be. Lump presses his skull against
+          Voss's knee and does not move until dawn.
+        character_beats:
+          lump: "The one chapter from the dog's sensory world. He hears more than the humans. What he hears is terrible."
+          rolf: "Breaks first among the band. Not cowardice — honest fear. Voss pulls him back with a hand on the shoulder."
+        band_state_delta:
+          morale: "-2 (midwinter chorus)"
+
+      - chapter: 8
+        title: "Last Offer"
+        template: "personal"
+        pov: "Voss"
+        time_span: "Y314, Days 290–355"
+        weather_week: 41-50
+        events:
+          - "EVT_314_W12_058"
+          - "EVT_314_W14_060"
+        summary: >
+          Ordovast sends a personal message: join me or watch Grimholt
+          fall. He offers captaincy of a reformed Iron Grip warband —
+          fifty fighters, Grimholt as base. Everything Voss never
+          wanted. Voss stares at the offer for two days and sends it
+          back blank. Gest tallies the year. Silver: adequate. Losses:
+          one Warden. Morale: fragile. The band survived Y314. But the
+          world outside is worse, and Y315 will decide everything.
+        character_beats:
+          voss: "Refuses the biggest offer of his career without hesitation. He knows what Ordovast's leash feels like on other men."
+          gest: "Year-end accounting. The ledger is honest. Adequate is not comfortable."
+
+      # ---- SPRING Y315 ----
+
+      - chapter: 9
+        title: "The Grey Thaw"
+        template: "transition"
+        pov: "Petra"
+        time_span: "Y315, Days 2–10"
+        weather_week: 1-2
+        weather_events: ["WE_030"]
+        events:
+          - "EVT_315_S01_061"
+          - "EVT_315_S02_062"
+          - "EVT_315_S03_063"
+          - "EVT_315_S04_064"
+        summary: >
+          Y315 opens under the Grey Thaw — the sun muted, birds silent.
+          Ordovast walks out of Grimholt with a pack and a sword. Twenty
+          years of ambition ended in a quiet morning. Sigrun's envoys
+          arrive before the gate is cold. The Iron Grip is dead. Voss
+          calls every Black Axe together. Full gear, no exceptions. He
+          looks at each of them: "This year we finish it, one way or
+          another."
+        character_beats:
+          petra: "Watches the old order die and the new one assemble. She is thinking about what 'finishing it' means for her sister."
+          voss: "The muster speech. Economy of words. Every member present understands what he is asking."
+        band_state_delta:
+          morale: "+1 (Voss's muster speech)"
+
+      - chapter: 10
+        title: "The Reckoning"
+        template: "confrontation"
+        pov: "Thorne"
+        time_span: "Y315, Days 14–22"
+        weather_week: 3-4
+        weather_events: ["WE_031"]
+        events:
+          - "EVT_315_S05_065"
+          - "EVT_315_S06_066"
+          - "EVT_315_S07_067"
+        summary: >
+          Eight fighters arrive from the south — the full blood-price
+          party. During the Hush of Open Graves, when every sealed
+          barrow in the mountains stands open and blue light pours from
+          the mouths, the Widow summons Sigrun and Voss to Ashen Reach.
+          She reveals what she has always known: the barrows wake because
+          the galdr-forge beneath the Iron Barrow was unsealed. She
+          knows who did it. She wants it resealed — on her terms. Then
+          Dalla tells Thorne his marks are a key. "You were made to
+          open it."
+        character_beats:
+          thorne: "His pursuers and his purpose arrive in the same week. He cannot deal with both. Voss takes the hunters; Thorne faces the forge."
+          dalla: "Delivers the truth Thorne has suspected since he read the bone tablet. No comfort in it. Just clarity."
+        band_state_delta:
+          notes: "Crisis converges. Thorne's blood-price and the galdr-forge collide."
+
+      - chapter: 11
+        title: "Blood-Price"
+        template: "negotiation"
+        pov: "Voss"
+        time_span: "Y315, Days 30–48"
+        weather_week: 5-7
+        weather_events: ["WE_032"]
+        events:
+          - "EVT_315_S08_068"
+          - "EVT_315_S13_073"
+          - "EVT_315_S09_069"
+        summary: >
+          Bryn lays the barrow map on the table. Every breach forms a
+          circle. At the centre: the Iron Barrow. Voss rides out with
+          the Black Axes to meet Thorne's hunters and offers triple
+          weregild. Tense negotiation under the Burning Sky — three
+          days of deep arterial red from horizon to horizon, barrows
+          glowing, animals panicking. The hunters take the silver. They
+          ride south fast. Nobody wants to be in the Rimevegr any longer
+          than necessary.
+        character_beats:
+          voss: "Pays the blood-price from the band's funds without discussion. Thorne's freedom is non-negotiable."
+          thorne: "Watches his past ride south. The old debts are paid. Only the forge remains."
+        band_state_delta:
+          treasury: "-45 silver (weregild)"
+          notes: "Thorne's blood-price resolved. Alliance crystalising."
+
+      - chapter: 12
+        title: "The Alliance"
+        template: "council"
+        pov: "Voss"
+        time_span: "Y315, Days 30–38"
+        weather_week: 5-6
+        events:
+          - "EVT_315_S09_069"
+          - "EVT_315_S10_070"
+          - "EVT_315_S11_071"
+        summary: >
+          Sigrun commits Compact fighters. Bryn commits Warden expertise.
+          Voss commits the Black Axes and Thorne — the only person who
+          can read the forge-runes. An alliance born of necessity, not
+          trust. Wulfgar pledges the Red Tide's twenty fighters. The
+          Bone Pack refuses and hunkers down in Ashmark. The largest
+          cooperative force the Rimevegr has ever assembled takes shape
+          around a problem none of them fully understand.
+        character_beats:
+          voss: "Commits the band to something that may kill them all. Does it because nobody else has a key."
+          gest: "Records the alliance terms. Notices the Widow's name appears nowhere in the formal agreement. Notes this separately."
+
+      - chapter: 13
+        title: "Volunteers"
+        template: "personal"
+        pov: "Kell"
+        time_span: "Y315, Days 42–52"
+        weather_week: 7-8
+        events:
+          - "EVT_315_S12_072"
+          - "EVT_315_S14_074"
+        summary: >
+          Kell tells Voss he wants to be first into the Iron Barrow.
+          No debts. No shame. Just something he needs to do. Voss
+          studies him for a long time, then nods. Petra installs her
+          sister in Deepholm under Compact protection, returns to camp,
+          and sharpens her axe. Her sister is safe. This is what Petra
+          does now. Two people choosing freely for the first time — one
+          walking toward danger, one walking back to it.
+        character_beats:
+          kell: "The volunteer. Not seeking death — seeking the right moment to be exactly who he is."
+          petra: "The sister secured. The Widow's debt rendered moot by Compact protection. Petra chooses the band with no strings."
+        band_state_delta:
+          morale: "+2 (voluntary commitment, Petra's arc resolving)"
+
+      - chapter: 14
+        title: "Muster"
+        template: "military"
+        pov: "Voss"
+        time_span: "Y315, Days 52–63"
+        weather_week: 8-9
+        weather_events: ["WE_033"]
+        events:
+          - "EVT_315_S15_075"
+          - "EVT_315_U01_076"
+        summary: >
+          The ground shakes for thirty seconds near Vargheim. Cracks
+          open in fields. Villagers hear groaning from underground — like
+          something rolling over in its sleep. The Midsummer Storm hits
+          the coast with summer ice. Then sixty fighters gather at
+          Skaldhaven. Compact regulars, Grave Wardens, Red Tide veterans,
+          the Black Axes, eight settlement volunteers. Voss counts them.
+          It is enough or it is not. They march tomorrow.
+        character_beats:
+          voss: "The final assessment. Sixty fighters, an ancient barrow, and one man with rune-marks who might be the key. He has made worse bets."
+          lump: "Sits in the middle of the gathered force and watches. Sixty armed humans. The biggest pack he has ever seen."
+        band_state_delta:
+          treasury: "+50 silver (alliance stipend)"
+          notes: "Volume 9 closing. Expedition assembled. Band at full strength."
+
+  # ================================================================
+  # VOLUME 10 — THE IRON GATE
+  # Y315 Summer through Winter
+  # Tone: Desperate hope → iron determination → bittersweet resolution
+  # THE FINAL VOLUME.
+  # ================================================================
+
+  volume_10:
+    title: "The Iron Gate"
+    time_span: "Y315, Summer through Winter (Days 61–360)"
+    chapter_count: 14
+    tone: "Desperate hope → iron determination → bittersweet resolution"
+    thematic_arc: >
+      The march, the forge, the sealing. Every arc resolves. Kell holds
+      the gate. Thorne gives up what he was made to be. Voss decides
+      what the band becomes. The Widow claims her prize. And Lump sits
+      by the fire when it is over and watches the ice crack on the fjord.
+      Year 315 ends. The Rimevegr is scarred, diminished, and still
+      standing.
+
+    band_state_opening:
+      morale: 5
+      reputation: 9
+      treasury_silver: 95
+      roster: 10
+      location: "Skaldhaven, expedition staging"
+
+    band_state_closing:
+      morale: 7
+      reputation: 10
+      treasury_silver: 180
+      treasury_note: "Barrow expedition bonus + Allthing stipend. Comfortable for the first time since Y312."
+      roster: 8
+      roster_note: "Halvar and Signy killed in barrow collapse. Eight survive: Voss, Gest, Kell, Thorne, Petra, Bjorn, Rolf, Lump."
+      location: "Skaldhaven, council-contracted company"
+      band_status: "Voss's Black Axes adapt to peacetime: council contracts, trade route guards, barrow monitors. Mercenaries with a seat at the table."
+
+    chapters:
+      - chapter: 1
+        title: "War Footing"
+        template: "council"
+        pov: "Voss"
+        time_span: "Y315, Days 63–72"
+        weather_week: 9-10
+        weather_events: ["WE_034"]
+        events:
+          - "EVT_315_U02_077"
+        summary: >
+          The Allthing votes unanimously to fund the Iron Barrow
+          expedition. For the first time in living memory, every faction
+          agrees. The lawspeaker weeps — he has waited forty years for
+          this. Outside, the Veil Tear rips the boundary between living
+          and dead: sounds from underground audible on the surface, stone
+          grinding on stone, a voice giving orders in a language no one
+          alive speaks. Whatever the barrows have been building toward,
+          it is almost here.
+        character_beats:
+          voss: "Watches the unanimous vote. Distrusts unanimity — but takes the commission."
+          gest: "Records the Allthing resolution. Writes 'first unanimous vote' in the margin. Underlines it."
+
+      - chapter: 2
+        title: "The March"
+        template: "travel"
+        pov: "Lump"
+        time_span: "Y315, Days 74–76"
+        weather_week: 11
+        events:
+          - "EVT_315_U03_078"
+        summary: >
+          Sixty fighters march north from Skaldhaven. Three days' travel.
+          The ground trembles more frequently as they approach. On the
+          first night, Lump refuses to sleep. On the second night, green
+          lights appear on the horizon — a welcoming committee. On the
+          third morning, the hills north of Vargheim are visible and
+          something in the earth hums at a frequency that makes teeth
+          ache. Lump walks at the front of the column. He has always
+          walked at the front.
+        character_beats:
+          lump: "Leads the march the way a dog leads — not by command but by going first. The pack follows."
+          kell: "Walks near the front. Calm. He has been preparing for this since the Moor's End barrow."
+        band_state_delta:
+          notes: "In transit. Supernatural proximity increasing."
+
+      - chapter: 3
+        title: "The Widow's Price"
+        template: "negotiation"
+        pov: "Voss"
+        time_span: "Y315, Days 77–81"
+        weather_week: 11-12
+        weather_events: ["WE_035"]
+        events:
+          - "EVT_315_U04_079"
+        summary: >
+          The night before the descent. The Fog of the Dead rolls in —
+          cold, sweet, wrong. People see their dead standing where they
+          died or where they were last happy. In the fog, the Widow
+          tells Voss her price: whatever is in the galdr-forge belongs
+          to her. Knowledge, artifacts, rune-tools — all of it. Voss
+          can have the glory. He looks at her through the fog that
+          carries the scent of grave-earth. "You can have what the
+          dead don't want. That's the only deal I make underground."
+        character_beats:
+          voss: "Negotiates the impossible: giving the Widow enough to keep Circle support without surrendering leverage. He knows she will take what she wants regardless."
+          widow: "Reveals the full scope of her ambition for the first time. She does not want power over the living. She wants the tools of the dead."
+
+      - chapter: 4
+        title: "The Door Opens"
+        template: "supernatural"
+        pov: "Thorne"
+        time_span: "Y315, Day 82"
+        weather_week: 12
+        events:
+          - "EVT_315_U05_080"
+        summary: >
+          Dalla leads them to a hillside north of Vargheim. Wind-scoured
+          grass, nothing visible. Thorne places his hand on the stone.
+          His rune-marks glow — every line, every curve, bright enough
+          to read by. The hill opens. Not crumbles, not cracks — opens,
+          like a mouth. A staircase descends into green-lit darkness.
+          Cold air pours up from below, carrying the smell of iron and
+          old stone and something else — something alive that has been
+          waiting. Thorne's hand is still glowing when he takes the
+          first step down.
+        character_beats:
+          thorne: "The moment his entire existence was designed for. He opens the door. He does not hesitate."
+          dalla: "Guides them to the exact spot. Her role shifts from prophet to navigator."
+        band_state_delta:
+          notes: "Descent begins. No retreat."
+
+      - chapter: 5
+        title: "The Descent"
+        template: "descent"
+        pov: "Kell"
+        time_span: "Y315, Days 83–87"
+        weather_week: 12-13
+        events:
+          - "EVT_315_U06_081"
+        summary: >
+          Down. Three levels. The architecture shifts from crude stone to
+          something older and more precise — walls carved with runes that
+          pulse at Thorne's approach. Above, draugar swarm the surface
+          camp. Red Tide and Compact fighters hold the perimeter. Twelve
+          dead by nightfall. The exit must stay open. Below, Kell marks
+          the walls with axe-notches — not because they will find their
+          way back by them, but because a man should mark where he walks
+          when he walks into the dark.
+        character_beats:
+          kell: "Methodical. Calm. He was afraid in the Moor's End barrow. He is not afraid now. He has decided what this costs and he will pay it."
+          bjorn: "Stays close to Kell. Shield up. The two of them form the point of the column without being asked."
+        band_state_delta:
+          notes: "Underground. Surface casualties mounting."
+
+      - chapter: 6
+        title: "The Galdr-Forge"
+        template: "revelation"
+        pov: "Thorne"
+        time_span: "Y315, Day 88"
+        weather_week: 13
+        events:
+          - "EVT_315_U07_082"
+        summary: >
+          Three levels down, they find it. A stone chamber the size of a
+          longhouse. A forge that burns without fuel — cold white fire
+          that casts no heat. Runes cover every surface: walls, floor,
+          ceiling, the forge itself. Thorne's entire body glows. Dalla
+          goes still. "This is where they made you. This is where we
+          end it." The chamber hums at a frequency that makes blood move
+          differently in the veins. The air tastes of iron. Somewhere
+          above, the surface camp is fighting for its life. Down here,
+          the sealing must begin.
+        character_beats:
+          thorne: "Stands in the place where he was made. The runes on his skin respond to the runes on the walls. He is the key. He always was."
+          dalla: "Assesses the forge with the eye of someone who has already studied its blueprints in her visions. She knows what to do."
+        band_state_delta:
+          notes: "Galdr-Forge found. Sealing sequence must begin."
+
+      - chapter: 7
+        title: "Kell Holds the Gate"
+        template: "last_stand"
+        pov: "Kell"
+        time_span: "Y315, Days 89–90"
+        weather_week: 13
+        events:
+          - "EVT_315_U08_083"
+        summary: >
+          Draugar pour from a side tunnel like a black tide — the
+          forge's last defence or its inhabitants' last rage. The
+          corridor narrows to a chokepoint three men wide. Kell and
+          Bjorn hold it. Six hours. The rune-workers need time beyond
+          measuring, and Kell gives it to them. He fights with a calm
+          precision no one has ever seen from him — not the brawler,
+          not the debtor, not the man who won fistfights at the Allthing.
+          This is someone else. Someone who has been waiting inside Kell
+          Hook since the day he settled his last coin on Gest's table.
+          A man with no debts, no shame, and no intention of dying today
+          — but the willingness to, if the gate requires it. Bjorn's
+          shield cracks. Kell shifts to cover both lanes. Hours pass.
+          The hum changes pitch. And the draugar stop.
+        character_beats:
+          kell: >
+            The defining chapter of Kell's arc. Not a sacrifice of life but
+            a sacrifice of self — the old Kell (debtor, brawler, unreliable)
+            dies in the gate. What walks out is the man he chose to become.
+            He does not die. He holds.
+          bjorn: "Fights beside Kell until his shield cracks. Refuses to fall back. They hold the gate together."
+        band_state_delta:
+          notes: "The emotional climax. Kell and Bjorn hold. Nobody in the chokepoint dies."
+
+      - chapter: 8
+        title: "The Sealing"
+        template: "ritual"
+        pov: "Thorne"
+        time_span: "Y315, Days 90–92"
+        weather_week: 13
+        events:
+          - "EVT_315_U09_084"
+        summary: >
+          Thorne and Dalla work together — his rune-marks as the key,
+          her seiðr as the lock. The process is not dramatic. It is
+          precise, slow, and exhausting. Thorne places his hands on the
+          forge-runes. Dalla speaks words that do not exist in any living
+          language. One by one, the runes on the walls go dark. The forge
+          fire dims from white to grey to nothing. The hum stops. And
+          then Thorne's rune-marks go dark for the first time in his
+          life. Something in him goes quiet. The thing that made him
+          different — that made him useful — is gone. He is just a man
+          standing in a dark room with cold hands.
+        character_beats:
+          thorne: "Gives up what he was made to be. The rune-marks were his identity and his curse. Without them, he is free. The cost is everything that made him special."
+          dalla: "The seiðr passes through her for the last time. She is the instrument, not the source. When it is done, she collapses."
+        band_state_delta:
+          notes: "Forge sealed. Supernatural threat neutralised. Thorne's marks fading."
+
+      - chapter: 9
+        title: "Collapse"
+        template: "retreat"
+        pov: "Voss"
+        time_span: "Y315, Days 92–94"
+        weather_week: 13-14
+        events:
+          - "EVT_315_U10_085"
+        summary: >
+          The barrow begins to collapse. Stone grinding, dust falling,
+          the staircase cracking. Bryn leads the retreat. Voss carries
+          Dalla — unconscious, breathing, lighter than she should be.
+          Halvar takes a falling stone and does not get up. Signy pulls
+          him forward but the ceiling comes down behind them. Eight
+          fighters from the expedition are lost in the collapse. Bryn
+          is the last one out. The hillside seals itself — not with
+          violence but with finality, like a wound closing.
+        character_beats:
+          voss: "Carries Dalla because he is closest and does not think. Loses Halvar and registers it while running. Will grieve later."
+          signy: "Dies trying to pull Halvar free. The last act of a Y313 recruit who never got a saga."
+        band_state_delta:
+          roster: "-2 (Halvar and Signy killed in collapse)"
+          notes: "Eight expedition fighters lost total. Band loses two unnamed members."
+
+      - chapter: 10
+        title: "Forty-Three"
+        template: "aftermath"
+        pov: "Lump"
+        time_span: "Y315, Days 94–105"
+        weather_week: 14-15
+        events:
+          - "EVT_315_U11_086"
+          - "EVT_315_U12_087"
+          - "EVT_315_U15_090"
+        summary: >
+          Forty-three fighters walk back into Skaldhaven from sixty.
+          Nobody cheers. Nobody needs to. The barrow hum has stopped
+          across the entire Rimevegr. People stand in doorways and
+          watch them pass. Then: the first real celebration in three
+          years. Songs. Mead. Wrestling. Bjorn loses an arm-wrestle to
+          Bryn. Kell sits outside the firelight and drinks alone. He
+          is smiling. Lump digs up a massive thighbone from outside the
+          sealed barrow and carries it everywhere for a week.
+        character_beats:
+          lump: "The bone is his trophy. The biggest bone he has ever found. Nobody takes it from him."
+          kell: "Sits apart. Smiling. Not lonely — at peace. The gate is behind him."
+          bjorn: "Loses to Bryn and demands a rematch. Alive and loud about it."
+        band_state_delta:
+          morale: "+4 (survival + victory)"
+          reputation: "+1 (legendary status)"
+          treasury: "+60 silver (expedition bonus)"
+
+      - chapter: 11
+        title: "The Marks Fade"
+        template: "resolution"
+        pov: "Thorne"
+        time_span: "Y315, Days 110–174"
+        weather_week: 16-25
+        events:
+          - "EVT_315_U13_088"
+          - "EVT_315_A04_094"
+          - "EVT_315_A06_096"
+          - "EVT_315_A11_101"
+          - "EVT_315_A01_091"
+        summary: >
+          The barrows go silent. Dalla wakes one morning asking for
+          breakfast — brown eyes, no glow, hungry. She eats three bowls
+          of porridge. Thorne's rune-marks continue to fade until they
+          are faint scars. He teaches basic rune identification to Grave
+          Wardens — knowledge given freely instead of carved in flesh.
+          Petra spends a week in Deepholm with her sister, bringing a
+          good axe, a warm cloak, and enough silver. They eat together
+          every night. Neither talks about the past. The Widow's agents
+          recover galdr artifacts from the expedition's wounded before
+          anyone notices. Petra's Widow-debt is rendered moot: her
+          sister lives under Compact protection now. No leverage left.
+        character_beats:
+          thorne: "Fading marks, fading power, growing peace. He is no longer a tool. He is a teacher and a man with scars."
+          petra: "The arc resolves. Sister safe. Debt extinct. Petra chose the band and the choice holds."
+          dalla: "Returns to ordinary. The seiðr passed through her. She remembers everything and nothing."
+        band_state_delta:
+          notes: "Personal arcs resolving. Supernatural threat ended."
+
+      - chapter: 12
+        title: "The Quiet Power"
+        template: "political"
+        pov: "Gest"
+        time_span: "Y315, Days 156–226"
+        weather_week: 23-32
+        events:
+          - "EVT_315_A08_098"
+          - "EVT_315_A09_099"
+          - "EVT_315_A10_100"
+          - "EVT_315_A14_104"
+          - "EVT_315_W02_107"
+          - "EVT_315_W03_108"
+        summary: >
+          The Bone Pack disbands — fighters drift away, their captain
+          found drunk in Kolvik. The Grave Wardens shift from crisis
+          to maintenance. Sigrun proposes a permanent regional council.
+          Eleven of fifteen settlements send representatives. The Widow
+          takes Ashen Reach's seat personally — her first public
+          appearance. She has the artifacts, the debts, the information.
+          She does not declare anything. She does not need to. The
+          Rimevegr, for the first time, has something that resembles
+          governance. Imperfect. Fragile. Real.
+        character_beats:
+          gest: "Watches the political resolution from the margins. Records it. The ledger now includes institutional history alongside accounts."
+          widow: "Arc resolves. She wanted the galdr-forge tools and the political network. She has both. She plays the long game from inside the council, not outside it."
+        band_state_delta:
+          notes: "Political arc resolves. Council-based governance established."
+
+      - chapter: 13
+        title: "The Last Entry"
+        template: "personal"
+        pov: "Gest"
+        time_span: "Y315, Days 290–345"
+        weather_week: 41-49
+        weather_events: ["WE_038"]
+        events:
+          - "EVT_315_W10_115"
+          - "EVT_315_W14_119"
+          - "EVT_315_W13_118"
+          - "EVT_315_W04_109"
+        summary: >
+          Gest begins writing the Black Axes' history — not a saga but
+          a ledger. Between the numbers, the whole story is there for
+          anyone who reads carefully. Kell walks into the Skaldhaven
+          mead hall and puts silver on the bar: drinks for anyone who
+          fought in the barrow. Midwinter night passes in silence. No
+          hum. No green light. No voices. Just fires crackling and
+          people eating together. Rolf raises a cup to absent friends.
+          Then Voss gathers the band and speaks: the Black Axes will
+          take council contracts, guard trade routes, clear whatever
+          comes next. Mercenaries with a seat at the table. Nobody
+          argues. Lump wags his tail.
+        character_beats:
+          gest: "The ledger is his legacy. Not silver counts — a record of what a band of ten did across four years when the world was ending. His last entry is a number: eight surviving members."
+          voss: "The band survives by adapting. Not glory, not retirement — purpose. His legacy is that the Black Axes still exist."
+          kell: "Opens a tab at the mead hall. The man who owed everyone now buys drinks for strangers. Full circle."
+        band_state_delta:
+          notes: "All arcs resolved. Band transitions to peacetime role."
+
+      - chapter: 14
+        title: "Spring Again"
+        template: "epilogue"
+        pov: "Lump"
+        time_span: "Y315, Days 355–360"
+        weather_week: 51
+        events:
+          - "EVT_315_W15_120"
+        summary: >
+          The first crack of melting ice echoes across the fjord. Lump
+          lies by the fire with the thighbone he dug up from outside
+          the sealed barrow — gnawed smooth now, a comfortable weight
+          against his paws. Bjorn's new dog Rust naps beside him. Voss
+          sits nearby, sharpening an axe that does not need sharpening.
+          Gest writes. Kell hums a tune he did not know he remembered.
+          Thorne turns his scarred hands in the firelight, studying
+          the faint lines where the runes used to glow. Petra is
+          somewhere south, visiting her sister, and will be back before
+          the roads open. Rolf is drunk. Year 315 ends. The Rimevegr
+          is scarred, diminished, and still standing. The Black Axes
+          sharpen their weapons and wait for spring. Lump watches the
+          fire and the men around it and knows, in the way that dogs
+          know, that the pack is whole.
+        character_beats:
+          lump: "The final word belongs to the dog. He does not understand years, or barrows, or politics. He understands warmth, pack, food, and the bone between his paws. That is enough."
+          voss: "Present. Steady. Sharpening a blade. The same man he was in Volume 1, with four years of scars."
+          kell: "Humming. At peace. The gate is behind him; the mead hall is ahead."
+          thorne: "Studying his fading scars. Not mourning what he lost. Accepting what he is."
+          petra: "Absent but returning. Her arc completed offscreen — she is where she chooses to be."
+          gest: "Writing. Always writing. The ledger outlasts them all."
+          rolf: "Drunk. Reliable in his unreliability. The band's constant."
+          bjorn: "Owns a dog now. Rust and Lump share the fire. Bjorn shares it with both."
+        band_state_delta:
+          notes: >
+            Final state. Eight members (Voss, Gest, Kell, Thorne, Petra,
+            Bjorn, Rolf, Lump) plus Rust the dog. Council-contracted.
+            Financially stable. The band survives. The story ends as it
+            began — with a dog watching a fire and the sound of weapons
+            being sharpened.
+
+    # ---- VOLUME 10 RESOLUTION LEDGER ----
+    arc_resolutions:
+      lump: "Remains with the pack. The final POV. He chose this life by staying, and he stays."
+      voss: "The band survives by adapting. Not disbanding, not retiring — evolving into council-contracted professionals. His legacy is continuity."
+      kell: "Held the gate. Did not die. The sacrifice was willingness, not death. Buys drinks for barrow fighters. The debtor became the creditor of goodwill."
+      petra: "Sister safe in Deepholm under Compact protection. Widow's debt rendered moot. Petra chose the band freely and the choice holds."
+      thorne: "Rune-marks faded. No longer a galdr-tool. Teaches rune-reading to Wardens. Knowledge given freely, not carved in flesh. At peace."
+      gest: "Writes the band's history. The ledger becomes a chronicle. His final entry records eight survivors and a closing balance. The rest is between the numbers."
+      widow: "Holds galdr-forge artifacts, council seat, and information network. The most powerful person in the post-crisis Rimevegr. She wins not by force but by patience."
+      political_map: "Regional council replaces the Allthing war footing. Compact-led governance. Iron Grip extinct. Red Tide disbanded. Bone Pack dissolved. Grave Wardens shift to monitoring. Something resembling civilisation, for the first time."
+      band_final_roster:
+        surviving:
+          [
+            "Voss Cold-Eye",
+            "Gest Ledger",
+            "Kell Hook",
+            "Thorne Ash-Born",
+            "Petra Shepherd",
+            "Bjorn the Lean",
+            "Rolf",
+            "Lump",
+          ]
+        killed:
+          [
+            "Halvar (barrow collapse, V10 Ch9)",
+            "Signy (barrow collapse, V10 Ch9)",
+          ]
+        animals: ["Lump (war-dog)", "Rust (Bjorn's stray, adopted Y315 winter)"]
+        total_human: 7
+        total_with_animals: 9

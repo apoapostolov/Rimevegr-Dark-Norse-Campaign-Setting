@@ -1,0 +1,722 @@
+npcs:
+  - id: "NPC_SUP_001"
+    name: "Eydis Hearth-Ash"
+    true_name: "Eydis Sigurdsdottir"
+    type: "named_draugr"
+    bound_location: "BAR_010 - Grimholt Barrow"
+    description: "A tall dead woman in blackened mail with half her jaw split by an old axe-cut. Ash still clings inside her ribcage, and when she speaks, smoke leaks between her teeth."
+    stats:
+      MIG: 7
+      NIM: 4
+      TOU: 7
+      WIT: 5
+      WIL: 8
+      WYR: 3
+    hp: 19
+    abilities:
+      - "Ash Oath: weapons that harmed her in life glow faintly near her"
+      - "Murder-Scent: can identify bloodline kin of her killers by smell"
+    personality: "In life she was patient and diplomatic; in death she is direct, bitter, and precise. She still honors sworn words and will pause for truth, but lies trigger immediate violence."
+    can_communicate: true
+    communication_method: "speech"
+    agenda: "Find proof of her murder and force weregild from the guilty line before she can rest."
+    knowledge: "Knows where the murder happened, who carried her body, and which family records were altered afterward."
+    danger_level: "hostile"
+    interaction_hooks:
+      - "She appears when mercenaries dig old oath-posts near BAR_010."
+      - "She offers safe passage through her chamber if the band brings her a named confession."
+    secret: "Her younger brother ordered the ambush, not the rival clan blamed in local songs."
+    relationships:
+      - target: "BAR_010"
+        type: "bound_to"
+        note: "Her burial niche is behind the third shield-wall carving."
+      - target: "House Vargson"
+        type: "enemy"
+        note: "She marks their descendants for vengeance."
+    associated_barrows: ["BAR_010"]
+    associated_chains: ["waking_barrows", "grave_wardens"]
+    image_prompt: "Norse undead shield-maiden in soot-black mail, split jaw, smoke leaking from mouth, standing in a torchlit barrow hall with carved shield motifs, eerie cold blue and ember orange light."
+
+  - id: "NPC_SUP_002"
+    name: "Skorri Iron-Lock"
+    true_name: "Skorri Hallkelsson"
+    type: "named_draugr"
+    bound_location: "BAR_009 - Iron Barrow"
+    description: "A broad draugr with iron keys fused to his spine and a chain wrapped through his sternum. His fingers end in flattened black nails from centuries of clutching an unseen chest-lid."
+    stats:
+      MIG: 8
+      NIM: 3
+      TOU: 8
+      WIT: 4
+      WIL: 7
+      WYR: 4
+    hp: 23
+    abilities:
+      - "Hoard Ward: gains strength when intruders carry gold in his chamber"
+      - "Lock-Bite: his grapple can pin both wrists with chain-like force"
+    personality: "He was a quartermaster in life and remains methodical in death. He is not cruel unless treasure is touched, then he becomes coldly surgical."
+    can_communicate: true
+    communication_method: "speech"
+    agenda: "Guard the chain-chest of rune silver and never allow its inventory to change."
+    knowledge: "Knows hidden vault catches, the original ownership marks, and who stole from the hoard before it was sealed."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "He challenges any armed band to recite a proper inventory tally before entering."
+      - "He can be bargained with using replacement silver of equal weight and purity."
+    secret: "The chest he guards contains one forged treaty-ring that could ignite a regional blood-feud."
+    relationships:
+      - target: "BAR_009"
+        type: "bound_to"
+        note: "Will not cross the treasury threshold."
+      - target: "Iron Barrow Hoard"
+        type: "ward"
+        note: "Treats every coin as sacred inventory."
+    associated_barrows: ["BAR_009"]
+    associated_chains: ["waking_barrows", "grave_wardens"]
+    image_prompt: "Massive draugr treasurer with iron keys grown into spine, chain through chest, in a dark iron-lined vault chamber filled with tarnished silver and rune chests, grim dark Norse atmosphere."
+
+  - id: "NPC_SUP_003"
+    name: "Jorund Wave-Biter"
+    true_name: "Jorund Ketilson"
+    type: "named_draugr"
+    bound_location: "BAR_002 - Draugr-Jarl's Crypt"
+    description: "A salt-stiff corpse in fractured lamellar, beard frozen into needles, and one ear missing from a sea-fight long ago. Barnacle scars have grown into his neck like pale scales."
+    stats:
+      MIG: 7
+      NIM: 4
+      TOU: 7
+      WIT: 6
+      WIL: 6
+      WYR: 3
+    hp: 20
+    abilities:
+      - "Sea Memory: can predict storm turns and coastal currents"
+      - "Keel-Cleave: first strike against shielded foes deals bonus damage"
+    personality: "He shifts between lucid captain and feral corpse in minutes. Respectful speech and sailor rites keep him coherent long enough to negotiate."
+    can_communicate: true
+    communication_method: "speech"
+    agenda: "Secure a true sea-burial and prevent the crypt's cold command from enslaving his crew's dead."
+    knowledge: "Knows forgotten reef routes, hidden smuggler inlets, and old naval signal codes."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "He hails bands in dead sailor cant before attacking."
+      - "He will trade safe passage for a promise to sink his bones in deep water."
+    secret: "He sabotaged his own jarl's flagship in life to stop a massacre of hostages."
+    relationships:
+      - target: "BAR_002"
+        type: "bound_to"
+        note: "Cannot leave the lower flooded galleries."
+      - target: "Frostfjord Hollow"
+        type: "memory"
+        note: "Remembers the coast before the settlement existed."
+    associated_barrows: ["BAR_002"]
+    associated_chains: ["waking_barrows", "veil_collapse"]
+    image_prompt: "Ancient Norse sea-raider draugr with iced beard and barnacle scars, standing in a flooded crypt corridor with cold mist and broken lamellar armor, grim fjord undead aesthetic."
+
+  - id: "NPC_SUP_004"
+    name: "Ketil Rope-Counter"
+    true_name: "Ketil Arnfinnsson"
+    type: "named_draugr"
+    bound_location: "BAR_015 - Standing Stone Barrow"
+    description: "A thin corpse wrapped in tally ropes and wax tablets stitched to his coat. His fingers click like abacus beads when he counts, and frost numerals appear where he points."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 6
+      WIT: 7
+      WIL: 7
+      WYR: 4
+    hp: 16
+    abilities:
+      - "Debt Mark: cursed tally brands liars with visible rune scars"
+      - "Ledger Lash: rope-whip strike disarms coin purses and keys"
+    personality: "In life he was a dry, fair reeve; in death he is obsessively literal. He can be reasoned with if terms are precise and witnessed."
+    can_communicate: true
+    communication_method: "cold_writing"
+    agenda: "Collect unpaid blood-price from families that never settled old killings."
+    knowledge: "Keeps memorized debt lines across three generations, including crimes hidden by jarls."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "He scratches a debtor's true total into shield faces at night."
+      - "Bands can hire him as a witness in disputed weregild cases."
+    secret: "His own books were altered by a priest, and one debt he enforces is legally void."
+    relationships:
+      - target: "BAR_015"
+        type: "bound_to"
+        note: "Returns to the counting niche before dawn."
+      - target: "NPC_SUP_013"
+        type: "enemy"
+        note: "Disputes ferry toll debts with Ormund."
+    associated_barrows: ["BAR_015", "BAR_017"]
+    associated_chains: ["waking_barrows", "political_collapse"]
+    image_prompt: "Lean draugr reeve wrapped in rope tallies and wax tablets, scratching frost-runes onto stone in a moor barrow lit by dim torchlight, austere dark Norse horror style."
+
+  - id: "NPC_SUP_005"
+    name: "Ragna Twelve-Cuts"
+    true_name: "Ragna Hrolfsdottir"
+    type: "named_draugr"
+    bound_location: "BAR_021 - Widow's Barrow"
+    description: "A helmetless dead duelist with twelve visible sword-seams stitched in silver wire. Her mouth is calm but her eyes flare amber whenever she hears a challenge spoken aloud."
+    stats:
+      MIG: 6
+      NIM: 6
+      TOU: 7
+      WIT: 6
+      WIL: 7
+      WYR: 3
+    hp: 18
+    abilities:
+      - "Duel Geas: accepted single combat locks out outside interference"
+      - "Silver Seam Riposte: first counterattack each duel round gains precision"
+    personality: "She was honorable in life and remains rigidly formal in death. She keeps promises, despises ambush tactics, and can become an ally if treated as a lawful champion."
+    can_communicate: true
+    communication_method: "speech"
+    agenda: "Finish the final duel she died in and name the true victor before oblivion."
+    knowledge: "Knows who entered BAR_021 during recent nights and what was removed."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "She blocks narrow halls and demands ritual duel terms before passage."
+      - "Winning without dishonor grants one truthful answer and safe exit."
+    secret: "She deliberately took a fatal strike to protect a child hidden behind the duel circle stones."
+    relationships:
+      - target: "BAR_021"
+        type: "bound_to"
+        note: "Appears only where the duel runes are intact."
+      - target: "The Pale Widow"
+        type: "enemy"
+        note: "Recognizes her scent and calls her a grave-thief."
+    associated_barrows: ["BAR_021"]
+    associated_chains: ["waking_barrows", "widows_web"]
+    image_prompt: "Female Norse draugr duelist with silver-stitched battle wounds and glowing amber eyes, standing in a rune-ring chamber inside a pine-forest barrow, cold torchlit dark fantasy realism."
+
+  - id: "NPC_SUP_006"
+    name: "The Wicker Bride"
+    true_name: "Hilda of Frostfjord"
+    type: "barrow_spirit"
+    bound_location: "BAR_001 - Whispering Barrow"
+    description: "A veiled figure of reed and rime who appears at corridor forks with frost-lantern light in her palms. Her face is never visible, only a hollow veil shape that exhales winter breath."
+    stats:
+      MIG: 2
+      NIM: 5
+      TOU: 1
+      WIT: 7
+      WIL: 8
+      WYR: 8
+    hp: 0
+    abilities:
+      - "Threshold Warning: projects visions of recent deaths beyond wrong doors"
+      - "Bride's Chill: extinguishes torches before lethal trap plates"
+    personality: "She is melancholy but protective, speaking like someone used to calming frightened children. If mocked or ignored repeatedly, she fades and leaves intruders to their fate."
+    can_communicate: true
+    communication_method: "vision"
+    agenda: "Keep the living from opening the inner seal that should remain shut."
+    knowledge: "Knows safe path markers, false burial lids, and where the warning runes were broken."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "A band sees her lantern at intersections where one path is fatal."
+      - "Offering a woven reed ring lets her guide for one chamber."
+    secret: "Living elders bound her as a warning spirit after sacrificing her wedding day to seal the barrow."
+    relationships:
+      - target: "BAR_001"
+        type: "ward"
+        note: "Maintains old warning function set by the living."
+      - target: "NPC_SUP_008"
+        type: "enemy"
+        note: "Hates trap-spirits that imitate her lantern."
+    associated_barrows: ["BAR_001"]
+    associated_chains: ["waking_barrows", "dalla_awakening"]
+    image_prompt: "Incorporeal Norse bride spirit made of wicker reeds and frost, holding cold lantern light in a whispering barrow crossroads, veil face hidden, eerie winter-blue ambience."
+
+  - id: "NPC_SUP_007"
+    name: "Smoke Under Stone"
+    true_name: "Unrecorded"
+    type: "barrow_spirit"
+    bound_location: "BAR_025 - First Barrow"
+    description: "A low human-shaped cloud of soot that writes runes on the ceiling with drifting cinders. Its outline breaks apart and reforms whenever someone says a true ancestral name nearby."
+    stats:
+      MIG: 1
+      NIM: 4
+      TOU: 1
+      WIT: 9
+      WIL: 9
+      WYR: 9
+    hp: 0
+    abilities:
+      - "Soot Script: leaves cold-writing runes readable only in torch smoke"
+      - "Memory Draft: can replay old burial rites as moving ash visions"
+    personality: "Detached, patient, and almost scholarly. It values accuracy over mercy and will share truths even when they harm morale."
+    can_communicate: true
+    communication_method: "cold_writing"
+    agenda: "Preserve the original binding formulas as modern memory decays."
+    knowledge: "Knows partial unbinding sequences, anchor-stone locations, and which runes were deliberately falsified."
+    danger_level: "lethal"
+    interaction_hooks:
+      - "Its soot runes appear after campfires are doused near BAR_025."
+      - "It trades one true formula for one family name spoken without error."
+    secret: "It was formed from nine executed rune-carvers whose names were erased from every saga."
+    relationships:
+      - target: "BAR_025"
+        type: "bound_to"
+        note: "Cannot manifest beyond the inner vent shafts."
+      - target: "NPC_SUP_019"
+        type: "memory"
+        note: "Recognizes Torleif's voice pattern from old forge days."
+    associated_barrows: ["BAR_025"]
+    associated_chains: ["waking_barrows", "veil_collapse", "dalla_awakening"]
+    image_prompt: "Soot-and-ash humanoid spirit writing glowing runes in smoke on a barrow ceiling, deep underground First Barrow chamber, severe dark Norse occult mood."
+
+  - id: "NPC_SUP_008"
+    name: "Hrafnhild's Lantern"
+    true_name: "Hrafnhild Torvaldsdottir"
+    type: "barrow_spirit"
+    bound_location: "BAR_013 - Wreck-Grave"
+    description: "A warm golden lantern appears in fog, carried by a woman-shaped blur with seaweed hair and no feet. Up close, her smile is too wide and reflected backward in wet stone."
+    stats:
+      MIG: 2
+      NIM: 7
+      TOU: 1
+      WIT: 6
+      WIL: 7
+      WYR: 8
+    hp: 0
+    abilities:
+      - "False Exit: projects convincing pathways that end in shafts or tide pits"
+      - "Mirror Pit: victims following her light lose direction and loop chambers"
+    personality: "Playful, mocking, and cruelly curious. She enjoys conversation only to gather fears she can weaponize moments later."
+    can_communicate: true
+    communication_method: "vision"
+    agenda: "Feed fear into the flooded grave until the drowned dead rise again."
+    knowledge: "Knows every hidden side-tunnel and when tides expose or seal escape routes."
+    danger_level: "hostile"
+    interaction_hooks:
+      - "Mercenaries spot her lantern where no fire should burn underwater."
+      - "She offers 'safe way out' bargains that always carry fatal wording traps."
+    secret: "She was once a healer sealed alive for refusing to hide a jarl's plague deaths."
+    relationships:
+      - target: "BAR_013"
+        type: "bound_to"
+        note: "Most active during fog and low tide."
+      - target: "NPC_SUP_006"
+        type: "enemy"
+        note: "Imitates the Wicker Bride to lure victims."
+    associated_barrows: ["BAR_013"]
+    associated_chains: ["waking_barrows", "coastal_crisis"]
+    image_prompt: "Ghostly woman with seaweed hair carrying a warm lantern in a flooded cliff barrow, deceptive smile, fog-heavy coastal night, eerie Norse maritime horror realism."
+
+  - id: "NPC_SUP_009"
+    name: "The Ninth Whisper"
+    true_name: "Scribe-Echo of Ivar"
+    type: "barrow_spirit"
+    bound_location: "BAR_009 - Iron Barrow"
+    description: "A hovering throat-shaped mist that forms lips from drifting dust and speaks in layered voices. Frost scripts crawl along nearby stone each time it names a dead person correctly."
+    stats:
+      MIG: 1
+      NIM: 5
+      TOU: 1
+      WIT: 8
+      WIL: 8
+      WYR: 7
+    hp: 0
+    abilities:
+      - "Name Ledger: reveals true names buried under titles and aliases"
+      - "Whisper Tax: wrong names cause sudden memory loss of one recent hour"
+    personality: "Pedantic, severe, and eerily polite. It rewards exact ritual language and punishes sloppy speech instantly."
+    can_communicate: true
+    communication_method: "inscription"
+    agenda: "Keep the dead correctly named so the barrow network remains ordered."
+    knowledge: "Holds the best surviving map of linked burial lines between barrows."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "It appears when someone reads grave inscriptions aloud."
+      - "Bands can petition it for true-name confirmation before a sealing rite."
+    secret: "It has deliberately hidden one lineage name to protect a living heir tied to old treason."
+    relationships:
+      - target: "BAR_009"
+        type: "ward"
+        note: "Treats naming errors as structural threats."
+      - target: "The Grave Wardens"
+        type: "memory"
+        note: "Recognizes their older oath formulas."
+    associated_barrows: ["BAR_009", "BAR_010", "BAR_025"]
+    associated_chains: ["grave_wardens", "waking_barrows"]
+    image_prompt: "Incorporeal whisper spirit shaped like a floating throat-mist, frost runes forming on iron barrow walls, layered ghostly lips speaking names, dark ritual Norse ambience."
+
+  - id: "NPC_SUP_010"
+    name: "Yrsa Back-Speaks"
+    true_name: "Yrsa Jarnadottir"
+    type: "veil_touched"
+    bound_location: "Frostfjord Shore Caves"
+    description: "A gaunt living woman whose jaw twitches before each sentence, as if language rewinds in her throat. Her pupils flicker like fish scales, and her footsteps leave rime prints even on dry stone."
+    stats:
+      MIG: 3
+      NIM: 6
+      TOU: 4
+      WIT: 7
+      WIL: 6
+      WYR: 8
+    hp: 10
+    abilities:
+      - "Reverse Tongue: can decode backward speech and Veil-echo phrases"
+      - "Seam Sense: detects thin-Veil pockets by ear pressure and taste of copper"
+    personality: "She is wary, dryly humorous, and never fully present in the same moment as everyone else. She dislikes crowds but is unexpectedly loyal to anyone who feeds and shelters children."
+    can_communicate: true
+    communication_method: "speech"
+    agenda: "Trade translation work for winter supplies while avoiding factions that want to own her."
+    knowledge: "Can interpret Hush-time utterances and identify which voices are human, dead, or Veil-born."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "She is found writing reversed warnings on fish-drying racks before storms."
+      - "A band can hire her to interpret speech from cursed chambers without triggering traps."
+    secret: "She occasionally hears tomorrow's final sentence of anyone standing directly behind her."
+    relationships:
+      - target: "BAR_001"
+        type: "memory"
+        note: "First heard backward whispers there as a child."
+      - target: "NPC_SUP_008"
+        type: "enemy"
+        note: "Claims Hrafnhild's Lantern stole her sister."
+    associated_barrows: ["BAR_001", "BAR_002"]
+    associated_chains: ["waking_barrows", "dalla_awakening"]
+    image_prompt: "Veil-touched Norse woman with twitching jaw and reflective fish-scale pupils, standing in cold fjord cave with reversed runes scratched on wood, eerie realistic dark fantasy tone."
+
+  - id: "NPC_SUP_011"
+    name: "Naddi Split-Step"
+    true_name: "Naddi Einarsson"
+    type: "veil_touched"
+    bound_location: "Kolvik Salt Marsh"
+    description: "A narrow-shouldered youth whose left leg bends a finger-width off natural alignment, then snaps back when unwatched. His shadow lags one heartbeat behind his body in lantern light."
+    stats:
+      MIG: 5
+      NIM: 7
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 7
+    hp: 12
+    abilities:
+      - "Split-Step: short phase-hop through reeds, walls, or shield gaps"
+      - "Drift Map: can trace safe lanes through Hush zones and fog loops"
+    personality: "Fast-talking and suspicious, he expects betrayal first and kindness second. He softens around children and elders, especially if they remind him of home."
+    can_communicate: true
+    communication_method: "gesture"
+    agenda: "Earn enough silver to move his younger sister away from the marsh edge."
+    knowledge: "Knows three hidden approaches to flooded barrows and where patrols vanish most often."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "He appears beside campfires without sound, offering route guidance for coin."
+      - "He can lead a band through marsh fog in half time if promised safe escort for family."
+    secret: "He once led grave-thieves to BAR_013 and still dreams the screams."
+    relationships:
+      - target: "SUP_VEIL_04"
+        type: "enemy"
+        note: "Survived one Rift-Spawn encounter and carries a scar from it."
+      - target: "Kolvik"
+        type: "memory"
+        note: "Refuses contracts that endanger his sister's quarter."
+    associated_barrows: ["BAR_012", "BAR_013"]
+    associated_chains: ["waking_barrows", "veil_collapse"]
+    image_prompt: "Young veil-touched marsh guide with misaligned limb and delayed shadow, moving through salt reeds at dusk with lantern reflections and distant barrow mound, dark Norse realism."
+
+  - id: "NPC_SUP_012"
+    name: "Svanhild Ash-Mouth"
+    true_name: "Svanhild Torbjornsdottir"
+    type: "veil_touched"
+    bound_location: "Ashen Reach Tar Kilns"
+    description: "A half-blind woman with soot-black lips and lungs scarred from breathing ritual smoke for years. When she coughs, tiny ember runes flare and vanish in the air."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 5
+      WIT: 8
+      WIL: 7
+      WYR: 8
+    hp: 9
+    abilities:
+      - "Ash Translation: interprets Veil residue patterns in smoke and soot"
+      - "Cinder Ward: brief ember veil that reduces spirit intrusion"
+    personality: "Dry, patient, and cuttingly honest. She is kind to apprentices but ruthless toward frauds pretending to understand the Veil."
+    can_communicate: true
+    communication_method: "speech"
+    agenda: "Document every major Veil event before her sight fails completely."
+    knowledge: "Can identify forged rune patterns used by smugglers and Pale Widow intermediaries."
+    danger_level: "harmless"
+    interaction_hooks:
+      - "She hires mercenaries to retrieve soot samples from active barrows."
+      - "She can authenticate whether a 'prophecy' is true omen or staged trick."
+    secret: "She once served the Pale Widow and hid copies of her route ledgers."
+    relationships:
+      - target: "The Pale Widow"
+        type: "enemy"
+        note: "Broke with her after witnessing corpse-trade deals."
+      - target: "NPC_SUP_019"
+        type: "memory"
+        note: "Uses fragments of old forge lore from Torleif's echo."
+    associated_barrows: ["BAR_021", "BAR_025"]
+    associated_chains: ["widows_web", "dalla_awakening", "veil_collapse"]
+    image_prompt: "Middle-aged veil-touched Norse woman with soot-black mouth and ember-rune cough, standing near tar kilns in dark pine dusk, grim practical dark fantasy atmosphere."
+
+  - id: "NPC_SUP_013"
+    name: "Ormund Knot-Bone"
+    true_name: "Ormund Leifsson"
+    type: "veil_touched"
+    bound_location: "Ghost Moor Crossing"
+    description: "A heavy-shouldered ferryman whose elbows and knees bend one notch too far, then reset with wet clicks. Iron ferry hooks hang from his belt though no river runs where he waits."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 7
+      WIT: 4
+      WIL: 5
+      WYR: 6
+    hp: 15
+    abilities:
+      - "Wrong-Limbed Rush: ignores rough terrain and shoves through shield lines"
+      - "Ferry Toll Geas: marks oathbreakers who refuse passage payment"
+    personality: "He is blunt, territorial, and fatalistic, but not mindlessly violent. If paid fairly and treated with respect, he can become a dangerous but dependable local guide."
+    can_communicate: true
+    communication_method: "speech"
+    agenda: "Collect toll from all who cross his ghost-road, living or dead, until an unknown debt is paid."
+    knowledge: "Knows where unburied bodies lie in the moor and which paths are watched by stone spirits."
+    danger_level: "hostile"
+    interaction_hooks:
+      - "Bands encounter him where map paths disagree with actual ground."
+      - "He offers safe crossing through corpse fog for silver and a sworn name."
+    secret: "He drowned his own brother over ferry rights, and the debt he pays is blood-guilt, not coin."
+    relationships:
+      - target: "NPC_SUP_004"
+        type: "enemy"
+        note: "Ketil's old debt records expose Ormund's original crime."
+      - target: "BAR_017"
+        type: "bound_to"
+        note: "Cannot stray far from the cairn cluster road."
+    associated_barrows: ["BAR_015", "BAR_017"]
+    associated_chains: ["waking_barrows", "thorne_curse"]
+    image_prompt: "Veil-touched ferryman with wrong-jointed limbs and iron hooks on belt, standing on misty moor path with no river, bleak dark Norse supernatural tone."
+
+  - id: "NPC_SUP_014"
+    name: "The Law Between Stones"
+    true_name: "Galdr of the Third Oath"
+    type: "stone_spirit"
+    bound_location: "Moor's End Standing Stones"
+    description: "A tall rune-shadow that appears only as carved lines filling with pale fire between monoliths. In storms, it forms a faceless judge-shape with a stone staff and no feet."
+    stats:
+      MIG: 2
+      NIM: 3
+      TOU: 1
+      WIT: 8
+      WIL: 9
+      WYR: 8
+    hp: 0
+    abilities:
+      - "Oath Measure: detects lies spoken inside the stone ring"
+      - "Rune Verdict: marks oathbreakers with visible frost sigils"
+    personality: "Rigid, formal, and uninterested in excuses. It respects courage and truth but has no pity for political convenience."
+    can_communicate: true
+    communication_method: "inscription"
+    agenda: "Enforce guest-right, blood-price, and truce law where settlements have forgotten them."
+    knowledge: "Holds intact wording of early High Kingship law and old arbitration rites."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "Mercenary contracts sworn inside the ring become magically binding."
+      - "It can judge disputed testimony if both sides agree to stand in the stones."
+    secret: "It cannot tell justice from vengeance when both are legally worded."
+    relationships:
+      - target: "Moor's End Standing Stones"
+        type: "ward"
+        note: "Fails to manifest if one of nine core runes is broken."
+      - target: "NPC_SUP_017"
+        type: "memory"
+        note: "Remembers Styrkar's final lawful ruling."
+    associated_barrows: ["BAR_015", "BAR_017"]
+    associated_chains: ["waking_barrows", "high_kingship", "political_collapse"]
+    image_prompt: "Ancient stone-spirit judge as glowing rune-lines between weathered standing stones on windswept moor, faceless Norse law entity in stormlight, stark dark fantasy realism."
+
+  - id: "NPC_SUP_015"
+    name: "Rimewatch Bell-Eye"
+    true_name: "Watcher of the Blue Ring"
+    type: "stone_spirit"
+    bound_location: "Icebreak Blue Stones"
+    description: "A floating ice lens with a vertical pupil, suspended above a cracked rune pillar like a frozen bell clapper. Each time nearby barrows stir, a soundless pulse ripples through snow and bone."
+    stats:
+      MIG: 1
+      NIM: 4
+      TOU: 1
+      WIT: 6
+      WIL: 7
+      WYR: 8
+    hp: 0
+    abilities:
+      - "Dead-Bell Toll: alerts all seidr-sensitive minds before major undead surges"
+      - "Rime Alarm: projects directional visions of where the next breach begins"
+    personality: "Clinical and distant, like a weather instrument with memory. It answers only direct questions and never speculates."
+    can_communicate: true
+    communication_method: "vision"
+    agenda: "Warn the living early enough that evacuation remains possible."
+    knowledge: "Knows approximate timing of rune flare cycles around BAR_025."
+    danger_level: "harmless"
+    interaction_hooks:
+      - "Scouts use it as a living alarm before winter patrols."
+      - "If ignored too often, it withholds direction detail and gives only raw warning pulses."
+    secret: "It was built as a battlefield alarm for an ancient war, not as civilian protection."
+    relationships:
+      - target: "BAR_025"
+        type: "ward"
+        note: "Linked to first-rank runes around the complex."
+      - target: "Icebreak"
+        type: "memory"
+        note: "Tracks every winter breach since the settlement's founding."
+    associated_barrows: ["BAR_025"]
+    associated_chains: ["waking_barrows", "veil_collapse"]
+    image_prompt: "Floating icy eye-spirit above ancient blue runestone circle in snowstorm, silent alarm pulses in frost air, bleak Norse winter supernatural aesthetic."
+
+  - id: "NPC_SUP_016"
+    name: "Gnafa Oath-Eater"
+    true_name: "Gnafa of the Crossroad Stone"
+    type: "stone_spirit"
+    bound_location: "Thornwall Crossroad Monolith"
+    description: "A thin stone-headed figure crouched in the monolith's shadow, with a split mouth carved from old chisel cuts. Its tongue is a strip of black slate etched with moving runes."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 2
+      WIT: 6
+      WIL: 8
+      WYR: 7
+    hp: 0
+    abilities:
+      - "Riddle Trial: forces oathbreakers to answer in formal legal verse"
+      - "Tongue-Seal: those who fail cannot speak proper names until dawn"
+    personality: "Petty, razor-witted, and theatrical. It delights in humiliating liars but can be bribed with difficult truths spoken publicly."
+    can_communicate: true
+    communication_method: "speech"
+    agenda: "Feed on broken oaths and expose high-born perjury to common ears."
+    knowledge: "Knows three active blood-oath breaches among regional leaders."
+    danger_level: "hostile"
+    interaction_hooks:
+      - "Bands meet it when crossing roads after curfew with hidden cargo."
+      - "It can strip magical silence from witnesses before a public hearing."
+    secret: "It once erased a true oath from stone in exchange for child sacrifice."
+    relationships:
+      - target: "Jarl Halvar the Vain"
+        type: "enemy"
+        note: "Seeks to expose his contract frauds."
+      - target: "BAR_011"
+        type: "memory"
+        note: "Claims the pass tomb holds evidence of old oath crimes."
+    associated_barrows: ["BAR_011"]
+    associated_chains: ["political_collapse", "high_kingship", "waking_barrows"]
+    image_prompt: "Sinister stone-spirit with slit carved mouth and rune-etched black slate tongue at a Norse crossroads monolith, moonlit legal-riddle horror aesthetic."
+
+  - id: "NPC_SUP_017"
+    name: "Echo of Jarl Styrkar One-Hand"
+    true_name: "Styrkar Ulfredsson"
+    type: "ancestor_echo"
+    bound_location: "Grimholt Allthing Hearth"
+    description: "A broad one-handed warlord silhouette made of ember smoke and old battle scars. He appears only in reflected firelight, never directly where people look."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 1
+      WIT: 7
+      WIL: 8
+      WYR: 5
+    hp: 0
+    abilities:
+      - "Shieldwall Lesson: grants tactical insight for one defensive engagement"
+      - "War-Call Memory: can replay a historic battle from his command view"
+    personality: "Proud, disciplined, and bluntly paternal. He gives excellent battlefield advice but has little patience for diplomacy or changing social realities."
+    can_communicate: true
+    communication_method: "vision"
+    agenda: "Prevent Grimholt from fracturing into civil war while external threats rise."
+    knowledge: "Knows forgotten sally tunnels and old gate weak points beneath Grimholt."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "He manifests when leaders argue strategy over an active war map."
+      - "Mercenaries can consult him before sieges, but he demands offerings of iron filings and oath words."
+    secret: "His 'victorious' last campaign was actually a negotiated retreat hidden by court skalds."
+    relationships:
+      - target: "Grimholt"
+        type: "memory"
+        note: "Anchored to the old allthing hearthstone."
+      - target: "NPC_SUP_014"
+        type: "ward"
+        note: "Defers legal disputes to the Law Between Stones."
+    associated_barrows: ["BAR_010"]
+    associated_chains: ["iron_grip", "waking_barrows", "political_collapse"]
+    image_prompt: "Ember-smoke ancestor warlord with one hand, appearing in longhouse fire reflections over tactical map, grim authentic Norse dark fantasy style."
+
+  - id: "NPC_SUP_018"
+    name: "Mother Brynja of the Winter Hearth"
+    true_name: "Brynja Hallkelsdottir"
+    type: "ancestor_echo"
+    bound_location: "Frostfjord Mead Hall Hearth"
+    description: "An older woman formed from heat shimmer and flour dust, with callused hands and a carved ladle of light. Her presence smells of broth, smoke, and wool kept dry through hard winters."
+    stats:
+      MIG: 1
+      NIM: 2
+      TOU: 1
+      WIT: 8
+      WIL: 9
+      WYR: 4
+    hp: 0
+    abilities:
+      - "Hearth Counsel: improves rationing, warmth discipline, and shelter routines"
+      - "Winter Circle Rite: reinforces communal hearth wards for one night"
+    personality: "Firm, practical, and deeply compassionate. Her advice is wise for famine and cold but sometimes dangerously conservative for modern warfare and politics."
+    can_communicate: true
+    communication_method: "cold_writing"
+    agenda: "Keep settlements alive through winter scarcity and prevent panic-hoarding."
+    knowledge: "Remembers the original communal hearth ritual used to repel Hunger."
+    danger_level: "harmless"
+    interaction_hooks:
+      - "She appears when families break ration rules during hard freezes."
+      - "Bands can seek her guidance before winter marches to cut attrition."
+    secret: "Her old famine laws require abandoning the weak first, and she still believes that was necessary."
+    relationships:
+      - target: "Frostfjord Hollow"
+        type: "ward"
+        note: "Anchored to the central hall's first hearthstone."
+      - target: "BAR_002"
+        type: "memory"
+        note: "Remembers when cellar cold first began."
+    associated_barrows: ["BAR_002"]
+    associated_chains: ["famine_crisis", "waking_barrows"]
+    image_prompt: "Warm yet eerie ancestor matriarch spirit made of hearth shimmer and flour dust in Norse mead hall, winter survival aura, dark historical fantasy mood."
+
+  - id: "NPC_SUP_019"
+    name: "Torleif Rune-Split"
+    true_name: "Torleif Vestrason"
+    type: "ancestor_echo"
+    bound_location: "Ruined Rune-Forge above Deepholm"
+    description: "A thin smith-echo with glowing hammer marks across his forearms and no lower jaw. Sparks form words beneath him on stone whenever he gestures at broken runic metalwork."
+    stats:
+      MIG: 2
+      NIM: 3
+      TOU: 1
+      WIT: 9
+      WIL: 7
+      WYR: 6
+    hp: 0
+    abilities:
+      - "Ancient Formula: can reconstruct partial galdr inscriptions from fragments"
+      - "Outdated Command: imposes old forge protocol geasa on listeners"
+    personality: "Brilliant, arrogant, and trapped in obsolete social assumptions. He offers genuinely useful technical knowledge, but his moral framework belongs to a brutal age."
+    can_communicate: true
+    communication_method: "inscription"
+    agenda: "Restore pre-collapse rune-smith law and restart sealed forge lines."
+    knowledge: "Knows how to disable minor forge echoes and identify counterfeit galdr steel."
+    danger_level: "guarded"
+    interaction_hooks:
+      - "He can decode damaged forge tablets found in BAR_009."
+      - "He demands ritual obedience before sharing advanced rune methods."
+    secret: "His best procedure requires blood-tithe labor from bound workers, which he still treats as acceptable."
+    relationships:
+      - target: "BAR_009"
+        type: "memory"
+        note: "Helped inscribe one of its secondary lock formulas."
+      - target: "NPC_SUP_012"
+        type: "enemy"
+        note: "Svanhild publicly rejects his coercive forge doctrine."
+    associated_barrows: ["BAR_009", "BAR_025"]
+    associated_chains: ["dalla_awakening", "waking_barrows", "veil_collapse"]
+    image_prompt: "Ancestor smith echo with glowing hammer scars and jawless face, sparks writing runes on ruined forge stone in mountain twilight, gritty dark Norse occult forge atmosphere."

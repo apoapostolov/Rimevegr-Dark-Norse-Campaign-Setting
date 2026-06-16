@@ -1,0 +1,1614 @@
+enemies:
+  # ==========================================================================
+  # DRAUGR (UND_DRAUGR_01 through UND_DRAUGR_05)
+  # ==========================================================================
+
+  - id: "UND_DRAUGR_01"
+    name: "Restless Dead"
+    category: "undead"
+    subcategory: "draugr"
+    tier: 2
+    description: "A grey-skinned corpse still wearing its burial tunic, jaw hanging loose on one hinge of tendon. Dirt packed under split fingernails. The eyes are clouded but track movement. Smells of cold earth and something sweetly rotten underneath."
+    stats:
+      MIG: 5
+      NIM: 2
+      TOU: 5
+      WIT: 1
+      WIL: 3
+      WYR: 2
+    hp: 8
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Intimidation"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Grave-Cold Fists"
+          type: "unarmed"
+          speed: 1
+          base_damage: 4
+      armor:
+        torso: "Burial Shroud"
+        head: "None"
+    tactics: "Lurches toward the nearest living thing. Grabs and squeezes. No feints, no dodging. Walks through minor wounds without flinching."
+    morale_break: "Does not flee. Destroyed at 0 HP."
+    group_size: "1-3"
+    abilities:
+      - "Deathgrip: MIG contest to escape grapple at -1"
+      - "Unfeeling: ignores pain penalties from wounds"
+    combat_phases:
+      pre_battle:
+        - name: "Grave Moan"
+          description: "Low grinding sound from the earth; WIL test or -1 to initiative from dread."
+      maneuvers:
+        - name: "Deathgrip Lock"
+          description: "On successful grapple, grip tightens automatically — d4 damage per round, MIG test at -2 to break."
+          cost: "Replaces attack"
+      on_death:
+        - name: "Death Rattle"
+          description: "Collapses with a final moan; all undead within 30 paces are alerted to the living's presence."
+    resistances: ["cold", "fear", "bleeding"]
+    weaknesses: ["fire", "decapitation", "sunlight"]
+    is_undead: true
+    sim_traits: ["unfeeling", "deathgrip_1", "death_rattle", "grave_moan"]
+    encounter_conditions:
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 5]
+      items: ["burial_ring", "grave_dirt"]
+    image_prompt: |
+      A grey-skinned corpse in a torn linen burial shroud, standing in a
+      shallow barrow opening. Jaw hangs at an angle, clouded eyes reflecting
+      faint torchlight. Dirt under cracked fingernails. Cold blue-grey palette,
+      underground stone walls with condensation. Dim amber light from off-frame
+      torch.
+
+  - id: "UND_DRAUGR_02"
+    name: "Barrow Draugr"
+    category: "undead"
+    subcategory: "draugr"
+    tier: 3
+    description: "Centuries in the dark have hardened this thing. Skin like boiled leather stretched over dense bone. Patches of rusted mail fused to the torso where flesh grew around the rings. Moss in the eye sockets. It moves with terrible purpose."
+    stats:
+      MIG: 6
+      NIM: 3
+      TOU: 7
+      WIT: 2
+      WIL: 4
+      WYR: 3
+    hp: 12
+    skills:
+      - name: "Brawl"
+        rank: 3
+      - name: "Intimidation"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Corroded Sword"
+          type: "sword"
+          speed: 2
+          base_damage: 5
+      armor:
+        torso: "Fused Rusted Mail"
+        head: "None"
+    tactics: "Guards its section of barrow. Stands motionless until intruders cross a threshold, then attacks the closest. Pursues through corridors but will not leave the barrow."
+    morale_break: "Does not flee. Destroyed at 0 HP. Returns to resting position if intruders retreat beyond threshold."
+    group_size: "1-2"
+    abilities:
+      - "Deathgrip: MIG contest to escape grapple at -2"
+      - "Terrifying Presence: WIL test or -1 to all actions first round"
+      - "Dark-Hardened: +1 TOU when inside barrow"
+    combat_phases:
+      pre_battle:
+        - name: "Terrifying Rise"
+          description: "Rises from burial position, dust cascading; all witnesses WIL test or lose first action."
+      maneuvers:
+        - name: "Crushing Embrace"
+          description: "MIG contest, on success deals d8 and target cannot breathe — TOU test each round or black out."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Relentless Advance"
+          trigger: "Below 50% HP"
+          description: "Ignores all wound penalties, moves toward nearest living target regardless of obstacles, +1 MIG from fury."
+      on_death:
+        - name: "Burial Curse"
+          description: "Anyone who looted the barrow must WIL test or suffer nightmares for d6 nights (no natural healing during that time)."
+    resistances: ["cold", "fear", "bleeding", "poison"]
+    weaknesses: ["fire", "silver", "sunlight"]
+    is_undead: true
+    sim_traits:
+      [
+        "unfeeling",
+        "terrifying_presence",
+        "deathgrip_2",
+        "dark_hardened",
+        "relentless_advance",
+      ]
+    encounter_conditions:
+      season: ["any"]
+    loot:
+      silver_range: [2, 10]
+      items: ["corroded_sword", "burial_arm_ring", "tarnished_brooch"]
+    image_prompt: |
+      A leather-skinned corpse standing in a stone barrow corridor, rusted
+      mail rings embedded in dried flesh around the torso. Moss fills the
+      eye sockets. A corroded sword hangs in one fist. Tight underground
+      space, carved stone walls with crude runes. Single torch guttering
+      in the distance. Dark greens and rust-browns.
+
+  - id: "UND_DRAUGR_03"
+    name: "Draugr Warrior"
+    category: "undead"
+    subcategory: "draugr"
+    tier: 3
+    description: "This one remembers how to fight. The body is withered and stiff but the sword arm moves with drilled precision. Shield still strapped to the left forearm, wood rotted but the iron boss intact. It parries. It counters. It does not tire."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 6
+      WIT: 3
+      WIL: 4
+      WYR: 3
+    hp: 10
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Notched Long Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 6
+      armor:
+        torso: "Rotted Leather over Mail Fragments"
+        head: "Corroded Helmet"
+        shield: "Cracked Round Shield"
+    tactics: "Fights with retained martial skill. Uses shield to block, then counterattacks. Targets opponents who turn their backs. Will pursue fleeing enemies within the barrow."
+    morale_break: "Does not flee. Destroyed at 0 HP."
+    group_size: "1-2"
+    abilities:
+      - "Combat Memory: retains trained weapon skills from life"
+      - "Relentless Pace: ignores movement penalties from wounds"
+      - "Shield Bash: can shove opponent back with shield, NIM test or fall prone"
+    combat_phases:
+      pre_battle:
+        - name: "Shield Wall Memory"
+          description: "If 2+ draugr warriors present, they instinctively form a shield wall from their living memory."
+      maneuvers:
+        - name: "Shield Bash Stagger"
+          description: "On successful shield bash, target also drops held weapon — NIM test to keep grip."
+          cost: "Replaces attack"
+        - name: "Combat Memory Riposte"
+          description: "After being hit, immediately counter-attacks at +2."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Last Stand Formation"
+          trigger: "Below 50% HP"
+          description: "Fights with +1 NIM and +1 to parry from instinctive combat technique, as if remembering its finest battle."
+      on_death:
+        - name: "Weapon Throw"
+          description: "With its last breath, hurls weapon at the nearest living enemy; auto-attack at base damage."
+    resistances: ["cold", "fear", "bleeding"]
+    weaknesses: ["fire", "silver", "decapitation"]
+    is_undead: true
+    sim_traits:
+      [
+        "unfeeling",
+        "combat_memory",
+        "last_stand",
+        "weapon_throw_on_death",
+        "shield_wall_memory",
+      ]
+    encounter_conditions:
+      season: ["any"]
+    loot:
+      silver_range: [3, 12]
+      items: ["notched_sword", "corroded_helmet", "shield_boss"]
+    image_prompt: |
+      A desiccated warrior corpse in a fighting stance inside a barrow
+      chamber. Rotted leather armor over fragments of mail. A notched long
+      sword held at guard, a cracked round shield with a dull iron boss on
+      the other arm. Corroded helmet with nose guard. Tight stone room
+      with burial niches in the walls. Amber torchlight on grey dead skin.
+
+  - id: "UND_DRAUGR_04"
+    name: "Bloated Draugr"
+    category: "undead"
+    subcategory: "draugr"
+    tier: 2
+    description: "Something went wrong in the rotting. The corpse swelled with gas and dark fluid, skin stretched tight and shiny like a drum. Veins visible beneath translucent grey flesh. It moves in lurching steps. The stench is overpowering. When it dies, it bursts."
+    stats:
+      MIG: 5
+      NIM: 1
+      TOU: 5
+      WIT: 1
+      WIL: 3
+      WYR: 2
+    hp: 8
+    skills:
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Swollen Fists"
+          type: "unarmed"
+          speed: 1
+          base_damage: 3
+      armor:
+        torso: "Distended Skin"
+        head: "None"
+    tactics: "Shambles toward the nearest target. Tries to grab and hold. When reduced to 0 HP, bursts in a 2-pace radius. Drawn to noise."
+    morale_break: "Does not flee. Explodes at 0 HP."
+    group_size: "1-2"
+    abilities:
+      - "Corpse Burst: on death, all within 2 paces take 4 damage (TOU test to halve) and must pass TOU test or be nauseated (-1 to actions for 3 rounds)"
+      - "Foul Stench: anyone within 1 pace must pass TOU test each round or suffer -1 to actions"
+      - "Slow: always acts last in initiative"
+    combat_phases:
+      pre_battle:
+        - name: "Stench Cloud"
+          description: "The smell precedes it by 10 paces; TOU test or nausea (-1 to all actions) while within range."
+      maneuvers:
+        - name: "Bile Spray"
+          description: "Sprays a 3-pace cone of grave-bile; d4 damage and TOU test or blinded for d4 rounds."
+          cost: "Replaces attack"
+        - name: "Embrace of Rot"
+          description: "Grapple attack, coating target in putrid slime — armor corroded, -1 armor value permanently."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Swelling"
+          trigger: "Below 50% HP"
+          description: "Body distends grotesquely, expanding; gains +1 TOU but moves at half speed; increases corpse burst damage dice by one step."
+    resistances: ["cold", "fear", "bleeding", "piercing"]
+    weaknesses: ["fire", "slashing", "decapitation"]
+    is_undead: true
+    sim_traits:
+      [
+        "unfeeling",
+        "slow_init",
+        "foul_stench",
+        "corpse_burst_4_2",
+        "nauseating_burst",
+        "stench_cloud",
+      ]
+    encounter_conditions:
+      season: ["spring", "summer"]
+    loot:
+      silver_range: [0, 3]
+      items: ["grave_dirt", "bloated_organ"]
+    image_prompt: |
+      A horribly swollen corpse standing in a wet barrow passage. Grey skin
+      stretched tight and glossy, dark veins visible beneath. Belly distended,
+      limbs puffy. Fluid seeps from cracks in the skin. Mossy stone walls,
+      standing water on the floor reflecting a sickly greenish light. Flies
+      buzzing in the air.
+
+  - id: "UND_DRAUGR_05"
+    name: "Ancient Draugr"
+    category: "undead"
+    subcategory: "draugr"
+    tier: 4
+    description: "Older than the barrow it inhabits. The body is nearly mummified, drawn tight over heavy bones, but strength radiates from it like heat from coals. Gold burial jewelry is fused to its neck and wrists. Its eyes glow a faint amber. When it speaks, the words are in a language dead for centuries, but the commands reach every lesser corpse nearby."
+    stats:
+      MIG: 7
+      NIM: 4
+      TOU: 7
+      WIT: 5
+      WIL: 6
+      WYR: 5
+    hp: 18
+    skills:
+      - name: "Swords"
+        rank: 4
+      - name: "Brawl"
+        rank: 3
+      - name: "Intimidation"
+        rank: 3
+      - name: "Command"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Rune-Etched Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 7
+      armor:
+        torso: "Ancient Lamellar"
+        head: "Bronze Crown-Helm"
+    tactics: "Commands lesser undead to engage first while it observes. Identifies the strongest opponent and attacks them directly. Uses commanding voice to raise fallen enemies during the fight. Fights tactically, retreating to chokepoints."
+    morale_break: "Does not flee. If reduced below 5 HP, fights with increased ferocity (+1 MIG)."
+    group_size: "1 (with 2-4 lesser undead)"
+    abilities:
+      - "Command Dead: can direct up to 4 lesser undead within earshot as a free action"
+      - "Raise Fallen: once per encounter, animate a fresh corpse nearby as a Shambling Corpse"
+      - "Terrifying Presence: WIL test at -2 or -2 to all actions for first 2 rounds"
+      - "Deathgrip: MIG contest at -2 to escape grapple"
+      - "Ancient Resilience: takes half damage from non-magical, non-silver weapons"
+    combat_phases:
+      pre_battle:
+        - name: "Commanding Presence"
+          description: "Rises to full height and speaks a single word of power; all lesser undead in earshot activate; living witnesses WIL test at -2 or flee for d4 rounds."
+      maneuvers:
+        - name: "Galdr Word"
+          description: "Barks a rune-word as free action once per 3 rounds; choose: frost bolt (d6 cold damage, 10 paces), terror (force WIL retest on one target), or silence (seidr users cannot cast for 1 round)."
+          cost: "Free action"
+        - name: "Coordinated Command"
+          description: "Directs up to 4 lesser draugr to attack same target this round."
+          cost: "Free action"
+      bloodied:
+        - name: "Ancient Fury"
+          trigger: "Below 50% HP"
+          description: "+1 MIG, attacks include d4 frost damage on each strike; gains dark sight aura — torches and campfires within 10 paces dim to half brightness."
+      on_death:
+        - name: "Death Command"
+          description: "With final will, commands all remaining undead to focus the one who struck the killing blow; all undead gain +1 MIG for d6 rounds from the fury."
+    resistances: ["cold", "fear", "bleeding", "poison", "non-magical weapons"]
+    weaknesses: ["fire", "silver", "sunlight", "rune-weapons"]
+    is_undead: true
+    sim_traits:
+      [
+        "unfeeling",
+        "terrifying_presence",
+        "commanding_presence",
+        "ancient_resilience",
+        "deathgrip_2",
+        "ancient_fury",
+        "command_dead",
+        "raise_fallen_once",
+      ]
+    encounter_conditions:
+      season: ["any"]
+    loot:
+      silver_range: [20, 80]
+      items:
+        [
+          "rune_etched_sword",
+          "gold_arm_ring",
+          "bronze_crown_helm",
+          "burial_gold",
+        ]
+    image_prompt: |
+      A mummified figure in layered ancient lamellar armor, standing on a
+      stone dais in a deep barrow chamber. Gold arm rings fused to withered
+      wrists. A bronze crown-helm sits on a skull-tight head. Faint amber
+      glow in the eye sockets. A rune-etched sword held point-down. Lesser
+      corpses standing motionless in alcoves behind. Carved stone pillars,
+      burial offerings at the foot of the dais. Deep shadows, amber and
+      cold blue lighting.
+
+  # ==========================================================================
+  # HAUGBUI (UND_HAUG_01 through UND_HAUG_03)
+  # ==========================================================================
+
+  - id: "UND_HAUG_01"
+    name: "Barrow-Bound Spirit"
+    category: "undead"
+    subcategory: "haugbui"
+    tier: 3
+    description: "It cannot leave. That is the only mercy. Within the barrow it is absolute — the air thickens when it's near, and the stone seems to lean inward. A figure made of shadow and cold, with the suggestion of a face behind a veil of dark. It hits like a falling wall."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 5
+      WIT: 4
+      WIL: 6
+      WYR: 5
+    hp: 12
+    skills:
+      - name: "Brawl"
+        rank: 3
+      - name: "Intimidation"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Grave-Cold Touch"
+          type: "supernatural"
+          speed: 3
+          base_damage: 5
+      armor:
+        torso: "Incorporeal"
+        head: "None"
+    tactics: "Waits in the deepest chamber. Attacks intruders who touch burial goods or cross sacred thresholds. Strikes from walls and floor. Retreats into stone if badly wounded, re-emerges when intruders lower their guard."
+    morale_break: "Cannot leave barrow. Retreats into stone below 3 HP, re-forms after one hour."
+    group_size: "1"
+    abilities:
+      - "Bound Territory: cannot be lured outside the barrow under any circumstances"
+      - "Phase Through Stone: can move through barrow walls and floor"
+      - "Grave-Cold Touch: ignores physical armor, deals cold damage directly to HP"
+      - "Territorial Fury: +2 MIG when defending the innermost burial chamber"
+      - "Choking Darkness: can extinguish all non-magical light sources within 5 paces"
+    combat_phases:
+      pre_battle:
+        - name: "Choking Darkness"
+          description: "The torches go out in a radius; supernatural darkness fills the barrow corridor; vision reduced to 1 pace."
+      maneuvers:
+        - name: "Wall Strike"
+          description: "Attacks through solid stone, targeting enemies in adjacent rooms — ignores cover and shield."
+          cost: "Replaces attack"
+        - name: "Grave-Cold Touch"
+          description: "Bypasses armor completely — d6 direct HP damage plus TOU test or -1 NIM from deep cold for 1 hour."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Desperate Phase"
+          trigger: "Below 50% HP"
+          description: "Begins phasing rapidly in and out of walls; 50% miss chance on all attacks against it; attacks become erratic but more frequent (2 attacks per round at -2)."
+      on_death:
+        - name: "Barrow Seal"
+          description: "The spirit's destruction destabilizes the local barrow section; doors slam, passages shift; 25% chance a previously open path is now blocked."
+    resistances: ["cold", "fear", "bleeding", "physical weapons", "poison"]
+    weaknesses: ["fire", "silver", "sunlight", "holy symbols", "rune-weapons"]
+    is_undead: true
+    sim_traits:
+      [
+        "unfeeling",
+        "phase_through_stone",
+        "armor_bypass_supernatural",
+        "territorial_fury_barrow",
+        "choking_darkness",
+      ]
+    encounter_conditions:
+      terrain: ["barrow"]
+      season: ["any"]
+    loot:
+      silver_range: [5, 20]
+      items: ["burial_treasure", "cold_stone_shard"]
+    image_prompt: |
+      A dark semi-transparent figure coalescing from shadow inside a tight
+      barrow chamber. The suggestion of a bearded face and broad shoulders
+      behind a veil of darkness. Stone walls glistening with moisture. A
+      pile of tarnished burial goods — arm rings, a sword, pottery — on a
+      stone shelf behind the figure. No light source visible; the scene
+      lit by a faint phosphorescent glow from the walls. Blues, blacks and
+      cold greys.
+
+  - id: "UND_HAUG_02"
+    name: "Treasure Guardian"
+    category: "undead"
+    subcategory: "haugbui"
+    tier: 4
+    description: "Chained to a single object for centuries. The body is gone but the will remains, coiled around a gold torc or a rune-carved blade like smoke around a brand. Touch the treasure and the air splits. A form of compressed rage assembles itself from dust and old bone. It does not negotiate."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 6
+      WIT: 4
+      WIL: 7
+      WYR: 6
+    hp: 16
+    skills:
+      - name: "Brawl"
+        rank: 4
+      - name: "Intimidation"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Spectral Fists"
+          type: "supernatural"
+          speed: 3
+          base_damage: 7
+      armor:
+        torso: "Partially Incorporeal"
+        head: "None"
+    tactics: "Dormant until its linked artifact is touched or moved. Manifests instantly and attacks the thief. Ignores all others unless they intervene. Will pursue anywhere within the barrow. If artifact is removed from the barrow, follows to the threshold and shrieks."
+    morale_break: "Does not flee. If linked artifact is returned to its resting place, immediately goes dormant. Destroyed at 0 HP but re-forms in 1d6 days unless artifact is removed or destroyed."
+    group_size: "1"
+    abilities:
+      - "Artifact Bond: linked to one specific treasure, dormant until it is disturbed"
+      - "Manifest Fury: attacks at +2 MIG in the round it first manifests"
+      - "Spectral Strike: bypasses physical armor, resisted only by magical protection"
+      - "Regeneration: regains 2 HP per round while within 5 paces of linked artifact"
+      - "Banshee Shriek: once per encounter, all within 10 paces test WIL at -2 or flee for 1 round"
+    combat_phases:
+      pre_battle:
+        - name: "Artifact Flare"
+          description: "The bonded artifact(s) pulse with light; any who touched the treasure feel a burning pain and must drop it (WIL test to resist)."
+      maneuvers:
+        - name: "Manifest Storm"
+          description: "Spectral energy erupts in 5-pace radius — d6 damage to all, WIL test to halve."
+          cost: "Replaces attack"
+        - name: "Treasure Chain"
+          description: "An invisible force drags a stolen artifact back toward its resting place — carrier must MIG test or be pulled 5 paces toward the barrow center."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Spectral Expansion"
+          trigger: "Below 50% HP"
+          description: "Form grows larger and more terrible; gains 5-pace Banshee Shriek aura that deals d4 fear damage per round to all living; artifact regeneration doubles."
+      on_death:
+        - name: "Treasure Curse"
+          description: "All artifacts bonded to this guardian become cursed for d6 weeks; holders suffer -1 WIL and hear whispering; only blood sacrifice or seidr ritual breaks the curse."
+    resistances: ["cold", "fear", "bleeding", "physical weapons", "poison"]
+    weaknesses:
+      [
+        "fire",
+        "silver",
+        "rune-weapons",
+        "removing the linked artifact from barrow",
+      ]
+    is_undead: true
+    sim_traits:
+      [
+        "unfeeling",
+        "armor_bypass_supernatural",
+        "dormant_trigger",
+        "deathgrip_2",
+      ]
+    encounter_conditions:
+      terrain: ["barrow"]
+      season: ["any"]
+    loot:
+      silver_range: [20, 50]
+      items: ["linked_artifact", "bone_dust", "spectral_residue"]
+    image_prompt: |
+      A violent spectral form erupting from a gold torc sitting on a stone
+      pedestal inside a barrow vault. The figure is half-formed — skull face,
+      trailing ribcage, arms ending in claw-like hands reaching outward.
+      Dust and bone fragments spiraling in the air. The gold torc glowing
+      faintly beneath the apparition. Carved stone vault, other burial goods
+      undisturbed on shelves. Violent motion blur, cold blue-white energy,
+      dark stone background.
+
+  - id: "UND_HAUG_03"
+    name: "Whispering Haugbui"
+    category: "undead"
+    subcategory: "haugbui"
+    tier: 3
+    description: "You hear it before you see it. A voice in the dark, speaking your name. Promising warmth, treasure, the way out. The words are reasonable. The voice is your mother's, your brother's, your dead friend's. When you follow the sound to the deepest room, the walls close and the thing in the corner stops pretending."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 5
+      WIL: 6
+      WYR: 5
+    hp: 10
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Intimidation"
+        rank: 3
+      - name: "Deception"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Cold Grasp"
+          type: "supernatural"
+          speed: 2
+          base_damage: 5
+      armor:
+        torso: "Semi-Incorporeal"
+        head: "None"
+    tactics: "Lures intruders deeper into the barrow using mimicked voices of their loved ones. Creates false sounds of treasure or escape. Once victims are isolated and deep, attacks from behind. Prefers to separate groups."
+    morale_break: "Does not flee. Retreats into stone if reduced below 3 HP. Cannot leave barrow."
+    group_size: "1"
+    abilities:
+      - "Voice Mimicry: perfectly imitates any voice the target has heard; WIT test at -2 to recognize as false"
+      - "Luring Whisper: WIL test or compelled to move toward the voice for 1 round"
+      - "Ambush Strike: +3 damage on first attack against an unaware target"
+      - "Phase Through Stone: can move through barrow walls"
+      - "Bound Territory: cannot leave the barrow"
+    combat_phases:
+      pre_battle:
+        - name: "Mimicry Lure"
+          description: "Calls to victims using voices of their dead companions; WIL test to recognize the deception; failure means walking toward the source unguarded."
+      maneuvers:
+        - name: "Throat Whisper"
+          description: "When adjacent, whispers terrible truths — target WIL test or stunned 1 round from psychological shock."
+          cost: "Free action"
+        - name: "Ambush Strike"
+          description: "When attacking from concealment, double base damage on first hit."
+          cost: "Replaces attack"
+      on_death:
+        - name: "Last Secret"
+          description: "Whispers a true but terrible secret about one PC (GM's choice of disturbing revelation); WIL test or the PC gains a permanent -1 WIL from the knowledge."
+    resistances: ["cold", "fear", "bleeding", "physical weapons"]
+    weaknesses: ["fire", "silver", "sunlight", "loud noise", "rune-weapons"]
+    encounter_conditions:
+      terrain: ["barrow"]
+      season: ["any"]
+    loot:
+      silver_range: [5, 15]
+      items: ["cold_stone_shard", "tarnished_brooch", "victim_belongings"]
+    image_prompt: |
+      A dark barrow corridor forking in two directions. In the left passage,
+      a faint warm glow suggests safety. In the right, darkness. A shadowy
+      figure barely visible at the edge of the warm light, mouth open as if
+      speaking, features blurred and wrong — too many teeth, eyes too wide.
+      Stone walls carved with old runes. Cobwebs. The warm glow has no
+      visible source. Muted warm tones contrasted with deep shadow.
+
+  # ==========================================================================
+  # APTRGANGR — WALKING DEAD (UND_APT_01 through UND_APT_03)
+  # ==========================================================================
+
+  - id: "UND_APT_01"
+    name: "Shambling Corpse"
+    category: "undead"
+    subcategory: "aptrgangr"
+    tier: 1
+    description: "Barely a threat alone. A dead farmer or thrall dragged upright by some residual pull from the barrow. Jaw slack, one arm hanging wrong. Moves like a drunk. The danger is in numbers — when a barrow vomits up a dozen of these at once."
+    stats:
+      MIG: 3
+      NIM: 1
+      TOU: 3
+      WIT: 1
+      WIL: 2
+      WYR: 2
+    hp: 4
+    skills:
+      - name: "Brawl"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Grasping Hands"
+          type: "unarmed"
+          speed: 1
+          base_damage: 2
+      armor:
+        torso: "Rotten Clothing"
+        head: "None"
+    tactics: "Moves toward nearest living thing. Grabs and holds. No coordination, no tactics. Strength is in numbers — multiple shambling corpses can overwhelm a single fighter by grappling."
+    morale_break: "Does not flee. Destroyed at 0 HP. Collapses when the animating force is disrupted."
+    group_size: "3-12"
+    abilities:
+      - "Mob Grapple: for each additional Shambling Corpse grappling the same target, MIG contest penalty increases by -1"
+      - "Slow: always acts last in initiative"
+      - "Expendable: no penalty to allied undead morale when destroyed"
+    combat_phases:
+      maneuvers:
+        - name: "Mob Pile"
+          description: "When 3+ shambling corpses are adjacent to same target, target is automatically grappled and prone; each corpse adds +1 to the MIG contest to escape."
+          cost: "Replaces attack"
+      on_death:
+        - name: "Tripping Hazard"
+          description: "Corpse falls in place, the square becomes difficult terrain; anyone moving through must NIM test or stumble."
+    resistances: ["cold", "fear", "bleeding"]
+    weaknesses: ["fire", "slashing", "decapitation", "sunlight"]
+    encounter_conditions:
+      terrain: ["barrow", "graveyard", "field", "road"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 1]
+      items: ["rotten_clothing", "grave_dirt"]
+    image_prompt: |
+      A slack-jawed corpse in rotten peasant clothing stumbling through
+      a moonlit field. One arm hangs at a bad angle. Bare feet dragging
+      through mud. Behind it, more shapes moving in the darkness — five,
+      six, more. A barrow mound visible on the hill behind. Cold moonlight,
+      mist at ankle height, desaturated greens and greys.
+
+  - id: "UND_APT_02"
+    name: "Night-Walker"
+    category: "undead"
+    subcategory: "aptrgangr"
+    tier: 2
+    description: "Only comes out after dark. By day it lies rigid in whatever shadow it found at dawn — under a cart, in a ditch, behind a woodpile. At night the eyes open and it walks. Faster than the shambling kind. Drawn to firelight and the sound of breathing."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 5
+      WIT: 2
+      WIL: 3
+      WYR: 3
+    hp: 8
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Stealth"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Grave-Cold Fists"
+          type: "unarmed"
+          speed: 2
+          base_damage: 4
+      armor:
+        torso: "Burial Clothes"
+        head: "None"
+    tactics: "Approaches camps at night, drawn to firelight. Circles the edge of the light before lunging at isolated targets. Avoids groups until it can catch someone alone. Returns to hiding before dawn."
+    morale_break: "Does not flee at night. Immediately retreats to nearest shadow if exposed to sunlight or strong firelight (bonfire-sized or larger)."
+    group_size: "1-3"
+    abilities:
+      - "Nocturnal: +1 to all stats at night; paralyzed and helpless during daylight hours"
+      - "Light-Shy: takes 2 damage per round in direct sunlight"
+      - "Shadow Step: +2 Stealth in darkness"
+      - "Drawn to Warmth: always targets the person nearest to a fire first"
+    combat_phases:
+      pre_battle:
+        - name: "Shadow Emergence"
+          description: "Steps out of darkness with no warning; first attack if undetected is at +3 to hit."
+      maneuvers:
+        - name: "Shadow Step"
+          description: "Teleports between shadow to shadow within 10 paces — cannot be attacked during the move."
+          cost: "Free action"
+        - name: "Throat Strike"
+          description: "-2 to hit but deals double base damage and target cannot call for help for d4 rounds."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Light-Shy Fury"
+          trigger: "Below 50% HP"
+          description: "Becomes reckless when wounded, +2 MIG but -2 NIM; any light source within 5 paces causes d2 extra damage to it per round."
+      on_death:
+        - name: "Shadow Pool"
+          description: "The body dissolves into a patch of supernatural darkness that persists for d6 hours; anything within the pool is hidden from sight."
+    resistances: ["cold", "fear", "bleeding"]
+    weaknesses: ["fire", "sunlight", "decapitation"]
+    encounter_conditions:
+      terrain: ["camp", "road", "village", "field"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 4]
+      items: ["burial_clothes", "grave_dirt", "stolen_trinket"]
+    image_prompt: |
+      A corpse standing at the edge of a campfire's light, just outside
+      the circle of warmth. Eyes open and reflecting the fire. Burial
+      clothes stained with earth. Hands at its sides, fingers slightly
+      curled. The camp behind is abandoned — bedrolls disturbed, a pot
+      overturned by the fire. Forest edge behind the figure. Night scene,
+      warm firelight on dead grey skin, deep darkness beyond.
+
+  - id: "UND_APT_03"
+    name: "Plague Carrier"
+    category: "undead"
+    subcategory: "aptrgangr"
+    tier: 2
+    description: "This one died of sickness and the sickness came with it when it stood back up. Skin mottled green and black, weeping from open sores. A cloud of flies follows it. Every scratch from its nails, every splash of its fluids, carries the rot."
+    stats:
+      MIG: 4
+      NIM: 2
+      TOU: 4
+      WIT: 1
+      WIL: 3
+      WYR: 3
+    hp: 7
+    skills:
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Diseased Claws"
+          type: "unarmed"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Plague-Rotted Flesh"
+        head: "None"
+    tactics: "Moves toward the living. Scratches and claws. Does not need to kill — one wound is enough to spread the sickness. Groups of plague carriers can contaminate a whole area."
+    morale_break: "Does not flee. Destroyed at 0 HP."
+    group_size: "2-6"
+    abilities:
+      - "Plague Touch: any wound inflicted requires TOU test at -1 or contract barrow-plague (progressive -1 TOU per day until treated or dead)"
+      - "Toxic Cloud: anyone within 1 pace must pass TOU test each round or suffer -1 to actions from nausea"
+      - "Disease Vector: upon death, corpse remains infectious for 1d6 days"
+      - "Slow: always acts last in initiative"
+    combat_phases:
+      pre_battle:
+        - name: "Toxic Miasma"
+          description: "The ground-level cloud of disease precedes it by 5 paces; TOU test or begin coughing (-1 to ranged attacks)."
+      maneuvers:
+        - name: "Plague Vomit"
+          description: "3-pace cone, d4 damage + TOU test at -1 or contract grave-plague; onset in d6 hours."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Lesion Burst"
+          trigger: "Below 50% HP"
+          description: "Pustules rupture, spraying fluid in 2-pace radius; TOU test or exposed to concentrated plague (onset in d4 hours instead of days)."
+    resistances: ["cold", "fear", "bleeding", "poison"]
+    weaknesses: ["fire", "slashing", "sunlight"]
+    encounter_conditions:
+      terrain: ["swamp", "graveyard", "village", "road"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [0, 2]
+      items: ["plague_sample", "rotted_clothing"]
+    image_prompt: |
+      A corpse with mottled green-black skin, open weeping sores on the
+      arms and face, stumbling through a foggy village street. A cloud of
+      black flies swirls around it. Bare feet leaving dark stains on the
+      packed earth. Abandoned village houses on either side, doors hanging
+      open. Overcast sky, sickly yellow-green light. Everything looks
+      damp and rotten.
+
+  # ==========================================================================
+  # SKELETAL (UND_SKEL_01 through UND_SKEL_03)
+  # ==========================================================================
+
+  - id: "UND_SKEL_01"
+    name: "Bone Soldier"
+    category: "undead"
+    subcategory: "skeletal"
+    tier: 1
+    description: "Stripped clean by time and worms, this skeleton still holds its weapon in a bony grip. Light enough to move fast, brittle enough to shatter. The jaw works soundlessly. The empty eye sockets track you with something that isn't quite sight."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 2
+      WIT: 1
+      WIL: 2
+      WYR: 2
+    hp: 4
+    skills:
+      - name: "Swords"
+        rank: 2
+      - name: "Shields"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Rusted Short Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 3
+      armor:
+        torso: "None"
+        head: "None"
+        shield: "Splintered Shield"
+    tactics: "Attacks in groups, using numbers to flank. Faster than expected. Fragile — a solid hit shatters limbs. Keeps fighting until completely dismantled."
+    morale_break: "Does not flee. Fights until every bone is broken."
+    group_size: "3-8"
+    abilities:
+      - "Brittle: takes double damage from bludgeoning weapons"
+      - "Light-Footed: +1 NIM due to low weight"
+      - "Reassemble: if not fully destroyed, pulls itself back together in 1d6 rounds"
+    combat_phases:
+      maneuvers:
+        - name: "Shield Splinter"
+          description: "When blocking with shield, the shield shatters but negates all damage from one attack; skeleton reforms the shield from ambient bones in d4 rounds if available."
+          cost: "Replaces attack"
+    resistances: ["cold", "fear", "bleeding", "piercing"]
+    weaknesses: ["bludgeoning", "fire", "holy symbols"]
+    encounter_conditions:
+      terrain: ["barrow", "ruins", "battlefield"]
+      season: ["any"]
+    loot:
+      silver_range: [0, 3]
+      items: ["rusted_short_sword", "bone_fragments"]
+    image_prompt: |
+      A clean human skeleton standing in a barrow niche, holding a rusted
+      short sword in one hand and a splintered round shield in the other.
+      Empty eye sockets with a faint pinprick of light deep inside. Jaw
+      slightly open. Other skeletons visible in alcoves behind, some
+      beginning to move. Stone walls, dust in the air, dim amber light
+      from a dropped torch on the ground.
+
+  - id: "UND_SKEL_02"
+    name: "Skeleton Archer"
+    category: "undead"
+    subcategory: "skeletal"
+    tier: 2
+    description: "Crouched in a barrow niche with a short bow of darkened yew, string replaced by something that looks like sinew but isn't. It doesn't breathe, so it doesn't tremble. The arrows fly straight and silent from the dark."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 2
+      WIT: 2
+      WIL: 3
+      WYR: 2
+    hp: 5
+    skills:
+      - name: "Bows"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Darkened Yew Bow"
+          type: "bow"
+          speed: 3
+          base_damage: 4
+        - name: "Bone Arrows"
+          type: "arrow"
+          speed: 0
+          base_damage: 0
+      armor:
+        torso: "None"
+        head: "None"
+    tactics: "Hides in barrow niches, arrow slits, or elevated positions. Fires at intruders from concealment. Relocates after being spotted. Targets torch-bearers and spellcasters first."
+    morale_break: "Does not flee. Continues firing until destroyed."
+    group_size: "2-4"
+    abilities:
+      - "Dead Aim: no penalty for shooting in dim light"
+      - "Silent Shot: arrows make no sound in flight; targets unaware until hit"
+      - "Brittle: takes double damage from bludgeoning weapons"
+      - "Elevated Position: +1 to Bows when shooting from above"
+    combat_phases:
+      maneuvers:
+        - name: "Pinning Shot"
+          description: "-2 to hit, but pins target's cloak/gear to ground or wall — NIM test or immobilized for 1 round."
+          cost: "Replaces attack"
+        - name: "Bone Arrow"
+          description: "Fires a sharpened rib bone — d6 damage and TOU test or festering wound, +1 damage per day until treated."
+          cost: "Once per encounter"
+      on_death:
+        - name: "Final Volley"
+          description: "Releases one last arrow at the nearest living target as it collapses; auto-attack at base damage."
+    resistances: ["cold", "fear", "bleeding", "piercing"]
+    weaknesses: ["bludgeoning", "fire", "holy symbols"]
+    encounter_conditions:
+      terrain: ["barrow", "ruins"]
+      season: ["any"]
+    loot:
+      silver_range: [1, 5]
+      items: ["darkened_bow", "bone_arrows", "bone_fragments"]
+    image_prompt: |
+      A skeleton crouched in a narrow stone niche high on a barrow wall,
+      short bow drawn, arrow nocked. Bone fingers on the string. Empty
+      eye sockets aimed down at the viewer. The barrow corridor below is
+      dim, with a fallen torch flickering on the ground. Other niches
+      visible along the wall, some empty, some holding more skeletal
+      shapes. Tight composition, looking up at the archer. Cold grey
+      stone, amber torchlight.
+
+  - id: "UND_SKEL_03"
+    name: "Bone-Swarm"
+    category: "undead"
+    subcategory: "skeletal"
+    tier: 3
+    description: "Not one skeleton but dozens, crushed together and moving as a single mass. A rolling wave of skulls, ribcages, femurs, and grasping hands that fills the corridor floor to ceiling. Individual bones are meaningless — destroy one and twenty more press forward. The sound is a dry rattling roar."
+    stats:
+      MIG: 6
+      NIM: 3
+      TOU: 6
+      WIT: 1
+      WIL: 4
+      WYR: 4
+    hp: 14
+    skills:
+      - name: "Brawl"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Grinding Bones"
+          type: "swarm"
+          speed: 2
+          base_damage: 5
+      armor:
+        torso: "Mass of Bone"
+        head: "N/A"
+    tactics: "Fills corridors and rolls forward. Engulfs targets. Cannot be flanked or surrounded. Pushes through barriers. Splitting the swarm reduces its effectiveness but doesn't stop it."
+    morale_break: "Does not flee. Collapses when HP reaches 0, bones falling inert."
+    group_size: "1 (swarm)"
+    abilities:
+      - "Engulf: anyone caught in the swarm's space takes automatic damage each round, no attack roll"
+      - "Swarm Body: immune to single-target attacks; area effects deal full damage"
+      - "Corridor Fill: blocks passage entirely in spaces less than 3 paces wide"
+      - "Grinding: engulfed targets lose 1 point of armor durability per round"
+      - "Split: if dealt 7+ damage in one hit, splits into two half-strength swarms (7 HP each)"
+    combat_phases:
+      pre_battle:
+        - name: "Bone Rattle"
+          description: "Corridor fills with the sound of hundreds of bones scraping stone; terrible grinding crescendo; WIL test or -2 initiative."
+      maneuvers:
+        - name: "Corridor Fill"
+          description: "Can expand to fill a 3-pace-wide corridor, blocking all movement; anyone trying to push through takes d6 damage per pace."
+          cost: "Replaces attack"
+        - name: "Skeletal Spear"
+          description: "Launches a dense column of bones at one target — d8 piercing damage, 5-pace range."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Swarm Compression"
+          trigger: "Below 50% HP"
+          description: "Collapses into a dense spinning mass of bone; becomes a 1-pace entity with +3 TOU; movement speed doubles; grinding damage to adjacent targets increases to d8."
+      on_death:
+        - name: "Bone Shrapnel"
+          description: "Explodes outward in a 5-pace radius; d6 piercing damage to all within range, NIM test to halve; the corridor is littered with sharp bone fragments (difficult terrain)."
+    resistances:
+      ["cold", "fear", "bleeding", "piercing", "single-target attacks"]
+    weaknesses: ["bludgeoning", "fire", "area effects", "holy symbols"]
+    encounter_conditions:
+      terrain: ["barrow", "ruins", "catacomb"]
+      season: ["any"]
+    loot:
+      silver_range: [3, 15]
+      items: ["bone_fragments", "buried_jewelry", "lost_weapon"]
+    image_prompt: |
+      A corridor in a deep barrow completely filled with a rolling mass of
+      bones — skulls tumbling over ribcages, femurs grinding against each
+      other, hundreds of skeletal hands grasping from the mass. The wave
+      fills the passage floor to ceiling. A dropped shield being consumed
+      by the tide of bone. Stone corridor walls, torchlight illuminating
+      the chaos. Dust thick in the air. Motion blur on the leading edge
+      of the swarm. Terrifying scale.
+
+  # ==========================================================================
+  # BARROW SPECIALS (UND_SPEC_01 through UND_SPEC_04)
+  # ==========================================================================
+
+  - id: "UND_SPEC_01"
+    name: "Corpse-Light"
+    category: "undead"
+    subcategory: "barrow_special"
+    tier: 1
+    description: "A cold blue-white flame that drifts through barrow passages and out across marshland at night. Not a creature exactly — more like a symptom. It bobs and weaves ahead of you, always just far enough to follow. It leads to open graves, pit traps, barrow entrances, and thin ice. It has never led anyone anywhere safe."
+    stats:
+      MIG: 1
+      NIM: 4
+      TOU: 1
+      WIT: 3
+      WIL: 3
+      WYR: 4
+    hp: 4
+    skills:
+      - name: "Deception"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+    gear:
+      weapons:
+        - name: "None"
+          type: "none"
+          speed: 0
+          base_damage: 0
+      armor:
+        torso: "Incorporeal"
+        head: "None"
+    tactics: "Does not attack directly. Appears as a comforting light in darkness. Leads followers toward hazards — pits, unstable ground, barrow traps, deeper undead. Extinguishes if directly approached, reappears behind the target."
+    morale_break: "Extinguishes if hit with any attack. Re-forms 1d6 hours later."
+    group_size: "1-3"
+    abilities:
+      - "Luring Glow: WIL test to resist following the light; -2 for lost or frightened targets"
+      - "Incorporeal: immune to physical attacks; only magical or fire-based attacks can harm"
+      - "Trap Guide: always leads toward the nearest barrow hazard or ambush"
+      - "False Comfort: suppresses fear effects in those following it, making them less cautious"
+      - "Non-Combatant: cannot deal damage directly"
+    resistances: ["cold", "fear", "bleeding", "physical weapons", "poison"]
+    weaknesses: ["fire", "sunlight", "holy symbols", "magical attacks"]
+    encounter_conditions:
+      terrain: ["barrow", "swamp", "moor", "field"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+    image_prompt: |
+      A small cold blue-white flame floating at head height in a dark
+      barrow passage. The flame casts no warmth but illuminates the
+      walls faintly. Ahead of the flame, barely visible, the corridor
+      floor drops away into a pit. Behind the viewer, deeper darkness.
+      The flame seems to beckon forward. Cold blue tones, stone walls
+      glistening with moisture, a sense of depth and danger ahead.
+
+  - id: "UND_SPEC_02"
+    name: "Barrow Guardian"
+    category: "undead"
+    subcategory: "barrow_special"
+    tier: 4
+    description: "A warrior spirit that never left its post. The armor is ancient but intact — bronze plates laced with leather, green with age but still solid. The body inside is hollow, held together by will and old oaths. It fights the way it was trained: perfectly. No wasted movement. No anger. Just execution."
+    stats:
+      MIG: 7
+      NIM: 6
+      TOU: 7
+      WIT: 4
+      WIL: 7
+      WYR: 4
+    hp: 16
+    skills:
+      - name: "Swords"
+        rank: 4
+      - name: "Spears"
+        rank: 4
+      - name: "Shields"
+        rank: 3
+      - name: "Brawl"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Bronze-Headed Spear"
+          type: "spear"
+          speed: 3
+          base_damage: 6
+        - name: "Ancient Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 6
+      armor:
+        torso: "Ancient Bronze Plate"
+        head: "Bronze Face-Helm"
+        shield: "Tower Shield"
+    tactics: "Holds chokepoints with spear and shield. Switches to sword if enemies close inside spear reach. Uses terrain perfectly — doorways, stairs, narrow passages. Never overextends. Never chases."
+    morale_break: "Does not flee. Fights until destroyed. Returns to guard position if intruders retreat."
+    group_size: "1"
+    abilities:
+      - "Perfect Form: cannot be feinted; immune to combat tricks and intimidation"
+      - "Chokepoint Master: when fighting in a doorway or narrow passage, enemies cannot flank"
+      - "Weapon Switch: can change between spear and sword as a free action"
+      - "Oath-Bound: cannot be turned, commanded, or controlled by necromancy"
+      - "Shield Wall: +2 to defense when braced in a doorway or corridor"
+    combat_phases:
+      pre_battle:
+        - name: "Oath Declaration"
+          description: "Announces itself in the Old Tongue, challenging intruders; those who answer in the Old Tongue may negotiate; those who advance are attacked without mercy."
+      maneuvers:
+        - name: "Chokepoint Lock"
+          description: "When defending a doorway or narrow passage, cannot be pushed, pulled, or moved by any means; all attacks against targets trying to pass gain +2."
+          cost: "Free action"
+        - name: "Oath-Strike"
+          description: "An empowered blow — d10 damage and target is knocked back 3 paces."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Oath Fury"
+          trigger: "Below 50% HP"
+          description: "The Guardian's oath-bound duty strengthens it; +2 MIG, heals d6 HP once; stone dust falls from the ceiling as its rage shakes the corridor."
+      on_death:
+        - name: "Guardian's Rest"
+          description: "Finally falls to its knees and speaks its name and the name of who it served; the doorway it guarded becomes physically easier to pass (traps disarm, locks open)."
+    resistances: ["cold", "fear", "bleeding", "poison", "mind control"]
+    weaknesses: ["fire", "silver", "rune-weapons"]
+    encounter_conditions:
+      terrain: ["barrow", "ruins"]
+      season: ["any"]
+    loot:
+      silver_range: [10, 30]
+      items:
+        [
+          "bronze_spear",
+          "ancient_sword",
+          "bronze_plate_fragment",
+          "tower_shield",
+        ]
+    image_prompt: |
+      A hollow suit of ancient bronze armor standing in a barrow doorway,
+      spear leveled, tower shield filling the frame. The armor is
+      green-patinated but intact. Through the eye slits of the face-helm,
+      nothing — just darkness. The stance is perfect, weight balanced,
+      spear point unwavering. Carved stone doorway, burial chamber behind
+      with a sarcophagus visible. Amber torchlight reflecting off bronze.
+      The figure radiates stillness and readiness.
+
+  - id: "UND_SPEC_03"
+    name: "The Restless"
+    category: "undead"
+    subcategory: "barrow_special"
+    tier: 3
+    description: "Fresh dead from a recent battle, risen within days. Still in war-gear, blood still damp on the mail. These aren't ancient things from barrows — they're last week's casualties, standing back up. That's what makes them worse. You might recognize a face."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 2
+      WIL: 4
+      WYR: 3
+    hp: 9
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Axes"
+        rank: 2
+      - name: "Shields"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Blood-Stained Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 5
+      armor:
+        torso: "Dented Mail"
+        head: "Dented Helm"
+        shield: "Battered Shield"
+    tactics: "Fights with recent muscle memory. More coordinated than ancient undead. Can form shield walls and fight in formation. Targets former allies — drawn to the living they knew."
+    morale_break: "Does not flee. Destroyed at 0 HP."
+    group_size: "3-8"
+    abilities:
+      - "Battle Memory: retains formation fighting and shield wall capability"
+      - "Familiar Face: allies who recognize the corpse must pass WIL test or suffer -1 to attacks against it"
+      - "Fresh Strength: fights at full combat effectiveness, no decay penalties"
+      - "War-Gear: equipped with functional (not corroded) weapons and armor"
+    combat_phases:
+      pre_battle:
+        - name: "Recognition"
+          description: "PCs must WIL test when they recognize the face; failure means hesitation — cannot attack on first round."
+      maneuvers:
+        - name: "Familiar Voice"
+          description: "Speaks in the dead person's voice, asking for help — WIL test at -2 or PC cannot attack this target for d4 rounds."
+          cost: "Once per encounter"
+        - name: "Fresh Strength Surge"
+          description: "The body fights at its prime — one attack at +3 to hit."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Death Memory"
+          trigger: "Below 50% HP"
+          description: "The dead person's final moments replay through its movements; it fights more desperately but speaks the last words of the dead (psychological torment -1 WIL to witnesses)."
+      on_death:
+        - name: "Face Reveal"
+          description: "The familiar features slacken into the true face of death; WIL test or gain a permanent unease about the dead person's memory (RP consequence, -1 when dealing with that person's relatives)."
+    resistances: ["cold", "fear", "bleeding"]
+    weaknesses: ["fire", "silver", "decapitation", "sunlight"]
+    encounter_conditions:
+      terrain: ["battlefield", "road", "camp", "field"]
+      season: ["any"]
+    loot:
+      silver_range: [3, 12]
+      items:
+        ["functional_sword", "mail_shirt", "helm", "shield", "personal_effects"]
+    image_prompt: |
+      Three dead warriors in dented but functional mail and helms, standing
+      in a muddy field at dusk. Blood still wet on their gear. Swords and
+      shields held in fighting stances. Wounds visible — a gash across one
+      face, a broken arrow shaft in another's shoulder. Behind them, more
+      shapes rising from the mud. Battlefield debris — broken spears,
+      a fallen banner. Red-orange sunset sky, dark mud, steel grey mail.
+      The horror is how normal they look.
+
+  - id: "UND_SPEC_04"
+    name: "Grave-Mist"
+    category: "undead"
+    subcategory: "barrow_special"
+    tier: 2
+    description: "Not a creature but a presence. A thick grey-green fog that seeps from cracked barrow stones and spreads across the ground. It smells of turned earth and iron. Inside the mist, the cold bites to the bone and the dead stir. Breathing it brings visions of burial and the taste of grave-dirt."
+    stats:
+      MIG: 1
+      NIM: 1
+      TOU: 8
+      WIT: 1
+      WIL: 5
+      WYR: 4
+    hp: 10
+    skills:
+      - name: "Stealth"
+        rank: 4
+    gear:
+      weapons:
+        - name: "Choking Fog"
+          type: "area"
+          speed: 0
+          base_damage: 2
+      armor:
+        torso: "Diffuse"
+        head: "N/A"
+    tactics: "Spreads slowly from a barrow entrance or crack in the earth. Fills low ground. Deals passive damage to anyone breathing inside it. Obscures vision, making unseen undead more dangerous. Cannot be fought conventionally."
+    morale_break: "Does not flee. Dissipates in strong wind or direct sunlight. Re-forms at dusk."
+    group_size: "1 (area)"
+    abilities:
+      - "Area Hazard: fills a 10-pace radius; all inside take 2 damage per round (TOU test to halve)"
+      - "Vision Obscured: -2 to all ranged attacks and perception within the mist"
+      - "Grave Visions: WIL test each round inside or suffer hallucinations (disoriented, -1 WIT)"
+      - "Dead Stirring: undead within the mist gain +1 to all stats"
+      - "Diffuse: immune to physical and single-target attacks; dispersed by strong wind or fire"
+    resistances:
+      [
+        "cold",
+        "fear",
+        "bleeding",
+        "physical weapons",
+        "piercing",
+        "slashing",
+        "bludgeoning",
+      ]
+    weaknesses: ["fire", "strong wind", "sunlight"]
+    encounter_conditions:
+      terrain: ["barrow", "swamp", "graveyard", "moor"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 0]
+      items: []
+    image_prompt: |
+      A thick grey-green fog rolling out of a cracked barrow entrance at
+      dusk, spreading across marshy ground. Within the mist, faint shapes
+      move — suggestions of reaching hands and hollow faces. The fog hugs
+      the ground, knee-deep at the edges, chest-deep near the barrow.
+      A dead tree stands half-consumed by the mist. The sky above is
+      darkening. Cold greens, greys, and muted earth tones. An oppressive,
+      smothering atmosphere.
+
+  # ==========================================================================
+  # VEIL-TOUCHED (UND_VEIL_01 through UND_VEIL_04)
+  # ==========================================================================
+
+  - id: "UND_VEIL_01"
+    name: "Veil-Touched Farmer"
+    category: "undead"
+    subcategory: "veil_touched"
+    tier: 2
+    description: "Still alive in the technical sense. A farmstead too close to a barrow, seasons of bad dreams, and now this. Grey skin, black veins visible at the wrists and throat. Doesn't blink anymore. Speaks in fragments, repeating phrases from the dead. Stronger than a farmer should be. Doesn't feel the cold."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 5
+      WIT: 2
+      WIL: 2
+      WYR: 3
+    hp: 7
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Axes"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Wood Axe"
+          type: "axe"
+          speed: 2
+          base_damage: 4
+      armor:
+        torso: "Wool Tunic"
+        head: "None"
+    tactics: "Acts on instinct. Protects the nearby barrow as if it were home. Attacks intruders who approach the barrow entrance. Doesn't coordinate but other veil-touched in the area gravitate to the same location."
+    morale_break: "Does not flee. Can be subdued. If dragged far from the barrow, becomes confused and docile."
+    group_size: "1-3"
+    abilities:
+      - "Barrow-Drawn: always moves toward the nearest barrow; becomes agitated if restrained"
+      - "Unnatural Strength: MIG is 2 higher than a normal farmer"
+      - "Dead Whisper: repeats phrases spoken by the barrow dead; WIL test or -1 to actions from unease"
+      - "Partially Dead: takes half damage from cold; immune to fear and bleeding below half HP"
+    combat_phases:
+      pre_battle:
+        - name: "Normal Approach"
+          description: "Walks toward the party looking like a living person; Deception check vs party's WIT; only close inspection (3 paces) reveals the grey skin and black veins."
+      maneuvers:
+        - name: "Desperate Swing"
+          description: "Wild attack at +2 MIG but -2 NIM; the farming tools make unpredictable weapons."
+          cost: "Replaces attack"
+      bloodied:
+        - name: "Barrow Pull"
+          trigger: "Below 50% HP"
+          description: "The barrow's influence strengthens; the farmer's eyes go fully amber, +2 MIG, speech becomes the barrow-king's voice giving commands."
+      on_death:
+        - name: "Release"
+          description: "If killed away from the barrow, the body collapses and looks briefly peaceful; the human features return for a moment. Anyone witnessing this loses 1 WIL temporarily from guilt."
+    resistances: ["cold", "fear"]
+    weaknesses: ["fire", "removal from barrow proximity", "silver"]
+    encounter_conditions:
+      terrain: ["farm", "field", "barrow_approach", "road"]
+      season: ["any"]
+    loot:
+      silver_range: [1, 5]
+      items: ["wood_axe", "farm_tools", "tarnished_amulet"]
+    image_prompt: |
+      A farmer standing in a muddy field near a barrow mound, holding a
+      wood axe. Grey skin, black veins visible on hands and neck. Eyes
+      open and unblinking. Wool tunic stained with dirt. The posture is
+      wrong — too still, weight slightly forward. A farmstead in the
+      background with a cold hearth, no smoke. The barrow visible on
+      the hill behind. Overcast, muted colors, an unsettling normalcy.
+
+  - id: "UND_VEIL_02"
+    name: "Barrow-Sick Warrior"
+    category: "undead"
+    subcategory: "veil_touched"
+    tier: 3
+    description: "A fighter who went into a barrow for treasure and came back different. The body is still warm but the eyes are wrong — too wide, pupils blown. Black veins web across the face and hands. Fights berserk, ignoring wounds that should kill. Talks to people who aren't there between attacks."
+    stats:
+      MIG: 6
+      NIM: 4
+      TOU: 6
+      WIT: 2
+      WIL: 3
+      WYR: 4
+    hp: 11
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Brawl"
+        rank: 3
+      - name: "Axes"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Looted Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 6
+      armor:
+        torso: "Leather Armor"
+        head: "None"
+    tactics: "Attacks with berserk fury. Targets anyone who approaches the barrow or tries to take treasure from it. Fights without self-preservation. Talks to invisible presences between swings."
+    morale_break: "Does not flee. Fights until dead. Can be knocked unconscious but wakes violent."
+    group_size: "1-2"
+    abilities:
+      - "Berserk: +1 MIG when below half HP; cannot be reasoned with during combat"
+      - "Pain Blind: ignores wound penalties until 0 HP"
+      - "Barrow-Bound Will: controlled by the barrow's influence; WIL tests against barrow commands automatically fail"
+      - "Unnatural Stamina: can act for one additional round after reaching 0 HP before collapsing"
+      - "Infected: contact with their blood requires TOU test or gain 1 barrow-corruption"
+    combat_phases:
+      pre_battle:
+        - name: "Berserk Challenge"
+          description: "Screams a war-cry from its living days; all within earshot WIL test or -1 to hit for first round from the unnatural volume."
+      maneuvers:
+        - name: "Reckless Assault"
+          description: "+3 to hit, +2 damage, but attacker takes 2 damage from self-inflicted cuts and impacts."
+          cost: "Replaces attack"
+        - name: "Infected Spray"
+          description: "Deliberately reopens own wounds — blood sprays in 2-pace arc, TOU test or gain 1 barrow-corruption."
+          cost: "Once per encounter"
+      bloodied:
+        - name: "Pain Threshold"
+          trigger: "Below 50% HP"
+          description: "Ignores wound penalties AND gains +1 MIG; begins babbling to invisible presences, pointing at PC positions, potentially directing unseen barrow forces."
+      on_death:
+        - name: "Corrupted Collapse"
+          description: "The body convulses and black blood pools around it; anyone standing in the pool (1-pace radius) must TOU test or gain 1 barrow-corruption; the body cannot be raised as undead — too far corrupted."
+    resistances: ["cold", "fear", "pain"]
+    weaknesses: ["fire", "silver", "isolation from barrow"]
+    encounter_conditions:
+      terrain: ["barrow", "barrow_approach", "road", "camp"]
+      season: ["any"]
+    loot:
+      silver_range: [5, 15]
+      items:
+        ["looted_sword", "leather_armor", "barrow_trinket", "personal_effects"]
+    image_prompt: |
+      A wild-eyed warrior in leather armor, sword raised, standing at the
+      entrance of a barrow. Black veins webbing across the face and hands.
+      Pupils fully dilated. Blood on the sword and on the ground around
+      bare feet. The posture is aggressive, leaning forward. Mouth open
+      as if speaking to someone not visible. Torchlight from inside the
+      barrow behind creating a halo. Evening sky. The living and the dead
+      blurring together.
+
+  - id: "UND_VEIL_03"
+    name: "Corpse-Speaker"
+    category: "undead"
+    subcategory: "veil_touched"
+    tier: 3
+    description: "Was human once and may still believe it is. A gaunt figure with ritual scars and blackened fingertips, surrounded by the dead it speaks to. Not a necromancer in the traditional sense — the dead simply obey it because it's closer to their world than to ours. Cult followers treat it as a prophet."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 4
+      WIT: 5
+      WIL: 6
+      WYR: 6
+    hp: 9
+    skills:
+      - name: "Command"
+        rank: 3
+      - name: "Intimidation"
+        rank: 3
+      - name: "Deception"
+        rank: 2
+      - name: "Rituals"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Bone Staff"
+          type: "staff"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Ritual Robes"
+        head: "None"
+    tactics: "Never fights directly. Commands undead servants to intercept while it stays at range. Attempts to animate fresh corpses during combat. If cornered, uses Corpse Shield ability. Surrenders if all undead servants are destroyed and will try to negotiate."
+    morale_break: "Attempts to flee if all undead servants are destroyed. Surrenders if caught. Can be reasoned with, unlike true undead."
+    group_size: "1 (with 2-6 undead servants)"
+    abilities:
+      - "Animate Dead: can raise up to 3 Shambling Corpses from available remains as an action"
+      - "Command Undead: controls up to 6 lesser undead within earshot"
+      - "Corpse Shield: can redirect one melee attack per round to an adjacent undead servant"
+      - "Death Speech: can communicate with any undead; learns barrow secrets and trap locations"
+      - "Veil Sight: can see in total darkness; senses the presence of undead within 20 paces"
+    combat_phases:
+      pre_battle:
+        - name: "Corpse Vanguard"
+          description: "Sends undead servants forward while staying hidden; uses dead scouts to map PC positions."
+      maneuvers:
+        - name: "Emergency Raise"
+          description: "When an undead servant is destroyed, attempt raising it immediately — WIL test at -2, success means it rises again at 1 HP."
+          cost: "Free action"
+        - name: "Corpse Shield Redirect"
+          description: "When targeted by melee, redirect the attack to an adjacent undead servant — automatic, once per round."
+          cost: "Free action"
+      bloodied:
+        - name: "Veil Pulse"
+          trigger: "Below 50% HP"
+          description: "In desperation, channels Veil energy outward; all corpses within 10 paces animate as Shambling Corpses (regardless of prior state); gains d4 temporary HP."
+      on_death:
+        - name: "Corpse Cascade"
+          description: "All currently controlled undead collapse simultaneously; the Corpse-Speaker's journal reveals barrow layouts and treasure locations."
+    resistances: ["cold", "fear"]
+    weaknesses:
+      ["fire", "silver", "isolation from corpses", "disrupting concentration"]
+    encounter_conditions:
+      terrain: ["barrow", "graveyard", "ruins", "cave"]
+      season: ["any"]
+    loot:
+      silver_range: [5, 20]
+      items: ["bone_staff", "ritual_components", "corpse_journal", "barrow_map"]
+    image_prompt: |
+      A gaunt figure in dark ritual robes standing in a moonlit graveyard,
+      bone staff raised. Blackened fingertips. Ritual scars on the
+      exposed forearms. Around the figure, three corpses standing at
+      attention — a farmer, a warrior, a child — all grey-skinned and
+      still. The Corpse-Speaker's mouth is moving. Behind, crude shelters
+      and a fire pit — a camp of living followers watching from the edges.
+      Moonlight, cold blue tones, the living and dead together. Unsettling
+      calm.
+
+  - id: "UND_VEIL_04"
+    name: "Thrall of the Barrow"
+    category: "undead"
+    subcategory: "veil_touched"
+    tier: 4
+    description: "Whatever this person was is gone. The barrow-king's will fills the body like a hand in a glove. Skin is cold and grey but the muscles move with terrible strength. The eyes glow the same amber as the ancient draugr that commands it. It speaks with two voices — its own, pleading, underneath the barrow-king's commands."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 7
+      WIT: 4
+      WIL: 2
+      WYR: 5
+    hp: 15
+    skills:
+      - name: "Swords"
+        rank: 4
+      - name: "Brawl"
+        rank: 3
+      - name: "Shields"
+        rank: 3
+      - name: "Intimidation"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Barrow-King's Blade"
+          type: "sword"
+          speed: 3
+          base_damage: 7
+      armor:
+        torso: "Ancient Mail, Restored"
+        head: "Iron Helm"
+        shield: "Heavy Round Shield"
+    tactics: "Fights as the barrow-king's champion. Engages the strongest opponent while lesser undead handle the rest. Fights with precision and fury. If the barrow-king is destroyed, the thrall collapses — the host may survive if the body hasn't been pushed past its limits."
+    morale_break: "Does not flee while barrow-king lives. If barrow-king is destroyed, collapses immediately."
+    group_size: "1"
+    abilities:
+      - "Barrow-King's Puppet: controlled directly by the barrow-king; shares the king's tactical intelligence"
+      - "Superhuman Strength: MIG exceeds normal human limits due to supernatural enhancement"
+      - "Two Voices: occasionally the host's personality surfaces; WIL test from the host at a dramatic moment may cause the thrall to hesitate for 1 round"
+      - "Fearless: immune to fear, intimidation, and morale effects"
+      - "Pain Drain: the barrow-king absorbs the thrall's pain; the thrall ignores all wound penalties"
+      - "Kill-Link: if the barrow-king is destroyed, the thrall drops to 0 HP instantly"
+    combat_phases:
+      pre_battle:
+        - name: "Champion's Challenge"
+          description: "The barrow-king speaks through the thrall, offering single combat; the thrall's fighting stance reveals master-level swordsmanship."
+      maneuvers:
+        - name: "King's Precision"
+          description: "The barrow-king takes direct control mid-swing — the attack gains +3 to hit and ignores shield; the thrall's own face briefly shows horror."
+          cost: "Once per encounter"
+        - name: "Bound Shield"
+          description: "When the barrow-king's will is exerted, the thrall gains +2 to all defensive rolls for 1 round."
+          cost: "Free action"
+      bloodied:
+        - name: "Host Surfaces"
+          trigger: "Below 50% HP"
+          description: "The human personality fights through for d4 rounds; the thrall stops attacking and pleads for help; WIL contest between host (WIL 2) and barrow-king (WIL 9) each round to see who controls the body; if PCs help the host in this window, the barrow-king's control can be permanently broken."
+      on_death:
+        - name: "Will Collapse"
+          description: "If killed, the barrow-king's control is severed violently; the host may survive if body HP is above -5; psychic backlash reaches the barrow-king, dealing d6 damage to it; the thrall's equipment remains intact."
+    resistances: ["cold", "fear", "bleeding", "pain", "mind control"]
+    weaknesses:
+      [
+        "fire",
+        "silver",
+        "destroying the barrow-king",
+        "reaching the host's personality",
+      ]
+    encounter_conditions:
+      terrain: ["barrow", "barrow_approach", "ruins"]
+      season: ["any"]
+    loot:
+      silver_range: [10, 25]
+      items:
+        [
+          "barrow_kings_blade",
+          "ancient_mail",
+          "iron_helm",
+          "heavy_shield",
+          "host_personal_effects",
+        ]
+    image_prompt: |
+      A powerfully built figure in restored ancient mail and an iron helm,
+      standing at the entrance to a barrow king's chamber. Grey skin,
+      amber glow in the eyes matching the faint glow from deeper in the
+      barrow. A long sword in one hand, a heavy round shield in the other.
+      The body is tense, veins standing out on the neck. The mouth is
+      slightly open — two expressions fighting for the face, one of cold
+      command and one of trapped anguish. Dark stone chamber, amber
+      light from within, a sense of terrible puppetry.

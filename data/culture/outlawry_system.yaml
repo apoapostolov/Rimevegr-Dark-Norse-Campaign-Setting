@@ -1,0 +1,305 @@
+# Iron Ledger — Outlawry Legal System
+# The full legal framework for outlawry in the Rimevegr.
+# Cross-references: 01_RIMEVEGR_SETTING_BIBLE.md (Law and Justice),
+#   20_SIMULATION_RULES.md §18 (Village Politics), data/events/.
+# Currency: 1 silver = 10 copper. Merc retainer: 2 silver/week.
+
+# =================================================================
+# TYPES OF OUTLAWRY
+# =================================================================
+
+outlawry_types:
+  - id: "OUTLAW_LESSER"
+    name: "Fjörbaugsgarðr"
+    translation: "Life-ring exile"
+    severity: "lesser"
+    duration_years: 3
+    description: >
+      Three-year exile from the ruling jarl's territory. The outlawed
+      man may pay weregild to return before the term expires. He retains
+      legal personhood outside the exile territory — he can trade, swear
+      oaths, and testify at a ting in another jarl's domain. But word
+      travels. A man under fjörbaugsgarðr carries the mark even where
+      the ruling does not bind.
+    consequences:
+      - "Banned from ruling jarl's territory for 3 years"
+      - "May not enter any settlement under that jarl's authority"
+      - "Property seized — may be returned after exile if weregild paid"
+      - "Family may choose to follow or disown"
+      - "Can trade and shelter in other jarls' territories"
+      - "Cannot testify at ting in ruling jarl's domain"
+      - "May be killed without weregild ONLY within exile territory"
+    return_conditions:
+      - "Survive 3 years of exile"
+      - "Pay weregild to the wronged party (amount set at ting)"
+      - "Third party may pay weregild on the exile's behalf"
+      - "Return requires formal readmission at ting"
+    weregild_typical_copper:
+      minor_offense: 100
+      moderate_offense: 300
+      serious_offense: 500
+
+  - id: "OUTLAW_FULL"
+    name: "Skóggangr"
+    translation: "Forest-going"
+    severity: "full"
+    duration_years: null # permanent
+    description: >
+      Permanent outlawry. The man is declared vargr — wolf. He has no
+      legal personhood anywhere in the Rimevegr. He may be killed by
+      anyone without weregild. He cannot trade in settlements, cannot
+      testify, cannot swear binding oaths. His property is forfeit.
+      His family may be required to formally disown him or share his
+      status. The forests and moors are full of men under skóggangr
+      who survived anyway.
+    consequences:
+      - "Permanent exile from ALL settlements in the Rimevegr"
+      - "May be killed by anyone without legal consequence"
+      - "All property forfeit to the wronged party"
+      - "Family must formally disown or share outlaw status"
+      - "Cannot trade in any settlement"
+      - "Cannot testify at any ting"
+      - "Cannot swear binding oaths"
+      - "Name struck from thing records"
+    return_conditions:
+      - "Exceptional service to a jarl (saving kin, military service)"
+      - "Bringing a worse outlaw's head to a ting"
+      - "Formal petition by a jarl with thing approval"
+      - "In practice: almost never happens"
+
+# =================================================================
+# OFFENSES THAT TRIGGER OUTLAWRY
+# =================================================================
+
+outlawry_offenses:
+  - offense: "Oath-breaking at ting"
+    typical_severity: "full"
+    notes: "Breaking an oath sworn before witnesses at the thing"
+
+  - offense: "Murder without weregild offer"
+    typical_severity: "full"
+    notes: "Killing a freeman and refusing to pay or negotiate weregild"
+
+  - offense: "Theft from a host"
+    typical_severity: "lesser"
+    notes: "Violating guest-right by stealing. The host's word is proof."
+
+  - offense: "Harboring a full outlaw"
+    typical_severity: "lesser"
+    notes: >
+      Knowingly sheltering a man under skóggangr. The harborer's
+      settlement may be fined. Repeated offense escalates to full.
+
+  - offense: "Failure to pay weregild debt"
+    typical_severity: "lesser"
+    notes: "Debt owed from a killing or injury. 3 ting-cycles to pay."
+
+  - offense: "Fleeing a blood-feud without settlement"
+    typical_severity: "lesser"
+    notes: >
+      Abandoning a feud obligation without negotiating peace.
+      The fleeing party's kin inherit the obligation.
+
+  - offense: "Seiðr-crimes"
+    typical_severity: "varies"
+    notes: >
+      Death-seiðr (rank 4+ spirit compulsion) is always full outlawry.
+      Other seiðr offenses depend on the jarl. Some jarls outlaw all
+      male seiðr practice. Others tolerate it. See 20_SIMULATION_RULES.md
+      §11.8.4 (Dark Arts classification).
+
+  - offense: "Contract default"
+    typical_severity: "lesser"
+    notes: >
+      A mercenary band that takes payment and fails to deliver.
+      Jarl may declare the captain or the entire band outlawed.
+      See 20_SIMULATION_RULES.md §13 (Contracts and Reputation).
+
+  - offense: "Blood-galdr"
+    typical_severity: "full"
+    notes: >
+      Galdr using another person's unwilling blood. Automatic full
+      outlawry. See 20_SIMULATION_RULES.md §11.8.3 (blood-galdr
+      exception).
+
+  - offense: "Kinslaying (freeman)"
+    typical_severity: "full"
+    notes: "Killing a blood relative who is a freeman. No weregild path."
+
+  - offense: "Intentional Veil-thinning"
+    typical_severity: "full"
+    notes: >
+      Deliberately weakening the Veil. Triggers settlement panic,
+      feud +3 with all neighbors. See 20_SIMULATION_RULES.md §11.8.4.
+
+  - offense: "Arson of a dwelling"
+    typical_severity: "full"
+    notes: >
+      Burning an occupied hall or farmstead. The crime that made
+      Thorne an orphan. No weregild — the burned cannot be repaid.
+
+# =================================================================
+# THE PROCESS
+# =================================================================
+
+outlawry_process:
+  accusation:
+    description: >
+      Any freeman may accuse another at the ting. The accuser must
+      name the offense, present at least one witness, and formally
+      request the thing's judgment. The lawspeaker records the charge.
+    requirements:
+      - "Accuser must be a freeman (thralls cannot accuse)"
+      - "At least one witness to the offense or its consequences"
+      - "Formal statement before the ting with named lawspeaker"
+
+  defense:
+    description: >
+      The accused may speak in their own defense, call witnesses,
+      present counter-claims, or challenge the accuser to swear an
+      oath of truth. If the accused does not appear at the ting,
+      judgment proceeds in absentia — which almost always means
+      conviction.
+    options:
+      - "Personal testimony"
+      - "Witness testimony (seiðr testimony per §11.8.2 rules)"
+      - "Counter-accusation"
+      - "Oath of truth (both parties swear; false oath = outlawry)"
+      - "Weregild offer (preemptive — may prevent outlawry ruling)"
+
+  ruling:
+    description: >
+      The lawspeaker proposes a ruling. The assembled freemen vote
+      by acclamation (shouting). A clear majority decides. Close
+      votes may be re-called or referred to the overjarl.
+    outcomes:
+      acquittal: "Accused cleared. Accuser may face counter-charge."
+      lesser_outlawry: "Fjörbaugsgarðr — 3-year exile, weregild set."
+      full_outlawry: "Skóggangr — permanent, immediate expulsion."
+      compromise: "Both parties fined. Feud +1 between settlements."
+
+  grace_period:
+    duration_days: 3
+    description: >
+      After a ruling of outlawry, the condemned has 3 days to leave
+      the jarl's territory. During this period, he may gather
+      possessions, say farewells, and arrange his affairs. After 3
+      days, he is kill-on-sight within the territory. Some men use
+      the grace period to recruit followers or plan revenge. Wise
+      lawspeakers watch them.
+
+  enforcement:
+    description: >
+      Enforcement is local and imperfect. A jarl's outlawry ruling
+      binds his territory. Other jarls may honor it as a courtesy
+      or ignore it as politics dictates. Active enforcement means
+      sending armed men — usually mercenaries — to hunt the outlaw
+      or drive him from the borders. Passive enforcement means
+      refusing trade and shelter. Most jarls choose passive unless
+      the outlaw becomes a problem.
+    methods:
+      - "Mercenary hunting contracts (15-50 copper per head)"
+      - "Settlement gate enforcement (refused entry)"
+      - "Trade blacklisting"
+      - "Bounty posting at ting"
+      - "Militia patrol of borders"
+
+# =================================================================
+# LOOPHOLES AND GRAY AREAS
+# =================================================================
+
+gray_areas:
+  - name: "Jurisdictional limits"
+    description: >
+      Outlawry from one jarl's territory does not automatically apply
+      in another's. A man outlawed in Frostfjord may trade freely in
+      Deepholm — if Deepholm's headman allows it. But word travels,
+      and harboring another jarl's outlaw strains relations.
+
+  - name: "Settlement blind eyes"
+    description: >
+      Some settlements profit from outlaw trade. Night markets outside
+      walls are technically illegal but economically useful. A headman
+      who looks the other way gets access to cheap goods, stolen
+      livestock, and information about threats in the wilderness.
+
+  - name: "Night markets"
+    description: >
+      Illegal trade occurring outside settlement walls after dark.
+      Outlaws, smugglers, and merchants who prefer no records meet
+      at established spots. Night markets offer rare goods (barrow
+      loot, stolen weapons, foreign spices) but also disease, stolen
+      property, and the risk of being associated with outlaw trade.
+
+  - name: "Third-party weregild"
+    description: >
+      Weregild for lesser outlawry can be paid by anyone — a kinsman,
+      a patron, a mercenary captain who values the outlawed man's
+      sword-arm. This creates a debt economy: the payer owns the
+      outlaw's labor until repaid. Some men walk free with heavier
+      chains than before.
+
+  - name: "Useful outlaws"
+    description: >
+      An outlaw who provides valuable intelligence, fights in a
+      war, or performs exceptional service may earn amnesty. This is
+      rare and always political — the jarl must justify the pardon
+      at the ting. The legal fiction: the outlaw was never truly
+      condemned, but merely tested.
+
+  - name: "The dead man's loophole"
+    description: >
+      If an outlaw is reported dead (and no one contradicts), the
+      outlawry lapses. Some men fake their deaths, change their names,
+      and reappear in a distant settlement. It works until someone
+      recognizes them.
+
+# =================================================================
+# SIMULATION INTEGRATION HOOKS
+# =================================================================
+
+simulation_hooks:
+  settlement_stats:
+    - name: "outlaw_pressure"
+      type: "integer (0-5)"
+      description: >
+        How many outlaw bands operate near the settlement. Affects
+        safety, trade volume, contract availability, and militia
+        readiness. Increases when wolfshead bands grow. Decreases
+        when mercenaries or militia clear the area.
+      effects:
+        0: "No outlaw activity. Safe roads. Full trade."
+        1: "Occasional sighting. Travellers cautious."
+        2: "Regular presence. Trade caravans hire guards."
+        3: "Active threat. Settlement considers tribute."
+        4: "Siege-like pressure. Night markets flourish."
+        5: "Settlement partly controlled by outlaws."
+
+    - name: "reputation_with_outlaws"
+      type: "integer (-2 to +2)"
+      description: >
+        How the local outlaw population views this settlement.
+        Positive: outlaws trade carefully, avoid raiding.
+        Negative: outlaws target the settlement for raids.
+      modifiers:
+        night_market_tolerated: "+1"
+        actively_hunts_outlaws: "-1"
+        paid_tribute: "+1"
+        harbored_then_betrayed: "-2"
+
+  events:
+    - "outlaw_raid"
+    - "outlaw_parley"
+    - "outlaw_joins_band"
+    - "wolfshead_war"
+    - "night_market"
+    - "amnesty_offer"
+    - "mercenary_declared_outlaw"
+
+  actions:
+    - name: "declare_outlaw"
+      description: >
+        Settlement headman or ting formally declares a person or
+        band outlawed. Requires accusation + ruling process above.
+        Settlement gains outlaw_pressure +1 (the newly outlawed
+        rarely leave quietly).

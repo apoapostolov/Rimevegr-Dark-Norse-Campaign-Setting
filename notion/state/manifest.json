@@ -1,0 +1,477 @@
+{
+  "pipeline_version": "0.1.0",
+  "notion_api_version": "2026-03-11",
+  "project_root_page_id": "3450ea5c-af8e-80c1-ba7d-e9d059a8b8fd",
+  "chapters": [
+    {
+      "key": "01",
+      "title": "Rimevegr Setting Bible",
+      "source_file": "01_RIMEVEGR_SETTING_BIBLE.md",
+      "chapter_page_id": "3450ea5c-af8e-8105-ae72-cbf4a878ee0b",
+      "subpages": [],
+      "url": "https://www.notion.so/Rimevegr-Setting-Bible-3450ea5caf8e8105ae72cbf4a878ee0b",
+      "clean_hash": "412892592bcc91ee67f71ddcf50b021caf9f5ba74424a64cb3940e9b48d4804c",
+      "block_count": 554,
+      "page_title": "Rimevegr Setting Bible"
+    },
+    {
+      "key": "02",
+      "title": "Master Index — Iron Ledger: Mercenaries of the Rimevegr",
+      "source_file": "02_MASTER_INDEX.md",
+      "chapter_page_id": "3450ea5c-af8e-811e-9490-d2246940c48b",
+      "subpages": [],
+      "url": "https://www.notion.so/Master-Index-Iron-Ledger-Mercenaries-of-the-Rimevegr-3450ea5caf8e811e9490d2246940c48b",
+      "clean_hash": "b9e8f5cf42a670d10f631b775b9a8aec36391c8248da8e3a299bd47ee520c5d9",
+      "block_count": 111,
+      "page_title": "Master Index — Iron Ledger: Mercenaries of the Rimevegr"
+    },
+    {
+      "key": "03",
+      "title": "Geography and Map of the Rimevegr",
+      "source_file": "03_GEOGRAPHY_AND_MAP.md",
+      "chapter_page_id": "3450ea5c-af8e-8126-bc52-e796fb29ee15",
+      "subpages": [],
+      "url": "https://www.notion.so/Geography-and-Map-of-the-Rimevegr-3450ea5caf8e8126bc52e796fb29ee15",
+      "clean_hash": "a65abeeb8fa49e289379d930c0c33c74af3b4d27be27d6dc08737d3c94e37a2a",
+      "block_count": 97,
+      "page_title": "Geography and Map of the Rimevegr"
+    },
+    {
+      "key": "04",
+      "title": "Culture and Customs of the Rimevegr",
+      "source_file": "04_CULTURE_AND_CUSTOMS.md",
+      "chapter_page_id": "3450ea5c-af8e-817e-a20e-e34cbc75873f",
+      "subpages": [],
+      "url": "https://www.notion.so/Culture-and-Customs-of-the-Rimevegr-3450ea5caf8e817ea20ee34cbc75873f",
+      "clean_hash": "f75c13f798dc9084964f1536e387bc92d42b094548425327527ff97b98d432d2",
+      "block_count": 231,
+      "page_title": "Culture and Customs of the Rimevegr"
+    },
+    {
+      "key": "05",
+      "title": "Economy of the Rimevegr",
+      "source_file": "05_ECONOMY_OF_RIMEVEGR.md",
+      "chapter_page_id": "3450ea5c-af8e-81cd-977e-f0cde705701d",
+      "subpages": [],
+      "url": "https://www.notion.so/Economy-of-the-Rimevegr-3450ea5caf8e81cd977ef0cde705701d",
+      "clean_hash": "c72262148322940cebcb1fa85ad248e0acc6953e3260dbf8bf0fee3b435a9265",
+      "block_count": 236,
+      "page_title": "Economy of the Rimevegr"
+    },
+    {
+      "key": "06",
+      "title": "Dictionary of Norse Terms — Iron Ledger",
+      "source_file": "06_DICTIONARY_OF_NORSE_TERMS.md",
+      "chapter_page_id": "3450ea5c-af8e-818e-a27b-cfc6fdc8eded",
+      "subpages": [
+        {
+          "key": "06A",
+          "title": "1 -- A",
+          "source_file": "06A_DICTIONARY_OF_NORSE_TERMS.md",
+          "notion_page_id": "3450ea5c-af8e-81b1-9c6c-e1224117c6fa",
+          "url": "https://www.notion.so/1-A-3450ea5caf8e81b19c6ce1224117c6fa",
+          "clean_hash": "4ccc4cbfd535dec038f8f1315696164198cea8fb30e4ee6343c34ccdaaf195ee",
+          "block_count": 429,
+          "page_title": "1 -- A"
+        },
+        {
+          "key": "06B",
+          "title": "2 -- M",
+          "source_file": "06B_DICTIONARY_OF_NORSE_TERMS.md",
+          "notion_page_id": "3450ea5c-af8e-8135-90b8-ca7eb1453280",
+          "url": "https://www.notion.so/2-M-3450ea5caf8e813590b8ca7eb1453280",
+          "clean_hash": "d8f55d428954cc207af871b04a387e51539d34bd8f998b0f7f175e537a408b23",
+          "block_count": 362,
+          "page_title": "2 -- M"
+        }
+      ],
+      "url": "https://www.notion.so/Dictionary-of-Norse-Terms-Iron-Ledger-3450ea5caf8e818ea27bcfc6fdc8eded",
+      "clean_hash": "7509d29089631ad41071fe5c344d28c1f83ec2602373c2fc288a648781cd09b1",
+      "block_count": 4,
+      "page_title": "Dictionary of Norse Terms — Iron Ledger"
+    },
+    {
+      "key": "07",
+      "title": "Religion of the Rimevegr",
+      "source_file": "07_RELIGION_OF_RIMEVEGR.md",
+      "chapter_page_id": "3450ea5c-af8e-815b-934d-ce2a526a5b2f",
+      "subpages": [
+        {
+          "key": "07A",
+          "title": "1 -- The High Court (Aesrgrim — The Grim Gods)",
+          "source_file": "07A_RELIGION_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-81e7-9e72-e443a20983ec",
+          "url": "https://www.notion.so/1-The-High-Court-Aesrgrim-The-Grim-Gods-3450ea5caf8e81e79e72e443a20983ec",
+          "clean_hash": "6c7922b01b89cc848fd58da49e5bacf7566866c100fc42b4192138e5f9b389c6",
+          "block_count": 216,
+          "page_title": "1 -- The High Court (Aesrgrim — The Grim Gods)"
+        },
+        {
+          "key": "07B",
+          "title": "2 -- The Slow Wolf — Úlfrinn Hljóði",
+          "source_file": "07B_RELIGION_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-813d-bacb-fa5ac338fd26",
+          "url": "https://www.notion.so/2-The-Slow-Wolf-lfrinn-Hlj-i-3450ea5caf8e813dbacbfa5ac338fd26",
+          "clean_hash": "53c983cb19e26df283f04deb7a85ec0394da5ccf1a6220e413e8180c212b759c",
+          "block_count": 256,
+          "page_title": "2 -- The Slow Wolf — Úlfrinn Hljóði"
+        },
+        {
+          "key": "07C",
+          "title": "3 -- Conversion and Faith Transmission",
+          "source_file": "07C_RELIGION_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-81f8-9570-fd9ba71c6f78",
+          "url": "https://www.notion.so/3-Conversion-and-Faith-Transmission-3450ea5caf8e81f89570fd9ba71c6f78",
+          "clean_hash": "98ab6411946be3d2fe8174dc83a24517ebff398f157427cf321fa5ec72ce0546",
+          "block_count": 19,
+          "page_title": "3 -- Conversion and Faith Transmission"
+        }
+      ],
+      "url": "https://www.notion.so/Religion-of-the-Rimevegr-3450ea5caf8e815b934dce2a526a5b2f",
+      "clean_hash": "3ac6ccb67d31257e1d5600972ff71b3993979cfc7d4ff32a6713ef07822dfb81",
+      "block_count": 5,
+      "page_title": "Religion of the Rimevegr"
+    },
+    {
+      "key": "08",
+      "title": "The Magic of Rimevegr",
+      "source_file": "08_MAGIC_OF_RIMEVEGR.md",
+      "chapter_page_id": "3450ea5c-af8e-81c1-8f44-e8a3fe4f0076",
+      "subpages": [
+        {
+          "key": "08A",
+          "title": "1 -- The Cracking and Its Consequences",
+          "source_file": "08A_MAGIC_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-8115-a3d0-ff7d72401c80",
+          "url": "https://www.notion.so/1-The-Cracking-and-Its-Consequences-3450ea5caf8e8115a3d0ff7d72401c80",
+          "clean_hash": "ba6a5d3ad0db89047c39797a24dae8541c2df890574b65a8f2ed1ebc486248f8",
+          "block_count": 218,
+          "page_title": "1 -- The Cracking and Its Consequences"
+        },
+        {
+          "key": "08B",
+          "title": "2 -- Encoded Mysteries",
+          "source_file": "08B_MAGIC_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-81b0-94bc-d09b231b3623",
+          "url": "https://www.notion.so/2-Encoded-Mysteries-3450ea5caf8e81b094bcd09b231b3623",
+          "clean_hash": "b73839dc4067e8200c086e5eced27b380f8577e8985d932362ceda67a69a7276",
+          "block_count": 150,
+          "page_title": "2 -- Encoded Mysteries"
+        },
+        {
+          "key": "08C",
+          "title": "3 -- Magic and the Material World",
+          "source_file": "08C_MAGIC_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-817d-a726-f4ed703d26d7",
+          "url": "https://www.notion.so/3-Magic-and-the-Material-World-3450ea5caf8e817da726f4ed703d26d7",
+          "clean_hash": "18dc7e0c20526ed2da24ffdb6a423f7384227e87abf84c3f3a4dc5df63e7b6cd",
+          "block_count": 87,
+          "page_title": "3 -- Magic and the Material World"
+        },
+        {
+          "key": "08D",
+          "title": "4 -- The Practitioner's Lifecycle",
+          "source_file": "08D_MAGIC_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-81dc-bcf1-d43385d2afbd",
+          "url": "https://www.notion.so/4-The-Practitioner-s-Lifecycle-3450ea5caf8e81dcbcf1d43385d2afbd",
+          "clean_hash": "eac8669cb96d3b942db25462675662454926ee15698cb72199f7923be1b3341c",
+          "block_count": 133,
+          "page_title": "4 -- The Practitioner's Lifecycle"
+        },
+        {
+          "key": "08E",
+          "title": "5 -- The Rune-Tongue of Rimevegr",
+          "source_file": "08E_MAGIC_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-814c-a5b1-d0e3e5486972",
+          "url": "https://www.notion.so/5-The-Rune-Tongue-of-Rimevegr-3450ea5caf8e814ca5b1d0e3e5486972",
+          "clean_hash": "9fe689defbbceca26f140f893aa42b8ce69d13e88a2f8824d399a71fd325819c",
+          "block_count": 495,
+          "page_title": "5 -- The Rune-Tongue of Rimevegr"
+        },
+        {
+          "key": "08F",
+          "title": "6 -- The Inversion: Seiðr and the Wolfsheads",
+          "source_file": "08F_MAGIC_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-8136-b9d6-e87af5941d39",
+          "url": "https://www.notion.so/6-The-Inversion-Sei-r-and-the-Wolfsheads-3450ea5caf8e8136b9d6e87af5941d39",
+          "clean_hash": "9cbbcdc9e5e0f67e2acc16e7a47a43afad86ed15d4b84e195dac84662c0c4d2e",
+          "block_count": 229,
+          "page_title": "6 -- The Inversion: Seiðr and the Wolfsheads"
+        },
+        {
+          "key": "08G",
+          "title": "7 -- Madness — The Völva's Particular Forms",
+          "source_file": "08G_MAGIC_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-8171-abe6-ddd2cb1934d4",
+          "url": "https://www.notion.so/7-Madness-The-V-lva-s-Particular-Forms-3450ea5caf8e8171abe6ddd2cb1934d4",
+          "clean_hash": "8c4cb05957e38264002517f7270ae40371269a3538bbaca3525f90267ef31945",
+          "block_count": 24,
+          "page_title": "7 -- Madness — The Völva's Particular Forms"
+        }
+      ],
+      "url": "https://www.notion.so/The-Magic-of-Rimevegr-3450ea5caf8e81c18f44e8a3fe4f0076",
+      "clean_hash": "af3e929b7ff3237ebd0b075025d94fc47f4c95d76f5f99939fb8512b2a48dce9",
+      "block_count": 9,
+      "page_title": "The Magic of Rimevegr"
+    },
+    {
+      "key": "09",
+      "title": "Weather, Seasons, and Hazards",
+      "source_file": "09_WEATHER_SEASONS_AND_HAZARDS.md",
+      "chapter_page_id": "3450ea5c-af8e-8111-8715-c63a83b2cf5d",
+      "subpages": [],
+      "url": "https://www.notion.so/Weather-Seasons-and-Hazards-3450ea5caf8e81118715c63a83b2cf5d",
+      "clean_hash": "fddeb844587204007db88b48e85afe56b23a30374573476b2dc696a02d4a5606",
+      "block_count": 49,
+      "page_title": "Weather, Seasons, and Hazards"
+    },
+    {
+      "key": "10",
+      "title": "Calendar and Hidden Events",
+      "source_file": "10_CALENDAR_AND_HIDDEN_EVENTS.md",
+      "chapter_page_id": "3450ea5c-af8e-8175-85b2-edcc38d5b084",
+      "subpages": [],
+      "url": "https://www.notion.so/Calendar-and-Hidden-Events-3450ea5caf8e817585b2edcc38d5b084",
+      "clean_hash": "a893d37df84193674a40b00cf93cc54fb7662aa968dd81d78d3b62596b2f35a5",
+      "block_count": 58,
+      "page_title": "Calendar and Hidden Events"
+    },
+    {
+      "key": "11",
+      "title": "Villages and Settlements",
+      "source_file": "11_VILLAGES_AND_SETTLEMENTS.md",
+      "chapter_page_id": "3450ea5c-af8e-81ee-9745-f229bd3b2715",
+      "subpages": [],
+      "url": "https://www.notion.so/Villages-and-Settlements-3450ea5caf8e81ee9745f229bd3b2715",
+      "clean_hash": "c56613e189cd978e9f21ebd05c9136ba6f0eabb657e13b922ab2493bf98ad111",
+      "block_count": 339,
+      "page_title": "Villages and Settlements"
+    },
+    {
+      "key": "12",
+      "title": "Political Villages — Lore Reference",
+      "source_file": "12_POLITICAL_VILLAGES_AND_UNIONS.md",
+      "chapter_page_id": "3450ea5c-af8e-81ca-9f80-df4c3e32c68f",
+      "subpages": [],
+      "url": "https://www.notion.so/Political-Villages-Lore-Reference-3450ea5caf8e81ca9f80df4c3e32c68f",
+      "clean_hash": "50bfdf6bef167ac795882583dd3f3c838faf53092b47b1bdfeb6dc81a7f89634",
+      "block_count": 383,
+      "page_title": "Political Villages — Lore Reference"
+    },
+    {
+      "key": "13",
+      "title": "Rival Bands and Factions",
+      "source_file": "13_RIVAL_BANDS_AND_FACTIONS.md",
+      "chapter_page_id": "3450ea5c-af8e-81ee-a925-c31aee1a4bc5",
+      "subpages": [],
+      "url": "https://www.notion.so/Rival-Bands-and-Factions-3450ea5caf8e81eea925c31aee1a4bc5",
+      "clean_hash": "ffb34f3cc6924da466b8bbd9cef9fc98d1c5d71fa29aed6b5d85a7b6303d23c9",
+      "block_count": 88,
+      "page_title": "Rival Bands and Factions"
+    },
+    {
+      "key": "14",
+      "title": "Wolfsheads of the Rimevegr",
+      "source_file": "14_WOLFSHEADS_OF_RIMEVEGR.md",
+      "chapter_page_id": "3450ea5c-af8e-8187-979a-ce7a42a99deb",
+      "subpages": [
+        {
+          "key": "14A",
+          "title": "1 -- The Word",
+          "source_file": "14A_WOLFSHEADS_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-8113-8ffd-ea55119d756c",
+          "url": "https://www.notion.so/1-The-Word-3450ea5caf8e81138ffdea55119d756c",
+          "clean_hash": "a977db0054353a950f0348f94c0a1c56a6f73268d10b4ee3355c85670b170c90",
+          "block_count": 416,
+          "page_title": "1 -- The Word"
+        },
+        {
+          "key": "14B",
+          "title": "2 -- The Three Soulbanes — Mannsbani Þrír",
+          "source_file": "14B_WOLFSHEADS_OF_RIMEVEGR.md",
+          "notion_page_id": "3450ea5c-af8e-8102-b156-cb5fa5defef1",
+          "url": "https://www.notion.so/2-The-Three-Soulbanes-Mannsbani-r-r-3450ea5caf8e8102b156cb5fa5defef1",
+          "clean_hash": "c2568cb1468060f83bdee1a5177347d0eb954c5011cf577481375a9db45c2ccf",
+          "block_count": 85,
+          "page_title": "2 -- The Three Soulbanes — Mannsbani Þrír"
+        }
+      ],
+      "url": "https://www.notion.so/Wolfsheads-of-the-Rimevegr-3450ea5caf8e8187979ace7a42a99deb",
+      "clean_hash": "6da382deb6b6aafeffa5a38a69fa11891020049b195cbfcd78c0346be98c980e",
+      "block_count": 4,
+      "page_title": "Wolfsheads of the Rimevegr"
+    },
+    {
+      "key": "15",
+      "title": "Mercenary Lifestyle Database",
+      "source_file": "15_MERCENARY_LIFESTYLE.md",
+      "chapter_page_id": "3450ea5c-af8e-81c0-a39e-d9944efed4cc",
+      "subpages": [],
+      "url": "https://www.notion.so/Mercenary-Lifestyle-Database-3450ea5caf8e81c0a39ed9944efed4cc",
+      "clean_hash": "fd327894dc27907452d21e363393510eac9954741329708c3b8956983ee4378e",
+      "block_count": 186,
+      "page_title": "Mercenary Lifestyle Database"
+    },
+    {
+      "key": "16",
+      "title": "Named Men and Archetypes",
+      "source_file": "16_NAMED_MEN_AND_ARCHETYPES.md",
+      "chapter_page_id": "3450ea5c-af8e-81e3-9cdc-ca72f9b698b5",
+      "subpages": [],
+      "url": "https://www.notion.so/Named-Men-and-Archetypes-3450ea5caf8e81e39cdcca72f9b698b5",
+      "clean_hash": "b842c594e818aa89f0d29de544080c39a051ecf196ae81a1627e03674fab9eed",
+      "block_count": 43,
+      "page_title": "Named Men and Archetypes"
+    },
+    {
+      "key": "17",
+      "title": "Character Bible — Iron Ledger",
+      "source_file": "17_CHARACTER_BIBLE.md",
+      "chapter_page_id": "3450ea5c-af8e-8109-a689-c80b2a9cf64c",
+      "subpages": [],
+      "url": "https://www.notion.so/Character-Bible-Iron-Ledger-3450ea5caf8e8109a689c80b2a9cf64c",
+      "clean_hash": "2d930dc009d1f861b4115dc229d8f1c01dce328d971963ad53efd5e4d6bcc7e9",
+      "block_count": 377,
+      "page_title": "Character Bible — Iron Ledger"
+    },
+    {
+      "key": "18",
+      "title": "Barrow Atlas of the Rimevegr",
+      "source_file": "18_BARROWS_OF_RIMEVEGR.md",
+      "chapter_page_id": "3450ea5c-af8e-8142-b51c-fa34775c862c",
+      "subpages": [],
+      "url": "https://www.notion.so/Barrow-Atlas-of-the-Rimevegr-3450ea5caf8e8142b51cfa34775c862c",
+      "clean_hash": "1d891279a2b41f5f29a44dbd330cb5758547f204afcda9156c0e2e30573420e8",
+      "block_count": 77,
+      "page_title": "Barrow Atlas of the Rimevegr"
+    },
+    {
+      "key": "19",
+      "title": "Iron Ledger — Game Content Bible",
+      "source_file": "19_GAME_CONTENT_BIBLE.md",
+      "chapter_page_id": "3450ea5c-af8e-81c7-b16a-d7330da11d93",
+      "subpages": [],
+      "url": "https://www.notion.so/Iron-Ledger-Game-Content-Bible-3450ea5caf8e81c7b16ad7330da11d93",
+      "clean_hash": "7243fb1efc6bf63e9c766dc89cc0acec47cb6e42337897d5cbb847623b1d6e82",
+      "block_count": 267,
+      "page_title": "Iron Ledger — Game Content Bible"
+    },
+    {
+      "key": "20",
+      "title": "Iron Ledger — Simulation Rules",
+      "source_file": "20_SIMULATION_RULES.md",
+      "chapter_page_id": "3450ea5c-af8e-8103-87b2-d7dfbacaf243",
+      "subpages": [
+        {
+          "key": "20A",
+          "title": "1 -- Iron Ledger Rules — Complete Simulation System",
+          "source_file": "20A_SIMULATION_RULES.md",
+          "notion_page_id": "3450ea5c-af8e-81d2-bd8e-d73ddf9e6a6a",
+          "url": "https://www.notion.so/1-Iron-Ledger-Rules-Complete-Simulation-System-3450ea5caf8e81d2bd8ed73ddf9e6a6a",
+          "clean_hash": "efdce0d2ab6c9fbc75851edb9789b9f1ad62039d7832ec1fc49d0cdf48eae827",
+          "block_count": 726,
+          "page_title": "1 -- Iron Ledger Rules — Complete Simulation System"
+        },
+        {
+          "key": "20B",
+          "title": "2 -- Health and Wounds",
+          "source_file": "20B_SIMULATION_RULES.md",
+          "notion_page_id": "3450ea5c-af8e-8123-b4f4-ce5e2f2cd97d",
+          "url": "https://www.notion.so/2-Health-and-Wounds-3450ea5caf8e8123b4f4ce5e2f2cd97d",
+          "clean_hash": "22960b614860fb3ad052fb934fd856dc49828fd9ad6077c39b7f46a126e183cd",
+          "block_count": 480,
+          "page_title": "2 -- Health and Wounds"
+        },
+        {
+          "key": "20C",
+          "title": "3 -- Norse Magic System",
+          "source_file": "20C_SIMULATION_RULES.md",
+          "notion_page_id": "3450ea5c-af8e-8150-b7b2-d7cea2cace2e",
+          "url": "https://www.notion.so/3-Norse-Magic-System-3450ea5caf8e8150b7b2d7cea2cace2e",
+          "clean_hash": "1efdb3608525ab2a9199975a8adfbddf984ef53f6d31683e6e86500b4db74cf9",
+          "block_count": 598,
+          "page_title": "3 -- Norse Magic System"
+        },
+        {
+          "key": "20D",
+          "title": "4 -- Political Simulation (Village Networks)",
+          "source_file": "20D_SIMULATION_RULES.md",
+          "notion_page_id": "3450ea5c-af8e-8134-a6b1-d10c839c8386",
+          "url": "https://www.notion.so/4-Political-Simulation-Village-Networks-3450ea5caf8e8134a6b1d10c839c8386",
+          "clean_hash": "690b213e7de7e3270ed9fa38489840e8af40eac8736254fc296ccb5c7e478399",
+          "block_count": 131,
+          "page_title": "4 -- Political Simulation (Village Networks)"
+        }
+      ],
+      "url": "https://www.notion.so/Iron-Ledger-Simulation-Rules-3450ea5caf8e810387b2d7dfbacaf243",
+      "clean_hash": "e6edfcaa2383702c44a5a4d43bfead0bc62ff091c7b7b0f5c5b375aed14ef3db",
+      "block_count": 6,
+      "page_title": "Iron Ledger — Simulation Rules"
+    },
+    {
+      "key": "21",
+      "title": "Band Simulation",
+      "source_file": "21_BAND_SIMULATION.md",
+      "chapter_page_id": "3450ea5c-af8e-81b3-a69b-e80e09ddac2f",
+      "subpages": [],
+      "url": "https://www.notion.so/Band-Simulation-3450ea5caf8e81b3a69be80e09ddac2f",
+      "clean_hash": "3fa69288eb5d708c169efb8b66793e1cb40210ab8e35dab1c17737b264664762",
+      "block_count": 31,
+      "page_title": "Band Simulation"
+    },
+    {
+      "key": "22",
+      "title": "Member Statblocks",
+      "source_file": "22_MEMBER_STATBLOCKS.md",
+      "chapter_page_id": "3450ea5c-af8e-81d5-bbf1-f8d585c5a0e0",
+      "subpages": [],
+      "url": "https://www.notion.so/Member-Statblocks-3450ea5caf8e81d5bbf1f8d585c5a0e0",
+      "clean_hash": "bac463d319c38db403dbf82f5c6fdf08ee94015de0daa9acbc4a480bdfb8a6e3",
+      "block_count": 414,
+      "page_title": "Member Statblocks"
+    },
+    {
+      "key": "23",
+      "title": "Campaign Arcs and Plot Architecture",
+      "source_file": "23_CAMPAIGN_ARCS_AND_PLOT_SEEDS.md",
+      "chapter_page_id": "3450ea5c-af8e-817a-a3f3-c057ef2c629b",
+      "subpages": [
+        {
+          "key": "23A",
+          "title": "1 -- Plot summary of the campaign",
+          "source_file": "23A_CAMPAIGN_ARCS_AND_PLOT_SEEDS.md",
+          "notion_page_id": "3450ea5c-af8e-818c-8184-e0e9a44a1baa",
+          "url": "https://www.notion.so/1-Plot-summary-of-the-campaign-3450ea5caf8e818c8184e0e9a44a1baa",
+          "clean_hash": "81fe76690d353d2c33360092cd6952b5acf0aac721a88a2255b9f8c9057cc605",
+          "block_count": 738,
+          "page_title": "1 -- Plot summary of the campaign"
+        },
+        {
+          "key": "23B",
+          "title": "2 -- Prompt 23 — The four final outcomes",
+          "source_file": "23B_CAMPAIGN_ARCS_AND_PLOT_SEEDS.md",
+          "notion_page_id": "3450ea5c-af8e-814c-b0ab-cca89b12a781",
+          "url": "https://www.notion.so/2-Prompt-23-The-four-final-outcomes-3450ea5caf8e814cb0abcca89b12a781",
+          "clean_hash": "23f1c1423e754a8dce4cec481cbaa8b6929575efeadcb8ba9eabd4e573bf082c",
+          "block_count": 83,
+          "page_title": "2 -- Prompt 23 — The four final outcomes"
+        }
+      ],
+      "url": "https://www.notion.so/Campaign-Arcs-and-Plot-Architecture-3450ea5caf8e817aa3f3c057ef2c629b",
+      "clean_hash": "0bc1bb8f6d1f6c9503541868b41ab9ea988e6fce39088e9416eabf1c2caf4373",
+      "block_count": 4,
+      "page_title": "Campaign Arcs and Plot Architecture"
+    },
+    {
+      "key": "24",
+      "title": "Vignettes and Scenes",
+      "source_file": "24_VIGNETTES_AND_SCENES.md",
+      "chapter_page_id": "3450ea5c-af8e-810a-8889-d1dd5d0918d6",
+      "subpages": [],
+      "url": "https://www.notion.so/Vignettes-and-Scenes-3450ea5caf8e810a8889d1dd5d0918d6",
+      "clean_hash": "ba66d9c47a4d88932ab00caf3a00d7982752bca52b85a649d2803fa2645e6c68",
+      "block_count": 349,
+      "page_title": "Vignettes and Scenes"
+    }
+  ]
+}

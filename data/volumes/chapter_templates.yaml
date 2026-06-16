@@ -1,0 +1,1343 @@
+# Iron Ledger — Reusable Chapter Templates
+# Structural templates for the 10-volume Norse mercenary novel series.
+# Each template maps to common event types and provides beat structure,
+# pacing guidance, and required data sources for chapter writing.
+#
+# Usage: Select a template based on the dominant event type for the
+# chapter. Combine templates for hybrid chapters (see combinations).
+# Beat word targets are guidelines, not hard limits.
+
+chapter_templates:
+  metadata:
+    purpose: >-
+      Reusable chapter structures mapped to event types. Each template
+      provides beat structure, pacing guidance, and required elements.
+      Templates are selected by matching against event_types from the
+      yearly event files (y312_events.yaml, y313_events.yaml, etc.).
+    typical_chapter_length: "4,000-6,000 words"
+    pov_note: >-
+      Primary POV is Lump unless specified. Secondary POV chapters
+      permitted 1-2 per volume. POV shifts must be earned — only when
+      Lump cannot witness a critical event, or when a character's
+      interiority reveals something the plot needs.
+    data_sources:
+      geography: "data/geography/atlas.yaml, data/geography/routes.yaml"
+      weather: "data/weather/weather_history.yaml, data/weather/hazards.yaml"
+      npcs: "data/npcs/*.yaml"
+      events: "data/events/y31*_events.yaml"
+      contracts: "data/contracts/*.yaml"
+      barrows: "data/barrows/*.yaml"
+      culture: "data/culture/*.yaml"
+      politics: "data/political_state.yaml"
+      band: "data/band_state.yaml"
+      settlements: "data/settlements.yaml"
+      economy: "data/economy/*.yaml"
+      bestiary: "data/bestiary/*.yaml"
+      terrain: "data/geography/terrain_encounters.yaml"
+    version: "1.0"
+    last_updated: "2026-04-13"
+
+  templates:
+    # ================================================================
+    # CHAP_MARCH — Travel between locations
+    # ================================================================
+    - id: "CHAP_MARCH"
+      name: "March Chapter"
+      type: travel
+      description: >-
+        The band moves between locations. Character development through
+        hardship and conversation. The landscape is a character. The
+        march strips away pretense — men reveal themselves on the trail.
+      event_types: [travel, escort, relocation, patrol, foraging_expedition]
+      typical_beats:
+        - beat: "departure"
+          description: >-
+            Leave the settlement. Lump notices what others don't — the
+            look on a face, the thing left behind, the smell of the
+            place they won't see again. Short and sharp.
+          word_target: 800
+        - beat: "road_life"
+          description: >-
+            Camp routines, conversation, small conflicts. Weather and
+            terrain dominate. Walking, complaining, the rhythm of boots
+            and breath. Someone tells a story. Someone picks a fight.
+            Food is discussed because food is always discussed.
+          word_target: 1500
+        - beat: "encounter_or_obstacle"
+          description: >-
+            Something disrupts the march — weather turn, terrain hazard,
+            bandits, wildlife, omen, broken bridge, swollen river. The
+            band reacts. Competence or failure on display.
+          word_target: 1200
+        - beat: "camp_night"
+          description: >-
+            Evening camp. Deeper character moments. Plans discussed. The
+            Long Dark presses. Fire and darkness. Someone says something
+            they wouldn't say in daylight.
+          word_target: 1000
+        - beat: "arrival_or_cliffhanger"
+          description: >-
+            Reach destination or face a new complication. If arriving,
+            first impression of the place. If cliffhanger, the thing
+            that changes the next chapter.
+          word_target: 500
+      required_elements:
+        - "Weather conditions from weather/weather_history.yaml"
+        - "Terrain description from geography/atlas.yaml"
+        - "Route details from geography/routes.yaml"
+        - "At least one character interaction that advances a personal arc"
+        - "Food/supply status from band_state.yaml"
+        - "Terrain encounter check from geography/terrain_encounters.yaml"
+      pacing: >-
+        Slow burn. Let the landscape do work. These chapters breathe.
+        Resist the urge to make something happen — the march itself is
+        the event. Silence is permitted. Boredom is permitted. What the
+        reader learns about these men on the trail is worth more than
+        an invented fight.
+      weather_integration: >-
+        Weather drives mood and obstacles. Never background. If it's
+        raining, everyone is miserable and the trail is mud. If it's
+        clear and cold, breath steams and exposed skin burns. Weather
+        is not decoration — it is the primary antagonist of travel.
+      word_target: 5000
+      frequency: "2-3 per volume"
+
+    # ================================================================
+    # CHAP_BATTLE — Major combat
+    # ================================================================
+    - id: "CHAP_BATTLE"
+      name: "Battle Chapter"
+      type: combat
+      description: >-
+        Major combat — siege assault, field battle, beach landing, or
+        prepared ambush at scale. Multiple combatants, tactical phases,
+        real stakes. Someone dies or nearly dies. The band earns its
+        silver or bleeds for nothing.
+      event_types:
+        [
+          field_battle,
+          siege_assault,
+          ambush_major,
+          naval_assault,
+          defense_major,
+        ]
+      typical_beats:
+        - beat: "before_the_line"
+          description: >-
+            The wait before combat. Lump's body knows what's coming
+            before his mind does. The band forms up. Equipment checked.
+            Voss gives orders or doesn't. Fear is physical — gut, hands,
+            breath. Someone vomits. Someone prays.
+          word_target: 800
+        - beat: "the_clash"
+          description: >-
+            First contact. Chaos. The plan survives or doesn't. Lump's
+            POV is narrow — he sees ten feet of war, not the whole
+            field. Sound, impact, footing. The choreography of killing.
+          word_target: 1500
+        - beat: "the_turn"
+          description: >-
+            Something shifts — a flank collapses, a champion falls, the
+            weather changes, reinforcements arrive or don't. The moment
+            the fight pivots. Lump may or may not understand what
+            happened. The reader pieces it together.
+          word_target: 1200
+        - beat: "the_rout_or_hold"
+          description: >-
+            Victory, defeat, or bloody stalemate. The aftermath begins
+            while fighting continues at the edges. Lump survives. Not
+            everyone does.
+          word_target: 800
+        - beat: "the_cost"
+          description: >-
+            Counting the dead. Treating wounds. Looting. The silence
+            after. What was gained, what was lost, and whether it was
+            worth it. Voss tallies silver. Lump tallies faces.
+          word_target: 700
+      required_elements:
+        - "Terrain and position from geography/atlas.yaml"
+        - "Weather conditions from weather/weather_history.yaml"
+        - "Enemy composition from npcs/antagonist_npcs.yaml or npcs/rival_band_npcs.yaml"
+        - "Band formation and member positioning from band_state.yaml"
+        - "At least one named casualty or serious wound"
+        - "Tactical detail — footing, shield wall, line discipline"
+        - "Post-battle morale and treasury update"
+      pacing: >-
+        Compressed time. The whole fight may last twenty minutes but
+        takes 2,000 words. Interleave close-combat chaos with
+        momentary clarity. Never omniscient — Lump sees what's in front
+        of him. Use hearing and ground-vibration for what's behind.
+      weather_integration: >-
+        Weather shapes the battle. Rain makes footing treacherous and
+        bows useless. Fog hides flanks. Cold numbs fingers on
+        sword-grips. Snow covers the dead before they're found.
+      word_target: 5000
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_SKIRMISH — Small-scale combat
+    # ================================================================
+    - id: "CHAP_SKIRMISH"
+      name: "Skirmish Chapter"
+      type: combat
+      description: >-
+        Small-scale fight — bandits on the trail, a bar brawl that
+        turns lethal, wildlife attack, rival band encounter. Quick,
+        dirty, personal. Often fought without formation or warning.
+      event_types:
+        [
+          bandit_ambush,
+          wildlife_attack,
+          bar_fight,
+          rival_skirmish,
+          robbery_attempt,
+        ]
+      typical_beats:
+        - beat: "first_sign"
+          description: >-
+            Something is wrong. Lump's thrall instincts fire before the
+            warriors react — a branch that shouldn't move, a silence
+            where birds should sing, a stranger's hand on his knife.
+          word_target: 600
+        - beat: "the_violence"
+          description: >-
+            Fast and ugly. No shield wall, no formation. Grappling,
+            improvised weapons, someone slips in mud. Combat at this
+            scale is intimate and frightening. Every detail is close —
+            breath, teeth, blood-smell.
+          word_target: 1500
+        - beat: "aftermath"
+          description: >-
+            Panting, bleeding, standing over the result. Looting if
+            there's anything to take. Jokes that aren't funny.
+            Adrenaline fading into shaking hands.
+          word_target: 600
+        - beat: "what_it_means"
+          description: >-
+            The skirmish reveals something — about the region, the
+            enemy, the band's readiness, a character's nerve. Lump
+            processes. The band moves on, changed or unchanged.
+          word_target: 300
+      required_elements:
+        - "Terrain from geography/atlas.yaml or terrain_encounters.yaml"
+        - "Enemy from npcs/ or bestiary/"
+        - "Weapon and fighting style detail (no generic sword-swinging)"
+        - "Physical consequence — wound, broken gear, exhaustion"
+        - "Weather mentioned even if brief"
+      pacing: >-
+        Fast entry, short burst, lingering exit. The fight itself is
+        compressed — a minute or two of violence. Let the before and
+        after carry the weight. Skirmishes are more frightening than
+        battles because they come without warning.
+      weather_integration: >-
+        Weather as tactical factor — slippery ground, poor visibility,
+        numb fingers. Even briefly, ground the fight in conditions.
+      word_target: 3000
+      frequency: "2-4 per volume"
+
+    # ================================================================
+    # CHAP_BARROW — Dungeon delve
+    # ================================================================
+    - id: "CHAP_BARROW"
+      name: "Barrow Chapter"
+      type: exploration
+      description: >-
+        The band enters a barrow — ancient grave-mound of the dead
+        kings, sealed since before the Cracking. Stone corridors, dead
+        air, things that move in darkness. The Veil thins underground.
+        This is where silver lives and men die.
+      event_types:
+        [barrow_clear, barrow_exploration, barrow_ambush, tomb_robbing]
+      typical_beats:
+        - beat: "the_mouth"
+          description: >-
+            Approaching and entering the barrow. The transition from
+            daylight to underground. Temperature drops. Sound changes.
+            The band lights torches and someone makes a joke that nobody
+            laughs at. Lump feels the weight of the earth above.
+          word_target: 800
+        - beat: "the_descent"
+          description: >-
+            Moving through corridors and chambers. Room-by-room, the
+            barrow reveals itself. Traps, dead ends, old bones, runes
+            on the walls. The band's formation stretches and bunches.
+            Torchlight makes shadows lie.
+          word_target: 1500
+        - beat: "the_encounter"
+          description: >-
+            Something in the dark. Draugr, barrow-wight, trap that
+            triggers, a chamber that shouldn't exist. Combat underground
+            is different — tight spaces, poor light, nowhere to run.
+            Sound echoes wrong. The dead don't fight like the living.
+          word_target: 1200
+        - beat: "the_heart"
+          description: >-
+            The central chamber — the burial, the treasure, the thing
+            the barrow was built to contain. Revelation or horror or
+            both. Lump sees something that changes his understanding.
+          word_target: 800
+        - beat: "the_exit"
+          description: >-
+            Getting out. Daylight hits different after the dark. What
+            they carry, what they leave, what follows them out. The
+            band counts fingers and silver.
+          word_target: 700
+      required_elements:
+        - "Barrow layout from barrows/barrows.yaml"
+        - "Room descriptions from barrows/room_templates.yaml"
+        - "Encounter from barrows/encounter_tables.yaml"
+        - "Loot from barrows/loot_tables.yaml"
+        - "Torch/light management — darkness is real, not metaphorical"
+        - "Temperature — barrows are cold. Always cold."
+        - "At least one supernatural element (even subtle)"
+      pacing: >-
+        Claustrophobic compression. Time stretches underground — an
+        hour feels like a day. Alternate between creeping dread and
+        sudden violence. Let silence work. The reader should feel the
+        weight of stone overhead and the inadequacy of torchlight.
+      weather_integration: >-
+        Weather matters at entry/exit only. Inside, the barrow has its
+        own climate — cold, still, dead air. The contrast when they
+        emerge (rain, sun, wind) is a beat in itself.
+      word_target: 5000
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_CONTRACT_ACCEPT — Taking a new contract
+    # ================================================================
+    - id: "CHAP_CONTRACT_ACCEPT"
+      name: "Contract Chapter"
+      type: negotiation
+      description: >-
+        The band takes a new contract. Negotiation, terms, risk
+        assessment. Voss haggles. The band debates. Lump watches the
+        employer's eyes and judges whether they'll be paid. These
+        chapters establish stakes for the next arc.
+      event_types: [contract_negotiation, contract_offer, hiring, commission]
+      typical_beats:
+        - beat: "the_offer"
+          description: >-
+            The employer presents the job. Hall scene, roadside
+            meeting, or messenger arrives. Lump reads the room — who's
+            desperate, who's lying, who has the silver.
+          word_target: 1000
+        - beat: "the_terms"
+          description: >-
+            Voss negotiates. Payment, advance, provisions, risk
+            disclosure. The dance between what's said and what's hidden.
+            Side-conversations among the band — who wants this job and
+            who doesn't.
+          word_target: 1200
+        - beat: "the_debate"
+          description: >-
+            Band discussion, formal or around a fire. Objections raised.
+            Old grudges surface. Practical concerns — distance, season,
+            supplies. Morale is the invisible vote.
+          word_target: 1000
+        - beat: "the_handshake"
+          description: >-
+            Decision made. Oath sworn or mark made. The advance
+            received. The weight of commitment. Lump sees the future —
+            someone in this room won't survive this contract.
+          word_target: 800
+      required_elements:
+        - "Contract details from contracts/*.yaml"
+        - "Employer NPC from npcs/settlement_npcs.yaml or npcs/antagonist_npcs.yaml"
+        - "Band treasury and supply status from band_state.yaml"
+        - "Political context from political_state.yaml"
+        - "Settlement scene from settlements.yaml"
+        - "At least one band member vocally opposed"
+      pacing: >-
+        Dialogue-heavy, tension underneath. The negotiation is the
+        action. Let subtext work — what the employer doesn't say is
+        more important than what they do. Build dread about the job
+        ahead through practical detail, not foreshadowing.
+      weather_integration: >-
+        Weather as atmosphere — rain drumming on a hall roof during
+        negotiation, the cold that makes the advance silver feel warm
+        in Voss's hand. Setting, not obstacle.
+      word_target: 4000
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_CONTRACT_RESOLVE — Completing or failing a contract
+    # ================================================================
+    - id: "CHAP_CONTRACT_RESOLVE"
+      name: "Contract Resolution Chapter"
+      type: resolution
+      description: >-
+        The contract concludes — payment received, employer satisfied or
+        betrayed, promises kept or broken. The accounting of what the
+        job cost versus what it paid. The band's reputation shifts.
+      event_types:
+        [contract_complete, contract_failed, contract_betrayal, payment_dispute]
+      typical_beats:
+        - beat: "the_report"
+          description: >-
+            The band returns to the employer or the employer inspects
+            the result. The job is declared done or disputed. Lump sees
+            the politics — gratitude, resentment, calculation.
+          word_target: 800
+        - beat: "the_reckoning"
+          description: >-
+            Payment delivered or withheld. Bonuses, penalties,
+            deductions for damage. The moment where silver changes
+            hands — or doesn't. Every coin counted. Voss knows what
+            each life cost in silver-per-day.
+          word_target: 1000
+        - beat: "the_fallout"
+          description: >-
+            Consequences — reputation gained or lost, enemies made,
+            allies strengthened. Political ripples. The band discusses
+            what went wrong, what went right, and whether they'd take
+            the job again.
+          word_target: 1000
+        - beat: "the_ledger"
+          description: >-
+            Lump's private accounting — not silver, but human cost.
+            Who changed, who's missing, what was learned. The chapter
+            earns its name: Iron Ledger.
+          word_target: 700
+      required_elements:
+        - "Contract terms from contracts/*.yaml"
+        - "Payment update to band_state.yaml treasury"
+        - "Reputation/morale change"
+        - "Reference to original contract_accept chapter"
+        - "At least one NPC relationship changed"
+        - "Explicit silver accounting"
+      pacing: >-
+        Falling action with an edge. The job is done but the chapter
+        should reveal that nothing is simple. Payment always comes with
+        strings. Success breeds new obligations. Failure breeds new
+        enemies.
+      weather_integration: >-
+        Seasonal. Resolution chapters often mark transitions — end of
+        the Long Dark, deep winter, harvest. The season reflects the
+        emotional weight.
+      word_target: 3500
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_POLITICAL — Faction maneuvering and diplomacy
+    # ================================================================
+    - id: "CHAP_POLITICAL"
+      name: "Political Chapter"
+      type: political
+      description: >-
+        Allthing attendance, faction negotiations, diplomatic missions,
+        tribute demands. The band navigates politics it doesn't fully
+        understand. Lump watches powerful men decide who lives and dies
+        while pretending the decision hasn't already been made.
+      event_types:
+        [
+          allthing,
+          faction_diplomacy,
+          tribute_demand,
+          alliance_shift,
+          political_marriage,
+        ]
+      typical_beats:
+        - beat: "the_hall"
+          description: >-
+            Setting the scene — whose hall, who's present, who's
+            absent. The arrangement of benches tells the political
+            story. Lump maps power by watching who sits where and who
+            stands.
+          word_target: 800
+        - beat: "the_speeches"
+          description: >-
+            Formal arguments, accusations, proposals. Norse political
+            discourse — direct, threatening, poetic. Quotation from
+            law-custom. The band listens and tries to calculate which
+            outcome pays.
+          word_target: 1200
+        - beat: "the_corridor"
+          description: >-
+            Side-conversations, private deals, threats delivered
+            quietly. The real politics. Lump overhears or is
+            deliberately shown something. Voss plays his hand.
+          word_target: 1000
+        - beat: "the_outcome"
+          description: >-
+            Decision made. Alliances shift. The band now serves a new
+            interest or is trapped between two. Lump understands just
+            enough to be afraid of what he doesn't understand.
+          word_target: 800
+      required_elements:
+        - "Faction data from political_state.yaml"
+        - "Settlement and hall from settlements.yaml"
+        - "NPCs from npcs/settlement_npcs.yaml or npcs/antagonist_npcs.yaml"
+        - "Legal customs from culture/legal_customs.yaml"
+        - "Band allegiances from band_state.yaml"
+        - "At least two factions present with opposing interests"
+      pacing: >-
+        Dialogue-driven tension. The violence here is structural, not
+        physical. Every word is a weapon. Slow build to a decision
+        that changes the strategic landscape. Lump's limited
+        understanding creates dramatic irony — the reader may grasp
+        implications that Lump misses.
+      weather_integration: >-
+        Indoor atmosphere. Cold seeping through stone walls. Hearth
+        smoke. The weather outside represents what's waiting if the
+        politics fail — winter doesn't negotiate.
+      word_target: 4000
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_SETTLEMENT — Town arrival and settlement life
+    # ================================================================
+    - id: "CHAP_SETTLEMENT"
+      name: "Settlement Chapter"
+      type: settlement
+      description: >-
+        The band arrives at or spends time in a settlement. Supply,
+        rest, information gathering, social friction. Mercenaries are
+        never welcome for long. The settlement is a living system —
+        economy, politics, gossip, suspicion.
+      event_types:
+        [settlement_arrival, resupply, shore_leave, market_day, hired_defense]
+      typical_beats:
+        - beat: "first_sight"
+          description: >-
+            Approach and first impression. What Lump sees — the walls
+            (or lack of them), the smoke, the fields, the people
+            watching from doorways. The settlement's character in a
+            paragraph.
+          word_target: 600
+        - beat: "the_welcome"
+          description: >-
+            Reception. Cautious, hostile, eager, or desperate. The
+            headman, jarl, or lawspeaker meets the band. First
+            negotiations — lodging, supplies, behavior expectations.
+            Someone says "we don't want trouble."
+          word_target: 1000
+        - beat: "the_town"
+          description: >-
+            Exploring the settlement. Market, hall, forge, temple. The
+            band disperses — some to drink, some to trade, some to
+            find women or trouble. Lump wanders and observes. Rumors
+            collected. Prices noted.
+          word_target: 1200
+        - beat: "the_tension"
+          description: >-
+            Friction between band and locals. A theft, an insult, a
+            price dispute, an old grudge recognized. The band is armed
+            and dangerous in a place that fears armed and dangerous men.
+          word_target: 800
+        - beat: "departure_or_commitment"
+          description: >-
+            The band leaves with supplies and information, or commits
+            to stay for a contract. Either way, the settlement has left
+            its mark — a new rumor, a new enemy, a new face in the band.
+          word_target: 400
+      required_elements:
+        - "Settlement data from settlements.yaml"
+        - "Local NPCs from npcs/settlement_npcs.yaml"
+        - "Economy/prices from economy/"
+        - "Political alignment from political_state.yaml"
+        - "Band supply update from band_state.yaml"
+        - "At least one piece of information about the wider world (rumor, news)"
+        - "Sensory detail — smell of the place, sounds, architecture"
+      pacing: >-
+        Episodic. Settlements are rest stops and information hubs. The
+        pacing can breathe, but there should be an undercurrent of
+        unease — mercenaries are guests with swords. Something should
+        be slightly wrong that the reader notices before Lump does.
+      weather_integration: >-
+        Settlement life is shaped by weather. Indoor scenes — hall,
+        forge, market stall. The weather determines what's available,
+        who's outside, and how desperate people are.
+      word_target: 4000
+      frequency: "2-3 per volume"
+
+    # ================================================================
+    # CHAP_CAMP — Downtime and character development
+    # ================================================================
+    - id: "CHAP_CAMP"
+      name: "Camp Chapter"
+      type: character
+      description: >-
+        The band at rest — making camp, maintaining gear, cooking,
+        talking, arguing, gambling, sleeping badly. The chapters where
+        characters become people. No event drives the plot; the
+        characters drive the chapter.
+      event_types: [camp_rest, downtime, training, gear_maintenance, foraging]
+      typical_beats:
+        - beat: "making_camp"
+          description: >-
+            The work of stopping. Fire, shelter, perimeter, water.
+            Who does what — the hierarchy of camp duties reveals band
+            dynamics. Lump's former thrall skills make him useful in
+            ways that complicate his status.
+          word_target: 800
+        - beat: "fireside"
+          description: >-
+            Conversation. Stories, arguments, confessions. The fire
+            draws out what the march suppresses. Two or three
+            character threads advance. Lump listens more than he talks.
+          word_target: 1500
+        - beat: "the_quiet_moment"
+          description: >-
+            A one-on-one scene. Lump and another band member. Real
+            talk — not posturing. A backstory detail emerges. Trust
+            built or broken. Physical activity — mending gear,
+            sharpening iron, cooking — as backdrop to intimacy.
+          word_target: 1200
+        - beat: "watch_and_sleep"
+          description: >-
+            Night watch. The camp sleeps. Lump alone with his thoughts
+            and the dark. Reflection, fear, ambition, memory. The
+            internal life that sustains the series.
+          word_target: 500
+      required_elements:
+        - "Weather from weather/weather_history.yaml"
+        - "Food/supply status from band_state.yaml"
+        - "At least two character arcs advanced"
+        - "Physical detail — camp construction, cooking, gear"
+        - "Band morale reflected in tone"
+        - "Material culture from culture/material_culture.yaml"
+      pacing: >-
+        Languid on purpose. These chapters earn the reader's patience
+        by making them care about the people. The pacing of camp life
+        is the pacing of real life — waiting, working, talking, being
+        cold. No artificial tension. The tension is human.
+      weather_integration: >-
+        Weather determines everything about camp — shelter type, fire
+        feasibility, clothing, mood. A camp in freezing rain is a
+        misery chapter. A camp under clear stars is a rare moment of
+        peace. Let weather set the emotional register.
+      word_target: 4000
+      frequency: "2-3 per volume"
+
+    # ================================================================
+    # CHAP_CRISIS — Band crisis
+    # ================================================================
+    - id: "CHAP_CRISIS"
+      name: "Crisis Chapter"
+      type: crisis
+      description: >-
+        The band fractures or nearly fractures. Morale breaks, a member
+        betrays, a mutiny threatens, supplies are gone, someone deserts.
+        These are the chapters where the band's survival as a unit is
+        the stake — more important than any contract.
+      event_types:
+        [
+          morale_break,
+          betrayal,
+          mutiny_threat,
+          desertion,
+          starvation,
+          leadership_challenge,
+        ]
+      typical_beats:
+        - beat: "the_pressure"
+          description: >-
+            The accumulation that breaks something. Not one event but
+            the last event. Lump has been watching the fracture lines
+            for chapters — now they open. Quote the specific grievance
+            from band_state.yaml.
+          word_target: 800
+        - beat: "the_confrontation"
+          description: >-
+            The crisis made explicit. Voices raised. Weapons not drawn
+            yet but hands on hilts. Voss challenged or a member accused.
+            The band divides — by loyalty, by self-interest, by who
+            owes whom.
+          word_target: 1500
+        - beat: "the_decision"
+          description: >-
+            Someone acts — concession, violence, departure, a bargain.
+            The crisis resolves through force, compromise, or
+            sacrifice. Not all crises resolve cleanly. Some just
+            pause.
+          word_target: 1200
+        - beat: "the_new_shape"
+          description: >-
+            The band after the crisis. Changed roster, changed
+            hierarchy, changed trust. Lump's position shifts — the
+            former thrall's value recalculated in the new equation.
+          word_target: 500
+      required_elements:
+        - "Band morale and grievances from band_state.yaml"
+        - "Specific triggering event from events/"
+        - "At least two band members with opposing positions"
+        - "Voss's leadership tested or reaffirmed"
+        - "Consequence — someone leaves, is punished, or concession made"
+        - "Lump's status within the band changes"
+      pacing: >-
+        Pressure-cooker. The crisis chapter is tight — internal
+        conflict is more exhausting than external. Dialogue should
+        crackle. Physical details (clenched fists, pacing, weapons
+        shifted) carry the threat that words encode.
+      weather_integration: >-
+        Weather as amplifier. Crisis in a blizzard — no one can leave.
+        Crisis in good weather — desertion is possible, which changes
+        the calculus. The environment constrains options.
+      word_target: 4000
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_SUPERNATURAL — Veil thinning and magic
+    # ================================================================
+    - id: "CHAP_SUPERNATURAL"
+      name: "Supernatural Chapter"
+      type: supernatural
+      description: >-
+        The Veil thins and something wrong enters the world. The Hush
+        falls. The dead stir. Seidr manifests. These chapters break
+        the rules of the mundane world the reader has learned to trust.
+        Horror, not wonder — the supernatural is unwelcome.
+      event_types:
+        [
+          veil_thinning,
+          the_hush,
+          undead_encounter,
+          seidr_event,
+          omen,
+          wyrd_reading,
+        ]
+      typical_beats:
+        - beat: "the_wrongness"
+          description: >-
+            Something is off. Animals flee, fires burn wrong, silence
+            falls where there should be wind. Lump's thrall-senses
+            fire — he's been close to the ground his whole life, and
+            the ground is speaking. Others dismiss it.
+          word_target: 800
+        - beat: "the_manifestation"
+          description: >-
+            The supernatural becomes undeniable. The Hush descends.
+            The dead walk. Runes glow. The temperature drops to
+            something that isn't cold — it's absence. The band reacts
+            with their training, which is inadequate.
+          word_target: 1500
+        - beat: "the_response"
+          description: >-
+            How the band copes. Weapons against what weapons can't
+            kill. Someone knows a ward, a prayer, a rune. Someone
+            breaks. The old Aesrgrim rituals — do they still work when
+            the gods are silent? Someone tries.
+          word_target: 1200
+        - beat: "the_aftermath"
+          description: >-
+            The Veil re-thickens or the threat is endured, not defeated.
+            What was seen cannot be unseen. Someone is changed — marked,
+            haunted, blessed, or just smaller. The band doesn't talk
+            about it, which is its own kind of talking about it.
+          word_target: 700
+      required_elements:
+        - "Supernatural event from events/supernatural_chain_events.yaml"
+        - "Barrow or Veil-thin location from barrows/barrows.yaml or atlas.yaml"
+        - "Supernatural NPC from npcs/supernatural_npcs.yaml"
+        - "Ritual reference from culture/rituals.yaml"
+        - "Hazards from weather/hazards.yaml"
+        - "At least one wardstone, prayer, or rune attempted"
+        - "Physical symptoms — cold, nausea, nosebleed, temporal disorientation"
+      pacing: >-
+        Dread, then shock, then numb. The supernatural doesn't build
+        to a climax — it arrives. The horror is in the mundane
+        response to the impossible. Keep the prose grounded in physical
+        sensation. No purple language. The plainest sentences carry
+        the most dread.
+      weather_integration: >-
+        Supernatural weather is its own phenomenon. The Hush kills
+        wind. Cold deepens past natural. Frost forms in patterns.
+        Normal weather returns when the event ends — the contrast is
+        the scariest part.
+      word_target: 4200
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_CHARACTER — Deep POV chapter
+    # ================================================================
+    - id: "CHAP_CHARACTER"
+      name: "Character Chapter"
+      type: character
+      description: >-
+        A deep dive into Lump's interiority or (rarely) another
+        character's POV. Backstory, trauma, turning point, or crisis
+        of identity. These chapters are earned by the events around
+        them — they don't stand alone but illuminate everything else.
+      event_types:
+        [
+          personal_crisis,
+          backstory_trigger,
+          identity_shift,
+          relationship_change,
+          trauma_response,
+        ]
+      typical_beats:
+        - beat: "the_trigger"
+          description: >-
+            Something in the present pulls the past forward. A smell,
+            a gesture, a word. Lump's body remembers before his mind
+            does. The transition from external to internal should be
+            seamless — no 'he remembered' constructions.
+          word_target: 600
+        - beat: "the_memory"
+          description: >-
+            The backstory sequence. Thrall years, the farm,
+            the master's household. Specific, physical, sensory. Not
+            exposition — experience. The reader lives through what
+            shaped Lump into who he is.
+          word_target: 1500
+        - beat: "the_present"
+          description: >-
+            Return to the present moment, changed by remembering. The
+            past informs a present decision. Lump sees the current
+            situation through older eyes. A connection drawn without
+            stating it.
+          word_target: 1000
+        - beat: "the_shift"
+          description: >-
+            Something changes in Lump — a decision, a boundary, a
+            willingness, a refusal. Not dramatic transformation but
+            the kind of internal tectonic shift that only the reader
+            can see. The other characters won't notice for chapters.
+          word_target: 900
+      required_elements:
+        - "Character arc data from npcs/relationship_web.yaml"
+        - "Personal events from events/personal_band_events.yaml"
+        - "Backstory elements consistent with established history"
+        - "Physical anchoring — even memory chapters stay in the body"
+        - "No exposition dumps — backstory through scene, not summary"
+        - "Connection to current plot arc"
+      pacing: >-
+        Introspective but not still. Even memory sequences have
+        movement, conflict, and stakes. The pacing alternates between
+        present and past, each informing the other. Never more than
+        one of these per four chapters — they need room to resonate.
+      weather_integration: >-
+        Weather as emotional mirror — but not on the nose. A memory
+        of summer triggered by deep winter. Rain in the present,
+        drought in the past. The contrast does the work.
+      word_target: 4000
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_SIEGE — Extended siege
+    # ================================================================
+    - id: "CHAP_SIEGE"
+      name: "Siege Chapter"
+      type: combat
+      description: >-
+        Extended siege — the band attacks or defends a fortified
+        position over days or weeks. Attrition, boredom, sudden
+        violence. Siege warfare is waiting punctuated by horror.
+      event_types: [siege_defend, siege_attack, siege_break, siege_relief]
+      typical_beats:
+        - beat: "the_walls"
+          description: >-
+            Establishing the siege. The fortification described — walls,
+            gates, terrain, approaches. Who holds what. The band's
+            role in the larger force. Day one — optimism or grim
+            calculation.
+          word_target: 800
+        - beat: "the_waiting"
+          description: >-
+            Days pass. Supply counts. Patrols on the perimeter.
+            Sniping from walls. The psychological wear of siege — the
+            certainty that something will happen and the torture of
+            not knowing when.
+          word_target: 1200
+        - beat: "the_assault"
+          description: >-
+            The attack — scaling ladders, battering rams, tunneling,
+            fire. Close combat in the breach. The worst kind of
+            fighting — uphill, exposed, desperate. Or the sally —
+            defenders bursting out when attackers least expect it.
+          word_target: 1500
+        - beat: "the_price"
+          description: >-
+            Aftermath of the assault — successful or repulsed. Wounded
+            tended. The dead counted. The siege continues or breaks.
+            If the walls fall, the sack. If they hold, another night
+            of attrition.
+          word_target: 700
+        - beat: "the_resolution"
+          description: >-
+            Siege ends — surrender, storm, relief force, starvation.
+            The band emerges from the siege changed. Siege brings out
+            the worst and best — theft, cowardice, unexpected heroism.
+          word_target: 800
+      required_elements:
+        - "Settlement fortifications from settlements.yaml"
+        - "Defending/attacking NPCs from npcs/"
+        - "Supply tracking from band_state.yaml"
+        - "Weather impact — rain fills trenches, cold kills sentries"
+        - "Multi-day timeline with day markers"
+        - "At least one engineering detail (trenching, mining, siege works)"
+        - "Morale erosion visible in dialogue and behavior"
+      pacing: >-
+        Slow-fast-slow. The siege cadence is boredom, violence,
+        boredom, violence. Each cycle costs more. The pacing should
+        feel like the siege feels — interminable until suddenly it's
+        not.
+      weather_integration: >-
+        Weather is a besieging force itself. Rain drowns approaches.
+        Cold kills exposed sentries. Snow obscures the walls. A clear
+        day means archers can see — which is not good for anyone
+        climbing.
+      word_target: 5000
+      frequency: "0-1 per volume"
+
+    # ================================================================
+    # CHAP_WEATHER — Weather-dominated chapter
+    # ================================================================
+    - id: "CHAP_WEATHER"
+      name: "Weather Chapter"
+      type: survival
+      description: >-
+        Weather becomes the antagonist. A storm that pins the band
+        down, a flood that destroys the camp, a cold snap that kills
+        livestock and men. Survival is the only goal. These chapters
+        remind the reader that the Rimevegr itself is the true enemy.
+      event_types: [blizzard, flood, avalanche, fog_hazard, extreme_cold, storm]
+      typical_beats:
+        - beat: "the_warning"
+          description: >-
+            Signs of what's coming. Someone who knows the land reads
+            the sky, the wind, the animals. Preparation — or the
+            failure to prepare because the signs were ignored.
+          word_target: 600
+        - beat: "the_storm"
+          description: >-
+            The weather arrives. Sensory immersion — sound, cold,
+            darkness, disorientation. The world shrinks to what's
+            within arm's reach. Movement becomes work. Breathing
+            becomes work. Survival is not guaranteed.
+          word_target: 1500
+        - beat: "the_crisis"
+          description: >-
+            Something fails — a shelter collapses, a man goes missing,
+            a river breaks its banks, the fire dies. The band responds
+            to the immediate threat. Competence tested. Hierarchy
+            dissolves when the wind can kill you.
+          word_target: 1200
+        - beat: "the_endurance"
+          description: >-
+            Waiting it out. Huddled together, rationing, listening.
+            Character moments born from extremity. People reveal
+            themselves when comfort is impossible. Lump's thrall
+            endurance — trained for suffering — becomes an asset.
+          word_target: 800
+        - beat: "the_clearing"
+          description: >-
+            The storm passes. Damage assessed. What was lost — gear,
+            food, men, animals 路. The world looks different after
+            the weather has reshaped it. Move on or rebuild.
+          word_target: 400
+      required_elements:
+        - "Weather event from weather/weather_history.yaml or weather/hazards.yaml"
+        - "Named weather event from weather/named_events.yaml"
+        - "Terrain from geography/atlas.yaml"
+        - "Season context from weather/seasonal_life.yaml"
+        - "Supply impact — food, shelter, fire materials"
+        - "Physical survival detail (frostbite, hypothermia, windburn)"
+        - "Band equipment and shelter capacity"
+      pacing: >-
+        Relentless. The weather doesn't pause for dialogue or
+        reflection. These chapters are physical—the prose should
+        make the reader cold, wet, and miserable. Compress internal
+        thought. Expand physical sensation.
+      weather_integration: >-
+        This IS the weather chapter. Weather doesn't integrate — it
+        dominates. Every sentence serves the storm. The chapter ends
+        when the weather does.
+      word_target: 4500
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_REVELATION — Plot revelation
+    # ================================================================
+    - id: "CHAP_REVELATION"
+      name: "Revelation Chapter"
+      type: plot
+      description: >-
+        A secret uncovered, a truth revealed, a lie exposed. The
+        reader's understanding of the story shifts. These chapters
+        recontextualize what came before. They are the payoff for
+        planted seeds and subtle wrongness.
+      event_types:
+        [
+          secret_revealed,
+          betrayal_discovered,
+          identity_uncovered,
+          conspiracy_exposed,
+          prophecy_fulfilled,
+        ]
+      typical_beats:
+        - beat: "the_seed"
+          description: >-
+            The thing that starts the unraveling. A document found,
+            a conversation overheard, a detail that finally clicks.
+            Lump has been looking at something without seeing it.
+            Now he sees.
+          word_target: 800
+        - beat: "the_pursuit"
+          description: >-
+            Following the thread. Investigation — asking questions,
+            checking facts, finding the second piece that confirms
+            the first. Lump works alone or with one trusted ally.
+            The revelation builds through evidence, not exposition.
+          word_target: 1200
+        - beat: "the_revelation"
+          description: >-
+            The moment of understanding. Not a monologue — a
+            realization. Lump connects the pieces. The reader connects
+            the pieces. The world tilts and re-settles at a new angle.
+          word_target: 800
+        - beat: "the_weight"
+          description: >-
+            Living with what's known. Who to tell, who to protect,
+            what to do. Knowledge is obligation. The revelation creates
+            a new problem that didn't exist before.
+          word_target: 700
+      required_elements:
+        - "Plot thread from events/ or hidden/"
+        - "At least one reference to earlier chapters/volumes where seeds were planted"
+        - "NPC involved from npcs/"
+        - "Evidence-based revelation — not intuition, not magic"
+        - "Consequence that changes the next 2-3 chapters minimum"
+        - "Lump's emotional response — not shock but the quiet click of understanding"
+      pacing: >-
+        Building suspense, sudden clarity, settling dread. The
+        revelation itself is quiet — a sentence, a look, a document.
+        The chapter earns it through accumulation. The aftermath is
+        where the energy shifts.
+      weather_integration: >-
+        Atmospheric. The weather mirrors the emotional state only if
+        it can be done subtly. A revelation in bright sunshine can be
+        more disorienting than one in darkness. Avoid pathetic fallacy
+        unless it's ironic.
+      word_target: 3500
+      frequency: "1-2 per volume"
+
+    # ================================================================
+    # CHAP_FUNERAL — Death and funeral rites
+    # ================================================================
+    - id: "CHAP_FUNERAL"
+      name: "Funeral Chapter"
+      type: ritual
+      description: >-
+        A member of the band or a significant NPC dies. The chapter
+        covers the death, the funeral rites, and the grief — Norse
+        style, which is practical, ritualistic, and not sentimental.
+        The band buries its dead and moves on. Except they don't,
+        not really.
+      event_types: [band_death, npc_death, funeral_rites, burial, pyre_burning]
+      typical_beats:
+        - beat: "the_death"
+          description: >-
+            The death itself — in battle, from wounds, from cold, from
+            sickness. Physical and specific. If Lump was present, the
+            exact last moments. If not, the moment he learns. Either
+            way, the body — always the body.
+          word_target: 800
+        - beat: "the_preparation"
+          description: >-
+            Preparing the body. Washing, dressing, positioning. The
+            grave goods selected — what the dead carry with them.
+            Arguments about what's owed. The living begin to take what
+            the dead no longer need.
+          word_target: 1000
+        - beat: "the_rites"
+          description: >-
+            The funeral — pyre or grave or ship-burial depending on
+            status and resources. Blót over the body. Words spoken by
+            Voss or the lawspeaker. The fire or the earth. Mead
+            poured. The Aesrgrim invoked though they don't answer.
+          word_target: 1200
+        - beat: "the_absence"
+          description: >-
+            After. The gap in the formation, the empty bedroll, the
+            name that's still said by habit. Lump reflects on what the
+            dead person meant — not in eulogy but in the specific
+            daily absence. Someone takes their gear. Life continues.
+          word_target: 700
+      required_elements:
+        - "Funeral rituals from culture/rituals.yaml"
+        - "Character data from npcs/ or band_state.yaml"
+        - "Grave goods from culture/material_culture.yaml"
+        - "Religious practice from culture/rituals.yaml (blóts)"
+        - "Band morale impact"
+        - "The dead person's last meaningful action or words"
+        - "Physical detail of the body and the burial"
+      pacing: >-
+        Solemn but not slow. Norse funerals are practical — the dead
+        are dangerous if not properly sent, and the living can't
+        afford to stop. Grief is expressed through action, not
+        monologue. The chapter should make the reader grieve through
+        absence, not sentiment.
+      weather_integration: >-
+        Weather complicates burial — frozen ground, pyre in rain,
+        wind carrying ash. The weather doesn't respect the dead any
+        more than the living. If it's beautiful, that's worse.
+      word_target: 3700
+      frequency: "1-3 per volume (depending on death count)"
+
+    # ================================================================
+    # CHAP_FEAST — Mead hall and celebration
+    # ================================================================
+    - id: "CHAP_FEAST"
+      name: "Feast Chapter"
+      type: social
+      description: >-
+        Mead hall gathering — victory celebration, seasonal feast,
+        jarl's welcome, or alliance-sealing. The rare moments when the
+        band is warm, fed, and not about to die. Social dynamics,
+        status games, boasting, grudges — all lubricated by mead.
+      event_types:
+        [
+          mead_hall,
+          victory_feast,
+          seasonal_celebration,
+          alliance_feast,
+          welcome_feast,
+        ]
+      typical_beats:
+        - beat: "the_hall"
+          description: >-
+            Entry into the hall. Light, warmth, smoke, noise. After
+            chapters of cold and dark, the hall is overwhelming. Lump
+            navigates seating — where a former thrall sits says
+            everything about where he stands.
+          word_target: 700
+        - beat: "the_food_and_drink"
+          description: >-
+            The feast itself. Meat, bread, mead, ale. After subsistence
+            rations, abundance is disorienting. Detail what's eaten
+            and drunk — this is rare and matters. Manners observed or
+            ignored. Toasts raised.
+          word_target: 800
+        - beat: "the_boasting"
+          description: >-
+            Stories told, deeds claimed, challenges issued. The social
+            competition of the mead hall — reputation built and
+            defended with words before weapons. Someone lies. Someone
+            tells a truth that shouldn't be told. A song, maybe.
+          word_target: 1200
+        - beat: "the_politics"
+          description: >-
+            The feast is never just a feast. Alliances tested, deals
+            made, enemies identified. The host has an agenda.
+            Information flows when guards drop. Lump listens to the
+            drunk and the careful alike.
+          word_target: 1000
+        - beat: "the_morning"
+          description: >-
+            After the feast. Hangovers, regrets, consequences. What
+            was promised in mead-heat. Who slept where. The hall in
+            daylight — smaller, dirtier, emptier. The world reasserts
+            itself.
+          word_target: 500
+      required_elements:
+        - "Settlement/hall from settlements.yaml"
+        - "Food and drink detail from culture/material_culture.yaml"
+        - "NPCs present from npcs/"
+        - "Political context from political_state.yaml"
+        - "Expressions and proverbs from culture/expressions.yaml or culture/proverbs_extended.yaml"
+        - "Social status dynamics — seating, toasting order, gift exchange"
+        - "At least one piece of plot-relevant information exchanged"
+      pacing: >-
+        Rise and fall. The feast builds in energy — arrival, eating,
+        drinking, peak (boasting/confrontation), decline (exhaustion,
+        drunkenness), morning. The loudest chapter type. Let it be
+        loud. But plant something quiet in the noise that matters
+        later.
+      weather_integration: >-
+        The feast is defined by the weather outside. A feast during
+        deep Long Dark — the hall is everything, the outside is death.
+        Summer feast — doors open, light lasts, the mood is different.
+        The walls are the boundary between survival and celebration.
+      word_target: 4200
+      frequency: "1-2 per volume"
+
+  # ==================================================================
+  # COMBINATIONS — Common template pairings and sequences
+  # ==================================================================
+  combinations:
+    description: >-
+      Common chapter sequences that form narrative arcs. Most volumes
+      follow 2-3 of these patterns across their 12-16 chapters.
+      Templates combine naturally — a MARCH ends at a SETTLEMENT which
+      leads to a CONTRACT_ACCEPT. These sequences are not mandatory
+      but represent the most common story rhythms.
+
+    contract_arc:
+      name: "Contract Arc"
+      sequence:
+        [
+          "CHAP_CONTRACT_ACCEPT",
+          "CHAP_MARCH",
+          "CHAP_BATTLE|CHAP_BARROW|CHAP_SKIRMISH",
+          "CHAP_CONTRACT_RESOLVE",
+        ]
+      description: >-
+        The bread and butter of a mercenary novel. Take a job, travel
+        to it, execute it, get paid (or don't). Most volumes contain
+        one complete contract arc.
+      typical_chapters: 4-6
+      notes: "Insert CHAP_CAMP or CHAP_WEATHER between any steps for texture."
+
+    settlement_arc:
+      name: "Settlement Arc"
+      sequence:
+        [
+          "CHAP_MARCH",
+          "CHAP_SETTLEMENT",
+          "CHAP_FEAST|CHAP_POLITICAL",
+          "CHAP_CONTRACT_ACCEPT|CHAP_CRISIS",
+        ]
+      description: >-
+        Arrival at a new place, social engagement, and the consequence
+        — a new job or a new problem. Settlement arcs provide
+        information, resupply, and social dynamics.
+      typical_chapters: 3-5
+      notes: "Feast and Political chapters can combine if the feast IS the political event."
+
+    barrow_arc:
+      name: "Barrow Arc"
+      sequence:
+        [
+          "CHAP_CONTRACT_ACCEPT",
+          "CHAP_MARCH",
+          "CHAP_BARROW",
+          "CHAP_SUPERNATURAL",
+          "CHAP_CONTRACT_RESOLVE",
+        ]
+      description: >-
+        The supernatural contract. Hired to clear a barrow, the band
+        encounters things that silver can't buy protection from. The
+        supernatural chapter may precede or follow the barrow delve.
+      typical_chapters: 4-6
+      notes: "The CHAP_SUPERNATURAL may be subtle — a dream, an omen, a lingering mark."
+
+    crisis_arc:
+      name: "Crisis Arc"
+      sequence:
+        ["CHAP_CAMP|CHAP_MARCH", "CHAP_CRISIS", "CHAP_CHARACTER", "CHAP_CAMP"]
+      description: >-
+        Internal tension builds through downtime or travel, erupts in
+        crisis, drives a character chapter, and settles into a new
+        normal. These arcs reshape the band for the next major event.
+      typical_chapters: 3-4
+      notes: "Crisis arcs often trigger mid-volume. The band that enters is not the band that exits."
+
+    survival_arc:
+      name: "Survival Arc"
+      sequence: ["CHAP_WEATHER", "CHAP_CAMP", "CHAP_SKIRMISH|CHAP_CRISIS"]
+      description: >-
+        The Rimevegr tries to kill the band without any human enemy
+        involved. Weather, starvation, wildlife. The survival arc
+        tests the band against nature and forces decisions about who
+        gets fed and who gets left.
+      typical_chapters: 2-3
+      notes: "Most common during deep Long Dark. Can cascade into a crisis if supplies fail."
+
+    political_arc:
+      name: "Political Arc"
+      sequence:
+        [
+          "CHAP_SETTLEMENT",
+          "CHAP_POLITICAL",
+          "CHAP_FEAST",
+          "CHAP_CONTRACT_ACCEPT|CHAP_BATTLE",
+        ]
+      description: >-
+        The band is drawn into faction politics. Settlement arrival
+        introduces the players, the political chapter shows the game,
+        the feast seals or breaks deals, and the consequence is either
+        a commissioned fight or a forced contract.
+      typical_chapters: 3-5
+      notes: "Political arcs span across volumes. One volume's political chapter plants seeds for the next."
+
+    death_arc:
+      name: "Death Arc"
+      sequence:
+        [
+          "CHAP_BATTLE|CHAP_SKIRMISH|CHAP_BARROW",
+          "CHAP_FUNERAL",
+          "CHAP_CHARACTER",
+        ]
+      description: >-
+        A named character dies. The death chapter, the funeral, and
+        the aftermath in a surviving character's interiority. These
+        arcs are the emotional backbone of the series. Don't rush
+        them.
+      typical_chapters: 2-3
+      notes: "Not every death gets a full arc. Minor deaths fold into the chapter that kills them."
+
+    revelation_arc:
+      name: "Revelation Arc"
+      sequence:
+        [
+          "CHAP_SETTLEMENT|CHAP_CAMP",
+          "CHAP_REVELATION",
+          "CHAP_CRISIS|CHAP_CHARACTER",
+        ]
+      description: >-
+        A secret surfaces. The band or Lump discovers something that
+        reframes the situation. The revelation drives a crisis or a
+        character shift. These arcs pay off threads planted volumes
+        earlier.
+      typical_chapters: 2-3
+      notes: "Revelation arcs should feel inevitable in retrospect. The seeds were visible."
+
+    siege_arc:
+      name: "Siege Arc"
+      sequence:
+        [
+          "CHAP_CONTRACT_ACCEPT|CHAP_POLITICAL",
+          "CHAP_MARCH",
+          "CHAP_SIEGE",
+          "CHAP_FUNERAL|CHAP_CONTRACT_RESOLVE",
+        ]
+      description: >-
+        Extended military engagement. The setup (political or
+        contractual), the approach, the siege itself, and the
+        aftermath. Siege arcs dominate a volume — the siege chapter
+        alone may be the longest in the book.
+      typical_chapters: 4-6
+      notes: "Maximum one siege arc per volume. The siege chapter itself may span 6,000-8,000 words."
+
+  # ==================================================================
+  # VOLUME COMPOSITION GUIDELINES
+  # ==================================================================
+  volume_guidelines:
+    chapters_per_volume: "12-16"
+    target_word_count: "55,000-75,000"
+    pov_balance: >-
+      Minimum 10 chapters from Lump's POV. Maximum 2 secondary POV
+      chapters per volume. Secondary POV chapters should be
+      CHAP_CHARACTER or CHAP_POLITICAL type.
+    template_distribution:
+      required_per_volume:
+        - "At least 1 CHAP_MARCH"
+        - "At least 1 CHAP_CAMP"
+        - "At least 1 combat chapter (BATTLE, SKIRMISH, BARROW, or SIEGE)"
+        - "At least 1 social chapter (SETTLEMENT, FEAST, or POLITICAL)"
+      recommended_per_volume:
+        - "1-2 CHAP_CHARACTER for emotional depth"
+        - "1 CHAP_CONTRACT_ACCEPT and 1 CHAP_CONTRACT_RESOLVE for structure"
+        - "1 CHAP_WEATHER during Long Dark volumes"
+      avoid:
+        - "More than 2 combat chapters in a row without a breathing chapter"
+        - "More than 3 slow chapters (CAMP, CHARACTER, SETTLEMENT) in sequence"
+        - "CHAP_REVELATION without adequate earlier foreshadowing"
+        - "CHAP_FUNERAL for characters the reader hasn't spent time with"
+    opening_chapter: >-
+      Volume openers should be CHAP_MARCH, CHAP_SETTLEMENT, or
+      CHAP_CAMP — ground the reader in the band's current state before
+      escalating. Exception: Volume 1 opens with the band already in
+      crisis.
+    closing_chapter: >-
+      Volume closers should be CHAP_CONTRACT_RESOLVE,
+      CHAP_REVELATION, or CHAP_CHARACTER — provide resolution while
+      planting hooks for the next volume. Never close on
+      CHAP_WEATHER or CHAP_CAMP — the ending must carry momentum.
+    seasonal_weighting: >-
+      Long Dark volumes (most of the series) favor CHAP_WEATHER,
+      CHAP_CAMP, CHAP_CRISIS — survival pressure. Long Summer volumes
+      favor CHAP_BATTLE, CHAP_POLITICAL, CHAP_FEAST — action and
+      social dynamics. The season shapes the template mix.

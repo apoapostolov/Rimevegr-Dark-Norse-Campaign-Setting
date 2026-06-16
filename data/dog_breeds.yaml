@@ -1,0 +1,164 @@
+dog_breeds:
+  fjord_hound:
+    display_name: "Fjord hound"
+    base_value_silver: 4
+    stats:
+      nose: 4
+      speed: 3
+      grit: 3
+      bite: 2
+      sense: 4
+      voice: 4
+    common_traits:
+      - weather_sense
+      - bark_alarm
+      - shorewise
+    common_weaknesses:
+      - soft_in_line
+    common_bloodline_tags:
+      - weather_sense
+      - shorewise
+      - homewise
+      - calm_house
+  black_pine_wolfdog:
+    display_name: "Black Pine wolf-dog"
+    base_value_silver: 12
+    stats:
+      nose: 5
+      speed: 4
+      grit: 5
+      bite: 5
+      sense: 3
+      voice: 2
+    common_traits:
+      - winter_hunter
+      - hard_bite
+      - silent_worker
+    common_weaknesses:
+      - stranger_sour
+      - pack_hot
+    common_bloodline_tags:
+      - winter_hunter
+      - hard_bite
+      - stranger_sour
+      - deep_nose
+  bog_tracker:
+    display_name: "Bog tracker"
+    base_value_silver: 6
+    stats:
+      nose: 5
+      speed: 3
+      grit: 3
+      bite: 2
+      sense: 5
+      voice: 3
+    common_traits:
+      - marsh_footed
+      - deep_nose
+      - careful_step
+    common_weaknesses:
+      - kennel_sour
+    common_bloodline_tags:
+      - deep_nose
+      - marsh_footed
+      - careful_step
+      - quiet_mouth
+  hall_mastiff:
+    display_name: "Hall mastiff"
+    base_value_silver: 8
+    stats:
+      nose: 3
+      speed: 2
+      grit: 5
+      bite: 4
+      sense: 3
+      voice: 5
+    common_traits:
+      - gate_guard
+      - hold_fast
+      - loud_warning
+    common_weaknesses:
+      - poor_endurance
+    common_bloodline_tags:
+      - gate_guard
+      - loud_warning
+      - hold_fast
+      - calm_house
+  moor_lurcher:
+    display_name: "Moor lurcher"
+    base_value_silver: 7
+    stats:
+      nose: 3
+      speed: 5
+      grit: 2
+      bite: 2
+      sense: 4
+      voice: 2
+    common_traits:
+      - long_legs
+      - hare_killer
+      - quick_return
+    common_weaknesses:
+      - thin_coat
+    common_bloodline_tags:
+      - long_legs
+      - quick_return
+      - homewise
+      - thin_coat
+
+puppy_quirks:
+  sure_returner:
+    stat_mods:
+      sense: 1
+    add_traits:
+      - homewise
+  late_head:
+    stat_mods: {}
+    add_traits:
+      - late_head
+  cold_nose:
+    stat_mods:
+      nose: 1
+    add_traits:
+      - cold_nose
+  kennel_sour:
+    stat_mods:
+      voice: -1
+    add_traits:
+      - kennel_sour
+  loud_mouth:
+    stat_mods:
+      voice: 1
+    add_traits:
+      - loud_mouth
+  soft_mouth:
+    stat_mods:
+      bite: -1
+      sense: 1
+    add_traits:
+      - soft_mouth
+  hard_keeper:
+    stat_mods:
+      grit: 1
+    add_traits:
+      - hard_keeper
+  fight_picker:
+    stat_mods:
+      grit: 1
+      sense: -1
+    add_traits:
+      - fight_picker
+
+bloodline_bonus_tags:
+  deep_nose: 3
+  winter_hunter: 4
+  hard_bite: 4
+  calm_house: 2
+  gate_guard: 3
+  homewise: 3
+  quick_return: 2
+  loud_warning: 2
+  stranger_sour: -3
+  kennel_sour: -2
+  pack_hot: -4
+  thin_coat: -2

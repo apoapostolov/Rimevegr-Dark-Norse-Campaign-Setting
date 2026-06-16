@@ -1,0 +1,1701 @@
+npcs:
+  - id: "NPC_SET_001"
+    name: "Hrothgar Stenborn"
+    call_name: "Jarl Hrothgar"
+    role: "notable"
+    settlement: "Frostfjord Hollow"
+    description: "He keeps his beard braided with fishbone pins and wears a seal-hide cloak polished with cod oil. A pale scar runs from his left ear to the corner of his mouth, and he taps an amber counting ring against the arm of his chair when he lies."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 4
+      WIT: 7
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Command"
+        rank: 3
+      - name: "Bargain"
+        rank: 4
+      - name: "Intimidate"
+        rank: 2
+    personality: "Hrothgar is patient in public and vicious in private bargaining. He smiles while he measures what your death is worth in silver."
+    agenda: "Secure exclusive cod routes to Kolvik before winter tolls strangle Frostfjord trade."
+    secret: "[CJK_PENDING] Hrothgar has been paying both the Pale Widow and Ordovast for different promises and cannot satisfy both debts."
+    relationships:
+      - target: "Astrid Veilborn"
+        type: "rival"
+        note: "Mutual blackmail disguised as diplomacy."
+      - target: "Voss"
+        type: "debt"
+        note: "Still owes Voss half-payment from the southern barrow contract."
+    associated_chains: ["widows_web", "waking_barrows"]
+    image_prompt: "Late-middle-aged Norse jarl in seal-hide cloak, fishbone beard pins, amber signet ring, long scar on cheek, dark timber hall, frost on beams, muted iron-blue palette."
+
+  - id: "NPC_SET_002"
+    name: "Yrsa Net-Mother"
+    call_name: "Net-Mother"
+    role: "merchant"
+    settlement: "Frostfjord Hollow"
+    description: "Yrsa has wrists roped with old net scars and wears a patched wool apron stiff with brine. She keeps a bronze hook at her belt and limps from a hip healed crooked after an ice-fall."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 3
+      - name: "Weather-sense"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+    personality: "She pretends to be blunt, but every insult she throws is a test. Yrsa remembers prices, favors, and funerals with equal accuracy."
+    agenda: "Form a women-run fish convoy that bypasses Hrothgar's tithe clerks."
+    secret: "[CJK_PENDING] She is storing Red Tide contraband in bait barrels to force Olaf into a ferry partnership."
+    relationships:
+      - target: "Olaf Reedson"
+        type: "ally"
+        note: "Shared smuggling lane by night river."
+      - target: "Hrothgar Stenborn"
+        type: "fear"
+        note: "He can revoke her dock rights in one decree."
+    associated_chains: ["fjord_compact", "red_tide"]
+    image_prompt: "Older fisher-matriarch with brine-stiff apron, scarred wrists, bronze fishhook knife, weather-beaten stance on icy pier, muted slate and sea-green tones."
+
+  - id: "NPC_SET_003"
+    name: "Keld Ironhand"
+    call_name: "The Bellows Ox"
+    role: "smith"
+    settlement: "Frostfjord Hollow"
+    description: "Keld's right forearm is wrapped in old burn leather and his beard is singed short from years over a shallow forge. He works in a smoke-dark shed with one cracked anvil and a door chained from inside after dusk."
+    stats:
+      MIG: 6
+      NIM: 3
+      TOU: 6
+      WIT: 4
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Smithing"
+        rank: 3
+      - name: "Brawl"
+        rank: 2
+      - name: "Shelter"
+        rank: 1
+    personality: "He speaks little and listens too well, which unsettles drunk warriors. Keld's temper is slow to rise and impossible to stop once lit."
+    agenda: "Acquire Deepholm steel dies to upgrade Frostfjord from basic to reliable arms-work."
+    secret: "[CJK_PENDING] He once forged shackles for Wulfgar and recognizes Red Tide iron marks on seized chains."
+    relationships:
+      - target: "Haldor Bronze-Brow"
+        type: "rival"
+        note: "Competes for the same ore caravans."
+      - target: "Wulfgar"
+        type: "fear"
+        note: "Knows Wulfgar will kill him if the shackle ledger resurfaces."
+    associated_chains: ["iron_grip", "red_tide"]
+    image_prompt: "Heavy Norse smith with burn-wrapped forearm, singed beard, soot-black forge room, cracked anvil, chain-locked door, dark charcoal palette with dull orange sparks."
+
+  - id: "NPC_SET_004"
+    name: "Astrid Veilborn"
+    call_name: "The Pale Widow"
+    role: "notable"
+    settlement: "Ashen Reach"
+    description: "Her skin is paper-white and her grey wool dress never seems wet even in sleet. She wears no jewelry except a bone needle at the throat, and her breath ghosts cold in warm rooms."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 3
+      WIT: 8
+      WIL: 9
+      WYR: 8
+    skills:
+      - name: "Wyrd-reading"
+        rank: 5
+      - name: "Deceive"
+        rank: 4
+      - name: "Persuade"
+        rank: 4
+      - name: "Spirit-lore"
+        rank: 4
+    personality: "She speaks softly and never repeats herself. People leave her hall believing they chose what she already decided."
+    agenda: "Complete a hidden chain of anchor-sites linking Ashen Reach, Kolvik, and Raven's Perch."
+    secret: "[CJK_PENDING] Her body is sustained by three hidden anchor stones; destroy them and she can truly die."
+    relationships:
+      - target: "Ordovast Karr"
+        type: "rival"
+        note: "Each feeds the other curated intelligence."
+      - target: "Dalla Mist-Tongue"
+        type: "ally"
+        note: "Primary seidr courier in the inner circle."
+    associated_chains: ["widows_web", "waking_barrows"]
+    image_prompt: "Pale Norse sorceress in grey wool, bone needle clasp, black reflective eyes, frost-hazed stone hall, subtle threadlike veils in air, muted ash-grey palette."
+
+  - id: "NPC_SET_005"
+    name: "Grimvi Ember-Nail"
+    call_name: "Tar Forge Master"
+    role: "smith"
+    settlement: "Ashen Reach"
+    description: "Grimvi's fingernails are permanently black from tar and iron scale. He keeps his sleeves stitched with copper rings to ward burns and works beside open pine pits that smoke day and night."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Smithing"
+        rank: 4
+      - name: "Survival"
+        rank: 1
+      - name: "Intimidate"
+        rank: 2
+    personality: "He is proud of practical work and contemptuous of courtly talk. Grimvi trusts tools more than people and prices both harshly."
+    agenda: "Produce pitch-proof lamellar for a winter campaign contract from Ordovast's quartermasters."
+    secret: "[CJK_PENDING] He is quietly forging altered spearheads for the Grave Wardens to test against barrow-flesh."
+    relationships:
+      - target: "Bryn Ashmouth"
+        type: "ally"
+        note: "Trades experimental iron for barrow samples."
+      - target: "Astrid Veilborn"
+        type: "fear"
+        note: "Knows she can ruin his trade with one whisper."
+    associated_chains: ["waking_barrows", "iron_grip"]
+    image_prompt: "Broad-shouldered tar-smith with soot-black nails, copper-ringed sleeves, smoking pine tar pits, iron tools glowing low red, muted brown-black palette."
+
+  - id: "NPC_SET_006"
+    name: "Dalla Mist-Tongue"
+    call_name: "Hall Listener"
+    role: "spy"
+    settlement: "Ashen Reach"
+    description: "Dalla shaves one side of her head and keeps the other braided with raven thread. Her lips are split from winter winds, and she carries wax tablets tucked inside her boot leather."
+    stats:
+      MIG: 3
+      NIM: 6
+      TOU: 4
+      WIT: 6
+      WIL: 6
+      WYR: 3
+    skills:
+      - name: "Stealth"
+        rank: 4
+      - name: "Deceive"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+    personality: "She laughs too quickly when afraid, then goes silent for hours. Dalla can mimic accents from five settlements and forgets none of what she hears."
+    agenda: "Place listening caches in Thornwall before Helga seals the spring roads."
+    secret: "[CJK_PENDING] She has started hearing voices from the standing stones and cannot tell which orders are human."
+    relationships:
+      - target: "Astrid Veilborn"
+        type: "ally"
+        note: "Bound by blood-oath and leverage."
+      - target: "Helga Thornsdottir"
+        type: "fear"
+        note: "Caught once in Thornwall and still carries the lash marks."
+    associated_chains: ["widows_web", "red_tide"]
+    image_prompt: "Lean female spy with half-shaved hair, raven-thread braid, cracked lips, wax tablets hidden in boot, shadowed timber corridor, muted blue-black palette."
+
+  - id: "NPC_SET_007"
+    name: "Eira Ashblood"
+    call_name: "Cinder Healer"
+    role: "healer"
+    settlement: "Ashen Reach"
+    description: "Eira wears layered wool stained with herb smoke and old blood. Her left eye waters constantly from furnace ash, and she keeps dried yarrow sewn into her cuffs."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 6
+      WYR: 2
+    skills:
+      - name: "Heal"
+        rank: 4
+      - name: "Forage"
+        rank: 3
+      - name: "Spirit-lore"
+        rank: 1
+    personality: "She is practical, stern, and unromantic about death. Eira will save enemies if they can still pay in work."
+    agenda: "Build a plague cellar with proper drains before late thaw floods the lower huts."
+    secret: "[CJK_PENDING] She is keeping a hidden list of people the Widow asked her to let die untreated."
+    relationships:
+      - target: "Marek Fen-reeve"
+        type: "ally"
+        note: "Smuggles medicines to Feldwick families."
+      - target: "Astrid Veilborn"
+        type: "fear"
+        note: "Knows too much of the Widow's triage orders."
+    associated_chains: ["widows_web", "three_wolves"]
+    image_prompt: "Ash-streaked Norse healer in smoke-stained wool, one irritated eye, herb bundles in cuffs, dim infirmary lit by tallow lamps, muted umber and grey tones."
+
+  - id: "NPC_SET_008"
+    name: "Marek Fen-reeve"
+    call_name: "Goat Crown"
+    role: "notable"
+    settlement: "Feldwick"
+    description: "Marek's jaw was broken and set badly; he speaks from one side of his mouth. He wears a stitched sheepskin coat under a borrowed wolf-cloak too fine for him."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+      - name: "Persuade"
+        rank: 2
+    personality: "He bends with whoever has blades at his door. Marek hates himself for surviving and still chooses survival each dawn."
+    agenda: "Keep at least thirty villagers alive through winter by juggling tribute to the Three Wolves."
+    secret: "[CJK_PENDING] He passes ration counts to Jorund so ambushes hit tribute wagons, not homes."
+    relationships:
+      - target: "Jorund Fen-Track"
+        type: "ally"
+        note: "Quiet resistance partnership."
+      - target: "Varis"
+        type: "fear"
+        note: "Varis can expose his split ledgers any day."
+    associated_chains: ["three_wolves", "iron_grip"]
+    image_prompt: "Thin village reeve with crooked jaw, patched sheepskin under stolen wolf-cloak, muddy sheep pens and broken palisade behind, bleak moor palette."
+
+  - id: "NPC_SET_009"
+    name: "Thora Rootwife"
+    call_name: "Bog-Hand"
+    role: "healer"
+    settlement: "Feldwick"
+    description: "Thora keeps peat mud under her nails to stop skin cracking in cold winds. She ties root bundles to her belt and walks with a carved ash staff notched for each winter she survived."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 2
+    skills:
+      - name: "Heal"
+        rank: 3
+      - name: "Forage"
+        rank: 4
+      - name: "Weather-sense"
+        rank: 2
+    personality: "She is blunt, unsentimental, and impossible to bully once she starts working. Thora treats fever and frostbite while cursing everyone equally."
+    agenda: "Find enough bitter-root to prevent another child fever wave before first hard freeze."
+    secret: "[CJK_PENDING] She poisoned one Three Wolves sergeant last autumn and buried the cup under the sheep stones."
+    relationships:
+      - target: "Marek Fen-reeve"
+        type: "ally"
+        note: "Forces him to reserve food for children first."
+      - target: "Hadric the Younger"
+        type: "fear"
+        note: "Knows retribution comes if the poisoning is traced."
+    associated_chains: ["three_wolves"]
+    image_prompt: "Moor healer with peat-stained fingers, root bundles at belt, notched ash staff, wind-scoured face, broken huts and fog behind, muted peat-brown palette."
+
+  - id: "NPC_SET_010"
+    name: "Jorund Fen-Track"
+    call_name: "Rush Ghost"
+    role: "scout"
+    settlement: "Feldwick"
+    description: "Jorund wears reed-wrapped boots that leave shallow prints in marsh soil. A knife scar crosses his nose, and he keeps goose-feather fletching tucked in his sleeve for luck."
+    stats:
+      MIG: 4
+      NIM: 6
+      TOU: 4
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Track"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+      - name: "Bows"
+        rank: 2
+      - name: "Survival"
+        rank: 3
+    personality: "He appears calm because panic wastes breath in bog country. Jorund trusts no banner and no oath sworn indoors."
+    agenda: "Map a safe winter escape route from Feldwick to Ashmark for noncombatants."
+    secret: "[CJK_PENDING] He has a hidden message tube for Voss's camp and plans to trade intel for evacuation."
+    relationships:
+      - target: "Voss"
+        type: "ally"
+        note: "Potential evacuation broker if terms hold."
+      - target: "Marek Fen-reeve"
+        type: "kin"
+        note: "Marek is his mother's cousin."
+    associated_chains: ["three_wolves", "bone_pack"]
+    image_prompt: "Lean moor scout with reed-wrapped boots, nose scar, goose-feather tokens, low bow in hand, marsh reeds and dusk mist, muted green-brown tones."
+
+  - id: "NPC_SET_011"
+    name: "Eydis Salt-Grandam"
+    call_name: "Stonebay Elder"
+    role: "notable"
+    settlement: "Stonebay Hamlet"
+    description: "Eydis has hands bent from decades of gutting fish in winter water. She wears a sealskin cap over white braids and keeps a carved whale-bone tally rod tucked under her arm."
+    stats:
+      MIG: 2
+      NIM: 3
+      TOU: 5
+      WIT: 6
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 2
+      - name: "Weather-sense"
+        rank: 3
+      - name: "Command"
+        rank: 2
+    personality: "She is courteous until someone threatens her boats, then she becomes iron. Eydis treats neutrality like a religion and fines anyone who endangers it."
+    agenda: "Keep Stonebay outside every union by balancing fish rights between Kolvik and Skaldhaven."
+    secret: "[CJK_PENDING] She hid Sigrun's old debt tablets that prove Stonebay was bought once and could be bought again."
+    relationships:
+      - target: "Sigrun Hrafnsdottir"
+        type: "debt"
+        note: "Holds records from Sigrun's earliest trade years."
+      - target: "Inga Stormdottir"
+        type: "ally"
+        note: "Barters storm warnings for rope and sailcloth."
+    associated_chains: ["fjord_compact"]
+    image_prompt: "Elder fisherwoman with bent hands, sealskin cap, whale-bone tally rod, tiny wave-beaten harbor, overcast sky, muted steel-blue palette."
+
+  - id: "NPC_SET_012"
+    name: "Rurik Kelp-Back"
+    call_name: "Harpoon Rurik"
+    role: "merchant"
+    settlement: "Stonebay Hamlet"
+    description: "Rurik's shoulders are broad and salt-burned, his back tattooed with old rope burns like dark cords. He oils his beard with fish fat and carries a chipped harpoon head tied to his belt cord."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 4
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 2
+      - name: "Navigate"
+        rank: 3
+      - name: "Brawl"
+        rank: 2
+    personality: "He jokes loudly when frightened and bargains like a starving wolf. Rurik is generous to kin and ruthless to outsiders."
+    agenda: "Purchase a second longboat before spring to break Kolvik's freight monopoly."
+    secret: "[CJK_PENDING] He ferries coded packets for Dalla when fog covers the coast."
+    relationships:
+      - target: "Dalla Mist-Tongue"
+        type: "debt"
+        note: "Accepted Widow silver after a failed fishing season."
+      - target: "Eydis Salt-Grandam"
+        type: "kin"
+        note: "Nephew and political headache."
+    associated_chains: ["widows_web", "fjord_compact"]
+    image_prompt: "Stocky Norse boatman with rope-scarred back, fish-fat beard, chipped harpoon charm, rough skiff and kelp-strewn shore, muted green-grey coastal palette."
+
+  - id: "NPC_SET_013"
+    name: "Nanna Gull-Bone"
+    call_name: "Tide Priestess"
+    role: "priest"
+    settlement: "Stonebay Hamlet"
+    description: "Nanna wears gull skulls sewn into her hood hem and paints whale-oil lines beneath her eyes. Her fingers are stained with lamp soot from night rites on the cliff shelf."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 3
+      WIT: 5
+      WIL: 7
+      WYR: 3
+    skills:
+      - name: "Spirit-lore"
+        rank: 3
+      - name: "Weather-sense"
+        rank: 3
+      - name: "Wyrd-reading"
+        rank: 2
+    personality: "She is quiet in daylight and intense after sundown. Nanna treats omens as logistics, not poetry."
+    agenda: "Appease the drowned spirits blamed for three missing skiffs near Bleakwater currents."
+    secret: "[CJK_PENDING] She saw Olaf dumping weighted bodies and has kept silent for ritual favors."
+    relationships:
+      - target: "Olaf Reedson"
+        type: "debt"
+        note: "Exchanges silence for river offerings."
+      - target: "Ragnhild Ice-Seer"
+        type: "fear"
+        note: "Ragnhild's dreams reach even her sea rites."
+    associated_chains: ["waking_barrows", "red_tide"]
+    image_prompt: "Sea-cliff priestess with gull-bone hood ornaments, soot-marked eyes, oil lamps in wind, black water below, muted moonlit blue palette."
+
+  - id: "NPC_SET_014"
+    name: "Ordovast Karr"
+    call_name: "Warchief Ordovast"
+    role: "notable"
+    settlement: "Grimholt"
+    description: "Ordovast keeps his hair cropped close and his jaw clean-shaven, dressed in dark wool with an iron torc chased in silver. Ink stains mark his fingers, and an old sword scar splits his left palm."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 4
+      WIT: 9
+      WIL: 8
+      WYR: 1
+    skills:
+      - name: "Command"
+        rank: 5
+      - name: "Bargain"
+        rank: 5
+      - name: "Intimidate"
+        rank: 4
+      - name: "Blades"
+        rank: 2
+    personality: "He is methodical, cold, and almost never raises his voice. Ordovast prefers to buy, isolate, and absorb enemies before steel is drawn."
+    agenda: "Bring Thornwall under formal levy law before Deepholm can guarantee its autonomy."
+    secret: "[CJK_PENDING] He keeps sealed letters proving he armed both sides of two settlement feuds to justify intervention."
+    relationships:
+      - target: "Sigrun Hrafnsdottir"
+        type: "rival"
+        note: "Economic war masked as border security."
+      - target: "Tormund Skall"
+        type: "ally"
+        note: "Absolute trust in his gate captain."
+    associated_chains: ["iron_grip"]
+    image_prompt: "Clean-shaven Norse warlord in dark wool, silver-chased iron torc, ink-stained hands, palm scar, map table in stone war hall, muted charcoal palette."
+
+  - id: "NPC_SET_015"
+    name: "Tormund Skall"
+    call_name: "Gate-Keeper"
+    role: "gate_captain"
+    settlement: "Grimholt"
+    description: "Tormund is massive, blond, and square-faced, with old white scars crossing his forearms. His garrison plate is polished daily, and his tower shield edge is worn from constant drills."
+    stats:
+      MIG: 8
+      NIM: 3
+      TOU: 8
+      WIT: 3
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Shields"
+        rank: 4
+      - name: "Blades"
+        rank: 3
+      - name: "Command"
+        rank: 2
+    personality: "He is literal, dutiful, and unshakable once ordered. Tormund sees politics as weather: loud, irrelevant, and temporary."
+    agenda: "Rebuild the north gate hinges before spring mud weakens the outer wall approach."
+    secret: "[CJK_PENDING] He once let Sigrid Blackwine pass Grimholt after curfew in exchange for a life-debt during a blizzard."
+    relationships:
+      - target: "Ordovast Karr"
+        type: "ally"
+        note: "Would die on command."
+      - target: "Sigrid Blackwine"
+        type: "debt"
+        note: "Shared survival oath from Long Dark Year 309."
+    associated_chains: ["iron_grip"]
+    image_prompt: "Huge blond gate captain in polished plate with tower shield, scarred forearms, grim stone gatehouse, sleet and iron chains, muted steel-grey palette."
+
+  - id: "NPC_SET_016"
+    name: "Brynja Ore-Mother"
+    call_name: "Mine Ledger"
+    role: "merchant"
+    settlement: "Grimholt"
+    description: "Brynja wears layered wool aprons over chain sleeves to survive cave falls and theft attempts. Her nose is broken twice over, and she carries slate tally tablets tucked in a leather chest harness."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 5
+      WIT: 7
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Command"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+    personality: "She is practical to the point of cruelty when supply lines are thin. Brynja admires competence and despises inherited status."
+    agenda: "Lock a two-season ore contract with Deepholm while undercutting Ashen Reach smelters."
+    secret: "[CJK_PENDING] She skims low-grade ore into a private stockpile intended for a breakaway forge in Ashmark."
+    relationships:
+      - target: "Haldor Bronze-Brow"
+        type: "ally"
+        note: "Trades slag ratios and furnace fuel forecasts."
+      - target: "Ordovast Karr"
+        type: "fear"
+        note: "If he audits her mine books, she dies."
+    associated_chains: ["iron_grip", "fjord_compact"]
+    image_prompt: "Hard-faced mine merchant with layered aprons and chain sleeves, broken nose, slate tally tablets in chest harness, ore carts in torchlit tunnel, muted iron-brown palette."
+
+  - id: "NPC_SET_017"
+    name: "Hake Long-Spear"
+    call_name: "War Hall Voice"
+    role: "jarl_advisor"
+    settlement: "Grimholt"
+    description: "Hake is narrow-shouldered with a spear scar through his right calf that gives him a hitching gait. He wears dark linen under a wolf-fur mantle and keeps a polished ash spear beside Ordovast's map table."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 7
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Command"
+        rank: 4
+      - name: "Navigate"
+        rank: 2
+    personality: "He is disciplined and formal, with a soldier's memory for terrain and losses. Hake never forgets who froze on which march."
+    agenda: "Convince Ordovast to delay the Thornwall push until fodder stores can sustain cavalry dogs."
+    secret: "[CJK_PENDING] He has been writing anonymous warnings to Helga to avoid a massacre that would stain Grimholt forever."
+    relationships:
+      - target: "Ordovast Karr"
+        type: "ally"
+        note: "Old campaign lieutenant turned strategist."
+      - target: "Helga Thornsdottir"
+        type: "fear"
+        note: "She would execute him if the warning letters are traced."
+    associated_chains: ["iron_grip", "red_tide"]
+    image_prompt: "Lean war advisor with limping stance, wolf-fur mantle, ash spear near map table, candlelit stone chamber with campaign markers, muted black-gold palette."
+
+  - id: "NPC_SET_018"
+    name: "Ketil Smoke-Scribe"
+    call_name: "Coal Quill"
+    role: "spy"
+    settlement: "Grimholt"
+    description: "Ketil keeps his beard singed short and inks notes with charcoal slurry on wax and bark. His left thumb is missing from the first joint, and he hides coded knots in his belt fringe."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 7
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Deceive"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+      - name: "Bargain"
+        rank: 2
+      - name: "Sagas"
+        rank: 1
+    personality: "He acts forgetful to disarm dangerous people. Ketil's mind is quick, cynical, and constantly counting exits."
+    agenda: "Identify which Kolvik dockmaster sells shipping timetables to the Widow's agents."
+    secret: "[CJK_PENDING] He is also on Sigrun's payroll and has been feeding both sides partial truths."
+    relationships:
+      - target: "Skari Coin-Tongue"
+        type: "ally"
+        note: "Uses Skari's caravans for dead-drop transfers."
+      - target: "Ordovast Karr"
+        type: "fear"
+        note: "One confession away from hanging."
+    associated_chains: ["iron_grip", "widows_web"]
+    image_prompt: "Sharp-eyed spy-scribe with singed beard and missing thumb joint, charcoal-stained hands, coded belt knots, smoky archive alcove, muted soot-grey palette."
+
+  - id: "NPC_SET_019"
+    name: "Egil Hrafnsson"
+    call_name: "Thane Raven-Eye"
+    role: "notable"
+    settlement: "Raven's Perch"
+    description: "Egil's left eye is clouded white and ringed by old raven-claw scars. He wears layered mail under a dark feathered cloak and keeps raven bone charms tied to his sword grip."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 6
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Blades"
+        rank: 3
+      - name: "Command"
+        rank: 3
+      - name: "Bows"
+        rank: 2
+    personality: "He is proud, suspicious, and quick to test outsiders with hard tasks. Egil still carries the posture of a free thane even under Ordovast's shadow."
+    agenda: "Fortify the ridge stair and reduce Grimholt oversight without open rebellion."
+    secret: "[CJK_PENDING] Egil has hidden a map stone from BAR_022 and lies that the chamber is empty."
+    relationships:
+      - target: "Ordovast Karr"
+        type: "fear"
+        note: "Pays tribute to avoid direct annexation."
+      - target: "Sigrid Blackwine"
+        type: "ally"
+        note: "Rents winter barracks to the Iron Tide Remnant."
+    associated_chains: ["iron_grip", "waking_barrows"]
+    image_prompt: "Mountain thane with one clouded eye, raven-claw facial scars, feathered dark cloak over mail, narrow stone rampart and high winds, muted black-stone palette."
+
+  - id: "NPC_SET_020"
+    name: "Svala Wall-Runner"
+    call_name: "Cliff Crow"
+    role: "scout"
+    settlement: "Raven's Perch"
+    description: "Svala is rope-thin, with chalked palms and knees wrapped in goat leather for cliff work. A fresh scar splits her lower lip, and she smells of pine pitch and wet stone."
+    stats:
+      MIG: 4
+      NIM: 7
+      TOU: 4
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Track"
+        rank: 3
+      - name: "Stealth"
+        rank: 4
+      - name: "Navigate"
+        rank: 3
+      - name: "Bows"
+        rank: 2
+    personality: "She is restless, curious, and always one ridge ahead in her mind. Svala hates politics but keeps getting dragged into them by what she sees."
+    agenda: "Chart every smuggler traverse between Raven's Perch and Icebreak before deep snow seals them."
+    secret: "[CJK_PENDING] She has been meeting Dalla's courier at a cliff shrine for silver and medicine."
+    relationships:
+      - target: "Dalla Mist-Tongue"
+        type: "debt"
+        note: "Trades route reports for her brother's treatment."
+      - target: "Egil Hrafnsson"
+        type: "ally"
+        note: "Primary eyes beyond the watchfires."
+    associated_chains: ["widows_web", "iron_grip"]
+    image_prompt: "Lean female cliff scout with chalked hands, goat-leather knee wraps, split lip scar, rope and short bow, steep mountain ledge, muted slate-blue palette."
+
+  - id: "NPC_SET_021"
+    name: "Borki Stone-Shoulder"
+    call_name: "Ridge Gate"
+    role: "gate_captain"
+    settlement: "Raven's Perch"
+    description: "Borki's neck and shoulders are thick as a yoke from lifting wall stones. He wears scale patches over boiled leather and keeps a broken tooth from his first siege strung on cord at his throat."
+    stats:
+      MIG: 7
+      NIM: 3
+      TOU: 7
+      WIT: 4
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Shields"
+        rank: 3
+      - name: "Spears"
+        rank: 3
+      - name: "Intimidate"
+        rank: 2
+    personality: "He is blunt, loyal, and slow to forgive. Borki trusts stone, steel, and people who stand their post in storms."
+    agenda: "Train village teenagers into a reserve wall crew before spring raiding season."
+    secret: "[CJK_PENDING] He accepted Ordovast coin to report Egil's private councils and now regrets it."
+    relationships:
+      - target: "Egil Hrafnsson"
+        type: "ally"
+        note: "Sworn shield to the thane."
+      - target: "Ordovast Karr"
+        type: "debt"
+        note: "Paid informer trying to break free."
+    associated_chains: ["iron_grip"]
+    image_prompt: "Burly gate captain with scale-patched leather, tooth charm necklace, heavy spear and shield, mountain gate tower in sleet, muted iron and stone palette."
+
+  - id: "NPC_SET_022"
+    name: "Ulf Vargson"
+    call_name: "Jarl Ulf"
+    role: "notable"
+    settlement: "Vargheim"
+    description: "Ulf wears wolf pelts over riveted leather and keeps his hair bound with black pine twine. His right cheek carries four claw marks from a kennel mishap he calls a blessing."
+    stats:
+      MIG: 7
+      NIM: 4
+      TOU: 7
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Command"
+        rank: 3
+      - name: "Axes"
+        rank: 3
+      - name: "Track"
+        rank: 3
+    personality: "He is territorial, tradition-bound, and fiercely protective of his wardens. Ulf respects clean agreements and punishes deceit without ceremony."
+    agenda: "Expand wolf-warden breeding lines to field winter scouts independent of hired bands."
+    secret: "[CJK_PENDING] He has a covert non-aggression pact with the Pale Widow he publicly denies."
+    relationships:
+      - target: "Astrid Veilborn"
+        type: "debt"
+        note: "Owes one major favor from a sickness cure."
+      - target: "Wulfgar"
+        type: "rival"
+        note: "Blood feud over stolen pups and killed wardens."
+    dogs:
+      - name: "Pine-Shadow"
+        kennel_ref: settlement_vargheim_wolf_wardens
+        role: war_dog
+    associated_chains: ["widows_web", "red_tide"]
+    image_prompt: "Wolf-cloaked forest jarl with claw-scarred cheek, black-pine hair ties, riveted leather, kennel palisades and winter pines, muted dark green palette."
+
+  - id: "NPC_SET_023"
+    name: "Yngrid Wolf-Mother"
+    call_name: "Kennel Warden"
+    role: "scout"
+    settlement: "Vargheim"
+    description: "Yngrid keeps her hair cut to the jaw to avoid bites and wears layered hide sleeves stitched from old muzzles. Her forearms are lined with healed puncture scars from training litters."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Track"
+        rank: 4
+      - name: "Survival"
+        rank: 3
+      - name: "Command"
+        rank: 2
+      - name: "Bows"
+        rank: 2
+    personality: "She is direct, unsentimental, and kinder to wolves than men. Yngrid judges character by how people behave around frightened animals."
+    agenda: "Recover three stolen breeding bitches before Red Tide sells them south."
+    secret: "[CJK_PENDING] She arranged a secret exchange with Askel Rope and intends to betray him at handoff."
+    relationships:
+      - target: "Ulf Vargson"
+        type: "ally"
+        note: "Trusted with kennel bloodlines and keys."
+      - target: "Askel Rope"
+        type: "rival"
+        note: "Mutual trap in motion."
+    dogs:
+      - name: "Moss-Ear"
+        kennel_ref: settlement_vargheim_wolf_wardens
+        role: breeding
+      - name: "Hearth-Warn"
+        kennel_ref: settlement_vargheim_wolf_wardens
+        role: alarm_dog
+    associated_chains: ["red_tide"]
+    image_prompt: "Battle-worn kennel scout with bite-scarred forearms, hide sleeves from old muzzles, wolf dogs in pine enclosure, muted forest and leather tones."
+
+  - id: "NPC_SET_024"
+    name: "Arne Char-Forge"
+    call_name: "Black Pine Smith"
+    role: "smith"
+    settlement: "Vargheim"
+    description: "Arne's beard is singed in uneven bands and his apron is stiff with charcoal dust. He has a flattened ear from a forge beam collapse and wears iron ear loops to keep scar tissue open."
+    stats:
+      MIG: 6
+      NIM: 3
+      TOU: 6
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Smithing"
+        rank: 4
+      - name: "Axes"
+        rank: 2
+      - name: "Shelter"
+        rank: 1
+    personality: "Arne is proud and stubborn, with little patience for decorative work. He believes every weapon should look ugly and survive three winters."
+    agenda: "Perfect a resin-quenched axe head that keeps edge in freezing rain patrols."
+    secret: "[CJK_PENDING] He supplies spare parts to Sigrid Blackwine despite Ulf's ban on outside military sales."
+    relationships:
+      - target: "Sigrid Blackwine"
+        type: "ally"
+        note: "Quiet metal trade through Raven's Perch."
+      - target: "Ulf Vargson"
+        type: "fear"
+        note: "Would lose his forge hand if exposed."
+    associated_chains: ["iron_grip", "fjord_compact"]
+    image_prompt: "Forest smith with charcoal-caked apron, flattened scarred ear with iron loops, axe heads cooling in resin trough, dark pine forge, muted black-green palette."
+
+  - id: "NPC_SET_025"
+    name: "Inga Stormdottir"
+    call_name: "Harbour-Master Inga"
+    role: "notable"
+    settlement: "Kolvik"
+    description: "Inga wears layered blue-grey wool under a salt-stiff sealskin coat and keeps brass dock keys on a chain across her chest. Her knuckles are split from rope work and old fistfights on wet planks."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 7
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Navigate"
+        rank: 3
+      - name: "Command"
+        rank: 3
+    personality: "She is brisk, practical, and allergic to romantic heroics. Inga trusts ledgers, tides, and people who show up before dawn."
+    agenda: "Expand Kolvik's dry-dock capacity before Deepholm military contracts bypass her harbor."
+    secret: "[CJK_PENDING] She accepted Widow coin to dissolve the old council and still hides the decree tablets."
+    relationships:
+      - target: "Sigrun Hrafnsdottir"
+        type: "ally"
+        note: "Trade partnership with recurring tension."
+      - target: "Astrid Veilborn"
+        type: "debt"
+        note: "Political debt from her rise to office."
+    associated_chains: ["fjord_compact", "widows_web"]
+    image_prompt: "Female harbor master with brass key-chain across chest, sealskin coat, split knuckles, stormy dock and ship masts behind, muted sea-steel palette."
+
+  - id: "NPC_SET_026"
+    name: "Sten Keelwright"
+    call_name: "Rib-Maker"
+    role: "smith"
+    settlement: "Kolvik"
+    description: "Sten's shoulders are broad from adze work, and his hands are thick with scar ridges from hot rivets. He keeps pine tar under his nails and wears a bone awl on a thong around his neck."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    skills:
+      - name: "Smithing"
+        rank: 3
+      - name: "Shelter"
+        rank: 3
+      - name: "Bargain"
+        rank: 1
+    personality: "He is meticulous and moody, happiest when shaping timber ribs in silence. Sten hates rushed launches and anyone who underestimates maintenance."
+    agenda: "Finish a reinforced river skiff design that can survive Bleakwater spring ice run."
+    secret: "[CJK_PENDING] He has built hidden compartments in three boats used for smuggling relics from barrows."
+    relationships:
+      - target: "Olaf Reedson"
+        type: "ally"
+        note: "Tests hulls on Olaf's crossing route."
+      - target: "Inga Stormdottir"
+        type: "debt"
+        note: "She covered his workshop losses after fire."
+    associated_chains: ["waking_barrows", "fjord_compact"]
+    image_prompt: "Shipwright-smith with tar-stained hands, bone awl necklace, adze and rivet tools, half-built longboat in dry-dock, muted timber and sea-grey tones."
+
+  - id: "NPC_SET_027"
+    name: "Miri Salt-Ledger"
+    call_name: "Wharf Scribe"
+    role: "spy"
+    settlement: "Kolvik"
+    description: "Miri keeps her hair wrapped in linen strips to hide ink stains and sea lice. She carries wax tablets under her cloak and a short knife tucked into her left boot seam."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 7
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Deceive"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+      - name: "Navigate"
+        rank: 1
+    personality: "She speaks in half-truths and listens like a trap waiting to close. Miri has no loyalty to banners, only to leverage."
+    agenda: "Auction one set of spring shipping manifests to the highest bidder without exposing her source."
+    secret: "[CJK_PENDING] She is the leak Ketil seeks, and she already sold false manifests to trap him."
+    relationships:
+      - target: "Ketil Smoke-Scribe"
+        type: "rival"
+        note: "Counter-intelligence duel across two harbors."
+      - target: "Inga Stormdottir"
+        type: "fear"
+        note: "Inga would drown her for treason if proven."
+    associated_chains: ["widows_web", "iron_grip"]
+    image_prompt: "Coastal spy-scribe with linen-wrapped hair, wax tablets hidden in cloak, boot knife, foggy wharf with chained cargo, muted blue-black palette."
+
+  - id: "NPC_SET_028"
+    name: "Brosa Thornmantle"
+    call_name: "Elder Brosa"
+    role: "notable"
+    settlement: "Moor's End"
+    description: "Brosa stoops from old peat loads and wears a thorn-woven mantle over damp wool. His beard is yellowed by pipe smoke and his left hand trembles near the humming stones."
+    stats:
+      MIG: 2
+      NIM: 3
+      TOU: 4
+      WIT: 6
+      WIL: 7
+      WYR: 2
+    skills:
+      - name: "Command"
+        rank: 2
+      - name: "Weather-sense"
+        rank: 3
+      - name: "Survival"
+        rank: 2
+    personality: "He is patient, ritual-minded, and quietly terrified of what he cannot explain. Brosa values peace over pride in every decision."
+    agenda: "Keep Ordovast's levy collectors from taking Moor's breeding ewes this winter."
+    secret: "[CJK_PENDING] He heard words from the stones matching an old map code and hid the carved slab."
+    relationships:
+      - target: "Ragnhild Ice-Seer"
+        type: "fear"
+        note: "Consults her in secret when the stones hum louder."
+      - target: "Ordovast Karr"
+        type: "debt"
+        note: "Pays tribute in livestock to avoid occupation."
+    associated_chains: ["waking_barrows", "iron_grip"]
+    image_prompt: "Stooped moor elder in thorn mantle, smoke-yellow beard, trembling hand near standing stones at dusk, peat fields and mist, muted violet-brown palette."
+
+  - id: "NPC_SET_029"
+    name: "Ketta Stone-Hearer"
+    call_name: "Moor Priest"
+    role: "priest"
+    settlement: "Moor's End"
+    description: "Ketta shaves her scalp except for a single braid weighted with stone beads. She paints ash circles around her ears before night vigils at the standing ring."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 3
+      WIT: 6
+      WIL: 7
+      WYR: 4
+    skills:
+      - name: "Spirit-lore"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 3
+      - name: "Rune-lore"
+        rank: 2
+    personality: "She is composed, intense, and unbothered by social discomfort. Ketta treats prophecy as labor, not mystique."
+    agenda: "Decode the new harmonic pattern in the stones before winter solstice."
+    secret: "[CJK_PENDING] She can reproduce the humming with carved pipes and plans to lure a draugr patrol for study."
+    relationships:
+      - target: "Brosa Thornmantle"
+        type: "ally"
+        note: "He funds her vigils despite fear."
+      - target: "Audun Kettilson"
+        type: "rival"
+        note: "Disputes his claim over rune interpretation rights."
+    associated_chains: ["waking_barrows"]
+    image_prompt: "Shaved-headed moor priestess with single stone-bead braid, ash circles by ears, standing stones under moonlight, mist and heather, muted silver-grey palette."
+
+  - id: "NPC_SET_030"
+    name: "Einar Peat-Cutter"
+    call_name: "Bog Pike"
+    role: "scout"
+    settlement: "Moor's End"
+    description: "Einar's boots are wrapped in wool and rawhide against sinkholes, and his cheeks are wind-cut raw. He carries a peat spade sharpened like a spear and a pouch of dry tinder sealed in bladder skin."
+    stats:
+      MIG: 5
+      NIM: 5
+      TOU: 5
+      WIT: 4
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Track"
+        rank: 3
+      - name: "Survival"
+        rank: 3
+      - name: "Spears"
+        rank: 2
+      - name: "Forage"
+        rank: 2
+    personality: "He is cautious, practical, and loyal to people more than leaders. Einar trusts routes he has walked and nothing he has only heard."
+    agenda: "Open a hidden peat road to Thornwall for emergency food trade under snow cover."
+    secret: "[CJK_PENDING] He has guided Bone Pack skirmishers through the moor in exchange for medicine."
+    relationships:
+      - target: "Pack-Elder Sura"
+        type: "debt"
+        note: "Bone Pack paid him in winter herbs and sheep fat."
+      - target: "Brosa Thornmantle"
+        type: "ally"
+        note: "Scouts hazard routes for the elder council."
+    associated_chains: ["bone_pack", "iron_grip"]
+    image_prompt: "Moor scout with rawhide-wrapped boots, wind-burned face, sharpened peat spade, bog track markers and low fog, muted peat-grey palette."
+
+  - id: "NPC_SET_031"
+    name: "Torsten Alriksson"
+    call_name: "Reeve Torsten"
+    role: "notable"
+    settlement: "Ashmark"
+    description: "Torsten keeps his beard clipped short and wears pine-tar treated leather over forest wool. A stitched scar circles his throat from an old garrote wound, visible when he turns his head."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 3
+      - name: "Command"
+        rank: 3
+      - name: "Persuade"
+        rank: 3
+    personality: "He is diplomatic, wary, and always balancing three bad outcomes. Torsten prefers compromise until compromise starts killing people."
+    agenda: "Keep Ashmark recognized as neutral ground at the next allthing despite pressure from both unions."
+    secret: "[CJK_PENDING] He owes Ordovast for three covert grain shipments and hid the debt under temple repairs."
+    relationships:
+      - target: "Ordovast Karr"
+        type: "debt"
+        note: "Outstanding supply debt with political strings."
+      - target: "Sigrun Hrafnsdottir"
+        type: "ally"
+        note: "Seeks Compact protection to offset Iron Grip pressure."
+    associated_chains: ["iron_grip", "fjord_compact"]
+    image_prompt: "Forest reeve with tar-dark leather coat, throat scar ring, neutral hall with mixed banners, pine smoke and rain, muted green-brown palette."
+
+  - id: "NPC_SET_032"
+    name: "Liv Tar-Herb"
+    call_name: "Birch Sister"
+    role: "healer"
+    settlement: "Ashmark"
+    description: "Liv wears birch-bark splints at her wrists from old strain injuries and keeps herb sachets sewn into her belt. Her nose is crooked from a mule kick, and she smells of spruce resin and vinegar."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 2
+    skills:
+      - name: "Heal"
+        rank: 4
+      - name: "Forage"
+        rank: 3
+      - name: "Spirit-lore"
+        rank: 1
+    personality: "She is warm with children and merciless with adults who waste medicine. Liv believes every village feud is paid for with healer sleep."
+    agenda: "Stockpile enough antiseptic resin to survive a full siege winter."
+    secret: "[CJK_PENDING] She shelters two wanted Bone Pack youths in her herb cellar."
+    relationships:
+      - target: "Torsten Alriksson"
+        type: "ally"
+        note: "Presses him to keep refugee policy humane."
+      - target: "Halldor the Pure"
+        type: "fear"
+        note: "His zealots consider her spirit methods suspect."
+    associated_chains: ["bone_pack", "witch_hunts"]
+    image_prompt: "Practical village healer with birch wrist splints, herb-stitched belt, crooked nose, resin jars in timber infirmary, muted moss and amber palette."
+
+  - id: "NPC_SET_033"
+    name: "Odr Pine-Scale"
+    call_name: "Tar Broker"
+    role: "merchant"
+    settlement: "Ashmark"
+    description: "Odr keeps waxed scales hanging from his neck and wears layered pockets full of bark contracts. His right thumb is ink-black, and his cloak hem is stiff with spilled tar."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Deceive"
+        rank: 3
+      - name: "Navigate"
+        rank: 2
+    personality: "He is cheerful under pressure and dishonest in small, survivable ways. Odr prides himself on getting everyone almost what they asked for."
+    agenda: "Corner the regional tar market by controlling neutral-ground storage rights."
+    secret: "[CJK_PENDING] He maintains duplicate books for both Widow agents and Compact factors."
+    relationships:
+      - target: "Miri Salt-Ledger"
+        type: "ally"
+        note: "Exchanges manifests and false seals."
+      - target: "Torsten Alriksson"
+        type: "fear"
+        note: "Would be exiled if his double books were read aloud."
+    associated_chains: ["widows_web", "fjord_compact"]
+    image_prompt: "Tar broker with waxed scales necklace, ink-dark thumb, pocketed cloak stiff with pitch, stacked barrels in forest yard, muted black-amber palette."
+
+  - id: "NPC_SET_034"
+    name: "Sigrun Hrafnsdottir"
+    call_name: "Jarl Sigrun Deepholm"
+    role: "notable"
+    settlement: "Deepholm"
+    description: "Sigrun is small and weathered, with silver-streaked red hair pinned under a linen cap and an amber pendant at her throat. Her hands are rough from rope and ledger work, and she walks with measured economy."
+    stats:
+      MIG: 2
+      NIM: 3
+      TOU: 3
+      WIT: 8
+      WIL: 7
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 5
+      - name: "Command"
+        rank: 3
+      - name: "Persuade"
+        rank: 4
+      - name: "Sagas"
+        rank: 2
+    personality: "She is calm, unsentimental, and relentlessly pragmatic. Sigrun will pay fairly, remember breaches forever, and choose profit over theater."
+    agenda: "Keep Deepholm independent by binding Thornwall and Kolvik into durable trade-defense compacts."
+    secret: "[CJK_PENDING] She has a sealed agreement with the Grave Wardens to recover a binding rite beneath Frostfjord."
+    relationships:
+      - target: "Ordovast Karr"
+        type: "rival"
+        note: "Strategic and economic conflict is escalating."
+      - target: "Helga Thornsdottir"
+        type: "ally"
+        note: "Mutual defense hinges on sheep-route security."
+    associated_chains: ["fjord_compact", "waking_barrows"]
+    image_prompt: "Compact-built female jarl with silver-red hair under linen cap, amber pendant, trade fortress backdrop of stone and iron gates, muted slate and amber palette."
+
+  - id: "NPC_SET_035"
+    name: "Haldor Bronze-Brow"
+    call_name: "Master of Sparks"
+    role: "smith"
+    settlement: "Deepholm"
+    description: "Haldor's eyebrows are singed bronze from furnace bursts and his beard is braided with iron wire spacers. He wears heavy leather layered over mail sleeves and works beside triple bellows."
+    stats:
+      MIG: 6
+      NIM: 4
+      TOU: 6
+      WIT: 6
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Smithing"
+        rank: 5
+      - name: "Blades"
+        rank: 2
+      - name: "Command"
+        rank: 2
+    personality: "He is proud, perfectionist, and openly disdainful of poor steel habits. Haldor would rather scrap a day's work than sell flawed iron."
+    agenda: "Standardize Deepholm blade marks so counterfeit weapons can be traced and punished."
+    secret: "[CJK_PENDING] He forged a private set of anti-seidr iron nails for Sigrun without entering them in guild records."
+    relationships:
+      - target: "Keld Ironhand"
+        type: "rival"
+        note: "Mentor-turned-competitor over ore rights."
+      - target: "Sigrun Hrafnsdottir"
+        type: "ally"
+        note: "Trusted for strategic forging projects."
+    associated_chains: ["fjord_compact", "waking_barrows"]
+    image_prompt: "Master smith with bronze-scorched brows, iron-wire beard braids, triple bellows furnace, heavy forge leathers over mail sleeves, muted orange-black palette."
+
+  - id: "NPC_SET_036"
+    name: "Runa Archive-Keeper"
+    call_name: "Rune Warden"
+    role: "priest"
+    settlement: "Deepholm"
+    description: "Runa wears layered undyed wool with rune tabs sewn into the cuffs and keeps ash chalk in finger tubes. A burn scar crosses her collarbone where a ward failed in youth."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 7
+      WIL: 7
+      WYR: 4
+    skills:
+      - name: "Rune-lore"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 3
+      - name: "Spirit-lore"
+        rank: 3
+      - name: "Sagas"
+        rank: 2
+    personality: "She is formal, precise, and impatient with sloppy mysticism. Runa believes archives are fortifications as vital as walls."
+    agenda: "Recover missing Grave Warden tablets before Ordovast's scholars copy and weaponize them."
+    secret: "[CJK_PENDING] She believes Frostfjord's binding rite is incomplete and is editing copies to hide that fact."
+    relationships:
+      - target: "Bryn Ashmouth"
+        type: "ally"
+        note: "Exchanges inscriptions and field confirmations."
+      - target: "Audun Kettilson"
+        type: "rival"
+        note: "Competing claims over rune authority."
+    associated_chains: ["waking_barrows", "fjord_compact"]
+    image_prompt: "Rune archivist-priestess with chalk finger tubes, runed wool cuffs, collarbone burn scar, stone archive shelves and tablets, muted bone-grey palette."
+
+  - id: "NPC_SET_037"
+    name: "Vemund Iron-Gate"
+    call_name: "Keep Captain"
+    role: "gate_captain"
+    settlement: "Deepholm"
+    description: "Vemund has a broken nose flattened by shield impact and a neatly trimmed beard tied in copper clasps. His brigandine is well patched, and he carries gate keys on a chain over his chest."
+    stats:
+      MIG: 7
+      NIM: 4
+      TOU: 7
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Shields"
+        rank: 4
+      - name: "Spears"
+        rank: 3
+      - name: "Command"
+        rank: 3
+    personality: "He is disciplined, courteous, and severe about protocol. Vemund likes clear rules because they keep soldiers and civilians alive."
+    agenda: "Upgrade Deepholm gatehouse murder holes before expected Iron Grip probing attacks."
+    secret: "[CJK_PENDING] He once served in Ordovast's levy and still receives letters from old comrades behind enemy walls."
+    relationships:
+      - target: "Sigrun Hrafnsdottir"
+        type: "ally"
+        note: "Trusted with keep security reforms."
+      - target: "Hake Long-Spear"
+        type: "kin"
+        note: "Former campaign brothers on opposite sides now."
+    associated_chains: ["fjord_compact", "iron_grip"]
+    image_prompt: "Veteran keep captain with flattened nose, copper-clasped beard, patched brigandine, heavy key chain, stone fortress gate interior, muted steel-brown palette."
+
+  - id: "NPC_SET_038"
+    name: "Skari Coin-Tongue"
+    call_name: "Market Voice"
+    role: "merchant"
+    settlement: "Deepholm"
+    description: "Skari keeps soft gloves over ink-stained fingers and wears a fox-fur collar over expensive wool. A fine scar cuts his upper lip where a debtor once threw a mug."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 7
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 5
+      - name: "Deceive"
+        rank: 3
+      - name: "Persuade"
+        rank: 3
+      - name: "Sagas"
+        rank: 1
+    personality: "He is charming, slippery, and impossible to pin down in public debate. Skari believes morality is a luxury of full granaries."
+    agenda: "Monopolize bronze imports by tying up Thornwall wool collateral in advance contracts."
+    secret: "[CJK_PENDING] He launders Widow funds through legitimate caravan insurance ledgers."
+    relationships:
+      - target: "Ketil Smoke-Scribe"
+        type: "ally"
+        note: "Trades discreet transport for actionable intelligence."
+      - target: "Sigrun Hrafnsdottir"
+        type: "fear"
+        note: "She audits his books personally when suspicious."
+    associated_chains: ["fjord_compact", "widows_web"]
+    image_prompt: "Well-dressed market broker with fox-fur collar, gloves over ink-stained fingers, lip scar, bustling stone market under winter awnings, muted bronze-grey palette."
+
+  - id: "NPC_SET_039"
+    name: "Olaf Reedson"
+    call_name: "Ferryman Olaf"
+    role: "notable"
+    settlement: "Bleakwater Landing"
+    description: "Olaf is broad-chested with river-burned hands and a beard tied in wet knots. He wears layered oilskin over wool and keeps a hooked pole scar across his right shoulder."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Navigate"
+        rank: 4
+      - name: "Bargain"
+        rank: 2
+      - name: "Command"
+        rank: 2
+    personality: "He is practical, fatalistic, and deeply protective of his crossing. Olaf will bargain hard with warriors and ferry children free in storms."
+    agenda: "Replace the old ferry chain before spring thaw tears the crossing apart."
+    secret: "[CJK_PENDING] Olaf has transported bound prisoners for Red Tide buyers under forced silence deals."
+    relationships:
+      - target: "Ordovast Karr"
+        type: "fear"
+        note: "Pays tribute because Iron Grip controls the upstream road."
+      - target: "Yrsa Net-Mother"
+        type: "ally"
+        note: "Runs discreet cargo in shared night windows."
+    associated_chains: ["iron_grip", "red_tide"]
+    image_prompt: "Weathered ferryman in oilskin layers, knotted wet beard, scarred shoulder, icy river ferry and chain mechanism, muted cold blue-brown palette."
+
+  - id: "NPC_SET_040"
+    name: "Sif Ropewife"
+    call_name: "River Healer"
+    role: "healer"
+    settlement: "Bleakwater Landing"
+    description: "Sif wears rope-bracelets soaked in vinegar against skin rot and keeps copper needles in a bone roll. Her left hand is missing two fingertips from an ice-winch accident."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 5
+      WIL: 6
+      WYR: 2
+    skills:
+      - name: "Heal"
+        rank: 3
+      - name: "Forage"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+    personality: "She is steady, compassionate, and quietly defiant around armed men. Sif has learned to work while terrified and never show it."
+    agenda: "Build a warmed recovery hut so drowning victims stop dying on the floorboards."
+    secret: "[CJK_PENDING] She keeps a log of branded thralls ferried past Bleakwater and plans to sell it to Helga."
+    relationships:
+      - target: "Olaf Reedson"
+        type: "ally"
+        note: "Splits ferry income for medicine stock."
+      - target: "Wulfgar"
+        type: "fear"
+        note: "Knows his slavers pass close in fog."
+    associated_chains: ["red_tide"]
+    image_prompt: "River healer with rope bracelets, missing fingertips, bone needle roll, rough ferry hut with steaming broth pot, muted grey-amber palette."
+
+  - id: "NPC_SET_041"
+    name: "Dagga Toll-Crow"
+    call_name: "Chain Clerk"
+    role: "spy"
+    settlement: "Bleakwater Landing"
+    description: "Dagga wears black wool wrapped tight and keeps her hair hidden under a tarred hood. A crow-foot tattoo marks her wrist, and she records toll names with charcoal under nail guards."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Stealth"
+        rank: 3
+      - name: "Deceive"
+        rank: 4
+      - name: "Bargain"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+    personality: "She is observant, dry-humored, and cautious with trust. Dagga treats every crossing like an intelligence opportunity."
+    agenda: "Track which captains are moving arms east before open war begins."
+    secret: "[CJK_PENDING] She is Ordovast's embedded listener but has started feeding Sigrun selective warnings."
+    relationships:
+      - target: "Ordovast Karr"
+        type: "debt"
+        note: "Placed at Bleakwater by Iron Grip handlers."
+      - target: "Sigrun Hrafnsdottir"
+        type: "ally"
+        note: "Testing defection through low-risk intelligence."
+    associated_chains: ["iron_grip", "fjord_compact"]
+    image_prompt: "Hooded toll spy in tarred black wool, charcoal under nail guards, crow-foot wrist tattoo, chain ferry checkpoint in drizzle, muted black-grey palette."
+
+  - id: "NPC_SET_042"
+    name: "Audun Kettilson"
+    call_name: "Lore-Keeper Audun"
+    role: "notable"
+    settlement: "Skaldhaven"
+    description: "Audun is long-limbed and stooped from years over rune tables, with ink-darkened fingertips and deep crow's feet. He wears layered blue wool and an antler clasp carved with old symbols."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 8
+      WIL: 7
+      WYR: 3
+    skills:
+      - name: "Rune-lore"
+        rank: 4
+      - name: "Sagas"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 3
+      - name: "Persuade"
+        rank: 2
+    personality: "He is scholarly, exacting, and prone to moral lectures when frightened. Audun values truth but still withholds it when chaos would follow."
+    agenda: "Reopen the sealed rune archive wing without triggering the same disappearance pattern."
+    secret: "[CJK_PENDING] He copied and hid one tablet describing the Frostfjord binding failure and never told Hrothgar."
+    relationships:
+      - target: "Runa Archive-Keeper"
+        type: "rival"
+        note: "Competing rune schools and access rights."
+      - target: "Ragnhild Ice-Seer"
+        type: "fear"
+        note: "Needs her insights, dreads her price."
+    associated_chains: ["waking_barrows", "fjord_compact"]
+    image_prompt: "Elder lore-keeper with ink-stained fingers, antler rune clasp, stone archive hall and saga shelves, cold fjord light, muted blue-grey palette."
+
+  - id: "NPC_SET_043"
+    name: "Thrain Ink-Finger"
+    call_name: "Archive Hound"
+    role: "priest"
+    settlement: "Skaldhaven"
+    description: "Thrain keeps his hair shaved close except for a scholar braid weighted with bronze rings. Ink stains both hands to the wrists, and he wears rune-etched spectacles of polished horn."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 3
+      WIT: 7
+      WIL: 6
+      WYR: 3
+    skills:
+      - name: "Rune-lore"
+        rank: 3
+      - name: "Sagas"
+        rank: 3
+      - name: "Spirit-lore"
+        rank: 2
+      - name: "Stealth"
+        rank: 1
+    personality: "He is obsessive, earnest, and socially clumsy outside archives. Thrain gets reckless whenever forbidden text is nearby."
+    agenda: "Find the vanished apprentice's hidden index before panic closes the Hall for a full year."
+    secret: "[CJK_PENDING] He has been entering the sealed archive at night through a collapsed drain shaft."
+    relationships:
+      - target: "Audun Kettilson"
+        type: "ally"
+        note: "Favored but frequently reprimanded apprentice-master dynamic."
+      - target: "Dalla Mist-Tongue"
+        type: "fear"
+        note: "Saw her in archive shadows and told no one."
+    associated_chains: ["waking_barrows", "widows_web"]
+    image_prompt: "Young archive priest with horn spectacles, bronze-ring scholar braid, ink-stained forearms, stacked rune tablets and candle smoke, muted parchment-grey palette."
+
+  - id: "NPC_SET_044"
+    name: "Elin Wave-Skald"
+    call_name: "Song Broker"
+    role: "merchant"
+    settlement: "Skaldhaven"
+    description: "Elin wears layered travelling wool with silver thread repairs and carries a skin-drum scarred by weather. A healed cut splits one eyebrow, giving her a permanent skeptical look."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 2
+    skills:
+      - name: "Sagas"
+        rank: 4
+      - name: "Bargain"
+        rank: 3
+      - name: "Deceive"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+    personality: "She is charismatic, adaptive, and dangerously curious. Elin can sell a warning as entertainment and an insult as praise."
+    agenda: "Build a paid messenger-saga route linking Skaldhaven, Kolvik, and Thornwall before war censors tighten."
+    secret: "[CJK_PENDING] She carries coded verses for Sigrid Blackwine hidden in performance stanzas."
+    relationships:
+      - target: "Sigrid Blackwine"
+        type: "ally"
+        note: "Moves battlefield news under cover of performances."
+      - target: "Audun Kettilson"
+        type: "debt"
+        note: "Audun sponsors her route in exchange for relic rumors."
+    associated_chains: ["fjord_compact", "iron_grip"]
+    image_prompt: "Travelling skald-merchant with weathered skin-drum, split eyebrow scar, layered wool cloak, cliffside hall stage under storm clouds, muted indigo-grey palette."
+
+  - id: "NPC_SET_045"
+    name: "Helga Thornsdottir"
+    call_name: "Jarl Helga Thornwall"
+    role: "notable"
+    settlement: "Thornwall"
+    description: "Helga wears thick moor wool beneath scale-reinforced leather and keeps thorn-wood pins through her braids. A pale scar crosses her chin from a sheep-route ambush she survived as a younger captain."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 6
+      WIT: 7
+      WIL: 7
+      WYR: 1
+    skills:
+      - name: "Command"
+        rank: 4
+      - name: "Shields"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+      - name: "Intimidate"
+        rank: 2
+    personality: "She is shrewd, protective, and hard to manipulate once she commits. Helga treats every route dispute as a military problem in disguise."
+    agenda: "Secure sheep routes and repel Red Tide slavers without conceding levy control to Ordovast."
+    secret: "[CJK_PENDING] Helga shelters escaped thralls in hidden fold-caves despite the diplomatic risk."
+    relationships:
+      - target: "Sigrun Hrafnsdottir"
+        type: "ally"
+        note: "Mutual defense through trade and arms."
+      - target: "Wulfgar"
+        type: "rival"
+        note: "Personal vendetta over stolen Thornwall children."
+    associated_chains: ["fjord_compact", "red_tide"]
+    image_prompt: "Moor jarl in scale-reinforced leather and thorn-pinned braids, chin scar, sheep market palisade and windblown heath, muted heather-grey palette."
+
+  - id: "NPC_SET_046"
+    name: "Mads Thorn-Captain"
+    call_name: "Gate Briar"
+    role: "gate_captain"
+    settlement: "Thornwall"
+    description: "Mads is broad and scarred, with a flattened left ear and beard bound in wool ties. He wears layered quilted armor patched with thorn-hide and carries a long ash spear polished by use."
+    stats:
+      MIG: 7
+      NIM: 4
+      TOU: 7
+      WIT: 4
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 4
+      - name: "Shields"
+        rank: 3
+      - name: "Command"
+        rank: 2
+    personality: "He is plainspoken, dependable, and suspicious of soft-handed nobles. Mads values practical defense over glory."
+    agenda: "Reinforce thorn-gate kill lanes before Red Tide longboats attempt spring landings."
+    secret: "[CJK_PENDING] He accepted hush silver from Dagga to ignore a midnight ferry crossing carrying fugitives."
+    relationships:
+      - target: "Helga Thornsdottir"
+        type: "ally"
+        note: "Loyal garrison pillar."
+      - target: "Dagga Toll-Crow"
+        type: "debt"
+        note: "Compromised by one covert crossing."
+    associated_chains: ["red_tide", "iron_grip"]
+    image_prompt: "Rugged gate captain with flattened ear, quilted thorn-hide armor, ash spear, spiked thorn gatehouse on moor, muted green-brown palette."
+
+  - id: "NPC_SET_047"
+    name: "Yrsa Fleecemother"
+    call_name: "Wool Broker"
+    role: "merchant"
+    settlement: "Thornwall"
+    description: "Yrsa wears layered shawls packed with spindle tools and keeps lanolin polished into her cracked hands. Her left knee is wrapped in dyed wool strips from years of market standing on cold stone."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Weather-sense"
+        rank: 2
+    personality: "She is warm in voice and ruthless in arithmetic. Yrsa can comfort a widow and undercut a rival in the same breath."
+    agenda: "Lock Deepholm armor contracts in wool before Ordovast can buy the spring clip outright."
+    secret: "[CJK_PENDING] She finances hidden shelters for escaped thralls and falsifies flock counts to fund them."
+    relationships:
+      - target: "Helga Thornsdottir"
+        type: "ally"
+        note: "Economic backbone of Helga's route policy."
+      - target: "Skari Coin-Tongue"
+        type: "rival"
+        note: "Competing contract traps and collateral games."
+    associated_chains: ["fjord_compact", "red_tide"]
+    image_prompt: "Middle-aged wool broker with spindle tools in layered shawls, lanolin-polished cracked hands, sheep pens and trading stalls, muted cream-grey moor palette."
+
+  - id: "NPC_SET_048"
+    name: "Ragnhild Isarnsdottir"
+    call_name: "Hermit Ragnhild"
+    role: "notable"
+    settlement: "Icebreak"
+    description: "Ragnhild is gaunt, wrapped in layered white-grey wool and seal skin, with frostburn scars along both cheeks. Her eyes are bright and fever-clear, and she keeps rune-cut whale bone charms hanging from her wrists."
+    stats:
+      MIG: 1
+      NIM: 3
+      TOU: 3
+      WIT: 7
+      WIL: 8
+      WYR: 5
+    skills:
+      - name: "Wyrd-reading"
+        rank: 5
+      - name: "Spirit-lore"
+        rank: 4
+      - name: "Rune-lore"
+        rank: 3
+      - name: "Survival"
+        rank: 3
+    personality: "She is severe, lucid, and detached from ordinary fear. Ragnhild speaks as if time is layered and she can hear all winters at once."
+    agenda: "Map the new veil-thin fractures beneath Icebreak before the dead routes open permanently."
+    secret: "[CJK_PENDING] She knows the probable location of the First Barrow and withholds it until a binding coalition forms."
+    relationships:
+      - target: "Audun Kettilson"
+        type: "ally"
+        note: "Trades visions for archive fragments."
+      - target: "Astrid Veilborn"
+        type: "rival"
+        note: "Believes the Widow is accelerating the thinning."
+    associated_chains: ["waking_barrows", "widows_web"]
+    image_prompt: "Gaunt ice hermit with frostburned cheeks, layered seal and wool wraps, rune-cut whale bone charms, blue-lit ice cave shrine, muted white-blue palette."
+
+  - id: "NPC_SET_049"
+    name: "Knut Seal-Bone"
+    call_name: "Ice Trail"
+    role: "scout"
+    settlement: "Icebreak"
+    description: "Knut is compact and scarred, with wind-cracked lips and eyelashes often rimed white. He wears stitched seal-hide over fur and keeps bone crampon spikes tied at his belt."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 4
+      WIL: 5
+      WYR: 1
+    skills:
+      - name: "Track"
+        rank: 4
+      - name: "Navigate"
+        rank: 4
+      - name: "Survival"
+        rank: 4
+      - name: "Bows"
+        rank: 2
+    personality: "He is terse, watchful, and respectful of silence on the ice. Knut treats overconfidence as a form of suicide."
+    agenda: "Mark safe tunnel routes to the shrine before spring thaw collapses old passages."
+    secret: "[CJK_PENDING] He has been guiding Red Tide outriders onto false ice to reduce their raids near Icebreak."
+    relationships:
+      - target: "Ragnhild Isarnsdottir"
+        type: "ally"
+        note: "Primary pathfinder and supply hunter."
+      - target: "Wulfgar"
+        type: "rival"
+        note: "Personal ice war after a cousin was taken."
+    associated_chains: ["red_tide", "waking_barrows"]
+    image_prompt: "Compact ice scout in seal-hide layers, frost-rimed lashes, bone crampon spikes, blue glacier tunnel with snow markers, muted cyan-grey palette."
+
+  - id: "NPC_SET_050"
+    name: "Svanhild Frost-Lantern"
+    call_name: "Shrine Keeper"
+    role: "priest"
+    settlement: "Icebreak"
+    description: "Svanhild keeps her head shaved and paints thin blue lines across her brow with mineral pigment. She wears layered felt and carries a horn lantern filled with whale oil that never fully warms the cave."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 6
+      WIL: 7
+      WYR: 4
+    skills:
+      - name: "Spirit-lore"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 3
+      - name: "Rune-lore"
+        rank: 2
+      - name: "Shelter"
+        rank: 2
+    personality: "She is devout, steady, and strangely cheerful in mortal danger. Svanhild believes fear is useful only when it sharpens ritual discipline."
+    agenda: "Consecrate three new lantern stations between Icebreak and Raven's Perch to reduce vanishings."
+    secret: "[CJK_PENDING] She has seen Ragnhild die in visions three times and is preparing a succession rite in secret."
+    relationships:
+      - target: "Ragnhild Isarnsdottir"
+        type: "ally"
+        note: "Serves as ritual second and witness."
+      - target: "Egil Hrafnsson"
+        type: "debt"
+        note: "Receives supplies from Raven's Perch in exchange for omen reports."
+    associated_chains: ["waking_barrows", "iron_grip"]
+    image_prompt: "Shaved-head ice priestess with blue brow lines, horn lantern of whale oil, layered felt robes, frozen shrine chamber with rune stones, muted icy blue palette."

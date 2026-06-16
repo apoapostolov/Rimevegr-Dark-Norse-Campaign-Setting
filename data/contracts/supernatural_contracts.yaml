@@ -1,0 +1,892 @@
+# Iron Ledger — Supernatural Contracts
+# 18 contracts tied to the waking_barrows chain, Veil phenomena,
+# and supernatural escalation across Y312–Y315.
+# Schema matches contracts_available.yaml + extended supernatural_elements block.
+# IDs: CONT_SUP_001 through CONT_SUP_018.
+
+contracts:
+  # ============================================================
+  # YEAR 312 — ISOLATED INCIDENTS (5 contracts)
+  # ============================================================
+
+  # --- Barrow Clearing ---
+  - id: "CONT_SUP_001"
+    type: "barrow_clear"
+    title: "Clear the Kolvik Dead-Ground"
+    employer: "Harbour-Master Inga of Kolvik"
+    settlement: "Kolvik"
+    region: "coastal"
+    season: "autumn"
+    year_range: [312, 313]
+    min_reputation: 2
+    payment_silver: 100
+    bonus: "Free ship repair (3 days)"
+    advance_silver: 30
+    duration_days: 5
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["rune_lore", "spears"]
+    supernatural_elements:
+      veil_proximity: "moderate"
+      undead_types: ["UND_DRAUGR_01", "UND_DRAUGR_02"]
+      seidr_useful: true
+      curse_risk: "low"
+    political_conditions:
+      requires_faction: null
+      requires_event: "EVT_312_SUP_001"
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Kolvik": 2 }
+        unlocks: ["CONT_SUP_002", "CONT_SUP_005"]
+        narrative_consequence: "Word spreads — other settlements begin seeking barrow-clearers"
+      failure:
+        reputation_change: -1
+        standing_change: { "Kolvik": -1 }
+        supernatural_consequence: "Barrow activity intensifies; nearby settlements hear scraping beneath the earth at night"
+    narrative_hook: >-
+      Inga's cattle are dying near the old mound. The ground shakes at dusk.
+      She wants it stopped before the fishing fleet refuses to dock. The
+      herdsman Erling vanished there a season ago. His wife still lights
+      a candle for him every night. Nobody expects to find him alive.
+    notes: "Entry point to waking_barrows chain. Small barrow — 3 chambers. Cold, tight, stinking of wet earth."
+
+  # --- Investigation ---
+  - id: "CONT_SUP_002"
+    type: "investigation"
+    title: "Chart the Rune-Stones of Icebreak"
+    employer: "Lore-Keeper Audun of Skaldhaven"
+    settlement: "Skaldhaven"
+    region: "fjord"
+    season: "autumn"
+    year_range: [312, 313]
+    min_reputation: 1
+    payment_silver: 40
+    bonus: "Access to Skaldhaven's rune archive (permanent)"
+    advance_silver: 15
+    duration_days: 12
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["rune_lore", "navigate", "lore"]
+    supernatural_elements:
+      veil_proximity: "moderate"
+      undead_types: []
+      seidr_useful: true
+      curse_risk: "low"
+    political_conditions:
+      requires_faction: null
+      requires_event: "EVT_312_SUP_005"
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Skaldhaven": 2 }
+        unlocks: ["CONT_SUP_006"]
+        lore_reward: "Barrow connection map — reveals linked barrow sites across the Rimevegr"
+        narrative_consequence: "Audun begins correlating the rune-stone patterns with barrow awakenings"
+      failure:
+        reputation_change: 0
+        standing_change: { "Skaldhaven": -1 }
+        supernatural_consequence: "Rune-stones pulse brighter; a standing stone cracks and the glow spreads underground"
+    narrative_hook: >-
+      Audun sends a runner with ink-stained fingers and a sealed letter.
+      The rune-stones at Icebreak are glowing. He wants rubbings of every
+      symbol, measurements of the stone circle, and soil samples from the
+      barrow mouth. He pays modestly but the knowledge he offers is worth
+      more than silver to anyone who plans to enter barrows again.
+    notes: "Knowledge reward, not wealth. The rubbings reveal that the barrows are networked — same rune-language across sites."
+
+  # --- Barrow Clearing ---
+  - id: "CONT_SUP_003"
+    type: "barrow_clear"
+    title: "Seal the Iron Barrow at Grimholt"
+    employer: "Warchief Ordovast the Iron-Grip"
+    settlement: "Grimholt"
+    region: "mountain"
+    season: "winter"
+    year_range: [312, 312]
+    min_reputation: 2
+    payment_silver: 110
+    bonus: "Ordovast's favor (one future contract negotiated at +20% pay)"
+    advance_silver: 40
+    duration_days: 3
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["rune_lore", "spears", "axes"]
+    supernatural_elements:
+      veil_proximity: "moderate"
+      undead_types: ["UND_DRAUGR_02", "UND_DRAUGR_03"]
+      seidr_useful: false
+      curse_risk: "moderate"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Grimholt": 2 }
+        unlocks: ["CONT_SUP_009"]
+        narrative_consequence: "Miners return to work. Ordovast notes the band's usefulness — and the value of barrow contents."
+      failure:
+        reputation_change: -1
+        standing_change: { "Grimholt": -2 }
+        supernatural_consequence: "The mine shaft adjacent to the barrow begins to freeze despite underground heat. Miners report voices."
+    narrative_hook: >-
+      A barrow has opened near Grimholt's iron mine. The miners refuse to
+      work — they hear hammering from the wrong side of the rock. Ordovast
+      does not believe in ghosts, but he believes in lost iron production.
+      He wants the barrow sealed with the dead inside. Whether they stay
+      sealed is tomorrow's problem.
+    notes: "Ordovast wants it shut, not studied. Looting risks his displeasure but the barrow holds old weapons."
+
+  # --- Escort ---
+  - id: "CONT_SUP_004"
+    type: "escort"
+    title: "Guide Hermit Ragnhild to the Kolvik Barrow"
+    employer: "Hermit Ragnhild"
+    settlement: "Icebreak"
+    region: "ice"
+    season: "winter"
+    year_range: [312, 313]
+    min_reputation: 3
+    payment_silver: 20
+    bonus: "Ragnhild reads the bones for the band (one WYR divination, truthful)"
+    advance_silver: 0
+    duration_days: 10
+    risk: "moderate"
+    band_size_min: 5
+    skills_valued: ["navigate", "shelter", "rune_lore"]
+    supernatural_elements:
+      veil_proximity: "high"
+      undead_types: []
+      seidr_useful: true
+      curse_risk: "low"
+    political_conditions:
+      requires_faction: null
+      requires_event: "EVT_312_SUP_009"
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Icebreak": 1 }
+        unlocks: ["CONT_SUP_007"]
+        lore_reward: "Ragnhild identifies the barrow network's focal point — beneath Frostfjord"
+        narrative_consequence: "Ragnhild confirms the Veil is thinning. She names it aloud, which makes it real."
+      failure:
+        reputation_change: 0
+        standing_change: {}
+        supernatural_consequence: "Ragnhild goes alone. She is found three days later, alive but mute. Her eyes have changed colour."
+    narrative_hook: >-
+      Ragnhild sends no runner. She appears at the edge of camp before dawn,
+      barefoot on frozen ground, and says she needs to see what Thorne felt
+      at Kolvik. She offers no silver — seidr women deal in stranger currencies.
+      The journey to Kolvik through midwinter ice is brutal. She does not
+      complain. She does not explain.
+    notes: "The divination reward is powerful — a true answer about one barrow or supernatural matter. Ragnhild is WYR 5."
+
+  # --- Investigation ---
+  - id: "CONT_SUP_005"
+    type: "investigation"
+    title: "Examine the Ashen Reach Black Frost"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "forest"
+    season: "winter"
+    year_range: [312, 313]
+    min_reputation: 1
+    payment_silver: 60
+    bonus: "The Widow shares intelligence on barrow locations known to her agents"
+    advance_silver: 20
+    duration_days: 7
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["rune_lore", "lore", "track"]
+    supernatural_elements:
+      veil_proximity: "moderate"
+      undead_types: []
+      seidr_useful: true
+      curse_risk: "moderate"
+    political_conditions:
+      requires_faction: null
+      requires_event: "EVT_312_SUP_010"
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Ashen Reach": 1 }
+        unlocks: ["CONT_SUP_008"]
+        lore_reward: "The black frost is barrow-leak — Veil energy seeping into the ground. More sites will develop it."
+        narrative_consequence: "The Widow begins funding barrow research. She sees political opportunity in the crisis."
+      failure:
+        reputation_change: 0
+        standing_change: { "Ashen Reach": -1 }
+        supernatural_consequence: "The frost ring expands faster. A dog crosses the line and is found frozen solid, standing upright."
+    narrative_hook: >-
+      The Pale Widow does not beg. She states facts: the ring of black frost
+      around the barrow outside Ashen Reach is growing. Water from the frost
+      smells of rot. Dogs refuse to cross it. She wants someone to dig at the
+      frost line, take soil samples, and report what they find. Her tone
+      suggests she already suspects the answer and wants confirmation.
+    notes: "The Widow's real interest is leverage — she wants to know if barrow phenomena can be weaponised politically."
+
+  # ============================================================
+  # YEAR 313 — PATTERN EMERGES (5 contracts)
+  # ============================================================
+
+  # --- Investigation (Dalla-specific) ---
+  - id: "CONT_SUP_006"
+    type: "investigation"
+    title: "Follow Dalla's Barrow Map"
+    employer: "Lore-Keeper Audun of Skaldhaven"
+    settlement: "Skaldhaven"
+    region: "multiple"
+    season: "spring"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 75
+    bonus: "Audun translates the barrow runes for free (saves weeks of research)"
+    advance_silver: 25
+    duration_days: 21
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["navigate", "rune_lore", "seidr"]
+    supernatural_elements:
+      veil_proximity: "high"
+      undead_types: ["UND_DRAUGR_01", "UND_DRAUGR_04"]
+      seidr_useful: true
+      curse_risk: "moderate"
+    political_conditions:
+      requires_faction: null
+      requires_event: "EVT_312_SUP_008"
+      requires_band_member: "Dalla"
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Skaldhaven": 3 }
+        unlocks: ["CONT_SUP_010", "CONT_SUP_011"]
+        lore_reward: "Five previously unknown barrows located. Three are active. The network pattern becomes visible."
+        narrative_consequence: "Dalla's seidr awakening accelerates. She begins hearing the dead speak in her dreams."
+      failure:
+        reputation_change: 0
+        standing_change: { "Skaldhaven": -1 }
+        supernatural_consequence: "Dalla's visions intensify painfully. She cannot sleep for three days. WIL test or lose 1 WIL temporarily."
+    narrative_hook: >-
+      Audun unfolds the copy of Dalla's map beside his rune-stone rubbings
+      and goes quiet for a long time. Then he says the unnamed barrows on
+      her map correspond to blank spaces in the oldest records — places
+      deliberately left unmarked. He wants the band to visit each site with
+      Dalla present. He wants to know what she sees when she stands above
+      the dead. He does not ask how she knows where they are buried.
+    notes: "Requires Dalla specifically — her seidr is the compass. Three weeks crossing dangerous terrain between barrow sites."
+
+  # --- Retrieval ---
+  - id: "CONT_SUP_007"
+    type: "retrieval"
+    title: "Recover the Binding Texts from Frostfjord's Cellar"
+    employer: "Hermit Ragnhild"
+    settlement: "Frostfjord Hollow"
+    region: "fjord"
+    season: "spring"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 30
+    bonus: "Ragnhild teaches one band member basic barrow-warding (rune_lore +1)"
+    advance_silver: 0
+    duration_days: 5
+    risk: "moderate"
+    band_size_min: 4
+    skills_valued: ["stealth", "rune_lore", "bargain"]
+    supernatural_elements:
+      veil_proximity: "high"
+      undead_types: []
+      seidr_useful: false
+      curse_risk: "moderate"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 0
+        standing_change: { "Frostfjord Hollow": -1, "Icebreak": 2 }
+        unlocks: ["CONT_SUP_012"]
+        lore_reward: "The binding texts describe the iron-stake ritual that holds the Draugr-Jarl (BOS_SUPER_02). The rite can be repeated — if the stakes hold."
+        narrative_consequence: "Hrothgar learns the band was digging in his cellar. He is furious — or terrified. Hard to tell."
+      failure:
+        reputation_change: -1
+        standing_change: { "Frostfjord Hollow": -2 }
+        supernatural_consequence: "Disturbance in the cellar accelerates the Draugr-Jarl's awakening by months."
+    narrative_hook: >-
+      Ragnhild says the binding rite for the thing beneath Frostfjord was
+      recorded on hide scrolls kept in the mead-hall cellar. Three generations
+      of elders safeguarded them. The last elder died with the secret. The
+      scrolls are still there — somewhere beneath Hrothgar's floor. Hrothgar
+      does not know what he sits on. Getting the scrolls means getting into
+      the cellar without permission, or convincing Hrothgar to let strangers
+      dig under his hall. Neither option is comfortable.
+    notes: "Social/stealth contract, not combat. Hrothgar's trust is fragile. The cellar is freezing — unnaturally so."
+
+  # --- Barrow Clearing (moral choice: seal or loot) ---
+  - id: "CONT_SUP_008"
+    type: "barrow_clear"
+    title: "The Thornwall Barrow: Seal or Strip"
+    employer: "Jarl Helga Thornwall"
+    settlement: "Thornwall"
+    region: "moors"
+    season: "summer"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 90
+    bonus: "If sealed: Helga's lasting trust. If looted: 200 silver in burial goods."
+    advance_silver: 30
+    duration_days: 8
+    risk: "high"
+    band_size_min: 8
+    skills_valued: ["spears", "rune_lore", "command"]
+    supernatural_elements:
+      veil_proximity: "high"
+      undead_types:
+        ["UND_DRAUGR_01", "UND_DRAUGR_02", "UND_DRAUGR_03", "UND_HAUG_01"]
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    moral_choice:
+      option_a:
+        action: "Seal the barrow with the dead inside"
+        payment: 90
+        reputation_change: 1
+        standing_change: { "Thornwall": 3 }
+        narrative: "Helga is satisfied. The Hush stops. The moor smells clean again. But whatever was in the barrow is still in the barrow."
+      option_b:
+        action: "Loot the barrow before sealing"
+        payment: 290
+        reputation_change: 0
+        standing_change: { "Thornwall": -1 }
+        curse_gained: "Barrow-thief's Mark — nightmares for d6 weeks, -1 WIL during that time"
+        narrative: "The burial goods are valuable. The dead noticed they were taken. The nightmares start on the third night."
+    consequences:
+      success:
+        unlocks: ["CONT_SUP_013"]
+        narrative_consequence: "The band gains a reputation as barrow specialists — for better or worse."
+      failure:
+        reputation_change: -2
+        standing_change: { "Thornwall": -3 }
+        supernatural_consequence: "The haugbui escapes the barrow. Thornwall's sheep begin dying at night. Helga's hall is cold by morning."
+    narrative_hook: >-
+      Helga's people have not slept properly since the Hush. The barrow on
+      the eastern moor — the one the grandmothers said to leave alone — is
+      open. The capstone has shifted. Cold air pours from the gap, and the
+      sheep refuse to graze within a hundred paces. Helga wants it sealed.
+      She does not mention the burial goods inside, but everyone knows the
+      old moor-lords were buried rich. The question is whether the silver is
+      worth what comes with taking it.
+    notes: "First major moral choice. Looting triggers curse mechanics. Sealing earns trust but leaves the threat contained, not eliminated."
+
+  # --- Escort ---
+  - id: "CONT_SUP_009"
+    type: "escort"
+    title: "Transport the Grimholt Barrow Relics to Deepholm"
+    employer: "Warchief Ordovast the Iron-Grip"
+    settlement: "Grimholt"
+    region: "mountain"
+    season: "summer"
+    year_range: [313, 313]
+    min_reputation: 2
+    payment_silver: 130
+    bonus: null
+    advance_silver: 40
+    duration_days: 10
+    risk: "moderate"
+    band_size_min: 6
+    skills_valued: ["command", "navigate", "intimidate"]
+    supernatural_elements:
+      veil_proximity: "low"
+      undead_types: []
+      seidr_useful: false
+      curse_risk: "moderate"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Grimholt": 1, "Deepholm": 1 }
+        unlocks: ["CONT_SUP_014"]
+        narrative_consequence: "Deepholm's archive receives the relics. Jarl Sigrun's scholars begin studying them. Ordovast's interest in barrow contents grows openly."
+      failure:
+        reputation_change: -1
+        standing_change: { "Grimholt": -2 }
+        supernatural_consequence: "The relics are lost or stolen. Whoever possesses them begins hearing whispers in Old Norse."
+    narrative_hook: >-
+      Ordovast recovered items from the Iron Barrow before it was sealed —
+      rune-carved bronze plates, a jawbone set with silver teeth, and a
+      stone tablet too heavy for one man that hums when touched. He wants
+      them delivered to Deepholm's archive for study. The road between
+      Grimholt and Deepholm passes through bandit territory and open moor.
+      The relics are heavy, and the stone tablet makes the pack-horse
+      skittish. On the second night, the jawbone's silver teeth begin to
+      chatter on their own.
+    notes: "Cursed cargo escort. The relics attract supernatural attention — random undead encounters increase along the route."
+
+  # --- Barrow Clearing ---
+  - id: "CONT_SUP_010"
+    type: "barrow_clear"
+    title: "Clear the Vargheim Root-Barrow"
+    employer: "Jarl Ulf Vargson"
+    settlement: "Vargheim"
+    region: "forest"
+    season: "autumn"
+    year_range: [313, 314]
+    min_reputation: 3
+    payment_silver: 150
+    bonus: "Two trained hunting wolves (war-dogs equivalent)"
+    advance_silver: 50
+    duration_days: 7
+    risk: "high"
+    band_size_min: 8
+    skills_valued: ["axes", "spears", "rune_lore"]
+    supernatural_elements:
+      veil_proximity: "high"
+      undead_types: ["UND_DRAUGR_02", "UND_DRAUGR_03", "UND_DRAUGR_05"]
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Vargheim": 3 }
+        unlocks: ["CONT_SUP_015"]
+        narrative_consequence: "The Ancient Draugr's destruction releases a wave of cold that kills every tree within fifty paces of the barrow. The dead circle is visible for miles."
+      failure:
+        reputation_change: -1
+        standing_change: { "Vargheim": -2 }
+        supernatural_consequence: "The Ancient Draugr commands the wolves of the Black Pine. Vargheim's kennels go silent — the hunting wolves turn on their handlers."
+    narrative_hook: >-
+      Tree roots have grown into the barrow and the barrow has grown into
+      the roots. The dead inside are tangled with the forest itself — bark
+      over bone, soil through ribcage. Ulf's wolf-wardens found the entrance
+      when a storm uprooted an ancient pine and exposed a stone lintel
+      carved with faces. The wolves will not go near it. An Ancient Draugr
+      sits in the deepest chamber, its throne grown through with living wood.
+      It has been feeding on the forest's strength for centuries.
+    notes: "Large barrow — 7 chambers. The Ancient Draugr (UND_DRAUGR_05) is the mini-boss. Tree-root terrain complicates movement."
+
+  # ============================================================
+  # YEAR 314 — VEIL-THINNING CRITICAL (5 contracts)
+  # ============================================================
+
+  # --- Retrieval ---
+  - id: "CONT_SUP_011"
+    type: "retrieval"
+    title: "Recover the Grave Wardens' Archive from the Deepholm Vault"
+    employer: "Jarl Sigrun Deepholm"
+    settlement: "Deepholm"
+    region: "mountain"
+    season: "spring"
+    year_range: [314, 314]
+    min_reputation: 3
+    payment_silver: 200
+    bonus: "Deepholm forges silver-edged weapons for the band (2 weapons)"
+    advance_silver: 60
+    duration_days: 10
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["rune_lore", "stealth", "lore"]
+    supernatural_elements:
+      veil_proximity: "high"
+      undead_types: ["UND_DRAUGR_02", "UND_DRAUGR_03", "UND_HAUG_01"]
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Deepholm": 3 }
+        unlocks: ["CONT_SUP_016"]
+        lore_reward: "The archive contains barrow-sealing rituals, a map of the anchor stones, and records of the First Chieftain's burial."
+        narrative_consequence: "Sigrun shares the archive contents openly. For the first time, the waking_barrows pattern is understood by someone with the resources to act."
+      failure:
+        reputation_change: -1
+        standing_change: { "Deepholm": -2 }
+        supernatural_consequence: "The vault's haugbui follows the intruders to Deepholm's surface. Strange things begin happening in the mining halls."
+    narrative_hook: >-
+      Sigrun's scholars studied the Grimholt relics and found references to
+      a Grave Wardens' archive sealed in a vault beneath Deepholm's oldest
+      mine-shaft. The vault was sealed for a reason — the previous Jarl
+      bricked up the entrance after three miners went mad. Sigrun wants the
+      archive recovered. She is pragmatic enough to hire expendable outsiders
+      for the work. The vault is cold. The air inside has not moved in decades.
+      Something has been breathing it anyway.
+    notes: "The archive is the key to understanding the Barrow Tide. Getting it is the hard part."
+
+  # --- Ghost-Laying Ritual ---
+  - id: "CONT_SUP_012"
+    type: "ritual"
+    title: "Re-Bind the Draugr-Jarl Beneath Frostfjord"
+    employer: "Hermit Ragnhild"
+    settlement: "Frostfjord Hollow"
+    region: "fjord"
+    season: "summer"
+    year_range: [314, 314]
+    min_reputation: 3
+    payment_silver: 0
+    bonus: "Survival. Ragnhild owes the band a life-debt (future seidr assistance guaranteed)."
+    advance_silver: 0
+    duration_days: 3
+    risk: "extreme"
+    band_size_min: 8
+    skills_valued: ["rune_lore", "seidr", "spears", "command"]
+    supernatural_elements:
+      veil_proximity: "critical"
+      undead_types: ["UND_DRAUGR_01", "UND_DRAUGR_02", "UND_DRAUGR_05"]
+      boss_present: "BOS_SUPER_02"
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+      requires_item: "Binding texts from CONT_SUP_007"
+    consequences:
+      success:
+        reputation_change: 3
+        standing_change: { "Frostfjord Hollow": 5, "Icebreak": 3 }
+        unlocks: ["CONT_SUP_017"]
+        narrative_consequence: "The Draugr-Jarl is re-bound. Frostfjord's cellar warms. Ragnhild says the binding will hold — for a generation, perhaps. Not forever."
+      failure:
+        reputation_change: -2
+        standing_change: { "Frostfjord Hollow": -3 }
+        supernatural_consequence: "The Draugr-Jarl breaks free. BOS_SUPER_02 becomes active. Frostfjord Hollow is evacuated within the week."
+    narrative_hook: >-
+      The iron stakes are failing. Hrothgar's mead freezes in the cup.
+      Ragnhild arrives with the binding texts and a face like stone. She
+      says the rite requires her voice, the old iron, and strong arms to
+      hold the thing down while she works. There is no pay because there
+      is nothing to pay with — this is survival. The band must descend into
+      the deepest barrow beneath Frostfjord and hold a five-hundred-year-old
+      corpse to a stone slab while a seidr woman screams words of power in
+      a language that makes the teeth ache. If the stakes hold, it sleeps
+      again. If not, everyone in Frostfjord dies.
+    notes: "No silver payment — this is existential. The ritual takes three rounds. Each round, the band must pass group combat checks to hold the Draugr-Jarl down while Ragnhild works."
+
+  # --- Barrow Clearing (moral choice: seal or loot) ---
+  - id: "CONT_SUP_013"
+    type: "barrow_clear"
+    title: "The Moor's End Bone-Yard: Dead or Profit"
+    employer: "Elder Brosa of Moor's End"
+    settlement: "Moor's End"
+    region: "moors"
+    season: "summer"
+    year_range: [314, 314]
+    min_reputation: 2
+    payment_silver: 50
+    bonus: null
+    advance_silver: 10
+    duration_days: 4
+    risk: "high"
+    band_size_min: 6
+    skills_valued: ["spears", "rune_lore", "axes"]
+    supernatural_elements:
+      veil_proximity: "high"
+      undead_types: ["UND_DRAUGR_01", "UND_DRAUGR_02", "UND_DRAUGR_04"]
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    moral_choice:
+      option_a:
+        action: "Destroy the standing stones to collapse the barrow permanently"
+        payment: 50
+        reputation_change: 1
+        standing_change: { "Moor's End": 2 }
+        narrative: "The barrow is gone. The standing stones shatter. Moor's End sleeps in silence for the first time in months. But the stones were the oldest things in the Rimevegr, and their destruction sends a shudder through every other barrow site."
+        supernatural_consequence: "Destroying the standing stones accelerates veil-thinning at three other sites"
+      option_b:
+        action: "Loot the barrow's bronze hoard and leave it open"
+        payment: 350
+        reputation_change: -1
+        standing_change: { "Moor's End": -3 }
+        curse_gained: "Moor-dead's Grudge — the band is haunted by whispering for d8 weeks"
+        narrative: "The bronze is ancient and valuable. The dead remember the theft. Moor's End never forgives."
+    consequences:
+      success:
+        unlocks: []
+        narrative_consequence: "Either the barrow is destroyed or looted — both have lasting consequences for the region."
+      failure:
+        reputation_change: -1
+        standing_change: { "Moor's End": -2 }
+        supernatural_consequence: "The barrow vomits its dead onto the moor. Moor's End is abandoned within the month."
+    narrative_hook: >-
+      Brosa is an old man with hands that shake and a voice that does not.
+      He says the standing stones hum so loud at night that the children
+      cannot sleep. The barrow beneath them has opened on its own — the
+      earth split like a wound. Bloated things crawl out after dark and
+      stand in the fields until dawn. He can offer fifty silver. He knows
+      it is not enough. He asks anyway, because his people have nowhere
+      else to go and no one else to ask.
+    notes: "Second moral choice. Option A has hidden consequences — destroying the stones damages the wider barrow network's containment. Option B is greedy and cursed."
+
+  # --- Escort ---
+  - id: "CONT_SUP_014"
+    type: "escort"
+    title: "Escort the Pale Widow's Curse-Carver to Raven's Perch"
+    employer: "The Pale Widow of Ashen Reach"
+    settlement: "Ashen Reach"
+    region: "forest"
+    season: "autumn"
+    year_range: [314, 314]
+    min_reputation: 3
+    payment_silver: 170
+    bonus: "The curse-carver inscribes protective runes on the band's shields (curse_risk reduced on future barrow contracts)"
+    advance_silver: 50
+    duration_days: 14
+    risk: "high"
+    band_size_min: 8
+    skills_valued: ["command", "navigate", "rune_lore", "spears"]
+    supernatural_elements:
+      veil_proximity: "high"
+      undead_types: ["UND_DRAUGR_01", "UND_DRAUGR_03"]
+      seidr_useful: true
+      curse_risk: "moderate"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 1
+        standing_change: { "Ashen Reach": 2, "Raven's Perch": 1 }
+        unlocks: ["CONT_SUP_018"]
+        narrative_consequence: "The curse-carver examines the Raven's Perch barrow and goes pale. She says the Barrow-King is not the worst thing in there."
+      failure:
+        reputation_change: -1
+        standing_change: { "Ashen Reach": -2 }
+        supernatural_consequence: "The curse-carver is killed or captured. The Pale Widow blames the band. Ashen Reach becomes hostile."
+    narrative_hook: >-
+      The Pale Widow's curse-carver is a thin woman with ink-stained hands
+      and a voice like dry leaves. She needs to reach the Raven's Perch
+      barrow to inscribe containment runes on the entrance stones. The
+      road passes through territory where the dead walk openly after dark.
+      The curse-carver is valuable and fragile — she can carve wards that
+      hold, but she fights like a scholar. Every night camp must be warded.
+      Every barrow-mouth along the route must be avoided or cleared.
+    notes: "High-value escort through increasingly supernatural terrain. The curse-carver's observations advance the waking_barrows plot."
+
+  # --- Barrow Clearing ---
+  - id: "CONT_SUP_015"
+    type: "barrow_clear"
+    title: "Assault the Raven's Perch Barrow"
+    employer: "Thane Egil Raven-Eye"
+    settlement: "Raven's Perch"
+    region: "mountain"
+    season: "autumn"
+    year_range: [314, 315]
+    min_reputation: 4
+    payment_silver: 250
+    bonus: "Barrow-King's map stone — reveals all remaining barrow locations in the Rimevegr"
+    advance_silver: 80
+    duration_days: 14
+    risk: "extreme"
+    band_size_min: 10
+    skills_valued: ["spears", "swords", "rune_lore", "command", "seidr"]
+    supernatural_elements:
+      veil_proximity: "critical"
+      undead_types:
+        ["UND_DRAUGR_02", "UND_DRAUGR_03", "UND_DRAUGR_05", "UND_HAUG_01"]
+      boss_present: "BOS_SUPER_01"
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 3
+        standing_change: { "Raven's Perch": 5 }
+        unlocks: ["CONT_SUP_017"]
+        lore_reward: "Barrow-King's map stone reveals the First Barrow location — the anchor for WBS_01"
+        narrative_consequence: "The Barrow-King is destroyed. The region's most dangerous barrow goes quiet. But the others grow louder."
+      failure:
+        reputation_change: -2
+        standing_change: { "Raven's Perch": -3 }
+        supernatural_consequence: "The Barrow-King's power grows. BOS_SUPER_01 begins commanding draugr beyond its barrow. Raven's Perch is besieged by the dead."
+    narrative_hook: >-
+      Egil Raven-Eye has watched the ravens gather above his barrow for
+      three years. Now the dead walk out at solstice and stand in his
+      fields. His people bolt their doors. His warriors refuse to go near
+      the mound. He has heard the band clears barrows. He offers everything
+      he can scrape together and says plainly: if this is not dealt with,
+      Raven's Perch will be a ghost settlement by next winter. The barrow
+      is large — twelve chambers, a throne room, and something that sits
+      on the throne and remembers being king.
+    notes: "Major boss encounter — BOS_SUPER_01 Barrow-King. The map stone reward is critical for the endgame chain."
+
+  # ============================================================
+  # YEAR 315 — ENDGAME (3 contracts)
+  # ============================================================
+
+  # --- Retrieval ---
+  - id: "CONT_SUP_016"
+    type: "retrieval"
+    title: "Locate and Reach the First Barrow"
+    employer: "Lore-Keeper Audun of Skaldhaven"
+    settlement: "Skaldhaven"
+    region: "unknown"
+    season: "spring"
+    year_range: [315, 315]
+    min_reputation: 4
+    payment_silver: 100
+    bonus: "Audun commits Skaldhaven's rune archive to the band's cause permanently"
+    advance_silver: 30
+    duration_days: 21
+    risk: "extreme"
+    band_size_min: 8
+    skills_valued: ["navigate", "rune_lore", "shelter", "track"]
+    supernatural_elements:
+      veil_proximity: "critical"
+      undead_types: ["UND_DRAUGR_01", "UND_DRAUGR_02", "UND_DRAUGR_03"]
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+      requires_item: "Barrow-King's map stone from CONT_SUP_015 or Grave Wardens' archive from CONT_SUP_011"
+    consequences:
+      success:
+        reputation_change: 2
+        standing_change: { "Skaldhaven": 3 }
+        unlocks: ["CONT_SUP_017", "CONT_SUP_018"]
+        lore_reward: "The First Barrow's location is confirmed. The Barrow Anchor Stone is inside."
+        narrative_consequence: "The endgame is visible. The band now knows what must be done to prevent the Barrow Tide — and how impossible it sounds."
+      failure:
+        reputation_change: -1
+        standing_change: {}
+        supernatural_consequence: "The band is lost in Veil-distorted terrain for d6 days. Each day, one member must pass WIL test or gain a permanent fear of barrows."
+    narrative_hook: >-
+      The Grave Wardens' records and the Barrow-King's map stone agree:
+      there is a First Barrow, older than any other, three miles behind
+      where the Barrow Tide will form. Inside it is the Barrow Anchor
+      Stone — the thing that connects every dead man in the Rimevegr to
+      every other dead man. Audun says destroying it is the only way to
+      prevent what is coming. The problem: no one knows exactly where it
+      is. The map and the records give clues, not coordinates. The terrain
+      between here and there is thick with Veil distortion — directions
+      lie, distances change, the dead stand in the fog and watch.
+    notes: "Exploration/pathfinding contract through supernatural terrain. The journey is the danger."
+
+  # --- Ghost-Laying Ritual (endgame) ---
+  - id: "CONT_SUP_017"
+    type: "ritual"
+    title: "Sever the Barrow Anchor"
+    employer: "Coalition — Ragnhild, Audun, and Dalla"
+    settlement: null
+    region: "the First Barrow"
+    season: "winter"
+    year_range: [315, 315]
+    min_reputation: 5
+    payment_silver: 0
+    bonus: "The Rimevegr survives."
+    advance_silver: 0
+    duration_days: 1
+    risk: "extreme"
+    band_size_min: 10
+    skills_valued: ["seidr", "rune_lore", "spears", "command", "swords"]
+    supernatural_elements:
+      veil_proximity: "critical"
+      undead_types: ["UND_DRAUGR_05"]
+      boss_present: "WBS_01"
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+      requires_items:
+        - "Binding texts from CONT_SUP_007"
+        - "Grave Wardens' archive from CONT_SUP_011"
+        - "First Barrow location from CONT_SUP_016"
+      requires_band_members: ["Dalla"]
+    consequences:
+      success:
+        reputation_change: 5
+        standing_change: { "all_settlements": 3 }
+        narrative_consequence: >-
+          The Anchor Stone shatters. The Barrow Tide collapses. The dead fall
+          where they stand, empty again. The ground goes still. Dalla screams
+          and collapses — her connection to the dead severed like a cut rope.
+          Ragnhild ages ten years in an hour. The Veil seals. Not forever.
+          But long enough.
+      failure:
+        reputation_change: -3
+        standing_change: { "all_settlements": -2 }
+        supernatural_consequence: >-
+          The Barrow Tide cannot be stopped. WBS_01 reaches the populated
+          settlements. The band flees with the survivors. The Rimevegr
+          as they knew it is over.
+    narrative_hook: >-
+      The ground shakes. The barrows are open — all of them, every mound
+      from Frostfjord to Deepholm, the dead pouring out in rivers of bone
+      and iron. The Barrow Tide is forming. Ragnhild says there are hours,
+      not days. Audun has the ritual. Dalla has the sight. The band has the
+      arms. A small party must reach the First Barrow while the Tide walks
+      and destroy the Anchor Stone before the core entity reaches Frostfjord.
+      Six Ancient Draugr guard the deep chamber. They did not join the march.
+      They are waiting.
+    notes: "Campaign climax. The band must reach and destroy the Anchor Stone (40 HP, immune to all except consecrated weapons or fire) while WBS_01 advances on the settlements. The six Ancient Draugr are the final obstacle."
+
+  # --- Barrow Clearing (final) ---
+  - id: "CONT_SUP_018"
+    type: "barrow_clear"
+    title: "Hold the Line at Frostfjord"
+    employer: "Jarl Hrothgar of Frostfjord (desperate)"
+    settlement: "Frostfjord Hollow"
+    region: "fjord"
+    season: "winter"
+    year_range: [315, 315]
+    min_reputation: 3
+    payment_silver: 300
+    bonus: "Whatever silver Hrothgar has left — he empties his chest on the table"
+    advance_silver: 0
+    duration_days: 1
+    risk: "extreme"
+    band_size_min: 12
+    skills_valued: ["command", "spears", "shields", "swords", "intimidate"]
+    supernatural_elements:
+      veil_proximity: "critical"
+      undead_types:
+        [
+          "UND_DRAUGR_01",
+          "UND_DRAUGR_02",
+          "UND_DRAUGR_03",
+          "UND_DRAUGR_04",
+          "UND_DRAUGR_05",
+        ]
+      boss_present: "WBS_01"
+      seidr_useful: true
+      curse_risk: "high"
+    political_conditions:
+      requires_faction: null
+      requires_event: null
+    consequences:
+      success:
+        reputation_change: 4
+        standing_change: { "Frostfjord Hollow": 5, "all_settlements": 2 }
+        narrative_consequence: >-
+          The palisade holds. Barely. The dead pile against the walls like
+          driftwood and the living fight until their arms are numb. If the
+          Anchor Stone strike team succeeded (CONT_SUP_017), the Tide breaks
+          and the living survive. If not — the line holds long enough for
+          the civilians to evacuate by sea.
+      failure:
+        reputation_change: -2
+        standing_change: { "Frostfjord Hollow": -5 }
+        supernatural_consequence: "Frostfjord falls. The dead walk the streets. The fjord freezes black."
+    narrative_hook: >-
+      Hrothgar is not a man who begs. He is begging now. The Barrow Tide
+      is visible from Frostfjord's watchtower — a dark line moving across
+      the moors, too wide for an army and too slow for a storm. It will
+      reach the palisade by nightfall. He needs every sword, every spear,
+      every body that can hold a shield. This is not a contract. This is
+      the end of the world arriving on foot, and the only question is
+      whether anyone survives the night.
+    notes: "Defensive siege contract. Runs concurrently with CONT_SUP_017 — the band splits or commits to one. The outcome depends on both."

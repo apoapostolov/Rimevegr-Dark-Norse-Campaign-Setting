@@ -1,0 +1,56 @@
+{
+  "transaction_id": "txn_20260418T071809Z_season_p1",
+  "branch": "mainline",
+  "unit": "season",
+  "amount": 1,
+  "seed_journal": {
+    "master_seed": 9488424226070697458,
+    "transaction_anchor": "mainline:Y312:D94:season:1",
+    "adapter_seeds": {
+      "settlement_stack": 11200390660850295434,
+      "animal_breeding": 1473526857514950333
+    }
+  },
+  "replay_probes": [
+    {
+      "key": "animal_breeding",
+      "signature": "96235a3c8a262f895589f0f66b09196c85442b49912798ae525c6aeee56bc1b0",
+      "payload": {
+        "key": "animal_breeding",
+        "summary": "Replay journal for 1 seasonal animal-breeding step(s).",
+        "metrics": {
+          "seasons": 1,
+          "seed": 1473526857514950333,
+          "horse_pair_draws": 0,
+          "dog_pair_draws": 0
+        },
+        "affected_entities": [],
+        "warnings": [],
+        "draw_journal": {
+          "horse_pairs": [],
+          "dog_pairs": []
+        }
+      }
+    }
+  ],
+  "from_cursor": {
+    "year": 312,
+    "day_of_year": 94,
+    "season": "Early Dark",
+    "branch": "mainline",
+    "transaction_index": 1
+  },
+  "to_cursor": {
+    "year": 312,
+    "day_of_year": 184,
+    "season": "Deep Dark",
+    "branch": "mainline",
+    "transaction_index": 2
+  },
+  "inverse": {
+    "unit": "season",
+    "amount": -1
+  },
+  "patches": [],
+  "notes": "Cursor transaction with deterministic seed journal scaffolded for replay-safe adapter execution."
+}

@@ -1,0 +1,1914 @@
+# Iron Ledger — Religious Practices and Rituals of the Rimevegr
+# Canonical ritual database for the Aesrgrim faith and related
+# supernatural practices. Used by campaign simulation and novel prose.
+#
+# Pantheon: Odynn (The One-Hung), Thurr (Crack-Handed), Fraeja
+# (The Grief-Bride), Lopt (The Scar-Mouth), Hael (The Half-Rotted).
+# Collectively: the Aesrgrim — the Grim Gods.
+#
+# Magic traditions: galdr (rune-scribing), seidr (spirit-talking),
+# wyrd-reading (fate divination). All cost blood, sanity, or the land.
+#
+# Key context: The gods went silent at the Cracking (~300 years ago).
+# Rituals continue because the alternative — admitting emptiness — is
+# worse. The tools still work. The craftsman has left the workshop.
+#
+# Seasons: long_summer (~60 days), long_dark (~300 days).
+# Named months: Ironmoon, Barrowrise, etc.
+
+rituals:
+
+  # ================================================================
+  # BLÓTS — Blood-offerings to the gods
+  # ================================================================
+  blots:
+    description: >-
+      Blood-offerings to the gods. The foundation of Rimevegr religion.
+      An animal is killed, its blood poured on the altar-stone and
+      sprinkled on participants, doorposts, and weapons. The meat is
+      shared. The gods receive the blood and smoke. Whether they notice
+      is a question no one asks aloud. Blóts continue because the
+      alternative — stopping — admits that the silence is permanent.
+      Every settlement keeps an altar-stone stained dark with old blood.
+
+    entries:
+      - id: "RIT_BLT_001"
+        name: "Harvest Blót"
+        category: "seasonal"
+        season: "long_summer"
+        deity: "Fraeja"
+        participants: "Settlement — all free folk"
+        description: >-
+          The greatest public sacrifice of the year. A sheep or goat is
+          throat-cut over the altar-stone, blood sprinkled on
+          participants and doorposts. The offering asks Fraeja —
+          Grief-Bride, keeper of barren fields — to let the thin soil
+          yield one more season. Failure to perform the Harvest Blót is
+          unthinkable. Even settlements on the edge of starvation
+          slaughter an animal they cannot afford to lose.
+        duration: "One evening, sunset to midnight"
+        components: "Sacrificial animal, mead, firelight, altar-stone, juniper branches for smoke"
+        aftermath: "Feasting, storytelling, public oaths renewed. The meat is shared in strict order — jarl first, thralls last."
+        mercenary_relevance: >-
+          Bands invited to attend if on good terms. Refusing is an
+          insult that costs standing. Attending gives +1 standing.
+          The band eats after free folk but before thralls — their
+          exact social position made visible.
+        dark_variant: >-
+          In desperate years, settlements have offered thralls on the
+          altar-stone. This is whispered about, never confirmed. The
+          blood is darker. Fraeja's answer — if it was an answer — was
+          a harvest that tasted of iron.
+
+      - id: "RIT_BLT_002"
+        name: "Midwinter Blót"
+        category: "seasonal"
+        season: "long_dark"
+        deity: "Odynn"
+        participants: "Settlement — all free folk and thralls"
+        description: >-
+          Performed at the darkest point of the Long Dark, when the sun
+          barely crests the horizon. A bull or the best horse the
+          settlement can spare is killed. Blood poured over the
+          altar-stone, sprinkled on every doorpost and weapon in the
+          settlement. The offering begs Odynn — the One-Hung, god of
+          knowledge-through-suffering — to see them through to thaw.
+          The Midwinter Blót is the most desperate ritual. Men weep
+          openly. Children are kept close.
+        duration: "Dusk to dawn — the longest night"
+        components: "Large sacrificial animal, stored mead, tallow lamps lining the hall, altar-stone, rune-marked kindling"
+        aftermath: "The meat feeds the settlement for days. Names of the dead since last midwinter are recited. Oaths of survival sworn. No one sleeps until dawn — sleeping on midwinter night invites dreams from beyond the Veil."
+        mercenary_relevance: >-
+          A band wintering in a settlement is expected to contribute an
+          animal or silver toward the sacrifice. Failure to contribute
+          is grounds for expulsion. The captain swears the band's
+          midwinter oath alongside the jarl — a rare moment of parity.
+        dark_variant: >-
+          Some settlements bleed a man instead of an animal. Not to
+          death — a deep cut across the palm, blood pooling on the
+          altar-stone. Odynn hung for knowledge. A man bleeds for
+          survival. The logic is sound if you do not think about it.
+
+      - id: "RIT_BLT_003"
+        name: "War Blót"
+        category: "event"
+        season: null
+        deity: "Thurr"
+        participants: "Fighting men — the warband or hird"
+        description: >-
+          Performed before a known battle or siege. A rooster — Thurr's
+          bird, the dawn-caller — has its throat cut and its blood
+          splashed across shields and axe-heads. Thurr the
+          Crack-Handed, god of thunder and hammered-flat enemies, is
+          asked to guide the blow, steady the grip, and let the right
+          men die. The rooster's death-cry is the signal. If it
+          screams loud, the omen is good. If it dies silent, men look
+          at each other.
+        duration: "Minutes. War does not wait for ceremony."
+        components: "Rooster, shields laid flat, the captain's weapon"
+        aftermath: "Blood on shields dries dark. Men do not wash it off until the fight is finished. The blood is proof of asking."
+        mercenary_relevance: >-
+          War blóts are the captain's ritual. Voss performs them
+          himself — badly, but no one corrects him. A band that fights
+          without a war blót fights with a weight on its shoulders.
+          Superstition or wisdom. Same effect.
+        dark_variant: >-
+          A captured enemy can be offered instead of a rooster. The
+          blood of a man is stronger than the blood of a bird. This is
+          done only when the band expects to die and wants to take more
+          with them.
+
+      - id: "RIT_BLT_004"
+        name: "Personal Sacrifice"
+        category: "personal"
+        season: null
+        deity: "Any — depends on the need"
+        participants: "Individual"
+        description: >-
+          A private offering. A man kills a chicken, a rat, whatever
+          bleeds — and lets the blood fall on bare earth while speaking
+          a god's name. No altar-stone required. No witnesses expected.
+          Personal sacrifices are made before a dangerous journey, after
+          a near-death experience, or when a man wants something badly
+          enough to bleed for it. The gods do not answer. The man
+          feels better. Whether those are the same thing is philosophy.
+        duration: "Minutes"
+        components: "Any animal, bare earth, the god's name spoken aloud"
+        aftermath: "The man buries the carcass or burns it. He does not speak of the request. If it worked, he makes another offering of thanks. If it did not, he makes another offering of rage."
+        mercenary_relevance: >-
+          Commons make personal sacrifices constantly — before watches,
+          before foraging in bad territory, before anything that might
+          kill them. Named Men are quieter about it but do the same.
+          The captain pretends he does not.
+
+      - id: "RIT_BLT_005"
+        name: "Passage Blót"
+        category: "event"
+        season: null
+        deity: "Hael"
+        participants: "Travellers — band, caravan, or lone wayfarer"
+        description: >-
+          Performed before crossing dangerous terrain — barrow-fields,
+          Veil-thinning zones, the Ghost Moor Crossing. A small animal
+          (usually a chicken or hare) is killed at the boundary and
+          left unburied. The blood is Hael's toll. The Half-Rotted
+          goddess of the dead is asked — not to help, but to look the
+          other way. Passage blóts are performed at standing stones,
+          crossroads, and the edges of barrow-mounds.
+        duration: "Minutes, performed at the threshold"
+        components: "Small sacrificial animal, a coin placed on the carcass (Hael's price), spoken invocation"
+        aftermath: "The carcass is left where it falls. Retrieving it is an insult to Hael. The meat belongs to the dead."
+        mercenary_relevance: >-
+          Bands crossing barrow territory always perform passage blóts.
+          The quartermaster budgets for sacrificial animals on routes
+          near known barrows. Skipping the passage blót is grounds for
+          the men to refuse the march.
+        dark_variant: >-
+          At Icebreak, where the Veil thins permanently, the passage
+          blót requires human blood — not a death, but a deep cut. The
+          blood is pressed against the ice. It freezes instantly. They
+          say the ice remembers the taste.
+
+      - id: "RIT_BLT_006"
+        name: "Desperate Blót"
+        category: "crisis"
+        season: null
+        deity: "All five Aesrgrim"
+        participants: "Settlement — everyone. No exceptions."
+        description: >-
+          The last sacrifice. When famine, plague, or Veil-breach
+          threatens to end a settlement, the headman calls the
+          desperate blót. Every animal the settlement can spare is
+          killed. Blood runs down the altar-stone in sheets. Every god
+          is named. Every oath is renewed. And if the animals are not
+          enough — if the desperate blót fails — there is one more
+          offering left. Human sacrifice was outlawed in the old
+          kingdoms. The old kingdoms are gone.
+        duration: "All day, from dawn to the following dawn"
+        components: "Multiple animals, all stored mead, communal weeping, altar-stone, fire kept burning through the night"
+        aftermath: "Silence. The settlement waits. If conditions improve within a week, the gods heard. If not, the headman has a harder decision to make."
+        mercenary_relevance: >-
+          Bands present during a desperate blót are compelled to
+          participate. Refusing marks the band as outlanders and
+          enemies. The captain contributes a weapon to the fire — a
+          symbolic offering. The band does not eat from the sacrifice.
+          The meat goes to the settlement's children first.
+        dark_variant: >-
+          A thrall is selected. Throat-cut over the altar-stone while
+          the settlement watches. The blood is collected in a bowl and
+          poured in a circle around the settlement's perimeter. This
+          has happened within living memory. The settlement that did it
+          survived the winter. Correlation is not causation. But
+          survival is survival.
+
+      - id: "RIT_BLT_007"
+        name: "Sea-Blót"
+        category: "event"
+        season: null
+        deity: "Fraeja"
+        participants: "Coastal settlement — fishermen, sailors"
+        description: >-
+          Before the fishing season, the coastal settlements sacrifice
+          to Fraeja — not as the Grief-Bride but as the old keeper of
+          abundance. A fish is gutted on the shore-stone, its blood
+          returned to the waves. Nets are dragged through the blood-
+          water. The sea takes the offering. The sea gives back what it
+          chooses. Kolvik and Stonebay Hamlet perform the sea-blót
+          twice yearly — once before the herring run, once after.
+        duration: "Dawn ceremony on the shoreline"
+        components: "Large fish, shore-stone, nets, salt water, spoken chant"
+        aftermath: "Nets cast immediately after. The first catch is cooked whole and shared among the fishermen. Bones returned to the sea."
+        mercenary_relevance: >-
+          Bands near coastal settlements during the sea-blót are
+          invited to eat from the first catch. Accepting creates a
+          minor obligation — the band is expected to help haul nets
+          for the day. Refusing insults the settlement.
+
+      - id: "RIT_BLT_008"
+        name: "Standing Stone Offering"
+        category: "personal"
+        season: null
+        deity: "None — or all. The stones predate the Aesrgrim."
+        participants: "Individual or small group"
+        description: >-
+          Blood or mead poured at the base of a standing stone. The
+          standing stones across the moors predate the Cracking,
+          predate the Aesrgrim, predate memory. They hum after dark.
+          Some resonate with old galdr. Offerings at standing stones
+          are not prayers — they are payments. What is being paid for,
+          and to whom, no one can say. The practice continues because
+          men who forgot the offering had worse luck than men who
+          remembered. Sample size is too small for certainty. Large
+          enough for fear.
+        duration: "Minutes"
+        components: "Blood (animal or a pricked finger), mead, silence"
+        aftermath: "The stone hums. Or it does not. Both outcomes are equally unsettling."
+        mercenary_relevance: >-
+          Moor's End locals insist that any band passing the standing
+          stones leave an offering. Elder Brosa at Moor's End forbids
+          approach after dark regardless. The band's galdr-worker may
+          sense lingering resonance — useful for navigation or runic
+          research.
+
+  # ================================================================
+  # FESTIVALS — Communal celebrations and seasonal gatherings
+  # ================================================================
+  festivals:
+    description: >-
+      Festivals are what survive when gods go silent but people still
+      need reasons to gather, eat, and pretend the world will not end
+      before the next one. In the Rimevegr, festivals are economic
+      events as much as religious ones — trade happens, debts are
+      settled, marriages arranged, and feuds negotiated. The calendar
+      has fewer festivals than the old kingdoms had. The Long Dark
+      compresses the year. Joy is rationed like grain.
+
+    entries:
+      - id: "RIT_FST_001"
+        name: "Yule Feast"
+        category: "seasonal"
+        season: "long_dark"
+        deity: "Odynn, Thurr"
+        participants: "Settlement — all ranks, including thralls"
+        description: >-
+          Three days of feasting at midwinter — the closest the
+          Rimevegr comes to celebration. Stored mead is opened. Meat
+          is served that would otherwise be saved. A yule log is
+          burned in the hall — the largest piece of wood available,
+          carved with runes by the settlement's galdr-worker if one
+          exists. The yule log must burn for all three days. If it
+          goes out, the omen is catastrophic. Men take shifts feeding
+          the fire. On the third night, the dead are toasted by name.
+        duration: "Three days and nights"
+        components: "Yule log, stored mead, salted and smoked meats, tallow lamps, hall decorated with evergreen boughs"
+        aftermath: "Debts renegotiated over the table. Marriages announced. New oaths sworn. The hangover lasts a week."
+        mercenary_relevance: >-
+          Bands wintering nearby are invited if standing is positive.
+          The captain exchanges gifts with the jarl — usually a
+          weapon or arm-ring. The band contributes mead or silver. In
+          return: three days of warmth, food, and not sleeping on
+          frozen ground. Worth more than pay.
+        dark_variant: >-
+          On the third night, some settlements set an empty place at
+          the table and pour mead for the dead. In settlements near
+          barrows, the mead is sometimes gone by morning.
+
+      - id: "RIT_FST_002"
+        name: "Thaw Celebration"
+        category: "seasonal"
+        season: "long_summer"
+        deity: "Fraeja"
+        participants: "Settlement — everyone"
+        description: >-
+          When the first mud appears and the ice breaks on the rivers,
+          the settlement knows it has survived. The thaw celebration
+          is less a ritual than a collective exhale. People gather
+          outside for the first time in months. Fires are built in the
+          open air. Children run on bare ground. The relief is
+          physical — shoulders drop, fists unclench. A goat is
+          slaughtered and the first green shoots are placed on the
+          altar-stone as proof that something still grows.
+        duration: "One day — dawn to well past dark"
+        components: "Open-air fires, first foraged greens, sacrificial goat, any surviving mead"
+        aftermath: "Planting begins the next morning. The celebration is permission to believe in the future for exactly one day."
+        mercenary_relevance: >-
+          Bands arriving at settlements during thaw find better
+          reception. Goodwill is high. Prices are lower. Contract
+          negotiations go easier when men are not starving and cold.
+
+      - id: "RIT_FST_003"
+        name: "Midsummer Fire"
+        category: "seasonal"
+        season: "long_summer"
+        deity: "Thurr"
+        participants: "Settlement and surrounding farms"
+        description: >-
+          A bonfire on the longest day — or rather, the day that stays
+          lightest longest, since the Rimevegr's sun is a pale ghost
+          behind cloud. Young men leap the fire. Old men remember
+          leaping it. The bonfire is Thurr's fire — thunder-god's
+          light against the dark that will return. Something primal
+          about lighting a fire you do not need for warmth. Proof that
+          fire can be celebration instead of survival.
+        duration: "One night — dusk to dawn (though true dark never comes)"
+        components: "Bonfire on high ground, mead, music (drums and bone flutes), wrestling matches"
+        aftermath: "Marriages consummated. Feuds temporarily suspended. Children conceived at midsummer are considered lucky — they will be born during the Long Dark when help is needed most."
+        mercenary_relevance: >-
+          Wrestling matches attract bets. The band's fighters can earn
+          silver and reputation in glíma. A Named Man who wins the
+          midsummer wrestling is remembered. Bets settled fairly earn
+          standing. Bets settled badly lose it.
+
+      - id: "RIT_FST_004"
+        name: "Harvest Fair"
+        category: "seasonal"
+        season: "long_summer"
+        deity: "Fraeja"
+        participants: "Multiple settlements — largest trade gathering of the year"
+        description: >-
+          The one time per year when multiple settlements send
+          representatives to trade in the open. Usually held at a
+          crossroads or neutral ground between settlements. Livestock,
+          grain, iron, cloth, dried fish, and information change hands.
+          It is a thing-assembly without the legal proceedings — though
+          disputes are settled in the margins. The biggest settlements
+          host the harvest fair. Grimholt and Ashen Reach compete for
+          the honour.
+        duration: "Three days"
+        components: "Trade goods, livestock pens, temporary shelters, mead tents, a designated truce area"
+        aftermath: "Settlements return loaded with what they lacked. The truce dissolves the moment the fair ends. Ambushes on the return journey are common enough to be expected."
+        mercenary_relevance: >-
+          The harvest fair is where contracts are negotiated for the
+          coming Long Dark. Bands attend to be seen, to bid on winter
+          work, and to assess the competition. Prices for everything
+          are lowest at the fair. Gest stockpiles.
+
+      - id: "RIT_FST_005"
+        name: "Weapon-Dedication Feast"
+        category: "event"
+        season: null
+        deity: "Thurr"
+        participants: "Warband or hird — fighting men only"
+        description: >-
+          When a Named Man earns a new weapon — forged, looted, or
+          gifted — it is dedicated at a feast. The weapon is laid on
+          the fire-circle's edge. Blood from a small cut is run along
+          the blade. Thurr's name is spoken. The weapon is given its
+          use-name. Swords and axes earn names in the Rimevegr. Spears
+          do not — they break too often. A named weapon carries its
+          owner's reputation.
+        duration: "One evening"
+        components: "The weapon, a small cut (owner's blood), fire-circle, mead, witnesses"
+        aftermath: "The weapon's name is entered in the charcoal ledger. Future kills with this weapon are tracked. The weapon outlives its owner."
+        mercenary_relevance: >-
+          A Named Man's weapon-dedication is a band event. Attendance
+          is expected. The captain toasts the weapon. Mockery of the
+          weapon-name is an insult that demands answer.
+
+      - id: "RIT_FST_006"
+        name: "Memorial Feast for the Fallen"
+        category: "event"
+        season: null
+        deity: "Hael"
+        participants: "The band, or a settlement remembering its dead"
+        description: >-
+          When the band has lost men and the march allows it, the
+          captain calls a memorial feast. The dead are named. Their
+          deeds are recited — honestly, without the inflation that
+          follows later. Their share of the stew is poured on the
+          ground. Their kit has already been redistributed, but their
+          ghost-share of mead remains for one more night. Hael is
+          asked to give them a seat in her hall. Whether she has a hall
+          is debatable.
+        duration: "One evening at the fire-circle"
+        components: "Mead (the dead's share poured out), their call-names spoken aloud, the fire"
+        aftermath: "The dead's names may now be spoken freely. Before the memorial feast, speaking a recently dead man's name is bad luck."
+        mercenary_relevance: >-
+          The memorial feast is the band's most important internal
+          ritual. It processes grief into shared memory. A band that
+          does not hold memorial feasts becomes haunted — not by ghosts
+          but by silence. Morale degrades. Men stop using dead men's
+          kit.
+
+      - id: "RIT_FST_007"
+        name: "Market Festival"
+        category: "seasonal"
+        season: "long_summer"
+        deity: "Lopt"
+        participants: "Settlement and visiting traders"
+        description: >-
+          Smaller than the Harvest Fair but more frequent. Individual
+          settlements hold market days during Long Summer when traders
+          arrive. Skaldhaven's market festival is the most renowned —
+          rune-craft, saga recitations, and galdr demonstrations draw
+          visitors from across the Rimevegr. The market is under Lopt's
+          sign — the god of deals that are technically honest. Every
+          merchant invokes him by spitting before the first sale.
+        duration: "One day"
+        components: "Trade stalls, barter goods, a designated truce stone, Lopt's mark scratched on the first coin exchanged"
+        aftermath: "Silver changes hands. Information changes hands faster. The market is where rumours become intelligence."
+        mercenary_relevance: >-
+          The market is the band's intelligence-gathering opportunity.
+          Gest shops for supplies at bulk prices. The captain listens
+          for contract opportunities. The men spend their pay.
+
+  # ================================================================
+  # FUNERAL RITES — How the Rimevegr handles its dead
+  # ================================================================
+  funeral_rites:
+    description: >-
+      The dead matter more in the Rimevegr than in the old kingdoms.
+      The Cracking made the boundary between living and dead unstable.
+      A body improperly handled may not stay down. Funeral rites are
+      not sentiment — they are containment. Every settlement and every
+      band knows: bury them right, burn them clean, or face what comes
+      back. The details vary by status. A jarl gets a ship. A common
+      gets a hole. Both get the same fear.
+
+    entries:
+      - id: "RIT_FNR_001"
+        name: "Field Burial"
+        category: "combat_death"
+        season: null
+        deity: "Hael"
+        participants: "The band or nearest survivors"
+        description: >-
+          The minimum. When the band loses men on the march and cannot
+          stop, the dead are buried where they fell. A shallow trench.
+          Rocks piled on top to stop animals. Hael's name spoken once.
+          The man's call-name spoken once. A coin placed on each eye —
+          or if no coins are available, a stone. The goal is speed, not
+          dignity. The dead man's kit is stripped before burial.
+          Sentiment costs lives.
+        duration: "Thirty minutes"
+        components: "A trench, rocks, coins or stones for the eyes, Hael's name"
+        aftermath: "March resumes. The dead man's name is not spoken until the memorial feast. His kit is redistributed by evening."
+        mercenary_relevance: >-
+          This is how most band members are buried. The men accept it
+          because they have seen it too many times to argue. A Named
+          Man receiving only a field burial is a morale hit — it means
+          the situation was bad enough that his status did not matter.
+
+      - id: "RIT_FNR_002"
+        name: "Proper Cairn"
+        category: "honoured_death"
+        season: null
+        deity: "Hael, Odynn"
+        participants: "The band or settlement"
+        description: >-
+          When time allows, the dead are buried under a cairn — a
+          mound of stones stacked head-high. The body is laid on its
+          side, facing north toward Hael's realm, with a weapon in
+          hand. Runes are scratched on the largest stone — the man's
+          name and how he died. Short. Factual. The cairn is sealed
+          with a flat capstone. A galdr-worker carves a ward-rune on
+          the capstone if available — to keep what is inside from
+          coming out.
+        duration: "Half a day"
+        components: "Stones (many), the dead man's weapon, a flat capstone, rune-scratching tools, ward-rune (if galdr-worker present)"
+        aftermath: "The cairn becomes a landmark. Bands passing it in later seasons leave a coin at the base. The rune tells them who lies beneath."
+        mercenary_relevance: >-
+          A proper cairn is what every Named Man expects. Denying a
+          Named Man his cairn — through negligence or spite — is a
+          grievance the band will not forget. Gest tracks cairn
+          locations in the ledger.
+
+      - id: "RIT_FNR_003"
+        name: "Ship Burial"
+        category: "prestigious_death"
+        season: null
+        deity: "Odynn, all Aesrgrim"
+        participants: "Settlement or jarl's hird"
+        description: >-
+          Reserved for jarls, warchiefs, and men of extraordinary
+          reputation. The body is placed in a ship — or boat, or
+          whatever vessel is available — with weapons, provisions, and
+          personal treasures. The ship is set afire on the water or
+          dragged onto a pyre. The fire must consume everything. It is
+          the highest honour the Rimevegr offers. It is also
+          insanely expensive. Destroying a ship in a world with limited
+          shipbuilding capacity is a statement about how much the dead
+          man was worth.
+        duration: "Full day — preparation, ceremony, burning"
+        components: "Ship or boat, weapons, provisions, personal treasures, fire, the entire settlement watching"
+        aftermath: "The ashes are collected and placed in an urn if possible. The location is marked. Songs are composed. The dead man's debts are forgiven."
+        mercenary_relevance: >-
+          No mercenary has received a ship burial in living memory. It
+          would require a captain of legendary reputation and a
+          settlement willing to sacrifice a vessel. The fact that it
+          has never happened is its own commentary on how society
+          views the svarthird.
+
+      - id: "RIT_FNR_004"
+        name: "Warrior's Pyre"
+        category: "honoured_death"
+        season: null
+        deity: "Thurr, Hael"
+        participants: "The band or warband"
+        description: >-
+          A proper burning. The body is placed on a pyre of good wood
+          — not scrub, not wet timber. A bale-fire for a man who died
+          with a weapon in his hand. The captain speaks the dead man's
+          name, his kills, and his best moment. The fire is lit. The
+          smoke carries him to whatever waits. Thunn's name is spoken
+          for the fighter. Hael's name for the receiver. The pyre
+          must burn hot enough to crack bone. Anything less, and the
+          body is not fully consumed. What is not fully consumed can
+          return.
+        duration: "Several hours — wood gathering, pyre construction, the burning"
+        components: "Good dry wood (a full cord), the dead man's weapon placed on his chest, tallow to accelerate the fire"
+        aftermath: "The ashes cool by morning. The fire scar marks the place. Named Men's pyres are remembered by location. 'He burned at the birch-stand near Kolvik' is how his death enters conversation."
+        mercenary_relevance: >-
+          The warrior's pyre is the standard for Named Men when
+          resources allow. Commons receive pyres only when wood is
+          plentiful and the captain is generous. The cost is real —
+          a cord of good wood in the Long Dark is a day's fuel for
+          the entire band.
+
+      - id: "RIT_FNR_005"
+        name: "Barrow Entombment"
+        category: "prestigious_death"
+        season: null
+        deity: "Hael"
+        participants: "Settlement — specialised labour"
+        description: >-
+          The old way. A mound is raised over the body. In the
+          Rimevegr, new barrows are rare — the labour is enormous and
+          the risk is understood. Everyone knows what barrows become.
+          But for a jarl or warchief who demands it, the barrow is
+          dug, the body interred with weapons and grave-goods, and the
+          entrance sealed with a rune-carved stone. The galdr-worker
+          wards the seal. The ward is supposed to hold. Supposed to.
+        duration: "Days to weeks of construction"
+        components: "Excavation, stone lining, grave-goods, rune-carved seal stone, galdr-worker for warding"
+        aftermath: "The barrow stands. For a generation, it is respected. Then it is feared. Then it is avoided. Then it opens."
+        mercenary_relevance: >-
+          The band may be hired to guard a barrow construction. The
+          irony of building what they will later be paid to clear is
+          not lost on veterans.
+
+      - id: "RIT_FNR_006"
+        name: "Drowned Man's Rite"
+        category: "special_death"
+        season: null
+        deity: "Fraeja"
+        participants: "Coastal settlement or whoever recovers the body"
+        description: >-
+          A drowned man is buried facing the sea, never inland. Salt
+          water is poured over the grave. His name is not spoken on any
+          ship for a year — to speak a drowned man's name on water
+          invites him aboard. The body is weighted with stones in the
+          shroud. If the body is not recovered — which is common — a
+          proxy burial with the man's possessions replaces the corpse.
+          The empty grave is worse than a full one. An empty grave is
+          an invitation.
+        duration: "One hour for burial, one year of name-silence on ships"
+        components: "Salt water, stones for weighting, seaward-facing grave, the dead man's possessions"
+        aftermath: "Fishermen avoid the burial shore for a season. The name-silence is strictly observed. Breaking it on a ship gets a man thrown overboard."
+        mercenary_relevance: >-
+          Bands rarely encounter drowned men's rites unless operating
+          in coastal contracts. Kolvik and Stonebay Hamlet observe the
+          rite meticulously. The band respects the name-silence — even
+          the least superstitious man will not speak a drowned name
+          on water.
+
+      - id: "RIT_FNR_007"
+        name: "Named Man's Reckoning"
+        category: "honoured_death"
+        season: null
+        deity: "Odynn"
+        participants: "The band — Named Men, veterans, commons"
+        description: >-
+          When a Named Man dies and the band has time, a reckoning is
+          performed before the pyre or cairn. The charcoal ledger is
+          opened. The dead man's entry is read aloud — every contract
+          he served, every notable action recorded. His debts are
+          voided. His credits distributed to kin or to the band's
+          common fund. The ledger entry is then struck through with a
+          single charcoal line. Not erased. Struck through. The record
+          remains but the man is closed.
+        duration: "Thirty minutes before the primary funeral rite"
+        components: "The charcoal ledger, the dead man's entry, witnesses"
+        aftermath: "The reckoning makes the death administrative as well as emotional. The band can grieve and also function. Both are necessary."
+        mercenary_relevance: >-
+          The reckoning is exclusive to the svarthird. No settlement
+          performs it. It is the band's own ritual — the closest thing
+          mercenaries have to religion. A captain who skips the
+          reckoning loses trust.
+
+      - id: "RIT_FNR_008"
+        name: "Unmourned Death"
+        category: "dishonoured_death"
+        season: null
+        deity: "None"
+        participants: "Whoever handles the disposal"
+        description: >-
+          For oath-breakers, niding, and those who died in disgrace.
+          No rites. No name spoken. The body is stripped of anything
+          useful and left for animals — or dumped in a bog. Bog
+          disposal is preferred because the acidic water preserves the
+          body long enough to prevent it from rising, while also
+          hiding the evidence of what the dead man did to earn this.
+          No cairn. No pyre. No mark. As if the man never existed.
+        duration: "As long as it takes to drag the body away"
+        components: "Nothing. That is the point."
+        aftermath: "The man's name becomes a curse-word. 'Remember what happened to [name]' is a disciplinary tool for a generation."
+        mercenary_relevance: >-
+          The worst thing the band can do to a dead man. Reserved for
+          betrayal, desertion under fire, or theft from the common
+          fund. The threat of unmourned death is more effective than
+          the threat of execution.
+
+      - id: "RIT_FNR_009"
+        name: "Enemy Disposal"
+        category: "combat_death"
+        season: null
+        deity: "None"
+        participants: "Whoever is left standing"
+        description: >-
+          Enemy dead are stripped of useful equipment and left where
+          they fell. No rites. No burial. If the bodies are near a
+          settlement, locals may bury them to prevent disease and
+          restless dead — a practical measure, not mercy. In the field,
+          the bodies are sometimes stacked as a marker: we were here,
+          we won. Ravens and wolves handle the rest.
+        duration: "Whatever the looting requires"
+        components: "None"
+        aftermath: "The battlefield rots. Travellers avoid it for months. In the Long Dark, the frozen bodies last until thaw, then the smell announces the thaw before the mud does."
+        mercenary_relevance: >-
+          Looting is systematic and rapid. Weapons, armor, coins,
+          boots — anything useful. The quartermaster tallies the loot.
+          Leaving useful equipment on dead enemies is waste, and waste
+          kills.
+
+      - id: "RIT_FNR_010"
+        name: "Burning for the Restless"
+        category: "special_death"
+        season: null
+        deity: "Hael, Thurr"
+        participants: "Anyone brave enough"
+        description: >-
+          When the dead return — when a draugr rises from a barrow or
+          a body refuses to stay down — the only certain disposal is
+          fire. The body is burned where it falls. If the draugr has
+          been fought and defeated, the pieces are gathered and burned
+          separately. The fire must be hot enough to crack the skull.
+          Thurr's name is hammered into the air with fists against
+          chests — the chest-beat. Hael is asked to take back what is
+          hers. The ash is scattered on running water.
+        duration: "Hours — depends on how much body is left to burn"
+        components: "Fire hot enough to consume bone, chest-beat invocation of Thurr, running water for ash disposal"
+        aftermath: "The site is warded by a galdr-worker if available. Men who fought the draugr do not sleep well for weeks. The dead do not always explain why they returned."
+        mercenary_relevance: >-
+          The band's most-feared rite. Every man knows it may be
+          needed. The chest-beat is practised — fingers curled, fist
+          against sternum, three times. It is the only physical
+          invocation of any god that the band performs collectively.
+
+  # ================================================================
+  # OATH CEREMONIES — The binding of word to consequence
+  # ================================================================
+  oath_ceremonies:
+    description: >-
+      In the old kingdoms, oaths were sworn before gods who listened.
+      In the Rimevegr, oaths are sworn before men who remember. The
+      mechanism changed, the weight did not. An oath-breaker is
+      economically dead — no band will hire him, no settlement will
+      shelter him, no contract will bear his name. The gods may be
+      silent, but the ledger is not.
+
+    entries:
+      - id: "RIT_OTH_001"
+        name: "Blood-Brotherhood"
+        category: "personal"
+        season: null
+        deity: "Odynn"
+        participants: "Two men (or women)"
+        description: >-
+          The strongest bond between non-kin. Two men cut their palms
+          and clasp hands, letting the blood mingle. They stand over
+          turned earth — symbolically mixing their blood with the
+          land. Odynn's name is spoken as witness. From this moment,
+          they are brothers. An attack on one is an attack on both.
+          Betrayal of blood-brotherhood is the worst crime in the
+          Rimevegr — worse than murder, because murder only kills a
+          body. Betraying a blood-brother kills trust itself.
+        duration: "Minutes — but the binding is permanent"
+        components: "A knife, bare earth, Odynn's name, at least one witness"
+        aftermath: "The two men fight for each other, inherit from each other, and avenge each other. If one dies, the other carries the grief and the blood-debt."
+        mercenary_relevance: >-
+          Blood-brotherhood within the band creates loyalty that
+          transcends pay. It also creates complications — a
+          blood-brother will choose his brother over the band. Captains
+          watch blood-oaths carefully. Too many and the band splits
+          into factions. Too few and no one trusts anyone.
+
+      - id: "RIT_OTH_002"
+        name: "Weapon Oath"
+        category: "military"
+        season: null
+        deity: "Thurr"
+        participants: "Warrior and weapon"
+        description: >-
+          A man swears on his primary weapon — usually his axe or
+          sword — that his words are true. The weapon is laid flat on
+          the ground between the swearer and the listener. If the oath
+          is broken, the weapon carries the stain. A stained weapon
+          misfires — or so the belief runs. In practice, a man who
+          swears on his weapon and is caught lying loses the weapon.
+          It is taken from him and given to the man he wronged.
+        duration: "The time it takes to speak the oath"
+        components: "The swearer's weapon, a listener, bare ground"
+        aftermath: "The oath binds until fulfilled or until both parties agree to dissolve it. A weapon oath is stronger than a verbal promise, weaker than an Odynn-sworn contract."
+        mercenary_relevance: >-
+          Weapon oaths are the band's internal currency. "I swear on
+          my axe" settles disputes, confirms scouting reports, and
+          guarantees debts. A man whose weapon oath proves false loses
+          his weapon and his standing.
+
+      - id: "RIT_OTH_003"
+        name: "Service Oath"
+        category: "political"
+        season: null
+        deity: "Odynn"
+        participants: "The captain and the jarl (or employer)"
+        description: >-
+          When the band accepts a long-term contract, the captain
+          swears a service oath to the employer. The oath is marked
+          with the rope-and-eye — Odynn's sign — scratched onto a
+          contract stone or written in the charcoal ledger. The service
+          oath defines duration, pay, and conditions. Breaking it
+          destroys the band's reputation across every settlement that
+          hears. The jarl who hires a band that has broken service
+          oaths is a fool.
+        duration: "Formal ceremony — one hour with witnesses"
+        components: "Contract stone or ledger, rope-and-eye mark, the captain's weapon placed on the stone, witnesses from both sides"
+        aftermath: "The contract is active. Pay begins. The band serves. When the oath expires, a closing ceremony releases both parties."
+        mercenary_relevance: >-
+          The service oath is the band's primary economic instrument.
+          Gest maintains every service oath in the ledger. The
+          rope-and-eye mark is the closest thing the band has to a
+          signature. A captain who swears too many service oaths at
+          once creates conflicting obligations — and obligation
+          conflicts are how bands die.
+
+      - id: "RIT_OTH_004"
+        name: "Ring-Oath"
+        category: "legal"
+        season: null
+        deity: "All Aesrgrim"
+        participants: "The swearer and the assembly"
+        description: >-
+          A solemn oath sworn on the settlement's oath-ring — a heavy
+          silver or bronze arm-ring kept by the jarl or headman. The
+          swearer places both hands on the ring and speaks the oath in
+          front of witnesses. Ring-oaths are used for serious legal
+          matters: property disputes, marriage contracts, political
+          alliances. The weight of all five Aesrgrim backs the
+          ring-oath. Breaking it makes a man niding.
+        duration: "Minutes, but requires witnesses and the ring"
+        components: "The settlement's oath-ring, the assembly as witnesses, the swearer's spoken words"
+        aftermath: "The oath is remembered by every witness. There is no document. There does not need to be. Twenty people heard it."
+        mercenary_relevance: >-
+          The band is occasionally asked to witness ring-oaths at
+          thing-assemblies. Their presence as armed outsiders lends
+          weight — a man swearing falsely in front of mercenaries is
+          swearing falsely in front of men who have no investment in
+          being merciful.
+
+      - id: "RIT_OTH_005"
+        name: "Thing-Oath of Innocence"
+        category: "legal"
+        season: null
+        deity: "Odynn"
+        participants: "The accused and the thing-assembly"
+        description: >-
+          When a man is accused of a crime at the thing-assembly, he
+          may swear a thing-oath of innocence. He places his hand on
+          the altar-stone and speaks Odynn's name, declaring his
+          innocence before the assembly. If the assembly believes him,
+          the matter is settled. If they do not, the matter escalates
+          to ordeal or combat. The thing-oath is the first test — it
+          measures whether the man can hold steady while calling on a
+          god who does not answer. A man who flinches is judged guilty
+          by his body, not his words.
+        duration: "Minutes"
+        components: "Altar-stone, the assembly, Odynn's name"
+        aftermath: "Acquittal or escalation. There is no middle ground at the thing."
+        mercenary_relevance: >-
+          Band members accused of crimes in settlements face the
+          thing-oath. The captain decides whether to support the member
+          or let the thing judge. A captain who abandons a man to the
+          thing loses loyalty. A captain who defends a guilty man
+          before the thing loses standing.
+
+      - id: "RIT_OTH_006"
+        name: "Oath of Joining"
+        category: "military"
+        season: null
+        deity: "Thurr, Odynn"
+        participants: "New recruit and the captain"
+        description: >-
+          When a man joins the band, he swears the Oath of Joining. He
+          places his weapon-hand on the captain's weapon and speaks
+          the words: he will march where ordered, fight where pointed,
+          share food and fire, and keep the band's business from
+          outsiders. In return, the captain swears to pay what is owed,
+          bury the dead right, and not spend lives cheaply. Both oaths
+          are recorded in the charcoal ledger. The recruit eats from
+          the common stew for the first time as a member.
+        duration: "Minutes"
+        components: "The captain's weapon, the recruit's weapon-hand, the charcoal ledger, witnesses from the band"
+        aftermath: "The recruit is now a common. His old life is irrelevant. The band is his kin, his employer, and his fate."
+        mercenary_relevance: >-
+          Every member of the band has sworn this oath. It is the
+          foundation of the band's cohesion. The words vary by captain
+          but the structure is universal across every svarthird in the
+          Rimevegr.
+
+  # ================================================================
+  # SEIDR RITUALS — Spirit-talking and divination
+  # ================================================================
+  seidr_rituals:
+    description: >-
+      Seidr is the old magic — spirit-talking, communion with what
+      lies beyond the Veil. Traditionally practiced by women (the
+      volva). Male practitioners carry the ergi stigma — the
+      accusation of unmanliness — though in the Rimevegr this has
+      weakened to wariness rather than violence. Seidr is feared,
+      needed, and never fully trusted. The seidr-wife sees what
+      others cannot. What she sees changes her. The cost is visible
+      on her face.
+
+    entries:
+      - id: "RIT_SDR_001"
+        name: "Spá (Divination)"
+        category: "divination"
+        season: null
+        deity: "Fraeja (patron of seidr)"
+        participants: "Volva or seidr-wife and the querent"
+        description: >-
+          The art of seeing what the threads of fate hold. The volva
+          enters a trance — induced by chanting, herbs, and
+          exhaustion — and reads the wyrd-threads attached to the
+          querent. The future she sees is not fixed but weighted. She
+          describes what is likely, not what is certain. A spá session
+          is intimate, disturbing, and physically taxing for the volva.
+          Her eyes roll back. Her voice changes. The temperature drops
+          in the room. Common folk are terrified. They come anyway.
+        duration: "One hour for the trance, minutes for the reading"
+        components: "A seidr staff (iron-shod distaff), herbs (wormwood, henbane), firelight, complete silence from observers"
+        aftermath: "The volva sleeps for hours afterward. The querent has information he may not want. The spá cannot be undone — once seen, the thread is visible."
+        mercenary_relevance: >-
+          Bands seek spá before major contracts — especially barrow
+          clearances. A volva's reading is expensive (5-10 silver) and
+          the information is often ambiguous. But ambiguous is better
+          than blind.
+
+      - id: "RIT_SDR_002"
+        name: "Spirit-Calling"
+        category: "communication"
+        season: "long_dark"
+        deity: "Hael, Fraeja"
+        participants: "Volva and witnesses (who often wish they had not come)"
+        description: >-
+          Reaching through the Veil to contact the dead. The volva
+          chants in a voice that is not entirely her own. The fire
+          dims. The air thickens. Sometimes the dead speak through her
+          — fragments, warnings, demands. Sometimes something else
+          answers. Spirit-calling is the most dangerous seidr practice
+          because the volva opens a door and cannot always control who
+          walks through it. The Long Dark is the only season when the
+          Veil is thin enough for reliable contact. Reliable is a
+          generous word.
+        duration: "One to three hours — the volva cannot sustain it longer"
+        components: "Seidr staff, blood offering (the volva's own), a fire that must not go out, the dead person's name or possession"
+        aftermath: "The volva is exhausted and often bleeding from the nose. Witnesses report cold spots, shadows at wrong angles, and a sweet-rotten smell. The information may be accurate. It may be lies. The dead have no obligation to tell the truth."
+        mercenary_relevance: >-
+          The band may need a spirit-calling to learn what killed a
+          previous expedition or what guards a barrow. The cost is
+          high — both in silver and in the mood of the camp. Men who
+          witness a spirit-calling do not sleep well for days.
+        dark_variant: >-
+          At Icebreak, where the Veil is permanently thin, Hermit
+          Ragnhild can call spirits without a full ritual. They come
+          unbidden. Some do not leave.
+
+      - id: "RIT_SDR_003"
+        name: "Curse-Laying"
+        category: "offensive"
+        season: null
+        deity: "Lopt"
+        participants: "Seidr practitioner and target (does not require consent)"
+        description: >-
+          A seidr curse is spoken, not carved. The practitioner speaks
+          the target's name, invokes Lopt (the Scar-Mouth, god of
+          lies that are true), and describes the affliction in precise,
+          physical terms. Bad luck, sickness, weapon-failure, or worse.
+          Whether the curse works through seidr or through the target's
+          belief in the curse is a distinction the Rimevegr does not
+          make. Both paths lead to the same ditch.
+        duration: "Minutes to perform; effects are open-ended"
+        components: "The target's name, Lopt's invocation (followed by spitting), a personal item of the target (if available)"
+        aftermath: "The curse-layer is avoided afterward — even by allies. Curse-laying marks a practitioner as dangerous in a way that healing and divination do not. A seidr-wife who curses is not the same as one who only sees."
+        mercenary_relevance: >-
+          Bands sometimes hire seidr practitioners for curse-laying
+          against enemies. The cost is silver and reputation — a band
+          known for hiring curses is feared and despised in equal
+          measure. Effective, though.
+
+      - id: "RIT_SDR_004"
+        name: "Ward-Setting"
+        category: "protective"
+        season: null
+        deity: "None — ward-setting is technique, not prayer"
+        participants: "Galdr-worker or seidr practitioner"
+        description: >-
+          Wards are carved or spoken barriers against supernatural
+          intrusion. A galdr-worker carves ward-runes on stakes
+          driven into the camp perimeter. A seidr practitioner speaks
+          the ward into the air, binding it to a location. Both
+          methods create a threshold that the dead — and whatever else
+          moves through the Veil — hesitate to cross. Hesitate. Not
+          refuse. Wards thin over time. They must be renewed. A camp
+          that stays too long on the same wards sleeps on borrowed
+          safety.
+        duration: "One hour for a camp perimeter"
+        components: "Ward-stakes (runed), blood (the carver's), a knife for carving"
+        aftermath: "The camp perimeter feels slightly warmer. Men sleep better inside the wards. Whether this is magical or psychological is a question the band does not ask."
+        mercenary_relevance: >-
+          The band's galdr-worker (Ash) sets wards at every new camp.
+          It is her first task after the fire is lit. The men do not
+          comment on it. They also do not sleep until it is done.
+
+      - id: "RIT_SDR_005"
+        name: "Vision Quest"
+        category: "personal"
+        season: null
+        deity: "Odynn"
+        participants: "The seeker — alone"
+        description: >-
+          An individual ritual. The seeker fasts for two days, then
+          sits alone in a wild place — a hilltop, a shoreline, a
+          standing stone — and waits. No fire. No shelter. No weapon.
+          Odynn hung on the ash tree for nine days to gain knowledge.
+          The vision quest asks for less but offers less. The seeker
+          stays until a vision comes or the body fails. Some see
+          nothing. Some see the Veil. Some see their death. All return
+          changed, though the change may be invisible.
+        duration: "Two days fasting, then one to three days of vigil"
+        components: "Nothing. Literally nothing. The absence is the point."
+        aftermath: "The seeker returns silent and does not explain. If the vision was useful, it shows in his next decision. If it was not, it shows in his eyes."
+        mercenary_relevance: >-
+          Named Men occasionally seek visions before decisive moments
+          — a pivotal contract, a leadership challenge, a personal
+          crisis. A man on a vision quest is left alone. Disturbing
+          him is an insult to Odynn.
+
+      - id: "RIT_SDR_006"
+        name: "Seidr Trance"
+        category: "divination"
+        season: null
+        deity: "Fraeja"
+        participants: "Seidr practitioner — alone or with an anchor"
+        description: >-
+          Deeper than spá. The seidr trance dissolves the boundary
+          between the practitioner and the Veil. The practitioner's
+          spirit walks the other side while her body remains seated,
+          breathing, and vulnerable. An anchor — a trusted person who
+          holds the practitioner's hand — maintains the connection to
+          the living world. Without an anchor, the practitioner risks
+          not coming back. What she sees on the other side: the
+          wyrd-threads of settlements, the shape of what moves in the
+          Veil, the dead in their errands. And sometimes, something
+          that sees her back.
+        duration: "Hours — the practitioner loses track of time"
+        components: "Seidr staff, an anchor (recommended), absolute silence, a fire that does not go out"
+        aftermath: "The practitioner wakes screaming, bleeding from the nose, or speaking in a voice that is not hers. Recovery takes a full day. The information gained is powerful and unreliable."
+        mercenary_relevance: >-
+          The band does not request seidr trances. They are
+          volunteered by the practitioner when the need is dire.
+          Watching a seidr trance is deeply unsettling. The camp is
+          quiet for days afterward.
+        dark_variant: >-
+          A seidr trance performed during Barrowrise — when the Veil
+          is thinnest — can crack the practitioner. Her spirit crosses
+          and something follows it back. This is how settlements
+          acquire ghosts.
+
+      - id: "RIT_SDR_007"
+        name: "Weather-Calling"
+        category: "environmental"
+        season: null
+        deity: "Thurr"
+        participants: "Seidr practitioner — high altitude preferred"
+        description: >-
+          An attempt to shift weather patterns through force of will
+          and the Veil's resonance. The practitioner climbs to high
+          ground, plants her staff, and chants Thurr's names — all of
+          them, including the secret ones that burn the throat. The
+          wind shifts. Sometimes. A fog lifts. Sometimes. Snow
+          intensifies when the practitioner wanted it to lighten.
+          Weather-calling is the least reliable seidr practice and the
+          most physically dangerous — high ground in a storm is a
+          death sentence for anyone who cannot command the lightning.
+          No one can command the lightning.
+        duration: "Hours of chanting"
+        components: "High ground, the seidr staff, Thurr's names, lungs strong enough to outshout the wind"
+        aftermath: "The weather may change. It may not. The practitioner comes down hoarse, cold, and often injured from the climb. The camp decides whether she succeeded or whether the weather was going to change anyway."
+        mercenary_relevance: >-
+          The band has never employed weather-calling. The cost-benefit
+          does not work for a mobile force. Settlement seidr-wives
+          attempt it before planting and before the worst storms.
+          Success rate unknown. Claimed success rate: high.
+
+      - id: "RIT_SDR_008"
+        name: "Bind-Song"
+        category: "offensive"
+        season: null
+        deity: "Fraeja"
+        participants: "Seidr practitioner — requires proximity to target"
+        description: >-
+          A song that freezes the listener. The seidr practitioner
+          sings — a monotone rising chant that hooks something behind
+          the target's eyes. The target's muscles lock. His will
+          dissolves. He stands in the open, unable to move or scream,
+          while the song continues. The bind-song requires maintained
+          concentration. If the singer is interrupted, the binding
+          snaps. If the target is strong-willed — or simply too angry
+          to stop — the song fails. The bind-song is the most feared
+          seidr weapon because it requires no weapon at all.
+        duration: "As long as the singer maintains the chant — minutes at most"
+        components: "Voice, proximity, eye contact with the target"
+        aftermath: "The target recovers immediately when the song ends. He remembers everything. The paralysis was not unconsciousness — it was imprisonment in his own body."
+        mercenary_relevance: >-
+          A seidr practitioner with a bind-song is worth ten fighters
+          in the right moment. And worth watching every other moment.
+          The band that employs one walks a thin line between asset
+          and liability.
+
+  # ================================================================
+  # RUNE-CRAFT — Galdr practices and runic inscription
+  # ================================================================
+  rune_craft:
+    description: >-
+      Galdr — the art of carving runes that hold power. Not prayer.
+      Craft. A galdr-worker inscribes runes with a chisel and iron,
+      feeds them with blood, and speaks the activation words.
+      Mis-carved runes twist their intent. Runes carved by an amateur
+      can ward a doorpost or sour a well. Runes carved by a master
+      can hold a barrow shut for centuries. Skaldhaven's rune archive
+      is the centre of galdr knowledge in the Rimevegr. Lore-Keeper
+      Audun's apprentices carve the most reliable rune-sets.
+
+    entries:
+      - id: "RIT_RNC_001"
+        name: "Rune-Carving for Protection"
+        category: "protective"
+        season: null
+        deity: "None — galdr is craft, not worship"
+        participants: "Galdr-worker"
+        description: >-
+          Ward-runes carved on doorposts, gate-frames, and ward-stakes.
+          The runes are cut with an iron chisel into wood or stone, then
+          traced with the carver's blood. The activation word is spoken
+          — a single syllable, different for each rune, that the carver
+          learned by rote and does not explain. The ward creates a
+          threshold that the dead hesitate to cross. Stronger runes
+          require more blood and more precise carving. A ward-rune with
+          a single wrong stroke does nothing. A ward-rune with two
+          wrong strokes does something unpredictable.
+        duration: "Minutes per rune for a competent carver"
+        components: "Iron chisel, wood or stone surface, the carver's blood, the activation word"
+        aftermath: "The rune holds until the material degrades or a stronger force breaks it. Wood-runes last seasons. Stone-runes last generations."
+        mercenary_relevance: >-
+          The band's galdr-worker carves ward-runes at every camp and
+          on every threshold the band secures. The men do not
+          understand the runes. They understand that the camps with
+          runes feel different from the camps without.
+
+      - id: "RIT_RNC_002"
+        name: "Rune-Reading"
+        category: "divination"
+        season: null
+        deity: "Odynn (patron of rune-knowledge)"
+        participants: "Galdr-worker or rune-literate scholar"
+        description: >-
+          Reading is not carving — it is interpretation. A galdr-worker
+          examines existing runes — on stones, on barrow seals, on old
+          weapons — and determines their meaning, their age, and their
+          remaining power. Rune-reading requires futhark literacy,
+          which is rare. Most men cannot read. A galdr-worker who can
+          read old runes is a walking archive. Skaldhaven pays silver
+          for rune-stone rubbings from unexplored barrows because each
+          new inscription expands the archive's knowledge.
+        duration: "Varies — minutes for common runes, hours for old or damaged inscriptions"
+        components: "The rune itself, charcoal and parchment for rubbing (if copying), adequate light"
+        aftermath: "The galdr-worker knows what the rune says. This may be useful, dangerous, or both. Some runes are warnings. Some are invitations."
+        mercenary_relevance: >-
+          Rune-reading is the band's primary intelligence tool in
+          barrow territory. Ash reads the runes on barrow seals before
+          the band enters. What she reads determines the approach —
+          or the decision not to enter.
+
+      - id: "RIT_RNC_003"
+        name: "Rune-Curse"
+        category: "offensive"
+        season: null
+        deity: "Lopt"
+        participants: "Galdr-worker with hostile intent"
+        description: >-
+          A curse carved in runes rather than spoken in seidr. The
+          galdr-worker carves the target's name and the affliction into
+          a piece of wood, feeds it with blood, and buries it near
+          the target's dwelling — or hides it in their possessions.
+          The curse is slower than a seidr curse but longer-lasting.
+          A rune-curse found and destroyed ends. A rune-curse hidden
+          well endures. The niding-pole is the most dramatic form: a
+          horse skull on a stake, carved with runes, facing the enemy's
+          land.
+        duration: "One hour for carving and placement"
+        components: "Wood or bone, iron chisel, the carver's blood, the target's name, a hiding place"
+        aftermath: "The target experiences the affliction — slowly, over days and weeks. Bad luck. Sickness. Livestock die. The target may never discover the source."
+        mercenary_relevance: >-
+          Bands hiring galdr-workers for rune-curses pay well and keep
+          quiet about it. A rune-curse left at a hostile settlement
+          is a declared act of war if discovered. If not discovered,
+          it is just bad luck.
+
+      - id: "RIT_RNC_004"
+        name: "Healing Runes"
+        category: "healing"
+        season: null
+        deity: "Fraeja"
+        participants: "Galdr-worker and the wounded"
+        description: >-
+          Runes carved directly onto the flesh near a wound — or onto
+          a bandage pressed against it. The runes promote healing,
+          resist infection, and reduce pain. The mechanism is unknown.
+          The effect is observable. A wound with healing runes seals
+          faster than one without. A fever breaks sooner. The galdr-
+          worker cuts the runes shallowly into the skin with a fine
+          blade, feeds them with the patient's own blood, and speaks
+          the activation. It hurts. The patient does not complain
+          because the alternative is worse.
+        duration: "Minutes"
+        components: "A fine blade or needle, the patient's blood, the activation word"
+        aftermath: "The runes fade as the wound heals. When the runes are gone, the healing is complete. If the runes remain visible after the wound closes, something went wrong."
+        mercenary_relevance: >-
+          Healing runes are the most in-demand galdr service. Every
+          band wants a galdr-worker who can carve them. Ash carves
+          healing runes on the worst injuries. The men accept the pain
+          because they have seen what happens to wounds without them.
+
+      - id: "RIT_RNC_005"
+        name: "War-Runes on Weapons"
+        category: "offensive"
+        season: null
+        deity: "Thurr"
+        participants: "Galdr-worker and the weapon's owner"
+        description: >-
+          Runes carved along a blade or into an axe-head. War-runes
+          are supposed to make the weapon bite harder, hold its edge
+          longer, and find the gap in armor. Whether this is galdr or
+          placebo, the men who carry war-runed weapons fight with more
+          confidence. And confidence kills. The carving requires the
+          weapon to be heated until the metal accepts the chisel
+          without shattering — a smith's cooperation is essential. The
+          runes are fed with the owner's blood, binding the weapon to
+          the wielder.
+        duration: "Hours — includes heating, carving, and cooling"
+        components: "Forge fire, iron chisel, the weapon, the owner's blood, the activation word"
+        aftermath: "The weapon bears visible runes. It may function better. It definitely looks intimidating. Enemies who see runed weapons hesitate — that moment of hesitation is worth more than whatever the runes actually do."
+        mercenary_relevance: >-
+          Named Men pay premium silver for war-runes. A Named Man's
+          weapon without runes is just steel. A weapon with runes is a
+          Named Man's weapon. The distinction matters.
+
+      - id: "RIT_RNC_006"
+        name: "Name-Runes on Gravestones"
+        category: "memorial"
+        season: null
+        deity: "Hael"
+        participants: "Galdr-worker or any rune-literate person"
+        description: >-
+          The simplest rune-craft. A name carved on a cairn-stone or
+          grave-marker. No activation, no blood — just the letters.
+          The name holds the identity of the dead against the erosion
+          of memory. A named grave is a person. An unnamed grave is
+          earth. In the Rimevegr, where the dead sometimes return,
+          name-runes serve a second purpose: they identify what is
+          inside. When a cairn opens and a draugr walks out, the
+          name-rune tells you who it was. That matters when the thing
+          was your father.
+        duration: "Minutes"
+        components: "Stone, a chisel, the dead person's name"
+        aftermath: "The name endures. Stone outlasts memory. A cairn may stand for a century with a name no one living can connect to a life."
+        mercenary_relevance: >-
+          Gest records the text of name-runes on cairns the band
+          builds. The ledger is the portable version. The stone is the
+          permanent one.
+
+  # ================================================================
+  # BIRTH AND NAMING — Arriving in the Rimevegr
+  # ================================================================
+  birth_and_naming:
+    description: >-
+      A child born in the Rimevegr has a one-in-three chance of
+      surviving to adulthood. The naming ceremony is delayed until
+      the father decides the child is worth keeping. This is not
+      cruelty — it is arithmetic. A mouth that cannot be fed is not
+      a child yet. It is a question.
+
+    entries:
+      - id: "RIT_BRN_001"
+        name: "Name-Giving Ceremony"
+        category: "birth"
+        season: null
+        deity: "Fraeja"
+        participants: "Father, mother, and settlement witnesses"
+        description: >-
+          Nine days after birth, the father lifts the child and gives
+          it a name. The name is spoken aloud — once by the father,
+          once by the mother, once by the eldest witness. Three times
+          makes it real. The child is sprinkled with water from the
+          nearest clean source. From this moment, the child is a
+          person with a name, kin-rights, and a claim on the family's
+          resources. Before the naming, the child is no one. After
+          the naming, killing it is murder.
+        duration: "Minutes"
+        components: "Clean water, the child, the father's voice, three witnesses"
+        aftermath: "The child's name is remembered. In settlements with a galdr-worker, the name may be carved into the family's doorpost."
+        mercenary_relevance: >-
+          Bands rarely witness name-givings — mercenaries and babies
+          occupy different parts of the lifecycle. But a band quartered
+          in a settlement during a naming adds its voices to the
+          witnesses. This creates a minor bond.
+
+      - id: "RIT_BRN_002"
+        name: "Water-Blessing"
+        category: "birth"
+        season: null
+        deity: "Fraeja"
+        participants: "Mother and a seidr-wife or elder woman"
+        description: >-
+          Before the name-giving — sometimes immediately after birth
+          — the child is blessed with water. The seidr-wife or eldest
+          woman in the settlement pours water over the child's head
+          and whispers words that no one else hears. The blessing is
+          protective — against sickness, bad luck, and the Veil's
+          attention. Whether it works is unprovable. The mothers
+          demand it anyway.
+        duration: "Minutes"
+        components: "Clean water, the seidr-wife's whisper, privacy"
+        aftermath: "The child is considered warded. A child that sickens despite the blessing is considered cursed — the blame falls on the seidr-wife, who absorbs it without comment."
+        mercenary_relevance: >-
+          None directly. But a band that disrupts a water-blessing
+          — through noise, violence, or desecrating the water source
+          — earns the settlement's permanent hatred.
+
+      - id: "RIT_BRN_003"
+        name: "Exposure"
+        category: "birth"
+        season: null
+        deity: "None — this is a decision, not a ritual"
+        participants: "The father"
+        description: >-
+          Before the name-giving — in the nine-day window when the
+          child is still no one — the father may choose to expose it.
+          The child is carried to a distant place and left. In the
+          Long Dark, death comes quickly. In Long Summer, there is a
+          thin chance of survival — found by another family, by a
+          passing band, by luck. Exposure is not murder in the
+          Rimevegr. It is a decision about resources. No one
+          celebrates it. No one apologises for it. A family that
+          cannot feed one more mouth does not gain virtue by
+          starving together.
+        duration: "A walk to a distant place. A return without the child."
+        components: "Nothing. There is nothing to bring."
+        aftermath: "The child is not spoken of. No name was given. No person died. The silence is the rite."
+        mercenary_relevance: >-
+          The band has found exposed children. The decision to keep or
+          leave them reveals character. There is no right answer.
+          Dalla's silence on the matter is louder than any opinion.
+
+      - id: "RIT_BRN_004"
+        name: "Fate-Reading at Birth"
+        category: "birth"
+        season: null
+        deity: "The Norns (if they exist)"
+        participants: "Volva and the parents"
+        description: >-
+          If a volva is available — and few settlements have one —
+          the parents may request a fate-reading for the newborn. The
+          volva casts rune-staves on the ground and reads the pattern.
+          She speaks the child's wyrd — not specifics, but weight.
+          Heavy is a short life with significance. Light is a long
+          life with little consequence. The parents accept the reading.
+          They have no choice. But a heavy wyrd makes the naming
+          ceremony more serious. A child destined for consequence is
+          both a blessing and a threat.
+        duration: "One hour"
+        components: "Rune-staves, the child present, the volva's trance"
+        aftermath: "The parents know something they may not want to know. The fate-reading cannot be undone. Some parents regret asking. None refuse the answer."
+        mercenary_relevance: >-
+          Rarely relevant — but a band member who learns his own
+          fate-reading (told by a parent before joining) carries the
+          knowledge quietly. A heavy wyrd explains the recklessness
+          of some Named Men.
+
+  # ================================================================
+  # COMING OF AGE — The transition from child to person
+  # ================================================================
+  coming_of_age:
+    description: >-
+      There is no fixed age. A boy becomes a man when the settlement
+      — or the band — decides he has earned it. The threshold is
+      demonstrated competence: the ability to fight, to work, to
+      carry weight without complaint. No ceremony makes a man. The
+      man makes himself. The ceremony confirms what everyone can
+      already see.
+
+    entries:
+      - id: "RIT_COA_001"
+        name: "First Weapon Gift"
+        category: "coming_of_age"
+        season: null
+        deity: "Thurr"
+        participants: "Father (or mentor) and the youth"
+        description: >-
+          A father gives his son a weapon — usually a hand-axe, the
+          most practical tool a man can own. The weapon is presented
+          at the fire-circle or in the hall. No speeches. The father
+          holds out the axe. The son takes it. That is the entire
+          ritual. The weight of the weapon in the boy's hand is the
+          transition. From this moment, he is expected to maintain it,
+          carry it, and use it competently. He is now dangerous. The
+          world treats dangerous men differently.
+        duration: "Seconds"
+        components: "A weapon. A hand to give. A hand to take."
+        aftermath: "The youth carries the weapon everywhere. He sleeps with it by his side. He learns that an axe is not a toy but a responsibility that can split a man's skull."
+        mercenary_relevance: >-
+          Young recruits receive their first weapon from the captain
+          if they have no father to give it. The captain's axe placed
+          in a recruit's hands is the beginning of military life.
+
+      - id: "RIT_COA_002"
+        name: "First Blood"
+        category: "coming_of_age"
+        season: null
+        deity: "Thurr, Hael"
+        participants: "The youth and witnesses"
+        description: >-
+          First blood is first kill — animal in a hunt, or enemy in a
+          fight. Both count. The youth bloods his weapon and returns
+          to the settlement or the fire-circle with proof. No one
+          asks how he feels. No one congratulates him. The veterans
+          nod. That is sufficient. First blood changes a man's smell
+          — not literally, but the men sense it. A boy who has killed
+          walks differently. Not with pride. With weight.
+        duration: "The time it takes to kill. The return."
+        components: "The weapon, the blood, the witnesses who verify the claim"
+        aftermath: "The youth is now treated as a man. He eats in the men's order. His opinions are heard, though not necessarily valued."
+        mercenary_relevance: >-
+          Commons who have not seen first blood are watched closely
+          in combat. The moment they blood their weapon, the veterans'
+          attitude shifts from contempt to assessment.
+
+      - id: "RIT_COA_003"
+        name: "Formal Recognition at Thing"
+        category: "coming_of_age"
+        season: null
+        deity: "All Aesrgrim"
+        participants: "The youth and the thing-assembly"
+        description: >-
+          A settlement youth who has received his weapon and drawn
+          first blood may be formally recognised at the next
+          thing-assembly. The headman or jarl speaks the youth's name
+          and declares him a free man — a karl with thing-rights. He
+          may now speak at the assembly, bear witness to oaths, own
+          property, and be held accountable under weregild. The
+          recognition is the legal confirmation of what the physical
+          rites already established. Without it, the youth fights
+          and kills but has no standing.
+        duration: "Minutes at the thing-assembly"
+        components: "The thing-assembly, the youth's weapon displayed, witnesses"
+        aftermath: "The youth is a karl. He can now be killed for weregild, which is simultaneously a right and a threat."
+        mercenary_relevance: >-
+          Band members have no thing-standing unless a settlement
+          grants it. A common who is formally recognised at a
+          thing-assembly gains a legal identity the band cannot
+          provide. Some veterans leave the band for this alone.
+
+      - id: "RIT_COA_004"
+        name: "Call-Name Earning"
+        category: "coming_of_age"
+        season: null
+        deity: "None — this is social, not religious"
+        participants: "The band"
+        description: >-
+          In the band, the true coming of age is earning a call-name.
+          Call-names are not chosen — they are given by the men around
+          the fire. A man does something distinctive — brave, stupid,
+          memorable — and the name sticks. Goat, Hook, Coldhand,
+          Shepherd, Lump. The call-name is who you are in the band.
+          Your birth-name is who your mother thought you would be. A
+          man without a call-name is invisible. A man with one is
+          known.
+        duration: "Happens organically. Cannot be forced."
+        components: "A memorable action. The right moment at the fire. Someone who speaks it first."
+        aftermath: "The call-name replaces the birth-name in daily use. The charcoal ledger records both."
+        mercenary_relevance: >-
+          Earning a call-name is the transition from common to
+          potential Named Man. Not all call-named men become Named —
+          but no Named Man lacks a call-name.
+
+  # ================================================================
+  # WAR RITES — Rituals of combat and violent profession
+  # ================================================================
+  war_rites:
+    description: >-
+      The Rimevegr's mercenaries fight year-round. War is not a
+      season — it is a profession. The war rites are the closest
+      thing the svarthird has to religion. They are practical,
+      physical, and observed with more consistency than any blót.
+      Because the men who skip the war rites die slightly more often
+      than those who do not.
+
+    entries:
+      - id: "RIT_WAR_001"
+        name: "Pre-Battle Sacrifice"
+        category: "combat"
+        season: null
+        deity: "Thurr"
+        participants: "The warband"
+        description: >-
+          See War Blót (RIT_BLT_003) for the full ritual. Before a
+          known engagement, the captain or a designated man kills a
+          rooster or small animal and bloods the weapons. This is the
+          abbreviated version — done in minutes when the enemy is in
+          sight. Sometimes the sacrifice is a rat caught in camp.
+          Thurr does not care about the species. He cares about the
+          blood.
+        duration: "Minutes"
+        components: "Any animal, the weapons, blood"
+        aftermath: "The men grip their weapons tighter. Whether Thurr notices is irrelevant. They do."
+        mercenary_relevance: >-
+          The band performs this before every engagement. Skipping it
+          requires the captain to explain why, which costs more time
+          than the sacrifice.
+
+      - id: "RIT_WAR_002"
+        name: "Berserker Trance"
+        category: "combat"
+        season: null
+        deity: "None — or something older than gods"
+        participants: "The berserker"
+        description: >-
+          Not a ritual but a state. The berserker eats certain
+          mushrooms — fly agaric, probably — or simply works himself
+          into a fury through hyperventilation and self-inflicted pain.
+          The eyes change. The pupils dilate. Pain stops registering.
+          Fear leaves. What remains is a weapon that does not know when
+          to stop swinging. The trance is not supernatural — probably.
+          The chemical and psychological explanation suffices for most
+          questions. But berserkers in full trance shrug off wounds
+          that should drop a man. And some keep fighting with injuries
+          incompatible with consciousness.
+        duration: "Minutes to an hour — the body cannot sustain it longer"
+        components: "Fly agaric mushroom (optional), self-inflicted pain (biting, head-striking), an enemy to fixate on"
+        aftermath: "The berserker collapses. Shaking, confusion, sometimes vomiting. Memory fragmented. He does not remember what he did. The men around him do."
+        mercenary_relevance: >-
+          A berserker is an uncontrollable weapon. The band deploys
+          them at need and keeps distance otherwise. A berserker's
+          trance in camp — triggered by rage or nightmare — is a
+          lethal accident waiting to happen.
+
+      - id: "RIT_WAR_003"
+        name: "Shield-Wall Oath"
+        category: "combat"
+        season: null
+        deity: "Thurr"
+        participants: "The men in the shield line"
+        description: >-
+          Before forming line — the loose, mobile version of a
+          shield-wall used by small bands — the men lock shields and
+          speak a short oath: they will hold, they will not step back,
+          they will cover the man beside them. The oath is spoken in
+          unison, shields touching. The physical contact matters as
+          much as the words. A man who feels the shield beside him is
+          less likely to run. A man without that contact is alone in
+          the worst moment of his life.
+        duration: "Seconds"
+        components: "Shields, the men, the words"
+        aftermath: "The line holds or it breaks. The oath makes the holding more likely. Not certain."
+        mercenary_relevance: >-
+          Shield-wall oaths are spoken before every defensive
+          engagement. The words are the band's own — passed from
+          captain to captain, varied by tradition.
+
+      - id: "RIT_WAR_004"
+        name: "Challenge Ritual"
+        category: "combat"
+        season: null
+        deity: "Thurr, Odynn"
+        participants: "Two fighters and witnesses"
+        description: >-
+          When a dispute cannot be resolved by the thing or by
+          negotiation, a formal challenge is issued. The challenger
+          throws his weapon at the opponent's feet — not to hit, but
+          to mark the ground. The challenged man picks up the weapon
+          and returns it. This acceptance is binding. The fight is to
+          submission, first blood, or death — the terms are declared
+          before the first blow. Witnesses form a circle. No
+          interference. The outcome is final.
+        duration: "Minutes for the ritual, however long the fight takes"
+        components: "Weapons, a clearing, witnesses, declared terms"
+        aftermath: "The dispute is settled. The loser accepts the terms. Refusing a challenge is cowardice. Refusing to accept the outcome is niding."
+        mercenary_relevance: >-
+          Internal band disputes sometimes reach the challenge
+          threshold. The captain arbitrates the terms. A challenge
+          that kills a Named Man costs the band — captains prefer
+          first-blood terms.
+
+      - id: "RIT_WAR_005"
+        name: "Victory Rites"
+        category: "post-combat"
+        season: null
+        deity: "Thurr, Hael"
+        participants: "The survivors"
+        description: >-
+          After a won engagement, the survivors perform the rites in
+          order: secure the wounded, loot the dead, count the losses,
+          and then — if time allows — build a fire and drink. The
+          victory rite is not celebration. It is accounting. Thurr is
+          thanked for the win. Hael is acknowledged for the cost. The
+          captain recites the names of the dead. Then the men eat.
+          Sometimes the meal is the victory. Full stomachs after a
+          fight feel like a blessing whether the gods are listening
+          or not.
+        duration: "One evening"
+        components: "Fire, food, mead if available, the names of the dead"
+        aftermath: "Morale improves briefly. The ledger records the win, the losses, and the loot. Reality resumes at dawn."
+        mercenary_relevance: >-
+          Victory rites are mandatory after any engagement with
+          casualties. Skipping them means the dead are not
+          acknowledged, which creates haunted silences in camp.
+
+      - id: "RIT_WAR_006"
+        name: "Trophy-Taking"
+        category: "post-combat"
+        season: null
+        deity: "None"
+        participants: "Individual fighters"
+        description: >-
+          Some men take trophies — a tooth, an ear, a weapon-pommel,
+          a braided lock of hair. The practice is not formalised.
+          No one orders it. No one prohibits it. A trophy is personal
+          proof of survival. Men who take trophies from every fight
+          are watched — it signals something about how they process
+          killing. One trophy: remembrance. A collection: something
+          else.
+        duration: "Seconds"
+        components: "A knife. Something from the dead."
+        aftermath: "The trophy is carried as a charm or stored in the kit. Some men show them. Others do not."
+        mercenary_relevance: >-
+          Trophy-taking is tolerated but not encouraged. Stripping
+          enemy dead of teeth slows the looting process that the
+          quartermaster needs to run efficiently.
+
+      - id: "RIT_WAR_007"
+        name: "War-Name Earning"
+        category: "post-combat"
+        season: null
+        deity: "None — this is reputation, not religion"
+        participants: "The fighter and witnesses"
+        description: >-
+          A fighter who performs a singular act in combat — kills a
+          notable enemy, holds a position alone, saves the line from
+          breaking — may earn a war-name. The war-name is different
+          from a call-name. Call-names are camp identities. War-names
+          are combat identities. A man can be Lump at the fire and
+          Shield-Breaker in the line. The war-name follows him to
+          other bands and future contracts. It is currency.
+        duration: "Spontaneous — awarded after the engagement"
+        components: "Witnesses, the act, the name that sticks"
+        aftermath: "The war-name enters the ledger. It enters the band's stories. It enters the man's price."
+        mercenary_relevance: >-
+          Named Men with war-names command higher pay and better
+          treatment. A war-name earned against a known enemy force
+          is worth more than one earned against bandits.
+
+      - id: "RIT_WAR_008"
+        name: "Chest-Beat Invocation"
+        category: "combat"
+        season: null
+        deity: "Thurr"
+        participants: "Fighting men — collective"
+        description: >-
+          The physical invocation of Thurr. Fingers curled, fist
+          against the sternum, three times. Hard enough to hurt. The
+          sound carries across the line — a hundred fists striking a
+          hundred chests. It is a heartbeat made external, given to
+          the god of thunder. The chest-beat is the only divinity the
+          band performs in unison. Not spoken. Struck. The vibration
+          in the ribcage is the prayer.
+        duration: "Seconds"
+        components: "Fists. Chests. Will."
+        aftermath: "The noise intimidates. The vibration settles the nerves. Whether Thurr receives it is a question for after the fight."
+        mercenary_relevance: >-
+          The chest-beat precedes every engagement. It is the one
+          ritual that every man — common, veteran, Named — performs
+          identically. The one moment the band is truly together.
+
+  # ================================================================
+  # HEALING RITES — Keeping the wounded alive
+  # ================================================================
+  healing_rites:
+    description: >-
+      Healing in the Rimevegr is herbs, stitching, and hope.
+      Seidr-enhanced healing works but is rare and expensive. Most
+      wounds are treated with what the band has — and what the band
+      has is a cook who doubles as a healer, some galdr-runes, and
+      the stubborn refusal of men to admit they are dying.
+
+    entries:
+      - id: "RIT_HLG_001"
+        name: "Wound-Chanting"
+        category: "healing"
+        season: null
+        deity: "Fraeja"
+        participants: "Healer (seidr-wife, volva, or skilled woman) and the wounded"
+        description: >-
+          The healer chants over the wound while cleaning and
+          stitching. The chant is rhythmic, monotone, and in a
+          language the patient does not recognise — archaic forms that
+          the healer learned by rote descent. The chanting does not
+          replace the physical treatment. It accompanies it. The
+          patient's breathing slows. Pain recedes. Whether the effect
+          is seidr or hypnotic trance or both, the wound-response
+          improves. Bleeding slows. Shock is delayed. The healer's
+          hands work while her voice holds the patient in a space
+          between pain and unconsciousness.
+        duration: "As long as the treatment requires"
+        components: "The healer's voice, clean water, needle and sinew for stitching, whatever herbs are available"
+        aftermath: "The patient sleeps after wound-chanting — a deep, still sleep that lasts hours. Recovery rates are observably better than without."
+        mercenary_relevance: >-
+          Dalla performs wound-chanting. She learned it from a
+          settlement healer and does not call it seidr. The men do
+          not ask what to call it. They ask her to keep chanting.
+
+      - id: "RIT_HLG_002"
+        name: "Herb-Blessing"
+        category: "healing"
+        season: null
+        deity: "Fraeja"
+        participants: "Healer and the herbs themselves"
+        description: >-
+          Before using foraged herbs for healing — yarrow to stop
+          bleeding, meadow-sweet for pain, wormwood for infection —
+          the healer blesses them. The blessing is a whispered prayer
+          to Fraeja, asking the plants to hold their virtue. A
+          pragmatic ritual: the herbs are also checked for mould,
+          misidentification, and potency. The prayer happens while the
+          hands do the work. Fraeja taught seidr. She may also have
+          taught which plants kill and which ones heal. The
+          distinction is in the dosage.
+        duration: "Minutes"
+        components: "The herbs, clean water, the healer's voice"
+        aftermath: "The herbs are prepared — ground, infused, or applied as poultice. The blessing is invisible. The treatment is not."
+        mercenary_relevance: >-
+          The band's herb stores are blessed before use on the march.
+          A rational precaution framed as devotion. The herbs do not
+          know the difference.
+
+      - id: "RIT_HLG_003"
+        name: "Fever-Breaking Ritual"
+        category: "healing"
+        season: "long_dark"
+        deity: "Fraeja, Hael"
+        participants: "Healer and attendants"
+        description: >-
+          When a man develops camp-fever — the burning sickness that
+          kills more men than steel — the healer performs the
+          fever-breaking ritual. The patient is wrapped in wet cloth
+          and placed by the fire. He sweats. The healer chants. Herbs
+          are brewed into a tea that tastes of dirt and bitterness.
+          If the fever breaks before dawn, the man lives. If it climbs
+          through dawn, the man dies. Hael is asked to release her
+          grip. Fraeja is asked to cool the blood. The healer works
+          through the night knowing that most of what she does is
+          irrelevant and doing it anyway.
+        duration: "All night — from onset to dawn"
+        components: "Wet cloth, fire, herbal tea (yarrow, willow bark, meadow-sweet), the healer's vigil"
+        aftermath: "The patient survives or does not. The healer moves to the next patient. There is always a next patient."
+        mercenary_relevance: >-
+          Fever kills more band members than combat. The
+          fever-breaking ritual is performed in silence — the rest
+          of the camp knows what is happening by the healer's absence
+          from the fire and the smell of herbal tea in the cold air.
+
+      - id: "RIT_HLG_004"
+        name: "Blood-Letting for the Wounded"
+        category: "healing"
+        season: null
+        deity: "None — this is medicine, not faith"
+        participants: "Healer and the wounded"
+        description: >-
+          A controlled cut near a wound or on the arm to release
+          presumed bad blood — an ancient practice based on the belief
+          that infection is blood-borne poison that must be drained.
+          The healer opens a vein, collects the dark blood in a bowl,
+          and monitors the patient. The practice sometimes helps (when
+          a wound is genuinely poisoned and drainage accelerates
+          recovery). It sometimes kills (blood loss in an already
+          weakened patient). The healer's judgment determines which
+          patients benefit and which are better left alone.
+        duration: "Minutes"
+        components: "A clean blade, a bowl, linen for binding"
+        aftermath: "The patient is weaker but sometimes recovers faster. The calculus is risk versus certainty — certain death from infection versus possible death from blood loss."
+        mercenary_relevance: >-
+          Dalla performs blood-letting only when she assesses the
+          alternative is worse. The men trust her judgment. They have
+          seen her refuse to bleed a man who asked for it and watched
+          him survive.
+
+  # ================================================================
+  # VEIL RITES — Rituals at the boundary of the living and the dead
+  # ================================================================
+  veil_rites:
+    description: >-
+      The Veil — the boundary between the living world and whatever
+      lies beyond — has been unstable since the Cracking. In certain
+      places (barrows, standing stones, Icebreak, the Ghost Moor
+      Crossing), the boundary thins. Reality becomes unreliable.
+      Shadows fall at wrong angles. Sounds carry from empty rooms.
+      Fire burns blue at the edges. The Veil rites are not worship
+      — they are survival protocols for navigating the boundary
+      between what is real and what should not be.
+
+    entries:
+      - id: "RIT_VEI_001"
+        name: "Standing Stone Vigil"
+        category: "observation"
+        season: null
+        deity: "None"
+        participants: "Galdr-worker, seidr practitioner, or desperate fool"
+        description: >-
+          A night spent at a standing stone, alone, from dusk to dawn.
+          The vigil-keeper sits with his back to the stone and watches.
+          The humming of the stone rises and falls through the night.
+          Sometimes there are lights — cold, blue-white, moving among
+          the stones. Sometimes there are voices. Sometimes there is
+          only the cold and the dark and the sound of your own
+          breathing. The vigil provides information about Veil
+          activity in the area — how thin the boundary is, what moves
+          on the other side, whether the stone is dormant or active.
+          The information costs a night of sleep and sometimes more.
+        duration: "Dusk to dawn — no leaving, no fire"
+        components: "The standing stone, the vigil-keeper, darkness, endurance"
+        aftermath: "The vigil-keeper returns at dawn with information or with silence. Both are meaningful. A man who returns from a vigil and will not speak of it saw something he cannot explain."
+        mercenary_relevance: >-
+          The band's galdr-worker may perform a standing stone vigil
+          before the band crosses barrow territory. The intelligence
+          shapes the route. A dormant stone means a safe passage. An
+          active stone means a detour.
+
+      - id: "RIT_VEI_002"
+        name: "Barrow Approach Ritual"
+        category: "protective"
+        season: null
+        deity: "Hael, Thurr"
+        participants: "The clearing team"
+        description: >-
+          Before entering a barrow, the team performs the approach
+          ritual. Weapons are checked. Ward-runes are confirmed. Hael
+          is asked to keep her dead seated. Thurr is asked to guide
+          the arm that swings in the dark. A small blood offering is
+          made at the barrow entrance — not on the seal-stone, which
+          is the dead's property, but on the ground before it. Then
+          the seal is broken. The air that pours out — barrow-breath
+          — is cold, stale, and sweet-rotten. The men breathe it
+          anyway. They have no choice.
+        duration: "Thirty minutes before entry"
+        components: "Ward-runes checked, blood offering, weapons drawn, torches lit"
+        aftermath: "The barrow is entered. What happens inside is a separate matter. The approach ritual is about being right with the threshold before crossing it."
+        mercenary_relevance: >-
+          Every barrow clearance begins with the approach ritual.
+          Skipping it is technically possible and practically
+          unthinkable. Men who skip the ritual die more often.
+          Correlation or causation. Does not matter.
+
+      - id: "RIT_VEI_003"
+        name: "Veil-Warding"
+        category: "protective"
+        season: null
+        deity: "None — this is technique"
+        participants: "Galdr-worker"
+        description: >-
+          When the band camps near a Veil-thinning zone — standing
+          stones, barrow fields, or the approaches to Icebreak — the
+          galdr-worker establishes Veil-wards. These are more intensive
+          than standard camp wards. Runes carved on heavier stakes,
+          fed with more blood, reinforced with iron nails driven
+          through the stake-base into the earth. The iron grounds the
+          ward. The blood activates it. The result is a perimeter that
+          the Veil's influence hesitates to cross. Inside the wards,
+          the air is clear. Shadows fall correctly. Fire burns the
+          right colour.
+        duration: "Two hours for a full perimeter"
+        components: "Heavy ward-stakes, iron nails, the carver's blood (more than usual), iron chisel"
+        aftermath: "The camp is safe. The galdr-worker is pale from blood loss. The men sleep. The wards hold until dawn. Whether they hold the next night depends on who is carving."
+        mercenary_relevance: >-
+          Veil-warding is expensive in blood and energy. The
+          galdr-worker's capacity decreases with each night of
+          warding. Extended stays in Veil-active areas require rotating
+          practitioners — which the band does not have.
+
+      - id: "RIT_VEI_004"
+        name: "Spirit Appeasement"
+        category: "negotiation"
+        season: null
+        deity: "Hael"
+        participants: "Seidr practitioner and the restless dead"
+        description: >-
+          Not an attack. Not a ward. A conversation. When the dead
+          appear but do not attack — standing at the edge of firelight,
+          lingering near a cairn, visible but still — the seidr
+          practitioner attempts appeasement. She speaks to the dead.
+          She offers blood, mead, or a personal item. She asks what
+          the dead want. Sometimes they want rest. Sometimes they
+          want something buried with them that was taken. Sometimes
+          they want nothing that the living can provide. The
+          conversation is in words that are not quite words — a
+          resonance in the Veil that the practitioner interprets.
+        duration: "Varies — minutes to hours depending on the dead's temperament"
+        components: "Offerings (blood, mead, possessions), the seidr practitioner's voice, the Veil thin enough for contact"
+        aftermath: "The dead retreat, or they do not. Appeasement succeeds less than half the time. When it does, the relief is profound. When it does not, the alternative is fire and iron."
+        mercenary_relevance: >-
+          The band has used spirit appeasement to avoid fights with
+          restless dead. A fight costs wounds and resources.
+          Appeasement costs a bottle of mead and the practitioner's
+          nerves. The economics favour trying.
+
+      - id: "RIT_VEI_005"
+        name: "Thinning-Mark Recognition"
+        category: "observation"
+        season: null
+        deity: "None"
+        participants: "Anyone trained to look"
+        description: >-
+          Recognising the signs of a Veil-thinning in progress. Not
+          a ritual — a skill. The signs: fire burns blue at the
+          edges. Shadows fall at wrong angles to the light source.
+          Sounds carry from empty spaces — footsteps, breathing,
+          distant chanting. The air tastes of old metal. Animals
+          refuse to enter the area. A compass (lodestone) spins. A
+          galdr-worker's runes tingle. The thinning-mark is the
+          moment the observer stops explaining and starts reacting.
+          Training teaches what to look for. Experience teaches when
+          to run.
+        duration: "Continuous awareness"
+        components: "Observation, training, the willingness to trust what you see"
+        aftermath: "The band adjusts — reroutes, establishes Veil-wards, or retreats. A thinning-mark recognised early is a problem. Recognised late is a crisis."
+        mercenary_relevance: >-
+          Veterans train commons to recognise thinning-marks because
+          the galdr-worker cannot be everywhere. A common who spots
+          a thinning-mark early saves the band. A common who misses
+          one costs the band. The training is part of survival.
+
+# -------------------------------------------------------------------
+# Summary counts:
+#   blots:           8 entries  (RIT_BLT_001 – RIT_BLT_008)
+#   festivals:       7 entries  (RIT_FST_001 – RIT_FST_007)
+#   funeral_rites:  10 entries  (RIT_FNR_001 – RIT_FNR_010)
+#   oath_ceremonies:  6 entries  (RIT_OTH_001 – RIT_OTH_006)
+#   seidr_rituals:   8 entries  (RIT_SDR_001 – RIT_SDR_008)
+#   rune_craft:      6 entries  (RIT_RNC_001 – RIT_RNC_006)
+#   birth_and_naming: 4 entries  (RIT_BRN_001 – RIT_BRN_004)
+#   coming_of_age:   4 entries  (RIT_COA_001 – RIT_COA_004)
+#   war_rites:       8 entries  (RIT_WAR_001 – RIT_WAR_008)
+#   healing_rites:   4 entries  (RIT_HLG_001 – RIT_HLG_004)
+#   veil_rites:      5 entries  (RIT_VEI_001 – RIT_VEI_005)
+# -------------------------------------------------------------------
+# Total: 70 rituals

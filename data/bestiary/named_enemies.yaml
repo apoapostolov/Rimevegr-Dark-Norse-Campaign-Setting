@@ -1,0 +1,1206 @@
+enemies:
+  # ==========================================================================
+  # RIVAL BAND LEADERS (BOS_RIVAL_01 through BOS_RIVAL_07)
+  # ==========================================================================
+
+  - id: "BOS_RIVAL_01"
+    name: "Sigrid Blackwine"
+    category: "boss"
+    subcategory: "rival_leader"
+    tier: 4
+    named: true
+    description: "Broad-shouldered woman in her late thirties with a jaw like a ship's prow and pale eyes that measure everything in terms of cost. Black hair cut short at the neck, the left side shaved above a thick scar from ear to temple. Ring mail kept oiled and fitted. A wine-dark cloak — her signature — pinned with a silver wolf's-head brooch. Hands scarred across the knuckles from a decade of close-quarters work. She stands like someone who owns the ground under her."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 5
+      WIT: 7
+      WIL: 6
+      WYR: 1
+    hp: 16
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Command"
+        rank: 4
+      - name: "Bargain"
+        rank: 3
+      - name: "Intimidation"
+        rank: 3
+      - name: "Tactics"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Blackwine Blade"
+          type: "sword"
+          speed: 3
+          base_damage: 6
+        - name: "Seax"
+          type: "knife"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Ring Mail"
+        head: "Steel Helm"
+    tactics: "Commands from the second rank, reading the fight and issuing positioning orders. Enters melee only at the decisive moment or when challenged to a duel she cannot refuse without losing face. Fights with controlled aggression — no wasted swings. Will sacrifice a flank to create an opening at center."
+    morale_break: "Retreats if band drops below 40% strength. Will not risk the Three Wolves for personal pride — but will accept a duel if challenged publicly."
+    group_size: "1 (with 10-20 Three Wolves)"
+    abilities:
+      - "Rally: allies within earshot recover 2 morale on her turn"
+      - "Blackwine Rage: +2 MIG for 3 rounds when first wounded"
+      - "Read the Field: once per combat, force one enemy to reroll a successful attack"
+    resistances: []
+    weaknesses:
+      ["pride — can be goaded into duels", "protective of her second, Torolf"]
+    sim_traits: ["blackwine_rage", "read_the_field_once"]
+    loot:
+      silver_range: [50, 200]
+      items: ["blackwine_blade", "ring_mail", "silver_wolf_brooch"]
+      special: "Three Wolves war chest if camp taken (300-500 silver)"
+    lore: "Born in Vargheim to a tanner and a shield-maiden who never came home. Built the Three Wolves from a handful of unemployed garrison soldiers and a reputation for keeping contracts. Every jarl between Grimholt and Stonebay knows her name. She wants what the player band wants — the next contract, the better reputation, the seat at the jarl's table."
+    associated_locations: ["Vargheim", "Grimholt"]
+    associated_chains: ["three_wolves", "iron_grip"]
+    image_prompt: |
+      A broad-shouldered woman in well-maintained ring mail, dark wine-colored
+      cloak, silver wolf brooch at the throat. Short black hair shaved on one
+      side revealing a scar from ear to temple. Pale calculating eyes. Standing
+      with arms crossed on a muddy hillside, mercenary camp behind her.
+      Overcast sky. Muted steel and burgundy palette. Realistic, not stylized.
+
+  - id: "BOS_RIVAL_02"
+    name: "Hrafn Bone-Gnaw"
+    category: "boss"
+    subcategory: "rival_leader"
+    tier: 4
+    named: true
+    description: "Massive. Head and shoulders above most men, with a neck like a bull's and hands that could close around a skull. Face cratered with old pox scars, nose broken flat. Wears a necklace of finger bones — some yellowed, some fresh. Grey-streaked beard braided with copper wire. Bare arms sleeved in scar tissue. His eyes are small and bright and perpetually amused, which is worse than if they were angry."
+    stats:
+      MIG: 8
+      NIM: 3
+      TOU: 7
+      WIT: 4
+      WIL: 5
+      WYR: 1
+    hp: 20
+    skills:
+      - name: "Axes"
+        rank: 4
+      - name: "Brawl"
+        rank: 3
+      - name: "Intimidation"
+        rank: 4
+      - name: "Command"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Gnaw"
+          type: "two-handed_axe"
+          speed: 2
+          base_damage: 8
+        - name: "Fists"
+          type: "unarmed"
+          speed: 1
+          base_damage: 5
+      armor:
+        torso: "Hardened Leather with Bone Plates"
+        head: "None"
+    tactics: "Walks straight at the strongest-looking enemy and swings. No subtlety. No second plan. His violence is so total it creates its own tactical advantage — the enemy focuses on him while the Bone Pack flanks. Will grapple downed enemies and bite."
+    morale_break: "Does not retreat. Fights until physically unable to stand. The Bone Pack scatters when he falls."
+    group_size: "1 (with 8-15 Bone Pack)"
+    abilities:
+      - "Terrifying Presence: enemies within 5m make WIL test or suffer -1 to first attack"
+      - "Bone-Gnaw: bites grappled opponent for d4 damage, ignoring armor"
+      - "Relentless: ignores first critical wound effect"
+    resistances: ["fear", "pain_penalties"]
+    weaknesses:
+      [
+        "slow — NIM-based attacks exploit his poor footwork",
+        "cannot resist a challenge to his strength",
+      ]
+    sim_traits: ["bone_gnaw", "relentless_no_crit", "terrifying_presence"]
+    loot:
+      silver_range: [20, 80]
+      items: ["gnaw_axe", "bone_necklace", "copper_arm_rings"]
+      special: "Bone Pack territory markers — worth nothing, but their removal demoralizes survivors"
+    lore: "Nobody knows where Hrafn came from. He appeared at Kolvik three winters ago with six men and a reputation that preceded him by a month. The Bone Pack grew because people were more afraid of being his enemy than his follower. He collects finger bones from those he personally kills. There are forty-seven on the necklace."
+    associated_locations: ["Kolvik", "Moor's End"]
+    associated_chains: ["bone_pack"]
+    image_prompt: |
+      An enormous man with pox-scarred face and broken nose, bare arms
+      covered in scar tissue, wearing hardened leather with bone plates
+      riveted on. Necklace of finger bones, grey-streaked beard with copper
+      wire. Holding a massive two-handed axe one-handed. Small bright eyes.
+      Standing in a burned village. Ash and grey palette, cold light.
+
+  - id: "BOS_RIVAL_03"
+    name: "Eerik Stillwater"
+    category: "boss"
+    subcategory: "rival_leader"
+    tier: 3
+    named: true
+    description: "Lean man with a face like carved driftwood — all planes and no softness. Salt-white hair despite being barely forty. Hands perpetually tar-stained from ship work. Eyes the pale grey of winter sea. Missing the last joint of his right ring finger. Moves with a sailor's economy, never a wasted step. Speaks quietly, which makes people lean in, which is the point."
+    stats:
+      MIG: 4
+      NIM: 6
+      TOU: 4
+      WIT: 7
+      WIL: 5
+      WYR: 1
+    hp: 12
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Seamanship"
+        rank: 4
+      - name: "Tactics"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+      - name: "Navigate"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Stillwater"
+          type: "spear"
+          speed: 3
+          base_damage: 5
+        - name: "Boarding Axe"
+          type: "axe"
+          speed: 3
+          base_damage: 4
+      armor:
+        torso: "Oiled Leather"
+        head: "None"
+    tactics: "Never engages on unfavorable ground. Prefers ambushes at river crossings, coastal choke points, or fog. Uses his ship for rapid repositioning. In direct combat, fights defensively with the spear, keeping distance, waiting for the opponent to overcommit. Will withdraw from any fight he cannot win and return on his terms."
+    morale_break: "Withdraws to sea if outnumbered or outflanked. Will sacrifice crew members to cover his retreat — cold, not cowardly."
+    group_size: "1 (with 12-25 Silent Oar)"
+    abilities:
+      - "Fog-Fighter: no penalties in low visibility conditions"
+      - "Tactical Withdrawal: once per combat, disengage without provoking free attacks"
+      - "Patient Strike: if he delays his attack one round, +2 base damage on next hit"
+    resistances: []
+    weaknesses:
+      [
+        "inland combat — loses advantage away from water",
+        "will not risk his ship for anything",
+      ]
+    sim_traits: ["fog_fighter", "patient_strike", "tactical_withdrawal_once"]
+    loot:
+      silver_range: [30, 120]
+      items: ["stillwater_spear", "boarding_axe", "navigation_charts"]
+      special: "The Silent Oar's longship if captured — worth a fortune"
+    lore: "Former pilot for a merchant fleet out of Bleakwater Landing. Went independent after the fleet's owner shorted his crew's pay for the third season running. The Silent Oar grew around him because he never lost a ship and never shorted a split. Coastal settlements pay him not to raid them. He considers this a reasonable business arrangement."
+    associated_locations: ["Bleakwater Landing", "Stonebay Hamlet"]
+    associated_chains: ["silent_oar", "fjord_compact"]
+    image_prompt: |
+      A lean man with salt-white hair and driftwood face standing at the
+      prow of a longship in grey fog. Tar-stained hands resting on a spear
+      butt. Oiled leather armor, no helm. Pale grey eyes scanning the
+      coastline. Cold blue-grey palette, muted fog, dark water. Realistic
+      Norse coastal setting.
+
+  - id: "BOS_RIVAL_04"
+    name: "Ylva Ash-Hall"
+    category: "boss"
+    subcategory: "rival_leader"
+    tier: 3
+    named: true
+    description: "Young — barely twenty-two — with a face still carrying baby fat under fresh scars. Red-brown hair tied back in a functional braid. Burns on the backs of both hands from pulling comrades out of the fire that killed the Hollow Hall's last leader. Wears a dead man's mail coat two sizes too large, cinched with rope at the waist. Eyes that are tired and fierce in equal parts. The set of her jaw says she will not be the second Hollow Hall leader to die this year."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 4
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    hp: 10
+    skills:
+      - name: "Swords"
+        rank: 2
+      - name: "Command"
+        rank: 2
+      - name: "Survival"
+        rank: 3
+      - name: "Healing"
+        rank: 2
+      - name: "Intimidation"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Ash-Hall Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 5
+      armor:
+        torso: "Ill-Fitting Chain Mail"
+        head: "Leather Cap"
+    tactics: "Cautious — retreats from even fights. Targets supply trains, wounded stragglers, undefended camps. Fights defensively, backing up her few remaining fighters. Takes risks only when starvation forces her hand. If pushed into real combat, she is surprisingly vicious — desperation carves away hesitation."
+    morale_break: "Retreats if she loses two fighters. Cannot afford losses. Will surrender if cornered and offered terms."
+    group_size: "1 (with 4-8 Hollow Hall survivors)"
+    abilities:
+      - "Desperate Fury: +2 to all combat rolls when below 50% HP"
+      - "Survivor's Instinct: +2 to Survival checks for ambush detection"
+      - "Hold Together: her presence prevents Hollow Hall morale collapse for 2 extra rounds"
+    resistances: []
+    weaknesses:
+      [
+        "inexperience — predictable tactics",
+        "cannot abandon wounded",
+        "can be bought off with food and silver",
+      ]
+    sim_traits: ["desperate_fury"]
+    loot:
+      silver_range: [5, 30]
+      items: ["ash_hall_sword", "chain_mail_ill_fitting", "fire_scarred_shield"]
+      special: "Hollow Hall charter — symbolic value, could be used to recruit survivors"
+    lore: "Was the Hollow Hall's camp cook three months ago. When Bjarne Ash-Hall burned alive in his own mead tent — set alight by Iron Tide raiders — Ylva dragged two men from the fire and the survivors followed her because no one else stepped forward. She is learning command by doing it badly and correcting. If she survives the year, she will be formidable."
+    associated_locations: ["Ashmark", "Feldwick"]
+    associated_chains: ["hollow_hall"]
+    image_prompt: |
+      A young woman in an ill-fitting chain mail coat cinched with rope,
+      burn scars on both hands, red-brown hair in a practical braid. Holding
+      a sword that looks too new for her scarred hands. Standing in front
+      of a ragged group of fighters near a burned longhouse. Exhaustion and
+      determination in equal measure. Ash and amber palette.
+
+  - id: "BOS_RIVAL_05"
+    name: "Gunnar Iron-Tide"
+    category: "boss"
+    subcategory: "rival_leader"
+    tier: 4
+    named: true
+    description: "Fifty years old and every one of them carved into his face. Once the most feared band leader north of Grimholt. Now grey-bearded and stiff in the mornings, with a knee that clicks and a shoulder that won't raise past his ear. Still built like an oak stump — short, thick, unmovable. His eyes are the worst part: flat, disappointed, measuring everyone against the men he used to lead and finding them wanting. Wears his old Iron Tide arm ring like a holy relic."
+    stats:
+      MIG: 6
+      NIM: 3
+      TOU: 6
+      WIT: 6
+      WIL: 7
+      WYR: 1
+    hp: 16
+    skills:
+      - name: "Swords"
+        rank: 4
+      - name: "Command"
+        rank: 3
+      - name: "Tactics"
+        rank: 4
+      - name: "Intimidation"
+        rank: 3
+      - name: "History"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Tide-Breaker"
+          type: "sword"
+          speed: 3
+          base_damage: 6
+        - name: "Round Shield"
+          type: "shield"
+          speed: 0
+          base_damage: 2
+      armor:
+        torso: "Old Chain Mail"
+        head: "Nasal Helm"
+    tactics: "Fights from behind a shield wall. His sword work is textbook and lethal — thirty years of practice etched into muscle. Reads an opponent's style within three exchanges and adapts. His weakness is stamina: he fights in bursts, then disengages to breathe. Knows exactly when to commit his reserves."
+    morale_break: "Will not retreat — dying in battle is acceptable, losing the last of the Iron Tide is not. Will negotiate if the Remnant is about to be wiped out."
+    group_size: "1 (with 5-10 Iron Tide Remnant)"
+    abilities:
+      - "Veteran's Eye: identifies weakest opponent automatically — +1 to attacks vs that target"
+      - "Shield Wall Master: +2 armor when fighting alongside at least 2 allies in formation"
+      - "Last Stand: when below 25% HP, all attacks deal +3 damage"
+    resistances: ["fear", "intimidation"]
+    weaknesses:
+      [
+        "bad knee — disadvantage on NIM rolls after 5 rounds of combat",
+        "bitter — pride can be exploited by invoking Iron Tide's legacy",
+      ]
+    sim_traits: ["veteran_eye", "last_stand_25", "shield_wall_master"]
+    loot:
+      silver_range: [30, 100]
+      items: ["tide_breaker_sword", "iron_tide_arm_ring", "chain_mail_old"]
+      special: "Iron Tide war records — maps and contacts from a decade of campaigns"
+    lore: "Twenty years ago, the Iron Tide was sixty strong and took contracts from kings. Then came the ambush at Thornwall — half the band dead in an afternoon, betrayed by a client. Gunnar pulled the survivors out and has been holding the Remnant together by sheer force of will ever since. He hates the new generation of bands. He hates himself for surviving. He still fights because he doesn't know how to stop."
+    associated_locations: ["Thornwall", "Deepholm"]
+    associated_chains: ["iron_tide_remnant"]
+    image_prompt: |
+      A short, thick-bodied old warrior in worn chain mail and nasal helm,
+      grey beard, flat disappointed eyes. Round shield on one arm, well-used
+      sword in the other. Standing on a muddy hill with a handful of ragged
+      fighters behind him. An iron arm ring visible on his sword wrist.
+      Grey sky, barren heath. Muted iron and brown palette.
+
+  - id: "BOS_RIVAL_06"
+    name: "Bryn Ashmouth"
+    category: "boss"
+    subcategory: "rival_leader"
+    tier: 3
+    named: true
+    description: "Thin man with a face like a hatchet and burn-scar tissue covering the left side of his mouth and jaw, pulling the lip into a permanent sneer. The scar is from a draugr's grave-fire — he'll tell you if you ask, and if you don't. Smells of the herbs he burns to mask barrow stench. Dark eyes that have seen things underground that no one believes. Fingers stained with charcoal from ward-drawing."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 4
+      WIT: 7
+      WIL: 6
+      WYR: 2
+    hp: 11
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Lore"
+        rank: 4
+      - name: "Stealth"
+        rank: 2
+      - name: "Survival"
+        rank: 3
+      - name: "Rune-Craft"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Barrow-Spike"
+          type: "spear"
+          speed: 3
+          base_damage: 5
+        - name: "Iron-Bound Torch"
+          type: "improvised"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Studded Leather"
+        head: "None"
+    tactics: "Specialist. Studies the barrow before entering — reads the stones, checks for ward-signs, counts the dead. Inside, fights from chokepoints with spear and torch. Uses fire aggressively against undead. Never lets the Wardens go deeper than they can retreat from in two minutes. On the surface against living enemies, fights pragmatically and tries to disengage."
+    morale_break: "Withdraws if a Warden falls underground — no barrow is worth losing trained people. Against surface enemies, retreats if outnumbered."
+    group_size: "1 (with 6-12 Grave Wardens)"
+    abilities:
+      - "Barrow-Wise: +2 to all rolls involving undead lore, detection, and weaknesses"
+      - "Fire-Bearer: torch attacks deal +2 damage vs undead"
+      - "Ward-Signs: can spend 10 minutes creating a ward that delays undead crossing a threshold for d6 rounds"
+    resistances: ["fear_from_undead"]
+    weaknesses:
+      [
+        "obsessive — will risk too much to clear a barrow he's mapped",
+        "socially abrasive — makes enemies easily",
+      ]
+    sim_traits: ["barrow_wise", "fire_bearer_torchbonus"]
+    loot:
+      silver_range: [20, 60]
+      items: ["barrow_spike_spear", "ward_chalk", "undead_field_guide"]
+      special: "Grave Wardens' barrow maps — invaluable for anyone entering the mounds"
+    lore: "Former grave-digger's apprentice from Ashmark who dug into a barrow by accident at sixteen and barely survived. He has been going back underground ever since, first alone, then with anyone foolish enough to follow. The Grave Wardens exist because Bryn convinced enough people that dead things are everyone's problem and someone should get paid to deal with them."
+    associated_locations: ["Ashmark", "Raven's Perch", "Frostfjord Hollow"]
+    associated_chains: ["grave_wardens", "waking_barrows"]
+    image_prompt: |
+      A thin man with a hatchet face and burn-scar tissue pulling his
+      lip into a sneer, holding a spear in one hand and an iron-bound
+      torch in the other. Charcoal-stained fingers. Standing at the
+      mouth of a barrow, darkness behind him. Studded leather armor,
+      herb pouches on his belt. Amber torchlight against grey stone.
+
+  - id: "BOS_RIVAL_07"
+    name: "Sven Red-Hand"
+    category: "boss"
+    subcategory: "rival_leader"
+    tier: 4
+    named: true
+    description: "Medium build, unremarkable face, the kind of man you'd pass on the road without looking twice — until you see his hands. Stained to the wrists in a brownish-red that doesn't wash out, whether from blood or from the dye he uses to maintain the effect. Dead eyes like river stones. Smiles constantly, showing teeth filed to points. Three missing teeth on the left side. Moves with a lazy, rolling gait that shifts to explosive speed without warning."
+    stats:
+      MIG: 6
+      NIM: 6
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    hp: 16
+    skills:
+      - name: "Axes"
+        rank: 4
+      - name: "Knives"
+        rank: 3
+      - name: "Intimidation"
+        rank: 4
+      - name: "Stealth"
+        rank: 2
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Red-Hand's Axe"
+          type: "axe"
+          speed: 3
+          base_damage: 6
+        - name: "Gut-Hook Knife"
+          type: "knife"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Leather with Iron Plates"
+        head: "None"
+    tactics: "No formation. No strategy. Sven charges the nearest enemy and starts hacking. His band follows or they don't. He targets the face and hands — fights dirty, bites, throws dirt, headbutts. The Red Tide's only tactic is overwhelming violence applied without hesitation. It works more often than it should."
+    morale_break: "Does not break. Fights until dead or physically incapacitated. The Red Tide scatters without him."
+    group_size: "1 (with 8-14 Red Tide)"
+    abilities:
+      - "Frenzy: attacks twice per round at -1 to each roll"
+      - "Terror: enemies who see him kill make WIL test or suffer -2 next round"
+      - "Filed Teeth: bite attack in grapple for d4 damage"
+    resistances: ["fear", "pain_penalties"]
+    weaknesses:
+      [
+        "no tactical thinking — predictable, always charges",
+        "cannot resist killing — will murder emissaries and prisoners",
+      ]
+    loot:
+      silver_range: [15, 70]
+      items: ["red_hand_axe", "gut_hook_knife", "finger_trophies"]
+      special: "Nothing of strategic value — Sven destroys anything useful"
+    lore: "Appeared on the road near Icebreak two years ago with a handful of men and a fresh collection of heads. No one knows where he came from. No one's been able to trace his past. The Red Tide attracts the kind of people other bands reject — killers too unstable or too cruel to follow orders. Sven doesn't give orders. He gives permission."
+    associated_locations: ["Icebreak", "Kolvik"]
+    associated_chains: ["red_tide"]
+    image_prompt: |
+      A medium-built man with an unremarkable face except for the constant
+      smile showing filed-to-point teeth. Hands stained reddish-brown to
+      the wrists. Dead eyes like river stones. Leather armor with iron
+      plates. Holding a blood-stained axe loosely. Standing in front of a
+      burning farmstead. Red and black palette, firelight. Unsettling calm.
+
+  # ==========================================================================
+  # FACTION CHAMPIONS (BOS_FACTION_01 through BOS_FACTION_04)
+  # ==========================================================================
+
+  - id: "BOS_FACTION_01"
+    name: "Ordovast the Iron"
+    category: "boss"
+    subcategory: "faction_champion"
+    tier: 5
+    named: true
+    description: "Not tall. Not broad. Not the man you'd pick out of a room as dangerous — until he speaks. Square-jawed, clean-shaven, grey hair cropped close to the skull. A face of angles and economy. Dresses in understated dark wool with a single piece of visible wealth: an iron torc chased with silver at the terminals that marks him as overjarl of the Iron Grip. His eyes do not move quickly. They do not need to. Everything in the room has already been assessed. His hands are a politician's hands — uncallused, ink-stained — but the sword scar across his left palm says he was not always behind a desk."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 4
+      WIT: 9
+      WIL: 8
+      WYR: 1
+    hp: 14
+    skills:
+      - name: "Command"
+        rank: 5
+      - name: "Bargain"
+        rank: 5
+      - name: "Tactics"
+        rank: 4
+      - name: "Intimidation"
+        rank: 4
+      - name: "Swords"
+        rank: 2
+      - name: "Lore"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Iron Grip Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 5
+      armor:
+        torso: "Fine Wool (no armor)"
+        head: "None"
+    tactics: "Never fights. This is the point. Ordovast wins before swords are drawn — through leverage, debt, supply control, and the implicit threat of the Iron Grip's military resources. If cornered physically, he fights competently but without brilliance, because he never intended to be in this situation. His real weapon is the network. Kill Ordovast and three contingency plans activate."
+    morale_break: "Surrenders if personally threatened — then has you killed by proxies within the week. True defeat requires dismantling the Iron Grip's structure, not just reaching the man."
+    group_size: "1 (with Tormund and 20-40 Iron Grip garrison)"
+    abilities:
+      - "Political Web: always has 2-3 contingency plans — killing him triggers retribution"
+      - "Master Negotiator: +3 to all Bargain and Command rolls in non-combat encounters"
+      - "Iron Grip Authority: can call upon garrison reinforcements within one day's march of Grimholt"
+      - "Debt Leverage: knows the debts and secrets of every jarl in the region"
+    resistances: ["intimidation — has faced worse threats than the players"]
+    weaknesses:
+      [
+        "physically ordinary — vulnerable if his network is stripped away",
+        "arrogance — believes he has accounted for everything",
+      ]
+    loot:
+      silver_range: [200, 500]
+      items: ["iron_grip_torc", "fine_sword", "political_correspondence"]
+      special: "Iron Grip treasury and records if Grimholt is taken — reshapes regional power"
+    lore: "Rose from a clerk's position in Grimholt's garrison to overjarl of the Iron Grip in twelve years through a combination of competence, ruthlessness, and an uncanny ability to be the only reasonable voice in every room. He does not want to rule — he wants to organize. The difference is academic to those being organized. He is the closest thing the region has to a king, and he intends to make it official."
+    associated_locations: ["Grimholt"]
+    associated_chains: ["iron_grip"]
+    image_prompt: |
+      A square-jawed, clean-shaven man with grey close-cropped hair in
+      dark wool clothing, seated at a heavy oak table covered in
+      correspondence and maps. Iron torc with silver terminals at his
+      throat. Ink-stained fingers. A sword scar across his left palm.
+      Calm, assessing eyes. Grimholt's stone hall background with
+      iron fixtures. Dark palette, candlelight. Power without spectacle.
+
+  - id: "BOS_FACTION_02"
+    name: "Sigrun of the Compact"
+    category: "boss"
+    subcategory: "faction_champion"
+    tier: 3
+    named: true
+    description: "Small woman in her fifties with silver-streaked red hair pinned under a linen cap. Face weathered by salt wind, crow's feet deep enough to hold rain. Dressed in good wool and sealskin, no weapons visible, an amber pendant worth more than most fighters earn in a year. Hands rough from a lifetime of rope work and ledger-keeping. She looks like someone's stern aunt. She controls more trade goods than any jarl on the coast."
+    stats:
+      MIG: 2
+      NIM: 3
+      TOU: 3
+      WIT: 8
+      WIL: 7
+      WYR: 1
+    hp: 7
+    skills:
+      - name: "Bargain"
+        rank: 5
+      - name: "Command"
+        rank: 3
+      - name: "Seamanship"
+        rank: 3
+      - name: "Lore"
+        rank: 3
+      - name: "Persuasion"
+        rank: 4
+    gear:
+      weapons: []
+      armor:
+        torso: "Wool and Sealskin"
+        head: "Linen Cap"
+    tactics: "Does not fight. Sigrun's combat effectiveness is zero and she knows it. Her power is economic: she can embargo a settlement, redirect trade, hire any band in the region, or simply outbid any opponent for any resource. In a direct confrontation, she has bodyguards. If cornered alone, she negotiates — and her offers are usually good enough to take."
+    morale_break: "Offers terms immediately. She can always make another deal. Violence is waste."
+    group_size: "1 (with 4 personal guards and access to hired bands)"
+    abilities:
+      - "Trade Embargo: can cut supplies to any settlement within a week"
+      - "Deep Purse: can hire any mercenary band at premium rates"
+      - "Network: knows current prices, ship movements, and political debts across the coast"
+      - "Reasonable Offer: once per encounter, can make an offer that forces a WIL test to refuse"
+    resistances: ["intimidation — has been threatened by better"]
+    weaknesses:
+      [
+        "physically helpless without guards",
+        "dependent on trade routes — blockade breaks her power",
+      ]
+    loot:
+      silver_range: [100, 400]
+      items: ["amber_pendant", "trade_ledger", "compact_seal"]
+      special: "Fjord Compact trade network access — alliances, contracts, debts owed"
+    lore: "Began as a fish-seller in Stonebay Hamlet. Married a ship captain, outlived him, inherited the ship, bought two more. Built the Fjord Compact from loose trade agreements into a formal economic alliance that controls coastal commerce. She does not want territory. She wants margin. Every conflict is an opportunity to sell supplies to both sides."
+    associated_locations: ["Stonebay Hamlet", "Bleakwater Landing"]
+    associated_chains: ["fjord_compact"]
+    image_prompt: |
+      A small, weathered woman in her fifties with silver-red hair under
+      a linen cap, dressed in good wool and sealskin. An amber pendant
+      at her throat. Standing on a stone wharf with fishing boats and
+      trade ships behind her. Rough hands, sharp eyes. Salt-wind in her
+      face. Muted coastal palette — grey, blue, cream, amber accent.
+
+  - id: "BOS_FACTION_03"
+    name: "The Pale Widow"
+    category: "boss"
+    subcategory: "faction_champion"
+    tier: 5
+    named: true
+    description: "No one agrees on what she looks like. Some say a gaunt woman with white hair and no eyebrows. Others describe a middle-aged beauty with black eyes. The few consistent details: she is always pale — paper-white, bloodless. She wears grey, always. Her voice is quiet but carries. Her hands are cold to the touch. There is a smell around her — not decay, not perfume — something older, like stones after rain. Those with seidr-sight see something else entirely: threads of silver-grey extending from her fingers into the walls, the floor, the people around her."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 3
+      WIT: 8
+      WIL: 9
+      WYR: 8
+    hp: 10
+    skills:
+      - name: "Seidr"
+        rank: 5
+      - name: "Persuasion"
+        rank: 4
+      - name: "Intimidation"
+        rank: 4
+      - name: "Lore"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Bone Needle"
+          type: "seidr_focus"
+          speed: 1
+          base_damage: 2
+      armor:
+        torso: "Grey Wool (warded)"
+        head: "None"
+    tactics: "Does not enter combat. Ever. Her agents, bound spirits, and manipulated pawns do the fighting. If directly confronted, she uses seidr to confuse, terrify, or freeze opponents while she withdraws. Killing her body may not be sufficient — she has contingencies that involve things that should not exist. The real fight is tracing her influence network and severing it before she notices."
+    morale_break: "Cannot be cornered through normal means. She knows you're coming before you decide to come. True confrontation requires disrupting her seidr network first."
+    group_size: "1 (with bound spirits, 2-4 Whispering Circle agents, and an unknown number of unknowing pawns)"
+    abilities:
+      - "Veil-Sight: sees through illusions and detects all seidr within 100m"
+      - "Thread-Bind: can compel a target to perform one action (WIL contest at -2 to resist)"
+      - "Flesh-Shift: can change her appearance — WYR test to see through it"
+      - "Spirit-Ward: immune to first seidr attack per encounter — it simply unravels"
+      - "Cold Presence: those within arm's reach feel a bone-deep cold — -1 to all physical rolls"
+      - "Death Contingency: if her body dies, she re-manifests at a prepared anchor within 7 days"
+    resistances:
+      ["seidr_first_strike", "physical_weapons_reduced", "cold", "fear"]
+    weaknesses:
+      [
+        "iron — direct contact burns her and disrupts seidr",
+        "her anchor sites — destroy them to make death permanent",
+        "genuine human connection — she has forgotten how to model unpredictable loyalty",
+      ]
+    loot:
+      silver_range: [0, 50]
+      items: ["bone_needle", "grey_thread_spool", "veil_stone"]
+      special: "Whispering Circle cipher key — unlocks her entire network of agents and debts"
+    lore: "The name is old. Older than the current settlements. Whether she is the original Pale Widow or a successor wearing the title is a question no one has answered. She controls the Whispering Circle from Ashen Reach — a network of informants, blackmail targets, and unwitting puppets that spans the region. Her goals are not territory or wealth. They appear to involve the barrows, the things beneath them, and a door that should stay closed."
+    associated_locations: ["Ashen Reach"]
+    associated_chains: ["widows_web", "waking_barrows"]
+    image_prompt: |
+      A paper-white woman in grey wool standing in a dark stone chamber.
+      Features indistinct, shifting — gaunt, then beautiful, then wrong.
+      Faint silver-grey threads extending from her fingertips into shadow.
+      Black eyes without reflection. Bone needle in one hand. Cold light,
+      no visible source. Stone walls with condensation. The air around her
+      looks thick. Folk horror, not fantasy.
+
+  - id: "BOS_FACTION_04"
+    name: "Tormund Gate-Keeper"
+    category: "boss"
+    subcategory: "faction_champion"
+    tier: 4
+    named: true
+    description: "Built like a longhouse door — broad, flat, and immovable. Six and a half feet of bone and muscle with a face that has never in its life expressed curiosity. Blond hair cropped short, jaw like a shovel blade, small blue eyes set deep under a shelf of brow. Arms thick as most men's thighs, crossed with old white scars. Wears Grimholt garrison plate — maintained to parade standard. Speaks rarely, in short sentences, with long pauses. Follows Ordovast's orders without question because Ordovast has never given him a bad one."
+    stats:
+      MIG: 8
+      NIM: 3
+      TOU: 8
+      WIT: 3
+      WIL: 6
+      WYR: 1
+    hp: 22
+    skills:
+      - name: "Swords"
+        rank: 4
+      - name: "Brawl"
+        rank: 3
+      - name: "Shields"
+        rank: 4
+      - name: "Intimidation"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Grimholt Broadsword"
+          type: "sword"
+          speed: 3
+          base_damage: 7
+        - name: "Tower Shield"
+          type: "shield"
+          speed: 0
+          base_damage: 3
+      armor:
+        torso: "Garrison Plate"
+        head: "Great Helm"
+    tactics: "Stands in the way. That's it. Tormund plants himself in a doorway, a gate, a corridor, and nothing gets past. In open field, he advances behind his tower shield and forces opponents to deal with him before they can reach whoever he's protecting. Does not pursue. Does not chase. If you run, he lets you go. If you come back, he is still there."
+    morale_break: "Does not flee. Will fight until ordered to withdraw by Ordovast, or until Ordovast is dead."
+    group_size: "1 (usually with 4-8 Grimholt garrison soldiers)"
+    abilities:
+      - "Immovable: MIG contest to push past him at -3"
+      - "Shield Fortress: adjacent allies gain +2 armor"
+      - "Endurance: ignores first two rounds of fatigue penalties"
+      - "Gate-Lock: if positioned in a chokepoint, enemies cannot bypass without defeating him"
+    resistances: ["fear", "knockback", "pain_penalties_first_wound"]
+    weaknesses:
+      [
+        "slow — cannot catch a fleeing opponent",
+        "no independent thinking — confused without orders",
+        "ranged attacks from elevation",
+      ]
+    loot:
+      silver_range: [30, 80]
+      items: ["grimholt_broadsword", "tower_shield", "garrison_plate"]
+      special: "Grimholt gate keys — literal and figurative access to the fortress"
+    lore: "Tormund has guarded Grimholt's main gate for eleven years. Before that, he guarded a sheep pen, which he performed with exactly the same level of dedication. Ordovast recognized in him the rarest quality in a soldier: absolute, unquestioning reliability. Tormund does not think about politics or power. He thinks about the gate and whether it is closed."
+    associated_locations: ["Grimholt"]
+    associated_chains: ["iron_grip"]
+    image_prompt: |
+      An enormous blond man in polished garrison plate and great helm
+      standing in a stone gateway, tower shield planted in front of him,
+      broadsword at rest in his right hand. Small blue eyes visible
+      through the helm slit. Immovable stance. Grimholt's stone walls
+      behind him. Steel and grey palette, cold daylight. The gate is
+      closed.
+
+  # ==========================================================================
+  # SUPERNATURAL BOSSES (BOS_SUPER_01 through BOS_SUPER_04)
+  # ==========================================================================
+
+  - id: "BOS_SUPER_01"
+    name: "The Barrow-King of Raven's Perch"
+    category: "boss"
+    subcategory: "supernatural_boss"
+    tier: 5
+    named: true
+    description: "What sits on the stone throne in the deepest chamber of Raven's Perch barrow was a jarl once. The remnants are there — a gold torc green with age, rings fused to the finger bones, a sword across the knees that has not rusted in three centuries. The body is desiccated to leather over iron-hard bone, but the eyes are not dead. They burn with a pale blue light that follows movement. The jaw moves. It speaks in a language that is almost recognizable — Old Norse degraded by centuries of talking to no one. It remembers being a king. It still expects obedience."
+    stats:
+      MIG: 8
+      NIM: 4
+      TOU: 9
+      WIT: 6
+      WIL: 8
+      WYR: 5
+    hp: 26
+    skills:
+      - name: "Swords"
+        rank: 5
+      - name: "Command"
+        rank: 4
+      - name: "Intimidation"
+        rank: 5
+      - name: "Seidr-Sense"
+        rank: 3
+    gear:
+      weapons:
+        - name: "King's Blade"
+          type: "sword"
+          speed: 3
+          base_damage: 8
+      armor:
+        torso: "Ancient Mail (fused to body)"
+        head: "Crown of Corroded Gold"
+    tactics: "Sits and waits. Commands lesser draugr to deal with intruders. Those who reach the throne room face the Barrow-King's sword — three centuries of unliving practice have made it flawless. Fights without urgency because time is meaningless to it. Will attempt to command the living to kneel — and the command carries supernatural weight."
+    morale_break: "Cannot be routed. Can be temporarily driven from its throne by fire or consecrated weapons. Returns within d6 hours. Permanent destruction requires destroying the throne, the torc, and the barrow's keystone."
+    group_size: "1 (with 6-12 barrow draugr and 2-4 barrow sentinels)"
+    abilities:
+      - "King's Command: WIL test at -2 or kneel for one round — affects all within the throne room"
+      - "Death-Grip Sword: attacks ignore 2 points of armor"
+      - "Raise Dead: once per day, command d4 buried corpses to rise as Restless Dead"
+      - "Deathless: regenerates 2 HP per round unless throne is destroyed"
+      - "Grave-Cold Aura: all living creatures within the barrow suffer -1 TOU"
+    resistances:
+      ["cold", "fear", "bleeding", "poison", "physical_weapons_half_damage"]
+    weaknesses:
+      [
+        "fire",
+        "consecrated_weapons",
+        "destroying the throne and torc ends its binding",
+        "sunlight — weakened above ground",
+      ]
+    loot:
+      silver_range: [100, 300]
+      items: ["kings_blade", "corroded_gold_torc", "burial_rings"]
+      special: "Barrow-King's map stone — reveals locations of connected barrows in the region"
+    lore: "Jarl Halvdan of Raven's Perch died during the great plague and was buried with full honors in a barrow meant to keep him comfortable in the afterlife. Something went wrong. Whether it was the manner of death, a flawed binding rite, or something that was already in the hill, Halvdan did not stay dead. The barrow has been sealed and reopened three times in three centuries. Each time, the king is on his throne. Each time, there are more dead in the halls."
+    associated_locations: ["Raven's Perch"]
+    associated_chains: ["waking_barrows"]
+    image_prompt: |
+      A desiccated corpse in ancient fused mail sitting on a stone throne
+      in a dark underground chamber. A corroded gold torc, rings fused to
+      finger bones. A sword across the knees, unrusted. Pale blue light
+      burning in the eye sockets. Lesser draugr standing motionless in the
+      shadows along the walls. Cold blue and gold palette, damp stone.
+
+  - id: "BOS_SUPER_02"
+    name: "The Draugr-Jarl Beneath Frostfjord"
+    category: "boss"
+    subcategory: "supernatural_boss"
+    tier: 5
+    named: true
+    description: "The oldest barrow in the region lies beneath Frostfjord Hollow. What dwells in its deepest chamber predates the settlement above by centuries. It was not buried gently. The body is pinned to a stone slab with iron stakes through shoulder, hip, and ankle — a binding that has held for five hundred years and is now failing. The iron is flaking. The thing on the slab is moving. Incrementally. Each year, a little more. Its mouth opens and closes on words with no sound. Its eyes are gone — empty sockets that leak a cold so profound it crystallizes the moisture in the air. When the stakes fail, it will stand. It has been thinking about what it will do for a very long time."
+    stats:
+      MIG: 9
+      NIM: 2
+      TOU: 10
+      WIT: 7
+      WIL: 9
+      WYR: 6
+    hp: 30
+    skills:
+      - name: "Brawl"
+        rank: 5
+      - name: "Seidr"
+        rank: 4
+      - name: "Command"
+        rank: 5
+      - name: "Intimidation"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Grave-Hands"
+          type: "unarmed"
+          speed: 2
+          base_damage: 8
+      armor:
+        torso: "Petrified Flesh (stone-hard)"
+        head: "Iron Stakes (embedded)"
+    tactics: "When unbound: moves slowly but with absolute purpose. Grabs and crushes. Calls every dead thing within a mile to defend it. Does not dodge, does not parry — absorbs damage like stone absorbing rain. Its real attack is the cold: standing near it kills. Speaks in a voice that commands the dead to rise. The fight is a race against attrition."
+    morale_break: "Cannot be routed or reasoned with. Can be re-bound with the original iron stakes and a binding rite — but the rite requires knowledge no living person has without research."
+    group_size: "1 (with all undead within the barrow complex — potentially 20-30 draugr)"
+    abilities:
+      - "Killing Cold: all living creatures within 5m take 1 damage per round (ignores armor)"
+      - "Mass Command: all undead within earshot obey without contest"
+      - "Iron-Bound: while stakes remain, cannot move but can still use voice abilities"
+      - "Petrified Flesh: physical weapons deal half damage; blunt weapons deal full"
+      - "Voice of the Dead: WIL test at -3 or take no action for one round — hearing the voice overwrites thought"
+      - "Slow Rise: if unbound, takes d6 rounds to reach full mobility — vulnerable during this time"
+    resistances:
+      ["cold", "fear", "bleeding", "poison", "edged_weapons_half_damage"]
+    weaknesses:
+      [
+        "fire — full damage",
+        "iron stakes — can re-bind with original ritual",
+        "the binding rite — knowledge exists in the Grave Wardens' records",
+        "blunt weapons — full damage against petrified flesh",
+      ]
+    loot:
+      silver_range: [0, 100]
+      items: ["iron_binding_stakes", "bone_dust"]
+      special: "The barrow contains a sealed inner vault — its contents are unknown and probably terrible"
+    lore: "The settlement of Frostfjord Hollow was built above this barrow by people who did not know it was there. By the time they found it, they had already built the mead hall. The elders decided to keep the secret. They maintained the iron stakes. They passed the knowledge down. Three generations ago, the last elder died before passing the rite. Now the stakes are failing, the cellar of the mead hall gets colder every winter, and no one in Frostfjord understands why."
+    associated_locations: ["Frostfjord Hollow"]
+    associated_chains: ["waking_barrows"]
+    image_prompt: |
+      A massive petrified corpse pinned to a stone slab by rusted iron
+      stakes through shoulder, hip, and ankle. Empty eye sockets leaking
+      crystalline cold. Mouth moving silently. The iron is flaking, the
+      body straining against the pins. Frost on every surface. Deep
+      underground chamber, stone walls slick with ice. Blue-white and
+      iron-black palette. Absolute cold.
+
+  - id: "BOS_SUPER_03"
+    name: "The Veil-Walker"
+    category: "boss"
+    subcategory: "supernatural_boss"
+    tier: 5
+    named: true
+    description: "Not a creature. Not a spirit. Something that exists in the space between the barrow-dark and the living world, pressing against a membrane that should be thicker than it is. Glimpsed only where the veil is thin — barrow mouths at solstice, the edge of fog banks, the space between two mirrors. The shape is wrong in a way that resists description: too many angles, proportions that shift when observed directly. The impression is of something tall and thin and patient, with hands — if they are hands — that reach but do not quite touch. It leaves an aftertaste of copper and the memory of a sound you cannot identify."
+    stats:
+      MIG: 3
+      NIM: 8
+      TOU: 5
+      WIT: 10
+      WIL: 10
+      WYR: 9
+    hp: 15
+    skills:
+      - name: "Seidr"
+        rank: 5
+      - name: "Stealth"
+        rank: 5
+      - name: "Lore"
+        rank: 5
+      - name: "Seidr-Sense"
+        rank: 5
+    gear:
+      weapons:
+        - name: "Veil-Touch"
+          type: "supernatural"
+          speed: 4
+          base_damage: 4
+      armor: {}
+    tactics: "Does not fight in any conventional sense. The Veil-Walker manipulates probability, perception, and the boundary between worlds. Targets a person's sense of reality — are you sure that shadow was there before? Was that doorway always on the left? It creates situations where its targets destroy themselves through paranoia, mistrust, or walking into spaces that no longer connect to the world they left."
+    morale_break: "Cannot be confronted in the conventional sense. It retreats through the veil when directly engaged. It can be sealed behind the veil by repairing the weak points — but new weak points keep opening."
+    group_size: "1"
+    abilities:
+      - "Veil-Step: can disappear and reappear at any thin-veil location within the region"
+      - "Reality Distortion: WIT test at -3 or perceive surroundings incorrectly for d6 minutes"
+      - "Veil-Touch: physical contact drains WIL — d4 WIL damage, no armor"
+      - "Phase: partially incorporeal — physical weapons have 50% chance of passing through"
+      - "Alien Mind: immune to all mental effects — its thoughts are not structured like mortal minds"
+      - "Thin the Veil: over time, its presence weakens the barrier — more undead rise, more spirits manifest"
+    resistances:
+      [
+        "physical_weapons_unreliable",
+        "cold",
+        "fear",
+        "fire_reduced",
+        "seidr_standard",
+      ]
+    weaknesses:
+      [
+        "iron cold-forged — full damage and prevents phase for d6 rounds",
+        "sealing the veil locations cuts off its anchor points",
+        "bright sunlight — cannot manifest in direct noon sun",
+        "it is curious — this can be exploited",
+      ]
+    loot:
+      silver_range: [0, 0]
+      items: ["veil_residue"]
+      special: "Where the Veil-Walker lingers, the boundary thins permanently — creating new barrow-mouths and spirit-roads"
+    lore: "The Pale Widow knows about it. Bryn Ashmouth has seen its traces in four barrows. The oldest sagas mention something that walked between the worlds during the long winters, when the days were short and the dead were close. Whether the Veil-Walker is one entity or a category of entity is unclear. What is clear: the boundary is weakening across the region, and this thing is either the cause or the first symptom."
+    associated_locations: ["Frostfjord Hollow", "Raven's Perch", "Ashen Reach"]
+    associated_chains: ["waking_barrows", "widows_web"]
+    image_prompt: |
+      A tall, thin shape with too many angles standing at the mouth of a
+      barrow in thick fog. The proportions shift when viewed directly.
+      Hands that reach but do not touch. The space around it bends subtly.
+      Copper-tinted light at the edges. Fog and stone and wrongness.
+      Not fantasy — cosmic folk horror. The shape is patient. The shape
+      has been here longer than the barrow.
+
+  - id: "BOS_SUPER_04"
+    name: "Runa Veil-Touched"
+    category: "boss"
+    subcategory: "supernatural_boss"
+    tier: 4
+    named: true
+    description: "Once she had a name people spoke without flinching. Now they call her the Renegade Seidr-Wife and check the locks. She is gaunt — cheekbones like blades under papery skin marbled with blue veins. White hair in matted ropes to her waist. Her fingers are stained black to the second knuckle from working with barrow-things. She wears layers of undyed wool and a belt of small bones that click when she moves. Her eyes are different colors: one brown, one the milky blue-white of the veil-touched. She twitches. She laughs at things no one else can see."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 3
+      WIT: 7
+      WIL: 7
+      WYR: 7
+    hp: 9
+    skills:
+      - name: "Seidr"
+        rank: 4
+      - name: "Lore"
+        rank: 4
+      - name: "Stealth"
+        rank: 3
+      - name: "Survival"
+        rank: 3
+      - name: "Healing"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Barrow Bone Staff"
+          type: "seidr_focus"
+          speed: 2
+          base_damage: 3
+        - name: "Herb Knife"
+          type: "knife"
+          speed: 2
+          base_damage: 2
+      armor:
+        torso: "Layered Wool (warded)"
+        head: "None"
+    tactics: "Avoids combat entirely. Lives in the margins — swamp edges, abandoned barrow entrances, the deep woods nobody enters. If found, she uses confusion seidr and flees. If cornered, she bargains with information — she knows more about the barrows than anyone alive. If truly pressed, she calls bound things from the ground. The bound things are not pleasant."
+    morale_break: "Flees at any sign of organized pursuit. Will trade information for safety — including information about the Pale Widow."
+    group_size: "1 (with 2-4 bound lesser undead and occasional spirit servants)"
+    abilities:
+      - "Barrow-Speech: can communicate with undead — not control, communicate"
+      - "Confusion Fog: seidr that creates d6 rounds of disorientation in a 10m area"
+      - "Death-Sight: can see the recently dead, their manner of death, and what binds draugr"
+      - "Bind Minor Dead: can command up to 4 lesser undead (Restless Dead tier)"
+      - "Herb-Craft: creates potions, poultices, and poisons from barrow flora"
+    resistances: ["cold", "seidr_detection_difficult"]
+    weaknesses:
+      [
+        "physically frail — one solid hit could kill her",
+        "unstable — loud noises, bright light, or iron can break her concentration",
+        "lonely — can be manipulated through genuine human contact",
+      ]
+    loot:
+      silver_range: [5, 20]
+      items: ["barrow_bone_staff", "herb_pouch", "veil_stone_fragment"]
+      special: "Her knowledge — barrow locations, undead behaviors, Pale Widow's weaknesses, veil-thin locations"
+    lore: "Runa was a respected healer in Skaldhaven until she started going into the barrows alone. She came back different each time — knowing more, sleeping less, talking to people who weren't there. When she started bringing things back from the barrows — bound dead that followed her like dogs — the town drove her out. She has been living in the wild for seven years, going deeper into the barrows, trading with things that should not be traded with. She is not evil. She is a scholar standing at the edge of a cliff and leaning forward."
+    associated_locations: ["Skaldhaven", "Frostfjord Hollow"]
+    associated_chains: ["waking_barrows", "widows_web"]
+    image_prompt: |
+      A gaunt woman with white matted hair and mismatched eyes — one brown,
+      one milky blue-white — in layered undyed wool. Black-stained fingers
+      gripping a staff made from barrow bone. Belt of small clicking bones.
+      Standing at the edge of a swamp near a barrow entrance. Two grey
+      shapes — lesser draugr — standing motionless behind her. Green-grey
+      palette, mist, failing light.
+
+  # ==========================================================================
+  # OTHER NAMED ANTAGONISTS (BOS_OTHER_01 through BOS_OTHER_03)
+  # ==========================================================================
+
+  - id: "BOS_OTHER_01"
+    name: "Iron Inge"
+    category: "boss"
+    subcategory: "other_named"
+    tier: 3
+    named: true
+    description: "Tall woman with an angular face and grey-blonde hair pulled back so tightly it stretches the skin at her temples. Dresses in black wool, well-made but plain. A single iron ring on each finger — her only adornment and her signature. Voice flat, inflectionless, like she is reading terms from a contract, which she essentially always is. Her eyes track debt the way a hawk tracks a vole. She does not hurry. She does not need to."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 4
+      WIT: 7
+      WIL: 7
+      WYR: 1
+    hp: 10
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Intimidation"
+        rank: 3
+      - name: "Knives"
+        rank: 2
+      - name: "Persuasion"
+        rank: 3
+      - name: "Lore"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Hidden Knife"
+          type: "knife"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Black Wool (no armor)"
+        head: "None"
+    tactics: "Does not fight herself. Inge employs two enforcers and maintains a network of informants in every settlement where she holds debts. She corners targets through social and economic pressure — hiring their employers, turning their friends, closing their lines of credit. If physical violence is necessary, her enforcers handle it. She watches."
+    morale_break: "Withdraws if enforcers are defeated. Returns with legal backing — a jarl's writ, a thegn's warrant. She does not forget."
+    group_size: "1 (with 2 enforcers and a network of informants)"
+    abilities:
+      - "Debt Register: knows the financial obligations of every mercenary band and most freeholders in the region"
+      - "Social Pressure: can apply economic disadvantage — target pays +20% for all goods in settlements where Inge has influence"
+      - "Patient Hunter: if target flees, Inge arrives at their next destination within a week"
+      - "Iron Rings: her rings are weighted — improvised weapon, d2+1 damage in a surprise punch"
+    resistances: ["intimidation — has heard every threat"]
+    weaknesses:
+      [
+        "physically unremarkable — dangerous only through her network",
+        "relies on rule of law — in lawless areas her leverage vanishes",
+        "obsessive record-keeping — her ledger is her vulnerability",
+      ]
+    loot:
+      silver_range: [30, 100]
+      items: ["iron_rings", "debt_ledger", "hidden_knife"]
+      special: "Debt ledger — contains the financial secrets of dozens of people, including Kell's history"
+    lore: "Inge began as a money-lender's clerk in Grimholt and learned that debt is a more reliable weapon than steel. She operates independently, buying debts from merchants and jarls at discount and collecting at full value. She is hunting one of the player band's members — Kell — for a debt incurred two years ago that has been compounding. She is not cruel. She is relentless. There is a difference that does not matter to the debtor."
+    associated_locations: ["Grimholt", "Feldwick", "Stonebay Hamlet"]
+    associated_chains: ["kells_debt"]
+    image_prompt: |
+      A tall angular woman in plain black wool with grey-blonde hair pulled
+      back tightly. Iron rings on every finger. Flat expression, hawk eyes.
+      Standing in a market square with a leather-bound ledger under one arm.
+      Two broad-shouldered men in plain clothes behind her. Muted palette —
+      black, grey, iron. Cold daylight.
+
+  - id: "BOS_OTHER_02"
+    name: "Halldor the Pure"
+    category: "boss"
+    subcategory: "other_named"
+    tier: 4
+    named: true
+    description: "Broad-chested man with a shaved head and a beard trimmed to a rigid square. Face mapped with self-inflicted scars — ritual cuts, disciplined rows along jaw and forehead. Wears a white surcoat over chain mail, stained but meticulously mended. An iron hammer pendant the size of a fist hangs at his throat. Eyes like heated metal — conviction without doubt. Moves like a man who has never questioned a single decision. His hands are clean. The hands of his followers are not."
+    stats:
+      MIG: 6
+      NIM: 4
+      TOU: 6
+      WIT: 5
+      WIL: 8
+      WYR: 1
+    hp: 18
+    skills:
+      - name: "Axes"
+        rank: 3
+      - name: "Command"
+        rank: 4
+      - name: "Intimidation"
+        rank: 4
+      - name: "Persuasion"
+        rank: 3
+      - name: "Lore"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Purifier"
+          type: "axe"
+          speed: 3
+          base_damage: 6
+        - name: "Iron-Bound Shield"
+          type: "shield"
+          speed: 0
+          base_damage: 2
+      armor:
+        torso: "Chain Mail"
+        head: "Iron Half-Helm"
+    tactics: "Fights in formation with his followers, shield-wall drill. Targets seidr users first, always. Uses his authority to demand surrender before combat — and means it. Fights with mechanical precision and no joy. In his mind, he is performing a necessary service. He will burn a village to kill one witch if he believes it saves the region."
+    morale_break: "Does not flee from seidr-tainted enemies — considers retreat a spiritual failure. Will withdraw from mundane opponents if outmatched. His followers scatter if he falls."
+    group_size: "1 (with 8-15 witch-hunter followers)"
+    abilities:
+      - "Iron Conviction: immune to seidr that targets WIL — his faith is absolute"
+      - "Purifying Strike: attacks against seidr users deal +2 damage"
+      - "Zealot's Call: once per combat, all followers gain +1 to attack rolls for 3 rounds"
+      - "Seidr-Sense: can detect recent seidr use in a location — not precise, but reliable"
+    resistances: ["fear", "seidr_wil_based"]
+    weaknesses:
+      [
+        "rigid thinking — cannot adapt to unexpected situations",
+        "collateral damage — his methods create enemies",
+        "can be turned against other factions by convincing him they harbor seidr users",
+      ]
+    loot:
+      silver_range: [20, 60]
+      items: ["purifier_axe", "iron_hammer_pendant", "chain_mail"]
+      special: "List of suspected seidr users — some accurate, many not"
+    lore: "Halldor lost his family to a seidr-curse three years ago — or believes he did. A fever took his wife and daughter in a single week, and a völva's charm was found under the doorstep. Whether the charm caused the fever or someone placed it after is irrelevant to Halldor. He has since gathered followers who share his conviction that seidr is a corruption to be burned out. The Iron Grip tolerates him because he is useful. The Pale Widow watches him because he is dangerous to her network."
+    associated_locations: ["Thornwall", "Grimholt"]
+    associated_chains: ["witch_hunts", "widows_web"]
+    image_prompt: |
+      A broad-chested man with shaved head and ritual scars in rows along
+      his jaw and forehead. White surcoat over chain mail, iron hammer
+      pendant at his throat. Iron half-helm. Holding an axe and iron-bound
+      shield. Standing before a burning pyre. Followers in white behind him.
+      Orange firelight against dark sky. Absolute certainty in his face.
+
+  - id: "BOS_OTHER_03"
+    name: "Jarl Halvar the Vain"
+    category: "boss"
+    subcategory: "other_named"
+    tier: 3
+    named: true
+    description: "Handsome in a way that has curdled — features too fine, too maintained, the product of a life spent avoiding anything that might scar. Oiled brown hair, a trimmed beard, soft hands heavy with silver rings. Wears dyed wool and imported linen, fur-trimmed cloak pinned with a gold brooch shaped like a stag. Smells of imported oils. His smile shows too many teeth and never reaches his watery blue eyes. He has the build of a man who eats well and fights never."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 3
+      WIT: 6
+      WIL: 4
+      WYR: 1
+    hp: 8
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Persuasion"
+        rank: 4
+      - name: "Command"
+        rank: 2
+      - name: "Intimidation"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Ornamental Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 4
+      armor:
+        torso: "Fine Wool (no armor)"
+        head: "None"
+    tactics: "Halvar does not fight. Has never been in a fight. If physically threatened, he offers money, titles, land — whatever it takes to survive the next five minutes. He is most dangerous in political settings, where he lies with fluid ease, makes promises he will break, and sells information about his own people to whoever pays most. His guard contingent fights for pay, not loyalty."
+    morale_break: "Surrenders immediately when threatened. Offers bribes. If imprisoned, begins negotiating his release before the cell door closes."
+    group_size: "1 (with 4-6 household guards)"
+    abilities:
+      - "Silver Tongue: +3 to Persuasion and Bargain when lying"
+      - "Political Immunity: killing a jarl has consequences — other jarls unite against the killer"
+      - "Informant Network: sells information to all factions — knows more than he should"
+      - "Slippery: once per scene, avoid consequences of a failed Bargain roll by shifting blame"
+    resistances: []
+    weaknesses:
+      [
+        "coward — crumbles under physical threat",
+        "vain — can be manipulated through flattery",
+        "universally despised — his people would not lift a finger to save him",
+      ]
+    loot:
+      silver_range: [80, 250]
+      items: ["gold_stag_brooch", "ornamental_sword", "silver_rings"]
+      special: "Jarl's treasury — tax revenue, trade agreements, and a record of every bribe he has taken and given"
+    lore: "Halvar inherited the jarldom of Skaldhaven from his father, who earned it by fighting. Halvar has spent his tenure selling timber rights to the Silent Oar, grain contracts to the Iron Grip, and protection promises to the Fjord Compact — all simultaneously, all contradictory. His people starve while he imports southern wine. He is a political obstacle because removing him requires either a legitimate challenger or a willingness to murder a jarl and accept the consequences."
+    associated_locations: ["Skaldhaven"]
+    associated_chains: ["fjord_compact", "iron_grip"]
+    image_prompt: |
+      A handsome but soft-featured man in dyed wool and fur-trimmed cloak,
+      gold stag brooch, too many silver rings, oiled brown hair. Sitting in
+      a carved chair in a longhouse, cups of wine on the table. Watery blue
+      eyes, calculating smile. Imported tapestries on the walls while the
+      settlement outside looks poor. Warm interior light, rich colors that
+      feel wrong. A man who eats while others starve.

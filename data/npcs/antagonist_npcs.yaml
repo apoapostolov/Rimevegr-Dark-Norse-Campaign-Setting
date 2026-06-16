@@ -1,0 +1,1052 @@
+npcs:
+  - id: "NPC_ANT_001"
+    name: "Hakon Split-Banner"
+    call_name: "Split-Banner"
+    role: "sub_jarl"
+    base: "Raven's Perch"
+    description: "A tall man with a wolf-pelt collar and a split raven banner stitched into his cloak. His nose was broken twice and healed crooked, and he keeps his beard bound in iron rings from dead retainers. Fresh scar tissue climbs his neck where a spear grazed him at Deepholm."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 6
+      WIT: 8
+      WIL: 7
+      WYR: 1
+    skills:
+      - name: "Command"
+        rank: 4
+      - name: "Deceive"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+      - name: "Intimidate"
+        rank: 2
+    threat_level: "high"
+    scheme: "He has already bribed two reeves in Moor's End and Ashmark, and his scribes are forging Ordovast's seals to issue false levy orders. When the levies fail, Hakon plans to accuse Ordovast of losing command and call an emergency oath-thing naming himself war-reeve."
+    resources: "Thirty-two loyal spears, forged seal-stamps, two paid reeves, and a hidden grain cache above Raven's Perch."
+    personality: "Patient, cold, and theatrical when he smells weakness. He never raises his voice in council, then has dissenters beaten outside the hall. He truly believes only fear can hold the Rimevegr together."
+    agenda: "Break Ordovast's authority and become overjarl of the northern ridges."
+    secret: "He promised the Pale Widow transport rights through Raven's Perch in exchange for seidr intelligence."
+    vulnerability: "The forged seals use outdated knotwork from old Grimholt records; a competent rune-scribe can expose them publicly."
+    relationships:
+      - target: "Ordovast"
+        type: "rival"
+        note: "Openly loyal, privately preparing his fall."
+      - target: "The Pale Widow"
+        type: "ally"
+        note: "Mutual betrayal pact disguised as cooperation."
+      - target: "Moor's End"
+        type: "target"
+        note: "Needs its levy roll to validate his false orders."
+    associated_chains: ["iron_grip", "political_collapse"]
+    image_prompt: "Hard-faced Norse sub-jarl in a wolf-pelt cloak with a split raven banner, iron-ringed beard, scarred neck, standing on a wind-cut ridge above Raven's Perch under iron-grey skies."
+
+  - id: "NPC_ANT_002"
+    name: "Astrid Wolf-Mother"
+    call_name: "Wolf-Mother"
+    role: "sub_jarl"
+    base: "Vargheim"
+    description: "A broad-hipped woman in boiled leather with claw-mark scars across both forearms. Her hair is braided with wolf teeth and tar-thread, and one eye is filmed from an old bite. She smells of kennel straw, pine smoke, and blood."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 7
+      WIT: 7
+      WIL: 8
+      WYR: 1
+    skills:
+      - name: "Command"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Deceive"
+        rank: 2
+      - name: "Bows"
+        rank: 2
+    threat_level: "medium"
+    scheme: "She is releasing half-starved kennel wolves along Ulf Vargson's tax roads, then sending her own men as 'rescuers' to collect loyalty oaths. In fourteen days she intends to present Ulf as unfit and install herself as emergency war-keeper."
+    resources: "Wolf handlers, kennel keys, five hidden feed pits, and sworn families in Vargheim's outer farms."
+    personality: "Protective toward her own and brutal toward outsiders. She speaks of duty and kin, then burns any farm that refuses her call. Her anger is real, but so is her ambition."
+    agenda: "Seize Vargheim and build a hereditary wolf-warden jarldom."
+    secret: "The first wolf attacks were staged with butchered carcasses from her own stores."
+    vulnerability: "Her wolves answer distinct whistle patterns; capturing one handler and his whistle codes can collapse her terror campaign."
+    relationships:
+      - target: "Jarl Ulf Vargson"
+        type: "rival"
+        note: "She calls him soft and old."
+      - target: "Vargheim"
+        type: "target"
+        note: "Her claimed 'protectorate.'"
+      - target: "The Bone Pack"
+        type: "ally"
+        note: "Short-term night patrol contract."
+    associated_chains: ["iron_grip", "resource_crisis"]
+    image_prompt: "Scarred Norse wolf-warden woman with braided wolf teeth and clouded eye, standing in pine snow beside chained war-wolves and tar torches."
+
+  - id: "NPC_ANT_003"
+    name: "Torleif Gate-Lord"
+    call_name: "Gate-Lord"
+    role: "sub_jarl"
+    base: "Grimholt"
+    description: "Lean and hawk-nosed, with narrow hands stained by ink and lamp soot. He wears a fur-lined black cloak and carries a ring of gate keys as a badge of office. His lower lip is split from a recent brawl with garrison men."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 5
+      WIT: 9
+      WIL: 8
+      WYR: 1
+    skills:
+      - name: "Command"
+        rank: 3
+      - name: "Bargain"
+        rank: 4
+      - name: "Deceive"
+        rank: 4
+      - name: "Blades"
+        rank: 1
+    threat_level: "high"
+    scheme: "He has diverted one sack in five from Grimholt's granary and hidden the theft under false mold reports. When shortages peak, he will accuse Ordovast's officers of incompetence and push a garrison vote to put himself in charge of ration law."
+    resources: "Gatehouse ledgers, bribed quartermasters, four lockmasters, and control of the inner granary keys."
+    personality: "Quiet, plausible, and venomously polite. He weaponizes procedure and lets hungry men do his violence for him. He fears open battle and prefers sealed doors."
+    agenda: "Rule Grimholt through logistics and turn military command into clerical dependency."
+    secret: "He has been selling surplus grain to Molla Grainveil through a dead-drop at Bleakwater Landing."
+    vulnerability: "His fake mold entries repeat the same witness mark; proving one forged page discredits every ration edict."
+    relationships:
+      - target: "Ordovast"
+        type: "rival"
+        note: "Publicly obedient, privately starving his regime."
+      - target: "Molla Grainveil"
+        type: "ally"
+        note: "Mutual famine profiteering."
+      - target: "Grimholt"
+        type: "target"
+        note: "Seeks rule without title."
+    associated_chains: ["iron_grip", "famine_crisis", "political_collapse"]
+    image_prompt: "Thin Norse gate official with key-ring at belt, black fur cloak, split lip and ink-stained fingers, standing under Grimholt's iron gate in torchlight."
+
+  - id: "NPC_ANT_004"
+    name: "Brynja Ash-Cloak"
+    call_name: "Ash-Cloak"
+    role: "sub_jarl"
+    base: "Thornwall"
+    description: "A stern woman in ash-grey wool with a braided copper torque and a burn scar under her jaw. Her right hand is missing two fingertips, wrapped in lambskin. She keeps a thorn-wood spear polished like a priest's relic."
+    stats:
+      MIG: 5
+      NIM: 5
+      TOU: 6
+      WIT: 8
+      WIL: 7
+      WYR: 2
+    skills:
+      - name: "Command"
+        rank: 3
+      - name: "Persuade"
+        rank: 4
+      - name: "Bargain"
+        rank: 3
+      - name: "Spears"
+        rank: 2
+    threat_level: "medium"
+    scheme: "She is arranging three political marriages in two weeks to bind Thornwall's reeves to her bloodline and bypass Jarl Helga's authority. Her stewards are already collecting private oaths and land maps for a breakaway moor-march."
+    resources: "Marriage contracts, clan hostages, reeve debt records, and twenty household guards."
+    personality: "Measured and maternal until crossed. She frames every betrayal as a sacrifice for children yet unborn. She rarely lies directly; she edits truth with surgical precision."
+    agenda: "Found an independent thorn-march that answers to her house alone."
+    secret: "She promised Qadir ibn Sarrak passage rights for chained captives if he arms her breakaway guards."
+    vulnerability: "One bride is unwilling and has written testimony naming forged consent marks; if revealed at the wedding thing, Brynja's coalition fractures."
+    relationships:
+      - target: "Jarl Helga Thornwall"
+        type: "rival"
+        note: "Undercuts Helga through family law."
+      - target: "Qadir ibn Sarrak"
+        type: "ally"
+        note: "Secret arms-for-passage pact."
+      - target: "Thornwall"
+        type: "target"
+        note: "Wants its legal heart, not its walls."
+    associated_chains: ["allthing", "political_collapse", "coastal_crisis"]
+    image_prompt: "Ash-cloaked Norse noblewoman with jaw burn scar and thorn-wood spear, copper torque gleaming, standing in a moor hall lined with marriage contracts and hostage seals."
+
+  - id: "NPC_ANT_005"
+    name: "Halldor Ash-Tongue"
+    call_name: "Ash-Tongue"
+    role: "cult_leader"
+    base: "Ashen Reach"
+    description: "Shaved scalp, soot-black tongue, and ritual cuts around his mouth that never fully heal. He wears white wool under chain links blackened by smoke and grave ash. His breath smells of tallow and burnt juniper."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 6
+      WIT: 7
+      WIL: 9
+      WYR: 2
+    skills:
+      - name: "Spirit-lore"
+        rank: 3
+      - name: "Persuade"
+        rank: 3
+      - name: "Intimidate"
+        rank: 4
+      - name: "Deceive"
+        rank: 2
+    threat_level: "high"
+    scheme: "He has marked seven households as 'veil-tainted' and his zealots are preparing a dawn purge to seize their grain and daughters for 'purification service.' He plans to force the Pale Widow's court to legitimize his witch courts by threatening riot."
+    resources: "Thirty fanatics, confession lists, hidden weapon racks in two shrines, and control of fear among Ashen Reach laborers."
+    personality: "Absolutely certain and theatrically calm. He speaks softly while others burn for him. He believes cruelty is mercy if it preserves the many."
+    agenda: "Establish a permanent purifier order answerable only to his doctrine."
+    secret: "He was once paid by Ordovast to stage anti-seidr panic in Compact territory."
+    vulnerability: "His first confession ledger is fabricated; two listed 'witnesses' were dead before the alleged testimony date."
+    relationships:
+      - target: "The Pale Widow"
+        type: "rival"
+        note: "Needs her legitimacy but wants her replaced."
+      - target: "Ashen Reach"
+        type: "target"
+        note: "Turning panic into clerical rule."
+      - target: "Ordovast"
+        type: "ally"
+        note: "Past covert patronage."
+    associated_chains: ["widows_web", "waking_barrows", "political_collapse"]
+    image_prompt: "Fanatic Norse cult leader with soot-black tongue and ritual mouth cuts, white wool and blackened chain, standing before a shrine fire as armed zealots kneel."
+
+  - id: "NPC_ANT_006"
+    name: "Yrsa Bone-Chanter"
+    call_name: "Bone-Chanter"
+    role: "cult_leader"
+    base: "Icebreak"
+    description: "A gaunt woman with frostbitten fingertips and strings of vertebrae braided into her hair. Her eyes are milky blue, and she paints runes in marrow paste across her throat. Her voice hums with a low resonance that vibrates teeth."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 8
+      WIL: 8
+      WYR: 5
+    skills:
+      - name: "Spirit-lore"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 4
+      - name: "Rune-lore"
+        rank: 3
+      - name: "Persuade"
+        rank: 2
+    threat_level: "high"
+    scheme: "She is leading midnight bone-choirs at Icebreak's shrine to call specific barrow dead by name, and three dead have already risen where she sang. Her next rite targets the old battlefield south of Grimholt to raise a disciplined dead retinue."
+    resources: "Veil-touched acolytes, bone reliquaries, grave maps, and a true if dangerous spirit-link."
+    personality: "Detached, trance-prone, and eerily honest about horrors. She is not lying when she says she hears the dead; she simply values them over the living. Her pity appears only in brief, painful flashes."
+    agenda: "Crown herself voice of the dead host and negotiate from terror."
+    secret: "One voice she follows is not a dead ancestor but the Veil-Walker imitating one."
+    vulnerability: "Iron bells break her chanting focus; without sustained rhythm, her summoned dead revert to aimless unrest."
+    relationships:
+      - target: "Ragnhild"
+        type: "ally"
+        note: "Receives shelter and weather signs."
+      - target: "The Pale Widow"
+        type: "rival"
+        note: "Rejects the Widow's controlled methods."
+      - target: "Grimholt"
+        type: "target"
+        note: "Wants its dead from the siege fields."
+    associated_chains: ["waking_barrows", "veil_collapse", "grave_wardens"]
+    image_prompt: "Gaunt Norse seer with milky blue eyes, bone-braided hair and marrow runes on her throat, chanting in moonlit snow before cracked barrow stones."
+
+  - id: "NPC_ANT_007"
+    name: "Morkel Tithe-Crow"
+    call_name: "Tithe-Crow"
+    role: "cult_leader"
+    base: "Moor's End"
+    description: "A stooped man in black feathers stitched to patched wool, with silver hooks through both ears. His cheeks are hollow, his teeth filed flat, and his hands are inked with tally marks of the dead. He carries a crow-skull staff polished from constant handling."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 8
+      WIL: 7
+      WYR: 2
+    skills:
+      - name: "Deceive"
+        rank: 4
+      - name: "Bargain"
+        rank: 3
+      - name: "Spirit-lore"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+    threat_level: "medium"
+    scheme: "He is collecting a 'grave tithe' from starving villages and burying the silver in marked cairns, claiming it wards the dead. In truth he uses that silver to pay Red Tide scouts to raid non-paying settlements and make his prophecy seem real."
+    resources: "Fearful peasants, cairn stashes, forged omens, and paid raiders."
+    personality: "Cowardly in private, apocalyptic in public. He weaponizes symbols better than steel. He does not believe his own doctrine, but he believes in leverage."
+    agenda: "Build a portable terror-cult that can extort any settlement during famine."
+    secret: "He cannot read runes; every omen he gives is copied from old barrow graffiti."
+    vulnerability: "His payment cairns are mapped in a hidden crow-bone bundle; exposing the raider payments ruins his divine authority overnight."
+    relationships:
+      - target: "Wulfgar the Branded"
+        type: "employer"
+        note: "Pays Red Tide outriders through intermediaries."
+      - target: "Moor's End"
+        type: "target"
+        note: "Primary extortion ground."
+      - target: "Halldor Ash-Tongue"
+        type: "rival"
+        note: "Competes for fear-based authority."
+    associated_chains: ["famine_crisis", "red_tide", "political_collapse"]
+    image_prompt: "Stooped feather-cloaked Norse charlatan with crow-skull staff and tally-marked hands, preaching beside wind-bent cairns on a frozen moor."
+
+  - id: "NPC_ANT_008"
+    name: "Einar Chain-Break"
+    call_name: "Chain-Break"
+    role: "criminal"
+    base: "Bleakwater Landing"
+    description: "Thick-shouldered and iron-scarred, with shackles still welded into one wrist cuff. His scalp is shaved except for a knotted braid down the back, and his front teeth are chipped from biting chain links. He wraps his torso in layered sailcloth over old lash scars."
+    stats:
+      MIG: 8
+      NIM: 4
+      TOU: 7
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Axes"
+        rank: 3
+      - name: "Brawl"
+        rank: 3
+      - name: "Track"
+        rank: 2
+      - name: "Stealth"
+        rank: 1
+    threat_level: "medium"
+    scheme: "He escaped a chain gang and is now hunting Kell Hook from Voss's band, believing Kell sold route timings to his captors. Einar has already bribed ferry men at Bleakwater to signal whenever Black Axes scouts cross the river."
+    resources: "Six escaped convicts, two ferrymen informants, and hidden hatchets cached along the river road."
+    personality: "Explosive, stubborn, and ruled by humiliations he replays nightly. He has moments of rough fairness with other escaped thralls. When Kell's name is spoken, reason dies."
+    agenda: "Capture Kell alive, break his sword hand, and publicly brand him as an oath-seller."
+    secret: "Kell never betrayed him; Inge's collectors forged the tip to keep both men unstable."
+    vulnerability: "He protects fellow escapees at all costs; offering safe passage for his people can force negotiation."
+    relationships:
+      - target: "Kell Hook"
+        type: "target"
+        note: "Primary blood-feud objective."
+      - target: "Voss Cold-Eye"
+        type: "rival"
+        note: "Assumes Voss sanctioned the betrayal."
+      - target: "Bleakwater Landing"
+        type: "ally"
+        note: "Bribed ferrymen relay movement."
+    associated_chains: ["kell_debt", "voss_command", "coastal_crisis"]
+    image_prompt: "Massive escaped chain-gang fighter with welded wrist cuff, sailcloth wraps, chipped teeth and axe, crouched by a frozen river crossing at dusk."
+
+  - id: "NPC_ANT_009"
+    name: "Runa Stag-Knife"
+    call_name: "Stag-Knife"
+    role: "criminal"
+    base: "Feldwick"
+    description: "A hard-eyed woman with close-cropped hair and a stag-antler knife hilt wrapped in red thread. Her cheeks are wind-burned and one ear is half missing from frostbite. She wears patched mail over shepherd's wool and moves like a hunter, low and silent."
+    stats:
+      MIG: 5
+      NIM: 7
+      TOU: 5
+      WIT: 6
+      WIL: 7
+      WYR: 1
+    skills:
+      - name: "Bows"
+        rank: 3
+      - name: "Track"
+        rank: 4
+      - name: "Survival"
+        rank: 3
+      - name: "Blades"
+        rank: 2
+    threat_level: "medium"
+    scheme: "She is picking off Three Wolves outriders one by one and nailing their ear-rings to Feldwick's gate as a warning. Her final target is Hadric's quartermaster, whose account books prove the Wolves burned her family's hall for unpaid grain."
+    resources: "Two kin survivors, hidden ridge blinds, and precise knowledge of Three Wolves patrol timings."
+    personality: "Quiet, restrained, and terrifyingly focused. She is harsh but not cruel to civilians, and her anger is anchored in real loss. She still leaves food for children before she raids supply trains."
+    agenda: "Destroy Hadric's command web and force public acknowledgment of her family's murder."
+    secret: "Sigrid Blackwine has quietly supplied her arrows to weaken Hadric without open war."
+    vulnerability: "If shown legal weregild backed by sworn witnesses, she will accept judgment over endless bloodshed."
+    relationships:
+      - target: "Hadric the Younger"
+        type: "target"
+        note: "Personal blood-feud leader target."
+      - target: "Sigrid Blackwine"
+        type: "ally"
+        note: "Covert support through intermediaries."
+      - target: "Feldwick"
+        type: "ally"
+        note: "Locals shelter her despite fear."
+    associated_chains: ["three_wolves", "iron_grip", "famine_crisis"]
+    image_prompt: "Weathered Norse huntress with stag-antler knife and red-thread grip, frostbitten ear, drawing a bow from heather cover above Feldwick under sleet skies."
+
+  - id: "NPC_ANT_010"
+    name: "Ofeig Marsh-Hound"
+    call_name: "Marsh-Hound"
+    role: "criminal"
+    base: "Moor's End"
+    description: "A narrow-faced outlaw with peat-blackened skin, reed braids, and a dog jawbone tied to his belt. His left knee clicks loudly when he runs, and his fingers are web-scarred from rope burns. He wears bog-dyed leathers that swallow moonlight."
+    stats:
+      MIG: 6
+      NIM: 6
+      TOU: 5
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Blades"
+        rank: 3
+      - name: "Intimidate"
+        rank: 2
+      - name: "Stealth"
+        rank: 3
+      - name: "Navigate"
+        rank: 3
+    threat_level: "low"
+    scheme: "He is kidnapping messengers moving between Raven's Perch and Deepholm, then ransoming their satchels to both sides. He plans to fake a Compact order naming Sigrid Blackwine a traitor and trigger a mercenary feud."
+    resources: "Bog hideouts, three cutthroats, forged satchel seals, and marsh routes no cavalry can follow."
+    personality: "Petty, vindictive, and opportunistic. He confuses chaos with genius and takes pride in ruining trust. He breaks under sustained pressure."
+    agenda: "Profit from forged dispatches until every banner in the moors distrusts every courier."
+    secret: "He once served Sigrid Blackwine and was flogged for theft; his schemes are revenge by proxy."
+    vulnerability: "His knee injury slows him in dry uphill terrain; forcing pursuit onto stone ridges negates his escape advantage."
+    relationships:
+      - target: "Sigrid Blackwine"
+        type: "rival"
+        note: "Old humiliation turned obsession."
+      - target: "Raven's Perch"
+        type: "target"
+        note: "Primary courier interception lane."
+      - target: "Deepholm"
+        type: "target"
+        note: "Sells stolen dispatches there too."
+    associated_chains: ["fjord_compact", "political_collapse"]
+    image_prompt: "Lean bog-bandit in peat-dark leathers with reed braids and jawbone charm, crouched over stolen message satchels among black marsh pools at night."
+
+  - id: "NPC_ANT_011"
+    name: "Ketil Salt-Brand"
+    call_name: "Salt-Brand"
+    role: "criminal"
+    base: "Kolvik"
+    description: "Sun-cracked skin, rope-thick forearms, and a burn scar branded across his chest in the shape of a ship hook. His beard is salted white from sea spray and age, and his right hand is missing the ring finger. He moves with an old sailor's roll that turns violent without warning."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 7
+      WIT: 4
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Track"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+      - name: "Intimidate"
+        rank: 3
+    threat_level: "medium"
+    scheme: "He is hunting five former crewmates who sold his family into thrall chains during a mutiny, and he has already killed two near Stonebay. His next move is to board a Silent Oar supply boat posing as dock labor and slaughter the remaining names during night watch."
+    resources: "Harbor labor disguises, one loyal nephew, and a kill-list carved into a driftwood board."
+    personality: "Bitter, direct, and ritualistic about vengeance. He pays for food and never harms children, then butchers oath-breakers in their sleep. He sees himself as a correction, not a criminal."
+    agenda: "Complete his blood list and hang each traitor's hook at Kolvik's pier."
+    secret: "One name on his list is innocent, added by a Red Tide broker to redirect his rage."
+    vulnerability: "His oath to spare non-mutineers is absolute; witnesses and proof can redirect him if shown before combat starts."
+    relationships:
+      - target: "The Silent Oar"
+        type: "target"
+        note: "Believes they sheltered mutineers."
+      - target: "Kolvik"
+        type: "ally"
+        note: "Dock poor quietly support him."
+      - target: "Wulfgar the Branded"
+        type: "rival"
+        note: "Unaware Wulfgar's broker manipulated his list."
+    associated_chains: ["coastal_crisis", "red_tide"]
+    image_prompt: "Old Norse sailor-avenger with branded chest scar and white-salted beard, gripping a boat spear on a moonlit dock beside tarred hulls and frozen ropes."
+
+  - id: "NPC_ANT_012"
+    name: "Severin Valeborn"
+    call_name: "Vale-Scribe"
+    role: "spy"
+    base: "Skaldhaven"
+    description: "A clean-bearded southern man in layered wool dyed too rich for local taste. His fingernails are trimmed like a clerk's, but his knuckles show old knife scars. He carries a leather case of scrolls sealed with foreign wax."
+    stats:
+      MIG: 3
+      NIM: 6
+      TOU: 4
+      WIT: 9
+      WIL: 8
+      WYR: 1
+    skills:
+      - name: "Deceive"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+    threat_level: "high"
+    scheme: "As intelligence officer for a southern kingdom, he is financing border feuds so local jarls request 'neutral advisors' from his court. Three forged treaty drafts are already circulating, each giving his kingdom docking rights in Kolvik by spring."
+    resources: "Cipher sheets, courier network, southern silver, and one embedded translator in Deepholm."
+    personality: "Polished, patient, and emotionally vacant while negotiating. He never threatens directly; he offers better options with poisoned clauses. He respects competent enemies."
+    agenda: "Convert the Rimevegr into a dependent protectorate through legal debt and military advisers."
+    secret: "He has standing orders to assassinate any local leader who unifies more than four settlements."
+    vulnerability: "His ciphers rely on a repeating lunar key; once cracked, his whole intelligence web can be exposed in a single Allthing session."
+    relationships:
+      - target: "Skaldhaven"
+        type: "ally"
+        note: "Uses scholars as cover and code clerks."
+      - target: "Deepholm"
+        type: "target"
+        note: "Key to legal annexation strategy."
+      - target: "Ordovast"
+        type: "target"
+        note: "Too unstable to partner, ideal to weaken."
+    associated_chains: ["allthing", "fjord_compact", "political_collapse"]
+    image_prompt: "Refined foreign intelligence officer in expensive wool with scroll case and wax seals, standing in a skald hall while snow whips at shuttered windows."
+
+  - id: "NPC_ANT_013"
+    name: "Qadir ibn Sarrak"
+    call_name: "Chain-Master"
+    role: "slaver"
+    base: "Stonebay Hamlet"
+    description: "Dark-bearded and broad-chested, with kohl-lined eyes and a scar that runs from ear to collarbone. He wears layered silk under fur and carries a curved knife with worked bronze inlay. His wrists are stacked with counting cords and slave tallies."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 6
+      WIT: 8
+      WIL: 7
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Intimidate"
+        rank: 3
+      - name: "Command"
+        rank: 3
+      - name: "Navigate"
+        rank: 3
+    threat_level: "high"
+    scheme: "An eastern slave trader, he has chartered two hidden transport boats and is buying famine debt contracts to legally seize children as bonded 'winter collateral.' The first convoy is scheduled to leave Stonebay in six nights under Red Tide escort."
+    resources: "Armed caravan guards, debt contracts, chain stores, and offshore buyers."
+    personality: "Courteous, merciless, and obsessed with legal cover for brutality. He views people as moving inventory and admires efficient cruelty. He does not bluff about violence."
+    agenda: "Establish a permanent northern thrall corridor from Stonebay to eastern markets."
+    secret: "He is financing Brynja Ash-Cloak's coup to secure inland capture routes."
+    vulnerability: "His contracts are valid only if signed before two witnesses; many were witnessed by dead or nonexistent names that can void entire shipments."
+    relationships:
+      - target: "Wulfgar the Branded"
+        type: "ally"
+        note: "Pays for convoy escort and raids."
+      - target: "Brynja Ash-Cloak"
+        type: "ally"
+        note: "Trades arms for route access."
+      - target: "Stonebay Hamlet"
+        type: "target"
+        note: "Primary embarkation point."
+    associated_chains: ["coastal_crisis", "red_tide", "famine_crisis"]
+    image_prompt: "Eastern slave trader in layered silk and fur with scarred throat, bronze-inlaid curved knife and tally cords, standing beside chained captives on a frozen coastal jetty."
+
+  - id: "NPC_ANT_014"
+    name: "Marek Amber-Eye"
+    call_name: "Amber-Eye"
+    role: "spy"
+    base: "Kolvik"
+    description: "A pale man with one amber glass eye and one living grey eye that never blinks enough. His cloak is lined with hidden pockets and stitched map scraps. Salt-cracks split his lips from years at sea."
+    stats:
+      MIG: 4
+      NIM: 7
+      TOU: 4
+      WIT: 8
+      WIL: 6
+      WYR: 2
+    skills:
+      - name: "Deceive"
+        rank: 4
+      - name: "Stealth"
+        rank: 4
+      - name: "Persuade"
+        rank: 2
+      - name: "Wyrd-reading"
+        rank: 1
+    threat_level: "medium"
+    scheme: "He is embedding coded route marks in shipwright chalk symbols across Kolvik to guide foreign raiders past harbor chains. In ten days he will signal a test landing during market night to assess response times."
+    resources: "Smuggler contacts, coded chalk lexicon, one fast cutter, and bribes in cut amber."
+    personality: "Nervy, charming, and faithless to every patron. He survives by selling timing, never loyalty. Fear makes him faster, not kinder."
+    agenda: "Stay indispensable by feeding every side just enough truth to keep wars alive."
+    secret: "His glass eye contains a rolled micro-map of hidden inlets commissioned by Severin Valeborn."
+    vulnerability: "Without harbor access his network collapses; exposing his chalk code to shipwright guilds turns every dock worker into a counter-spy."
+    relationships:
+      - target: "Severin Valeborn"
+        type: "employer"
+        note: "Primary intelligence buyer."
+      - target: "Kolvik"
+        type: "target"
+        note: "Turning its walls into coded signal boards."
+      - target: "Qadir ibn Sarrak"
+        type: "ally"
+        note: "Mutual smuggling support."
+    associated_chains: ["coastal_crisis", "fjord_compact", "political_collapse"]
+    image_prompt: "Lean coastal spy with one amber glass eye, pocketed cloak and chalk-stained fingers, standing in Kolvik dock fog beside carved hull marks and shuttered lanterns."
+
+  - id: "NPC_ANT_015"
+    name: "Dagr Worm-Reader"
+    call_name: "Worm-Reader"
+    role: "renegade_seidr"
+    base: "Ashmark"
+    description: "A narrow man with translucent skin and worm-thin tattoo lines around his jaw. He keeps his head shaved except for a greasy lock tied with black thread and finger bones. His nails are packed with grave soil and iron filings."
+    stats:
+      MIG: 2
+      NIM: 5
+      TOU: 4
+      WIT: 8
+      WIL: 8
+      WYR: 4
+    skills:
+      - name: "Rune-lore"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 4
+      - name: "Spirit-lore"
+        rank: 3
+      - name: "Deceive"
+        rank: 2
+    threat_level: "high"
+    scheme: "Imitating the Pale Widow's methods, he is sewing rune-threads into battlefield corpses to make obedient dead porters that can move arms unseen. He already has nine reanimated carriers hauling blades from Ashmark to hidden pits near Thornwall."
+    resources: "Corpse pits, forbidden rune thread, two apprentice carvers, and bribed grave diggers."
+    personality: "Obsessive, grandiose, and jealous of better seidr practitioners. He rationalizes desecration as innovation and collects failures like trophies. He alternates between panic and arrogance."
+    agenda: "Prove he can industrialize necromancy and sell armies made from the dead."
+    secret: "His 'obedient' dead are beginning to ignore commands at dawn and whisper Pale Widow's name."
+    vulnerability: "His thread matrix burns instantly in salted fire; destroying a single anchor spool can collapse his whole undead chain."
+    relationships:
+      - target: "The Pale Widow"
+        type: "rival"
+        note: "Wants her reputation without her discipline."
+      - target: "Ashmark"
+        type: "target"
+        note: "Uses graveyards as raw material."
+      - target: "Torleif Gate-Lord"
+        type: "ally"
+        note: "Arms transport arrangement through corpse porters."
+    associated_chains: ["waking_barrows", "widows_web", "resource_crisis"]
+    image_prompt: "Thin renegade seidr with grave-soiled nails and jaw runes, crouched over stitched corpses threaded with black rune-cord in a torchlit pit."
+
+  - id: "NPC_ANT_016"
+    name: "Helga Nine-Knots"
+    call_name: "Nine-Knots"
+    role: "renegade_seidr"
+    base: "Skaldhaven"
+    description: "An older woman with weather-cracked cheeks and nine cord knots woven permanently into her hair. Her forearms are covered in healing cuts used for blood rites, and one shoulder droops from an untreated break. She carries a seal-bone charm rack that clicks while she walks."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 5
+      WIT: 7
+      WIL: 8
+      WYR: 5
+    skills:
+      - name: "Rune-lore"
+        rank: 3
+      - name: "Wyrd-reading"
+        rank: 4
+      - name: "Heal"
+        rank: 3
+      - name: "Deceive"
+        rank: 2
+    threat_level: "medium"
+    scheme: "She is selling 'protective' blood-knot charms that secretly bind buyers into a communal pain web she can trigger to force obedience. Three reeves already carry her knots, and she plans to paralyze council votes by collapsing them with shared agony."
+    resources: "Charm workshop, loyal patients, blood ledgers, and one hidden ritual cellar under Skaldhaven."
+    personality: "Tender in one breath and predatory in the next. She began as a healer and still wants to save people, but now she cannot imagine authority without control. Shame makes her more manipulative."
+    agenda: "Build a coerced peace bloc by making leaders physically unable to defy her."
+    secret: "Her first knot circle was made to stop her son's execution, and he died anyway."
+    vulnerability: "If knot cords are soaked in lye and cut at moonrise, the pain web snaps and backlashes onto the caster."
+    relationships:
+      - target: "Skaldhaven"
+        type: "target"
+        note: "Testing ground for pain-web governance."
+      - target: "Severin Valeborn"
+        type: "ally"
+        note: "Trades influence for southern medicines."
+      - target: "The Pale Widow"
+        type: "rival"
+        note: "Hates being dismissed as provincial."
+    associated_chains: ["allthing", "widows_web", "political_collapse"]
+    image_prompt: "Elder Norse seidr-healer with nine knotted braids, blood-marked forearms and bone charm rack, standing over bound cords in a dim rune-cellar."
+
+  - id: "NPC_ANT_017"
+    name: "Ottar Candle-Eater"
+    call_name: "Candle-Eater"
+    role: "renegade_seidr"
+    base: "Icebreak"
+    description: "A skeletal man with wax-burn scars around his mouth and throat. He keeps tallow stubs in a leather pouch and chews them while muttering to spirits. His eyelids are tattooed with ward runes that twitch in sleep."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 7
+      WIL: 7
+      WYR: 4
+    skills:
+      - name: "Spirit-lore"
+        rank: 4
+      - name: "Wyrd-reading"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+      - name: "Deceive"
+        rank: 3
+    threat_level: "high"
+    scheme: "He is trafficking with Veil entities by trading still-living captives for prophetic fragments, and he has arranged a midnight exchange at the split barrow near Vargheim. His buyers include warlords seeking future battle outcomes."
+    resources: "Veil contact marks, abductors, hidden cave shrine, and prophecy fragments sold in sealed wax."
+    personality: "Erratic, sly, and spiritually addicted. He oscillates between childlike wonder and calculated cruelty. He believes any atrocity is justified if it reveals tomorrow."
+    agenda: "Monopolize prophecy traffic and become indispensable to every faction command."
+    secret: "One of his Veil patrons has marked him for eventual replacement; he is now disposable bait."
+    vulnerability: "He cannot perform rites in direct sunlight; forcing confrontations at full day strips him of spirit channeling and confidence."
+    relationships:
+      - target: "Yrsa Bone-Chanter"
+        type: "ally"
+        note: "Swaps ritual sites and corpse access."
+      - target: "Ordovast"
+        type: "employer"
+        note: "Sells selective war omens through brokers."
+      - target: "Vargheim"
+        type: "target"
+        note: "Primary exchange zone for Veil trades."
+    associated_chains: ["waking_barrows", "veil_collapse", "iron_grip"]
+    image_prompt: "Emaciated rune-tattooed seidr man with wax-burned mouth, chewing candle stubs beside a wind-lashed barrow mouth where pale lights move in the dark."
+
+  - id: "NPC_ANT_018"
+    name: "Knut Two-Scales"
+    call_name: "Two-Scales"
+    role: "slaver"
+    base: "Deepholm"
+    description: "A thick-necked merchant with a split beard and silver caps on both front teeth. He wears layered lambswool and heavy bronze weights at his belt, always jingling. His fingertips are permanently dark from ink and fish oil."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 5
+      WIT: 8
+      WIL: 7
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Deceive"
+        rank: 4
+      - name: "Persuade"
+        rank: 3
+      - name: "Stealth"
+        rank: 1
+    threat_level: "medium"
+    scheme: "He is selling the same battlefield timing reports to Ordovast and Sigrun on alternating nights, then charging each side extra to 'verify' the other's lies. A forged scout ledger he planted is set to trigger a retaliatory raid at the next moonless watch."
+    resources: "Informer stable, duplicate ledgers, silver reserves, and dockside safehouses in Deepholm."
+    personality: "Jovial, obscene, and utterly transactional. He treats war as market weather. He fears blades but never fears consequences enough to stop."
+    agenda: "Keep the war balanced and profitable until he can buy permanent grain monopolies."
+    secret: "He reports summaries to Severin Valeborn, selling the whole region as an intelligence commodity."
+    vulnerability: "His codebook is hidden in hollow scale-weights; seize one and every planted report can be traced."
+    relationships:
+      - target: "Ordovast"
+        type: "ally"
+        note: "Pays for 'exclusive' intelligence."
+      - target: "Sigrun"
+        type: "ally"
+        note: "Also pays for 'exclusive' intelligence."
+      - target: "Severin Valeborn"
+        type: "employer"
+        note: "Higher bidder for strategic summaries."
+    associated_chains: ["iron_grip", "fjord_compact", "political_collapse"]
+    image_prompt: "Heavy Norse war-profiteer with split beard and bronze trade weights, grinning over duplicate ledgers in a Deepholm counting room lit by whale-oil lamps."
+
+  - id: "NPC_ANT_019"
+    name: "Bera Net-Mother"
+    call_name: "Net-Mother"
+    role: "slaver"
+    base: "Bleakwater Landing"
+    description: "A broad-backed woman with rope burns crossing both palms and a tattooed net pattern from throat to sternum. Her left ear is torn clean through by an old hook, tied with copper wire. She wears seal-skin coats over chain sleeves and keeps a weighted throwing net at all times."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 7
+      WIT: 7
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Command"
+        rank: 3
+      - name: "Intimidate"
+        rank: 4
+      - name: "Bargain"
+        rank: 3
+      - name: "Bows"
+        rank: 2
+    threat_level: "high"
+    scheme: "She runs a slaver network using fishing quotas as cover and has marked ten famine families for forced debt seizure this week. Two transport sledges are already loaded for transfer to Qadir's ships at Stonebay."
+    resources: "Net crews, chain sheds, quota ledgers, and armed river boats."
+    personality: "Pragmatic, predatory, and maternal only toward her crew. She frames slavery as survival math and punishes sentiment as weakness. She is hardest on people who remind her of herself."
+    agenda: "Control all human cargo routes between Bleakwater, Stonebay, and eastern buyers."
+    secret: "She was once sold as a child and murdered her original owner during a storm transfer."
+    vulnerability: "Her crews are paid in strict silver shares; intercepting one payout turns her own men against her quickly."
+    relationships:
+      - target: "Qadir ibn Sarrak"
+        type: "ally"
+        note: "Primary buyer and logistics partner."
+      - target: "Wulfgar the Branded"
+        type: "ally"
+        note: "Raid supply and intimidation support."
+      - target: "Bleakwater Landing"
+        type: "target"
+        note: "Uses quotas to launder captives."
+    associated_chains: ["coastal_crisis", "red_tide", "famine_crisis"]
+    image_prompt: "Powerful net-tattooed slaver matriarch in seal-skin and chain sleeves, copper-wired torn ear, standing over chained captives by icy riverboats."
+
+  - id: "NPC_ANT_020"
+    name: "Styrkar Tar-Lord"
+    call_name: "Tar-Lord"
+    role: "slaver"
+    base: "Ashmark"
+    description: "A stocky man with a tar-black beard and blister scars up both arms. His eyebrows are burned off and never fully regrew, giving his stare a corpse-like emptiness. He wears fire-hardened leather aprons over wool even in council."
+    stats:
+      MIG: 6
+      NIM: 4
+      TOU: 7
+      WIT: 7
+      WIL: 6
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Deceive"
+        rank: 3
+      - name: "Command"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+    threat_level: "medium"
+    scheme: "He is diluting pine tar shipments with whale grease so siege ropes fail under stress, then selling emergency replacements at triple price. He has also planted a fire in one warehouse to force Ashmark into exclusive supply terms."
+    resources: "Tar pits, burner crews, warehouse keys, and falsified quality marks."
+    personality: "Gruff, cynical, and convinced everyone has a price. He laughs at honor and keeps perfect memory for debt. Under pressure he becomes paranoid and violent."
+    agenda: "Control all siege consumables in the central routes and become war-essential."
+    secret: "His warehouse arson killed his own nephew, and he covered it as enemy sabotage."
+    vulnerability: "His diluted tar leaves a pale sheen detectable by smell and flame test; public demonstration in front of buyers destroys his contracts."
+    relationships:
+      - target: "Ashmark"
+        type: "target"
+        note: "Turning neutral tar town into dependency node."
+      - target: "Ordovast"
+        type: "ally"
+        note: "Iron Grip buys his emergency stock."
+      - target: "Sigrun"
+        type: "ally"
+        note: "Compact also buys when desperate."
+    associated_chains: ["resource_crisis", "iron_grip", "fjord_compact"]
+    image_prompt: "Burn-scarred Norse tar merchant with black beard and leather apron, standing amid smoking tar pits and broken siege ropes under red firelight."
+
+  - id: "NPC_ANT_021"
+    name: "Oline Salt-Book"
+    call_name: "Salt-Book"
+    role: "slaver"
+    base: "Kolvik"
+    description: "A narrow-shouldered woman with salt-whitened hair and a ledger case chained to her belt. She has cracked lips from brine wind and a tattooed abacus along her fingers. Her cloak smells of cod racks and old ink."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 8
+      WIL: 7
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 4
+      - name: "Deceive"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+    threat_level: "low"
+    scheme: "She is buying up winter salt stocks through shell buyers, then forcing mercenary bands to sign 'labor for salt' contracts that function as temporary bondage. Three bands are already trapped and guarding her warehouses without pay."
+    resources: "Salt monopoly contracts, warehouse guards, shell companies, and shipping tabs in Kolvik."
+    personality: "Dry, brittle, and terrifyingly calm with numbers. She calls coercion 'accounting gravity.' She rarely shouts because she rarely needs to."
+    agenda: "Turn every independent band into contract labor under her supply regime."
+    secret: "Her shell buyers are financed by Molla Grainveil, making salt and grain scarcity coordinated."
+    vulnerability: "Her shell companies share the same guarantor sigil; proving common ownership voids her anti-hoarding protections."
+    relationships:
+      - target: "Kolvik"
+        type: "target"
+        note: "Controls dockside salt vault access."
+      - target: "Molla Grainveil"
+        type: "ally"
+        note: "Joint scarcity manipulation."
+      - target: "Voss's Black Axes"
+        type: "target"
+        note: "Attempting to bind them by ration debt."
+    associated_chains: ["famine_crisis", "coastal_crisis", "voss_command"]
+    image_prompt: "Lean salt monopolist with chained ledger case and abacus-finger tattoos, standing in a Kolvik salt warehouse of stacked barrels under cold blue dawn light."
+
+  - id: "NPC_ANT_022"
+    name: "Lady Ragnfrid Thornwall"
+    call_name: "Lady Thorn"
+    role: "manipulator"
+    base: "Thornwall"
+    description: "A severe noblewoman in deep green wool and fox fur with silver pins shaped like thorns. Her face is pale and smooth except for a healed cut at the brow line. She wears no visible weapon, only rings with hidden seals."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 5
+      WIT: 9
+      WIL: 8
+      WYR: 2
+    skills:
+      - name: "Persuade"
+        rank: 4
+      - name: "Deceive"
+        rank: 4
+      - name: "Command"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+    threat_level: "high"
+    scheme: "While her husband holds ceremonial feasts, she has already replaced two council scribes and redirects every decree through her private seal room. Next month she intends to declare emergency widow-regency powers using forged omens from Helga Nine-Knots."
+    resources: "Household guard captain, private scribes, marriage alliances, and control of Thornwall court access."
+    personality: "Elegant, ruthless, and convinced governance is too important for men of pride. She rewards competence lavishly and destroys disloyalty without noise. She believes she is the only adult in the room."
+    agenda: "Rule Thornwall openly as regent, then expand through legal dependency rather than war."
+    secret: "She arranged the hunting accident that crippled her husband's sword arm."
+    vulnerability: "Her private seal-room has wax impressions of forged signatures; securing that room is enough for a lawful coup trial."
+    relationships:
+      - target: "Jarl Helga Thornwall"
+        type: "puppet"
+        note: "Ceremonial ruler; she governs."
+      - target: "Helga Nine-Knots"
+        type: "ally"
+        note: "Supplies omen theater for legal cover."
+      - target: "Allthing"
+        type: "target"
+        note: "Wants recognition as lawful regent."
+    associated_chains: ["allthing", "political_collapse", "famine_crisis"]
+    image_prompt: "Regal Norse noblewoman in fox fur and thorn-silver pins, seated in a candlelit seal chamber over stacked decrees while a ceremonial jarl feasts beyond the door."
+
+  - id: "NPC_ANT_023"
+    name: "Councilor Leif Skald-Coin"
+    call_name: "Skald-Coin"
+    role: "manipulator"
+    base: "Deepholm"
+    description: "A plump middle-aged councilor with hennaed beard tips and soft merchant hands. His left eye twitches when he lies, so he keeps it hidden under a lock of hair. He dresses in polished blue wool and carries two ink horns at all times."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 8
+      WIL: 7
+      WYR: 1
+    skills:
+      - name: "Deceive"
+        rank: 4
+      - name: "Bargain"
+        rank: 4
+      - name: "Sagas"
+        rank: 3
+      - name: "Persuade"
+        rank: 3
+    threat_level: "medium"
+    scheme: "He is selling sealed council vote outcomes to three outside buyers before deliberations happen, then shaping speeches to match whoever paid most. He has a pending sale to Ordovast that would expose Deepholm's winter weak points tomorrow night."
+    resources: "Council access, speech drafts, blackmail letters, and hidden silver in Skaldhaven vaults."
+    personality: "Verbose, flattering, and endlessly adaptable. He treats ethics like a theatrical costume he can change by audience. Deep down he is terrified of poverty, not punishment."
+    agenda: "Retire as indispensable kingmaker with enough silver to buy immunity in any port."
+    secret: "He once swore personal loyalty to Sigrun and still keeps her first seal-ring in a locked chest."
+    vulnerability: "His duplicate vote copies use imported paper unavailable locally; tracing the paper trail ties every leak to him."
+    relationships:
+      - target: "Sigrun"
+        type: "ally"
+        note: "Nominally serves her council."
+      - target: "Ordovast"
+        type: "ally"
+        note: "Secret buyer of war-sensitive votes."
+      - target: "Severin Valeborn"
+        type: "employer"
+        note: "Pays premium for strategic deliberations."
+    associated_chains:
+      ["fjord_compact", "iron_grip", "allthing", "political_collapse"]
+    image_prompt: "Soft-handed Norse councilor in rich blue wool with twin ink horns, leaning over sealed vote tablets in a Deepholm archive lit by narrow winter sun."
+
+  - id: "NPC_ANT_024"
+    name: "Molla Grainveil"
+    call_name: "Grainveil"
+    role: "manipulator"
+    base: "Bleakwater Landing"
+    description: "A heavyset widow with flour-pale skin, braided black hair, and a jaw set like a lock. She wears stacked aprons over mail sleeves and keeps a grain scoop of carved oak at her belt. Her voice is low, dry, and impossible to rush."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 6
+      WIT: 9
+      WIL: 8
+      WYR: 1
+    skills:
+      - name: "Bargain"
+        rank: 5
+      - name: "Command"
+        rank: 3
+      - name: "Deceive"
+        rank: 3
+      - name: "Intimidate"
+        rank: 2
+    threat_level: "high"
+    scheme: "She has bought and hidden nearly half the moveable grain between Bleakwater and Kolvik, then spread rumors of blight to trigger panic pricing. In six days she plans to offer emergency grain loans tied to hereditary land liens."
+    resources: "Granary keys, barge contracts, hired guards, and debt clerks in three settlements."
+    personality: "Calm, unsentimental, and terrifyingly practical. She sees hunger as leverage and calls mercy 'bad forecasting.' She never wastes food, people, or opportunities."
+    agenda: "Control the entire winter food market and convert famine into permanent land ownership."
+    secret: "She coordinated hoarding with Oline Salt-Book to bind food and salt simultaneously."
+    vulnerability: "Several of her hidden caches are stored in flood-prone reed barns; exposing locations before thaw can force confiscation and ruin her leverage."
+    relationships:
+      - target: "Oline Salt-Book"
+        type: "ally"
+        note: "Joint scarcity architecture."
+      - target: "Torleif Gate-Lord"
+        type: "ally"
+        note: "Grimholt grain diversion pipeline."
+      - target: "Bleakwater Landing"
+        type: "target"
+        note: "First lien conversions begin there."
+    associated_chains:
+      ["famine_crisis", "resource_crisis", "political_collapse"]
+    image_prompt: "Imposing Norse grain magnate in layered aprons and mail sleeves, standing before locked winter granaries and guarded grain barges under a dead white sky."
+
+  - id: "NPC_ANT_025"
+    name: "Father Ivar Bridge-Quiet"
+    call_name: "Bridge-Quiet"
+    role: "manipulator"
+    base: "Skaldhaven"
+    description: "A thin temple elder with ash-blond hair, inked prayer knots around both wrists, and a permanently hoarse whisper. He wears plain undyed wool and carries a driftwood staff wrapped in confession cords. Deep hollows under his eyes suggest he rarely sleeps."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 4
+      WIT: 8
+      WIL: 9
+      WYR: 3
+    skills:
+      - name: "Persuade"
+        rank: 4
+      - name: "Deceive"
+        rank: 3
+      - name: "Spirit-lore"
+        rank: 3
+      - name: "Sagas"
+        rank: 2
+    threat_level: "medium"
+    scheme: "He is collecting private confessions from officers and reeves, then feeding selected sins to rival factions to trigger 'moral removals' exactly before key votes. He has already arranged for tomorrow's harbor ballot to fail by exposing one councilor's hidden thrall debt at dawn prayer."
+    resources: "Confession archives, temple influence, anonymous messengers, and moral authority among refugees."
+    personality: "Soft-spoken, severe, and deeply convinced that truth must be weaponized to purify leadership. He genuinely mourns each ruin he causes. He sees himself as surgeon, not executioner."
+    agenda: "Engineer a new ruling class through controlled scandal and ritual shame."
+    secret: "He once confessed to the same offense he now condemns in others and expunged it from the temple record."
+    vulnerability: "His confession cords are coded by knot spacing; once decoded, every manipulated leak can be traced back to him publicly."
+    relationships:
+      - target: "Councilor Leif Skald-Coin"
+        type: "target"
+        note: "Preparing moral takedown dossier."
+      - target: "Lady Ragnfrid Thornwall"
+        type: "rival"
+        note: "Competing models of hidden rule."
+      - target: "Skaldhaven"
+        type: "ally"
+        note: "Temple base and information intake."
+    associated_chains: ["allthing", "political_collapse", "widows_web"]
+    image_prompt: "Gaunt Norse temple elder in plain wool with confession cords on a driftwood staff, whispering over sealed names in a candlelit shrine while snow beats the shutters."

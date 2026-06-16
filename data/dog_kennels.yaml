@@ -1,0 +1,154 @@
+dog_kennels:
+- kennel_id: settlement_vargheim_wolf_wardens
+  owner_type: settlement
+  owner_name: Vargheim
+  location: Wolf-pen kennels
+  kennel_master: NPC_SET_022
+  breeding_keeper: NPC_SET_023
+  breeding_policy: 'Keep two hard winter lines: scouts first, war dogs second.'
+  dogs:
+  - name: Pine-Shadow
+    breed: black_pine_wolfdog
+    sex: dog
+    age: 9
+    age_class: prime
+    role: war_dog
+    mood: watchful
+    condition: worked
+    bond_handler: Ulf Vargson
+    nose: 5
+    speed: 4
+    grit: 5
+    bite: 5
+    sense: 3
+    voice: 2
+    traits:
+    - winter_hunter
+    - hard_bite
+    - silent_worker
+    tricks:
+    - hold_fast
+    - heel_fire
+    bloodline_tags:
+    - winter_hunter
+    - hard_bite
+    active_conditions: []
+    species: dog
+    max_hp: 34
+    hp: 34
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  - name: Moss-Ear
+    breed: black_pine_wolfdog
+    sex: bitch
+    age: 8
+    age_class: prime
+    role: breeding
+    mood: calm
+    condition: fresh
+    bond_handler: Yngrid Wolf-Mother
+    nose: 5
+    speed: 4
+    grit: 5
+    bite: 4
+    sense: 3
+    voice: 2
+    traits:
+    - winter_hunter
+    - deep_nose
+    - silent_worker
+    tricks:
+    - trail_blood
+    - silent_circle
+    bloodline_tags:
+    - winter_hunter
+    - deep_nose
+    active_conditions: []
+    species: dog
+    max_hp: 33
+    hp: 33
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  - name: Hearth-Warn
+    breed: hall_mastiff
+    sex: bitch
+    age: 7
+    age_class: prime
+    role: alarm_dog
+    mood: watchful
+    condition: worked
+    bond_handler: Yngrid Wolf-Mother
+    nose: 3
+    speed: 2
+    grit: 5
+    bite: 4
+    sense: 3
+    voice: 5
+    traits:
+    - gate_guard
+    - hold_fast
+    - loud_warning
+    tricks:
+    - bark_alarm
+    - keep_gate
+    bloodline_tags:
+    - gate_guard
+    - loud_warning
+    active_conditions: []
+    species: dog
+    max_hp: 32
+    hp: 32
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  breeding_pairs: []
+  pups:
+  - name: Moss-Pine
+    breed: black_pine_wolfdog
+    display_breed: Black Pine wolf-dog
+    sex: bitch
+    age: 0
+    age_class: pup
+    role: breeding
+    mood: calm
+    condition: fresh
+    bond_handler: null
+    traits:
+    - winter_hunter
+    - hard_bite
+    - late_head
+    - deep_nose
+    tricks: []
+    bloodline_tags:
+    - deep_nose
+    - hard_bite
+    inheritance:
+    - dam strong stat grit -> 5
+    - sire strong stat nose -> 5
+    nose: 5
+    speed: 4
+    grit: 5
+    bite: 5
+    sense: 3
+    voice: 2
+    puppy_quirk: late_head
+    estimated_value_silver: 25
+    season_born: Y312-S2
+    sire: Pine-Shadow
+    dam: Moss-Ear
+    age_seasons: 2
+    species: dog
+    max_hp: 34
+    hp: 34
+    wounds: []
+    healing_days: 0.0
+    health_status: sound
+  breeding_history:
+  - season: Y312-S2
+    dam: Moss-Ear
+    sire: Pine-Shadow
+    pup: Moss-Pine
+    breed: black_pine_wolfdog
+    estimated_value_silver: 25

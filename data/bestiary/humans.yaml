@@ -1,0 +1,1795 @@
+enemies:
+  # ==========================================================================
+  # BANDITS (HUM_BANDIT_01 through HUM_BANDIT_05)
+  # ==========================================================================
+
+  - id: "HUM_BANDIT_01"
+    name: "Desperate Beggar-Thief"
+    category: "human"
+    subcategory: "bandit"
+    tier: 1
+    description: "Hollow-cheeked wretch with cracked lips and a tremor in his knife hand. Ribs visible through a torn tunic. Smells of piss and rotting teeth."
+    stats:
+      MIG: 2
+      NIM: 3
+      TOU: 2
+      WIT: 3
+      WIL: 2
+      WYR: 1
+    hp: 4
+    skills:
+      - name: "Knives"
+        rank: 1
+      - name: "Stealth"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Eating Knife"
+          type: "knife"
+          speed: 2
+          base_damage: 2
+      armor:
+        torso: "Rags"
+        head: "None"
+    tactics: "Creeps up on sleeping or distracted targets. Grabs food or a purse and bolts. Will stab only if cornered, aiming wild and low."
+    morale_break: "Flees at first wound. Surrenders immediately if grabbed."
+    group_size: "1-2"
+    encounter_conditions:
+      terrain: ["road", "town_outskirts", "camp"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [0, 3]
+      items: ["eating_knife", "dirty_rags"]
+    image_prompt: |
+      A skeletal man in filthy rags, barefoot on muddy ground, holding a small
+      knife with a shaking hand. Deep-set eyes, visible ribs, matted hair.
+      Muted browns and greys. Cold overcast light. Norse settlement refuse heap
+      in background.
+
+  - id: "HUM_BANDIT_02"
+    name: "Roadside Bandit"
+    category: "human"
+    subcategory: "bandit"
+    tier: 2
+    description: "Wiry man with a weather-beaten face and a hand axe tucked through a rope belt. Leather jerkin stained dark at the armpits. Missing two fingers on his left hand."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 4
+      WIT: 3
+      WIL: 3
+      WYR: 1
+    hp: 8
+    skills:
+      - name: "Axes"
+        rank: 2
+      - name: "Stealth"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Hand Axe"
+          type: "axe"
+          speed: 3
+          base_damage: 4
+      armor:
+        torso: "Leather Jerkin"
+        head: "None"
+    tactics: "Ambushes from cover with two or three others. Steps onto the road to block. Demands silver first, attacks if refused. Targets the one carrying bags."
+    morale_break: "Flees below 50% HP or if leader falls."
+    group_size: "2-5"
+    encounter_conditions:
+      terrain: ["road", "forest_edge"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [2, 15]
+      items: ["hand_axe", "leather_scraps"]
+    image_prompt: |
+      A gaunt man in patched leather jerkin crouching behind a fallen birch
+      tree beside a muddy road. Hand axe ready, eyes on approaching travelers.
+      Brown and green palette, overcast sky, sparse Nordic forest.
+
+  - id: "HUM_BANDIT_03"
+    name: "Forest Outlaw"
+    category: "human"
+    subcategory: "bandit"
+    tier: 2
+    description: "Compact woman in moss-stained leathers with a short bow and a face painted in charcoal streaks. Moves through undergrowth without sound. A collection of severed finger-bones hangs from her belt."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 4
+      WIT: 5
+      WIL: 3
+      WYR: 1
+    hp: 8
+    skills:
+      - name: "Bows"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+      - name: "Knives"
+        rank: 1
+      - name: "Navigate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Short Bow"
+          type: "bow"
+          speed: 4
+          base_damage: 4
+        - name: "Hunting Knife"
+          type: "knife"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Boiled Leather"
+        head: "None"
+    tactics: "Fires from concealment in trees. Repositions after every two shots. If targets close distance, falls back deeper into forest where she knows the ground. Never engages melee willingly."
+    morale_break: "Withdraws silently if more than lightly wounded. Will not flee in panic — simply vanishes into the trees."
+    group_size: "1-3"
+    encounter_conditions:
+      terrain: ["deep_forest", "forest_edge", "mountain_pass"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [5, 20]
+      items: ["short_bow", "arrows", "hunting_knife", "finger_bone_trophies"]
+    image_prompt: |
+      A lean woman with charcoal-streaked face crouching on a mossy boulder in
+      thick pine forest, short bow drawn, eyes fixed downhill. Boiled leather
+      armor green with age. Finger-bone necklace. Dappled grey-green light
+      through canopy.
+
+  - id: "HUM_BANDIT_04"
+    name: "Bandit Sergeant"
+    category: "human"
+    subcategory: "bandit"
+    tier: 3
+    description: "Broad-shouldered man with a scar running from temple to jawline and a mail shirt looted from a dead huskarl. Carries a proper sword and round shield. Barks orders that his crew actually follows."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    hp: 12
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+      - name: "Command"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Looted Sword"
+          type: "sword"
+          speed: 4
+          base_damage: 6
+        - name: "Round Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Looted Mail Shirt"
+        head: "Leather Cap"
+    tactics: "Directs his band from the second rank, pushing his weakest men forward first to test the enemy. Enters the fight once he sees an opening. Targets the most dangerous-looking opponent to break enemy morale."
+    morale_break: "Retreats if he loses more than half his men. Will not surrender — knows the rope waits."
+    group_size: "4-8"
+    encounter_conditions:
+      terrain: ["road", "forest_edge", "river_crossing", "ruins"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [15, 50]
+      items: ["looted_sword", "mail_shirt", "round_shield", "silver_arm_ring"]
+    image_prompt: |
+      A scarred, heavy-set man in a dented mail shirt standing on a dirt road,
+      sword drawn, round shield raised, three ragged bandits behind him. Deep
+      scar across his face. Overcast sky, birch trees, cart tracks in mud.
+      Dark iron tones and muted leather browns.
+
+  - id: "HUM_BANDIT_05"
+    name: "Bandit King"
+    category: "human"
+    subcategory: "bandit"
+    tier: 4
+    description: "Grey-bearded veteran who controls three river crossings and a ruined hill fort. Wears layered mail and a wolf-fur cloak clasped with stolen silver. His left eye is a milky dead thing. Commands through fear and fairness — his crew eats well."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 7
+      WIT: 6
+      WIL: 7
+      WYR: 1
+    hp: 18
+    skills:
+      - name: "Axes"
+        rank: 4
+      - name: "Shields"
+        rank: 3
+      - name: "Command"
+        rank: 4
+      - name: "Intimidate"
+        rank: 3
+      - name: "Bargain"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Dane Axe"
+          type: "axe"
+          speed: 5
+          base_damage: 8
+        - name: "Iron-Rimmed Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 3
+      armor:
+        torso: "Layered Mail"
+        head: "Iron Helm"
+    tactics: "Never fights alone — always has eight or more men with him. Opens with a demand for toll. If combat begins, directs from behind a shield wall. Enters personally only to finish a weakened foe or to rally breaking troops. Will offer terms to save his own men."
+    morale_break: "Will negotiate a retreat if losing badly. Never panics. Would rather buy his way out than die for pride."
+    group_size: "10+"
+    encounter_conditions:
+      terrain: ["river_crossing", "ruins", "road", "hill_fort"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [50, 200]
+      items:
+        [
+          "dane_axe",
+          "layered_mail",
+          "iron_helm",
+          "silver_arm_rings",
+          "wolf_fur_cloak",
+        ]
+    image_prompt: |
+      A grey-bearded one-eyed man in layered mail and wolf-fur cloak seated on
+      a carved wooden chair inside a ruined stone hall. Dane axe across his
+      knees, iron helm beside him. Armed men flanking the entrance. Firelight
+      and shadow. Heavy, brooding atmosphere.
+
+  # ==========================================================================
+  # RAIDERS (HUM_RAIDER_01 through HUM_RAIDER_03)
+  # ==========================================================================
+
+  - id: "HUM_RAIDER_01"
+    name: "Shore Raider"
+    category: "human"
+    subcategory: "raider"
+    tier: 2
+    description: "Salt-crusted man with wind-burnt skin and a short spear. Wool tunic under a sleeveless leather corselet. Bare calves scarred from barnacles and rigging rope. Moves fast on sand but clumsily on rock."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 5
+      WIT: 3
+      WIL: 4
+      WYR: 1
+    hp: 9
+    skills:
+      - name: "Spears"
+        rank: 2
+      - name: "Axes"
+        rank: 1
+      - name: "Navigate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Short Spear"
+          type: "spear"
+          speed: 4
+          base_damage: 5
+        - name: "Hatchet"
+          type: "axe"
+          speed: 3
+          base_damage: 3
+      armor:
+        torso: "Leather Corselet"
+        head: "None"
+    tactics: "Arrives at dawn from the waterline. Rushes in a loose mob toward buildings, grabs everything movable. Fights in pairs with spears. Retreats to boats if resistance stiffens."
+    morale_break: "Runs for the boats if more than a third of the raiding party falls."
+    group_size: "5-10"
+    encounter_conditions:
+      terrain: ["coast", "beach", "fishing_village"]
+      season: ["spring", "summer"]
+    loot:
+      silver_range: [5, 25]
+      items: ["short_spear", "hatchet", "salted_fish", "rope"]
+    image_prompt: |
+      A windburnt man in leather corselet splashing through shallow surf, short
+      spear raised, hatchet at his belt. Longship silhouette behind him in grey
+      morning mist. Wet sand, cold light, salt spray. Muted blues and browns.
+
+  - id: "HUM_RAIDER_02"
+    name: "Mounted Raider"
+    category: "human"
+    subcategory: "raider"
+    tier: 3
+    description: "Hard-eyed rider on a shaggy steppe horse, wrapped in furs and boiled leather. A composite bow hangs from the saddle. His teeth are filed to points — a steppe custom or a warning."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    hp: 11
+    skills:
+      - name: "Bows"
+        rank: 3
+      - name: "Spears"
+        rank: 2
+      - name: "Navigate"
+        rank: 2
+      - name: "Track"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Composite Bow"
+          type: "bow"
+          speed: 4
+          base_damage: 5
+        - name: "Cavalry Spear"
+          type: "spear"
+          speed: 5
+          base_damage: 6
+      armor:
+        torso: "Boiled Leather and Furs"
+        head: "Fur-Lined Cap"
+    tactics: "Circles at bow range, peppering targets with arrows. Closes with the spear only against isolated or fleeing enemies. Never dismounts willingly. If forced to ground, fights desperately to remount."
+    morale_break: "Breaks off and gallops away if horse is injured or if pinned in melee for more than two rounds."
+    group_size: "3-6"
+    encounter_conditions:
+      terrain: ["plains", "steppe", "road", "farmland"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [10, 40]
+      items:
+        [
+          "composite_bow",
+          "arrows",
+          "cavalry_spear",
+          "horse_tack",
+          "filed_tooth_trophy",
+        ]
+    image_prompt: |
+      A fur-wrapped rider on a shaggy dark horse galloping across flat
+      grassland, composite bow drawn, quiver bouncing at his hip. Teeth bared
+      in a snarl showing filed points. Dust cloud behind. Grey sky, yellow
+      grass, muted earth tones.
+
+  - id: "HUM_RAIDER_03"
+    name: "Raider Chieftain"
+    category: "human"
+    subcategory: "raider"
+    tier: 4
+    description: "Thick-necked man in riveted mail with an arm-ring collection running shoulder to wrist. A heavy bearded axe in each hand. Face cratered with old pox scars. Voice like dragging a chain over rock."
+    stats:
+      MIG: 8
+      NIM: 5
+      TOU: 7
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    hp: 17
+    skills:
+      - name: "Axes"
+        rank: 4
+      - name: "Command"
+        rank: 3
+      - name: "Intimidate"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Bearded Axe"
+          type: "axe"
+          speed: 4
+          base_damage: 7
+        - name: "Bearded Axe (off-hand)"
+          type: "axe"
+          speed: 4
+          base_damage: 6
+      armor:
+        torso: "Riveted Mail"
+        head: "Iron Helm with Cheek Guards"
+    tactics: "Leads from the front. Charges the strongest-looking enemy to establish dominance. Dual-wields axes, hooking shields aside with the beard of one axe while striking with the other. His men follow his example — if he charges, they all charge."
+    morale_break: "Does not break. Will fight to the death unless offered a face-saving way out by a worthy enemy."
+    group_size: "5-10"
+    encounter_conditions:
+      terrain: ["coast", "river_crossing", "farmland", "settlement"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [40, 150]
+      items:
+        [
+          "bearded_axe",
+          "riveted_mail",
+          "iron_helm",
+          "silver_arm_rings",
+          "gold_torc",
+        ]
+    image_prompt: |
+      A massive pox-scarred man in riveted mail roaring a war cry, a bearded
+      axe in each fist, silver arm-rings glinting. Behind him, a burning
+      fishing village and a beached longship. Orange firelight against grey
+      smoke. Blood on his forearms.
+
+  # ==========================================================================
+  # DESERTERS (HUM_DESER_01 through HUM_DESER_02)
+  # ==========================================================================
+
+  - id: "HUM_DESER_01"
+    name: "Lone Deserter"
+    category: "human"
+    subcategory: "deserter"
+    tier: 1
+    description: "Gaunt man with a thousand-yard stare and a sword he keeps drawing and sheathing. Still wears the remnants of a huskarl's tunic, but the lord's badge has been torn off. Flinches at loud sounds. Talks to someone who isn't there."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 3
+      WIT: 2
+      WIL: 2
+      WYR: 1
+    hp: 6
+    skills:
+      - name: "Swords"
+        rank: 2
+      - name: "Shields"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Nicked Sword"
+          type: "sword"
+          speed: 4
+          base_damage: 5
+      armor:
+        torso: "Torn Gambeson"
+        head: "None"
+    tactics: "Unpredictable. May charge screaming, freeze mid-fight, or collapse weeping. When he fights, muscle memory takes over — his swordwork is better than his condition suggests. Does not coordinate, does not retreat tactically."
+    morale_break: "May break at any moment or may never break at all. Roll each round — equal chance of fleeing, fighting harder, or going catatonic."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["road", "ruins", "forest_edge", "abandoned_farm"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [0, 8]
+      items: ["nicked_sword", "torn_gambeson", "empty_water_skin"]
+    image_prompt: |
+      A hollow-eyed man in a torn gambeson standing alone on an empty road,
+      sword half-drawn, staring at nothing. Badge ripped from his chest leaving
+      torn fabric. Autumn leaves blowing. Grey overcast. Haunted expression.
+
+  - id: "HUM_DESER_02"
+    name: "Deserter Pack"
+    category: "human"
+    subcategory: "deserter"
+    tier: 3
+    description: "Six to ten former soldiers who fled the same losing battle and stuck together. They keep military discipline — sentries, formations, rationing — but answer to no jarl. Their gear is mismatched but well-maintained. The ranking man has an arrowhead still lodged in his shoulder."
+    stats:
+      MIG: 5
+      NIM: 5
+      TOU: 5
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    hp: 11
+    skills:
+      - name: "Spears"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+      - name: "Swords"
+        rank: 2
+      - name: "Stealth"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Spear"
+          type: "spear"
+          speed: 4
+          base_damage: 5
+        - name: "Short Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 5
+        - name: "Round Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Padded Gambeson"
+        head: "Leather Cap"
+    tactics: "Forms a tight shield wall and advances. Will parley first — they prefer to take supplies without fighting. If forced to fight, they hold formation and grind the enemy down. Flankers try to get behind."
+    morale_break: "Retreats in order if the ranking man falls or if they take 40% casualties. They survive by knowing when to leave."
+    group_size: "5-10"
+    encounter_conditions:
+      terrain: ["road", "farmland", "ruins", "forest_edge"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [10, 40]
+      items:
+        ["spear", "short_sword", "round_shield", "rations", "military_cloak"]
+    image_prompt: |
+      A tight group of grim-faced men in mismatched armor forming a small
+      shield wall on a forest road. Spears leveled, shields overlapping. One
+      man with a bandaged shoulder giving hand signals. Muted greens, browns,
+      iron grey. Tense standoff atmosphere.
+
+  # ==========================================================================
+  # BERSERKERS (HUM_BERSERK_01 through HUM_BERSERK_02)
+  # ==========================================================================
+
+  - id: "HUM_BERSERK_01"
+    name: "Maddened Berserker"
+    category: "human"
+    subcategory: "berserker"
+    tier: 3
+    description: "Bare-chested man covered in self-inflicted scars, pupils blown wide, foam flecking his beard. Bites the rim of his shield until blood runs from his gums. Muscles corded like ship rope. The sounds he makes are not words."
+    stats:
+      MIG: 7
+      NIM: 5
+      TOU: 6
+      WIT: 2
+      WIL: 6
+      WYR: 1
+    hp: 14
+    skills:
+      - name: "Axes"
+        rank: 3
+      - name: "Brawl"
+        rank: 3
+      - name: "Intimidate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Broad Axe"
+          type: "axe"
+          speed: 5
+          base_damage: 7
+      armor:
+        torso: "None (bare skin)"
+        head: "None"
+    tactics: "Charges the nearest enemy and does not stop swinging until everything around him is dead or he is. No feints, no defense. Every attack is a committed overhead or lateral swing aimed to split bone. Will grab and bite if disarmed."
+    resistances: ["fear"]
+    sim_traits: ["berserker_pain_fury"]
+    morale_break: "None. Does not feel fear. Does not flee. Fights until dead or until the rage passes and he collapses from blood loss."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["battlefield", "road", "settlement", "forest"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [5, 20]
+      items: ["broad_axe", "bear_tooth_amulet", "shield_splinters"]
+    image_prompt: |
+      A bare-chested man with ritual scars and a foam-flecked beard mid-swing
+      with a broad axe, eyes white and unfocused. Blood on his hands and teeth.
+      Broken shield on the ground. Grey smoke, trampled grass. Raw, savage
+      energy. No glamour.
+
+  - id: "HUM_BERSERK_02"
+    name: "Ulfhednar"
+    category: "human"
+    subcategory: "berserker"
+    tier: 4
+    description: "A man wearing a complete wolf skin, head still attached, draped over his skull like a hood. Beneath the fur, his body is lean and scarred, sinew standing out like cables. His eyes track movement like a predator. He has not spoken in years."
+    stats:
+      MIG: 7
+      NIM: 7
+      TOU: 6
+      WIT: 4
+      WIL: 8
+      WYR: 1
+    hp: 16
+    skills:
+      - name: "Axes"
+        rank: 4
+      - name: "Brawl"
+        rank: 3
+      - name: "Stealth"
+        rank: 3
+      - name: "Track"
+        rank: 2
+      - name: "Intimidate"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Bearded Axe"
+          type: "axe"
+          speed: 4
+          base_damage: 7
+        - name: "Teeth and Claws (Brawl)"
+          type: "brawl"
+          speed: 2
+          base_damage: 4
+      armor:
+        torso: "Wolf Skin (thick hide)"
+        head: "Wolf-Head Hood"
+    tactics: "Stalks targets through darkness and terrain before attacking. Enters a trance-state where pain is ignored. Opens with a silent rush from an unexpected angle. Hooks weapons away with the axe beard, then closes to grappling range to bite and gouge. Hunts isolated targets — avoids shield walls."
+    resistances: ["fear"]
+    sim_traits: ["berserker_pain_fury"]
+    morale_break: "None in trance. Does not recognize surrender, retreat, or self-preservation. After the trance passes, may wander away confused."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["deep_forest", "mountain", "ruins", "battlefield"]
+      season: ["autumn", "winter"]
+    loot:
+      silver_range: [10, 35]
+      items: ["bearded_axe", "wolf_skin", "trance_herbs", "human_finger_bones"]
+    image_prompt: |
+      A lean, scarred man draped in a full wolf skin, wolf's head over his
+      skull, crouching at the edge of firelight. Eyes glinting beneath the
+      wolf's jaws. Axe in one hand, other hand clawed. Deep forest, snow on
+      the ground. Blue-grey moonlight. Predatory stillness.
+
+  # ==========================================================================
+  # SELLSWORDS (HUM_SELL_01 through HUM_SELL_03)
+  # ==========================================================================
+
+  - id: "HUM_SELL_01"
+    name: "Cheap Blade"
+    category: "human"
+    subcategory: "sellsword"
+    tier: 1
+    description: "Young man with a borrowed sword too long for him and a bruise-yellow face from last week's beating. No armor. Took the contract because the alternative was starving. His hands shake when he holds the weapon two-handed."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 3
+      WIT: 2
+      WIL: 2
+      WYR: 1
+    hp: 5
+    skills:
+      - name: "Swords"
+        rank: 1
+      - name: "Brawl"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Borrowed Sword"
+          type: "sword"
+          speed: 4
+          base_damage: 5
+      armor:
+        torso: "Wool Tunic"
+        head: "None"
+    tactics: "Hangs at the back of any group. Follows others into the fight but stays at maximum weapon range. Swings wide, telegraphed cuts. Stumbles on uneven ground. Will switch sides if offered more silver."
+    morale_break: "Flees at first blood — his own or anyone else's. Drops weapon while running."
+    group_size: "1-3"
+    encounter_conditions:
+      terrain: ["town", "road", "camp"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [1, 5]
+      items: ["borrowed_sword", "half_loaf_bread"]
+    image_prompt: |
+      A scrawny young man in a wool tunic gripping an oversized sword with both
+      hands, knuckles white, standing in a muddy yard. Black eye, cracked lip.
+      Behind him, a tavern doorway. Overcast light, puddles, rats. Pathetic
+      rather than threatening.
+
+  - id: "HUM_SELL_02"
+    name: "Seasoned Sellsword"
+    category: "human"
+    subcategory: "sellsword"
+    tier: 2
+    description: "Calm woman in well-oiled mail with a sword and shield that show use but no neglect. Short-cropped hair, steady hands, a businesslike expression. Asks what the pay is before she asks what the job is."
+    stats:
+      MIG: 4
+      NIM: 5
+      TOU: 4
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    hp: 9
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+      - name: "Bargain"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Straight Sword"
+          type: "sword"
+          speed: 4
+          base_damage: 5
+        - name: "Round Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Mail Shirt"
+        head: "Leather Cap"
+    tactics: "Fights defensively, shield high, probing with measured cuts. Conserves energy and lets the enemy tire. Takes openings but never overcommits. Communicates with other sellswords through head nods and taps on the shield rim."
+    morale_break: "Withdraws if the contract isn't worth dying for — which it usually isn't. Clean, professional disengagement."
+    group_size: "1-3"
+    encounter_conditions:
+      terrain: ["town", "road", "settlement", "camp"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [10, 35]
+      items: ["straight_sword", "round_shield", "mail_shirt", "contract_token"]
+    image_prompt: |
+      A compact woman with short hair in a clean mail shirt, sword at rest,
+      round shield on her arm, standing in a tavern common room. Evaluating
+      expression. Well-kept gear, no ornamentation. Warm candlelight, wooden
+      beams, other armed figures in background.
+
+  - id: "HUM_SELL_03"
+    name: "Veteran Mercenary"
+    category: "human"
+    subcategory: "sellsword"
+    tier: 3
+    description: "Big man missing an ear and most of his humility. Ring mail over a padded aketon, a heavy sword with a wire-wrapped grip, and a tower shield scarred by a hundred fights. Moves with the economy of someone who has killed often and plans to keep doing it."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 6
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    hp: 13
+    skills:
+      - name: "Swords"
+        rank: 4
+      - name: "Shields"
+        rank: 3
+      - name: "Intimidate"
+        rank: 2
+      - name: "Bargain"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Heavy Sword"
+          type: "sword"
+          speed: 4
+          base_damage: 7
+        - name: "Tower Shield"
+          type: "shield"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Ring Mail over Aketon"
+        head: "Iron Nasal Helm"
+    tactics: "Advances behind the tower shield, absorbing blows, waiting. When the opponent commits to a big swing, steps inside and delivers a short, brutal thrust. Targets joints and throat. Finishes wounded enemies without hesitation — leaving them alive is bad for business."
+    morale_break: "Only retreats for money. If the employer is dead and no one's paying, walks away from the fight mid-swing."
+    group_size: "1-2"
+    encounter_conditions:
+      terrain: ["town", "road", "battlefield", "camp", "settlement"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [25, 80]
+      items:
+        ["heavy_sword", "tower_shield", "ring_mail", "iron_helm", "coin_purse"]
+    image_prompt: |
+      A large one-eared man in ring mail and iron nasal helm advancing behind a
+      battered tower shield, heavy sword held low. Scarred arms, wire-wrapped
+      sword grip. Battle-torn field behind him. Grey sky, trampled mud.
+      Professional menace.
+
+  # ==========================================================================
+  # WARRIORS (HUM_WAR_01 through HUM_WAR_04)
+  # ==========================================================================
+
+  - id: "HUM_WAR_01"
+    name: "Huskarl"
+    category: "human"
+    subcategory: "warrior"
+    tier: 3
+    description: "Professional household guard in well-fitted mail, painted shield, and iron helm. Clean-shaven jaw, calloused sword hand, and the flat eyes of a man who kills on order. Bears his jarl's mark branded on his forearm."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 6
+      WIT: 4
+      WIL: 5
+      WYR: 1
+    hp: 13
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Shields"
+        rank: 3
+      - name: "Spears"
+        rank: 2
+      - name: "Command"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Sword"
+          type: "sword"
+          speed: 4
+          base_damage: 6
+        - name: "Spear"
+          type: "spear"
+          speed: 4
+          base_damage: 5
+        - name: "Painted Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Riveted Mail"
+        head: "Iron Helm"
+    tactics: "Fights in disciplined formation. Shield wall with overlapping coverage, spears over the top. When the wall breaks, switches to sword and fights in pairs, covering each other's flanks. Never abandons a shieldmate."
+    morale_break: "Holds as long as the jarl or his representative stands. If the lord falls, retreats in order to protect the body."
+    group_size: "4-8"
+    encounter_conditions:
+      terrain: ["settlement", "road", "hall", "battlefield"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [15, 50]
+      items: ["sword", "spear", "painted_shield", "riveted_mail", "iron_helm"]
+    image_prompt: |
+      Four men in riveted mail and iron helms standing shoulder to shoulder in
+      a shield wall, painted shields locked, spears bristling over the top.
+      Brand marks on forearms. Stone hall courtyard behind them. Hard
+      discipline, cold light.
+
+  - id: "HUM_WAR_02"
+    name: "Jarl's Champion"
+    category: "human"
+    subcategory: "warrior"
+    tier: 4
+    description: "A giant of a man in a fine mail hauberk and a helm inlaid with silver wire. Sword forged by a master — the blade sings. Moves like a man half his size. The jarl keeps him fed on meat and mead. Twelve holmgangs, twelve kills."
+    stats:
+      MIG: 8
+      NIM: 6
+      TOU: 7
+      WIT: 5
+      WIL: 7
+      WYR: 1
+    hp: 19
+    skills:
+      - name: "Swords"
+        rank: 5
+      - name: "Shields"
+        rank: 3
+      - name: "Intimidate"
+        rank: 3
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Master-Forged Sword"
+          type: "sword"
+          speed: 5
+          base_damage: 8
+        - name: "Iron-Bossed Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 3
+      armor:
+        torso: "Fine Mail Hauberk"
+        head: "Silver-Inlaid Helm"
+    tactics: "Opens with measured strikes to test the opponent, reading their footwork and guard. Once he finds the pattern, exploits it with devastating precision. Uses the shield boss as a weapon — punching it into faces and ribs. Finishes with a single clean cut. Does not waste movement."
+    morale_break: "Only fights when ordered or challenged. Will not flee — his reputation is his life. Will accept an honorable yield."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["hall", "settlement", "holmgang_ground", "battlefield"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [50, 200]
+      items:
+        [
+          "master_forged_sword",
+          "fine_mail_hauberk",
+          "silver_inlaid_helm",
+          "gold_arm_ring",
+        ]
+    image_prompt: |
+      A towering man in a fine mail hauberk and silver-inlaid helm, sword
+      raised in a high guard, standing on a holmgang cloak spread on the
+      ground. Jarl watching from a carved chair behind. Cold morning light,
+      breath visible, mud and grass. Quiet, lethal confidence.
+
+  - id: "HUM_WAR_03"
+    name: "Shield-Maiden"
+    category: "human"
+    subcategory: "warrior"
+    tier: 3
+    description: "Young woman with a broken nose set crooked and arms ropy with muscle. Mail coat cut to fit her frame, spear held with the ease of ten thousand practice thrusts. A knotted cord around her wrist marks a death-oath. She does not smile."
+    stats:
+      MIG: 5
+      NIM: 6
+      TOU: 5
+      WIT: 5
+      WIL: 6
+      WYR: 1
+    hp: 12
+    skills:
+      - name: "Spears"
+        rank: 4
+      - name: "Shields"
+        rank: 2
+      - name: "Axes"
+        rank: 2
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "War Spear"
+          type: "spear"
+          speed: 5
+          base_damage: 6
+        - name: "Hand Axe"
+          type: "axe"
+          speed: 3
+          base_damage: 4
+        - name: "Round Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Fitted Mail Coat"
+        head: "Iron Helm"
+    tactics: "Fights from the shield wall, using the spear's reach to strike before opponents close. When the wall breaks, uses quick footwork and lateral movement to stay at spear range. Switches to axe and shield if forced inside. Targets legs and weapon arms."
+    morale_break: "Will not break while the oath-cord is uncut. Has sworn to die before retreating from this particular fight."
+    group_size: "1-3"
+    encounter_conditions:
+      terrain: ["settlement", "battlefield", "road", "hall"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [15, 55]
+      items:
+        [
+          "war_spear",
+          "hand_axe",
+          "round_shield",
+          "fitted_mail_coat",
+          "oath_cord",
+        ]
+    image_prompt: |
+      A young woman with a crooked nose and muscular arms in a fitted mail coat
+      and iron helm, spear leveled, round shield braced. Knotted cord on her
+      wrist. Standing firm on muddy ground. Grey sky, shield wall behind her.
+      Fierce determination, no beauty shots.
+
+  - id: "HUM_WAR_04"
+    name: "Blood-Feuder"
+    category: "human"
+    subcategory: "warrior"
+    tier: 2
+    description: "He has carved the name of the man he will kill into the flat of his axe blade. Red-rimmed eyes from sleepless nights. Average fighter, but pain and rage make him reckless — he hits harder than he should and leaves himself open constantly."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 4
+      WIT: 3
+      WIL: 5
+      WYR: 1
+    hp: 9
+    skills:
+      - name: "Axes"
+        rank: 2
+      - name: "Shields"
+        rank: 1
+      - name: "Track"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Name-Carved Axe"
+          type: "axe"
+          speed: 4
+          base_damage: 5
+        - name: "Round Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Leather Byrnie"
+        head: "None"
+    tactics: "Seeks his target single-mindedly. Ignores other combatants unless they physically block his path. Swings with full commitment, no defense. If his target is not present, interrogates anyone nearby with threats and violence."
+    morale_break: "Will not stop until his target is dead or he is. Against anyone else, loses interest and walks away once his path is clear."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["road", "settlement", "farmland", "forest_edge"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [5, 20]
+      items:
+        [
+          "name_carved_axe",
+          "round_shield",
+          "leather_byrnie",
+          "blood_feud_token",
+        ]
+    image_prompt: |
+      A man with red-rimmed eyes and clenched jaw walking down a dirt road
+      alone, axe in hand with runes carved into the blade. Leather byrnie,
+      shield slung on back. Autumn trees, long shadows. Driven, haunted,
+      zeroed-in on something ahead.
+
+  # ==========================================================================
+  # THRALLS AND CIVILIANS (HUM_CIVIL_01 through HUM_CIVIL_03)
+  # ==========================================================================
+
+  - id: "HUM_CIVIL_01"
+    name: "Thrall Rebel"
+    category: "human"
+    subcategory: "civilian"
+    tier: 1
+    description: "Starving man with a thrall-collar scar around his neck and a stolen wood-axe. Bare feet, lash marks across his back, one eye swollen shut. Teeth bared like a cornered animal. He would rather die than go back."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 3
+      WIT: 2
+      WIL: 4
+      WYR: 1
+    hp: 5
+    skills:
+      - name: "Axes"
+        rank: 1
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Stolen Wood-Axe"
+          type: "axe"
+          speed: 4
+          base_damage: 4
+      armor:
+        torso: "Rags"
+        head: "None"
+    tactics: "Attacks with desperate fury, swinging wild and screaming. Bites, claws, headbutts if disarmed. No technique, just animal survival instinct. Will target whoever looks like a master or slaver first."
+    morale_break: "Fights to the death. Has nothing to go back to."
+    group_size: "1-3"
+    encounter_conditions:
+      terrain: ["farmland", "settlement", "road", "forest_edge"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [0, 2]
+      items: ["stolen_wood_axe", "broken_thrall_collar"]
+    image_prompt: |
+      A skeletal barefoot man with a collar scar and whip-marked back, gripping
+      a blood-stained wood-axe in both hands. Swollen eye, bared teeth. Burning
+      farmstead behind him. Desperate, feral energy. Ashes drifting in grey air.
+
+  - id: "HUM_CIVIL_02"
+    name: "Armed Farmer"
+    category: "human"
+    subcategory: "civilian"
+    tier: 1
+    description: "Thick-armed man in a wool tunic, gripping a spear he normally uses for boar. Face pale with fear but feet planted in front of his door. A pregnant woman is behind him inside. He has never killed a person."
+    stats:
+      MIG: 4
+      NIM: 2
+      TOU: 4
+      WIT: 3
+      WIL: 4
+      WYR: 1
+    hp: 6
+    skills:
+      - name: "Spears"
+        rank: 1
+      - name: "Brawl"
+        rank: 1
+      - name: "Forage"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Boar Spear"
+          type: "spear"
+          speed: 4
+          base_damage: 5
+      armor:
+        torso: "Wool Tunic"
+        head: "None"
+    tactics: "Stands in his doorway and thrusts the spear at anyone who approaches. Does not advance. Does not pursue. Stabs straight ahead, using the door frame to prevent flanking. Shouting for neighbors the whole time."
+    morale_break: "Will not leave the doorway. If overwhelmed, drops the spear and shields the door with his body."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["farmland", "settlement"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [2, 10]
+      items: ["boar_spear", "farm_tools"]
+    image_prompt: |
+      A broad-shouldered farmer in a wool tunic standing in the doorway of a
+      timber longhouse, boar spear leveled. White-knuckled grip, scared face,
+      jaw set. Behind him, a dim interior. Late afternoon light, chickens
+      scattered in the yard.
+
+  - id: "HUM_CIVIL_03"
+    name: "Desperate Mob"
+    category: "human"
+    subcategory: "civilian"
+    tier: 2
+    description: "A crowd of twenty or more villagers with pitchforks, clubs, and rocks. Some have axes. None have armor. The blacksmith in front with a hammer is the closest thing to a leader. They are terrified but there are too many of them to ignore."
+    stats:
+      MIG: 3
+      NIM: 3
+      TOU: 3
+      WIT: 3
+      WIL: 3
+      WYR: 1
+    hp: 7
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Axes"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Pitchfork"
+          type: "spear"
+          speed: 3
+          base_damage: 4
+        - name: "Club"
+          type: "brawl"
+          speed: 2
+          base_damage: 3
+        - name: "Thrown Rocks"
+          type: "bow"
+          speed: 2
+          base_damage: 2
+      armor:
+        torso: "Work Clothes"
+        head: "None"
+    tactics: "Surrounds the target with numbers. Pelts with rocks from a distance. The bravest three or four rush in together. They trip over each other and get in their own way, but sheer numbers mean someone lands a hit. The blacksmith anchors the center."
+    morale_break: "Scatters if anyone makes a terrifying display — killing the blacksmith, cutting through three people, or charging the line screaming. They are not warriors."
+    group_size: "10+"
+    encounter_conditions:
+      terrain: ["settlement", "farmland", "town"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [5, 30]
+      items: ["pitchfork", "club", "farm_tools", "assorted_food"]
+    image_prompt: |
+      A loose mob of villagers filling a muddy village street, pitchforks and
+      clubs raised. A burly blacksmith at the front with a hammer. Faces
+      scared and angry. Timber buildings on both sides. Torches lit despite
+      daylight. Chaotic, tense energy.
+
+  # ==========================================================================
+  # SPECIALISTS (HUM_SPEC_01 through HUM_SPEC_05)
+  # ==========================================================================
+
+  - id: "HUM_SPEC_01"
+    name: "Witch-Hunter"
+    category: "human"
+    subcategory: "specialist"
+    tier: 3
+    description: "Gaunt man in dark wool with iron studs riveted directly into his leather bracers. Carries an iron sword and a pouch of iron filings. Burns rowan wood at camp. His eyes have a fanatic's gleam and he checks everyone's hands for seidr-marks. An iron torc sits at his throat — cold against the skin always."
+    stats:
+      MIG: 5
+      NIM: 5
+      TOU: 5
+      WIT: 6
+      WIL: 7
+      WYR: 2
+    hp: 12
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Lore"
+        rank: 3
+      - name: "Track"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Cold Iron Sword"
+          type: "sword"
+          speed: 4
+          base_damage: 6
+        - name: "Iron Filing Pouch (thrown)"
+          type: "bow"
+          speed: 2
+          base_damage: 1
+      armor:
+        torso: "Wool Over Iron-Studded Leather"
+        head: "Iron Circlet"
+    tactics: "Identifies seidr users first — watches for flinching at iron, checks for extra shadows, tests reactions to rowan smoke. Closes distance fast to prevent spell use. Throws iron filings at the face, then follows with the sword. Against mundane fighters, methodical and cautious."
+    morale_break: "Will not flee from witches. Against overwhelming mundane force, retreats to return with more men."
+    group_size: "1-2"
+    encounter_conditions:
+      terrain: ["settlement", "road", "forest", "ruins", "sacred_grove"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [15, 45]
+      items:
+        [
+          "cold_iron_sword",
+          "iron_filings",
+          "rowan_bundle",
+          "witch_sign_journal",
+        ]
+    image_prompt: |
+      A gaunt man in dark wool with iron-studded bracers, holding a plain iron
+      sword, scanning a woodland clearing. Iron torc at his throat. A thin
+      trail of rowan smoke from a pouch at his belt. Hard, suspicious eyes.
+      Autumn forest, cold light, black birds overhead.
+
+  - id: "HUM_SPEC_02"
+    name: "Slaver"
+    category: "human"
+    subcategory: "specialist"
+    tier: 2
+    description: "Fat-necked man with a whip coiled at his belt and a ring of iron collars clanking on his saddle. Soft hands but quick eyes. Backed by two or three thugs with clubs and nets. Treats people like livestock because that is what they are to him."
+    stats:
+      MIG: 4
+      NIM: 4
+      TOU: 4
+      WIT: 5
+      WIL: 4
+      WYR: 1
+    hp: 8
+    skills:
+      - name: "Brawl"
+        rank: 2
+      - name: "Intimidate"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Whip"
+          type: "brawl"
+          speed: 3
+          base_damage: 3
+        - name: "Short Sword"
+          type: "sword"
+          speed: 3
+          base_damage: 5
+        - name: "Weighted Net"
+          type: "brawl"
+          speed: 3
+          base_damage: 0
+      armor:
+        torso: "Leather Jerkin"
+        head: "None"
+    tactics: "His thugs throw nets to entangle, then beat the target down with clubs. The slaver himself stays back, directing. Uses the whip to discourage single targets from fighting. Only draws the sword if personally threatened. Targets the weak and isolated — never attacks groups that can fight back."
+    morale_break: "Flees at the first serious wound to himself. His thugs scatter if he runs. He will abandon captured thralls to save his skin."
+    group_size: "3-5"
+    encounter_conditions:
+      terrain: ["road", "settlement", "farmland", "town"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [20, 60]
+      items:
+        ["whip", "short_sword", "weighted_net", "iron_collars", "slave_ledger"]
+    image_prompt: |
+      A thick-necked man in a leather jerkin mounted on a mule, whip coiled at
+      his belt, iron collars dangling from the saddle. Two scarred thugs with
+      clubs and nets flanking him. A line of chained figures behind. Dusty road,
+      flat light, flies buzzing.
+
+  - id: "HUM_SPEC_03"
+    name: "Toll-Keeper"
+    category: "human"
+    subcategory: "specialist"
+    tier: 2
+    description: "Stocky man in a mail shirt leaning on a spear beside a chain stretched across a bridge. Local authority — the jarl's cousin's cousin. Has three armed men and a sense of petty power that inflates his threat level beyond his skill."
+    stats:
+      MIG: 4
+      NIM: 3
+      TOU: 5
+      WIT: 4
+      WIL: 4
+      WYR: 1
+    hp: 9
+    skills:
+      - name: "Spears"
+        rank: 2
+      - name: "Shields"
+        rank: 2
+      - name: "Bargain"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Spear"
+          type: "spear"
+          speed: 4
+          base_damage: 5
+        - name: "Round Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Mail Shirt"
+        head: "Leather Cap"
+    tactics: "Stands behind the chain with his men, spears leveled. Demands payment. If refused, his men hold the chokepoint — the bridge is too narrow for flanking. Shouts threats about the jarl's justice. Will not pursue beyond the bridge."
+    morale_break: "Backs down if confronted by anyone with obvious noble authority or a larger armed force. Not willing to die for toll fees."
+    group_size: "3-5"
+    encounter_conditions:
+      terrain: ["river_crossing", "mountain_pass", "bridge"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [10, 40]
+      items: ["spear", "round_shield", "mail_shirt", "toll_collection_box"]
+    image_prompt: |
+      A stocky man in mail leaning on a spear beside an iron chain stretched
+      across a narrow stone bridge. Three armed men behind him. River below.
+      Smug expression, belly pushing against the mail. Overcast, grey stone,
+      dark water.
+
+  - id: "HUM_SPEC_04"
+    name: "Skald-Spy"
+    category: "human"
+    subcategory: "specialist"
+    tier: 2
+    description: "Slight man with nimble fingers, a lyre, and a smile that never touches his eyes. Clothes finer than a traveling poet should own. Remembers every word spoken near him and will recite your plans to your enemy by next week."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 3
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    hp: 7
+    skills:
+      - name: "Knives"
+        rank: 2
+      - name: "Stealth"
+        rank: 3
+      - name: "Bargain"
+        rank: 3
+      - name: "Lore"
+        rank: 2
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Hidden Knife"
+          type: "knife"
+          speed: 2
+          base_damage: 3
+      armor:
+        torso: "Fine Wool Tunic"
+        head: "None"
+    tactics: "Avoids combat at all costs. Talks, bargains, flatters, threatens to compose a nid-poem. If cornered, fights dirty — dust in the eyes, knife from the sleeve, a kick between the legs, then runs. Will betray anyone to save himself."
+    morale_break: "Surrenders immediately and begins negotiating. Always has information to trade."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["hall", "town", "settlement", "road", "camp"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [10, 30]
+      items: ["hidden_knife", "lyre", "coded_message", "fine_clothes"]
+    image_prompt: |
+      A slight man with a lyre tucked under one arm, standing at the edge of a
+      mead hall feast, watching the jarl's table with sharp eyes. Fine wool
+      tunic, rings on thin fingers. Firelight, smoke, laughing warriors. He is
+      the only sober person in the room.
+
+  - id: "HUM_SPEC_05"
+    name: "Poison-Brewer"
+    category: "human"
+    subcategory: "specialist"
+    tier: 2
+    description: "Stooped old woman with stained fingers and a satchel of small clay pots. Smells of nightshade and ammonia. Yellow nails, sharp mind, and a profound indifference to human suffering. Her hut is surrounded by dead birds."
+    stats:
+      MIG: 2
+      NIM: 4
+      TOU: 3
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    hp: 6
+    skills:
+      - name: "Knives"
+        rank: 1
+      - name: "Stealth"
+        rank: 2
+      - name: "Lore"
+        rank: 3
+      - name: "Forage"
+        rank: 3
+    gear:
+      weapons:
+        - name: "Poisoned Needle"
+          type: "knife"
+          speed: 1
+          base_damage: 1
+        - name: "Blinding Powder (thrown)"
+          type: "bow"
+          speed: 2
+          base_damage: 0
+      armor:
+        torso: "Layered Shawls"
+        head: "Hood"
+    tactics: "Never fights directly. Coats door handles and food with contact poisons before visitors arrive. Throws blinding powder if approached aggressively. Pricked by her needle means a slow, painful death over three days. If a fight starts, screams for help and falls to the ground playing dead."
+    morale_break: "Submits immediately if physically grabbed. Will offer poison services to the attacker to survive."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["settlement", "forest_edge", "swamp", "isolated_hut"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [5, 25]
+      items:
+        [
+          "poisoned_needle",
+          "blinding_powder",
+          "poison_vials",
+          "dried_herbs",
+          "clay_pots",
+        ]
+    image_prompt: |
+      A hunched old woman in layered shawls standing in the doorway of a
+      tumbledown hut, stained fingers holding a small clay pot. Dead birds on
+      the ground. Nightshade and hemlock growing near the walls. Sickly yellow
+      light, swamp mist. Unsettling calm.
+
+  # ==========================================================================
+  # RARE (HUM_RARE_01)
+  # ==========================================================================
+
+  - id: "HUM_RARE_01"
+    name: "Holmgang Champion"
+    category: "human"
+    subcategory: "rare"
+    tier: 4
+    description: "A lean, silent man who makes his living by formal duel. Arms covered in kill-marks — short horizontal scars, one for each opponent who died on the cloak. He carries three identical shields because the rules allow it. His sword is a family heirloom with a name whispered on each draw."
+    stats:
+      MIG: 7
+      NIM: 7
+      TOU: 6
+      WIT: 6
+      WIL: 7
+      WYR: 1
+    hp: 17
+    skills:
+      - name: "Swords"
+        rank: 5
+      - name: "Shields"
+        rank: 4
+      - name: "Intimidate"
+        rank: 2
+      - name: "Lore"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Named Heirloom Sword"
+          type: "sword"
+          speed: 5
+          base_damage: 8
+        - name: "Holmgang Shield (x3)"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Fine Mail Hauberk"
+        head: "None (bare-headed by tradition)"
+    tactics: "Fights strictly within holmgang rules — three shields each, fight on the cloak, stepping off means forfeit. Uses the first shield aggressively, letting it break to study the opponent's timing. Second shield is defensive, conserving energy. Third shield — he goes for the kill. Targets the sword arm. Never breaks the rules because the rules are his advantage."
+    morale_break: "Will not break during holmgang. Outside formal duel, he is cautious and avoids unfair fights. Will walk away from any combat that is not a sanctioned duel."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["holmgang_ground", "settlement", "hall", "thing_assembly"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [40, 180]
+      items:
+        [
+          "named_heirloom_sword",
+          "fine_mail_hauberk",
+          "holmgang_shields",
+          "kill_mark_blade",
+        ]
+    image_prompt: |
+      A lean man with scarred forearms standing bareheaded on a staked-out
+      cloak, heirloom sword in one hand, shield in the other. Three shields
+      leaning against a post behind him. Kill-mark scars visible on both arms.
+      Flat grass, grey sky, crowd standing at the boundary stones. Still air,
+      absolute focus.
+
+  # ── Wolfshead (Outlaw) Enemies ──────────────────────────────────────
+
+  - id: "HUM_WOLF_01"
+    name: "Wolfshead Scout"
+    category: "human"
+    subcategory: "wolfshead"
+    tier: 1
+    description: "Thin youth with a jaw that never stops working — chewing birch bark, dried meat, his own cheek. Sunburned brown from living rough. Clothes patched with mismatched leather. Smells of woodsmoke and unwashed hair. Eyes never settle — scanning treelines, counting horses, reading dust on the road. A finger missing on the left hand, taken as punishment before the full sentence came down."
+    stats:
+      MIG: 3
+      NIM: 5
+      TOU: 3
+      WIT: 4
+      WIL: 3
+      WYR: 1
+    hp: 6
+    skills:
+      - name: "Stealth"
+        rank: 2
+      - name: "Bows"
+        rank: 2
+      - name: "Survival"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Short Bow"
+          type: "bow"
+          speed: 3
+          base_damage: 4
+        - name: "Hunting Knife"
+          type: "knife"
+          speed: 1
+          base_damage: 2
+      armor:
+        torso: "None"
+        head: "None"
+    sim_traits: ["skirmisher_retreat"]
+    tactics: "Observes and reports. Sits in a tree or behind a ridge and counts men, horses, weapons. If spotted, runs. If cornered, fights with the knife but only to create a gap. His job is to NOT fight — a dead scout tells no one anything."
+    morale_break: "Flees immediately. His value is in his legs and his eyes, not his blade."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["forest", "road", "mountain_pass", "river_crossing"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [1, 5]
+      items: ["short_bow", "hunting_knife", "birch_bark_message"]
+    image_prompt: |
+      A wiry youth crouched in a bare birch tree, short bow slung across his
+      back, watching a road below. Patched leather clothing, bare forearms,
+      missing finger on left hand. Muted greens and browns. Grey overcast.
+      He is perfectly still.
+
+  - id: "HUM_WOLF_02"
+    name: "Wolfshead Veteran"
+    category: "human"
+    subcategory: "wolfshead"
+    tier: 2
+    description: "Heavy man with a settler's build gone hard from years outside the law. Face weathered to cracked leather. Scar across the bridge of his nose — an old axe-wound, badly healed. Beard grown wild, braided with gut-cord to keep it from his eyes. Armor patched with scraps from three different sets. Smells of rancid tallow and old sweat. Moves with the economy of a man who has learned that wasted effort kills."
+    stats:
+      MIG: 5
+      NIM: 4
+      TOU: 5
+      WIT: 4
+      WIL: 4
+      WYR: 1
+    hp: 11
+    skills:
+      - name: "Axes"
+        rank: 3
+      - name: "Shields"
+        rank: 2
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "War Axe"
+          type: "axe"
+          speed: 4
+          base_damage: 6
+        - name: "Round Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Leather Armor (patched)"
+        head: "None"
+    sim_traits: ["dirty_fighter"]
+    tactics: "Fights dirty — uses terrain, flanking, withdrawal. Kicks dirt, throws rocks, shoves enemies into brush. Never stands in the open when cover exists. Retreats to draw pursuers into bad ground. Has survived this long by never fighting fair."
+    morale_break: "Breaks at half HP unless protecting camp. If the camp is behind him, fights to the death."
+    group_size: "2-4"
+    encounter_conditions:
+      terrain: ["forest", "road", "mountain_pass", "ruin", "camp"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [5, 20]
+      items:
+        [
+          "war_axe",
+          "round_shield",
+          "patched_leather_armor",
+          "stolen_provisions",
+        ]
+    image_prompt: |
+      A broad-shouldered man in mismatched leather armor crouched behind a
+      fallen log, war axe in one hand, battered round shield braced against
+      his shoulder. Scar across the nose. Wild braided beard. Forest
+      undergrowth, dappled grey light. Watching. Waiting.
+
+  - id: "HUM_WOLF_03"
+    name: "Wolfshead Leader"
+    category: "human"
+    subcategory: "wolfshead"
+    tier: 3
+    description: "Tall man who still carries himself like a huskarl. Clean mail — maintained with obsessive discipline even in the woods. Jaw set like a man used to giving orders that stick. Cold eyes that measure threat before they register the person behind it. A brand-scar on his left cheek where a jarl's man burned out his standing. Speaks quietly because he does not need to shout."
+    stats:
+      MIG: 6
+      NIM: 5
+      TOU: 5
+      WIT: 5
+      WIL: 5
+      WYR: 1
+    hp: 14
+    skills:
+      - name: "Swords"
+        rank: 3
+      - name: "Leadership"
+        rank: 2
+      - name: "Tactics"
+        rank: 2
+      - name: "Intimidate"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Good Sword"
+          type: "sword"
+          speed: 5
+          base_damage: 7
+        - name: "Round Shield"
+          type: "shield"
+          speed: 3
+          base_damage: 2
+      armor:
+        torso: "Mail Shirt"
+        head: "None"
+    sim_traits: ["dirty_fighter", "tactical_withdrawal_once"]
+    tactics: "Commands from the second rank. Positions his men, reads the terrain, controls withdrawal routes. Engages only when the fight is winnable or escape is impossible. Uses the veterans as the hammer, himself as the pivot. Retreats strategically — a fighting retreat, not a rout."
+    morale_break: "Does not break if fighters are still standing. Will retreat strategically when the cost exceeds the gain. Never routs."
+    group_size: "1 (with 3-8 followers)"
+    encounter_conditions:
+      terrain: ["forest", "road", "mountain_pass", "camp", "ruin"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [20, 80]
+      items:
+        [
+          "good_sword",
+          "mail_shirt",
+          "round_shield",
+          "stolen_trade_goods",
+          "brand_scar_face",
+        ]
+    image_prompt: |
+      A tall man in clean mail standing at the edge of a forest camp, hand
+      resting on a sheathed sword. Brand-scar visible on left cheek. Six
+      armed men behind him in a loose semicircle. Grey woods, thin smoke
+      from a banked fire. He is looking at something the viewer cannot see.
+      Absolute stillness. Command presence.
+
+  - id: "HUM_WOLF_04"
+    name: "Wolfshead Berserker"
+    category: "human"
+    subcategory: "wolfshead"
+    tier: 2
+    description: "Massive frame stripped to the waist despite the cold. Ritual scars across the chest — old cuts reopened and reopened until the skin thickened into ridged white ropes. Eyes that do not track properly. Jaw muscles bunched under the skin. Smells of blood and something chemical — he chews a root that kills the pain before it starts. When the fit takes him his face goes slack and his body does the killing without his mind's permission."
+    stats:
+      MIG: 7
+      NIM: 3
+      TOU: 6
+      WIT: 2
+      WIL: 2
+      WYR: 1
+    hp: 13
+    skills:
+      - name: "Axes"
+        rank: 3
+      - name: "Brawl"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Two-Handed Axe"
+          type: "axe"
+          speed: 3
+          base_damage: 9
+      armor:
+        torso: "None (bare-chested)"
+        head: "None"
+    sim_traits: ["berserker_pain_fury"]
+    tactics: "Charges the strongest enemy. No feints, no positioning, no retreat. Absorbs hits without flinching. Ignores wounds until the body physically refuses to continue. In the berserker state, feels no pain and makes no tactical decisions — the axe finds its own targets."
+    morale_break: "NEVER breaks. Fights until dead or unconscious. The rage does not permit surrender."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["forest", "road", "camp", "ruin", "mountain_pass"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [3, 15]
+      items: ["two_handed_axe", "berserker_root_pouch", "ritual_scar_hide"]
+    image_prompt: |
+      A huge bare-chested man with ritual scars across his torso, gripping a
+      two-handed axe at hip level. Veins visible in the forearms. Eyes
+      unfocused, jaw slack. Forest clearing, grey light. Other outlaws
+      standing well back from him. Snow on the ground. Steam rising from
+      his skin.
+
+  - id: "HUM_WOLF_05"
+    name: "Wolfshead Trapper"
+    category: "human"
+    subcategory: "wolfshead"
+    tier: 1
+    description: "Small man with dirt under every nail and rope burns on both palms. Moves through brush without sound — a lifetime of setting snares teaches a body to be quiet or starve. Teeth stained from chewing pine resin. Eyes set deep in a face thinned by hunger. Carries more rope than weapons. The ground around his camp is not safe to walk on."
+    stats:
+      MIG: 3
+      NIM: 4
+      TOU: 3
+      WIT: 5
+      WIL: 3
+      WYR: 1
+    hp: 6
+    skills:
+      - name: "Traps"
+        rank: 3
+      - name: "Stealth"
+        rank: 2
+      - name: "Survival"
+        rank: 2
+    gear:
+      weapons:
+        - name: "Hand Axe"
+          type: "axe"
+          speed: 3
+          base_damage: 4
+      armor:
+        torso: "None"
+        head: "None"
+    sim_traits: ["prepared_ground", "skirmisher_retreat"]
+    tactics: "Never fights directly. Lures enemies into prepared ground — pit traps covered with brush, deadfalls rigged with counterweights, snare lines at ankle height. Baits approaches with visible campfire smoke or left-behind goods. If the enemy reaches him, he has already failed."
+    morale_break: "Disappears into terrain at first direct confrontation. Gone between one breath and the next."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["forest", "mountain_pass", "ruin"]
+      season: ["spring", "summer", "autumn"]
+    loot:
+      silver_range: [2, 8]
+      items: ["hand_axe", "rope_coils", "trap_components", "animal_pelts"]
+    image_prompt: |
+      A small man barely visible among the underbrush, crouched beside a
+      half-buried rope snare. Dirt-caked hands, deep-set eyes, lean face.
+      A hand axe at his belt, coils of rope over one shoulder. Dense forest,
+      fallen leaves, grey-brown earth. Something about the ground ahead
+      looks wrong.
+
+  - id: "HUM_WOLF_06"
+    name: "Wolfshead Seiðr-Worker"
+    category: "human"
+    subcategory: "wolfshead"
+    tier: 3
+    description: "Gaunt woman with white-streaked hair and hands that never stop moving — fingers tracing patterns in the air, touching bone charms at her belt, rubbing herb paste between thumb and forefinger. Outlawed for witchcraft that killed a jarl's son. The killing may have been accidental. The smile when she speaks of it suggests otherwise. Smells of burned sage and something underneath — metallic, wrong. Her eyes are two different colors."
+    stats:
+      MIG: 2
+      NIM: 3
+      TOU: 3
+      WIT: 6
+      WIL: 5
+      WYR: 3
+    hp: 8
+    skills:
+      - name: "Seiðr"
+        rank: 2
+      - name: "Wyrd-reading"
+        rank: 2
+      - name: "Herbs"
+        rank: 2
+      - name: "Intimidate"
+        rank: 1
+    gear:
+      weapons:
+        - name: "Staff"
+          type: "spear"
+          speed: 3
+          base_damage: 3
+      armor:
+        torso: "None"
+        head: "None"
+    sim_traits: ["curse_hex", "skirmisher_retreat"]
+    tactics: "Stays hidden. Uses fear and superstition as weapons before any blade is drawn. Curses loudly before combat — names the enemy, describes his death, speaks to the dead standing behind him. Will not engage in melee. If forced close, uses the staff to create distance and retreats."
+    morale_break: "Retreats when the fighters fall. Her value to the band is too high to risk in direct combat. Disappears into the trees and rejoins later."
+    group_size: "1"
+    encounter_conditions:
+      terrain: ["forest", "ruin", "barrow", "camp"]
+      season: ["spring", "summer", "autumn", "winter"]
+    loot:
+      silver_range: [5, 25]
+      items:
+        ["staff", "bone_charms", "herb_pouch", "curse_fetish", "seidr_focus"]
+    image_prompt: |
+      A gaunt woman with white-streaked hair standing at the edge of firelight,
+      bone charms hanging from her belt, one hand raised with fingers spread.
+      Staff in the other hand. Mismatched eyes catching the light. Smoke
+      curling around her feet. Dark forest behind. The men near the fire are
+      not looking at her. They are looking away.

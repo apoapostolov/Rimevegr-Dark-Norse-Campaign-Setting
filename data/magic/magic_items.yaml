@@ -1,0 +1,238 @@
+# Iron Ledger — Magic Items Registry
+# Cursed, enchanted, and rune-marked items in circulation or known to exist.
+# Cross-references: 08_MAGIC_OF_RIMEVEGR.md §7, data/economy/trade_goods.yaml,
+#   data/barrows/loot_tables.yaml.
+# Status: active (in use), dormant (stored/sealed), destroyed, lost, unknown.
+# Origin: crafted (made by known galdr-worker), barrow_loot (recovered from
+#   barrow), ancient (pre-Cracking), cursed (carries negative galdr).
+
+magic_items:
+  # =================================================================
+  # WARD-STONES (active installations)
+  # =================================================================
+
+  - id: "MITM_001"
+    name: "Frostfjord Hollow Ward-Stones"
+    type: "ward_stone"
+    subtype: "settlement_boundary"
+    origin: "ancient"
+    age: "pre-Cracking (300+ years)"
+    location: "Frostfjord Hollow perimeter"
+    status: "active"
+    galdr_rank_at_creation: 5
+    current_effective_rank: 4
+    description: >
+      Six standing stones marking the settlement boundary. Carved with
+      binding runes in a style no living galdr-worker can replicate.
+      Still hum with power. The strongest active wards in the Rimevegr.
+    degradation_rate: "negligible — pre-Cracking work"
+    estimated_remaining_years: 100+
+    value_copper: "priceless — cannot be replicated"
+    notes: >
+      These stones are the reason Frostfjord has never suffered a major
+      undead incursion. Their existence is proof that galdr was once
+      far more powerful than it is today.
+
+  - id: "MITM_002"
+    name: "Grimholt Gate Ward"
+    type: "ward_stone"
+    subtype: "gate_ward"
+    origin: "crafted"
+    age: "~15 years"
+    location: "Grimholt main gate"
+    status: "active"
+    galdr_rank_at_creation: 3
+    current_effective_rank: 2
+    description: >
+      Granite post carved with binding runes by the previous Grimholt
+      galdr-worker. Fading. Needs replacement within 2 years.
+    degradation_rate: "standard modern rate"
+    estimated_remaining_years: 2
+    value_copper: 450
+    notes: >
+      When this ward fails, Grimholt's gatehouse becomes permeable to
+      the restless dead. Replacement requires a rank 3+ galdr-worker
+      willing to work for Grimholt's current political situation.
+
+  # =================================================================
+  # RUNE-MARKED WEAPONS
+  # =================================================================
+
+  - id: "MITM_010"
+    name: "Voss's Sword"
+    type: "rune_weapon"
+    subtype: "permanent_rune"
+    origin: "crafted"
+    age: "~20 years"
+    location: "Voss's belt"
+    status: "active"
+    galdr_rank_at_creation: 4
+    current_effective_rank: 3
+    description: >
+      Named sword with deep-carved binding rune integrated during
+      forging. Deepholm work. The rune was fresh when Voss earned it.
+      It has faded in the way all modern rune-work fades — measurably
+      weaker each decade but still functional.
+    mechanical_effect: "+1 damage vs supernatural entities"
+    degradation_rate: "slow (permanent rune in good steel)"
+    estimated_remaining_years: 20+
+    value_copper: 500
+    notes: >
+      Voss does not think of the sword as magical. He thinks of it as
+      well-made. This is the gap between what Voss understands and what
+      the sword actually is.
+
+  # =================================================================
+  # PROTECTIVE ITEMS
+  # =================================================================
+
+  - id: "MITM_020"
+    name: "Thorne's Rune-Amulet"
+    type: "binding_amulet"
+    subtype: "death_binding"
+    origin: "crafted"
+    age: "~7 years (activated at death)"
+    location: "around Thorne's neck"
+    status: "active (degrading)"
+    galdr_rank_at_creation: 2
+    current_effective_rank: 1
+    description: >
+      Small carved bone amulet on a leather cord. Carved by Thorne's
+      mother, a minor galdr-worker, as a childhood protective ward. Not
+      intended for what it is now doing. Activated at the moment of
+      Thorne's death in the hall fire. Bound his spirit to his flesh.
+      He is a draugr. It is the only thing keeping him functional.
+    mechanical_effect: "Binds spirit to body. Prevents full draugr awakening."
+    degradation_rate: "accelerating — binding weakens each year"
+    estimated_remaining_years: "3-5 (estimate)"
+    value_copper: "no market value — unique artifact"
+    encoded_truth_ref: "MAGIC_TRUTH_005"
+    notes: >
+      The amulet was not designed for this use. A rank 2 protective
+      charm holding a death-binding that would require rank 4 to
+      create intentionally. It works because the mother's love and the
+      moment of activation did what craft alone could not. When it
+      fails, Thorne either dies or becomes what barrows hold.
+
+  # =================================================================
+  # CURSED ITEMS
+  # =================================================================
+
+  - id: "MITM_030"
+    name: "Blood-Memory Axe of Raven's Perch"
+    type: "cursed_weapon"
+    subtype: "blood_memory"
+    origin: "barrow_loot"
+    age: "ancient"
+    location: "Raven's Perch (private collection)"
+    status: "active"
+    galdr_rank_at_creation: 4
+    current_effective_rank: 3
+    description: >
+      War axe recovered from the Whispering Barrow. Carries the death-
+      memories of its previous owners. Wielder experiences flashes of
+      combat from perspectives of the dead — useful for technique,
+      devastating for sleep. Three owners since recovery. Two are dead.
+      The third does not sleep well.
+    mechanical_effect: "+1 damage, wielder rolls Wyrd check each week or gains 1 dread"
+    curse_effect: "Death-memories intrude during sleep. Cumulative dread."
+    degradation_rate: "none — curse is self-sustaining"
+    value_copper: 200
+    notes: >
+      Worth more than uncursed equivalent because the combat-memory
+      effect is genuinely useful. The dread accumulation is the price.
+      Buyers are warned. They buy anyway.
+
+  - id: "MITM_031"
+    name: "Widow's Niding-Pole"
+    type: "curse_installation"
+    subtype: "niding_pole"
+    origin: "crafted"
+    age: "current (Y312)"
+    location: "deployed against Thornwall"
+    status: "active"
+    galdr_rank_at_creation: 4
+    current_effective_rank: 4
+    description: >
+      Horse skull on a pole carved with curse-runes by the Widow's
+      curse-carver. Directed at Thornwall's leadership. Subject of
+      ongoing ting dispute (see §11.8.3 curse arbitration rules).
+    mechanical_effect: "Per §11.8.3 curse legitimacy formula"
+    curse_effect: "Target settlement: morale penalty, superstition increase"
+    degradation_rate: "until removed or carver dies"
+    value_copper: 200
+    notes: "Active political weapon. Legal status under dispute."
+
+  # =================================================================
+  # BARROW ARTIFACTS (recovered or documented)
+  # =================================================================
+
+  - id: "MITM_040"
+    name: "Iron Barrow Galdr-Forge"
+    type: "installation"
+    subtype: "galdr_forge"
+    origin: "ancient"
+    age: "pre-Cracking"
+    location: "Iron Barrow (BAR_005), Grimholt mining district"
+    status: "active (sealed)"
+    galdr_rank_at_creation: 5
+    current_effective_rank: "unknown — sealed"
+    description: >
+      The original ward mechanism of the Iron Barrow. A galdr-forge
+      built into the barrow's deepest chamber. Hums with resonance
+      that Ash could feel through boot-soles if he stood in the right
+      place. Nobody has stood in the right place. The mine workings do
+      not go deep enough. This is the remains of the seal over the
+      Cracking's fracture-point.
+    mechanical_effect: "Unknown — sealed. Theoretical: anchor for the entire barrow ward network."
+    degradation_rate: "the seal is failing — barrows waking outward in sequence"
+    estimated_remaining_years: "unknown"
+    value_copper: "incalculable"
+    encoded_truth_ref: "MAGIC_TRUTH_006"
+    notes: >
+      Not a tomb artifact. The barrow was built as a seal. The dead
+      inside were sacrificed as structural reinforcement. The galdr-forge
+      is the original ward mechanism for the Veil's weakest point.
+      Everything radiates from here.
+
+  # =================================================================
+  # SEIDR OBJECTS
+  # =================================================================
+
+  - id: "MITM_050"
+    name: "Dalla's Bone Lots"
+    type: "divination_tool"
+    subtype: "bone_lots"
+    origin: "crafted"
+    age: "unknown (personal set)"
+    location: "Dalla's inventory"
+    status: "active"
+    galdr_rank_at_creation: ~
+    current_effective_rank: ~
+    description: >
+      Personal bone-lot set. Mixed animal bone carved with marks. Used
+      for wyrd-reading by a seidr practitioner — the readings carry
+      additional weight because Dalla's spirit-sensitivity informs her
+      interpretation.
+    mechanical_effect: "Per Wyrd-reading rules §11"
+    value_copper: 20
+    notes: "TG_SDR_001 equivalent. Dalla's personal set."
+
+  - id: "MITM_051"
+    name: "Petra's Bone Lots"
+    type: "divination_tool"
+    subtype: "bone_lots"
+    origin: "crafted"
+    age: "unknown"
+    location: "Petra's inventory"
+    status: "active"
+    galdr_rank_at_creation: ~
+    current_effective_rank: ~
+    description: >
+      Shepherd's bone-lot set. Simpler than Dalla's. Mixed bone with
+      basic marks. Petra's blank casting at the ford was not a skill
+      failure — it was a death-echo Hush zone (MAGIC_TRUTH_004).
+    mechanical_effect: "Per Wyrd-reading rules §11"
+    value_copper: 15
+    encoded_truth_ref: "MAGIC_TRUTH_004"
+    notes: "The lots work. The zone silenced them."

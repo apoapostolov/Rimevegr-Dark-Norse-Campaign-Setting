@@ -1,0 +1,219 @@
+[
+  {
+    "week": 13,
+    "year": 312,
+    "day_start": 87,
+    "day_end": 94,
+    "season": "long_dark",
+    "dry_run": false,
+    "steps": {
+      "foraging": {
+        "foragers": 4,
+        "terrain": "forest",
+        "food_gathered": 5,
+        "band_size": 8,
+        "deficit": true
+      },
+      "pay": {
+        "cost_copper": 260,
+        "treasury_copper": 470,
+        "paid": true,
+        "silver_spent": 26,
+        "treasury_after": 21
+      },
+      "morale": {
+        "events_fired": [
+          "food_deficit"
+        ],
+        "old_morale": 4,
+        "new_morale": 3,
+        "morale_name": "Shaken"
+      },
+      "loyalty": [
+        {
+          "member": "Gest Ledger",
+          "loyalty": 4,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        },
+        {
+          "member": "Kell Hook",
+          "loyalty": 3,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        },
+        {
+          "member": "Thorne Ash-Born",
+          "loyalty": 3,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        },
+        {
+          "member": "Petra Shepherd",
+          "loyalty": 4,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        },
+        {
+          "member": "Lump",
+          "loyalty": 1,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        }
+      ],
+      "contracts": {
+        "reputation": 3,
+        "settlement": "Black Pine Wilds, near Frostfjord",
+        "new_offers": 2,
+        "offers": [
+          {
+            "type": "guard",
+            "name": "Settlement Guard",
+            "description": "Protect a settlement from raiders or beasts for a season.",
+            "pay_silver": 78,
+            "duration_days": 34,
+            "risk": "moderate",
+            "band_size_min": 8,
+            "skills_valued": [
+              "command",
+              "intimidate"
+            ],
+            "reputation_required": 1
+          },
+          {
+            "type": "winter_hold",
+            "name": "Winter Hold Defense",
+            "description": "Garrison a remote hold through the Long Dark.",
+            "pay_silver": 156,
+            "duration_days": 83,
+            "risk": "moderate",
+            "band_size_min": 10,
+            "skills_valued": [
+              "shelter",
+              "command",
+              "forage"
+            ],
+            "reputation_required": 2
+          }
+        ]
+      },
+      "hidden_events": {
+        "note": "hidden_info.py has no list_due command yet. Check data/hidden_events/ manually for day 94."
+      }
+    },
+    "warnings": []
+  },
+  {
+    "week": 14,
+    "year": 312,
+    "day_start": 94,
+    "day_end": 101,
+    "season": "long_dark",
+    "dry_run": false,
+    "steps": {
+      "foraging": {
+        "foragers": 4,
+        "terrain": "forest",
+        "food_gathered": 5,
+        "band_size": 8,
+        "deficit": true
+      },
+      "pay": {
+        "cost_copper": 260,
+        "treasury_copper": 210,
+        "paid": false,
+        "non_payment": [
+          {
+            "roll": 22,
+            "event_type": "debt_demand",
+            "description": "Named Man demands written debt acknowledgment.",
+            "days_late": 7
+          }
+        ]
+      },
+      "morale": {
+        "events_fired": [
+          "late_pay",
+          "food_deficit"
+        ],
+        "old_morale": 3,
+        "new_morale": 1,
+        "morale_name": "Broken"
+      },
+      "loyalty": [
+        {
+          "member": "Gest Ledger",
+          "loyalty": 4,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        },
+        {
+          "member": "Kell Hook",
+          "loyalty": 3,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        },
+        {
+          "member": "Thorne Ash-Born",
+          "loyalty": 3,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        },
+        {
+          "member": "Petra Shepherd",
+          "loyalty": 4,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        },
+        {
+          "member": "Lump",
+          "loyalty": 1,
+          "change": 0,
+          "note": "no agenda_last_advanced_day set — use agenda_advance first"
+        }
+      ],
+      "contracts": {
+        "reputation": 3,
+        "settlement": "Black Pine Wilds, near Frostfjord",
+        "new_offers": 2,
+        "offers": [
+          {
+            "type": "bounty",
+            "name": "Bounty Hunt",
+            "description": "Track and eliminate a specific outlaw or beast.",
+            "pay_silver": 65,
+            "duration_days": 20,
+            "risk": "moderate",
+            "band_size_min": 4,
+            "skills_valued": [
+              "track",
+              "bows"
+            ],
+            "reputation_required": 1
+          },
+          {
+            "type": "diplomatic_escort",
+            "name": "Diplomatic Escort",
+            "description": "Escort an emissary through hostile territory.",
+            "pay_silver": 91,
+            "duration_days": 19,
+            "risk": "moderate",
+            "band_size_min": 6,
+            "skills_valued": [
+              "persuade",
+              "navigate",
+              "command"
+            ],
+            "reputation_required": 3
+          }
+        ]
+      },
+      "hidden_events": {
+        "note": "hidden_info.py has no list_due command yet. Check data/hidden_events/ manually for day 101."
+      }
+    },
+    "warnings": [
+      "Pay deficit — non-payment rolled."
+    ]
+  }
+]

@@ -1,0 +1,1416 @@
+# Iron Ledger — Barrow Loot Tables
+# Tiered loot system for barrow exploration.
+# Silver economy reference: meal=1s, seax=8s, good sword=30-50s, mail shirt=100s, ship=500+s.
+# Condition multiplier: poor=25%, fair=50%, good=75%, excellent=100%, pristine=125%.
+
+loot_tables:
+  # ========================================================================
+  # TIER 1 — COMMON GRAVE GOODS  (~35 items)
+  # Found in minor burials, collapsed barrows, outer chambers of larger mounds.
+  # ========================================================================
+  tier_1:
+    name: "Common Grave Goods"
+    description: "Found in minor burials, collapsed barrows, and the outer chambers of larger mounds. The dead here were farmers, thralls, and the unremarkable."
+    items:
+      - id: "LOOT_T1_001"
+        name: "Corroded Hand Axe"
+        type: "weapon"
+        value_silver: 2
+        weight_kg: 1.5
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "An axe-head fused to its haft with rust. Could be cleaned up and used in desperation. The edge is gone."
+        image_prompt: "A rusted hand axe with a cracked wooden haft, iron pitted and dark brown, sitting on a stone shelf in a burial alcove."
+
+      - id: "LOOT_T1_002"
+        name: "Bone Bead Necklace"
+        type: "jewelry"
+        value_silver: 1
+        weight_kg: 0.1
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "Small animal bones drilled and strung on sinew. Common burial adornment for the non-warrior dead."
+        image_prompt: "A string of tiny yellowed bone beads on dried sinew, coiled on a flat stone beside a skeleton's ribcage."
+
+      - id: "LOOT_T1_003"
+        name: "Clay Pot (Cracked)"
+        type: "trade_good"
+        value_silver: 0
+        weight_kg: 1.2
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A rough clay vessel split along one side. Whatever was stored inside rotted centuries ago. The bottom holds a paste of black residue."
+        image_prompt: "A cracked grey-brown clay pot with dark residue inside, sitting in a shallow grave niche lit by torchlight."
+
+      - id: "LOOT_T1_004"
+        name: "Copper Arm Ring"
+        type: "jewelry"
+        value_silver: 2
+        weight_kg: 0.2
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A simple copper band green with verdigris. The metal is soft and the decoration crude — stamped chevrons worn almost flat."
+        image_prompt: "A green-patinated copper arm ring with faint chevron stamps, resting on dark soil beside finger bones."
+
+      - id: "LOOT_T1_005"
+        name: "Rotten Linen Wrappings"
+        type: "trade_good"
+        value_silver: 0
+        weight_kg: 0.3
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "Scraps of burial linen turned brown and brittle. Falls apart when handled. Worthless except as tinder."
+        image_prompt: "Strips of dark brown rotted linen draped over a stone burial shelf, crumbling at the edges."
+
+      - id: "LOOT_T1_006"
+        name: "Iron Nail Pouch"
+        type: "tool"
+        value_silver: 1
+        weight_kg: 0.4
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A leather pouch half-rotted, containing fifteen hand-forged iron nails. Dark with oxide but still sound. A carpenter's burial offering."
+        image_prompt: "A crumbling leather pouch spilling blackened iron nails onto a stone slab inside a narrow barrow passage."
+
+      - id: "LOOT_T1_007"
+        name: "Wooden Bowl"
+        type: "tool"
+        value_silver: 0
+        weight_kg: 0.3
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A turned wooden bowl warped and split by centuries of damp. The grain has gone black. No use beyond firewood."
+        image_prompt: "A warped, blackened wooden bowl sitting in a shallow grave depression, its rim cracked and uneven."
+
+      - id: "LOOT_T1_008"
+        name: "Tarnished Copper Coins (handful)"
+        type: "silver_gold"
+        value_silver: 3
+        weight_kg: 0.2
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "Eight copper coins of mixed origin — some stamped with faces, others blank. Green and stuck together. Worth their metal weight."
+        image_prompt: "A cluster of green-tarnished copper coins fused together by corrosion, lying in a palm-shaped depression in stone."
+
+      - id: "LOOT_T1_009"
+        name: "Flint Knife"
+        type: "weapon"
+        value_silver: 1
+        weight_kg: 0.2
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A knapped flint blade bound to a bone handle with sinew. Old beyond reckoning. The edge is still sharp enough to cut flesh."
+        image_prompt: "A dark grey flint knife with a bone handle bound in dried sinew, laid across a flat stone in a shallow grave."
+
+      - id: "LOOT_T1_010"
+        name: "Sheep Jaw Amulet"
+        type: "jewelry"
+        value_silver: 0
+        weight_kg: 0.1
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A sheep's jawbone strung on a leather cord, teeth intact. Common folk charm against hunger. The bone is yellowed and dry."
+        image_prompt: "A small yellowed sheep jawbone hanging from a cracked leather cord, resting on a dead man's chest bones."
+
+      - id: "LOOT_T1_011"
+        name: "Corroded Spear Point"
+        type: "weapon"
+        value_silver: 1
+        weight_kg: 0.5
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "An iron spear point detached from its shaft. The socket is packed with soil and the edges are rounded by rust. Barely recognizable."
+        image_prompt: "A dark, rust-pitted iron spear point half-buried in grave soil, its socket clogged with packed earth."
+
+      - id: "LOOT_T1_012"
+        name: "Amber Chip"
+        type: "trade_good"
+        value_silver: 3
+        weight_kg: 0.05
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A thumbnail-sized piece of amber, cloudy gold. Not worked or polished but genuine. Could be sold to a jeweler or traded south."
+        image_prompt: "A small cloudy golden amber chip resting on dark soil, catching dim torchlight with a warm interior glow."
+
+      - id: "LOOT_T1_013"
+        name: "Whittling Knife"
+        type: "tool"
+        value_silver: 2
+        weight_kg: 0.3
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A small single-edged iron blade with a wooden grip. The kind used for carving spoons and pegs. Pitted but functional."
+        image_prompt: "A small iron knife with a worn wooden handle, pitted with rust spots, lying beside a pile of bone shavings."
+
+      - id: "LOOT_T1_014"
+        name: "Leather Belt (rotted)"
+        type: "trade_good"
+        value_silver: 0
+        weight_kg: 0.2
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A belt of cowhide stiff and cracked, the buckle a simple iron loop corroded shut. The leather breaks when bent."
+        image_prompt: "A stiff, cracked leather belt with a rusted iron buckle loop, draped across a skeleton's pelvis."
+
+      - id: "LOOT_T1_015"
+        name: "Soapstone Spindle Whorl"
+        type: "tool"
+        value_silver: 1
+        weight_kg: 0.15
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A disc of grey soapstone drilled through the center — a woman's spinning weight. Smooth from years of use. Intact."
+        image_prompt: "A smooth grey soapstone disc with a center hole, sitting among scattered finger bones in a grave niche."
+
+      - id: "LOOT_T1_016"
+        name: "Birch Bark Container"
+        type: "consumable"
+        value_silver: 0
+        weight_kg: 0.2
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A stitched birch bark box flattened by time. The contents are a black paste — possibly food, possibly pitch. Unidentifiable."
+        image_prompt: "A flattened birch bark container with crude stitching, its lid collapsed inward, sitting on a stone shelf."
+
+      - id: "LOOT_T1_017"
+        name: "Iron Fish Hook"
+        type: "tool"
+        value_silver: 1
+        weight_kg: 0.05
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A hand-forged iron fish hook, barbed. Dark with oxidation but the barb is intact. A fisherman's grave."
+        image_prompt: "A small blackened iron fish hook with a pronounced barb, resting on a flat stone beside a coil of rotted line."
+
+      - id: "LOOT_T1_018"
+        name: "Glass Bead (single)"
+        type: "trade_good"
+        value_silver: 2
+        weight_kg: 0.02
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A single cobalt-blue glass bead, imported. Survived the centuries intact. Small enough to palm. Worth more than everything else in this grave."
+        image_prompt: "A deep blue glass bead catching torchlight, sitting alone on a stone ledge in an otherwise empty burial niche."
+
+      - id: "LOOT_T1_019"
+        name: "Cattle Bone Comb"
+        type: "tool"
+        value_silver: 1
+        weight_kg: 0.1
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A single-sided comb carved from cattle bone, half the teeth snapped off. Every Norseman was buried with one. This one saw hard use."
+        image_prompt: "A yellowed bone comb with half its teeth broken off, laying near a skull on dark compacted earth."
+
+      - id: "LOOT_T1_020"
+        name: "Fire-Cracked Cooking Stones"
+        type: "tool"
+        value_silver: 0
+        weight_kg: 3.0
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A bundle of heat-split river stones placed as grave goods. Used for boiling water in wooden troughs. Worthless now."
+        image_prompt: "A pile of cracked grey river stones stacked in a shallow depression beside a collapsed skeleton."
+
+      - id: "LOOT_T1_021"
+        name: "Corroded Seax Blade"
+        type: "weapon"
+        value_silver: 3
+        weight_kg: 0.7
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A single-edged knife blade, the handle rotted away. The iron is pitted and thin. A smith could maybe draw a new edge, but it's barely worth the effort."
+        image_prompt: "A pitted iron seax blade lying on dark soil, the tang exposed where the handle rotted away, surrounded by wood fragments."
+
+      - id: "LOOT_T1_022"
+        name: "Antler Tine"
+        type: "tool"
+        value_silver: 0
+        weight_kg: 0.2
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A single red deer antler tine, smooth and polished at the grip end — used as a pressure flaker or leatherworking tool."
+        image_prompt: "A polished deer antler tine with a smooth grip end, lying on a stone shelf in a low barrow alcove."
+
+      - id: "LOOT_T1_023"
+        name: "Handful of Grave Dirt"
+        type: "seidr_object"
+        value_silver: 1
+        weight_kg: 0.3
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "Soil from a barrow floor. Some seidr workers pay silver for this. It smells of iron and cold and something older. Best not to think about why they want it."
+        image_prompt: "A cupped palm holding dark, fine-grained soil with flecks of bone, dim torchlight from behind."
+
+      - id: "LOOT_T1_024"
+        name: "Wooden Peg Leg"
+        type: "tool"
+        value_silver: 0
+        weight_kg: 1.0
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A crude prosthetic carved from birch, strapped to the stump of a leg bone. The dead man lost his foot to something before he lost his life."
+        image_prompt: "A rough-carved birch wood peg leg still strapped to a skeletal leg stump with cracked leather bindings."
+
+      - id: "LOOT_T1_025"
+        name: "Dog Skull"
+        type: "trade_good"
+        value_silver: 0
+        weight_kg: 0.4
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "The skull of a large hound, buried beside its master. The teeth are worn. Loyal to the end and past it."
+        image_prompt: "A dog skull with worn teeth resting beside a human skeleton's hand bones in a shallow grave."
+
+      - id: "LOOT_T1_026"
+        name: "Clay Oil Lamp"
+        type: "tool"
+        value_silver: 1
+        weight_kg: 0.4
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A shallow clay dish with a pinched spout for a wick. Soot-blackened. Still functional if you have oil and a wick."
+        image_prompt: "A soot-blackened clay oil lamp with a pinched wick spout, sitting on a stone ledge in a low passage."
+
+      - id: "LOOT_T1_027"
+        name: "Bundled Tallow Stubs"
+        type: "consumable"
+        value_silver: 1
+        weight_kg: 0.3
+        condition: "fair"
+        mechanical_effect: "Can light 3 torches or provide 2 hours of dim lamplight."
+        curse: null
+        description: "Three stubby tallow candles wrapped in oilskin. Still waxy and burnable despite the years. The barrow's cold preserved them."
+        image_prompt: "Three stubby yellowish tallow candles wrapped in dark oilskin, sitting in a niche carved into barrow stone."
+
+      - id: "LOOT_T1_028"
+        name: "Woolen Hood (moth-eaten)"
+        type: "trade_good"
+        value_silver: 0
+        weight_kg: 0.2
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A once-dyed wool hood reduced to a web of fibers. The color might have been red. Moths and centuries took it."
+        image_prompt: "A moth-eaten woolen hood, reddish-brown and full of holes, draped over a cairn stone in a grave chamber."
+
+      - id: "LOOT_T1_029"
+        name: "Whetstone"
+        type: "tool"
+        value_silver: 2
+        weight_kg: 0.4
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A river-smoothed whetstone of fine grey slate. Excellent grit. The groove down the center shows decades of use."
+        image_prompt: "A grey slate whetstone with a deep use-groove down its center, resting on a burial shelf beside an iron tang."
+
+      - id: "LOOT_T1_030"
+        name: "Charred Bone Fragments"
+        type: "trade_good"
+        value_silver: 0
+        weight_kg: 0.2
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "Cremation remains collected in a stone hollow. Black and chalky. The dead here was burned before burial — an older practice."
+        image_prompt: "Blackened and chalky bone fragments piled in a hollow carved into a flat stone, inside a low stone chamber."
+
+      - id: "LOOT_T1_031"
+        name: "Hemp Rope (coiled)"
+        type: "consumable"
+        value_silver: 2
+        weight_kg: 1.5
+        condition: "fair"
+        mechanical_effect: "10 paces of usable rope. Holds up to 80 kg before fraying."
+        curse: null
+        description: "A coil of braided hemp rope, stiff with age but not rotted through. The barrow's dry air kept it. Test it before you trust it with your weight."
+        image_prompt: "A coil of stiff, dark hemp rope lying on a stone floor in a barrow passage, fibers fraying at the cut end."
+
+      - id: "LOOT_T1_032"
+        name: "Broken Shield Plank"
+        type: "weapon"
+        value_silver: 0
+        weight_kg: 1.0
+        condition: "poor"
+        mechanical_effect: null
+        curse: null
+        description: "A single plank from a round shield, the leather rim still attached. The wood is soft with rot. Not even useful as firewood — too damp."
+        image_prompt: "A single warped wooden plank with a strip of leather rim, leaning against a barrow wall in dim torchlight."
+
+      - id: "LOOT_T1_033"
+        name: "Iron Strike-a-Light"
+        type: "tool"
+        value_silver: 2
+        weight_kg: 0.15
+        condition: "good"
+        mechanical_effect: "Can start a fire with flint. Reliable in wind."
+        curse: null
+        description: "A curved iron fire striker, still functional. A practical burial gift. Whoever buried this person knew the dead might need fire in the next world."
+        image_prompt: "A curved iron fire striker with knurled edges, sitting beside a piece of flint on a stone burial shelf."
+
+      - id: "LOOT_T1_034"
+        name: "Dried Herb Bundle"
+        type: "consumable"
+        value_silver: 1
+        weight_kg: 0.1
+        condition: "fair"
+        mechanical_effect: "Yarrow and moss — crude wound dressing. +1 to one Healing check."
+        curse: null
+        description: "A bundle of dried herbs wrapped in birch bark. Yarrow, bog moss, and something bitter. A healer's grave, or someone who feared bleeding out."
+        image_prompt: "A small bundle of dried brown herbs wrapped in birch bark, tucked into a stone niche beside a skeleton."
+
+      - id: "LOOT_T1_035"
+        name: "Iron Ring"
+        type: "jewelry"
+        value_silver: 1
+        weight_kg: 0.05
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A plain iron ring sized for a large finger. No decoration. The kind a free man wore to show he owned iron. Dark and rough."
+        image_prompt: "A plain dark iron ring sitting on a skeletal finger bone, on compacted brown earth in a grave cut."
+
+      - id: "LOOT_T1_036"
+        name: "Carved Bone Dice (pair)"
+        type: "tool"
+        value_silver: 1
+        weight_kg: 0.05
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "Two six-sided dice carved from cattle bone, the pips darkened with soot. Even the dead liked to gamble."
+        image_prompt: "Two small yellowed bone dice with soot-darkened pips, resting together on a flat stone in a barrow alcove."
+
+  # ========================================================================
+  # TIER 2 — WARRIOR BURIAL  (~35 items)
+  # Found in proper warrior graves — men buried with their weapons and gear.
+  # ========================================================================
+  tier_2:
+    name: "Warrior Burial"
+    description: "Found in the graves of fighting men — karls, huscarls, and freemen who died with a weapon in reach. These barrows have stone-lined chambers and sometimes a warding stone at the entrance."
+    items:
+      - id: "LOOT_T2_001"
+        name: "Serviceable Bearded Axe"
+        type: "weapon"
+        value_silver: 12
+        weight_kg: 1.8
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A bearded axe with a good head, the edge nicked but holdable. The ash haft is dry but sound. Clean the rust off and it kills just fine."
+        image_prompt: "A bearded axe with a dark iron head and dry ash haft, rust along the beard, laid across a stone-lined grave shelf."
+
+      - id: "LOOT_T2_002"
+        name: "Mail Fragment (torso)"
+        type: "armor"
+        value_silver: 25
+        weight_kg: 4.0
+        condition: "fair"
+        mechanical_effect: "+1 armor to torso when repaired (requires smith, 10 silver in links)."
+        curse: null
+        description: "The front half of a mail shirt, the back rotted where it pressed against the body. Roughly two thousand riveted links still sound. Worth the hauling."
+        image_prompt: "A partial iron mail shirt draped over a stone, the back section missing, individual rings visible and dark with patina."
+
+      - id: "LOOT_T2_003"
+        name: "Silver Arm-Ring (twisted)"
+        type: "silver_gold"
+        value_silver: 15
+        weight_kg: 0.12
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A twisted silver wire arm-ring with flattened terminals stamped with wolf heads. Solid silver. This is money you can wear."
+        image_prompt: "A twisted silver arm-ring with stamped wolf-head terminals, gleaming dully against dark burial soil."
+
+      - id: "LOOT_T2_004"
+        name: "Iron Shield Boss"
+        type: "armor"
+        value_silver: 5
+        weight_kg: 0.8
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A dome-shaped iron shield boss with four rivet holes. The shield it sat on rotted away. A smith can mount it on a new board."
+        image_prompt: "A dome-shaped iron shield boss with empty rivet holes, sitting alone on grave soil where a wooden shield once was."
+
+      - id: "LOOT_T2_005"
+        name: "Drinking Horn (mounted)"
+        type: "trade_good"
+        value_silver: 8
+        weight_kg: 0.5
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "An ox horn with a silver rim band and an iron tip. Holds about half a liter. The horn itself is dark and polished from handling."
+        image_prompt: "A dark polished ox drinking horn with tarnished silver rim band and iron tip, lying on a stone shelf in a grave chamber."
+
+      - id: "LOOT_T2_006"
+        name: "Leather Vambrace (pair)"
+        type: "armor"
+        value_silver: 6
+        weight_kg: 0.8
+        condition: "fair"
+        mechanical_effect: "+1 armor to arms when oiled and re-laced."
+        curse: null
+        description: "Hardened leather forearm guards with iron studs. Stiff and cracked but the core leather is thick cowhide. They'll limber up with oil."
+        image_prompt: "A pair of dark hardened leather vambraces with iron studs, stiff and cracked, lying crossed on a burial stone."
+
+      - id: "LOOT_T2_007"
+        name: "Spear (intact)"
+        type: "weapon"
+        value_silver: 10
+        weight_kg: 2.0
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A thrusting spear with an ash shaft and a leaf-shaped iron head. The shaft is dry but straight. The blade has a good edge under the surface rust."
+        image_prompt: "A leaf-bladed spear with a dry ash shaft laid full-length beside a skeleton in a stone-lined grave."
+
+      - id: "LOOT_T2_008"
+        name: "Iron Seax"
+        type: "weapon"
+        value_silver: 8
+        weight_kg: 0.6
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A single-edged fighting knife with a horn handle. The blade shows pattern-welding — cheap, but deliberate. A working man's pride."
+        image_prompt: "A single-edged iron seax with a dark horn handle, faint pattern-weld lines visible on the blade, on a stone shelf."
+
+      - id: "LOOT_T2_009"
+        name: "Hack-Silver Pouch"
+        type: "silver_gold"
+        value_silver: 20
+        weight_kg: 0.25
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A leather pouch of cut silver fragments — arm-ring ends, snipped coins, a flattened bead. A warrior's portable purse. About 20 silver by weight."
+        image_prompt: "An open leather pouch spilling irregular silver fragments, cut coins, and wire onto a flat stone in dim light."
+
+      - id: "LOOT_T2_010"
+        name: "Sword (pitted)"
+        type: "weapon"
+        value_silver: 20
+        weight_kg: 1.3
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A straight-bladed sword, double-edged, with a corroded iron hilt. The blade has deep pitting but the steel core is sound. Worth restoring."
+        image_prompt: "A double-edged sword with pitted blade and corroded three-lobed pommel, lying in a stone-cut grave alongside arm bones."
+
+      - id: "LOOT_T2_011"
+        name: "Bone-Handled Eating Knife"
+        type: "tool"
+        value_silver: 3
+        weight_kg: 0.2
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A small utility knife with a polished bone grip. Every warrior carried one. This one has notches on the handle — kills, debts, or days."
+        image_prompt: "A small iron knife with a polished bone handle bearing cut notches, lying on a stone beside a clay bowl."
+
+      - id: "LOOT_T2_012"
+        name: "Leather Sword Scabbard"
+        type: "trade_good"
+        value_silver: 5
+        weight_kg: 0.6
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A fleece-lined leather scabbard with a bronze chape. Stiff with age. The fleece lining kept the blade oiled — whoever made this cared about their steel."
+        image_prompt: "A dark leather sword scabbard with a dull bronze chape, laid flat on a stone surface, fleece lining visible at the mouth."
+
+      - id: "LOOT_T2_013"
+        name: "Iron Helmet (nasal)"
+        type: "armor"
+        value_silver: 18
+        weight_kg: 2.2
+        condition: "fair"
+        mechanical_effect: "+1 armor to head."
+        curse: null
+        description: "A conical iron helm with a nasal guard, forged from four plates riveted together. Dented above the left ear. The padding inside is gone."
+        image_prompt: "A dented four-plate iron helmet with a nasal guard, sitting on a stone shelf in a barrow, the interior padding gone."
+
+      - id: "LOOT_T2_014"
+        name: "Arrow Bundle (iron-tipped)"
+        type: "weapon"
+        value_silver: 5
+        weight_kg: 0.8
+        condition: "fair"
+        mechanical_effect: "8 iron-tipped arrows. Shafts dry but straight."
+        curse: null
+        description: "Eight arrows bundled with sinew. Birch shafts with goose fletching and socketed iron points. The fletching is ragged but the points are good."
+        image_prompt: "A bundle of eight birch arrows with ragged goose fletching and dark iron points, tied with sinew on a grave shelf."
+
+      - id: "LOOT_T2_015"
+        name: "Warrior's Brooch (bronze)"
+        type: "jewelry"
+        value_silver: 8
+        weight_kg: 0.1
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A penannular bronze brooch with beast-head terminals — the type used to fasten a cloak at the shoulder. Good casting work. Intact pin."
+        image_prompt: "A bronze penannular brooch with beast-head terminals and an intact pin, resting on dark wool remnants."
+
+      - id: "LOOT_T2_016"
+        name: "Wrist Guard (bone)"
+        type: "armor"
+        value_silver: 3
+        weight_kg: 0.2
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A flat bone plate shaped and polished for an archer's wrist. Drilled at the corners for lacing. Smooth from long use."
+        image_prompt: "A flat polished bone wrist guard with drill holes at the corners, on a stone shelf beside a bow fragment."
+
+      - id: "LOOT_T2_017"
+        name: "Cursed Seax — 'Foe-Bitter'"
+        type: "cursed"
+        value_silver: 12
+        weight_kg: 0.7
+        condition: "good"
+        mechanical_effect: "+1 damage on first wound inflicted per combat."
+        curse:
+          name: "Blood Thirst"
+          trigger: "Drawn in combat"
+          effect: "Wielder must make WIL test or attack nearest target — ally or enemy. Trigger once per combat."
+          removal: "Bury the seax in a fresh grave with a blood offering. Seidr practitioner (WYR 2+) speaks the unbinding."
+        description: "A seax with a dark-stained blade that seems to drink the light. The edge is impossibly keen for buried iron. Something about holding it makes the hand tighten."
+        image_prompt: "A dark-bladed seax with an almost black patina, resting on a stone shelf, the edge unnaturally sharp and gleaming."
+
+      - id: "LOOT_T2_018"
+        name: "Belt Purse (warrior's)"
+        type: "silver_gold"
+        value_silver: 10
+        weight_kg: 0.3
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A heavy belt pouch containing mixed coins — Frankish deniers, Arab dirhams, and local hack-silver. A well-traveled fighter's savings."
+        image_prompt: "A leather belt pouch half-open, spilling mixed silver coins of different origins onto a flat stone surface."
+
+      - id: "LOOT_T2_019"
+        name: "Bow (short, composite)"
+        type: "weapon"
+        value_silver: 14
+        weight_kg: 1.0
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A short bow of layered yew and sinew, unstrung. The limbs are dry but show no cracks. Needs a new string and careful re-tillering."
+        image_prompt: "An unstrung short composite bow of pale yew and dark sinew, laid beside a skeleton in a grave niche."
+
+      - id: "LOOT_T2_020"
+        name: "Cursed Helm — 'Hollow Gaze'"
+        type: "cursed"
+        value_silver: 15
+        weight_kg: 2.5
+        condition: "good"
+        mechanical_effect: "+1 to Intimidation when worn."
+        curse:
+          name: "Dead Man's Sight"
+          trigger: "Worn for more than 1 hour"
+          effect: "Wearer sees flickering shapes in darkness — dead men walking. -1 WIL for 12 hours after removal. Repeated use: WIL penalty stacks."
+          removal: "Submerge the helm in running water for a full day. A seidr practitioner (WYR 3+) must speak over it at dawn."
+        description: "A four-plate helm with a face guard. The eye holes are too wide, the metal around them scratched as if someone tried to claw them wider from inside."
+        image_prompt: "A four-plate iron helm with an oversized face guard, scratches radiating from the eye holes, sitting on a stone slab."
+
+      - id: "LOOT_T2_021"
+        name: "Gameboard (hnefatafl)"
+        type: "trade_good"
+        value_silver: 6
+        weight_kg: 1.2
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A carved wooden board for hnefatafl with some bone pieces still in a leather bag. The king piece is missing. A warrior's pastime."
+        image_prompt: "A carved wooden hnefatafl board with bone pieces scattered nearby, a leather bag half-open, in a grave chamber."
+
+      - id: "LOOT_T2_022"
+        name: "Whale-Bone Arm Guard"
+        type: "armor"
+        value_silver: 7
+        weight_kg: 0.3
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A curved plate of whale bone shaped to fit a forearm, laced with gut cord. Light, dense, and harder than it looks. A coastal warrior's gear."
+        image_prompt: "A curved whale-bone forearm guard with gut lacing, pale and dense, lying on a stone shelf with a dark backdrop."
+
+      - id: "LOOT_T2_023"
+        name: "Runestone Fragment"
+        type: "rune_item"
+        value_silver: 5
+        weight_kg: 2.0
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A broken section of a memorial runestone, carved with the name of the dead. '...son of Bjorn, who fell at...' — the rest is missing."
+        image_prompt: "A triangular stone fragment with carved runes visible on one flat face, leaning against a barrow wall."
+
+      - id: "LOOT_T2_024"
+        name: "Seal-Skin Pouch"
+        type: "trade_good"
+        value_silver: 4
+        weight_kg: 0.15
+        condition: "good"
+        mechanical_effect: "Waterproof. Keeps contents dry."
+        curse: null
+        description: "A small pouch made from seal skin, stitched tight. Waterproof even after centuries. Contains a few teeth — human — and a lock of braided hair."
+        image_prompt: "A small grey-brown seal skin pouch tied with sinew, partly open to reveal teeth and braided dark hair inside."
+
+      - id: "LOOT_T2_025"
+        name: "Iron Hand-Axe (good)"
+        type: "weapon"
+        value_silver: 10
+        weight_kg: 1.5
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A well-made hand axe with a tight head and a wrapped leather grip. The edge is good. Drop it in your belt loop and call it done."
+        image_prompt: "A well-balanced hand axe with leather-wrapped grip and dark iron head, lying on a stone shelf in a warrior grave."
+
+      - id: "LOOT_T2_026"
+        name: "Cursed Arm-Ring — 'Oath-Binder'"
+        type: "cursed"
+        value_silver: 18
+        weight_kg: 0.15
+        condition: "excellent"
+        mechanical_effect: "+1 to Command."
+        curse:
+          name: "Oath Fever"
+          trigger: "Worn for a full day"
+          effect: "Wearer becomes compulsively oath-making. Must make WIL test to refuse any request for a sworn promise. Broken oaths cause d6 psychic damage."
+          removal: "Cut the arm-ring off with the weapon of someone who has never broken an oath. Seidr practitioner not required."
+        description: "A heavy silver arm-ring with rune inscriptions spiraling around the band. It fits perfectly on any arm. The runes read 'I bind, I hold, I do not release.'"
+        image_prompt: "A heavy silver arm-ring with spiral rune inscriptions, catching dim light, resting on a dark stone beside forearm bones."
+
+      - id: "LOOT_T2_027"
+        name: "Smith's Tongs (iron)"
+        type: "tool"
+        value_silver: 5
+        weight_kg: 1.5
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "Heavy iron tongs from a smith's burial. Blackened with forge-scale. A smith was buried with his tools — a mark of deep respect."
+        image_prompt: "A pair of heavy iron tongs dark with forge scale, laid across a stone anvil-shaped block in a burial niche."
+
+      - id: "LOOT_T2_028"
+        name: "Mead Horn Stopper (silver)"
+        type: "silver_gold"
+        value_silver: 6
+        weight_kg: 0.08
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A cast silver stopper shaped like a boar's head, sized for a drinking horn. Fine workmanship — the boar's bristles are individually incised."
+        image_prompt: "A small silver boar's-head stopper with incised bristle detail, resting on a dark stone beside a broken horn tip."
+
+      - id: "LOOT_T2_029"
+        name: "Bone Whistle"
+        type: "tool"
+        value_silver: 2
+        weight_kg: 0.05
+        condition: "good"
+        mechanical_effect: "Produces a sharp, carrying note. Useful for signaling."
+        curse: null
+        description: "A bird bone shaped into a whistle, piercing and high. Probably used for hunting dogs or signaling across hills. Still plays clear."
+        image_prompt: "A small pale bone whistle with a single finger hole, lying beside a jawbone on dark grave soil."
+
+      - id: "LOOT_T2_030"
+        name: "Leather Gambeson (partial)"
+        type: "armor"
+        value_silver: 8
+        weight_kg: 3.0
+        condition: "fair"
+        mechanical_effect: "+1 armor to torso (no repair needed, but stiff)."
+        curse: null
+        description: "A padded leather jacket quilted with wool stuffing. The back is stained dark and stiff. The front is wearable. Smells of old sweat and earth."
+        image_prompt: "A dark leather gambeson with quilted panels, the back stiff and stained, lying flat on a stone burial shelf."
+
+      - id: "LOOT_T2_031"
+        name: "Rune-Scratched Whetstone"
+        type: "rune_item"
+        value_silver: 8
+        weight_kg: 0.5
+        condition: "good"
+        mechanical_effect: "Blades sharpened on this stone hold their edge 50% longer."
+        curse: null
+        description: "A fine-grained grey whetstone with a single rune scratched into one face — 'Tiwaz,' the rune of victory. Whether it works or the warrior just believed it did."
+        image_prompt: "A grey whetstone with a scratched Tiwaz rune on one face, showing a deep use-groove along the center."
+
+      - id: "LOOT_T2_032"
+        name: "Round Shield (battered)"
+        type: "weapon"
+        value_silver: 8
+        weight_kg: 4.5
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A lime-wood round shield, iron-bossed, leather-rimmed. The board is split in two places and the grip is loose. A few hours' work with fresh rawhide makes it field-ready."
+        image_prompt: "A battered lime-wood round shield with an iron boss and cracked leather rim, leaning against a barrow wall."
+
+      - id: "LOOT_T2_033"
+        name: "Amber Bead String"
+        type: "trade_good"
+        value_silver: 12
+        weight_kg: 0.1
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "Seven polished amber beads on a braided cord. Warm gold and honey tones. Amber was women's wealth, which makes this burial unusual — traded, stolen, or loved."
+        image_prompt: "Seven polished amber beads in honey and gold tones strung on braided cord, resting on dark stone in warm torchlight."
+
+      - id: "LOOT_T2_034"
+        name: "Cursed Spear Head — 'Geirfastr'"
+        type: "cursed"
+        value_silver: 14
+        weight_kg: 0.6
+        condition: "excellent"
+        mechanical_effect: "+1 to hit on thrown attacks."
+        curse:
+          name: "Returns to the Dead"
+          trigger: "Thrown and hits a target"
+          effect: "Spear must be retrieved before dawn or it vanishes back to the barrow. Disappears from the wielder's possession."
+          removal: "Drive the spear into a living oak and leave it for one full moon cycle."
+        description: "A leaf-shaped spear head of unusual dark iron, the socket etched with spiraling lines. Flies true when thrown — almost too true. But the dead want it back."
+        image_prompt: "A dark iron leaf-shaped spear head with spiral etchings on the socket, resting point-up on a stone plinth."
+
+      - id: "LOOT_T2_035"
+        name: "Woolen Cloak (heavy)"
+        type: "trade_good"
+        value_silver: 6
+        weight_kg: 2.0
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A heavy woolen cloak dyed dark blue, fastened with a bronze pin. Moth-holes along the hem but the body is sound. Warm and worth keeping."
+        image_prompt: "A dark blue woolen cloak with a bronze fastening pin, spread on a stone slab, moth holes visible at the hem edges."
+
+  # ========================================================================
+  # TIER 3 — CHIEFTAIN BURIAL  (~30 items)
+  # Prestige goods from the graves of jarls, gothi, and the powerful.
+  # ========================================================================
+  tier_3:
+    name: "Chieftain Burial"
+    description: "Found in the central chambers of great barrows — the graves of jarls, gothi, wealthy traders, and feared war-leaders. These chambers are stone-vaulted, sometimes guarded by the restless dead, and always worth the risk."
+    items:
+      - id: "LOOT_T3_001"
+        name: "Pattern-Welded Sword"
+        type: "weapon"
+        value_silver: 50
+        weight_kg: 1.2
+        condition: "good"
+        mechanical_effect: "+1 damage. Fine balance."
+        curse: null
+        description: "A double-edged sword with visible pattern-welding in the blade — twisted rods forge-welded into flowing lines. The hilt is bronze with silver wire inlay. A killing work of art."
+        image_prompt: "A double-edged sword with visible pattern-weld lines flowing through the blade, bronze hilt with silver wire, on dark velvet."
+
+      - id: "LOOT_T3_002"
+        name: "Gilded Helmet"
+        type: "armor"
+        value_silver: 60
+        weight_kg: 2.8
+        condition: "good"
+        mechanical_effect: "+2 armor to head. +1 Intimidation when worn."
+        curse: null
+        description: "An iron helm covered in gilt bronze plates depicting warriors and beasts. The face guard is shaped with eyebrows and a nose ridge. A chieftain's war-crown."
+        image_prompt: "A gilt-bronze plated iron helmet with beast and warrior reliefs, a shaped face guard with eyebrow ridges, on a stone plinth."
+
+      - id: "LOOT_T3_003"
+        name: "Gold Torc"
+        type: "silver_gold"
+        value_silver: 80
+        weight_kg: 0.35
+        condition: "excellent"
+        mechanical_effect: null
+        curse: null
+        description: "A twisted gold neck-ring with dragon-head terminals. Heavy, pure gold. Worth a small farm. The kind of thing that gets men killed for carrying it."
+        image_prompt: "A heavy twisted gold torc with dragon-head terminals, glowing warmly in dim torchlight on dark stone."
+
+      - id: "LOOT_T3_004"
+        name: "Silver Hoard (pouch)"
+        type: "silver_gold"
+        value_silver: 45
+        weight_kg: 0.5
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A leather bag heavy with silver — whole coins, arm-ring fragments, a small ingot. A jarl's emergency fund, buried with him against need in the next world."
+        image_prompt: "A heavy leather bag spilling silver coins, ring fragments, and a small ingot onto dark stone in torchlight."
+
+      - id: "LOOT_T3_005"
+        name: "Rune-Carved War Axe"
+        type: "rune_item"
+        value_silver: 40
+        weight_kg: 2.0
+        condition: "good"
+        mechanical_effect: "+1 to hit. Rune-name: 'Hewer.'"
+        curse: null
+        description: "A broad-bladed war axe with runes inlaid in silver along the cheek. The ash haft is bound in silver wire at the grip. The runes read the axe's name and the name of its maker."
+        image_prompt: "A broad war axe with silver-inlaid runes along the cheek, silver wire binding on the ash grip, laid on fur in a stone chamber."
+
+      - id: "LOOT_T3_006"
+        name: "Imported Silk Cloth"
+        type: "trade_good"
+        value_silver: 30
+        weight_kg: 0.3
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A folded length of Byzantine silk, deep red with gold-thread borders. It came a thousand miles by river and sea. In the north, it is worth more than steel."
+        image_prompt: "A folded length of deep red silk with gold-thread borders, resting on a stone shelf in a chieftain's grave chamber."
+
+      - id: "LOOT_T3_007"
+        name: "Full Mail Shirt"
+        type: "armor"
+        value_silver: 100
+        weight_kg: 12.0
+        condition: "good"
+        mechanical_effect: "+3 armor to torso. -1 NIM."
+        curse: null
+        description: "A complete riveted-link mail shirt reaching to mid-thigh with elbow-length sleeves. Thousands of rings. Two months of a smith's work. The most valuable single item a warrior could own."
+        image_prompt: "A complete riveted iron mail shirt laid flat on stone, thousands of individual rings visible, dark with age patina."
+
+      - id: "LOOT_T3_008"
+        name: "Seidr Bone Dice (set of three)"
+        type: "seidr_object"
+        value_silver: 20
+        weight_kg: 0.1
+        condition: "excellent"
+        mechanical_effect: "Can be cast to ask one yes/no question of the dead per day. WYR test required. Failure: nightmares for d6 days."
+        curse: null
+        description: "Three bone dice carved from human finger bones. Each face bears a different rune. They click with a sound like teeth chattering. Seidr workers use them for divination — and pay for the answers."
+        image_prompt: "Three small dice carved from human finger bones with rune faces, resting on a dark cloth beside ash residue."
+
+      - id: "LOOT_T3_009"
+        name: "Gold Arm-Ring (oath ring)"
+        type: "silver_gold"
+        value_silver: 55
+        weight_kg: 0.25
+        condition: "excellent"
+        mechanical_effect: "+1 Command when worn openly. Symbol of lordship."
+        curse: null
+        description: "A gold arm-ring of the type used for swearing oaths. Smooth, heavy, warm to the touch even in the barrow's cold. Wearing this says you are someone."
+        image_prompt: "A smooth, heavy gold arm-ring catching dim light, resting on a stone plinth draped with dark fur."
+
+      - id: "LOOT_T3_010"
+        name: "Glass Drinking Vessel"
+        type: "trade_good"
+        value_silver: 25
+        weight_kg: 0.4
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A cone-shaped glass beaker, pale green, imported from Frankia. Intact and without cracks. In the north, glass is rarer than silver."
+        image_prompt: "A pale green cone-shaped glass beaker standing upright on a stone shelf, light filtering through its translucent walls."
+
+      - id: "LOOT_T3_011"
+        name: "Cursed Mail Fragment — 'Grimnir's Coat'"
+        type: "cursed"
+        value_silver: 35
+        weight_kg: 5.0
+        condition: "good"
+        mechanical_effect: "+2 armor to torso."
+        curse:
+          name: "Frost Grip"
+          trigger: "Worn in combat"
+          effect: "-1 MIG for 24 hours after use; hand stiffens. In extreme cold, -2 MIG."
+          removal: "Seidr practitioner (WYR 3+) can unbind it using fire and a blood price (d6 HP from the wearer)."
+        description: "A mail shirt that sits cold against the skin no matter the weather. The rings have a blue-black sheen. Whoever wears it fights as if gripped by frost."
+        image_prompt: "A blue-black mail shirt with an unnatural sheen, laid out on a stone slab, frost crystals visible on the rings."
+
+      - id: "LOOT_T3_012"
+        name: "Walrus Ivory Game Pieces"
+        type: "trade_good"
+        value_silver: 18
+        weight_kg: 0.5
+        condition: "excellent"
+        mechanical_effect: null
+        curse: null
+        description: "A set of twelve hnefatafl pieces carved from walrus ivory — six warriors, five defenders, one king. The carving is exquisite. Each piece has a different face."
+        image_prompt: "Twelve carved walrus ivory hnefatafl pieces with individualized faces, arranged on a dark stone surface."
+
+      - id: "LOOT_T3_013"
+        name: "Seidr Seeing-Stone"
+        type: "seidr_object"
+        value_silver: 25
+        weight_kg: 0.8
+        condition: "good"
+        mechanical_effect: "Look through it to see hidden runes and wards. WYR test; failure causes temporary blindness (1 hour)."
+        curse: null
+        description: "A water-worn stone with a natural hole through the center. Looking through it in a barrow shows things the naked eye misses — wards, rune-traps, the faint outline of the dead. The stone takes something from your sight each time."
+        image_prompt: "A dark water-worn stone with a natural hole, held up to dim light showing a distorted view through the aperture."
+
+      - id: "LOOT_T3_014"
+        name: "Bronze-Mounted War Horn"
+        type: "trade_good"
+        value_silver: 15
+        weight_kg: 1.0
+        condition: "good"
+        mechanical_effect: "Heard up to 2 km. +1 to rally allies in combat."
+        curse: null
+        description: "A large auroch horn fitted with bronze bands and a mouthpiece. Deep, resonant tone. The kind a chieftain blew to call men to war."
+        image_prompt: "A large auroch horn with bronze bands and mouthpiece, lying on a fur-draped stone in a vaulted burial chamber."
+
+      - id: "LOOT_T3_015"
+        name: "Gold Wire Embroidered Tunic"
+        type: "trade_good"
+        value_silver: 35
+        weight_kg: 0.8
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A linen tunic with gold wire embroidery at the collar, cuffs, and hem — knotwork patterns. The linen is fragile but the gold thread can be recovered."
+        image_prompt: "A faded linen tunic with gold wire knotwork embroidery at the neckline, laid flat on stone, gold thread catching light."
+
+      - id: "LOOT_T3_016"
+        name: "Silver Inlaid Spear"
+        type: "weapon"
+        value_silver: 35
+        weight_kg: 2.2
+        condition: "good"
+        mechanical_effect: "+1 damage. Silver inlay — effective against supernatural."
+        curse: null
+        description: "A thrusting spear with silver wire hammered into channels along the blade. The silver runs in serpentine lines. A weapon made for fighting things that are not quite alive."
+        image_prompt: "A spear blade with hammered silver wire in serpentine channels, the shaft dark ash, leaning against a vaulted stone wall."
+
+      - id: "LOOT_T3_017"
+        name: "Cursed Torc — 'Nidhogg's Ring'"
+        type: "cursed"
+        value_silver: 50
+        weight_kg: 0.3
+        condition: "excellent"
+        mechanical_effect: "+1 WYR while worn."
+        curse:
+          name: "Serpent's Whisper"
+          trigger: "Worn for more than 3 days"
+          effect: "Wearer hears whispers urging betrayal and paranoia. -1 to all social checks with allies. After 7 days, must make WIL test daily or act on the paranoia."
+          removal: "Must be freely given to someone who does not want it. Cannot be stolen, thrown, or lost — it returns."
+        description: "A silver torc with serpent terminals that almost seem to move when you look away. The metal is warm. The whispers start on the third night."
+        image_prompt: "A silver torc with coiled serpent terminals, resting on a stone plinth, shadows seeming to shift around it."
+
+      - id: "LOOT_T3_018"
+        name: "Rune-Stone Tablet"
+        type: "document"
+        value_silver: 15
+        weight_kg: 3.5
+        condition: "good"
+        mechanical_effect: "Contains a rune-spell. WYR 2+ to read: reveals hidden barrow passages."
+        curse: null
+        description: "A flat stone tablet densely carved with runes on both faces. Not a memorial — instructions. A map of some kind, or a key. The runes are older than the barrow."
+        image_prompt: "A flat stone tablet covered in dense rune carvings on both faces, propped against a wall in a vaulted chamber."
+
+      - id: "LOOT_T3_019"
+        name: "Frankish Wine Jug (bronze)"
+        type: "trade_good"
+        value_silver: 20
+        weight_kg: 1.5
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A Carolingian bronze jug with a trefoil mouth and cast handle. The inside still smells faintly of old wine. A trade good from very far south."
+        image_prompt: "A green-patinated bronze jug with a trefoil mouth and ornate handle, standing on a stone shelf in a grave chamber."
+
+      - id: "LOOT_T3_020"
+        name: "Seidr Spirit Bottle"
+        type: "seidr_object"
+        value_silver: 30
+        weight_kg: 0.6
+        condition: "excellent"
+        mechanical_effect: "Contains a bound minor spirit. Can be released for one service (scouting, distraction, carrying a message). WYR 3+ to command safely. Failure: spirit attacks the releaser."
+        curse: null
+        description: "A small clay bottle sealed with wax and wound with hair. Something moves inside when you hold it to your ear. A seidr worker's prison for a spirit that was once a person."
+        image_prompt: "A small round clay bottle sealed with black wax and wound with dark hair, resting on a carved stone stand."
+
+      - id: "LOOT_T3_021"
+        name: "Bearskin Cloak"
+        type: "trade_good"
+        value_silver: 22
+        weight_kg: 5.0
+        condition: "fair"
+        mechanical_effect: "+2 cold resistance. +1 Intimidation."
+        curse: null
+        description: "A cloak made from a full brown bear hide, the head forming a hood. The fur is matted and stiff with age but the leather backing is sound. Wearing it makes you look twice as wide."
+        image_prompt: "A brown bearskin cloak with the bear's head forming a hood, spread over a stone burial slab, fur matted with age."
+
+      - id: "LOOT_T3_022"
+        name: "Lyre (five-stringed)"
+        type: "trade_good"
+        value_silver: 15
+        weight_kg: 1.5
+        condition: "fair"
+        mechanical_effect: null
+        curse: null
+        description: "A five-stringed lyre of maple with bone tuning pegs. Two strings broken. A skald's burial — the kind of person warriors took to sea to remember them."
+        image_prompt: "A five-stringed maple lyre with bone tuning pegs, two strings snapped, resting on dark cloth in a stone chamber."
+
+      - id: "LOOT_T3_023"
+        name: "Cursed Shield — 'Corpse-Wall'"
+        type: "cursed"
+        value_silver: 20
+        weight_kg: 5.0
+        condition: "good"
+        mechanical_effect: "+2 to block. Does not splinter."
+        curse:
+          name: "Dead Weight"
+          trigger: "Carried into a barrow"
+          effect: "Shield becomes impossibly heavy inside barrows. -2 NIM, -1 MIG. Outside barrows, functions normally."
+          removal: "Burn the shield's leather facing and re-cover it with hide from a living animal. The wood remembers the dead."
+        description: "A round shield reinforced with iron bands. Lighter than it should be. In daylight. Underground, it drags at the arm like a millstone."
+        image_prompt: "An iron-banded round shield with a dark leather face, leaning against a barrow stone, shadows heavy around it."
+
+      - id: "LOOT_T3_024"
+        name: "Silver Finger Ring (runic)"
+        type: "rune_item"
+        value_silver: 12
+        weight_kg: 0.03
+        condition: "excellent"
+        mechanical_effect: "+1 to Rune Lore checks."
+        curse: null
+        description: "A silver ring with tiny runes incised around the band. The inscription is a name — possibly the maker, possibly the dead. Wearing it sharpens the mind for reading runes."
+        image_prompt: "A silver finger ring with tiny incised runes around the band, resting on a stone beside a skeletal hand."
+
+      - id: "LOOT_T3_025"
+        name: "Arab Silver Coins (hoard)"
+        type: "silver_gold"
+        value_silver: 40
+        weight_kg: 0.4
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A linen pouch of Abbasid dirhams — silver coins with Arabic script. Sixty-three in total, clipped and whole. The eastern trade route ran through here."
+        image_prompt: "A pile of thin silver coins with Arabic script, scattered from a linen pouch on dark stone, some bent and clipped."
+
+      - id: "LOOT_T3_026"
+        name: "Dane Axe (two-handed)"
+        type: "weapon"
+        value_silver: 45
+        weight_kg: 2.5
+        condition: "good"
+        mechanical_effect: "+2 damage. Two-handed. Cannot use with shield."
+        curse: null
+        description: "A long-hafted axe with a crescentic blade as wide as a man's arm. The haft is wrapped in leather and silver wire. This is the weapon that breaks shield-walls."
+        image_prompt: "A long-hafted dane axe with a wide crescentic blade and silver-wire wrapped grip, laid across a stone sarcophagus."
+
+      - id: "LOOT_T3_027"
+        name: "Seidr Bone Needle"
+        type: "seidr_object"
+        value_silver: 15
+        weight_kg: 0.02
+        condition: "excellent"
+        mechanical_effect: "Can sew a wound closed with a rune-binding. Healing check at +2 but patient takes 1 WYR damage from the binding."
+        curse: null
+        description: "A needle carved from human bone, impossibly sharp. Thread drawn through it seals more than flesh. The seidr healers used these — and their patients never forgot the feeling."
+        image_prompt: "An impossibly fine bone needle resting on a small dark cloth beside coiled sinew thread, in a carved stone niche."
+
+      - id: "LOOT_T3_028"
+        name: "Bronze Scale Armor (torso)"
+        type: "armor"
+        value_silver: 55
+        weight_kg: 8.0
+        condition: "fair"
+        mechanical_effect: "+2 armor to torso. No NIM penalty."
+        curse: null
+        description: "A vest of overlapping bronze scales sewn to a leather backing. Eastern style — Varangian or Rus influence. The scales are green with verdigris but the construction is superb."
+        image_prompt: "A vest of overlapping bronze scales on leather backing, green with verdigris, laid flat on a stone burial surface."
+
+      - id: "LOOT_T3_029"
+        name: "Carved Whale-Bone Casket"
+        type: "trade_good"
+        value_silver: 20
+        weight_kg: 2.0
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A rectangular casket carved from whale bone with scenes of hunting and ships. It held something once — the interior is stained dark. A prestige object for storing valuables."
+        image_prompt: "A rectangular whale-bone casket with carved hunting and ship scenes, its lid slightly open, on a stone shelf."
+
+      - id: "LOOT_T3_030"
+        name: "Cursed Ring — 'Gullveig's Price'"
+        type: "cursed"
+        value_silver: 35
+        weight_kg: 0.03
+        condition: "excellent"
+        mechanical_effect: "Wearer always knows the exact silver value of anything they look at."
+        curse:
+          name: "Gold Fever"
+          trigger: "Worn for more than 1 day"
+          effect: "Wearer becomes obsessively protective of their possessions. -2 to all Persuasion checks involving trade or generosity. After 3 days, WIL test or refuse to share supplies."
+          removal: "Give away possessions worth 50 silver to strangers. The ring loosens and falls off."
+        description: "A thin gold ring that slides on easy and won't come off without effort. The wearer sees price tags on everything — people included."
+        image_prompt: "A thin gold ring on a skeletal finger, catching light with an almost oily sheen, in a stone-lined grave."
+
+  # ========================================================================
+  # TIER 4 — LEGENDARY ARTIFACTS  (~20 items)
+  # Unique, named items. Each has a story.
+  # ========================================================================
+  tier_4:
+    name: "Legendary Artifacts"
+    description: "The deepest chambers hold things that should not exist — weapons with names older than the barrow, objects of seidr that remember their makers, and treasures that have already ruined everyone who owned them. Taking these is never simple."
+    items:
+      - id: "LOOT_T4_001"
+        name: "Járnbítr — 'Iron Biter'"
+        type: "weapon"
+        value_silver: 200
+        weight_kg: 1.3
+        condition: "excellent"
+        mechanical_effect: "+2 damage. Ignores 1 point of armor. Never rusts."
+        curse: null
+        description: "A sword forged by the dwarf-smith Valbrand three hundred years ago, commissioned by a jarl who paid with his youngest son. The blade has never dulled. The pattern-welding shows a serpent that seems to move when the steel catches light. Járnbítr cut through Skaggi Halfhand's shield and arm in a single stroke at the Battle of the Red Shore — the last time anyone drew it in anger."
+        image_prompt: "A pattern-welded sword with a serpentine design in the blade steel, bronze hilt with amber pommel, on dark fur in a stone vault."
+
+      - id: "LOOT_T4_002"
+        name: "The Gothi's Skull"
+        type: "seidr_object"
+        value_silver: 150
+        weight_kg: 1.2
+        condition: "good"
+        mechanical_effect: "Once per day, ask one question of the dead gothi's spirit. WYR 3+ to hear the answer. Failure: the skull screams and all undead within 100 paces awaken."
+        curse: null
+        description: "The skull of Arnfinnr the Seer, who could walk between worlds. His jaw is bound shut with silver wire. Someone wired it shut after he died — because he kept talking. The eye sockets are filled with black pitch, and runes are carved into the brow. Arnfinnr answers questions, but his answers always serve his own purposes."
+        image_prompt: "A human skull with silver wire binding the jaw shut, black pitch filling the eye sockets, runes carved into the brow bone."
+
+      - id: "LOOT_T4_003"
+        name: "Ulfhednar Pelt"
+        type: "armor"
+        value_silver: 120
+        weight_kg: 6.0
+        condition: "good"
+        mechanical_effect: "+2 armor. +2 Intimidation. Wearer adds +1 MIG in combat but must make WIL test to disengage from a fight."
+        curse: null
+        description: "The wolf-skin battle mantle of Kveldulf 'Evening Wolf,' a berserkr who raided the Rimevegr coast for twelve winters. He killed thirty-one men in single combat before the Frostfjord huscarls cornered him in a burning hall. The pelt is dark grey, almost black, and smells of musk and blood no matter how many times it is washed. Men who wear it do not sleep easily."
+        image_prompt: "A dark grey-black wolf skin mantle with the head forming a hood, the teeth bared, spread over a stone sarcophagus."
+
+      - id: "LOOT_T4_004"
+        name: "Blóðsteinn — 'Blood Stone'"
+        type: "rune_item"
+        value_silver: 180
+        weight_kg: 4.0
+        condition: "excellent"
+        mechanical_effect: "Rune-stone of warding. Setting it at a camp entrance forces all undead to make WIL test to cross the line. Activation: blood price (d4 HP from the setter) and WYR 2+ test."
+        curse: null
+        description: "A granite standing stone the size of a man's torso, carved with interlocking ward-runes on all four faces. It was cut by the rune-master Skaldvé for the defense of Grimholt during the Corpse-Tide of Year 289 — when the dead rose from every barrow within three days' walk. The stone held the door for nine nights. The runes are stained brown. The blood-price was paid many times."
+        image_prompt: "A granite stone carved with interlocking runes on all faces, brown stains in the rune grooves, standing in a stone vault."
+
+      - id: "LOOT_T4_005"
+        name: "Hrafnklór — 'Raven Claw'"
+        type: "weapon"
+        value_silver: 160
+        weight_kg: 1.8
+        condition: "excellent"
+        mechanical_effect: "+1 damage, +1 to hit. On a critical hit, target bleeds for d4 additional damage per round until treated."
+        curse: null
+        description: "A bearded axe with a blade curved like a raven's talon. The head is inlaid with silver knotwork depicting Huginn and Muninn. Forged for the huscarl captain Thrain Kol, who used it to execute twelve oathbreakers at the Althing of Year 278. The axe has a reputation: people who see it know what it was made for."
+        image_prompt: "A bearded axe with a raven-talon curved blade, silver knotwork inlay showing two ravens, the haft wrapped in black leather."
+
+      - id: "LOOT_T4_006"
+        name: "Seidr Thread Spool"
+        type: "seidr_object"
+        value_silver: 100
+        weight_kg: 0.3
+        condition: "excellent"
+        mechanical_effect: "The thread reveals hidden doors, traps, and wards when unspooled in barrows. 20 paces of thread. Each pace used is consumed. WYR 1+ to activate. No cost — but the thread runs out."
+        curse: null
+        description: "A spool of thread spun from the hair of dead women by the völva Hildr Bone-Singer. The thread is black as shadow and impossibly fine. When unspooled in a barrow, it reaches toward hidden things — doors, traps, the places the dead do not want you to find. Hildr made three spools. Two are lost. This is the third."
+        image_prompt: "A small bone spool wound with impossibly fine black thread, resting on a carved stone stand in a dark chamber."
+
+      - id: "LOOT_T4_007"
+        name: "Cursed Sword — 'Sváfnir' (The Sleep-Bringer)"
+        type: "cursed"
+        value_silver: 180
+        weight_kg: 1.4
+        condition: "excellent"
+        mechanical_effect: "+2 damage. Any wound inflicted resists healing — natural healing takes twice as long, magical healing requires WYR contest against the sword's WYR (4)."
+        curse:
+          name: "Death's Lullaby"
+          trigger: "Kills a named enemy"
+          effect: "Wielder must sleep within 1 hour or lose d6 WIL. During sleep, dreams of the killed person's memories. After 3 kills, the wielder's eyes take on a grey-film appearance and they begin to smell of grave earth."
+          removal: "Drive the sword through the wielder's own hand (d8 damage, permanent scar) and bury it at a crossroads under a new moon. Do not mark the spot."
+        description: "A straight-bladed sword with a hilt wrapped in grey-stained leather. It was forged by the smith Vefr for the warlord Sigmund Corpse-Maker during the war of the Three Holds. Sigmund used it to end seventeen men before it turned on him — he could not stop sleeping, and in his sleep, the dead men found him. He was buried with the sword still in his hand. His grip has not loosened."
+        image_prompt: "A straight sword with a grey-stained leather grip, the blade showing a cold sheen, gripped in a skeleton's white-knuckled hand."
+
+      - id: "LOOT_T4_008"
+        name: "The Map-Skin"
+        type: "document"
+        value_silver: 80
+        weight_kg: 0.3
+        condition: "good"
+        mechanical_effect: "Reveals locations of 3 undiscovered barrows within 5 days' travel. Accuracy: WYR test. Failure: one location is a trap or already emptied."
+        curse: null
+        description: "A piece of human skin stretched on a birch frame, tattooed with a map of the Rimevegr's barrow-fields. The skin belonged to the barrow-robber Kol Flat-Nose, who had the map inked into his own back over twenty years of grave-breaking. His partner skinned it off him after he died and preserved it. The map is incomplete but invaluable — Kol found more barrows than any man alive."
+        image_prompt: "A piece of tattooed human skin stretched on a birch frame, showing inked landmarks and barrow markers, in dim torchlight."
+
+      - id: "LOOT_T4_009"
+        name: "Ísbrjótr — 'Ice Breaker'"
+        type: "weapon"
+        value_silver: 140
+        weight_kg: 3.0
+        condition: "excellent"
+        mechanical_effect: "+3 damage. Two-handed. On hit, target's armor takes 1 point of permanent damage."
+        curse: null
+        description: "A dane axe with a crescent blade wider than a man's shoulders. The head is a single piece of forged steel — no weld lines. It belonged to Hákon Ice-Breaker, who split a frozen fjord to sink a pursuing longship. The story is probably an exaggeration. The axe is not. It goes through mail like cloth."
+        image_prompt: "A massive dane axe with an impossibly wide crescent blade of dark steel, the haft wrapped in iron wire, on a stone floor."
+
+      - id: "LOOT_T4_010"
+        name: "Völva's Wand"
+        type: "seidr_object"
+        value_silver: 130
+        weight_kg: 0.5
+        condition: "good"
+        mechanical_effect: "+2 to all seidr/WYR checks. Grants the ability to see spirits. Prolonged use (more than once per day): d4 WIL damage."
+        curse: null
+        description: "An iron-capped wand of rowan wood hung with small bronze charms — a horse, a ship, a spindle, a serpent. It belonged to the völva Gróa Frost-Tongue, who served three jarls and betrayed two of them. The wand hums faintly when held. Gróa's spirit is said to still cling to it, guiding — or misleading — whoever uses it."
+        image_prompt: "A rowan wand with an iron cap and hanging bronze charms, resting on a dark cloth beside a carved stone stand."
+
+      - id: "LOOT_T4_011"
+        name: "Cursed Helm — 'Dauðasjón' (Death Sight)"
+        type: "cursed"
+        value_silver: 90
+        weight_kg: 2.5
+        condition: "good"
+        mechanical_effect: "Wearer can see in complete darkness. Can see through illusions and seidr concealment."
+        curse:
+          name: "The Price of Sight"
+          trigger: "Worn in complete darkness"
+          effect: "In daylight afterward, all colors appear washed out and painful. -1 NIM in daylight for d6 hours. After 5 uses: permanent -1 to NIM in daylight unless removed for a full month."
+          removal: "Blind the helm's eye holes with clay made from barrow-earth and a living man's tears. Let it dry for 7 days in sunlight."
+        description: "A spectacle-guarded helm with oddly shaped eye holes — too narrow, like slits. Made for a warrior named Glumr who lost his eyes in battle but kept fighting, guided by the helm. The story goes that he saw better blind than he ever did sighted. The helm shows you everything in the dark. It takes the light away in exchange."
+        image_prompt: "A spectacle-guarded iron helm with narrow slit eye holes, dark and angular, on a stone shelf in a deep barrow vault."
+
+      - id: "LOOT_T4_012"
+        name: "Niðingr's Hoard"
+        type: "silver_gold"
+        value_silver: 300
+        weight_kg: 3.5
+        condition: "good"
+        mechanical_effect: null
+        curse: null
+        description: "A chest containing the life savings of Ivarr the Niðingr — a raider declared outlaw by three separate Althings for oath-breaking, kin-slaying, and theft. He buried his plunder before they caught him. Gold arm-rings, Frankish coins, cut silver, and one Byzantine gold solidus. The chest itself is bound in iron and locked — the key is in Ivarr's ribcage."
+        image_prompt: "An iron-bound wooden chest spilling gold arm-rings, foreign coins, and cut silver onto a stone floor, a rusted lock visible."
+
+      - id: "LOOT_T4_013"
+        name: "Seidr Binding Rope"
+        type: "seidr_object"
+        value_silver: 70
+        weight_kg: 0.8
+        condition: "good"
+        mechanical_effect: "Binds any supernatural creature for d6 hours. WYR 3+ to activate. Single use per binding — must be re-prepared by a seidr worker (WYR 3+, 1 day of ritual)."
+        curse: null
+        description: "A coil of rope braided from human hair and horse mane, treated with something that makes it grey and stiff. The völva Hildr Bone-Singer made it for catching spirits that would not stay dead. It holds anything — even draugr, even trolls. But only for a time."
+        image_prompt: "A coil of grey braided rope made from hair and mane, stiff and unnatural, lying on a dark stone shelf."
+
+      - id: "LOOT_T4_014"
+        name: "Brynþing — 'Mail Assembly'"
+        type: "armor"
+        value_silver: 250
+        weight_kg: 14.0
+        condition: "excellent"
+        mechanical_effect: "+4 armor to torso and arms. -1 NIM. Repairs itself: one damaged ring regenerates per day."
+        curse: null
+        description: "A full-length mail coat reaching to the knees, with repairs in three different metals — iron, bronze, and steel. It belonged to three generations of the same family, each adding to it. The smith-work is so densely layered that damaged rings seem to close on their own overnight. The family's last son, Egill, died at the Fall of Ashen Reach. The mail survived him."
+        image_prompt: "A full-length mail coat of mixed iron, bronze, and steel rings, draped over a stone mannequin in a deep vault."
+
+      - id: "LOOT_T4_015"
+        name: "Cursed Coin — 'Helgrind's Toll'"
+        type: "cursed"
+        value_silver: 50
+        weight_kg: 0.02
+        condition: "pristine"
+        mechanical_effect: "Whoever holds the coin cannot be harmed by the dead — undead will not attack the holder unless provoked."
+        curse:
+          name: "The Toll"
+          trigger: "Carried for more than 7 days"
+          effect: "Holder begins aging at double rate. This is not visible immediately — but after 30 days, d6 years of aging become apparent. The effect is permanent."
+          removal: "Place the coin on the eyes of a freshly dead person. The dead person's spirit carries the coin to Helheim. The coin is gone."
+        description: "A single gold coin stamped with a face that might be Hel — half beautiful, half skull. It was found in the mouth of the draugr-lord Vargr Corpse-King, who carried it for a century. It keeps the dead at bay. The living pay the price instead."
+        image_prompt: "A single gold coin with a half-beautiful, half-skull face stamped on it, resting on a dark stone altar, gleaming faintly."
+
+      - id: "LOOT_T4_016"
+        name: "Valkyrja's Feather Cloak"
+        type: "armor"
+        value_silver: 200
+        weight_kg: 2.0
+        condition: "good"
+        mechanical_effect: "+1 NIM. Wearer takes half fall damage. Can slow-fall from heights up to 10 meters safely."
+        curse: null
+        description: "A cloak made from hundreds of hawk feathers sewn to a leather backing with silver thread. Legend says it was taken from a valkyrie by the hero Sigurðr Hrafnsson, who climbed the sky-mountain to steal it. More likely it was made by a masterful craftsman for someone very rich and very vain. Either way, the wearer moves as if the wind helps."
+        image_prompt: "A cloak of layered hawk feathers sewn with silver thread on leather backing, spread like wings on a stone sarcophagus lid."
+
+      - id: "LOOT_T4_017"
+        name: "The Speaking Rune-Stone"
+        type: "rune_item"
+        value_silver: 120
+        weight_kg: 15.0
+        condition: "excellent"
+        mechanical_effect: "Once per week, the rune-stone speaks a prophecy. WYR 2+ to understand it. Prophecies are always true but deliberately ambiguous."
+        curse: null
+        description: "A tall runestone carved with the entire Futhark on one face and a single phrase on the other: 'I REMEMBER WHAT WILL HAPPEN.' The stone was carved by the rune-master Vegtam for the Althing of Grimholt, where it was consulted before raids for two generations. The stone does not always speak. When it does, men wish it hadn't."
+        image_prompt: "A tall standing runestone with the full Futhark on one face, standing in a deep vaulted chamber, faint condensation on the stone."
+
+      - id: "LOOT_T4_018"
+        name: "Cursed Axe — 'Manabani' (Man-Bane)"
+        type: "cursed"
+        value_silver: 160
+        weight_kg: 2.2
+        condition: "excellent"
+        mechanical_effect: "+3 damage against humans. Only +1 against non-humans."
+        curse:
+          name: "Kin-Slayer's Mark"
+          trigger: "Kills any human with the axe"
+          effect: "After first kill, wielder is marked — animals flee, children cry, dogs growl. -2 to all social checks in settlements. After third kill, nightmares prevent full rest — no healing during sleep."
+          removal: "The wielder must perform a public act of major generosity or mercy that costs them something real. The mark fades over one month."
+        description: "A broad-headed axe with a silver-inlaid blade and a grip wrapped in red-stained leather. It was Raðulfr the Silent's weapon — a headsman who executed over one hundred men for the jarls of three holds. He never spoke after the first year of his service. The axe cuts men easily. Too easily. It makes everything feel like execution."
+        image_prompt: "A broad-headed axe with silver inlay and red-stained leather grip, the blade edge unnervingly clean, resting on a stone block."
+
+      - id: "LOOT_T4_019"
+        name: "The Draugr-Lord's Crown"
+        type: "rune_item"
+        value_silver: 250
+        weight_kg: 1.0
+        condition: "good"
+        mechanical_effect: "+2 WYR. Grants command over lesser undead (WYR contest). Wearer can sense all undead within 200 paces."
+        curse: null
+        description: "A circlet of blackened iron studded with amber and carved with a continuous rune-band that reads 'I RULE THE RESTLESS.' It was worn by Vargr Corpse-King, the draugr-lord of the Whispering Barrow, who commanded the dead of the Rimevegr for eighty years before the last warband put him down. The crown still hums with authority. Putting it on is easy. The hard part is remembering you are still alive."
+        image_prompt: "A blackened iron circlet studded with amber and carved with rune-bands, resting on a dark stone, dim light reflected in the amber."
+
+      - id: "LOOT_T4_020"
+        name: "Gullborg — 'Gold Fortress'"
+        type: "silver_gold"
+        value_silver: 500
+        weight_kg: 8.0
+        condition: "excellent"
+        mechanical_effect: null
+        curse: null
+        description: "A solid gold arm-ring the size of a man's bicep — not jewelry, but a portable treasure. It was the war-chest of Jarl Eiríkr Bloodmouth, who melted down the treasures of three raided monasteries into a single ring so he could carry his wealth into battle. Eiríkr drowned when his ship sank in a storm. The ring was recovered from his barrow by the band that buried him — and put back when four of them killed each other arguing over it."
+        image_prompt: "A massive solid gold arm-ring with crude monastery-melted texture, sitting on a stone plinth in a vault, too heavy for one hand."
