@@ -4,6 +4,13 @@
 
 # Rimevegr — Dark Norse Campaign Setting
 
+> *A world drowning in perpetual twilight, rime-fog, and the long cold. The gods
+> are silent but their absence is felt in every empty sky. Life is short,
+> measured by the ledger, the axe, and the fire. Glory is a lie the dead tell
+> themselves.*
+
+![Campaign Cover Art](images/image01.png)
+
 Imagine a world where the sun died centuries ago and nobody noticed.
 
 Not in fire. Not in glory. It simply — dimmed. One harvest the sky was a
@@ -176,13 +183,6 @@ pytest tests/
 | `20_SIMULATION_RULES.md` | Complete Iron Ledger game system |
 | `23_CAMPAIGN_ARCS_AND_PLOT_SEEDS.md` | Y311–Y315 story arcs |
 | `24_VIGNETTES_AND_SCENES.md` | 41 narrative vignettes for tone and inspiration |
-
-## Screenshots & Media
-
-![Campaign Cover Art](images/image01.png)
-
-> *Cover: A mercenary walking the frozen road through the perpetual twilight of
-> the Rimevegr.*
 
 ## License
 
