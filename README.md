@@ -1,4 +1,6 @@
-![Rimevegr Campaign Cover](images/image01.png)
+<p align="center">
+  <img src="images/logo.png" alt="Rimevegr Logo" width="400"/>
+</p>
 
 # Rimevegr — Dark Norse Campaign Setting
 
@@ -12,10 +14,6 @@ low-fantasy Norse campaign setting for tabletop roleplaying and fiction. It is
 the companion world bible for the **Iron Ledger** simulation project — a
 complete living-world system of mercenary survival, economic pressure, grounded
 combat, and deniable supernatural dread.
-
-<p align="center">
-  <img src="images/logo.png" alt="Rimevegr Logo" width="300"/>
-</p>
 
 ---
 
